@@ -330,7 +330,8 @@ void log_explain(uint32_t index)
     bson_destroy(&b);
 }
 
-#if DEBUG
+// evan: log stacktrace all of the time
+//#if DEBUG
 
 static void _log_stacktrace(bson *b)
 {
@@ -358,7 +359,7 @@ static void _log_stacktrace(bson *b)
     bson_append_finish_array(b);
 }
 
-#endif
+//#endif
 
 void log_api(uint32_t index, int is_success, uintptr_t return_value,
     uint64_t hash, last_error_t *lasterr, ...)
@@ -389,11 +390,12 @@ void log_api(uint32_t index, int is_success, uintptr_t return_value,
         bson_append_int(&b, "E", lasterr->nt_status);
     }
 
-#if DEBUG
+// evan: log stacktrace all of the time
+//#if DEBUG
     if(index != sig_index_exception()) {
         _log_stacktrace(&b);
     }
-#endif
+//#endif
 
     bson_append_start_array(&b, "args");
     bson_append_int(&b, "0", is_success);

@@ -38,7 +38,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 {% macro log_api(hook, ret='') -%}
     log_api(SIG_{{ hook.library }}_{{ hook.apiname }},
         {{ ret or hook.signature.is_success }},
-        {%- if hook.signature.return_value != 'void' %}
+        {%- if hook.signature.return_value != 'void' and hook.signature.return_value != 'DECLSPEC_NORETURN' %}
         {% if ret %}{{ ret }}{% else %}(uintptr_t) ret{% endif %},
         hash,
         {%- else %}
@@ -65,7 +65,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 {% macro call_old(hook, replace_args=True, lasterr=True) -%}
     set_last_error(&lasterror);
-    {%- if hook.signature.return_value != 'void' %}
+    {%- if hook.signature.return_value != 'void' and hook.signature.return_value != 'DECLSPEC_NORETURN' %}
     {{ hook.signature.return_value }} ret = Old_{{ hook.library }}_{{ hook.apiname }}(
     {%- else %}
     Old_{{ hook.library }}_{{ hook.apiname }}(
@@ -119,8 +119,9 @@ static {{ hook.signature.return_value }} ({{ hook.signature.calling_convention }
 
         {{ call_old(hook, replace_args=False, lasterr=False)|indent }}
 
-        {%- if hook.signature.return_value != 'void' %}
+        {%- if hook.signature.return_value != 'void' and hook.signature.return_value != 'DECLSPEC_NORETURN' %}
         return ret;
+        {%- elif hook.signature.return_value == 'DECLSPEC_NORETURN' %}
         {%- else %}
         return;
         {%- endif %}
@@ -159,8 +160,9 @@ static {{ hook.signature.return_value }} ({{ hook.signature.calling_convention }
 
         {{ call_old(hook, lasterr=False)|indent }}
 
-        {%- if hook.signature.return_value != 'void' %}
+        {%- if hook.signature.return_value != 'void' and hook.signature.return_value != 'DECLSPEC_NORETURN' %}
         return ret;
+        {%- elif hook.signature.return_value == 'DECLSPEC_NORETURN' %}
         {%- else %}
         return;
         {%- endif %}
@@ -215,7 +217,7 @@ static {{ hook.signature.return_value }} ({{ hook.signature.calling_convention }
     mem_free(prebuf);
     {%- endif %}
 
-    {%- if hook.signature.return_value != 'void' %}
+    {%- if hook.signature.return_value != 'void' and hook.signature.return_value != 'DECLSPEC_NORETURN' %}
     return ret;
     {%- endif %}
 }

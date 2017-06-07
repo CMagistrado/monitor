@@ -337,8 +337,10 @@ class SignatureProcessor(object):
             if 'is_success' not in row['signature']:
                 retval = row['signature']['return_value']
                 if retval not in self.is_success:
-                    raise Exception('Unknown return_value %r for api %r.' %
-                                    (retval, row['apiname']))
+                    # TODO - evan: just ignore this for all unknown types. basically label as always succeeding
+#                   raise Exception('Unknown return_value %r for api %r.' %
+#                                   (retval, row['apiname']))
+                    self.is_success[retval] = '1'
 
                 row['signature']['is_success'] = self.is_success[retval]
 
@@ -371,9 +373,11 @@ class SignatureProcessor(object):
             ensure = {}
             for arg in row.get('parameters', []):
                 if arg['log'] and arg['argtype'] not in self.types:
-                    raise Exception('Unknown argtype %r in %s, please add it '
-                                    'to data/types.conf.' % (arg['argtype'],
-                                                             row['apiname']))
+                    # TODO - evan: just treat all unknown types as pointers
+#                   raise Exception('Unknown argtype %r in %s, please add it '
+#                                   'to data/types.conf.' % (arg['argtype'],
+#                                                            row['apiname']))
+                    self.types[arg['argtype']] = 'p'
 
                 # Check whether we have to "ensure" this parameter. That is,
                 # it's a pointer and we'd like to have its contents after the

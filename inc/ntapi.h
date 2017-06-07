@@ -755,4 +755,179 @@ static inline UNICODE_STRING *unistr_from_objattr(OBJECT_ATTRIBUTES *obj)
 
 #define MOD_NOREPEAT 0x4000
 
+typedef enum _COPYFILE2_MESSAGE_TYPE {
+     COPYFILE2_CALLBACK_NONE = 0,
+     COPYFILE2_CALLBACK_CHUNK_STARTED,
+     COPYFILE2_CALLBACK_CHUNK_FINISHED,
+     COPYFILE2_CALLBACK_STREAM_STARTED,
+     COPYFILE2_CALLBACK_STREAM_FINISHED,
+     COPYFILE2_CALLBACK_POLL_CONTINUE,
+     COPYFILE2_CALLBACK_ERROR,
+     COPYFILE2_CALLBACK_MAX,
+} COPYFILE2_MESSAGE_TYPE;
+
+typedef enum _COPYFILE2_MESSAGE_ACTION {
+    COPYFILE2_PROGRESS_CONTINUE = 0,
+    COPYFILE2_PROGRESS_CANCEL,
+    COPYFILE2_PROGRESS_STOP,
+    COPYFILE2_PROGRESS_QUIET,
+    COPYFILE2_PROGRESS_PAUSE,
+} COPYFILE2_MESSAGE_ACTION;
+
+typedef enum _COPYFILE2_COPY_PHASE {
+    COPYFILE2_PHASE_NONE = 0,
+    COPYFILE2_PHASE_PREPARE_SOURCE,
+    COPYFILE2_PHASE_PREPARE_DEST,
+    COPYFILE2_PHASE_READ_SOURCE,
+    COPYFILE2_PHASE_WRITE_DESTINATION,
+    COPYFILE2_PHASE_SERVER_COPY,
+    COPYFILE2_PHASE_NAMEGRAFT_COPY,
+    // ... etc phases.
+    COPYFILE2_PHASE_MAX,
+} COPYFILE2_COPY_PHASE;
+
+#define COPYFILE2_MESSAGE_COPY_OFFLOAD     (0x00000001L)
+
+typedef struct COPYFILE2_MESSAGE {
+
+    COPYFILE2_MESSAGE_TYPE  Type;
+    DWORD                   dwPadding;
+
+    union {
+
+        struct {
+            DWORD           dwStreamNumber; // monotonically increasing stream number
+            DWORD           dwReserved;
+            HANDLE           hSourceFile; // handle to the source stream
+            HANDLE           hDestinationFile; // handle to the destination stream
+            ULARGE_INTEGER  uliChunkNumber; // monotonically increasing chunk number
+            ULARGE_INTEGER  uliChunkSize;  // size of the copied chunk
+            ULARGE_INTEGER  uliStreamSize; // size of the current stream
+            ULARGE_INTEGER  uliTotalFileSize; // size of all streams for this file
+        } ChunkStarted;
+
+        struct {
+            DWORD           dwStreamNumber; // monotonically increasing stream number
+            DWORD           dwFlags;
+            HANDLE           hSourceFile; // handle to the source stream
+            HANDLE           hDestinationFile; // handle to the destination stream
+            ULARGE_INTEGER  uliChunkNumber; // monotonically increasing chunk number
+            ULARGE_INTEGER  uliChunkSize;  // size of the copied chunk
+            ULARGE_INTEGER  uliStreamSize; // size of the current stream
+            ULARGE_INTEGER  uliStreamBytesTransferred; // bytes copied for this stream so far
+            ULARGE_INTEGER  uliTotalFileSize; // size of all streams for this file
+            ULARGE_INTEGER  uliTotalBytesTransferred; // total bytes copied so far
+        } ChunkFinished;
+
+        struct {
+            DWORD           dwStreamNumber;
+            DWORD           dwReserved;
+            HANDLE           hSourceFile; // handle to the source stream
+            HANDLE           hDestinationFile; // handle to the destination stream
+            ULARGE_INTEGER  uliStreamSize; // size of this stream
+            ULARGE_INTEGER  uliTotalFileSize; // total size of all streams for this file
+        } StreamStarted;
+
+        struct {
+            DWORD           dwStreamNumber;
+            DWORD           dwReserved;
+            HANDLE           hSourceFile; // handle to the source stream
+            HANDLE           hDestinationFile; // handle to the destination stream
+            ULARGE_INTEGER  uliStreamSize;
+            ULARGE_INTEGER  uliStreamBytesTransferred;
+            ULARGE_INTEGER  uliTotalFileSize;
+            ULARGE_INTEGER  uliTotalBytesTransferred;
+        } StreamFinished;
+
+        struct {
+            DWORD           dwReserved;
+        } PollContinue;
+
+        struct {
+            COPYFILE2_COPY_PHASE    CopyPhase;
+            DWORD                   dwStreamNumber;
+            HRESULT                 hrFailure;
+            DWORD                   dwReserved;
+            ULARGE_INTEGER          uliChunkNumber;
+            ULARGE_INTEGER          uliStreamSize;
+            ULARGE_INTEGER          uliStreamBytesTransferred;
+            ULARGE_INTEGER          uliTotalFileSize;
+            ULARGE_INTEGER          uliTotalBytesTransferred;
+        } Error;
+
+    } Info;
+
+} COPYFILE2_MESSAGE;
+
+typedef
+COPYFILE2_MESSAGE_ACTION (CALLBACK *PCOPYFILE2_PROGRESS_ROUTINE)(
+  _In_      const COPYFILE2_MESSAGE     *pMessage,
+  _In_opt_  PVOID                       pvCallbackContext
+);
+
+typedef struct COPYFILE2_EXTENDED_PARAMETERS {
+  DWORD                         dwSize;
+  DWORD                         dwCopyFlags;
+  BOOL                          *pfCancel;
+  PCOPYFILE2_PROGRESS_ROUTINE   pProgressRoutine;
+  PVOID                         pvCallbackContext;
+} COPYFILE2_EXTENDED_PARAMETERS;
+
+typedef struct _CREATEFILE2_EXTENDED_PARAMETERS {
+    DWORD dwSize;   
+    DWORD dwFileAttributes;
+    DWORD dwFileFlags;   
+    DWORD dwSecurityQosFlags;	
+    LPSECURITY_ATTRIBUTES lpSecurityAttributes; 
+    HANDLE hTemplateFile;      
+} CREATEFILE2_EXTENDED_PARAMETERS, *PCREATEFILE2_EXTENDED_PARAMETERS, *LPCREATEFILE2_EXTENDED_PARAMETERS;
+
+typedef BOOL (CALLBACK* CALINFO_ENUMPROCEXEX)(LPWSTR, CALID, LPWSTR, LPARAM);
+
+typedef BOOL (CALLBACK* DATEFMT_ENUMPROCEXEX)(LPWSTR, CALID, LPARAM);
+
+typedef BOOL (CALLBACK* TIMEFMT_ENUMPROCEX)(LPWSTR, LPARAM);
+
+typedef BOOL (CALLBACK* LOCALE_ENUMPROCEX)(LPWSTR, DWORD, LPARAM);
+
+typedef struct _PROCESSOR_NUMBER {
+    WORD   Group;
+    BYTE  Number;
+    BYTE  Reserved;
+} PROCESSOR_NUMBER, *PPROCESSOR_NUMBER;
+
+typedef enum _FILE_ID_TYPE {
+      FileIdType,
+      ObjectIdType,
+      ExtendedFileIdType,
+      MaximumFileIdType
+} FILE_ID_TYPE, *PFILE_ID_TYPE;
+
+typedef struct FILE_ID_DESCRIPTOR {
+    DWORD dwSize;  // Size of the struct
+    FILE_ID_TYPE Type; // Describes the type of identifier passed in.
+    union {
+        LARGE_INTEGER FileId;
+        GUID ObjectId;
+#if (_WIN32_WINNT >= _WIN32_WINNT_WIN8)
+        FILE_ID_128 ExtendedFileId;
+#endif
+    } DUMMYUNIONNAME;
+} FILE_ID_DESCRIPTOR, *LPFILE_ID_DESCRIPTOR;
+
+typedef struct _WIN32_MEMORY_RANGE_ENTRY {
+    PVOID VirtualAddress;
+    SIZE_T NumberOfBytes;
+} WIN32_MEMORY_RANGE_ENTRY, *PWIN32_MEMORY_RANGE_ENTRY;
+
+//_Function_class_(BAD_MEMORY_CALLBACK_ROUTINE)
+typedef
+VOID
+WINAPI
+BAD_MEMORY_CALLBACK_ROUTINE(
+    VOID
+    );
+
+typedef BAD_MEMORY_CALLBACK_ROUTINE *PBAD_MEMORY_CALLBACK_ROUTINE;
+
 #endif
