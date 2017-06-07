@@ -9418,8 +9418,8 @@ Parameters::
     ** DWORD nSize
 
 
-_FindResourceA
-==============
+FindResourceA
+=============
 
 Signature::
 
@@ -9433,8 +9433,8 @@ Parameters::
     ** LPCSTR lpType
 
 
-_FindResourceW
-==============
+FindResourceW
+=============
 
 Signature::
 
@@ -9448,8 +9448,8 @@ Parameters::
     ** LPCWSTR lpType
 
 
-_FindResourceExA
-================
+FindResourceExA
+===============
 
 Signature::
 
@@ -9464,8 +9464,8 @@ Parameters::
     ** WORD wLanguage
 
 
-_EnumResourceTypesA
-===================
+EnumResourceTypesA
+==================
 
 Signature::
 
@@ -9479,8 +9479,8 @@ Parameters::
     ** LONG_PTR lParam
 
 
-_EnumResourceTypesW
-===================
+EnumResourceTypesW
+==================
 
 Signature::
 
@@ -9494,8 +9494,8 @@ Parameters::
     ** LONG_PTR lParam
 
 
-_EnumResourceNamesA
-===================
+EnumResourceNamesA
+==================
 
 Signature::
 
@@ -9510,8 +9510,8 @@ Parameters::
     ** LONG_PTR lParam
 
 
-_EnumResourceNamesW
-===================
+EnumResourceNamesW
+==================
 
 Signature::
 
@@ -9526,8 +9526,8 @@ Parameters::
     ** LONG_PTR lParam
 
 
-_EnumResourceLanguagesA
-=======================
+EnumResourceLanguagesA
+======================
 
 Signature::
 
@@ -9543,8 +9543,8 @@ Parameters::
     ** LONG_PTR lParam
 
 
-_EnumResourceLanguagesW
-=======================
+EnumResourceLanguagesW
+======================
 
 Signature::
 
@@ -9560,8 +9560,8 @@ Parameters::
     ** LONG_PTR lParam
 
 
-_BeginUpdateResourceA
-=====================
+BeginUpdateResourceA
+====================
 
 Signature::
 
@@ -9574,8 +9574,8 @@ Parameters::
     ** BOOL bDeleteExistingResources
 
 
-_BeginUpdateResourceW
-=====================
+BeginUpdateResourceW
+====================
 
 Signature::
 
@@ -9588,8 +9588,8 @@ Parameters::
     ** BOOL bDeleteExistingResources
 
 
-_UpdateResourceA
-================
+UpdateResourceA
+===============
 
 Signature::
 
@@ -9606,8 +9606,8 @@ Parameters::
     ** DWORD cb
 
 
-_UpdateResourceW
-================
+UpdateResourceW
+===============
 
 Signature::
 
@@ -9624,8 +9624,8 @@ Parameters::
     ** DWORD cb
 
 
-_EndUpdateResourceA
-===================
+EndUpdateResourceA
+==================
 
 Signature::
 
@@ -9638,8 +9638,8 @@ Parameters::
     ** BOOL fDiscard
 
 
-_EndUpdateResourceW
-===================
+EndUpdateResourceW
+==================
 
 Signature::
 
@@ -9652,7 +9652,33 @@ Parameters::
     ** BOOL fDiscard
 
 
-_GlobalAddAtomA
+GlobalAddAtomA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: ATOM
+
+Parameters::
+
+    ** LPCSTR lpString
+
+
+GlobalAddAtomW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: ATOM
+
+Parameters::
+
+    ** LPCWSTR lpString
+
+
+GlobalFindAtomA
 ===============
 
 Signature::
@@ -9665,7 +9691,7 @@ Parameters::
     ** LPCSTR lpString
 
 
-_GlobalAddAtomW
+GlobalFindAtomW
 ===============
 
 Signature::
@@ -9678,34 +9704,8 @@ Parameters::
     ** LPCWSTR lpString
 
 
-_GlobalFindAtomA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: ATOM
-
-Parameters::
-
-    ** LPCSTR lpString
-
-
-_GlobalFindAtomW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: ATOM
-
-Parameters::
-
-    ** LPCWSTR lpString
-
-
-_GlobalGetAtomNameA
-===================
+GlobalGetAtomNameA
+==================
 
 Signature::
 
@@ -9719,8 +9719,8 @@ Parameters::
     ** int nSize
 
 
-_GlobalGetAtomNameW
-===================
+GlobalGetAtomNameW
+==================
 
 Signature::
 
@@ -9734,7 +9734,33 @@ Parameters::
     ** int nSize
 
 
-_AddAtomA
+AddAtomA
+========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: ATOM
+
+Parameters::
+
+    ** LPCSTR lpString
+
+
+AddAtomW
+========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: ATOM
+
+Parameters::
+
+    ** LPCWSTR lpString
+
+
+FindAtomA
 =========
 
 Signature::
@@ -9747,7 +9773,7 @@ Parameters::
     ** LPCSTR lpString
 
 
-_AddAtomW
+FindAtomW
 =========
 
 Signature::
@@ -9760,34 +9786,8 @@ Parameters::
     ** LPCWSTR lpString
 
 
-_FindAtomA
-==========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: ATOM
-
-Parameters::
-
-    ** LPCSTR lpString
-
-
-_FindAtomW
-==========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: ATOM
-
-Parameters::
-
-    ** LPCWSTR lpString
-
-
-_GetAtomNameA
-=============
+GetAtomNameA
+============
 
 Signature::
 
@@ -9801,8 +9801,8 @@ Parameters::
     ** int nSize
 
 
-_GetAtomNameW
-=============
+GetAtomNameW
+============
 
 Signature::
 
@@ -12467,8 +12467,8 @@ Parameters::
     ** HANDLE hActCtx
 
 
-_ActivateActCtx
-===============
+ActivateActCtx
+==============
 
 Signature::
 
@@ -12481,8 +12481,8 @@ Parameters::
     ** ULONG_PTR *lpCookie
 
 
-_DeactivateActCtx
-=================
+DeactivateActCtx
+================
 
 Signature::
 
@@ -12988,8 +12988,8 @@ Parameters::
     ** PSECURE_MEMORY_CACHE_CALLBACK pfnCallBack
 
 
-_CopyContext
-============
+CopyContext
+===========
 
 Signature::
 
@@ -13003,8 +13003,8 @@ Parameters::
     ** PCONTEXT Source
 
 
-_InitializeContext
-==================
+InitializeContext
+=================
 
 Signature::
 
@@ -13019,8 +13019,8 @@ Parameters::
     ** PDWORD ContextLength
 
 
-_GetEnabledXStateFeatures
-=========================
+GetEnabledXStateFeatures
+========================
 
 Signature::
 
@@ -13028,8 +13028,8 @@ Signature::
     * Return value: DWORD64
 
 
-_GetXStateFeaturesMask
-======================
+GetXStateFeaturesMask
+=====================
 
 Signature::
 
@@ -13042,8 +13042,8 @@ Parameters::
     ** PDWORD64 FeatureMask
 
 
-_LocateXStateFeature
-====================
+LocateXStateFeature
+===================
 
 Signature::
 
@@ -13057,8 +13057,8 @@ Parameters::
     ** PDWORD Length
 
 
-_SetXStateFeaturesMask
-======================
+SetXStateFeaturesMask
+=====================
 
 Signature::
 
@@ -14940,8 +14940,8 @@ Parameters::
     ** PDWORD pdwStatusRtrn
 
 
-_GetStringTypeExA
-=================
+GetStringTypeExA
+================
 
 Signature::
 
