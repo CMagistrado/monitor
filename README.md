@@ -22,6 +22,23 @@ $ cd ..
 $ make
 ```
 
+## Other tools
+
+Inside Command Prompt:
+```
+# Printing out byte values of API functions
+$ python debug.py
+
+# Prints out hooked API functions used by monitor and sources
+$ python scan.py
+
+# Converts old signatures files to new file
+$ python old_to_new.py
+
+    # Example
+    $ python old_to_new.py ../sigs-old/ ../sigs/sigs.rst-orig > ../sigs/sigs.rst
+```
+
 ## Issues
 
 **Cause `make` to error:**
@@ -33,6 +50,7 @@ error: aggregate value used where an integer was expected
 ```
 
 **Causes analyzer to error:**
+  - FreeResource
   - GetCurrentThread
   - DeleteProcThreadAttributeList 
   - GetCurrentProcess
@@ -54,3 +72,4 @@ error: aggregate value used where an integer was expected
   - SetXStateFeaturesMask
 ```
 [analyzer] DEBUG: Error resolving function
+```

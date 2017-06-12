@@ -52,6 +52,8 @@ def _main():
     apicall_to_dll = dict()
 
     # Extract header file functions belonging to each DLL file
+    #TODO evan: debugging
+#   dll_fns = ['C:\\Windows\\System32\\kernel32.dll']
     for fn in dll_fns:
 #       print 'Reading {0}'.format(fn)
 
@@ -99,6 +101,8 @@ def _main():
     written_names = set()
 
     # Extract declarations from each header file
+    #TODO evan: debugging
+#   header_fns = ['C:\\Program Files\\Windows Kits\\8.1\\Include\\um\\consoleapi.h']
     for fn in header_fns:
 #       print 'Reading {0}'.format(fn)
 
@@ -206,7 +210,7 @@ def _main():
                             # Replace VOID with void
                             p = re.sub('^VOID','void',p)
 
-                            fa.write('    ** {0}\n'.format(' '.join(p.split())))
+                            fa.write('    * {0}\n'.format(' '.join(p.split())))
                         fa.write('\n')
                         fa.write('\n')
 
@@ -278,7 +282,6 @@ def _main():
                             else:
                                 p = line
 
-
                         # Do we have to ignore _When_() stuff??
                         p = re.sub('_When_\(.*\)\s','',p)
 
@@ -291,8 +294,8 @@ def _main():
                         # Do we have to ignore (...) before the parameter?
                         p = re.sub('\(.*\)\s','',p)
 
-                        # Do we have to ignore CONST?
-                        p = re.sub('CONST\s','',p)
+                        # Do we have to lowercase CONST?
+                        p = re.sub('CONST\s','const ',p)
 
                         # Do we have to ignore __callback?
                         p = re.sub('__callback\s','',p)

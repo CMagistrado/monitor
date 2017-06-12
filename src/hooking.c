@@ -513,6 +513,7 @@ int hook_create_jump(hook_t *h)
     asm_jump(closeby, target);
 
     virtual_protect(addr, stub_used, PAGE_EXECUTE_READ);
+
     return 0;
 }
 
@@ -533,11 +534,55 @@ int hook_create_jump(hook_t *h)
         return -1;
     }
 
+    //TODO evan: debugging
+/*
+    pipe("CRITICAL:Here1");
+    pipe(
+        "CRITICAL:Addr   %x %x %x %x %x %x %x %x.",
+        addr[0],
+        addr[1],
+        addr[2],
+        addr[3],
+        addr[4],
+        addr[5],
+        addr[6],
+        addr[7]
+    );
+    pipe("CRITICAL:stub_used %d",stub_used);
+*/
+
     // Pad all used bytes out with int3's.
     memset(addr, 0xcc, stub_used);
 
+/*
+    pipe("CRITICAL:Here2");
+
+    pipe(
+        "CRITICAL:Addr   %x %x %x %x %x %x %x %x.",
+        addr[0],
+        addr[1],
+        addr[2],
+        addr[3],
+        addr[4],
+        addr[5],
+        addr[6],
+        addr[7]
+    );
+    pipe(
+        "CRITICAL:Target %x %x %x %x.",
+        addr[0],
+        addr[1],
+        addr[2],
+        addr[3]
+    );
+*/
+
     // Jump from the hooked address to the target address.
     asm_jump_32bit(addr, target);
+
+/*
+    pipe("CRITICAL:Here3");
+*/
 
     virtual_protect(addr, stub_used, PAGE_EXECUTE_READ);
     return 0;
@@ -750,11 +795,40 @@ int hook(hook_t *h, void *module_handle)
         }
     }
 
+/*
+    pipe("CRITICAL:Name %z",h->funcname);
+    //TODO evan: debugging
+    pipe("CRITICAL:Before %x %x %x %x %x %x %x %x.",
+        h->addr[0],
+        h->addr[1],
+        h->addr[2],
+        h->addr[3],
+        h->addr[4],
+        h->addr[5],
+        h->addr[6],
+        h->addr[7]
+    );
+*/
+
     if(_hook_determine_start(h) < 0) {
         pipe("CRITICAL:Error determining start of function %z!%z.",
             h->library, h->funcname);
         return -1;
     }
+
+    //TODO evan: debugging
+/*
+    pipe("CRITICAL:After  %x %x %x %x %x %x %x %x.",
+        h->addr[0],
+        h->addr[1],
+        h->addr[2],
+        h->addr[3],
+        h->addr[4],
+        h->addr[5],
+        h->addr[6],
+        h->addr[7]
+    );
+*/
 
     // Handle delay loaded forwarders. In some situations an exported symbol
     // will forward execution to another DLL. If this other DLL is delay
@@ -828,6 +902,21 @@ int hook(hook_t *h, void *module_handle)
         *h->orig = (FARPROC) h->func_stub;
     }
 
+    //TODO evan: debugging
+/*
+    pipe(
+        "CRITICAL:Orig   %x %x %x %x %x %x %x %x.",
+        h->addr[0],
+        h->addr[1],
+        h->addr[2],
+        h->addr[3],
+        h->addr[4],
+        h->addr[5],
+        h->addr[6],
+        h->addr[7]
+    );
+*/
+
     if(h->insn == 0) {
         // Create the original function stub.
         h->stub_used = hook_create_stub(h->func_stub,
@@ -844,6 +933,21 @@ int hook(hook_t *h, void *module_handle)
         h->stub_used = hook_insn(h, h->insn_signature);
     }
 
+    //TODO evan: debugging
+/*
+    pipe(
+        "CRITICAL:Stub   %x %x %x %x %x %x %x %x.",
+        h->func_stub[0],
+        h->func_stub[1],
+        h->func_stub[2],
+        h->func_stub[3],
+        h->func_stub[4],
+        h->func_stub[5],
+        h->func_stub[6],
+        h->func_stub[7]
+    );
+*/
+
     uint8_t region_original[32];
     memcpy(region_original, h->addr, h->stub_used);
 
@@ -851,6 +955,22 @@ int hook(hook_t *h, void *module_handle)
     if(hook_create_jump(h) < 0) {
         return -1;
     }
+
+    //TODO evan: debugging
+/*
+    pipe(
+        "CRITICAL:Jump   %x %x %x %x %x %x %x %x.",
+        h->addr[0],
+        h->addr[1],
+        h->addr[2],
+        h->addr[3],
+        h->addr[4],
+        h->addr[5],
+        h->addr[6],
+        h->addr[7]
+    );
+    pipe("CRITICAL:===================");
+*/
 
     unhook_detect_add_region(h->funcname, h->addr, region_original,
         h->addr, h->stub_used);
