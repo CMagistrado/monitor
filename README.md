@@ -37,6 +37,12 @@ $ python old_to_new.py
 
     # Example
     $ python old_to_new.py ../sigs-old/ ../sigs/sigs.rst-orig > ../sigs/sigs.rst
+
+# Finds mismatches of calls in monitor debug text file
+$ python match.py
+
+    # Example
+    $ python match.py monitor-debug-1054.txt
 ```
 
 ## Issues
@@ -47,29 +53,4 @@ $ python old_to_new.py
 ```
 error: aggregate value used where an integer was expected
          (uintptr_t) ret,
-```
-
-**Causes analyzer to error:**
-  - FreeResource
-  - GetCurrentThread
-  - DeleteProcThreadAttributeList 
-  - GetCurrentProcess
-```
-[analyzer] CRITICAL: Error creating function stub
-```
-
-**Causes analyzer to error:**
-  - AddDllDirectory
-  - RemoveDllDirectory
-  - SetDefaultDllDirectories 
-  - SystemTimeToTzSpecificLocalTimeEx
-  - TzSpecificLocalTimeToSystemTimeEx
-  - CopyContext
-  - GetEnabledXStateFeatures
-  - GetXStateFeaturesMask
-  - InitializeContext
-  - LocateXStateFeature
-  - SetXStateFeaturesMask
-```
-[analyzer] DEBUG: Error resolving function
 ```
