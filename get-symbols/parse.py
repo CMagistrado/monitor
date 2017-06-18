@@ -2,6 +2,246 @@ import sys
 import os
 import re
 
+# Parse parameter for content
+def parse_param(param):
+    # Ignore comments
+    param = re.sub('/.*','',param)
+
+    # Ignore whitespace
+    param = re.sub('^\s+','',param)
+    param = re.sub('\s+$','',param)
+
+    if len(param) == 0:
+        return ''
+
+    # Remove comma if it exists
+    if param[-1] == ',':
+        param = ''.join(param[:-1])
+
+    # Remove ); if it exists
+    if len(param) >= 2:
+        if ''.join(param[-2:]) == ');':
+            param = ''.join(param[:-2])
+
+    # Ignore (...) before parameter
+    param = re.sub('^\(.*\)\s+','',param)
+
+    # Ignore annotations
+    param = re.sub('_\w+_\(.*\)\s*','',param)
+    param = re.sub('_\w+_\s+','',param)
+    param = re.sub('IN\s+','',param)
+    param = re.sub('OUT\s+','',param)
+    param = re.sub('\s+OPTIONAL.*','',param)
+    param = re.sub('OPTIONAL\s+','',param)
+    param = re.sub('^CONST\s+','const',param)
+    param = re.sub('^VOID\s+','void',param)
+    param = re.sub('^__callback\s+','',param)
+    param = re.sub('^__drv_aliasesMem\s+','',param)
+
+    # Ignore (...)
+    param = re.sub('\(.*\)\s*','',param)
+
+    # Consolidate whitespace
+    param = re.sub('\s+',' ',param)
+
+    # If void, ignore this parameter
+    if param == 'VOID':
+        param = ''
+
+    # Remove space after * if one exists
+    param = re.sub('\*\s+','*',param)
+
+    # Add space before * if one doesn't exist
+    param = re.sub('(\w+)\*',r'\1 *',param)
+
+    # TODO Cases we can't handle yet
+    # Variable parameters
+    if '...' in param:
+        return False
+    # Parameter with just one type (no name)
+    if (len(param) > 0) and (' ' not in param):
+        return False
+
+    return param
+
+# Retrieves the rest of this API call and prints it to file
+def get_api(out,fd,apicall_to_dll,written_names,rv,name):
+    param = list()
+
+    # Prepare API call in correct format
+    while True:
+        # Read line
+        line = fd.readline()
+        if not line:
+            break
+
+        line = line.strip('\r\n')
+
+        if not useful(line):
+            continue
+
+        # If rv hasn't been filled in yet
+        if rv == '':
+            # If return value has some weird _blah_() stuff next to it
+            m = re.match('^\s*_\w+_\(.*\)\s*(\w+)$',line)
+            if m:
+                rv = m.group(1)
+            else:
+                rv = line
+
+            # If rv is VOID, change it
+            if rv == 'VOID':
+                rv = 'void'
+
+        # If name hasn't been filled in yet
+        elif name == '':
+            # If this looks like a function
+            m = re.match('^\s*(\w+)\s*\($',line)
+            if m:
+                name = m.group(1)
+
+            m = re.match('^\s*(\w+)\s*\n\($',line)
+            if m:
+                name = m.group(1)
+
+            # API call name and parameters all on one line
+            m = re.match('^\s*(\w+)\s*\((.*)\);$',line)
+            if m:
+                name = m.group(1)
+                for p in m.group(2).split(','):
+                    # Get parameters
+                    newp = parse_param(p)
+
+                    # Can't handle this function
+                    if newp == False:
+                        print 'Can\'t handle {0} yet'.format(name)
+                        return
+
+                    # Add parameter to list
+                    if newp != '':
+                        param.append(newp)
+
+        # If parameters haven't been filled in yet
+        elif not param:
+            while True:
+                line = line.strip('\r\n')
+
+                if not useful(line):
+                    line = fd.readline()
+                    # If this is the end of the file
+                    if not line:
+                        break
+
+                    continue
+
+                # Get parameters
+                newp = parse_param(line)
+
+                # Can't handle this function
+                if newp == False:
+                    print 'Can\'t handle {0} yet'.format(name)
+                    return
+
+                # Add parameter to list
+                if newp != '':
+                    param.append(newp)
+
+                # If this was the last parameter
+                if ');' in line:
+                    break
+
+                line = fd.readline()
+                # If this is the end of the file
+                if not line:
+                    break
+
+        # Are we done with this API call?
+        if ');' in line:
+            break
+
+        # If this is the end of the file
+        if not line:
+            break
+
+    # Print out to signatures file
+    if rv != '' and name != '':
+        # If name has already been written
+        if name in written_names:
+            return
+
+        # If name not in library
+        if name not in apicall_to_dll:
+            print '{0} not found in DLL'.format(name)
+            return
+
+        # Pick from list of potential libraries
+        library = ''
+        for l in apicall_to_dll[name]:
+            # No dashes in our library
+            if '-' in l:
+                continue
+            # No uppercase letters in our library
+            if any(c.isupper() for c in l):
+                continue
+
+            library = l 
+
+        if not len(library):
+            print '{0} no library name'.format(name)
+            return
+
+        # Add name to written list
+        written_names.add(name)
+
+        with open(out,'a') as fa:
+            fa.write('{0}\n'.format(name))
+            fa.write('='*len(name))
+            fa.write('\n\n')
+
+            fa.write('Signature::\n\n')
+            fa.write('    * Library: {0}\n'.format(library))
+            fa.write('    * Return value: {0}\n'.format(rv))
+
+            # Write out parameters
+            if len(param) > 0:
+                fa.write('\n')
+                fa.write('Parameters::\n\n')
+                for p in param:
+                    fa.write('    * {0}\n'.format(p))
+
+            fa.write('\n\n')
+
+# Determines if line is useful or not
+def useful(line):
+    # If no content is on line
+    if not line:
+        return False
+
+    # If this is a comment
+    if line[0] == '/':
+        return False
+
+    # If this is a # define
+    if line[0] == '#':
+        return False
+
+    # If this is a _Blah_() line
+    m = re.match('^\s*_\w+_\(.*\)\s*$',line)
+    if m:
+        return False
+
+    # If this is a _Blah_ line
+    m = re.match('^_\w+_$',line)
+    if m:
+        return False
+
+    # If this is a __Blah line
+    m = re.match('^\s*__\w+.*$',line)
+    if m:
+        return False
+
+    return True
+
 # Retrieves all *.dll files within this folder (recursively)
 def get_dll_files(path):
     for root, dirs, files in os.walk(path):
@@ -53,7 +293,7 @@ def _main():
 
     # Extract header file functions belonging to each DLL file
     #TODO evan: debugging
-#   dll_fns = ['C:\\Windows\\System32\\kernel32.dll']
+#   dll_fns = ['C:\\Windows\\System32\\winhttp.dll']
     for fn in dll_fns:
 #       print 'Reading {0}'.format(fn)
 
@@ -102,219 +342,59 @@ def _main():
 
     # Extract declarations from each header file
     #TODO evan: debugging
-#   header_fns = ['C:\\Program Files\\Windows Kits\\8.1\\Include\\um\\consoleapi.h']
+#   header_fns = ['C:\\Program Files\\Windows Kits\\8.1\\Include\\um\\winhttp.h']
     for fn in header_fns:
 #       print 'Reading {0}'.format(fn)
+        if 'winhttp.h' in fn:
+            print 'Can\'t handle winhttp.h'
+            continue
 
-        flag = 0
-        rv = ''
-        name = ''
-        params = list()
-        separate = 0
+        # Open file for reading
+        fd = open(fn,'r')
+        line = fd.readline()
+        previousline = ''
 
-        with open(fn,'r') as fr:
-            for line in fr:
-                line = line.strip('\n')
+        # Read file
+        while True:
+            # Strip out the newlines
+            line = line.strip('\r\n')
 
-                # End of section we care about
-                m = re.match('.*\);',line)
-                if m:
-                    # If no name was recorded, ignore it
-                    if name == '':
-                        continue
+            # If this isn't a useful file, read next line
+            if not useful(line):
+                line = fd.readline()
+                # If this is the end of the file
+                if not line:
+                    break
 
-                    p = ''
+                continue
 
-                    # Do we have to ignore the '_IN_', etc. stuff?
-                    m = re.match('\s*_[A-Za-z]+_\s(.*)\);',line)
-                    m2 = re.match('\s*_[A-Za-z]+_\(.*\)\s(.*)\);',line)
-                    m3 = re.match('\s*([A-Za-z]+)\);',line)
-                    if m:
-                        p = m.group(1)
-                    elif m2:
-                        p = m2.group(1)
-                    elif m3:
-                        p = m3.group(1)
+            # Parse for start of API call
+            m = re.match('^\w+API$',line)
+            if m:
+                rv = ''
+                name = ''
 
-                    # Append last parameter
-                    if p != '':
-                        params.append(p)
+                # Like in wininet.h
+                if line == 'BOOLAPI':
+                    rv = 'BOOL'
 
-                    # Don't declare duplicate functions
-                    if name in written_names:
-                        # Clear out information, we're done with this call declaration
-                        flag = 0
-                        rv = ''
-                        name = ''
-                        del params[:]
-                        separate = 0
-                        continue
+                # If the API call wasn't prefixed (e.g., compressapi.h)
+                elif line == 'WINAPI' or line == 'SDBAPI' or line == 'IMAGEAPI' or line == 'WSAAPI' or line == 'WSPAPI':
+                    rv = previousline
 
-                    # Keep track of what fuctions we've written
-                    written_names.add(name)
+                # Get rest of API call
+                get_api(sigs_file,fd,apicall_to_dll,written_names,rv,name)
 
-                    # Write API declaration to file
-                    with open(sigs_file,'a') as fa:
-                        fa.write('{0}\n'.format(name))
-                        fa.write('='*len(name))
-                        fa.write('\n')
-                        fa.write('\n')
+            # Keep track of previous line
+            previousline = line
 
-                        fa.write('Signature::\n\n')
+            # Read next line
+            line = fd.readline()
+            if not line:
+                break
 
-                        # Pick from list of potential libraries
-                        library = ''
-                        for l in apicall_to_dll[name]:
-                            # No dashes in our library
-                            if '-' in l:
-                                continue
-                            # No uppercase letters in our library
-                            if any(c.isupper() for c in l):
-                                continue
-
-                            library = l 
-                        
-                        fa.write('    * Library: {0}\n'.format(library))
-
-
-                        # Replace VOID with void
-                        if rv == 'VOID':
-                            fa.write('    * Return value: void\n')
-                        else:
-                            fa.write('    * Return value: {0}\n'.format(rv))
-
-                        fa.write('\n')
-
-                        # Don't print out parameters if only parameter is void
-                        if len(params) == 1:
-                            if params[0].split(' ')[-1] == 'VOID':
-                                fa.write('\n')
-
-                                # Clear out information, we're done with this call declaration
-                                flag = 0
-                                rv = ''
-                                name = ''
-                                del params[:]
-                                separate = 0
-
-                                continue
-
-                        fa.write('Parameters::\n\n')
-                        for p in params:
-                            # Remove space after * if one exists
-                            p = re.sub('\*\s+','*',p)
-
-                            # Add space before * if one doesn't exist
-                            p = re.sub('([A-Za-z0-9_]+)\*',r'\1 *',p)
-
-                            # Replace VOID with void
-                            p = re.sub('^VOID','void',p)
-
-                            fa.write('    * {0}\n'.format(' '.join(p.split())))
-                        fa.write('\n')
-                        fa.write('\n')
-
-
-                    # Clear out information, we're done with this call declaration
-                    flag = 0
-                    rv = ''
-                    name = ''
-                    del params[:]
-                    separate = 0
-
-                # Section we care about
-                if flag:
-                    # First we'll see the return value type
-                    if rv == '':
-                        # Sometimes Windows puts __When__() crap before the return value data type
-                        if '_' != line.lstrip(' ')[0]:
-                            rv = line
-                        continue
-
-                    # Next we'll see the API call name and parameters
-                    elif name == '':
-                        if line == 'WINAPI' or line == 'APIENTRY':
-                            continue
-
-                        # Unfortunately Windows varies this next part quite a bit.
-                        # Some declarations' parameters and names are separated by newlines,
-                        # and some aren't.
-
-                        # Just the name
-                        m = re.match('^([A-Za-z0-9_]+)\s*\($',line)
-                        if m:
-                            name = m.group(1)
-                            separate = 1
-                        else:
-                            # The entire thing on one line
-                            m = re.match('^([A-Za-z0-9_]+)\s*\((.*)\);$',line)
-                            if m:
-                                name = m.group(1)
-                                params.append(m.group(2))
-                                separate = 0
-
-                        if name == '':
-                            continue
-
-                        # Make sure this call is in a dll file
-                        if name not in apicall_to_dll:
-                            print '{0} not in a DLL file.'.format(name)
-                            flag = 0
-                            rv = ''
-                            name = ''
-
-                        continue
-
-                    if separate:
-                        # If "parameter" has ) at the end, it's probably because of _When_()
-                        if line[-1] == ')':
-                            continue
-
-                        # Do we have to ignore the '_IN_', etc. stuff?
-                        m = re.match('.*_[A-Za-z]+_\s(.*)',line)
-                        if m:
-                            p = m.group(1)
-                        else:
-                            # Do we have to ignore the '_Out_writes_to_opt_(...)', etc. stuff?
-                            m = re.match('.*_[A-Za-z]+_\(.*\)\s(.*)',line)
-                            if m:
-                                p = m.group(1)
-                            else:
-                                p = line
-
-                        # Do we have to ignore _When_() stuff??
-                        p = re.sub('_When_\(.*\)\s','',p)
-
-                        # Do we have to ignore _Deref_out_range_() stuff??
-                        p = re.sub('_Deref_out_range_\(.*\)\s','',p)
-
-                        # Do we have to ignore comments?
-                        p = re.sub('\s//.*','',p)
-
-                        # Do we have to ignore (...) before the parameter?
-                        p = re.sub('\(.*\)\s','',p)
-
-                        # Do we have to lowercase CONST?
-                        p = re.sub('CONST\s','const ',p)
-
-                        # Do we have to ignore __callback?
-                        p = re.sub('__callback\s','',p)
-
-                        # Do we have to ignore __drv_aliasesMem?
-                        p = re.sub('__drv_aliasesMem\s','',p)
-
-                        # If parameter has a comma at the end, ignore it
-                        if p[-1] == ',':
-                            params.append(p[:-1])
-                        # Else it's a normal line
-                        else:
-                            params.append(p)
-
-
-                # Start of section we care about
-                m = re.match('WINBASEAPI',line)
-                if m:
-                    flag = 1
+        # Close file
+        fd.close()
 
 if __name__ == '__main__':
     _main()
