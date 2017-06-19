@@ -33,6 +33,9 @@ $ python combine.py ../template/sigs.rst-full > ../sigs.rst 2>error
 ```
 
 Any API calls not found will be printed in "error"
+Note that the "error" file already exists. This is the output
+from the most recent run of combine.py and is kept for historic
+purposes.
 
 Then recompile monitor.
 
