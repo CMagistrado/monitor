@@ -1130,7 +1130,7 @@ AuthzEvaluateSacl
 Signature::
 
     * Library: authz
-    * Return value: BOOL 
+    * Return value: BOOL
 
 Parameters::
 
@@ -1148,7 +1148,7 @@ AuthzInstallSecurityEventSource
 Signature::
 
     * Library: authz
-    * Return value: BOOL 
+    * Return value: BOOL
 
 Parameters::
 
@@ -2590,7 +2590,7 @@ Signature::
 Parameters::
 
     * DEVINST dnDevInst
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * PULONG PropertyBufferSize
@@ -2608,7 +2608,7 @@ Signature::
 Parameters::
 
     * DEVINST dnDevInst
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * PULONG PropertyBufferSize
@@ -3235,7 +3235,7 @@ Signature::
 Parameters::
 
     * LPCWSTR pszDeviceInterface
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * PULONG PropertyBufferSize
@@ -3253,7 +3253,7 @@ Signature::
 Parameters::
 
     * LPCWSTR pszDeviceInterface
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * PULONG PropertyBufferSize
@@ -4497,9 +4497,9 @@ Signature::
 Parameters::
 
     * DEVINST dnDevInst
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * ULONG PropertyBufferSize
     * ULONG ulFlags
 
@@ -4515,9 +4515,9 @@ Signature::
 Parameters::
 
     * DEVINST dnDevInst
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * ULONG PropertyBufferSize
     * ULONG ulFlags
     * HMACHINE hMachine
@@ -4604,9 +4604,9 @@ Signature::
 Parameters::
 
     * LPCWSTR pszDeviceInterface
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * ULONG PropertyBufferSize
     * ULONG ulFlags
 
@@ -4622,9 +4622,9 @@ Signature::
 Parameters::
 
     * LPCWSTR pszDeviceInterface
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * ULONG PropertyBufferSize
     * ULONG ulFlags
     * HMACHINE hMachine
@@ -4962,7 +4962,7 @@ Signature::
 Parameters::
 
     * LPCGUID ClassGUID
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * PULONG PropertyBufferSize
@@ -4980,7 +4980,7 @@ Signature::
 Parameters::
 
     * LPCGUID ClassGUID
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * PULONG PropertyBufferSize
@@ -5032,9 +5032,9 @@ Signature::
 Parameters::
 
     * LPCGUID ClassGUID
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * ULONG PropertyBufferSize
     * ULONG ulFlags
 
@@ -5050,9 +5050,9 @@ Signature::
 Parameters::
 
     * LPCGUID ClassGUID
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * ULONG PropertyBufferSize
     * ULONG ulFlags
     * HMACHINE hMachine
@@ -7335,7 +7335,7 @@ Parameters::
     * HKEY hKey
     * LPCWSTR lpszValueName
     * DWORD dwType
-    * constBYTE *lpData
+    * const BYTE *lpData
     * DWORD cbData
 
 
@@ -8127,7 +8127,7 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleOutput
-    * constVOID *lpBuffer
+    * const VOID *lpBuffer
     * DWORD nNumberOfCharsToWrite
     * LPDWORD lpNumberOfCharsWritten
     * LPVOID lpReserved
@@ -8144,7 +8144,7 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleOutput
-    * constVOID *lpBuffer
+    * const VOID *lpBuffer
     * DWORD nNumberOfCharsToWrite
     * LPDWORD lpNumberOfCharsWritten
     * LPVOID lpReserved
@@ -8502,7 +8502,7 @@ Parameters::
 
     * LCID Locale
     * DWORD dwFlags
-    * constSYSTEMTIME *lpDate
+    * const SYSTEMTIME *lpDate
     * LPCSTR lpFormat
     * LPSTR lpDateStr
     * int cchDate
@@ -8520,7 +8520,7 @@ Parameters::
 
     * LCID Locale
     * DWORD dwFlags
-    * constSYSTEMTIME *lpDate
+    * const SYSTEMTIME *lpDate
     * LPCWSTR lpFormat
     * LPWSTR lpDateStr
     * int cchDate
@@ -8538,7 +8538,7 @@ Parameters::
 
     * LCID Locale
     * DWORD dwFlags
-    * constSYSTEMTIME *lpTime
+    * const SYSTEMTIME *lpTime
     * LPCSTR lpFormat
     * LPSTR lpTimeStr
     * int cchTime
@@ -8556,7 +8556,7 @@ Parameters::
 
     * LCID Locale
     * DWORD dwFlags
-    * constSYSTEMTIME *lpTime
+    * const SYSTEMTIME *lpTime
     * LPCWSTR lpFormat
     * LPWSTR lpTimeStr
     * int cchTime
@@ -8574,7 +8574,7 @@ Parameters::
 
     * LPCWSTR lpLocaleName
     * DWORD dwFlags
-    * constSYSTEMTIME *lpTime
+    * const SYSTEMTIME *lpTime
     * LPCWSTR lpFormat
     * LPWSTR lpTimeStr
     * int cchTime
@@ -8592,7 +8592,7 @@ Parameters::
 
     * LPCWSTR lpLocaleName
     * DWORD dwFlags
-    * constSYSTEMTIME *lpDate
+    * const SYSTEMTIME *lpDate
     * LPCWSTR lpFormat
     * LPWSTR lpDateStr
     * int cchDate
@@ -11879,7 +11879,7 @@ SetSymLoadError
 Signature::
 
     * Library: imagehlp
-    * Return value: void 
+    * Return value: void
 
 Parameters::
 
@@ -11929,7 +11929,7 @@ RangeMapFree
 Signature::
 
     * Library: dbghelp
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -12052,7 +12052,7 @@ Signature::
 Parameters::
 
     * HWND hwndClient
-    * constSECURITY_QUALITY_OF_SERVICE *pqosNew
+    * const SECURITY_QUALITY_OF_SERVICE *pqosNew
     * PSECURITY_QUALITY_OF_SERVICE pqosPrev
 
 
@@ -12746,7 +12746,7 @@ DriverPackageGetPathW
 Signature::
 
     * Library: difxapi
-    * Return value: DWORD 
+    * Return value: DWORD
 
 Parameters::
 
@@ -12776,7 +12776,7 @@ SetDifxLogCallbackW
 Signature::
 
     * Library: difxapi
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -12790,7 +12790,7 @@ SetDifxLogCallbackA
 Signature::
 
     * Library: difxapi
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -13680,7 +13680,7 @@ DsRoleFreeMemory
 Signature::
 
     * Library: netapi32
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -13722,7 +13722,7 @@ Parameters::
     * DWORD dwExceptionCode
     * DWORD dwExceptionFlags
     * DWORD nNumberOfArguments
-    * constULONG_PTR *lpArguments
+    * const ULONG_PTR *lpArguments
 
 
 UnhandledExceptionFilter
@@ -13757,7 +13757,7 @@ GetLastError
 Signature::
 
     * Library: rtmpal
-    * Return value: _Check_return_ _Post_equals_last_error_
+    * Return value: _Post_equals_last_error_
 
 
 SetLastError
@@ -14028,8 +14028,8 @@ Signature::
 
 Parameters::
 
-    * constFILETIME *lpFileTime1
-    * constFILETIME *lpFileTime2
+    * const FILETIME *lpFileTime1
+    * const FILETIME *lpFileTime2
 
 
 CreateDirectoryA
@@ -14162,7 +14162,7 @@ Signature::
 
 Parameters::
 
-    * constFILETIME *lpFileTime
+    * const FILETIME *lpFileTime
     * LPFILETIME lpLocalFileTime
 
 
@@ -14814,7 +14814,7 @@ Signature::
 
 Parameters::
 
-    * constFILETIME *lpLocalFileTime
+    * const FILETIME *lpLocalFileTime
     * LPFILETIME lpFileTime
 
 
@@ -15045,9 +15045,9 @@ Signature::
 Parameters::
 
     * HANDLE hFile
-    * constFILETIME *lpCreationTime
-    * constFILETIME *lpLastAccessTime
-    * constFILETIME *lpLastWriteTime
+    * const FILETIME *lpCreationTime
+    * const FILETIME *lpLastAccessTime
+    * const FILETIME *lpLastWriteTime
 
 
 SetFileValidData
@@ -18239,7 +18239,7 @@ JsValueToVariant
 Signature::
 
     * Library: jscript9
-    * Return value: JsErrorCode 
+    * Return value: JsErrorCode
 
 Parameters::
 
@@ -19451,7 +19451,7 @@ VirtualAlloc
 Signature::
 
     * Library: kernel32
-    * Return value: _Ret_maybenull_ _Post_writable_byte_size_(dwSize)
+    * Return value: 
 
 Parameters::
 
@@ -19513,7 +19513,7 @@ VirtualAllocEx
 Signature::
 
     * Library: kernel32
-    * Return value: _Ret_maybenull_ _Post_writable_byte_size_(dwSize)
+    * Return value: 
 
 Parameters::
 
@@ -19646,7 +19646,7 @@ MapViewOfFile
 Signature::
 
     * Library: rtmpal
-    * Return value: _Ret_maybenull_  __out_data_source(FILE)
+    * Return value: __out_data_source
 
 Parameters::
 
@@ -19663,7 +19663,7 @@ MapViewOfFileEx
 Signature::
 
     * Library: kernel32
-    * Return value: _Ret_maybenull_  __out_data_source(FILE)
+    * Return value: __out_data_source
 
 Parameters::
 
@@ -19932,7 +19932,7 @@ MapViewOfFileFromApp
 Signature::
 
     * Library: kernel32
-    * Return value: _Ret_maybenull_  __out_data_source(FILE)
+    * Return value: __out_data_source
 
 Parameters::
 
@@ -23492,7 +23492,7 @@ DsQuerySitesFree
 Signature::
 
     * Library: ntdsapi
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -23995,9 +23995,9 @@ Signature::
 Parameters::
 
     * HKEY RootPowerKey
-    * constGUID *SchemeGuid
-    * constGUID *SubGroupOfPowerSettingsGuid
-    * constGUID *PowerSettingGuid
+    * const GUID *SchemeGuid
+    * const GUID *SubGroupOfPowerSettingsGuid
+    * const GUID *PowerSettingGuid
     * PULONG Type
     * LPBYTE Buffer
     * LPDWORD BufferSize
@@ -24014,9 +24014,9 @@ Signature::
 Parameters::
 
     * HKEY RootPowerKey
-    * constGUID *SchemeGuid
-    * constGUID *SubGroupOfPowerSettingsGuid
-    * constGUID *PowerSettingGuid
+    * const GUID *SchemeGuid
+    * const GUID *SubGroupOfPowerSettingsGuid
+    * const GUID *PowerSettingGuid
     * PULONG Type
     * PUCHAR Buffer
     * LPDWORD BufferSize
@@ -24033,9 +24033,9 @@ Signature::
 Parameters::
 
     * HKEY RootPowerKey
-    * constGUID *SchemeGuid
-    * constGUID *SubGroupOfPowerSettingsGuid
-    * constGUID *PowerSettingGuid
+    * const GUID *SchemeGuid
+    * const GUID *SubGroupOfPowerSettingsGuid
+    * const GUID *PowerSettingGuid
     * DWORD AcValueIndex
 
 
@@ -24050,9 +24050,9 @@ Signature::
 Parameters::
 
     * HKEY RootPowerKey
-    * constGUID *SchemeGuid
-    * constGUID *SubGroupOfPowerSettingsGuid
-    * constGUID *PowerSettingGuid
+    * const GUID *SchemeGuid
+    * const GUID *SubGroupOfPowerSettingsGuid
+    * const GUID *PowerSettingGuid
     * DWORD DcValueIndex
 
 
@@ -24081,7 +24081,7 @@ Signature::
 Parameters::
 
     * HKEY UserRootPowerKey
-    * constGUID *SchemeGuid
+    * const GUID *SchemeGuid
 
 
 PowerSettingRegisterNotification
@@ -25228,7 +25228,7 @@ Signature::
 Parameters::
 
     * HANDLE hThread
-    * constCONTEXT *lpContext
+    * const CONTEXT *lpContext
 
 
 SetProcessMitigationPolicy
@@ -25530,7 +25530,7 @@ Signature::
 Parameters::
 
     * HANDLE hThread
-    * constGROUP_AFFINITY *GroupAffinity
+    * const GROUP_AFFINITY *GroupAffinity
     * PGROUP_AFFINITY PreviousGroupAffinity
 
 
@@ -27206,7 +27206,7 @@ ClusWorkerTerminate
 Signature::
 
     * Library: resutils
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -28844,7 +28844,7 @@ SendSAS
 Signature::
 
     * Library: sas
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -28857,7 +28857,7 @@ SslGenerateRandomBits
 Signature::
 
     * Library: schannel
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -28887,7 +28887,7 @@ SslFreeCertificate
 Signature::
 
     * Library: schannel
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -33184,7 +33184,7 @@ InstallHinfSectionA
 Signature::
 
     * Library: setupapi
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -33200,7 +33200,7 @@ InstallHinfSectionW
 Signature::
 
     * Library: setupapi
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -33539,7 +33539,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * HWND hwndParent
 
 
@@ -33553,7 +33553,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * HWND hwndParent
     * PCSTR MachineName
     * PVOID Reserved
@@ -33569,7 +33569,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * HWND hwndParent
     * PCWSTR MachineName
     * PVOID Reserved
@@ -33629,7 +33629,7 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PCSTR DeviceName
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PCSTR DeviceDescription
     * HWND hwndParent
     * DWORD CreationFlags
@@ -33648,7 +33648,7 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PCWSTR DeviceName
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PCWSTR DeviceDescription
     * HWND hwndParent
     * DWORD CreationFlags
@@ -33777,7 +33777,7 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PSP_DEVINFO_DATA DeviceInfoData
-    * constGUID *InterfaceClassGuid
+    * const GUID *InterfaceClassGuid
     * DWORD MemberIndex
     * PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
 
@@ -33794,7 +33794,7 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PSP_DEVINFO_DATA DeviceInfoData
-    * constGUID *InterfaceClassGuid
+    * const GUID *InterfaceClassGuid
     * PCSTR ReferenceString
     * DWORD CreationFlags
     * PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
@@ -33812,7 +33812,7 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PSP_DEVINFO_DATA DeviceInfoData
-    * constGUID *InterfaceClassGuid
+    * const GUID *InterfaceClassGuid
     * PCWSTR ReferenceString
     * DWORD CreationFlags
     * PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
@@ -33862,7 +33862,7 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
-    * constGUID *AliasInterfaceClassGuid
+    * const GUID *AliasInterfaceClassGuid
     * PSP_DEVICE_INTERFACE_DATA AliasDeviceInterfaceData
 
 
@@ -34161,7 +34161,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PCSTR Enumerator
     * HWND hwndParent
     * DWORD Flags
@@ -34177,7 +34177,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PCWSTR Enumerator
     * HWND hwndParent
     * DWORD Flags
@@ -34193,7 +34193,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PCSTR Enumerator
     * HWND hwndParent
     * DWORD Flags
@@ -34212,7 +34212,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PCWSTR Enumerator
     * HWND hwndParent
     * DWORD Flags
@@ -34317,7 +34317,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PSTR ClassDescription
     * DWORD ClassDescriptionSize
     * PDWORD RequiredSize
@@ -34333,7 +34333,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PWSTR ClassDescription
     * DWORD ClassDescriptionSize
     * PDWORD RequiredSize
@@ -34349,7 +34349,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PSTR ClassDescription
     * DWORD ClassDescriptionSize
     * PDWORD RequiredSize
@@ -34367,7 +34367,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PWSTR ClassDescription
     * DWORD ClassDescriptionSize
     * PDWORD RequiredSize
@@ -34562,7 +34562,7 @@ Parameters::
     * PCSTR InfFileName
     * DWORD Flags
     * HSPFILEQ FileQueue
-    * constGUID *InterfaceClassGuid
+    * const GUID *InterfaceClassGuid
     * PVOID Reserved1
     * PVOID Reserved2
 
@@ -34581,7 +34581,7 @@ Parameters::
     * PCWSTR InfFileName
     * DWORD Flags
     * HSPFILEQ FileQueue
-    * constGUID *InterfaceClassGuid
+    * const GUID *InterfaceClassGuid
     * PVOID Reserved1
     * PVOID Reserved2
 
@@ -34596,7 +34596,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * REGSAM samDesired
 
 
@@ -34610,7 +34610,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * REGSAM samDesired
     * DWORD Flags
     * PCSTR MachineName
@@ -34627,7 +34627,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * REGSAM samDesired
     * DWORD Flags
     * PCWSTR MachineName
@@ -34856,7 +34856,7 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PSP_DEVINFO_DATA DeviceInfoData
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * DWORD PropertyBufferSize
@@ -34876,9 +34876,9 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PSP_DEVINFO_DATA DeviceInfoData
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * DWORD PropertyBufferSize
     * DWORD Flags
 
@@ -34913,7 +34913,7 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * DWORD PropertyBufferSize
@@ -34933,9 +34933,9 @@ Parameters::
 
     * HDEVINFO DeviceInfoSet
     * PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
-    * constDEVPROPKEY *PropertyKey
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * DWORD PropertyBufferSize
     * DWORD Flags
 
@@ -34950,7 +34950,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * DEVPROPKEY *PropertyKeyArray
     * DWORD PropertyKeyCount
     * PDWORD RequiredPropertyKeyCount
@@ -34967,7 +34967,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * DEVPROPKEY *PropertyKeyArray
     * DWORD PropertyKeyCount
     * PDWORD RequiredPropertyKeyCount
@@ -34986,8 +34986,8 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
-    * constDEVPROPKEY *PropertyKey
+    * const GUID *ClassGuid
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * DWORD PropertyBufferSize
@@ -35005,8 +35005,8 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
-    * constDEVPROPKEY *PropertyKey
+    * const GUID *ClassGuid
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE *PropertyType
     * PBYTE PropertyBuffer
     * DWORD PropertyBufferSize
@@ -35026,10 +35026,10 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
-    * constDEVPROPKEY *PropertyKey
+    * const GUID *ClassGuid
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * DWORD PropertyBufferSize
     * DWORD Flags
 
@@ -35044,10 +35044,10 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
-    * constDEVPROPKEY *PropertyKey
+    * const GUID *ClassGuid
+    * const DEVPROPKEY *PropertyKey
     * DEVPROPTYPE PropertyType
-    * constPBYTE PropertyBuffer
+    * const PBYTE PropertyBuffer
     * DWORD PropertyBufferSize
     * DWORD Flags
     * PCWSTR MachineName
@@ -35102,7 +35102,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * DWORD Property
     * PDWORD PropertyRegDataType
     * PBYTE PropertyBuffer
@@ -35122,7 +35122,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * DWORD Property
     * PDWORD PropertyRegDataType
     * PBYTE PropertyBuffer
@@ -35145,7 +35145,7 @@ Parameters::
     * HDEVINFO DeviceInfoSet
     * PSP_DEVINFO_DATA DeviceInfoData
     * DWORD Property
-    * constBYTE *PropertyBuffer
+    * const BYTE *PropertyBuffer
     * DWORD PropertyBufferSize
 
 
@@ -35162,7 +35162,7 @@ Parameters::
     * HDEVINFO DeviceInfoSet
     * PSP_DEVINFO_DATA DeviceInfoData
     * DWORD Property
-    * constBYTE *PropertyBuffer
+    * const BYTE *PropertyBuffer
     * DWORD PropertyBufferSize
 
 
@@ -35176,9 +35176,9 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * DWORD Property
-    * constBYTE *PropertyBuffer
+    * const BYTE *PropertyBuffer
     * DWORD PropertyBufferSize
     * PCSTR MachineName
     * PVOID Reserved
@@ -35194,9 +35194,9 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * DWORD Property
-    * constBYTE *PropertyBuffer
+    * const BYTE *PropertyBuffer
     * DWORD PropertyBufferSize
     * PCWSTR MachineName
     * PVOID Reserved
@@ -35402,7 +35402,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * HICON *LargeIcon
     * PINT MiniIconIndex
 
@@ -35451,7 +35451,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PINT MiniIconIndex
 
 
@@ -35509,7 +35509,7 @@ Signature::
 Parameters::
 
     * PSP_CLASSIMAGELIST_DATA ClassImageListData
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PINT ImageIndex
 
 
@@ -35601,7 +35601,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PSTR ClassName
     * DWORD ClassNameSize
     * PDWORD RequiredSize
@@ -35617,7 +35617,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PWSTR ClassName
     * DWORD ClassNameSize
     * PDWORD RequiredSize
@@ -35633,7 +35633,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PSTR ClassName
     * DWORD ClassNameSize
     * PDWORD RequiredSize
@@ -35651,7 +35651,7 @@ Signature::
 
 Parameters::
 
-    * constGUID *ClassGuid
+    * const GUID *ClassGuid
     * PWSTR ClassName
     * DWORD ClassNameSize
     * PDWORD RequiredSize
@@ -36199,8 +36199,8 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pApplicationId
-    * constSLID *pProductSkuId
+    * const SLID *pApplicationId
+    * const SLID *pProductSkuId
     * PCWSTR pwszPKeyAlgorithm
     * PCWSTR pwszPKeyString
     * UINT cbPKeySpecificData
@@ -36219,7 +36219,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pPKeyId
+    * const SLID *pPKeyId
 
 
 SLInstallLicense
@@ -36234,7 +36234,7 @@ Parameters::
 
     * HSLC hSLC
     * UINT cbLicenseBlob
-    * constBYTE *pbLicenseBlob
+    * const BYTE *pbLicenseBlob
     * SLID *pLicenseFileId
 
 
@@ -36249,7 +36249,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pLicenseFileId
+    * const SLID *pLicenseFileId
 
 
 SLConsumeRight
@@ -36263,8 +36263,8 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pAppId
-    * constSLID *pProductSkuId
+    * const SLID *pAppId
+    * const SLID *pProductSkuId
     * PCWSTR pwszRightName
     * PVOID pvReserved
 
@@ -36280,7 +36280,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pProductSkuId
+    * const SLID *pProductSkuId
     * PCWSTR pwszValueName
     * SLDATATYPE *peDataType
     * UINT *pcbValue
@@ -36298,7 +36298,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pPKeyId
+    * const SLID *pPKeyId
     * PCWSTR pwszValueName
     * SLDATATYPE *peDataType
     * UINT *pcbValue
@@ -36316,7 +36316,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pSLLicenseId
+    * const SLID *pSLLicenseId
     * PCWSTR pwszValueName
     * SLDATATYPE *peDataType
     * UINT *pcbValue
@@ -36334,8 +36334,8 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pAppID
-    * constSLID *pProductSkuId
+    * const SLID *pAppID
+    * const SLID *pProductSkuId
     * PCWSTR pwszRightName
     * UINT *pnStatusCount
     * SL_LICENSING_STATUS **ppLicensingStatus
@@ -36419,10 +36419,10 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pProductSkuId
+    * const SLID *pProductSkuId
     * UINT cbAppSpecificData
-    * constPVOID pvAppSpecificData
-    * constSL_ACTIVATION_INFO_HEADER *pActivationInfo
+    * const PVOID pvAppSpecificData
+    * const SL_ACTIVATION_INFO_HEADER *pActivationInfo
     * PCWSTR pwszProxyServer
     * WORD wProxyPort
 
@@ -36455,7 +36455,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pReserved
+    * const SLID *pReserved
     * UINT *pcbValue
     * PBYTE *ppbValue
 
@@ -36472,7 +36472,7 @@ Parameters::
 
     * HSLC hSLC
     * UINT cbValue
-    * constBYTE *pbValue
+    * const BYTE *pbValue
 
 
 SLReArm
@@ -36486,8 +36486,8 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pApplicationId
-    * constSLID *pProductSkuId
+    * const SLID *pApplicationId
+    * const SLID *pProductSkuId
     * DWORD dwFlags
 
 
@@ -36502,7 +36502,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pProductSkuId
+    * const SLID *pProductSkuId
     * PWSTR *ppwszInstallationId
 
 
@@ -36517,8 +36517,8 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pProductSkuId
-    * constSL_ACTIVATION_INFO_HEADER *pActivationInfo
+    * const SLID *pProductSkuId
+    * const SL_ACTIVATION_INFO_HEADER *pActivationInfo
     * PWSTR *ppwszInstallationId
 
 
@@ -36533,7 +36533,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pProductSkuId
+    * const SLID *pProductSkuId
     * PCWSTR pwszInstallationId
     * PCWSTR pwszConfirmationId
 
@@ -36549,8 +36549,8 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pProductSkuId
-    * constSL_ACTIVATION_INFO_HEADER *pActivationInfo
+    * const SLID *pProductSkuId
+    * const SL_ACTIVATION_INFO_HEADER *pActivationInfo
     * PCWSTR pwszInstallationId
     * PCWSTR pwszConfirmationId
 
@@ -36569,7 +36569,7 @@ Parameters::
     * PCWSTR pwszPKeyAlgorithm
     * PCWSTR pwszPKeyString
     * UINT cbPKeySpecificData
-    * constBYTE *pbPKeySpecificData
+    * const BYTE *pbPKeySpecificData
     * SLID *pPKeyId
 
 
@@ -36584,7 +36584,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pProductSkuId
+    * const SLID *pProductSkuId
     * UINT *pnProductKeyIds
     * SLID **ppProductKeyIds
 
@@ -36600,8 +36600,8 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pProductSkuId
-    * constSLID *pProductKeyId
+    * const SLID *pProductSkuId
+    * const SLID *pProductKeyId
 
 
 SLGetSLIDList
@@ -36616,7 +36616,7 @@ Parameters::
 
     * HSLC hSLC
     * SLIDTYPE eQueryIdType
-    * constSLID *pQueryId
+    * const SLID *pQueryId
     * SLIDTYPE eReturnIdType
     * UINT *pnReturnIds
     * SLID **ppReturnIds
@@ -36634,7 +36634,7 @@ Parameters::
 
     * HSLC hSLC
     * UINT cbLicenseBlob
-    * constBYTE *pbLicenseBlob
+    * const BYTE *pbLicenseBlob
     * SLID *pLicenseFileId
 
 
@@ -36649,7 +36649,7 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pLicenseFileId
+    * const SLID *pLicenseFileId
     * UINT *pcbLicenseFile
     * PBYTE *ppbLicenseFile
 
@@ -36666,7 +36666,7 @@ Parameters::
 
     * HSLC hSLC
     * PCWSTR pwszEventId
-    * constSLID *pApplicationId
+    * const SLID *pApplicationId
 
 
 SLRegisterEvent
@@ -36681,7 +36681,7 @@ Parameters::
 
     * HSLC hSLC
     * PCWSTR pwszEventId
-    * constSLID *pApplicationId
+    * const SLID *pApplicationId
     * HANDLE hEvent
 
 
@@ -36697,7 +36697,7 @@ Parameters::
 
     * HSLC hSLC
     * PCWSTR pwszEventId
-    * constSLID *pApplicationId
+    * const SLID *pApplicationId
     * HANDLE hEvent
 
 
@@ -36707,7 +36707,7 @@ SLGetWindowsInformation
 Signature::
 
     * Library: slc
-    * Return value: HRESULT 
+    * Return value: HRESULT
 
 Parameters::
 
@@ -36723,7 +36723,7 @@ SLGetWindowsInformationDWORD
 Signature::
 
     * Library: slc
-    * Return value: HRESULT 
+    * Return value: HRESULT
 
 Parameters::
 
@@ -36741,7 +36741,7 @@ Signature::
 
 Parameters::
 
-    * constSLID *pAppId
+    * const SLID *pAppId
     * SL_GENUINE_STATE *pGenuineState
     * SL_NONGENUINE_UI_OPTIONS *pUIOptions
 
@@ -36756,8 +36756,8 @@ Signature::
 
 Parameters::
 
-    * constSLID *pAppId
-    * constSLID *pSkuId
+    * const SLID *pAppId
+    * const SLID *pSkuId
     * SL_GENUINE_STATE *pGenuineState
 
 
@@ -36788,11 +36788,11 @@ Signature::
 
 Parameters::
 
-    * constSLID *pQueryId
+    * const SLID *pQueryId
     * PCWSTR pwszValueName
     * SLDATATYPE eDataType
     * UINT cbValue
-    * constBYTE *pbValue
+    * const BYTE *pbValue
 
 
 SLGetReferralInformation
@@ -36807,7 +36807,7 @@ Parameters::
 
     * HSLC hSLC
     * SLREFERRALTYPE eReferralType
-    * constSLID *pSkuOrAppId
+    * const SLID *pSkuOrAppId
     * PCWSTR pwszValueName
     * PWSTR *ppwszValue
 
@@ -36823,8 +36823,8 @@ Signature::
 Parameters::
 
     * HSLC hSLC
-    * constSLID *pApplicationId
-    * constSLID *pProductSkuId
+    * const SLID *pApplicationId
+    * const SLID *pProductSkuId
     * BYTE *pbData
     * DWORD cbData
 
@@ -36839,8 +36839,8 @@ Signature::
 
 Parameters::
 
-    * constSLID *pApplicationId
-    * constSLID *pProductSkuId
+    * const SLID *pApplicationId
+    * const SLID *pProductSkuId
     * DWORD dwFlags
 
 
@@ -36871,8 +36871,8 @@ Signature::
 
 Parameters::
 
-    * constSLID *pApplicationId
-    * constSLID *pProductSkuId
+    * const SLID *pApplicationId
+    * const SLID *pProductSkuId
     * DWORD dwFlags
     * HSLP *phPolicyContext
 
@@ -36918,7 +36918,7 @@ Parameters::
 
     * HSLC hSLC
     * UINT cbValue
-    * constBYTE *pbValue
+    * const BYTE *pbValue
 
 
 SLGetGenuineInformation
@@ -36931,7 +36931,7 @@ Signature::
 
 Parameters::
 
-    * constSLID *pQueryId
+    * const SLID *pQueryId
     * PCWSTR pwszValueName
     * SLDATATYPE *peDataType
     * UINT *pcbValue
@@ -36948,7 +36948,7 @@ Signature::
 
 Parameters::
 
-    * constSLID *pAppId
+    * const SLID *pAppId
     * PCWSTR pwszValueName
     * SLDATATYPE *peDataType
     * UINT *pcbValue
@@ -37758,7 +37758,7 @@ Signature::
 Parameters::
 
     * DWORD nCount
-    * constHANDLE *lpHandles
+    * const HANDLE *lpHandles
     * BOOL bWaitAll
     * DWORD dwMilliseconds
     * BOOL bAlertable
@@ -38191,7 +38191,7 @@ Signature::
 
 Parameters::
 
-    * constSYSTEMTIME *lpSystemTime
+    * const SYSTEMTIME *lpSystemTime
 
 
 GetSystemInfo
@@ -38378,7 +38378,7 @@ Signature::
 
 Parameters::
 
-    * constSYSTEMTIME *lpSystemTime
+    * const SYSTEMTIME *lpSystemTime
 
 
 GetVersionExA
@@ -42297,8 +42297,8 @@ Signature::
 
 Parameters::
 
-    * constTIME_ZONE_INFORMATION *lpTimeZoneInformation
-    * constSYSTEMTIME *lpUniversalTime
+    * const TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const SYSTEMTIME *lpUniversalTime
     * LPSYSTEMTIME lpLocalTime
 
 
@@ -42312,8 +42312,8 @@ Signature::
 
 Parameters::
 
-    * constTIME_ZONE_INFORMATION *lpTimeZoneInformation
-    * constSYSTEMTIME *lpLocalTime
+    * const TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const SYSTEMTIME *lpLocalTime
     * LPSYSTEMTIME lpUniversalTime
 
 
@@ -42327,7 +42327,7 @@ Signature::
 
 Parameters::
 
-    * constFILETIME *lpFileTime
+    * const FILETIME *lpFileTime
     * LPSYSTEMTIME lpSystemTime
 
 
@@ -42341,7 +42341,7 @@ Signature::
 
 Parameters::
 
-    * constSYSTEMTIME *lpSystemTime
+    * const SYSTEMTIME *lpSystemTime
     * LPFILETIME lpFileTime
 
 
@@ -42368,7 +42368,7 @@ Signature::
 
 Parameters::
 
-    * constTIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const TIME_ZONE_INFORMATION *lpTimeZoneInformation
 
 
 SetDynamicTimeZoneInformation
@@ -42381,7 +42381,7 @@ Signature::
 
 Parameters::
 
-    * constDYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
 
 
 GetDynamicTimeZoneInformation
@@ -42422,7 +42422,7 @@ Signature::
 
 Parameters::
 
-    * constDWORD dwIndex
+    * const DWORD dwIndex
     * PDYNAMIC_TIME_ZONE_INFORMATION lpTimeZoneInformation
 
 
@@ -42436,7 +42436,7 @@ Signature::
 
 Parameters::
 
-    * constPDYNAMIC_TIME_ZONE_INFORMATION lpTimeZoneInformation
+    * const PDYNAMIC_TIME_ZONE_INFORMATION lpTimeZoneInformation
     * LPDWORD FirstYear
     * LPDWORD LastYear
 
@@ -42451,8 +42451,8 @@ Signature::
 
 Parameters::
 
-    * constDYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
-    * constSYSTEMTIME *lpUniversalTime
+    * const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const SYSTEMTIME *lpUniversalTime
     * LPSYSTEMTIME lpLocalTime
 
 
@@ -42466,8 +42466,8 @@ Signature::
 
 Parameters::
 
-    * constDYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
-    * constSYSTEMTIME *lpLocalTime
+    * const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const SYSTEMTIME *lpLocalTime
     * LPSYSTEMTIME lpUniversalTime
 
 
@@ -42820,7 +42820,7 @@ TxfSetThreadMiniVersionForCreate
 Signature::
 
     * Library: txfw32
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -42833,7 +42833,7 @@ TxfGetThreadMiniVersionForCreate
 Signature::
 
     * Library: txfw32
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -43328,7 +43328,7 @@ RsopFileAccessCheck
 Signature::
 
     * Library: userenv
-    * Return value: HRESULT 
+    * Return value: HRESULT
 
 Parameters::
 
@@ -44256,7 +44256,7 @@ WcmFreeMemory
 Signature::
 
     * Library: wcmapi
-    * Return value: VOID
+    * Return value: void
 
 
 OpenThreadWaitChainSession
@@ -44279,7 +44279,7 @@ CloseThreadWaitChainSession
 Signature::
 
     * Library: wer
-    * Return value: VOID WINAPI
+    * Return value: void WINAPI
 
 Parameters::
 
@@ -44311,7 +44311,7 @@ RegisterWaitChainCOMCallback
 Signature::
 
     * Library: wer
-    * Return value: VOID WINAPI
+    * Return value: void WINAPI
 
 Parameters::
 
@@ -45177,7 +45177,7 @@ Signature::
 Parameters::
 
     * HANDLE hThread
-    * constWOW64_CONTEXT *lpContext
+    * const WOW64_CONTEXT *lpContext
 
 
 Wow64GetThreadSelectorEntry
@@ -45258,7 +45258,7 @@ Signature::
 Parameters::
 
     * DWORD nCount
-    * constHANDLE *lpHandles
+    * const HANDLE *lpHandles
     * BOOL bWaitAll
     * DWORD dwMilliseconds
 
@@ -45614,7 +45614,7 @@ Signature::
 
 Parameters::
 
-    * constFILETIME *lpFileTime
+    * const FILETIME *lpFileTime
     * LPWORD lpFatDate
     * LPWORD lpFatTime
 
@@ -46216,7 +46216,7 @@ Signature::
 
 Parameters::
 
-    * constVOID *lpv
+    * const VOID *lpv
     * int iSize
     * LPINT lpiResult
 
@@ -49489,7 +49489,7 @@ MapViewOfFileExNuma
 Signature::
 
     * Library: kernel32
-    * Return value: _Ret_maybenull_ __out_data_source(FILE)
+    * Return value: __out_data_source
 
 Parameters::
 
@@ -49512,7 +49512,7 @@ Signature::
 
 Parameters::
 
-    * constVOID *lp
+    * const VOID *lp
     * UINT_PTR ucb
 
 
@@ -49540,7 +49540,7 @@ Signature::
 
 Parameters::
 
-    * constVOID *lp
+    * const VOID *lp
     * UINT_PTR ucb
 
 
@@ -50226,7 +50226,7 @@ CreateProcessWithLogonW
 Signature::
 
     * Library: advapi32
-    * Return value: _Must_inspect_result_ BOOL
+    * Return value: BOOL
 
 Parameters::
 
@@ -50249,7 +50249,7 @@ CreateProcessWithTokenW
 Signature::
 
     * Library: advapi32
-    * Return value: _Must_inspect_result_ BOOL
+    * Return value: BOOL
 
 Parameters::
 
@@ -51626,7 +51626,7 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleInput
-    * constINPUT_RECORD *lpBuffer
+    * const INPUT_RECORD *lpBuffer
     * DWORD nLength
     * LPDWORD lpNumberOfEventsWritten
 
@@ -51642,7 +51642,7 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleInput
-    * constINPUT_RECORD *lpBuffer
+    * const INPUT_RECORD *lpBuffer
     * DWORD nLength
     * LPDWORD lpNumberOfEventsWritten
 
@@ -51692,7 +51692,7 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleOutput
-    * constCHAR_INFO *lpBuffer
+    * const CHAR_INFO *lpBuffer
     * COORD dwBufferSize
     * COORD dwBufferCoord
     * PSMALL_RECT lpWriteRegion
@@ -51709,7 +51709,7 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleOutput
-    * constCHAR_INFO *lpBuffer
+    * const CHAR_INFO *lpBuffer
     * COORD dwBufferSize
     * COORD dwBufferCoord
     * PSMALL_RECT lpWriteRegion
@@ -51811,7 +51811,7 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleOutput
-    * constWORD *lpAttribute
+    * const WORD *lpAttribute
     * DWORD nLength
     * COORD dwWriteCoord
     * LPDWORD lpNumberOfAttrsWritten
@@ -52113,7 +52113,7 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleOutput
-    * constCONSOLE_CURSOR_INFO *lpConsoleCursorInfo
+    * const CONSOLE_CURSOR_INFO *lpConsoleCursorInfo
 
 
 ScrollConsoleScreenBufferA
@@ -52127,10 +52127,10 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleOutput
-    * constSMALL_RECT *lpScrollRectangle
-    * constSMALL_RECT *lpClipRectangle
+    * const SMALL_RECT *lpScrollRectangle
+    * const SMALL_RECT *lpClipRectangle
     * COORD dwDestinationOrigin
-    * constCHAR_INFO *lpFill
+    * const CHAR_INFO *lpFill
 
 
 ScrollConsoleScreenBufferW
@@ -52144,10 +52144,10 @@ Signature::
 Parameters::
 
     * HANDLE hConsoleOutput
-    * constSMALL_RECT *lpScrollRectangle
-    * constSMALL_RECT *lpClipRectangle
+    * const SMALL_RECT *lpScrollRectangle
+    * const SMALL_RECT *lpClipRectangle
     * COORD dwDestinationOrigin
-    * constCHAR_INFO *lpFill
+    * const CHAR_INFO *lpFill
 
 
 SetConsoleWindowInfo
@@ -52162,7 +52162,7 @@ Parameters::
 
     * HANDLE hConsoleOutput
     * BOOL bAbsolute
-    * constSMALL_RECT *lpConsoleWindow
+    * const SMALL_RECT *lpConsoleWindow
 
 
 SetConsoleTextAttribute
@@ -52309,7 +52309,7 @@ Parameters::
 
     * DWORD dwDesiredAccess
     * DWORD dwShareMode
-    * constSECURITY_ATTRIBUTES *lpSecurityAttributes
+    * const SECURITY_ATTRIBUTES *lpSecurityAttributes
     * DWORD dwFlags
     * LPVOID lpScreenBufferData
 
@@ -53431,7 +53431,7 @@ Parameters::
 
     * HCRYPTKEY hKey
     * DWORD dwParam
-    * constBYTE *pbData
+    * const BYTE *pbData
     * DWORD dwFlags
 
 
@@ -53464,7 +53464,7 @@ Parameters::
 
     * HCRYPTHASH hHash
     * DWORD dwParam
-    * constBYTE *pbData
+    * const BYTE *pbData
     * DWORD dwFlags
 
 
@@ -53497,7 +53497,7 @@ Parameters::
 
     * HCRYPTPROV hProv
     * DWORD dwParam
-    * constBYTE *pbData
+    * const BYTE *pbData
     * DWORD dwFlags
 
 
@@ -53577,7 +53577,7 @@ Signature::
 Parameters::
 
     * HCRYPTPROV hProv
-    * constBYTE *pbData
+    * const BYTE *pbData
     * DWORD dwDataLen
     * HCRYPTKEY hPubKey
     * DWORD dwFlags
@@ -53649,7 +53649,7 @@ Signature::
 Parameters::
 
     * HCRYPTHASH hHash
-    * constBYTE *pbData
+    * const BYTE *pbData
     * DWORD dwDataLen
     * DWORD dwFlags
 
@@ -53729,7 +53729,7 @@ Signature::
 Parameters::
 
     * HCRYPTHASH hHash
-    * constBYTE *pbSignature
+    * const BYTE *pbSignature
     * DWORD dwSigLen
     * HCRYPTKEY hPubKey
     * LPCSTR szDescription
@@ -53747,7 +53747,7 @@ Signature::
 Parameters::
 
     * HCRYPTHASH hHash
-    * constBYTE *pbSignature
+    * const BYTE *pbSignature
     * DWORD dwSigLen
     * HCRYPTKEY hPubKey
     * LPCWSTR szDescription
@@ -54362,7 +54362,7 @@ Parameters::
     * DWORD dwMsgEncodingType
     * DWORD dwFlags
     * DWORD dwMsgType
-    * void const *pvMsgEncodeInfo
+    * void *pvMsgEncodeInfo
     * LPSTR pszInnerContentObjID
     * PCMSG_STREAM_INFO pStreamInfo
 
@@ -54380,7 +54380,7 @@ Parameters::
     * DWORD dwMsgEncodingType
     * DWORD dwFlags
     * DWORD dwMsgType
-    * void const *pvMsgEncodeInfo
+    * void *pvMsgEncodeInfo
     * LPSTR pszInnerContentObjID
     * DWORD cbData
 
@@ -54475,7 +54475,7 @@ Parameters::
     * HCRYPTMSG hCryptMsg
     * DWORD dwFlags
     * DWORD dwCtrlType
-    * void const *pvCtrlPara
+    * void *pvCtrlPara
 
 
 CryptMsgVerifyCountersignatureEncoded
@@ -55419,7 +55419,7 @@ Parameters::
     * HCERTSTORE hCertStore
     * DWORD dwFlags
     * DWORD dwCtrlType
-    * void const *pvCtrlPara
+    * void *pvCtrlPara
 
 
 CertSetStoreProperty
@@ -57402,7 +57402,7 @@ Signature::
 
 Parameters::
 
-    * constBYTE *pbBinary
+    * const BYTE *pbBinary
     * DWORD cbBinary
     * DWORD dwFlags
     * LPSTR pszString
@@ -57419,7 +57419,7 @@ Signature::
 
 Parameters::
 
-    * constBYTE *pbBinary
+    * const BYTE *pbBinary
     * DWORD cbBinary
     * DWORD dwFlags
     * LPWSTR pszString
@@ -57781,7 +57781,7 @@ DnsFree
 Signature::
 
     * Library: dnsapi
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -57795,7 +57795,7 @@ DnsRecordListFree
 Signature::
 
     * Library: dnsapi
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -57921,7 +57921,7 @@ DnsReleaseContextHandle
 Signature::
 
     * Library: dnsapi
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -58150,7 +58150,7 @@ DnsFreeProxyName
 Signature::
 
     * Library: dnsapi
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -58292,7 +58292,7 @@ Parameters::
     * LPCWSTR DstFileName
     * DWORD dwCreationDistribution
     * DWORD dwAttributes
-    * constLPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
 
 GetEncryptedFileMetadata
@@ -58499,7 +58499,7 @@ Parameters::
 
     * HBITMAP hbm
     * DWORD cb
-    * constVOID *pvBits
+    * const VOID *pvBits
 
 
 GradientFill
@@ -59441,7 +59441,7 @@ GetLocaleInfoA
 Signature::
 
     * Library: kernel32
-    * Return value: int 
+    * Return value: int
 
 Parameters::
 
@@ -59605,7 +59605,7 @@ Parameters::
 
     * LCID Locale
     * DWORD dwFlags
-    * constSYSTEMTIME *lpDuration
+    * const SYSTEMTIME *lpDuration
     * ULONGLONG ullDuration
     * LPCWSTR lpFormat
     * LPWSTR lpDurationStr
@@ -59625,7 +59625,7 @@ Parameters::
     * LCID Locale
     * DWORD dwFlags
     * LPCSTR lpValue
-    * constNUMBERFMTA *lpFormat
+    * const NUMBERFMTA *lpFormat
     * LPSTR lpNumberStr
     * int cchNumber
 
@@ -59643,7 +59643,7 @@ Parameters::
     * LCID Locale
     * DWORD dwFlags
     * LPCWSTR lpValue
-    * constNUMBERFMTW *lpFormat
+    * const NUMBERFMTW *lpFormat
     * LPWSTR lpNumberStr
     * int cchNumber
 
@@ -59661,7 +59661,7 @@ Parameters::
     * LCID Locale
     * DWORD dwFlags
     * LPCSTR lpValue
-    * constCURRENCYFMTA *lpFormat
+    * const CURRENCYFMTA *lpFormat
     * LPSTR lpCurrencyStr
     * int cchCurrency
 
@@ -59679,7 +59679,7 @@ Parameters::
     * LCID Locale
     * DWORD dwFlags
     * LPCWSTR lpValue
-    * constCURRENCYFMTW *lpFormat
+    * const CURRENCYFMTW *lpFormat
     * LPWSTR lpCurrencyStr
     * int cchCurrency
 
@@ -60421,7 +60421,7 @@ Parameters::
 
     * LPCWSTR lpLocaleName
     * DWORD dwFlags
-    * constSYSTEMTIME *lpDuration
+    * const SYSTEMTIME *lpDuration
     * ULONGLONG ullDuration
     * LPCWSTR lpFormat
     * LPWSTR lpDurationStr
@@ -60441,7 +60441,7 @@ Parameters::
     * LPCWSTR lpLocaleName
     * DWORD dwFlags
     * LPCWSTR lpValue
-    * constNUMBERFMTW *lpFormat
+    * const NUMBERFMTW *lpFormat
     * LPWSTR lpNumberStr
     * int cchNumber
 
@@ -60459,7 +60459,7 @@ Parameters::
     * LPCWSTR lpLocaleName
     * DWORD dwFlags
     * LPCWSTR lpValue
-    * constCURRENCYFMTW *lpFormat
+    * const CURRENCYFMTW *lpFormat
     * LPWSTR lpCurrencyStr
     * int cchCurrency
 
@@ -60747,7 +60747,7 @@ RtlQueryDepthSList
 Signature::
 
     * Library: ntdll
-    * Return value: WORD  
+    * Return value: WORD
 
 Parameters::
 
@@ -60984,7 +60984,7 @@ Parameters::
     * LPSTR lpClass
     * DWORD dwOptions
     * REGSAM samDesired
-    * constLPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
     * PHKEY phkResult
     * LPDWORD lpdwDisposition
 
@@ -61005,7 +61005,7 @@ Parameters::
     * LPWSTR lpClass
     * DWORD dwOptions
     * REGSAM samDesired
-    * constLPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
     * PHKEY phkResult
     * LPDWORD lpdwDisposition
 
@@ -61026,7 +61026,7 @@ Parameters::
     * LPSTR lpClass
     * DWORD dwOptions
     * REGSAM samDesired
-    * constLPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
     * PHKEY phkResult
     * LPDWORD lpdwDisposition
     * HANDLE hTransaction
@@ -61049,7 +61049,7 @@ Parameters::
     * LPWSTR lpClass
     * DWORD dwOptions
     * REGSAM samDesired
-    * constLPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
     * PHKEY phkResult
     * LPDWORD lpdwDisposition
     * HANDLE hTransaction
@@ -61749,7 +61749,7 @@ Parameters::
 
     * HKEY hKey
     * LPCSTR lpFile
-    * constLPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
 
 RegSaveKeyW
@@ -61764,7 +61764,7 @@ Parameters::
 
     * HKEY hKey
     * LPCWSTR lpFile
-    * constLPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
 
 RegSetKeySecurity
@@ -61830,7 +61830,7 @@ Parameters::
     * LPCSTR lpValueName
     * DWORD Reserved
     * DWORD dwType
-    * constBYTE *lpData
+    * const BYTE *lpData
     * DWORD cbData
 
 
@@ -61848,7 +61848,7 @@ Parameters::
     * LPCWSTR lpValueName
     * DWORD Reserved
     * DWORD dwType
-    * constBYTE *lpData
+    * const BYTE *lpData
     * DWORD cbData
 
 
@@ -62232,7 +62232,7 @@ Parameters::
 
     * HKEY hKey
     * LPCSTR lpFile
-    * constLPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
     * DWORD Flags
 
 
@@ -62248,7 +62248,7 @@ Parameters::
 
     * HKEY hKey
     * LPCWSTR lpFile
-    * constLPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
     * DWORD Flags
 
 
@@ -63795,7 +63795,7 @@ WSAGetServiceClassNameByClassIdA
 Signature::
 
     * Library: ws2_32
-    * Return value: _Success_(return == 0) INT
+    * Return value: INT
 
 Parameters::
 
@@ -63810,7 +63810,7 @@ WSAGetServiceClassNameByClassIdW
 Signature::
 
     * Library: ws2_32
-    * Return value: _Success_(return == 0) INT
+    * Return value: INT
 
 Parameters::
 
@@ -65647,7 +65647,7 @@ Signature::
 
 Parameters::
 
-    * constSERVICE_TABLE_ENTRYA *lpServiceStartTable
+    * const SERVICE_TABLE_ENTRYA *lpServiceStartTable
 
 
 StartServiceCtrlDispatcherW
@@ -65660,7 +65660,7 @@ Signature::
 
 Parameters::
 
-    * constSERVICE_TABLE_ENTRYW *lpServiceStartTable
+    * const SERVICE_TABLE_ENTRYW *lpServiceStartTable
 
 
 StartServiceA
@@ -65850,7 +65850,7 @@ Parameters::
 
     * UINT wVirtKey
     * UINT wScanCode
-    * constBYTE *lpKeyState
+    * const BYTE *lpKeyState
     * LPWSTR pwszBuff
     * int cchBuff
     * UINT wFlags
@@ -66472,7 +66472,7 @@ Parameters::
 
     * HWND hwnd
     * HDC hdc
-    * constRECT *lprect
+    * const RECT *lprect
     * UINT flags
 
 
@@ -66488,8 +66488,8 @@ Parameters::
 
     * HWND hwnd
     * int idAni
-    * constRECT *lprcFrom
-    * constRECT *lprcTo
+    * const RECT *lprcFrom
+    * const RECT *lprcTo
 
 
 GetMessageA
@@ -66534,7 +66534,7 @@ Signature::
 
 Parameters::
 
-    * constMSG *lpMsg
+    * const MSG *lpMsg
 
 
 DispatchMessageA
@@ -66547,7 +66547,7 @@ Signature::
 
 Parameters::
 
-    * constMSG *lpMsg
+    * const MSG *lpMsg
 
 
 DispatchMessageW
@@ -66560,7 +66560,7 @@ Signature::
 
 Parameters::
 
-    * constMSG *lpMsg
+    * const MSG *lpMsg
 
 
 SetMessageQueue
@@ -67283,7 +67283,7 @@ Signature::
 
 Parameters::
 
-    * constWNDCLASSA *lpWndClass
+    * const WNDCLASSA *lpWndClass
 
 
 RegisterClassW
@@ -67296,7 +67296,7 @@ Signature::
 
 Parameters::
 
-    * constWNDCLASSW *lpWndClass
+    * const WNDCLASSW *lpWndClass
 
 
 UnregisterClassA
@@ -67367,7 +67367,7 @@ Signature::
 
 Parameters::
 
-    * constWNDCLASSEXA *
+    * const WNDCLASSEXA *
 
 
 RegisterClassExW
@@ -67380,7 +67380,7 @@ Signature::
 
 Parameters::
 
-    * constWNDCLASSEXW *
+    * const WNDCLASSEXW *
 
 
 GetClassInfoExA
@@ -67768,7 +67768,7 @@ Signature::
 Parameters::
 
     * HWND hWnd
-    * constWINDOWPLACEMENT *lpwndpl
+    * const WINDOWPLACEMENT *lpwndpl
 
 
 GetWindowDisplayAffinity
@@ -69182,7 +69182,7 @@ Parameters::
 
     * UINT uVirtKey
     * UINT uScanCode
-    * constBYTE *lpKeyState
+    * const BYTE *lpKeyState
     * LPWORD lpChar
     * UINT uFlags
 
@@ -69199,7 +69199,7 @@ Parameters::
 
     * UINT uVirtKey
     * UINT uScanCode
-    * constBYTE *lpKeyState
+    * const BYTE *lpKeyState
     * LPWORD lpChar
     * UINT uFlags
     * HKL dwhkl
@@ -69217,7 +69217,7 @@ Parameters::
 
     * UINT wVirtKey
     * UINT wScanCode
-    * constBYTE *lpKeyState
+    * const BYTE *lpKeyState
     * LPWSTR pwszBuff
     * int cchBuff
     * UINT wFlags
@@ -69433,7 +69433,7 @@ Signature::
 Parameters::
 
     * UINT32 count
-    * constPOINTER_TOUCH_INFO *contacts
+    * const POINTER_TOUCH_INFO *contacts
 
 
 GetPointerType
@@ -69797,7 +69797,7 @@ Parameters::
     * FEEDBACK_TYPE feedback
     * DWORD dwFlags
     * UINT32 size
-    * constVOID *configuration
+    * const VOID *configuration
 
 
 GetPointerInputTransform
@@ -69950,7 +69950,7 @@ Signature::
 Parameters::
 
     * DWORD nCount
-    * constHANDLE *pHandles
+    * const HANDLE *pHandles
     * BOOL fWaitAll
     * DWORD dwMilliseconds
     * DWORD dwWakeMask
@@ -69967,7 +69967,7 @@ Signature::
 Parameters::
 
     * DWORD nCount
-    * constHANDLE *pHandles
+    * const HANDLE *pHandles
     * DWORD dwMilliseconds
     * DWORD dwWakeMask
     * DWORD dwFlags
@@ -70240,7 +70240,7 @@ Signature::
 
 Parameters::
 
-    * constMENUTEMPLATEA *lpMenuTemplate
+    * const MENUTEMPLATEA *lpMenuTemplate
 
 
 LoadMenuIndirectW
@@ -70253,7 +70253,7 @@ Signature::
 
 Parameters::
 
-    * constMENUTEMPLATEW *lpMenuTemplate
+    * const MENUTEMPLATEW *lpMenuTemplate
 
 
 GetMenu
@@ -70668,7 +70668,7 @@ Parameters::
     * int y
     * int nReserved
     * HWND hWnd
-    * constRECT *prcRect
+    * const RECT *prcRect
 
 
 TrackPopupMenuEx
@@ -71074,7 +71074,7 @@ Parameters::
     * LPCSTR lpString
     * int chCount
     * int nTabPositions
-    * constINT *lpnTabStopPositions
+    * const INT *lpnTabStopPositions
     * int nTabOrigin
 
 
@@ -71094,7 +71094,7 @@ Parameters::
     * LPCWSTR lpString
     * int chCount
     * int nTabPositions
-    * constINT *lpnTabStopPositions
+    * const INT *lpnTabStopPositions
     * int nTabOrigin
 
 
@@ -71112,7 +71112,7 @@ Parameters::
     * LPCSTR lpString
     * int chCount
     * int nTabPositions
-    * constINT *lpnTabStopPositions
+    * const INT *lpnTabStopPositions
 
 
 GetTabbedTextExtentW
@@ -71129,7 +71129,7 @@ Parameters::
     * LPCWSTR lpString
     * int chCount
     * int nTabPositions
-    * constINT *lpnTabStopPositions
+    * const INT *lpnTabStopPositions
 
 
 UpdateWindow
@@ -71326,7 +71326,7 @@ Signature::
 Parameters::
 
     * HWND hWnd
-    * constPAINTSTRUCT *lpPaint
+    * const PAINTSTRUCT *lpPaint
 
 
 GetUpdateRect
@@ -71427,7 +71427,7 @@ Signature::
 Parameters::
 
     * HWND hWnd
-    * constRECT *lpRect
+    * const RECT *lpRect
     * BOOL bErase
 
 
@@ -71442,7 +71442,7 @@ Signature::
 Parameters::
 
     * HWND hWnd
-    * constRECT *lpRect
+    * const RECT *lpRect
 
 
 InvalidateRgn
@@ -71485,7 +71485,7 @@ Signature::
 Parameters::
 
     * HWND hWnd
-    * constRECT *lprcUpdate
+    * const RECT *lprcUpdate
     * HRGN hrgnUpdate
     * UINT flags
 
@@ -71516,8 +71516,8 @@ Parameters::
     * HWND hWnd
     * int XAmount
     * int YAmount
-    * constRECT *lpRect
-    * constRECT *lpClipRect
+    * const RECT *lpRect
+    * const RECT *lpClipRect
 
 
 ScrollDC
@@ -71533,8 +71533,8 @@ Parameters::
     * HDC hDC
     * int dx
     * int dy
-    * constRECT *lprcScroll
-    * constRECT *lprcClip
+    * const RECT *lprcScroll
+    * const RECT *lprcClip
     * HRGN hrgnUpdate
     * LPRECT lprcUpdate
 
@@ -71552,8 +71552,8 @@ Parameters::
     * HWND hWnd
     * int dx
     * int dy
-    * constRECT *prcScroll
-    * constRECT *prcClip
+    * const RECT *prcScroll
+    * const RECT *prcClip
     * HRGN hrgnUpdate
     * LPRECT prcUpdate
     * UINT flags
@@ -72015,7 +72015,7 @@ Signature::
 
 Parameters::
 
-    * constMSGBOXPARAMSA *lpmbp
+    * const MSGBOXPARAMSA *lpmbp
 
 
 MessageBoxIndirectW
@@ -72028,7 +72028,7 @@ Signature::
 
 Parameters::
 
-    * constMSGBOXPARAMSW *lpmbp
+    * const MSGBOXPARAMSW *lpmbp
 
 
 MessageBeep
@@ -72134,7 +72134,7 @@ Signature::
 
 Parameters::
 
-    * constRECT *lpRect
+    * const RECT *lpRect
 
 
 GetClipCursor
@@ -72451,8 +72451,8 @@ Signature::
 Parameters::
 
     * int cElements
-    * constINT *lpaElements
-    * constCOLORREF *lpaRgbValues
+    * const INT *lpaElements
+    * const COLORREF *lpaRgbValues
 
 
 DrawFocusRect
@@ -72466,7 +72466,7 @@ Signature::
 Parameters::
 
     * HDC hDC
-    * constRECT *lprc
+    * const RECT *lprc
 
 
 FillRect
@@ -72480,7 +72480,7 @@ Signature::
 Parameters::
 
     * HDC hDC
-    * constRECT *lprc
+    * const RECT *lprc
     * HBRUSH hbr
 
 
@@ -72495,7 +72495,7 @@ Signature::
 Parameters::
 
     * HDC hDC
-    * constRECT *lprc
+    * const RECT *lprc
     * HBRUSH hbr
 
 
@@ -72510,7 +72510,7 @@ Signature::
 Parameters::
 
     * HDC hDC
-    * constRECT *lprc
+    * const RECT *lprc
 
 
 SetRect
@@ -72554,7 +72554,7 @@ Signature::
 Parameters::
 
     * LPRECT lprcDst
-    * constRECT *lprcSrc
+    * const RECT *lprcSrc
 
 
 InflateRect
@@ -72583,8 +72583,8 @@ Signature::
 Parameters::
 
     * LPRECT lprcDst
-    * constRECT *lprcSrc1
-    * constRECT *lprcSrc2
+    * const RECT *lprcSrc1
+    * const RECT *lprcSrc2
 
 
 UnionRect
@@ -72598,8 +72598,8 @@ Signature::
 Parameters::
 
     * LPRECT lprcDst
-    * constRECT *lprcSrc1
-    * constRECT *lprcSrc2
+    * const RECT *lprcSrc1
+    * const RECT *lprcSrc2
 
 
 SubtractRect
@@ -72613,8 +72613,8 @@ Signature::
 Parameters::
 
     * LPRECT lprcDst
-    * constRECT *lprcSrc1
-    * constRECT *lprcSrc2
+    * const RECT *lprcSrc1
+    * const RECT *lprcSrc2
 
 
 OffsetRect
@@ -72642,7 +72642,7 @@ Signature::
 
 Parameters::
 
-    * constRECT *lprc
+    * const RECT *lprc
 
 
 EqualRect
@@ -72655,8 +72655,8 @@ Signature::
 
 Parameters::
 
-    * constRECT *lprc1
-    * constRECT *lprc2
+    * const RECT *lprc1
+    * const RECT *lprc2
 
 
 PtInRect
@@ -72669,7 +72669,7 @@ Signature::
 
 Parameters::
 
-    * constRECT *lprc
+    * const RECT *lprc
     * POINT pt
 
 
@@ -73362,8 +73362,8 @@ Parameters::
     * int yHotSpot
     * int nWidth
     * int nHeight
-    * constVOID *pvANDPlane
-    * constVOID *pvXORPlane
+    * const VOID *pvANDPlane
+    * const VOID *pvXORPlane
 
 
 DestroyCursor
@@ -73476,8 +73476,8 @@ Parameters::
     * int nHeight
     * BYTE cPlanes
     * BYTE cBitsPixel
-    * constBYTE *lpbANDbits
-    * constBYTE *lpbXORbits
+    * const BYTE *lpbANDbits
+    * const BYTE *lpbXORbits
 
 
 DestroyIcon
@@ -74034,7 +74034,7 @@ Parameters::
 
     * HWND hwndParent
     * UINT wHow
-    * constRECT *lpRect
+    * const RECT *lpRect
     * UINT cKids
     * const HWND FAR *lpKids
 
@@ -75852,7 +75852,7 @@ freeaddrinfo
 Signature::
 
     * Library: ws2_32
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -75865,7 +75865,7 @@ FreeAddrInfoW
 Signature::
 
     * Library: ws2_32
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -76122,7 +76122,7 @@ WTSCloseServer
 Signature::
 
     * Library: wtsapi32
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 
@@ -76559,7 +76559,7 @@ WTSFreeMemory
 Signature::
 
     * Library: wtsapi32
-    * Return value: VOID
+    * Return value: void
 
 Parameters::
 

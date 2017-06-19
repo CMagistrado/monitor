@@ -2,6 +2,46 @@ import sys
 import os
 import re
 
+# Parse return value for content
+def parse_rv(param):
+    # Ignore comments
+    param = re.sub('/.*','',param)
+
+    # Ignore whitespace
+    param = re.sub('^\s+','',param)
+    param = re.sub('\s+$','',param)
+
+    # Ignore (...) before parameter
+    param = re.sub('^\(.*\)\s+','',param)
+
+    # Ignore annotations
+    param = re.sub('_\w+_\(.*\)\s*','',param)
+    param = re.sub('_\w+_\s+','',param)
+    param = re.sub('\s+OPTIONAL.*','',param)
+    param = re.sub('OPTIONAL\s+','',param)
+    param = re.sub('^CONST\s+','const ',param)
+    param = re.sub('^VOID\s+','void ',param)
+    param = re.sub('^__callback\s+','',param)
+    param = re.sub('^__drv_aliasesMem\s+','',param)
+
+    # Ignore (...)
+    param = re.sub('\(.*\)\s*','',param)
+
+    # Consolidate whitespace
+    param = re.sub('\s+',' ',param)
+
+    # If void, uncapitalize it
+    if param == 'VOID':
+        param = 'void'
+
+    # Remove space after * if one exists
+    param = re.sub('\*\s+','*',param)
+
+    # Add space before * if one doesn't exist
+    param = re.sub('(\w+)\*',r'\1 *',param)
+
+    return param
+
 # Parse parameter for content
 def parse_param(param):
     # Ignore comments
@@ -33,8 +73,8 @@ def parse_param(param):
     param = re.sub('OUT\s+','',param)
     param = re.sub('\s+OPTIONAL.*','',param)
     param = re.sub('OPTIONAL\s+','',param)
-    param = re.sub('^CONST\s+','const',param)
-    param = re.sub('^VOID\s+','void',param)
+    param = re.sub('^CONST\s+','const ',param)
+    param = re.sub('^VOID\s+','void ',param)
     param = re.sub('^__callback\s+','',param)
     param = re.sub('^__drv_aliasesMem\s+','',param)
 
@@ -53,6 +93,9 @@ def parse_param(param):
 
     # Add space before * if one doesn't exist
     param = re.sub('(\w+)\*',r'\1 *',param)
+
+    # If "void const", change to "void"
+    param = re.sub('void const ','void ',param)
 
     # TODO Cases we can't handle yet
     # Variable parameters
@@ -88,10 +131,6 @@ def get_api(out,fd,apicall_to_dll,written_names,rv,name):
                 rv = m.group(1)
             else:
                 rv = line
-
-            # If rv is VOID, change it
-            if rv == 'VOID':
-                rv = 'void'
 
         # If name hasn't been filled in yet
         elif name == '':
@@ -200,7 +239,7 @@ def get_api(out,fd,apicall_to_dll,written_names,rv,name):
 
             fa.write('Signature::\n\n')
             fa.write('    * Library: {0}\n'.format(library))
-            fa.write('    * Return value: {0}\n'.format(rv))
+            fa.write('    * Return value: {0}\n'.format(parse_rv(rv)))
 
             # Write out parameters
             if len(param) > 0:

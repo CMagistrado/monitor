@@ -184,6 +184,7 @@ Scanning file.txt
    ReOpenFileA was not found in ../templates/sigs.rst-full
    ReOpenFileW was not found in ../templates/sigs.rst-full
    ReplaceFile was not found in ../templates/sigs.rst-full
+   SearchPath was not found in ../templates/sigs.rst-full
    SetEndOfFileA was not found in ../templates/sigs.rst-full
    SetEndOfFileW was not found in ../templates/sigs.rst-full
    SetFileApisToANSIA was not found in ../templates/sigs.rst-full
@@ -283,6 +284,7 @@ Scanning file.txt
    RemoveDirectoryTransacted was not found in ../templates/sigs.rst-full
    SetCurrentDirectory was not found in ../templates/sigs.rst-full
 Scanning service.txt
+   Handler was not found in ../templates/sigs.rst-full
    HandlerA was not found in ../templates/sigs.rst-full
    HandlerW was not found in ../templates/sigs.rst-full
    HandlerEx was not found in ../templates/sigs.rst-full
@@ -495,6 +497,7 @@ Scanning crypto.txt
    CryptXmlVerifySignature was not found in ../templates/sigs.rst-full
    CryptXmlVerifySignatureA was not found in ../templates/sigs.rst-full
    CryptXmlVerifySignatureW was not found in ../templates/sigs.rst-full
+   PFN_CRYPT_XML_WRITE_CALLBACK was not found in ../templates/sigs.rst-full
    PFN_CRYPT_XML_WRITE_CALLBACKA was not found in ../templates/sigs.rst-full
    PFN_CRYPT_XML_WRITE_CALLBACKW was not found in ../templates/sigs.rst-full
    PFN_CRYPT_XML_CREATE_TRANSFORM was not found in ../templates/sigs.rst-full

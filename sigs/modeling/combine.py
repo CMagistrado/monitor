@@ -8,7 +8,7 @@ written = set()
 def grep(full,api):
     found = None
     try:
-        out = subprocess.check_output(['grep', '-wn',api,full])
+        out = subprocess.check_output(['grep', '-wn','^'+api,full])
         found = int(out.split(':')[0])
     # API call wasn't found
     except subprocess.CalledProcessError:
@@ -64,8 +64,9 @@ def get_sig(full,api):
                 if not line:
                     break
 
-                line = line.strip('\r\n')
-                if not line:
+                line = line.replace('\r','')
+                line = line.replace('\n','')
+                if line == '':
                     newline += 1
                 else:
                     newline = 0
