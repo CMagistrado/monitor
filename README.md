@@ -29,14 +29,14 @@ old signatures in ./sigs-old
 Inside Linux shell:
 ```
 $ cd ./sigs/modeling
-$ python combine.py ./sigs/template/sigs.rst-full > ../sigs.rst 2>error
+$ python combine.py ../template/sigs.rst-full > ../sigs.rst 2>error
 ```
 
 Any API calls not found will be printed in "error"
 
 Then recompile monitor.
 
-Explanation of functions: sigs/modeling/README.md
+Explanation of functions: [README.md](sigs/modeling/README.md)
 
 ## To generate signatures for (most) API calls
 Inside Developer Command Prompt (Windows):
