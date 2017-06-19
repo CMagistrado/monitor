@@ -36,7 +36,7 @@ Any API calls not found will be printed in "error"
 
 Then recompile monitor.
 
-Explanation of functions: [README.md](sigs/modeling/README.md)
+Functions hooked: [modeling](sigs/modeling)
 
 ## To generate signatures for (most) API calls
 Inside Developer Command Prompt (Windows):
