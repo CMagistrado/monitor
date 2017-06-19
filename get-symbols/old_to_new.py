@@ -13,7 +13,7 @@ def get_rst_files(path):
                 yield os.path.join(root,f)
 
 def usage():
-    print 'usage: python old_to_new.py old-folder/ new_sigs.rst > output.rst'
+    print 'usage: python old_to_new.py old-folder/ sigs.rst-full > sigs.rst-old-stable'
     sys.exit(1)
 
 def _main():

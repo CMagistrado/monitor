@@ -1,11 +1,3 @@
-To put all signatures into one file to be used by monitor.
-
-```
-$ python combine.py
-```
-
-Final file is called "sigs.rst"
-
 ## Explanation of functions
 
   - File
