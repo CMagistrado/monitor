@@ -12,7 +12,6 @@ CopyFileEx
 CopyFileTransacted
 CopyProgressRoutine
 CreateFile
-CreateFile2
 CreateFileTransacted
 CreateHardLink
 CreateHardLinkTransacted

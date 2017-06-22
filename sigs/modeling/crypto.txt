@@ -132,9 +132,7 @@ CertGetSubjectCertificateFromStore
 CertGetValidUsages
 CertOpenServerOcspResponse
 CertRetrieveLogoOrBiometricInfo
-CertSelectCertificate
 CertSelectCertificateChains
-CertSelectionGetSerializedBlob
 CertSerializeCertificateStoreElement
 CertVerifySubjectCertificateContext
 CryptUIDlgCertMgr
@@ -168,7 +166,6 @@ CertDuplicateCTLContext
 CertEnumCTLsInStore
 CertFindCTLInStore
 CertFreeCTLContext
-CertModifyCertificatesToTrust
 CertSerializeCTLStoreElement
 CertEnumCertificateContextProperties
 CertEnumCRLContextProperties
@@ -238,7 +235,6 @@ CertFindRDNAttr
 CertGetIntendedKeyUsage
 CertGetPublicKeyLength
 CertIsRDNAttrsInCertificateName
-CertIsStrongHashToSign
 CertVerifyCRLRevocation
 CertVerifyCRLTimeValidity
 CertVerifyRevocation

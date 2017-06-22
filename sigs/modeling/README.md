@@ -58,3 +58,30 @@
   - Authorization
     - https://msdn.microsoft.com/en-us/library/windows/desktop/aa375742(v=vs.85).aspx
 
+# Functions not included
+
+  - auth.txt
+    - AuthzInitializeResourceManager
+      - Reason: Minimum Windows 8
+    - AuthzInitializeResourceManagerEx
+      - Reason: Minimum Windows 8
+    - AuthzInitializeRemoteResourceManager
+      - Reason: Minimum Windows 8
+    - AuthzRegisterCapChangeNotification
+      - Reason: Minimum Windows 8
+    - AuthzUnregisterCapChangeNotification
+      - Reason: Minimum Windows 8
+
+  - crypto.txt
+    - CertIsStrongHashToSign
+      - Reason: Minimum Windows 8
+    - CertModifyCertificatesToTrust
+      - Reason: Mingw-gcc doesn't have cryptdlg.h
+    - CertSelectCertificate
+      - Reason: Mingw-gcc doesn't have cryptdlg.h
+    - CertSelectionGetSerializedBlob
+      - Reason: Mingw-gcc doesn't have cryptdlg.h
+
+  - file.txt
+    - CreateFile2
+      - Reason: Minimum Windows 8

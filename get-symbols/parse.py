@@ -67,6 +67,8 @@ def parse_param(param):
     param = re.sub('^\(.*\)\s+','',param)
 
     # Ignore annotations
+    param = re.sub('_\w+\(.*\)\s*','',param)
+    param = re.sub('_\w+_\(.*\)\s*','',param)
     param = re.sub('_\w+_\(.*\)\s*','',param)
     param = re.sub('_\w+_\s+','',param)
     param = re.sub('IN\s+','',param)
@@ -96,6 +98,9 @@ def parse_param(param):
 
     # If "void const", change to "void"
     param = re.sub('void const ','void ',param)
+
+    # Remove "FAR".
+    param = re.sub('FAR ','',param)
 
     # TODO Cases we can't handle yet
     # Variable parameters
@@ -164,6 +169,12 @@ def get_api(out,fd,apicall_to_dll,written_names,rv,name):
         elif not param:
             while True:
                 line = line.strip('\r\n')
+
+                # TODO: handle this case
+                # Can't handle #'s within functions
+                if '#' in line:
+                    print 'Can\t handle {0} yet'.format(name)
+                    return
 
                 if not useful(line):
                     line = fd.readline()

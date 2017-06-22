@@ -25,7 +25,7 @@ SetEntriesInAclW
 
 Signature::
 
-    * Library: ntmarta
+    * Library: advapi32
     * Return value: DWORD
 
 Parameters::
@@ -56,7 +56,7 @@ GetExplicitEntriesFromAclW
 
 Signature::
 
-    * Library: ntmarta
+    * Library: advapi32
     * Return value: DWORD
 
 Parameters::
@@ -153,7 +153,7 @@ GetNamedSecurityInfoW
 
 Signature::
 
-    * Library: ntmarta
+    * Library: advapi32
     * Return value: DWORD
 
 Parameters::
@@ -173,7 +173,7 @@ GetSecurityInfo
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: DWORD
 
 Parameters::
@@ -212,7 +212,7 @@ SetNamedSecurityInfoW
 
 Signature::
 
-    * Library: ntmarta
+    * Library: advapi32
     * Return value: DWORD
 
 Parameters::
@@ -231,7 +231,7 @@ SetSecurityInfo
 
 Signature::
 
-    * Library: ntmarta
+    * Library: advapi32
     * Return value: DWORD
 
 Parameters::
@@ -934,35 +934,6 @@ Parameters::
     * PAUTHZ_RESOURCE_MANAGER_HANDLE phAuthzResourceManager
 
 
-AuthzInitializeResourceManagerEx
-================================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD Flags
-    * PAUTHZ_INIT_INFO pAuthzInitInfo
-    * PAUTHZ_RESOURCE_MANAGER_HANDLE phAuthzResourceManager
-
-
-AuthzInitializeRemoteResourceManager
-====================================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * PAUTHZ_RPC_INIT_INFO_CLIENT pRpcInitInfo
-    * PAUTHZ_RESOURCE_MANAGER_HANDLE phAuthzResourceManager
-
-
 AuthzFreeResourceManager
 ========================
 
@@ -1032,21 +1003,6 @@ Parameters::
     * PAUTHZ_CLIENT_CONTEXT_HANDLE phNewAuthzClientContext
 
 
-AuthzInitializeCompoundContext
-==============================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * AUTHZ_CLIENT_CONTEXT_HANDLE UserContext
-    * AUTHZ_CLIENT_CONTEXT_HANDLE DeviceContext
-    * PAUTHZ_CLIENT_CONTEXT_HANDLE phCompoundContext
-
-
 AuthzAddSidsToContext
 =====================
 
@@ -1063,22 +1019,6 @@ Parameters::
     * PSID_AND_ATTRIBUTES RestrictedSids
     * DWORD RestrictedSidCount
     * PAUTHZ_CLIENT_CONTEXT_HANDLE phNewAuthzClientContext
-
-
-AuthzSetAppContainerInformation
-===============================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
-    * PSID pAppContainerSid
-    * DWORD CapabilityCount
-    * PSID_AND_ATTRIBUTES pCapabilitySids
 
 
 AuthzGetInformationFromContext
@@ -1230,43 +1170,6 @@ Parameters::
     * DWORD dwAuditId
     * PSID pUserSid
     * PAUDIT_PARAMS pParams
-
-
-AuthzRegisterCapChangeNotification
-==================================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * PAUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE phCapChangeSubscription
-    * LPTHREAD_START_ROUTINE pfnCapChangeCallback
-    * PVOID pCallbackContext
-
-
-AuthzUnregisterCapChangeNotification
-====================================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE hCapChangeSubscription
-
-
-AuthzFreeCentralAccessPolicyCache
-=================================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
 
 
 AvSetMmThreadCharacteristicsA
@@ -5132,35 +5035,6 @@ Parameters::
     * HMACHINE hMachine
 
 
-CM_Register_Notification
-========================
-
-Signature::
-
-    * Library: cfgmgr32
-    * Return value: CONFIGRET
-
-Parameters::
-
-    * PCM_NOTIFY_FILTER pFilter
-    * PVOID pContext
-    * PCM_NOTIFY_CALLBACK pCallback
-    * PHCMNOTIFICATION pNotifyContext
-
-
-CM_Unregister_Notification
-==========================
-
-Signature::
-
-    * Library: cfgmgr32
-    * Return value: CONFIGRET
-
-Parameters::
-
-    * HCMNOTIFICATION NotifyContext
-
-
 CM_MapCrToWin32Err
 ==================
 
@@ -5372,79 +5246,6 @@ Parameters::
     * LPVOID lpOutBuffer
     * DWORD nOutBufferSize
     * LPDWORD lpBytesReturned
-
-
-CreateClusterNotifyPortV2
-=========================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: HCHANGE
-
-Parameters::
-
-    * HCHANGE hChange
-    * HCLUSTER hCluster
-    * NOTIFY_FILTER_AND_TYPE *Filters
-    * DWORD dwFilterCount
-    * DWORD_PTR dwNotifyKey
-
-
-RegisterClusterNotifyV2
-=======================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HCHANGE hChange
-    * NOTIFY_FILTER_AND_TYPE Filter
-    * HANDLE hObject
-    * DWORD_PTR dwNotifyKey
-
-
-GetNotifyEventHandle
-====================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HCHANGE hChange
-    * LPHANDLE lphTargetEvent
-
-
-GetClusterNotifyV2
-==================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HCHANGE hChange
-    * DWORD_PTR *lpdwNotifyKey
-    * PNOTIFY_FILTER_AND_TYPE pFilterAndType
-    * BYTE *buffer
-    * LPDWORD lpbBufferSize
-    * LPWSTR lpszObjectId
-    * LPDWORD lpcchObjectId
-    * LPWSTR lpszParentId
-    * LPDWORD lpcchParentId
-    * LPWSTR lpszName
-    * LPDWORD lpcchName
-    * LPWSTR lpszType
-    * LPDWORD lpcchType
-    * DWORD dwMilliseconds
 
 
 CreateClusterNotifyPort
@@ -5935,189 +5736,6 @@ Parameters::
     * DWORD *lpdwGrantedAccess
 
 
-PauseClusterNodeEx
-==================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HNODE hNode
-    * BOOL bDrainNode
-    * DWORD dwPauseFlags
-    * HNODE hNodeDrainTarget
-
-
-ResumeClusterNodeEx
-===================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HNODE hNode
-    * CLUSTER_NODE_RESUME_FAILBACK_TYPE eResumeFailbackType
-    * DWORD dwResumeFlagsReserved
-
-
-CreateClusterGroupEx
-====================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: HGROUP
-
-Parameters::
-
-    * HCLUSTER hCluster
-    * LPCWSTR lpszGroupName
-    * PCLUSTER_CREATE_GROUP_INFO pGroupInfo
-
-
-ClusterGroupOpenEnumEx
-======================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: HGROUPENUMEX
-
-Parameters::
-
-    * HCLUSTER hCluster
-    * LPCWSTR lpszProperties
-    * DWORD cbProperties
-    * LPCWSTR lpszRoProperties
-    * DWORD cbRoProperties
-    * DWORD dwFlags
-
-
-ClusterGroupGetEnumCountEx
-==========================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HGROUPENUMEX hGroupEnumEx
-
-
-ClusterGroupEnumEx
-==================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HGROUPENUMEX hGroupEnumEx
-    * DWORD dwIndex
-    * PCLUSTER_GROUP_ENUM_ITEM pItem
-    * LPDWORD cbItem
-
-
-ClusterGroupCloseEnumEx
-=======================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HGROUPENUMEX hGroupEnumEx
-
-
-ClusterResourceOpenEnumEx
-=========================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: HRESENUMEX
-
-Parameters::
-
-    * HCLUSTER hCluster
-    * LPCWSTR lpszProperties
-    * DWORD cbProperties
-    * LPCWSTR lpszRoProperties
-    * DWORD cbRoProperties
-    * DWORD dwFlags
-
-
-ClusterResourceGetEnumCountEx
-=============================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HRESENUMEX hResourceEnumEx
-
-
-ClusterResourceEnumEx
-=====================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HRESENUMEX hResourceEnumEx
-    * DWORD dwIndex
-    * PCLUSTER_RESOURCE_ENUM_ITEM pItem
-    * LPDWORD cbItem
-
-
-ClusterResourceCloseEnumEx
-==========================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HRESENUMEX hResourceEnumEx
-
-
-MoveClusterGroupEx
-==================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HGROUP hGroup
-    * HNODE hDestinationNode
-    * DWORD dwMoveFlags
-    * PBYTE lpInBuffer
-    * DWORD cbInBufferSize
-
-
 CloseClusterGroup
 =================
 
@@ -6604,21 +6222,6 @@ Parameters::
 
     * LPCWSTR lpszPathName
     * PBOOL pbFileIsOnSharedVolume
-
-
-ClusterSharedVolumeSetSnapshotState
-===================================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: DWORD
-
-Parameters::
-
-    * GUID guidSnapshotSet
-    * LPCWSTR lpszVolumeName
-    * CLUSTER_SHARED_VOLUME_SNAPSHOT_STATE state
 
 
 CanResourceBeDependent
@@ -7440,20 +7043,6 @@ Parameters::
     * PSECURITY_DESCRIPTOR pSecurityDescriptor
 
 
-ClusterRegSyncDatabase
-======================
-
-Signature::
-
-    * Library: clusapi
-    * Return value: LONG
-
-Parameters::
-
-    * HCLUSTER hCluster
-    * DWORD flags
-
-
 CreateCluster
 =============
 
@@ -7769,59 +7358,12 @@ Parameters::
     * LPTRACKMOUSEEVENT lpEventTrack
 
 
-CreateCompressor
-================
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD Algorithm
-    * PCOMPRESS_ALLOCATION_ROUTINES AllocationRoutines
-    * PCOMPRESSOR_HANDLE CompressorHandle
-
-
-SetCompressorInformation
-========================
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * COMPRESSOR_HANDLE CompressorHandle
-    * COMPRESS_INFORMATION_CLASS CompressInformationClass
-    * PVOID CompressInformation
-    * SIZE_T CompressInformationSize
-
-
-QueryCompressorInformation
-==========================
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * COMPRESSOR_HANDLE CompressorHandle
-    * COMPRESS_INFORMATION_CLASS CompressInformationClass
-    * PVOID CompressInformation
-    * SIZE_T CompressInformationSize
-
-
 Compress
 ========
 
 Signature::
 
-    * Library: ir50_qcxoriginal
+    * Library: ir50_qcx
     * Return value: BOOL
 
 Parameters::
@@ -7832,123 +7374,6 @@ Parameters::
     * PVOID CompressedBuffer
     * SIZE_T CompressedBufferSize
     * PSIZE_T CompressedDataSize
-
-
-ResetCompressor
-===============
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * COMPRESSOR_HANDLE CompressorHandle
-
-
-CloseCompressor
-===============
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * COMPRESSOR_HANDLE CompressorHandle
-
-
-CreateDecompressor
-==================
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD Algorithm
-    * PCOMPRESS_ALLOCATION_ROUTINES AllocationRoutines
-    * PDECOMPRESSOR_HANDLE DecompressorHandle
-
-
-SetDecompressorInformation
-==========================
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * DECOMPRESSOR_HANDLE DecompressorHandle
-    * COMPRESS_INFORMATION_CLASS CompressInformationClass
-    * PVOID CompressInformation
-    * SIZE_T CompressInformationSize
-
-
-QueryDecompressorInformation
-============================
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * DECOMPRESSOR_HANDLE DecompressorHandle
-    * COMPRESS_INFORMATION_CLASS CompressInformationClass
-    * PVOID CompressInformation
-    * SIZE_T CompressInformationSize
-
-
-Decompress
-==========
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * DECOMPRESSOR_HANDLE DecompressorHandle
-    * PVOID CompressedData
-    * SIZE_T CompressedDataSize
-    * PVOID UncompressedBuffer
-    * SIZE_T UncompressedBufferSize
-    * PSIZE_T UncompressedDataSize
-
-
-ResetDecompressor
-=================
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * DECOMPRESSOR_HANDLE DecompressorHandle
-
-
-CloseDecompressor
-=================
-
-Signature::
-
-    * Library: cabinet
-    * Return value: BOOL
-
-Parameters::
-
-    * DECOMPRESSOR_HANDLE DecompressorHandle
 
 
 AllocConsole
@@ -8320,7 +7745,7 @@ CryptUIWizDigitalSign
 
 Signature::
 
-    * Library: cryptuiwizard
+    * Library: cryptui
     * Return value: BOOL
 
 Parameters::
@@ -8337,7 +7762,7 @@ CryptUIWizFreeDigitalSignContext
 
 Signature::
 
-    * Library: cryptuiwizard
+    * Library: cryptui
     * Return value: BOOL
 
 Parameters::
@@ -8378,7 +7803,7 @@ CryptUIWizExport
 
 Signature::
 
-    * Library: cryptuiwizard
+    * Library: cryptui
     * Return value: BOOL
 
 Parameters::
@@ -8395,7 +7820,7 @@ CryptUIWizImport
 
 Signature::
 
-    * Library: cryptuiwizard
+    * Library: cryptui
     * Return value: BOOL
 
 Parameters::
@@ -8495,7 +7920,7 @@ GetDateFormatA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -9165,28 +8590,6 @@ Parameters::
     * PTRANSLATE_ADDRESS_ROUTINE64 TranslateAddress
 
 
-StackWalkEx
-===========
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD MachineType
-    * HANDLE hProcess
-    * HANDLE hThread
-    * LPSTACKFRAME_EX StackFrame
-    * PVOID ContextRecord
-    * PREAD_PROCESS_MEMORY_ROUTINE64 ReadMemoryRoutine
-    * PFUNCTION_TABLE_ACCESS_ROUTINE64 FunctionTableAccessRoutine
-    * PGET_MODULE_BASE_ROUTINE64 GetModuleBaseRoutine
-    * PTRANSLATE_ADDRESS_ROUTINE64 TranslateAddress
-    * DWORD Flags
-
-
 StackWalk
 =========
 
@@ -9580,22 +8983,6 @@ Parameters::
     * DWORD64 AddrBase
 
 
-SymFunctionTableAccess64AccessRoutines
-======================================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: PVOID
-
-Parameters::
-
-    * HANDLE hProcess
-    * DWORD64 AddrBase
-    * PREAD_PROCESS_MEMORY_ROUTINE64 ReadMemoryRoutine
-    * PGET_MODULE_BASE_ROUTINE64 GetModuleBaseRoutine
-
-
 SymFunctionTableAccess
 ======================
 
@@ -9782,42 +9169,6 @@ Parameters::
     * PIMAGEHLP_LINEW64 Line
 
 
-SymGetLineFromInlineContext
-===========================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * DWORD64 qwAddr
-    * ULONG InlineContext
-    * DWORD64 qwModuleBaseAddress
-    * PDWORD pdwDisplacement
-    * PIMAGEHLP_LINE64 Line64
-
-
-SymGetLineFromInlineContextW
-============================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * DWORD64 dwAddr
-    * ULONG InlineContext
-    * DWORD64 qwModuleBaseAddress
-    * PDWORD pdwDisplacement
-    * PIMAGEHLP_LINEW64 Line
-
-
 SymEnumSourceLines
 ==================
 
@@ -9856,57 +9207,6 @@ Parameters::
     * DWORD Flags
     * PSYM_ENUMLINES_CALLBACKW EnumLinesCallback
     * PVOID UserContext
-
-
-SymAddrIncludeInlineTrace
-=========================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hProcess
-    * DWORD64 Address
-
-
-SymCompareInlineTrace
-=====================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hProcess
-    * DWORD64 Address1
-    * DWORD InlineContext1
-    * DWORD64 RetAddress1
-    * DWORD64 Address2
-    * DWORD64 RetAddress2
-
-
-SymQueryInlineTrace
-===================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * DWORD64 StartAddress
-    * DWORD StartContext
-    * DWORD64 StartRetAddress
-    * DWORD64 CurAddress
-    * LPDWORD CurContext
-    * LPDWORD CurFrameIndex
 
 
 SymGetLineFromAddr
@@ -10557,21 +9857,6 @@ Parameters::
     * ULONG64 Address
 
 
-SymSetScopeFromInlineContext
-============================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * ULONG64 Address
-    * ULONG InlineContext
-
-
 SymSetScopeFromIndex
 ====================
 
@@ -10629,40 +9914,6 @@ Parameters::
 
     * HANDLE hProcess
     * DWORD64 Address
-    * PDWORD64 Displacement
-    * PSYMBOL_INFOW Symbol
-
-
-SymFromInlineContext
-====================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * DWORD64 Address
-    * ULONG InlineContext
-    * PDWORD64 Displacement
-    * PSYMBOL_INFO Symbol
-
-
-SymFromInlineContextW
-=====================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * DWORD64 Address
-    * ULONG InlineContext
     * PDWORD64 Displacement
     * PSYMBOL_INFOW Symbol
 
@@ -10802,24 +10053,6 @@ Parameters::
     * PVOID UserContext
 
 
-SymEnumSymbolsEx
-================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * ULONG64 BaseOfDll
-    * PCSTR Mask
-    * PSYM_ENUMERATESYMBOLS_CALLBACK EnumSymbolsCallback
-    * PVOID UserContext
-    * DWORD Options
-
-
 SymEnumSymbolsW
 ===============
 
@@ -10835,24 +10068,6 @@ Parameters::
     * PCWSTR Mask
     * PSYM_ENUMERATESYMBOLS_CALLBACKW EnumSymbolsCallback
     * PVOID UserContext
-
-
-SymEnumSymbolsExW
-=================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * ULONG64 BaseOfDll
-    * PCWSTR Mask
-    * PSYM_ENUMERATESYMBOLS_CALLBACKW EnumSymbolsCallback
-    * PVOID UserContext
-    * DWORD Options
 
 
 SymEnumSymbolsForAddr
@@ -11860,151 +11075,6 @@ Parameters::
     * PIMAGEHLP_SYMBOL Symbol
 
 
-SetCheckUserInterruptShared
-===========================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: void
-
-Parameters::
-
-    * LPCALL_BACK_USER_INTERRUPT_ROUTINE lpStartAddress
-
-
-SetSymLoadError
-===============
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: void
-
-Parameters::
-
-    * DWORD error
-
-
-ReportSymbolLoadSummary
-=======================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * PCWSTR pLoadModule
-    * PDBGHELP_DATA_REPORT_STRUCT pSymbolData
-
-
-RemoveInvalidModuleList
-=======================
-
-Signature::
-
-    * Library: imagehlp
-    * Return value: void
-
-Parameters::
-
-    * HANDLE hProcess
-
-
-RangeMapCreate
-==============
-
-Signature::
-
-    * Library: dbghelp
-    * Return value: PVOID
-
-
-RangeMapFree
-============
-
-Signature::
-
-    * Library: dbghelp
-    * Return value: void
-
-Parameters::
-
-    * PVOID RmapHandle
-
-
-RangeMapAddPeImageSections
-==========================
-
-Signature::
-
-    * Library: dbghelp
-    * Return value: BOOL
-
-Parameters::
-
-    * PVOID RmapHandle
-    * PCWSTR ImageName
-    * PVOID MappedImage
-    * DWORD MappingBytes
-    * DWORD64 ImageBase
-    * DWORD64 UserTag
-    * DWORD MappingFlags
-
-
-RangeMapRemove
-==============
-
-Signature::
-
-    * Library: dbghelp
-    * Return value: BOOL
-
-Parameters::
-
-    * PVOID RmapHandle
-    * DWORD64 UserTag
-
-
-RangeMapRead
-============
-
-Signature::
-
-    * Library: dbghelp
-    * Return value: BOOL
-
-Parameters::
-
-    * PVOID RmapHandle
-    * DWORD64 Offset
-    * PVOID Buffer
-    * DWORD RequestBytes
-    * DWORD Flags
-    * PDWORD DoneBytes
-
-
-RangeMapWrite
-=============
-
-Signature::
-
-    * Library: dbghelp
-    * Return value: BOOL
-
-Parameters::
-
-    * PVOID RmapHandle
-    * DWORD64 Offset
-    * PVOID Buffer
-    * DWORD RequestBytes
-    * DWORD Flags
-    * PDWORD DoneBytes
-
-
 MiniDumpWriteDump
 =================
 
@@ -12540,7 +11610,7 @@ IsDebuggerPresent
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 
@@ -12549,7 +11619,7 @@ DebugBreak
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 
@@ -12558,7 +11628,7 @@ OutputDebugStringA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -12571,7 +11641,7 @@ OutputDebugStringW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -12864,54 +11934,12 @@ Parameters::
     * DATA_BLOB *pDataOut
 
 
-CryptProtectDataNoUI
-====================
-
-Signature::
-
-    * Library: dpapi
-    * Return value: BOOL
-
-Parameters::
-
-    * DATA_BLOB *pDataIn
-    * LPCWSTR szDataDescr
-    * DATA_BLOB *pOptionalEntropy
-    * PVOID pvReserved
-    * CRYPTPROTECT_PROMPTSTRUCT *pPromptStruct
-    * DWORD dwFlags
-    * const BYTE *pbOptionalPassword
-    * DWORD cbOptionalPassword
-    * DATA_BLOB *pDataOut
-
-
-CryptUnprotectDataNoUI
-======================
-
-Signature::
-
-    * Library: dpapi
-    * Return value: BOOL
-
-Parameters::
-
-    * DATA_BLOB *pDataIn
-    * LPWSTR *ppszDataDescr
-    * DATA_BLOB *pOptionalEntropy
-    * PVOID pvReserved
-    * CRYPTPROTECT_PROMPTSTRUCT *pPromptStruct
-    * DWORD dwFlags
-    * const BYTE *pbOptionalPassword
-    * DWORD cbOptionalPassword
-    * DATA_BLOB *pDataOut
-
-
 CryptUpdateProtectedState
 =========================
 
 Signature::
 
-    * Library: dpapi
+    * Library: crypt32
     * Return value: BOOL
 
 Parameters::
@@ -12928,7 +11956,7 @@ CryptProtectMemory
 
 Signature::
 
-    * Library: dpapi
+    * Library: crypt32
     * Return value: BOOL
 
 Parameters::
@@ -12943,7 +11971,7 @@ CryptUnprotectMemory
 
 Signature::
 
-    * Library: dpapi
+    * Library: crypt32
     * Return value: BOOL
 
 Parameters::
@@ -13687,34 +12715,12 @@ Parameters::
     * PVOID Buffer
 
 
-EasRegisterEncryptionProvider
-=============================
-
-Signature::
-
-    * Library: easwrt
-    * Return value: HRESULT
-
-Parameters::
-
-    * LPCWSTR pcwzDllPath
-
-
-EasUnRegisterEncryptionProvider
-===============================
-
-Signature::
-
-    * Library: easwrt
-    * Return value: HRESULT
-
-
 RaiseException
 ==============
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -13730,7 +12736,7 @@ UnhandledExceptionFilter
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LONG
 
 Parameters::
@@ -13743,7 +12749,7 @@ SetUnhandledExceptionFilter
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LPTOP_LEVEL_EXCEPTION_FILTER
 
 Parameters::
@@ -13756,7 +12762,7 @@ GetLastError
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: _Post_equals_last_error_
 
 
@@ -13765,7 +12771,7 @@ SetLastError
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -13862,100 +12868,6 @@ Parameters::
     * DWORD dwErrCode
 
 
-FhServiceOpenPipe
-=================
-
-Signature::
-
-    * Library: fhsvcctl
-    * Return value: HRESULT
-
-Parameters::
-
-    * BOOL StartServiceIfStopped
-    * FH_SERVICE_PIPE_HANDLE *Pipe
-
-
-FhServiceClosePipe
-==================
-
-Signature::
-
-    * Library: fhsvcctl
-    * Return value: HRESULT
-
-Parameters::
-
-    * FH_SERVICE_PIPE_HANDLE Pipe
-
-
-FhServiceStartBackup
-====================
-
-Signature::
-
-    * Library: fhsvcctl
-    * Return value: HRESULT
-
-Parameters::
-
-    * FH_SERVICE_PIPE_HANDLE Pipe
-    * BOOL LowPriorityIo
-
-
-FhServiceStopBackup
-===================
-
-Signature::
-
-    * Library: fhsvcctl
-    * Return value: HRESULT
-
-Parameters::
-
-    * FH_SERVICE_PIPE_HANDLE Pipe
-    * BOOL StopTracking
-
-
-FhServiceReloadConfiguration
-============================
-
-Signature::
-
-    * Library: fhsvcctl
-    * Return value: HRESULT
-
-Parameters::
-
-    * FH_SERVICE_PIPE_HANDLE Pipe
-
-
-FhServiceBlockBackup
-====================
-
-Signature::
-
-    * Library: fhsvcctl
-    * Return value: HRESULT
-
-Parameters::
-
-    * FH_SERVICE_PIPE_HANDLE Pipe
-
-
-FhServiceUnblockBackup
-======================
-
-Signature::
-
-    * Library: fhsvcctl
-    * Return value: HRESULT
-
-Parameters::
-
-    * FH_SERVICE_PIPE_HANDLE Pipe
-
-
 FlsAlloc
 ========
 
@@ -14037,7 +12949,7 @@ CreateDirectoryA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14051,7 +12963,7 @@ CreateDirectoryW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14065,7 +12977,7 @@ CreateFileA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -14084,7 +12996,7 @@ CreateFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -14118,7 +13030,7 @@ DeleteFileA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14131,7 +13043,7 @@ DeleteFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14171,7 +13083,7 @@ FindClose
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14241,7 +13153,7 @@ FindFirstFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -14332,7 +13244,7 @@ FindNextFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14492,7 +13404,7 @@ GetFileAttributesW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -14520,7 +13432,7 @@ GetFileAttributesExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14535,7 +13447,7 @@ GetFileInformationByHandle
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14563,7 +13475,7 @@ GetFileSizeEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14577,7 +13489,7 @@ GetFileTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14873,7 +13785,7 @@ ReadFile
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14937,7 +13849,7 @@ RemoveDirectoryW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14977,7 +13889,7 @@ SetFileAttributesW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15007,7 +13919,7 @@ SetFilePointer
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -15023,7 +13935,7 @@ SetFilePointerEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15039,7 +13951,7 @@ SetFileTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15103,7 +14015,7 @@ WriteFile
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15154,7 +14066,7 @@ GetTempPathW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -15192,23 +14104,6 @@ Parameters::
     * LPWCH lpszVolumePathNames
     * DWORD cchBufferLength
     * PDWORD lpcchReturnLength
-
-
-CreateFile2
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * DWORD dwDesiredAccess
-    * DWORD dwShareMode
-    * DWORD dwCreationDisposition
-    * LPCREATEFILE2_EXTENDED_PARAMETERS pCreateExParams
 
 
 SetFileIoOverlappedRange
@@ -15259,7 +14154,7 @@ DrvPopulateFilterServices
 
 Signature::
 
-    * Library: hpbx3w81
+    * Library: unidrvui
     * Return value: HRESULT
 
 Parameters::
@@ -15355,7 +14250,7 @@ CloseHandle
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15368,7 +14263,7 @@ DuplicateHandle
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15416,7 +14311,7 @@ HeapCreate
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -15431,7 +14326,7 @@ HeapDestroy
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15444,7 +14339,7 @@ HeapAlloc
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LPVOID
 
 Parameters::
@@ -15459,7 +14354,7 @@ HeapReAlloc
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LPVOID
 
 Parameters::
@@ -15475,7 +14370,7 @@ HeapFree
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15489,7 +14384,7 @@ HeapSize
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: SIZE_T
 
 Parameters::
@@ -15548,7 +14443,7 @@ GetProcessHeap
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 
@@ -15611,7 +14506,7 @@ HeapSetInformation
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15961,22 +14856,6 @@ Parameters::
     * PVOID pPropertyInformation
     * ULONG PropertyInformationLength
     * PULONG pReturnLength
-
-
-HttpPrepareUrl
-==============
-
-Signature::
-
-    * Library: httpapi
-    * Return value: ULONG
-
-Parameters::
-
-    * PVOID Reserved
-    * ULONG Flags
-    * PCWSTR Url
-    * PWSTR *PreparedUrl
 
 
 HttpReceiveHttpRequest
@@ -16547,30 +15426,6 @@ Parameters::
     * DWORD Timeout
 
 
-IcmpSendEcho2
-=============
-
-Signature::
-
-    * Library: icmp
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE IcmpHandle
-    * HANDLE Event
-    * PIO_APC_ROUTINE ApcRoutine
-    * FARPROC ApcRoutine
-    * PVOID ApcContext
-    * IPAddr DestinationAddress
-    * LPVOID RequestData
-    * WORD RequestSize
-    * PIP_OPTION_INFORMATION RequestOptions
-    * LPVOID ReplyBuffer
-    * DWORD ReplySize
-    * DWORD Timeout
-
-
 IcmpParseReplies
 ================
 
@@ -16964,345 +15819,12 @@ Parameters::
     * DWORD OldCheckSum
 
 
-CreateInteractionContext
-========================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT *interactionContext
-
-
-DestroyInteractionContext
-=========================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-
-
-RegisterOutputCallbackInteractionContext
-========================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * INTERACTION_CONTEXT_OUTPUT_CALLBACK outputCallback
-    * void *clientData
-
-
-SetInteractionConfigurationInteractionContext
-=============================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * UINT32 configurationCount
-    * const INTERACTION_CONTEXT_CONFIGURATION *configuration
-
-
-GetInteractionConfigurationInteractionContext
-=============================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * UINT32 configurationCount
-    * INTERACTION_CONTEXT_CONFIGURATION *configuration
-
-
-SetPropertyInteractionContext
-=============================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * INTERACTION_CONTEXT_PROPERTY contextProperty
-    * UINT32 value
-
-
-GetPropertyInteractionContext
-=============================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * INTERACTION_CONTEXT_PROPERTY contextProperty
-    * UINT32 *value
-
-
-SetInertiaParameterInteractionContext
-=====================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * INERTIA_PARAMETER inertiaParameter
-    * float value
-
-
-GetInertiaParameterInteractionContext
-=====================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * INERTIA_PARAMETER inertiaParameter
-    * float *value
-
-
-SetCrossSlideParametersInteractionContext
-=========================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * UINT32 parameterCount
-    * CROSS_SLIDE_PARAMETER *crossSlideParameters
-
-
-GetCrossSlideParameterInteractionContext
-========================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * CROSS_SLIDE_THRESHOLD threshold
-    * float *distance
-
-
-SetMouseWheelParameterInteractionContext
-========================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * MOUSE_WHEEL_PARAMETER parameter
-    * float value
-
-
-GetMouseWheelParameterInteractionContext
-========================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * MOUSE_WHEEL_PARAMETER parameter
-    * float *value
-
-
-ResetInteractionContext
-=======================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-
-
-GetStateInteractionContext
-==========================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * const POINTER_INFO *pointerInfo
-    * INTERACTION_STATE *state
-
-
-AddPointerInteractionContext
-============================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * UINT32 pointerId
-
-
-RemovePointerInteractionContext
-===============================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * UINT32 pointerId
-
-
-ProcessPointerFramesInteractionContext
-======================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * UINT32 entriesCount
-    * UINT32 pointerCount
-    * const POINTER_INFO *pointerInfo
-
-
-BufferPointerPacketsInteractionContext
-======================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * UINT32 entriesCount
-    * const POINTER_INFO *pointerInfo
-
-
-ProcessBufferedPacketsInteractionContext
-========================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-
-
-ProcessInertiaInteractionContext
-================================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-
-
-StopInteractionContext
-======================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-
-
-SetPivotInteractionContext
-==========================
-
-Signature::
-
-    * Library: ninput
-    * Return value: HRESULT
-
-Parameters::
-
-    * HINTERACTIONCONTEXT interactionContext
-    * float x
-    * float y
-    * float radius
-
-
 InitializeSListHead
 ===================
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -17315,7 +15837,7 @@ InterlockedPopEntrySList
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: PSLIST_ENTRY
 
 Parameters::
@@ -17328,29 +15850,13 @@ InterlockedPushEntrySList
 
 Signature::
 
-    * Library: rtmpal
-    * Return value: PSLIST_ENTRY
-
-Parameters::
-
-    * PSLIST_HEADER ListHead
-    * PSLIST_ENTRY ListEntry
-
-
-InterlockedPushListSListEx
-==========================
-
-Signature::
-
     * Library: kernel32
     * Return value: PSLIST_ENTRY
 
 Parameters::
 
     * PSLIST_HEADER ListHead
-    * PSLIST_ENTRY List
-    * PSLIST_ENTRY ListEnd
-    * ULONG Count
+    * PSLIST_ENTRY ListEntry
 
 
 InterlockedFlushSList
@@ -17371,7 +15877,7 @@ QueryDepthSList
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: USHORT
 
 Parameters::
@@ -17509,23 +16015,6 @@ Parameters::
     * LPOVERLAPPED lpOverlapped
 
 
-GetOverlappedResultEx
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPOVERLAPPED lpOverlapped
-    * LPDWORD lpNumberOfBytesTransferred
-    * DWORD dwMilliseconds
-    * BOOL bAlertable
-
-
 CancelIo
 ========
 
@@ -17626,7 +16115,7 @@ joyGetPosEx
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -17640,7 +16129,7 @@ joyGetDevCapsA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -17655,7 +16144,7 @@ joyGetDevCapsW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -17670,7 +16159,7 @@ joyGetPos
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -17684,7 +16173,7 @@ joyGetThreshold
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -17698,7 +16187,7 @@ joyReleaseCapture
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -17711,7 +16200,7 @@ joySetCapture
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -17727,7 +16216,7 @@ joySetThreshold
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -17741,7 +16230,7 @@ joyConfigChanged
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -18810,7 +17299,7 @@ DisableThreadLibraryCalls
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -18857,7 +17346,7 @@ FreeLibrary
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -18897,7 +17386,7 @@ GetModuleFileNameA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -18912,7 +17401,7 @@ GetModuleFileNameW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -18940,7 +17429,7 @@ GetModuleHandleW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
@@ -18983,7 +17472,7 @@ GetProcAddress
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: FARPROC
 
 Parameters::
@@ -18997,7 +17486,7 @@ LoadLibraryExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
@@ -19012,7 +17501,7 @@ LoadLibraryExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
@@ -19481,7 +17970,7 @@ VirtualProtect
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -19497,7 +17986,7 @@ VirtualQuery
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: SIZE_T
 
 Parameters::
@@ -19612,7 +18101,7 @@ CreateFileMappingW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -19630,7 +18119,7 @@ OpenFileMappingW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -19645,7 +18134,7 @@ MapViewOfFile
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: __out_data_source
 
 Parameters::
@@ -19694,7 +18183,7 @@ UnmapViewOfFile
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -19879,69 +18368,6 @@ Parameters::
     * DWORD nndPreferred
 
 
-PrefetchVirtualMemory
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * ULONG_PTR NumberOfEntries
-    * PWIN32_MEMORY_RANGE_ENTRY VirtualAddresses
-    * ULONG Flags
-
-
-UnmapViewOfFileEx
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PVOID BaseAddress
-    * ULONG UnmapFlags
-
-
-CreateFileMappingFromApp
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * HANDLE hFile
-    * PSECURITY_ATTRIBUTES SecurityAttributes
-    * ULONG PageProtection
-    * ULONG64 MaximumSize
-    * PCWSTR Name
-
-
-MapViewOfFileFromApp
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: __out_data_source
-
-Parameters::
-
-    * HANDLE hFileMappingObject
-    * ULONG DesiredAccess
-    * ULONG64 FileOffset
-    * SIZE_T NumberOfBytesToMap
-
-
 AllocateUserPhysicalPages
 =========================
 
@@ -20021,45 +18447,6 @@ Parameters::
     * DWORD nndPreferred
 
 
-GetMemoryErrorHandlingCapabilities
-==================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PULONG Capabilities
-
-
-RegisterBadMemoryNotification
-=============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: PVOID
-
-Parameters::
-
-    * PBAD_MEMORY_CALLBACK_ROUTINE Callback
-
-
-UnregisterBadMemoryNotification
-===============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PVOID RegistrationHandle
-
-
 SnmpMgrRequest
 ==============
 
@@ -20082,7 +18469,7 @@ waveOutGetDevCapsA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20097,7 +18484,7 @@ waveOutGetDevCapsW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20112,7 +18499,7 @@ waveOutGetErrorTextA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20127,7 +18514,7 @@ waveOutGetErrorTextW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20142,7 +18529,7 @@ waveInGetDevCapsA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20157,7 +18544,7 @@ waveInGetDevCapsW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20172,7 +18559,7 @@ waveInGetErrorTextA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20187,7 +18574,7 @@ waveInGetErrorTextW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20202,7 +18589,7 @@ midiStreamOpen
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20220,7 +18607,7 @@ midiStreamClose
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20233,7 +18620,7 @@ midiStreamProperty
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20248,7 +18635,7 @@ midiStreamPosition
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20263,7 +18650,7 @@ midiStreamOut
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20278,7 +18665,7 @@ midiStreamPause
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20291,7 +18678,7 @@ midiStreamRestart
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20304,7 +18691,7 @@ midiStreamStop
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20317,7 +18704,7 @@ midiOutGetDevCapsA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20332,7 +18719,7 @@ midiOutGetDevCapsW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20347,7 +18734,7 @@ midiOutGetErrorTextA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20362,7 +18749,7 @@ midiOutGetErrorTextW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20377,7 +18764,7 @@ midiInGetDevCapsA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20392,7 +18779,7 @@ midiInGetDevCapsW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20407,7 +18794,7 @@ midiInGetErrorTextA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20422,7 +18809,7 @@ midiInGetErrorTextW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20437,7 +18824,7 @@ auxGetDevCapsA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20452,7 +18839,7 @@ auxGetDevCapsW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20467,7 +18854,7 @@ auxSetVolume
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20481,7 +18868,7 @@ auxGetVolume
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20495,7 +18882,7 @@ auxOutMessage
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20511,7 +18898,7 @@ mixerGetDevCapsA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20526,7 +18913,7 @@ mixerGetDevCapsW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20541,7 +18928,7 @@ mixerOpen
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20558,7 +18945,7 @@ mixerClose
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20571,7 +18958,7 @@ mixerMessage
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: DWORD
 
 Parameters::
@@ -20587,7 +18974,7 @@ mixerGetLineInfoA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20602,7 +18989,7 @@ mixerGetLineInfoW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20617,13 +19004,13 @@ mixerGetID
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
 
     * HMIXEROBJ hmxobj
-    * UINT FAR *puMxId
+    * UINT *puMxId
     * DWORD fdwId
 
 
@@ -20632,7 +19019,7 @@ mixerGetLineControlsA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20647,7 +19034,7 @@ mixerGetLineControlsW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20662,7 +19049,7 @@ mixerGetControlDetailsA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20677,7 +19064,7 @@ mixerGetControlDetailsW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20692,7 +19079,7 @@ mixerSetControlDetails
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20707,7 +19094,7 @@ CloseDriver
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: LRESULT
 
 Parameters::
@@ -20722,7 +19109,7 @@ OpenDriver
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: HDRVR
 
 Parameters::
@@ -20737,7 +19124,7 @@ SendDriverMessage
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: LRESULT
 
 Parameters::
@@ -20753,7 +19140,7 @@ DrvGetModuleHandle
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: HMODULE
 
 Parameters::
@@ -20766,7 +19153,7 @@ GetDriverModuleHandle
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: HMODULE
 
 Parameters::
@@ -20779,7 +19166,7 @@ DefDriverProc
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: LRESULT
 
 Parameters::
@@ -20791,28 +19178,12 @@ Parameters::
     * LPARAM lParam2
 
 
-sndOpenSound
-============
-
-Signature::
-
-    * Library: winmmbase
-    * Return value: LONG
-
-Parameters::
-
-    * LPCWSTR EventName
-    * LPCWSTR AppName
-    * INT32 Flags
-    * PHANDLE FileHandle
-
-
 mmioStringToFOURCCA
 ===================
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: FOURCC
 
 Parameters::
@@ -20826,7 +19197,7 @@ mmioStringToFOURCCW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: FOURCC
 
 Parameters::
@@ -20840,7 +19211,7 @@ mmioInstallIOProcA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: LPMMIOPROC
 
 Parameters::
@@ -20855,7 +19226,7 @@ mmioInstallIOProcW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: LPMMIOPROC
 
 Parameters::
@@ -20870,7 +19241,7 @@ mmioOpenA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: HMMIO
 
 Parameters::
@@ -20885,7 +19256,7 @@ mmioOpenW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: HMMIO
 
 Parameters::
@@ -20900,7 +19271,7 @@ mmioRenameA
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20916,7 +19287,7 @@ mmioRenameW
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20932,7 +19303,7 @@ mmioClose
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -20946,7 +19317,7 @@ mmioRead
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: LONG
 
 Parameters::
@@ -20961,7 +19332,7 @@ mmioWrite
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: LONG
 
 Parameters::
@@ -20976,7 +19347,7 @@ mmioSeek
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: LONG
 
 Parameters::
@@ -20991,7 +19362,7 @@ mmioGetInfo
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -21006,7 +19377,7 @@ mmioSetInfo
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -21021,7 +19392,7 @@ mmioSetBuffer
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -21037,7 +19408,7 @@ mmioFlush
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -21051,7 +19422,7 @@ mmioAdvance
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -21066,7 +19437,7 @@ mmioSendMessage
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: LRESULT
 
 Parameters::
@@ -21082,14 +19453,14 @@ mmioDescend
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
 
     * HMMIO hmmio
     * LPMMCKINFO pmmcki
-    * const MMCKINFO FAR *pmmckiParent
+    * const MMCKINFO *pmmckiParent
     * UINT fuDescend
 
 
@@ -21098,7 +19469,7 @@ mmioAscend
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -21113,7 +19484,7 @@ mmioCreateChunk
 
 Signature::
 
-    * Library: winmmbase
+    * Library: winmm
     * Return value: MMRESULT
 
 Parameters::
@@ -22151,201 +20522,6 @@ Parameters::
     * DWORD cbDerivedKey
     * DWORD *pcbResult
     * ULONG dwFlags
-
-
-NCryptKeyDerivation
-===================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * NCRYPT_KEY_HANDLE hKey
-    * NCryptBufferDesc *pParameterList
-    * PUCHAR pbDerivedKey
-    * DWORD cbDerivedKey
-    * DWORD *pcbResult
-    * ULONG dwFlags
-
-
-NCryptRegisterProtectionDescriptorName
-======================================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * LPCWSTR pwszName
-    * LPCWSTR pwszDescriptorString
-    * DWORD dwFlags
-
-
-NCryptQueryProtectionDescriptorName
-===================================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * LPCWSTR pwszName
-    * LPWSTR pwszDescriptorString
-    * SIZE_T *pcDescriptorString
-    * DWORD dwFlags
-
-
-NCryptCreateProtectionDescriptor
-================================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * LPCWSTR pwszDescriptorString
-    * DWORD dwFlags
-    * NCRYPT_DESCRIPTOR_HANDLE *phDescriptor
-
-
-NCryptCloseProtectionDescriptor
-===============================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * NCRYPT_DESCRIPTOR_HANDLE hDescriptor
-
-
-NCryptGetProtectionDescriptorInfo
-=================================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * NCRYPT_DESCRIPTOR_HANDLE hDescriptor
-    * const NCRYPT_ALLOC_PARA *pMemPara
-    * DWORD dwInfoType
-    * void **ppvInfo
-
-
-NCryptProtectSecret
-===================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * NCRYPT_DESCRIPTOR_HANDLE hDescriptor
-    * DWORD dwFlags
-    * const BYTE *pbData
-    * ULONG cbData
-    * const NCRYPT_ALLOC_PARA *pMemPara
-    * HWND hWnd
-    * BYTE **ppbProtectedBlob
-    * ULONG *pcbProtectedBlob
-
-
-NCryptUnprotectSecret
-=====================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * NCRYPT_DESCRIPTOR_HANDLE *phDescriptor
-    * DWORD dwFlags
-    * const BYTE *pbProtectedBlob
-    * ULONG cbProtectedBlob
-    * const NCRYPT_ALLOC_PARA *pMemPara
-    * HWND hWnd
-    * BYTE **ppbData
-    * ULONG *pcbData
-
-
-NCryptStreamOpenToProtect
-=========================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * NCRYPT_DESCRIPTOR_HANDLE hDescriptor
-    * DWORD dwFlags
-    * HWND hWnd
-    * NCRYPT_PROTECT_STREAM_INFO *pStreamInfo
-    * NCRYPT_STREAM_HANDLE *phStream
-
-
-NCryptStreamOpenToUnprotect
-===========================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * NCRYPT_PROTECT_STREAM_INFO *pStreamInfo
-    * DWORD dwFlags
-    * HWND hWnd
-    * NCRYPT_STREAM_HANDLE *phStream
-
-
-NCryptStreamUpdate
-==================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * NCRYPT_STREAM_HANDLE hStream
-    * const BYTE *pbData
-    * SIZE_T cbData
-    * BOOL fFinal
-
-
-NCryptStreamClose
-=================
-
-Signature::
-
-    * Library: ncrypt
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * NCRYPT_STREAM_HANDLE hStream
 
 
 UpdateDriverForPlugAndPlayDevicesA
@@ -23792,53 +21968,12 @@ Parameters::
     * LPCSTR DstPrincipal
 
 
-OOBEComplete
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PBOOL OOBEComplete
-
-
-RegisterWaitUntilOOBECompleted
-==============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * OOBE_COMPLETED_CALLBACK OOBECompletedCallback
-    * PVOID CallbackContext
-    * PVOID *WaitHandle
-
-
-UnregisterWaitUntilOOBECompleted
-================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PVOID WaitHandle
-
-
 NormalizeFileForPatchSignature
 ==============================
 
 Signature::
 
-    * Library: mspatchc
+    * Library: mspatcha
     * Return value: INT
 
 Parameters::
@@ -23941,47 +22076,6 @@ Signature::
 Parameters::
 
     * PSYSTEM_POWER_CAPABILITIES lpspc
-
-
-PowerDeterminePlatformRoleEx
-============================
-
-Signature::
-
-    * Library: powrprof
-    * Return value: POWER_PLATFORM_ROLE
-
-Parameters::
-
-    * ULONG Version
-
-
-PowerRegisterSuspendResumeNotification
-======================================
-
-Signature::
-
-    * Library: powrprof
-    * Return value: DWORD
-
-Parameters::
-
-    * DWORD Flags
-    * HANDLE Recipient
-    * PHPOWERNOTIFY RegistrationHandle
-
-
-PowerUnregisterSuspendResumeNotification
-========================================
-
-Signature::
-
-    * Library: powrprof
-    * Return value: DWORD
-
-Parameters::
-
-    * HPOWERNOTIFY RegistrationHandle
 
 
 PowerReadACValue
@@ -24343,7 +22437,7 @@ SetEnvironmentVariableW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24535,7 +22629,7 @@ GetCurrentProcess
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 
@@ -24544,7 +22638,7 @@ GetCurrentProcessId
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 
@@ -24566,7 +22660,7 @@ TerminateProcess
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24603,7 +22697,7 @@ CreateThread
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -24640,7 +22734,7 @@ GetCurrentThread
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 
@@ -24649,7 +22743,7 @@ GetCurrentThreadId
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 
@@ -24673,7 +22767,7 @@ SetThreadPriority
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24687,7 +22781,7 @@ SetThreadPriorityBoost
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24715,7 +22809,7 @@ GetThreadPriority
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -24755,7 +22849,7 @@ GetExitCodeThread
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24795,7 +22889,7 @@ TlsAlloc
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 
@@ -24804,7 +22898,7 @@ TlsGetValue
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LPVOID
 
 Parameters::
@@ -24817,7 +22911,7 @@ TlsSetValue
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24831,7 +22925,7 @@ TlsFree
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -25189,20 +23283,6 @@ Parameters::
     * LPDWORD lpThreadId
 
 
-GetCurrentThreadStackLimits
-===========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-Parameters::
-
-    * PULONG_PTR LowLimit
-    * PULONG_PTR HighLimit
-
-
 GetThreadContext
 ================
 
@@ -25229,37 +23309,6 @@ Parameters::
 
     * HANDLE hThread
     * const CONTEXT *lpContext
-
-
-SetProcessMitigationPolicy
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PROCESS_MITIGATION_POLICY MitigationPolicy
-    * PVOID lpBuffer
-    * SIZE_T dwLength
-
-
-GetProcessMitigationPolicy
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * PROCESS_MITIGATION_POLICY MitigationPolicy
-    * PVOID lpBuffer
-    * SIZE_T dwLength
 
 
 FlushInstructionCache
@@ -25314,7 +23363,7 @@ IsProcessorFeaturePresent
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -25444,52 +23493,6 @@ Parameters::
     * PFILETIME lpUserTime
 
 
-GetThreadInformation
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hThread
-    * THREAD_INFORMATION_CLASS ThreadInformationClass
-    * LPVOID ThreadInformation
-    * DWORD ThreadInformationSize
-
-
-SetThreadInformation
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hThread
-    * THREAD_INFORMATION_CLASS ThreadInformationClass
-    * LPVOID ThreadInformation
-    * DWORD ThreadInformationSize
-
-
-IsProcessCritical
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * PBOOL Critical
-
-
 GetProcessGroupAffinity
 =======================
 
@@ -25539,7 +23542,7 @@ QueryPerformanceCounter
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -25552,7 +23555,7 @@ QueryPerformanceFrequency
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -26825,24 +24828,6 @@ Parameters::
     * PULONGLONG pqwOutValue
 
 
-ResUtilSetValueEx
-=================
-
-Signature::
-
-    * Library: resutils
-    * Return value: DWORD
-
-Parameters::
-
-    * HKEY hkeyClusterKey
-    * LPCWSTR valueName
-    * DWORD valueType
-    * const LPBYTE valueData
-    * DWORD valueSize
-    * DWORD flags
-
-
 ResUtilGetBinaryProperty
 ========================
 
@@ -27532,122 +25517,6 @@ Signature::
 Parameters::
 
     * LPCWSTR lpszVolumePathName
-
-
-ResUtilSetResourceServiceStartParametersEx
-==========================================
-
-Signature::
-
-    * Library: resutils
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR pszServiceName
-    * SC_HANDLE schSCMHandle
-    * LPSC_HANDLE phService
-    * DWORD dwDesiredAccess
-    * PLOG_EVENT_ROUTINE pfnLogEvent
-    * RESOURCE_HANDLE hResourceHandle
-
-
-ResUtilEnumResourcesEx2
-=======================
-
-Signature::
-
-    * Library: resutils
-    * Return value: DWORD
-
-Parameters::
-
-    * HCLUSTER hCluster
-    * HRESOURCE hSelf
-    * LPCWSTR lpszResTypeName
-    * LPRESOURCE_CALLBACK_EX pResCallBack
-    * PVOID pParameter
-    * DWORD dwDesiredAccess
-
-
-ResUtilGetResourceDependencyEx
-==============================
-
-Signature::
-
-    * Library: resutils
-    * Return value: HRESOURCE
-
-Parameters::
-
-    * HANDLE hSelf
-    * LPCWSTR lpszResourceType
-    * DWORD dwDesiredAccess
-
-
-ResUtilGetResourceDependencyByNameEx
-====================================
-
-Signature::
-
-    * Library: resutils
-    * Return value: HRESOURCE
-
-Parameters::
-
-    * HCLUSTER hCluster
-    * HANDLE hSelf
-    * LPCWSTR lpszResourceType
-    * BOOL bRecurse
-    * DWORD dwDesiredAccess
-
-
-ResUtilGetResourceDependencyByClassEx
-=====================================
-
-Signature::
-
-    * Library: resutils
-    * Return value: HRESOURCE
-
-Parameters::
-
-    * HCLUSTER hCluster
-    * HANDLE hSelf
-    * PCLUS_RESOURCE_CLASS_INFO prci
-    * BOOL bRecurse
-    * DWORD dwDesiredAccess
-
-
-ResUtilGetResourceNameDependencyEx
-==================================
-
-Signature::
-
-    * Library: resutils
-    * Return value: HRESOURCE
-
-Parameters::
-
-    * LPCWSTR lpszResourceName
-    * LPCWSTR lpszResourceType
-    * DWORD dwDesiredAccess
-
-
-ResUtilGetCoreClusterResourcesEx
-================================
-
-Signature::
-
-    * Library: resutils
-    * Return value: DWORD
-
-Parameters::
-
-    * HCLUSTER hClusterIn
-    * HRESOURCE *phClusterNameResourceOut
-    * HRESOURCE *phClusterQuorumResourceOut
-    * DWORD dwDesiredAccess
 
 
 NdrProxyInitialize
@@ -28907,40 +26776,6 @@ Parameters::
     * DWORD Reserved 
 
 
-SslGetServerIdentity
-====================
-
-Signature::
-
-    * Library: schannel
-    * Return value: SECURITY_STATUS
-
-Parameters::
-
-    * PBYTE ClientHello
-    * DWORD ClientHelloSize
-    * PBYTE *ServerIdentity
-    * PDWORD ServerIdentitySize
-    * DWORD Flags
-
-
-GetAppContainerNamedObjectPath
-==============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE Token
-    * PSID AppContainerSid
-    * ULONG ObjectPathLength
-    * LPWSTR ObjectPath
-    * PULONG ReturnLength
-
-
 AccessCheck
 ===========
 
@@ -29311,42 +27146,6 @@ Parameters::
     * PSID pLabelSid
 
 
-AddResourceAttributeAce
-=======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * DWORD AccessMask
-    * PSID pSid
-    * PCLAIM_SECURITY_ATTRIBUTES_INFORMATION pAttributeInfo
-    * PDWORD pReturnLength
-
-
-AddScopedPolicyIDAce
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * DWORD AccessMask
-    * PSID pSid
-
-
 AdjustTokenGroups
 =================
 
@@ -29459,53 +27258,6 @@ Parameters::
 
     * HANDLE TokenHandle
     * PSID SidToCheck
-    * PBOOL IsMember
-
-
-CheckTokenCapability
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE TokenHandle
-    * PSID CapabilitySidToCheck
-    * PBOOL HasCapability
-
-
-GetAppContainerAce
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL Acl
-    * DWORD StartingAceIndex
-    * PVOID *AppContainerAce
-    * DWORD *AppContainerAceIndex
-
-
-CheckTokenMembershipEx
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE TokenHandle
-    * PSID SidToCheck
-    * DWORD Flags
     * PBOOL IsMember
 
 
@@ -30580,40 +28332,6 @@ Parameters::
     * TOKEN_INFORMATION_CLASS TokenInformationClass
     * LPVOID TokenInformation
     * DWORD TokenInformationLength
-
-
-SetCachedSigningLevel
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PHANDLE SourceFiles
-    * ULONG SourceFileCount
-    * ULONG Flags
-    * HANDLE TargetFile
-
-
-GetCachedSigningLevel
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE File
-    * PULONG Flags
-    * PULONG SigningLevel
-    * PUCHAR Thumbprint
-    * PULONG ThumbprintSize
-    * PULONG ThumbprintAlgorithm
 
 
 SetupGetInfInformationA
@@ -36444,37 +34162,6 @@ Parameters::
     * HRESULT *phrStatus
 
 
-SLGetActiveLicenseInfo
-======================
-
-Signature::
-
-    * Library: sppc
-    * Return value: HRESULT
-
-Parameters::
-
-    * HSLC hSLC
-    * const SLID *pReserved
-    * UINT *pcbValue
-    * PBYTE *ppbValue
-
-
-SLDepositStoreToken
-===================
-
-Signature::
-
-    * Library: sppc
-    * Return value: HRESULT
-
-Parameters::
-
-    * HSLC hSLC
-    * UINT cbValue
-    * const BYTE *pbValue
-
-
 SLReArm
 =======
 
@@ -36506,22 +34193,6 @@ Parameters::
     * PWSTR *ppwszInstallationId
 
 
-SLGenerateOfflineInstallationIdEx
-=================================
-
-Signature::
-
-    * Library: sppc
-    * Return value: HRESULT
-
-Parameters::
-
-    * HSLC hSLC
-    * const SLID *pProductSkuId
-    * const SL_ACTIVATION_INFO_HEADER *pActivationInfo
-    * PWSTR *ppwszInstallationId
-
-
 SLDepositOfflineConfirmationId
 ==============================
 
@@ -36534,23 +34205,6 @@ Parameters::
 
     * HSLC hSLC
     * const SLID *pProductSkuId
-    * PCWSTR pwszInstallationId
-    * PCWSTR pwszConfirmationId
-
-
-SLDepositOfflineConfirmationIdEx
-================================
-
-Signature::
-
-    * Library: sppc
-    * Return value: HRESULT
-
-Parameters::
-
-    * HSLC hSLC
-    * const SLID *pProductSkuId
-    * const SL_ACTIVATION_INFO_HEADER *pActivationInfo
     * PCWSTR pwszInstallationId
     * PCWSTR pwszConfirmationId
 
@@ -36938,75 +34592,6 @@ Parameters::
     * BYTE **ppbValue
 
 
-SLGetGenuineInformationEx
-=========================
-
-Signature::
-
-    * Library: sppcext
-    * Return value: HRESULT
-
-Parameters::
-
-    * const SLID *pAppId
-    * PCWSTR pwszValueName
-    * SLDATATYPE *peDataType
-    * UINT *pcbValue
-    * BYTE **ppbValue
-
-
-SLGatherMigrationBlob
-=====================
-
-Signature::
-
-    * Library: sppc
-    * Return value: HRESULT
-
-Parameters::
-
-    * BOOL bMigratableOnly
-    * LPCWSTR pwszEncryptorUri
-    * HANDLE hFile
-
-
-SLGatherMigrationBlobEx
-=======================
-
-Signature::
-
-    * Library: sppc
-    * Return value: HRESULT
-
-
-SLDepositMigrationBlob
-======================
-
-Signature::
-
-    * Library: sppc
-    * Return value: HRESULT
-
-Parameters::
-
-    * HANDLE hFile
-
-
-RegisterAppInstance
-===================
-
-Signature::
-
-    * Library: ntlanman
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE ProcessHandle
-    * GUID *AppInstanceId
-    * BOOL ChildrenInheritAppInstance
-
-
 SnmpUtilOidCpy
 ==============
 
@@ -37288,7 +34873,7 @@ MultiByteToWideChar
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -37306,7 +34891,7 @@ WideCharToMultiByte
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -37339,7 +34924,7 @@ ReleaseSRWLockExclusive
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37365,7 +34950,7 @@ AcquireSRWLockExclusive
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37417,7 +35002,7 @@ InitializeCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37430,7 +35015,7 @@ EnterCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37443,7 +35028,7 @@ LeaveCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37456,7 +35041,7 @@ InitializeCriticalSectionAndSpinCount
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37470,7 +35055,7 @@ InitializeCriticalSectionEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37499,7 +35084,7 @@ TryEnterCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37512,7 +35097,7 @@ DeleteCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37585,7 +35170,7 @@ InitializeConditionVariable
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37611,7 +35196,7 @@ WakeAllConditionVariable
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37624,7 +35209,7 @@ SleepConditionVariableCS
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37655,7 +35240,7 @@ SetEvent
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37668,7 +35253,7 @@ ResetEvent
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37681,7 +35266,7 @@ ReleaseSemaphore
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37696,7 +35281,7 @@ ReleaseMutex
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37709,7 +35294,7 @@ WaitForSingleObject
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -37737,7 +35322,7 @@ WaitForSingleObjectEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -37752,7 +35337,7 @@ WaitForMultipleObjectsEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -37784,7 +35369,7 @@ CreateMutexW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -37830,7 +35415,7 @@ CreateEventW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -38049,48 +35634,6 @@ Parameters::
     * DWORD dwDesiredAccess
 
 
-EnterSynchronizationBarrier
-===========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPSYNCHRONIZATION_BARRIER lpBarrier
-    * DWORD dwFlags
-
-
-InitializeSynchronizationBarrier
-================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPSYNCHRONIZATION_BARRIER lpBarrier
-    * LONG lTotalThreads
-    * LONG lSpinCount
-
-
-DeleteSynchronizationBarrier
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPSYNCHRONIZATION_BARRIER lpBarrier
-
-
 Sleep
 =====
 
@@ -38109,7 +35652,7 @@ SignalObjectAndWait
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -38134,7 +35677,7 @@ GlobalMemoryStatusEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -38147,7 +35690,7 @@ GetSystemTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -38160,7 +35703,7 @@ GetSystemTimeAsFileTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -38173,7 +35716,7 @@ GetLocalTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -38199,7 +35742,7 @@ GetSystemInfo
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -38212,7 +35755,7 @@ GetTickCount
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 
@@ -38221,7 +35764,7 @@ GetTickCount64
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: ULONGLONG
 
 
@@ -38399,7 +35942,7 @@ GetVersionExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -38471,7 +36014,7 @@ VerSetConditionMask
 
 Signature::
 
-    * Library: rtmpal
+    * Library: ntdll
     * Return value: ULONGLONG
 
 Parameters::
@@ -38479,19 +36022,6 @@ Parameters::
     * ULONGLONG ConditionMask
     * ULONG TypeMask
     * UCHAR Condition
-
-
-GetSystemTimePreciseAsFileTime
-==============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-Parameters::
-
-    * LPFILETIME lpSystemTimeAsFileTime
 
 
 EnumSystemFirmwareTables
@@ -38525,21 +36055,6 @@ Parameters::
     * DWORD BufferSize
 
 
-DnsHostnameToComputerNameExW
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR Hostname
-    * LPWSTR ComputerName
-    * LPDWORD nSize
-
-
 GetPhysicallyInstalledSystemMemory
 ==================================
 
@@ -38551,21 +36066,6 @@ Signature::
 Parameters::
 
     * PULONGLONG TotalMemoryInKilobytes
-
-
-SetComputerNameEx2W
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * COMPUTER_NAME_FORMAT NameType
-    * DWORD Flags
-    * LPCWSTR lpBuffer
 
 
 SetSystemTimeAdjustment
@@ -38580,19 +36080,6 @@ Parameters::
 
     * DWORD dwTimeAdjustment
     * BOOL bTimeAdjustmentDisabled
-
-
-InstallELAMCertificateInfo
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE ELAMFile
 
 
 GetNumaHighestNodeNumber
@@ -42099,38 +39586,6 @@ Parameters::
     * PTP_IO pio
 
 
-SetThreadpoolTimerEx
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PTP_TIMER pti
-    * PFILETIME pftDueTime
-    * DWORD msPeriod
-    * DWORD msWindowLength
-
-
-SetThreadpoolWaitEx
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PTP_WAIT pwa
-    * HANDLE h
-    * PFILETIME pftTimeout
-    * PVOID Reserved
-
-
 QueueUserWorkItem
 =================
 
@@ -42322,7 +39777,7 @@ FileTimeToSystemTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -42336,7 +39791,7 @@ SystemTimeToFileTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -42350,7 +39805,7 @@ GetTimeZoneInformation
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -42412,35 +39867,6 @@ Parameters::
     * LPTIME_ZONE_INFORMATION ptzi
 
 
-EnumDynamicTimeZoneInformation
-==============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * const DWORD dwIndex
-    * PDYNAMIC_TIME_ZONE_INFORMATION lpTimeZoneInformation
-
-
-GetDynamicTimeZoneInformationEffectiveYears
-===========================================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * const PDYNAMIC_TIME_ZONE_INFORMATION lpTimeZoneInformation
-    * LPDWORD FirstYear
-    * LPDWORD LastYear
-
-
 SystemTimeToTzSpecificLocalTimeEx
 =================================
 
@@ -42476,7 +39902,7 @@ CreateToolhelp32Snapshot
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -42563,7 +39989,7 @@ Process32FirstW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -42577,7 +40003,7 @@ Process32NextW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -43339,100 +40765,12 @@ Parameters::
     * LPBOOL pbAccessStatus
 
 
-GenerateGPNotification
-======================
-
-Signature::
-
-    * Library: userenv
-    * Return value: DWORD
-
-Parameters::
-
-    * BOOL bMachine
-    * LPCWSTR lpwszMgmtProduct
-    * DWORD dwMgmtProductOptions
-
-
-CreateAppContainerProfile
-=========================
-
-Signature::
-
-    * Library: userenv
-    * Return value: HRESULT
-
-Parameters::
-
-    * PCWSTR pszAppContainerName
-    * PCWSTR pszDisplayName
-    * PCWSTR pszDescription
-    * PSID_AND_ATTRIBUTES pCapabilities
-    * DWORD dwCapabilityCount
-    * PSID *ppSidAppContainerSid
-
-
-DeleteAppContainerProfile
-=========================
-
-Signature::
-
-    * Library: userenv
-    * Return value: HRESULT
-
-Parameters::
-
-    * PCWSTR pszAppContainerName
-
-
-GetAppContainerRegistryLocation
-===============================
-
-Signature::
-
-    * Library: userenv
-    * Return value: HRESULT
-
-Parameters::
-
-    * REGSAM desiredAccess
-    * PHKEY phAppContainerKey
-
-
-GetAppContainerFolderPath
-=========================
-
-Signature::
-
-    * Library: userenv
-    * Return value: HRESULT
-
-Parameters::
-
-    * PCWSTR pszAppContainerSid
-    * PWSTR *ppszPath
-
-
-DeriveAppContainerSidFromAppContainerName
-=========================================
-
-Signature::
-
-    * Library: userenv
-    * Return value: HRESULT
-
-Parameters::
-
-    * PCWSTR pszAppContainerName
-    * PSID *ppsidAppContainerSid
-
-
 EncodePointer
 =============
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: PVOID
 
 Parameters::
@@ -43445,7 +40783,7 @@ DecodePointer
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: PVOID
 
 Parameters::
@@ -43960,15 +41298,6 @@ Parameters::
     * PWSTR DiskPath
 
 
-GetAllAttachedVirtualDiskPhysicalPaths
-======================================
-
-Signature::
-
-    * Library: virtdisk
-    * Return value: DWORD
-
-
 GetStorageDependencyInformation
 ===============================
 
@@ -44014,67 +41343,6 @@ Parameters::
 
     * HANDLE VirtualDiskHandle
     * PSET_VIRTUAL_DISK_INFO VirtualDiskInfo
-
-
-EnumerateVirtualDiskMetadata
-============================
-
-Signature::
-
-    * Library: virtdisk
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE VirtualDiskHandle
-    * PULONG NumberOfItems
-    * GUID *Items
-
-
-GetVirtualDiskMetadata
-======================
-
-Signature::
-
-    * Library: virtdisk
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE VirtualDiskHandle
-    * const GUID *Item
-    * PULONG MetaDataSize
-    * PVOID MetaData
-
-
-SetVirtualDiskMetadata
-======================
-
-Signature::
-
-    * Library: virtdisk
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE VirtualDiskHandle
-    * const GUID *Item
-    * ULONG MetaDataSize
-    * const void *MetaData
-
-
-DeleteVirtualDiskMetadata
-=========================
-
-Signature::
-
-    * Library: virtdisk
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE VirtualDiskHandle
-    * const GUID *Item
 
 
 CompactVirtualDisk
@@ -44125,146 +41393,12 @@ Parameters::
     * LPOVERLAPPED Overlapped
 
 
-ResizeVirtualDisk
-=================
-
-Signature::
-
-    * Library: virtdisk
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE VirtualDiskHandle
-    * RESIZE_VIRTUAL_DISK_FLAG Flags
-    * PRESIZE_VIRTUAL_DISK_PARAMETERS Parameters
-    * LPOVERLAPPED Overlapped
-
-
-MirrorVirtualDisk
-=================
-
-Signature::
-
-    * Library: virtdisk
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE VirtualDiskHandle
-    * MIRROR_VIRTUAL_DISK_FLAG Flags
-    * PMIRROR_VIRTUAL_DISK_PARAMETERS Parameters
-    * LPOVERLAPPED Overlapped
-
-
-BreakMirrorVirtualDisk
-======================
-
-Signature::
-
-    * Library: virtdisk
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE VirtualDiskHandle
-
-
-AddVirtualDiskParent
-====================
-
-Signature::
-
-    * Library: virtdisk
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE VirtualDiskHandle
-    * PCWSTR ParentPath
-
-
-WcmQueryProperty
-================
-
-Signature::
-
-    * Library: wcmapi
-    * Return value: DWORD
-
-Parameters::
-
-    * const GUID *pInterface
-    * LPCWSTR strProfileName
-    * WCM_PROPERTY Property
-    * PVOID pReserved
-    * PDWORD pdwDataSize
-    * PBYTE *ppData
-
-
-WcmSetProperty
-==============
-
-Signature::
-
-    * Library: wcmapi
-    * Return value: DWORD
-
-Parameters::
-
-    * const GUID *pInterface
-    * LPCWSTR strProfileName
-    * WCM_PROPERTY Property
-    * PVOID pReserved
-    * DWORD dwDataSize
-    * const BYTE *pbData
-
-
-WcmGetProfileList
-=================
-
-Signature::
-
-    * Library: wcmapi
-    * Return value: DWORD
-
-Parameters::
-
-    * PVOID pReserved
-    * PWCM_PROFILE_INFO_LIST *ppProfileList
-
-
-WcmSetProfileList
-=================
-
-Signature::
-
-    * Library: wcmapi
-    * Return value: DWORD
-
-Parameters::
-
-    * WCM_PROFILE_INFO_LIST *pProfileList
-    * DWORD dwPosition
-    * BOOL fIgnoreUnknownProfiles
-    * PVOID pReserved
-
-
-WcmFreeMemory
-=============
-
-Signature::
-
-    * Library: wcmapi
-    * Return value: void
-
-
 OpenThreadWaitChainSession
 ==========================
 
 Signature::
 
-    * Library: wer
+    * Library: advapi32
     * Return value: HWCT WINAPI
 
 Parameters::
@@ -44278,7 +41412,7 @@ CloseThreadWaitChainSession
 
 Signature::
 
-    * Library: wer
+    * Library: advapi32
     * Return value: void WINAPI
 
 Parameters::
@@ -44291,7 +41425,7 @@ GetThreadWaitChain
 
 Signature::
 
-    * Library: wer
+    * Library: advapi32
     * Return value: BOOL WINAPI
 
 Parameters::
@@ -44310,7 +41444,7 @@ RegisterWaitChainCOMCallback
 
 Signature::
 
-    * Library: wer
+    * Library: advapi32
     * Return value: void WINAPI
 
 Parameters::
@@ -44509,7 +41643,7 @@ LocalAlloc
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HLOCAL
 
 Parameters::
@@ -44603,7 +41737,7 @@ LocalFree
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HLOCAL
 
 Parameters::
@@ -44733,7 +41867,7 @@ GetProcessAffinityMask
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -44748,7 +41882,7 @@ SetProcessAffinityMask
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -44941,7 +42075,7 @@ SetThreadAffinityMask
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD_PTR
 
 Parameters::
@@ -44962,38 +42096,6 @@ Parameters::
 
     * HANDLE hThread
     * DWORD dwIdealProcessor
-
-
-GetProcessInformation
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * PROCESS_INFORMATION_CLASS ProcessInformationClass
-    * LPVOID ProcessInformation
-    * DWORD ProcessInformationSize
-
-
-SetProcessInformation
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-    * PROCESS_INFORMATION_CLASS ProcessInformationClass
-    * LPVOID ProcessInformation
-    * DWORD ProcessInformationSize
 
 
 SetProcessDEPPolicy
@@ -45252,7 +42354,7 @@ WaitForMultipleObjects
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -45658,7 +42760,7 @@ FormatMessageW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -45926,7 +43028,7 @@ lstrcmpW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -45954,7 +43056,7 @@ lstrcmpiW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -46054,7 +43156,7 @@ lstrlenA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -46067,7 +43169,7 @@ lstrlenW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -46313,7 +43415,7 @@ CreateSemaphoreW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -46489,7 +43591,7 @@ LoadLibraryA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
@@ -46502,26 +43604,12 @@ LoadLibraryW
 
 Signature::
 
-    * Library: rtmpal
-    * Return value: HMODULE
-
-Parameters::
-
-    * LPCWSTR lpLibFileName
-
-
-LoadPackagedLibrary
-===================
-
-Signature::
-
     * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
 
-    * LPCWSTR lpwLibFileName
-    * DWORD Reserved
+    * LPCWSTR lpLibFileName
 
 
 QueryFullProcessImageNameA
@@ -46589,7 +43677,7 @@ FatalAppExitW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -46643,40 +43731,6 @@ Parameters::
     * DWORD nSize
 
 
-GetFirmwareEnvironmentVariableExA
-=================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpName
-    * LPCSTR lpGuid
-    * PVOID pBuffer
-    * DWORD nSize
-    * PDWORD pdwAttribubutes
-
-
-GetFirmwareEnvironmentVariableExW
-=================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpName
-    * LPCWSTR lpGuid
-    * PVOID pBuffer
-    * DWORD nSize
-    * PDWORD pdwAttribubutes
-
-
 SetFirmwareEnvironmentVariableA
 ===============================
 
@@ -46707,66 +43761,6 @@ Parameters::
     * LPCWSTR lpGuid
     * PVOID pValue
     * DWORD nSize
-
-
-SetFirmwareEnvironmentVariableExA
-=================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpName
-    * LPCSTR lpGuid
-    * PVOID pValue
-    * DWORD nSize
-    * DWORD dwAttributes
-
-
-SetFirmwareEnvironmentVariableExW
-=================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpName
-    * LPCWSTR lpGuid
-    * PVOID pValue
-    * DWORD nSize
-    * DWORD dwAttributes
-
-
-GetFirmwareType
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PFIRMWARE_TYPE FirmwareType
-
-
-IsNativeVhdBoot
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PBOOL NativeVhdBoot
 
 
 FindResourceA
@@ -47027,34 +44021,6 @@ Signature::
 Parameters::
 
     * LPCWSTR lpString
-
-
-GlobalAddAtomExA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: ATOM
-
-Parameters::
-
-    * LPCSTR lpString
-    * DWORD Flags
-
-
-GlobalAddAtomExW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: ATOM
-
-Parameters::
-
-    * LPCWSTR lpString
-    * DWORD Flags
 
 
 GlobalFindAtomA
@@ -48171,7 +45137,7 @@ CopyFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -48255,21 +45221,6 @@ Parameters::
     * HANDLE hTransaction
 
 
-CopyFile2
-=========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HRESULT
-
-Parameters::
-
-    * PCWSTR pwszExistingFileName
-    * PCWSTR pwszNewFileName
-    * COPYFILE2_EXTENDED_PARAMETERS *pExtendedParameters
-
-
 MoveFileA
 =========
 
@@ -48318,7 +45269,7 @@ MoveFileExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -49188,32 +46139,6 @@ Parameters::
     * LPDWORD pcbBytesNeeded
 
 
-OperationStart
-==============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * OPERATION_START_PARAMETERS *OperationStartParams
-
-
-OperationEnd
-============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * OPERATION_END_PARAMETERS *OperationEndParams
-
-
 AccessCheckAndAuditAlarmA
 =========================
 
@@ -49507,7 +46432,7 @@ IsBadReadPtr
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -49521,7 +46446,7 @@ IsBadWritePtr
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -50010,7 +46935,7 @@ GetComputerNameW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -50202,7 +47127,7 @@ CreateProcessAsUserA
 
 Signature::
 
-    * Library: kernel32
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -50486,7 +47411,7 @@ GetSystemPowerStatus
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -51281,7 +48206,7 @@ GetFileInformationByHandleEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -52545,7 +49470,7 @@ CredWriteW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52559,7 +49484,7 @@ CredWriteA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52573,7 +49498,7 @@ CredReadW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52589,7 +49514,7 @@ CredReadA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52605,7 +49530,7 @@ CredEnumerateW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52621,7 +49546,7 @@ CredEnumerateA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52637,7 +49562,7 @@ CredWriteDomainCredentialsW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52652,7 +49577,7 @@ CredWriteDomainCredentialsA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52667,7 +49592,7 @@ CredReadDomainCredentialsW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52683,7 +49608,7 @@ CredReadDomainCredentialsA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52699,7 +49624,7 @@ CredDeleteW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52714,7 +49639,7 @@ CredDeleteA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52761,7 +49686,7 @@ CredGetTargetInfoW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52776,7 +49701,7 @@ CredGetTargetInfoA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52791,7 +49716,7 @@ CredMarshalCredentialW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52806,7 +49731,7 @@ CredMarshalCredentialA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52821,7 +49746,7 @@ CredUnmarshalCredentialW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52836,7 +49761,7 @@ CredUnmarshalCredentialA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52851,7 +49776,7 @@ CredIsMarshaledCredentialW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52953,7 +49878,7 @@ CredProtectW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52971,7 +49896,7 @@ CredProtectA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -52989,7 +49914,7 @@ CredUnprotectW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -53006,7 +49931,7 @@ CredUnprotectA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -53023,7 +49948,7 @@ CredIsProtectedW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -53037,7 +49962,7 @@ CredIsProtectedA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -53051,7 +49976,7 @@ CredFindBestCredentialW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -53067,7 +49992,7 @@ CredFindBestCredentialA
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -53083,7 +50008,7 @@ CredGetSessionTypes
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -53097,7 +50022,7 @@ CredFree
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: void
 
 Parameters::
@@ -57685,7 +54610,7 @@ DrvDeviceCapabilities
 
 Signature::
 
-    * Library: tsprint
+    * Library: unidrvui
     * Return value: DWORD
 
 Parameters::
@@ -57855,34 +54780,6 @@ Parameters::
     * PVOID pExtra
     * PDNS_RECORD *ppQueryResults
     * PVOID *pReserved
-
-
-DnsQueryEx
-==========
-
-Signature::
-
-    * Library: dnsapi
-    * Return value: DNS_STATUS
-
-Parameters::
-
-    * PDNS_QUERY_REQUEST pQueryRequest
-    * PDNS_QUERY_RESULT pQueryResults
-    * PDNS_QUERY_CANCEL pCancelHandle
-
-
-DnsCancelQuery
-==============
-
-Signature::
-
-    * Library: dnsapi
-    * Return value: DNS_STATUS
-
-Parameters::
-
-    * PDNS_QUERY_CANCEL pCancelHandle
 
 
 DnsAcquireContextHandle_W
@@ -58157,15 +55054,6 @@ Parameters::
     * PWSTR proxyName
 
 
-CeipIsOptedIn
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-
 QueryUsersOnEncryptedFile
 =========================
 
@@ -58346,7 +55234,7 @@ GetBkMode
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: int
 
 Parameters::
@@ -58359,7 +55247,7 @@ GetBitmapBits
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: LONG
 
 Parameters::
@@ -58374,7 +55262,7 @@ GetSystemPaletteEntries
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: UINT
 
 Parameters::
@@ -58390,7 +55278,7 @@ GetTextExtentPointA
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: BOOL
 
 Parameters::
@@ -58406,7 +55294,7 @@ GetTextExtentPointW
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: BOOL
 
 Parameters::
@@ -58422,7 +55310,7 @@ GetTextExtentPoint32A
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: BOOL
 
 Parameters::
@@ -58438,7 +55326,7 @@ GetTextExtentPoint32W
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: BOOL
 
 Parameters::
@@ -58454,7 +55342,7 @@ GetTextExtentExPointA
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: BOOL
 
 Parameters::
@@ -58473,7 +55361,7 @@ GetTextExtentExPointW
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: BOOL
 
 Parameters::
@@ -58492,7 +55380,7 @@ SetBitmapBits
 
 Signature::
 
-    * Library: gdi32full
+    * Library: gdi32
     * Return value: LONG WINAPI
 
 Parameters::
@@ -60507,21 +57395,6 @@ Parameters::
     * LPNLSVERSIONINFOEX lpVersionInformation
 
 
-IsValidNLSVersion
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * NLS_FUNCTION function
-    * LPCWSTR lpLocaleName
-    * LPNLSVERSIONINFOEX lpVersionInformation
-
-
 FindNLSStringEx
 ===============
 
@@ -60712,22 +57585,6 @@ Parameters::
     * PSLIST_ENTRY ListEntry
 
 
-RtlInterlockedPushListSListEx
-=============================
-
-Signature::
-
-    * Library: ntdll
-    * Return value: PSLIST_ENTRY
-
-Parameters::
-
-    * PSLIST_HEADER ListHead
-    * PSLIST_ENTRY List
-    * PSLIST_ENTRY ListEnd
-    * DWORD Count
-
-
 RtlInterlockedFlushSList
 ========================
 
@@ -60771,42 +57628,12 @@ Parameters::
     * PDWORD ReturnedProductType
 
 
-RtlCrc32
-========
-
-Signature::
-
-    * Library: ntdll
-    * Return value: DWORD
-
-Parameters::
-
-    * const void *Buffer
-    * size_t Size
-    * DWORD InitialCrc
-
-
-RtlCrc64
-========
-
-Signature::
-
-    * Library: ntdll
-    * Return value: ULONGLONG
-
-Parameters::
-
-    * const void *Buffer
-    * size_t Size
-    * ULONGLONG InitialCrc
-
-
 RegCloseKey
 ===========
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -60973,7 +57800,7 @@ RegCreateKeyExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -60994,7 +57821,7 @@ RegCreateKeyExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -61075,7 +57902,7 @@ RegDeleteKeyW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -61277,7 +58104,7 @@ RegEnumKeyExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -61443,7 +58270,7 @@ RegOpenKeyExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -61460,7 +58287,7 @@ RegOpenKeyExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -61629,7 +58456,7 @@ RegQueryValueExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -61647,7 +58474,7 @@ RegQueryValueExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -61821,7 +58648,7 @@ RegSetValueExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -61839,7 +58666,7 @@ RegSetValueExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LSTATUS
 
 Parameters::
@@ -61994,7 +58821,7 @@ RegCopyTreeW
 
 Signature::
 
-    * Library: kernel32
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -62206,20 +59033,6 @@ Parameters::
     * DWORD dwReason
 
 
-CheckForHiberboot
-=================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PBOOLEAN pHiberboot
-    * BOOLEAN bClearFlag
-
-
 RegSaveKeyExA
 =============
 
@@ -62423,8 +59236,8 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * struct sockaddr FAR *addr
-    * int FAR *addrlen
+    * struct sockaddr *addr
+    * int *addrlen
 
 
 bind
@@ -62438,7 +59251,7 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * const struct sockaddr FAR *name
+    * const struct sockaddr *name
     * int namelen
 
 
@@ -62466,7 +59279,7 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * const struct sockaddr FAR *name
+    * const struct sockaddr *name
     * int namelen
 
 
@@ -62482,7 +59295,7 @@ Parameters::
 
     * SOCKET s
     * long cmd
-    * u_long FAR *argp
+    * u_long *argp
 
 
 getpeername
@@ -62496,8 +59309,8 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * struct sockaddr FAR *name
-    * int FAR *namelen
+    * struct sockaddr *name
+    * int *namelen
 
 
 getsockname
@@ -62511,8 +59324,8 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * struct sockaddr FAR *name
-    * int FAR *namelen
+    * struct sockaddr *name
+    * int *namelen
 
 
 getsockopt
@@ -62528,8 +59341,8 @@ Parameters::
     * SOCKET s
     * int level
     * int optname
-    * char FAR *optval
-    * int FAR *optlen
+    * char *optval
+    * int *optlen
 
 
 htonl
@@ -62568,7 +59381,7 @@ Signature::
 
 Parameters::
 
-    * const char FAR *cp
+    * const char *cp
 
 
 inet_ntoa
@@ -62635,7 +59448,7 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * char FAR *buf
+    * char *buf
     * int len
     * int flags
 
@@ -62651,11 +59464,11 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * char FAR *buf
+    * char *buf
     * int len
     * int flags
-    * struct sockaddr FAR *from
-    * int FAR *fromlen
+    * struct sockaddr *from
+    * int *fromlen
 
 
 select
@@ -62669,10 +59482,10 @@ Signature::
 Parameters::
 
     * int nfds
-    * fd_set FAR *readfds
-    * fd_set FAR *writefds
-    * fd_set FAR *exceptfds
-    * const struct timeval FAR *timeout
+    * fd_set *readfds
+    * fd_set *writefds
+    * fd_set *exceptfds
+    * const struct timeval *timeout
 
 
 send
@@ -62686,7 +59499,7 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * const char FAR *buf
+    * const char *buf
     * int len
     * int flags
 
@@ -62702,10 +59515,10 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * const char FAR *buf
+    * const char *buf
     * int len
     * int flags
-    * const struct sockaddr FAR *to
+    * const struct sockaddr *to
     * int tolen
 
 
@@ -62722,7 +59535,7 @@ Parameters::
     * SOCKET s
     * int level
     * int optname
-    * const char FAR *optval
+    * const char *optval
     * int optlen
 
 
@@ -62765,7 +59578,7 @@ Signature::
 
 Parameters::
 
-    * const char FAR *addr
+    * const char *addr
     * int len
     * int type
 
@@ -62780,7 +59593,7 @@ Signature::
 
 Parameters::
 
-    * const char FAR *name
+    * const char *name
 
 
 gethostname
@@ -62793,21 +59606,7 @@ Signature::
 
 Parameters::
 
-    * char FAR *name
-    * int namelen
-
-
-GetHostNameW
-============
-
-Signature::
-
-    * Library: ws2_32
-    * Return value: int
-
-Parameters::
-
-    * PWSTR name
+    * char *name
     * int namelen
 
 
@@ -62822,7 +59621,7 @@ Signature::
 Parameters::
 
     * int port
-    * const char FAR *proto
+    * const char *proto
 
 
 getservbyname
@@ -62835,8 +59634,8 @@ Signature::
 
 Parameters::
 
-    * const char FAR *name
-    * const char FAR *proto
+    * const char *name
+    * const char *proto
 
 
 getprotobynumber
@@ -62862,7 +59661,7 @@ Signature::
 
 Parameters::
 
-    * const char FAR *name
+    * const char *name
 
 
 WSAStartup
@@ -62917,9 +59716,9 @@ Parameters::
 
     * HWND hWnd
     * u_int wMsg
-    * const char FAR *name
-    * const char FAR *proto
-    * char FAR *buf
+    * const char *name
+    * const char *proto
+    * char *buf
     * int buflen
 
 
@@ -62936,8 +59735,8 @@ Parameters::
     * HWND hWnd
     * u_int wMsg
     * int port
-    * const char FAR *proto
-    * char FAR *buf
+    * const char *proto
+    * char *buf
     * int buflen
 
 
@@ -62953,8 +59752,8 @@ Parameters::
 
     * HWND hWnd
     * u_int wMsg
-    * const char FAR *name
-    * char FAR *buf
+    * const char *name
+    * char *buf
     * int buflen
 
 
@@ -62971,7 +59770,7 @@ Parameters::
     * HWND hWnd
     * u_int wMsg
     * int number
-    * char FAR *buf
+    * char *buf
     * int buflen
 
 
@@ -62987,8 +59786,8 @@ Parameters::
 
     * HWND hWnd
     * u_int wMsg
-    * const char FAR *name
-    * char FAR *buf
+    * const char *name
+    * char *buf
     * int buflen
 
 
@@ -63004,10 +59803,10 @@ Parameters::
 
     * HWND hWnd
     * u_int wMsg
-    * const char FAR *addr
+    * const char *addr
     * int len
     * int type
-    * char FAR *buf
+    * char *buf
     * int buflen
 
 
@@ -63051,7 +59850,7 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * struct sockaddr FAR *addr
+    * struct sockaddr *addr
     * LPINT addrlen
     * LPCONDITIONPROC lpfnCondition
     * DWORD_PTR dwCallbackData
@@ -63081,7 +59880,7 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * const struct sockaddr FAR *name
+    * const struct sockaddr *name
     * int namelen
     * LPWSABUF lpCallerData
     * LPWSABUF lpCalleeData
@@ -63223,7 +60022,7 @@ Parameters::
 
     * SOCKET s
     * u_long hostlong
-    * u_long FAR *lpnetlong
+    * u_long *lpnetlong
 
 
 WSAHtons
@@ -63238,7 +60037,7 @@ Parameters::
 
     * SOCKET s
     * u_short hostshort
-    * u_short FAR *lpnetshort
+    * u_short *lpnetshort
 
 
 WSAIoctl
@@ -63273,7 +60072,7 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * const struct sockaddr FAR *name
+    * const struct sockaddr *name
     * int namelen
     * LPWSABUF lpCallerData
     * LPWSABUF lpCalleeData
@@ -63294,7 +60093,7 @@ Parameters::
 
     * SOCKET s
     * u_long netlong
-    * u_long FAR *lphostlong
+    * u_long *lphostlong
 
 
 WSANtohs
@@ -63309,7 +60108,7 @@ Parameters::
 
     * SOCKET s
     * u_short netshort
-    * u_short FAR *lphostshort
+    * u_short *lphostshort
 
 
 WSARecv
@@ -63342,7 +60141,7 @@ Signature::
 Parameters::
 
     * SOCKET s
-    * __out_data_sourceLPWSABUF lpInboundDisconnectData
+    * LPWSABUF lpInboundDisconnectData
 
 
 WSARecvFrom
@@ -63360,7 +60159,7 @@ Parameters::
     * DWORD dwBufferCount
     * LPDWORD lpNumberOfBytesRecvd
     * LPDWORD lpFlags
-    * struct sockaddr FAR *lpFrom
+    * struct sockaddr *lpFrom
     * LPINT lpFromlen
     * LPWSAOVERLAPPED lpOverlapped
     * LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
@@ -63427,7 +60226,7 @@ Parameters::
     * DWORD dwBufferCount
     * LPDWORD lpNumberOfBytesSent
     * DWORD dwFlags
-    * const struct sockaddr FAR *lpTo
+    * const struct sockaddr *lpTo
     * int iTolen
     * LPWSAOVERLAPPED lpOverlapped
     * LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
@@ -63493,7 +60292,7 @@ Signature::
 Parameters::
 
     * DWORD cEvents
-    * const WSAEVENT FAR *lphEvents
+    * const WSAEVENT *lphEvents
     * BOOL fWaitAll
     * DWORD dwTimeout
     * BOOL fAlertable
@@ -63884,13 +60683,26 @@ InitializePrintMonitor2
 
 Signature::
 
-    * Library: win32spl
+    * Library: hpfllw73
     * Return value: LPMONITOR2
 
 Parameters::
 
     * PMONITORINIT pMonitorInit
     * PHANDLE phMonitor
+
+
+InitializePrintMonitor
+======================
+
+Signature::
+
+    * Library: usbmon
+    * Return value: LPMONITOREX
+
+Parameters::
+
+    * LPWSTR pRegistryRoot
 
 
 InitializePrintMonitorUI
@@ -64981,50 +61793,6 @@ Parameters::
     * LPWSTR pPrintProvidorName
 
 
-GetJobNamedPropertyValue
-========================
-
-Signature::
-
-    * Library: spoolss
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hPrinter
-    * DWORD JobId
-    * PCWSTR pszName
-    * PrintPropertyValue *pValue
-
-
-FreePrintPropertyValue
-======================
-
-Signature::
-
-    * Library: spoolss
-    * Return value: void
-
-Parameters::
-
-    * PrintPropertyValue *pValue
-
-
-DeleteJobNamedProperty
-======================
-
-Signature::
-
-    * Library: spoolss
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hPrinter
-    * DWORD JobId
-    * PCWSTR pszName
-
-
 ChangeServiceConfigA
 ====================
 
@@ -65215,7 +61983,7 @@ EnumDependentServicesW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -65295,7 +62063,7 @@ EnumServicesStatusExW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -65333,7 +62101,7 @@ GetServiceKeyNameW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -65365,7 +62133,7 @@ GetServiceDisplayNameW
 
 Signature::
 
-    * Library: sechost
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
@@ -65768,21 +62536,6 @@ Parameters::
     * PVOID pControlParams
 
 
-QueryServiceDynamicInformation
-==============================
-
-Signature::
-
-    * Library: sechost
-    * Return value: BOOL
-
-Parameters::
-
-    * SERVICE_STATUS_HANDLE hServiceStatus
-    * DWORD dwInfoLevel
-    * PVOID *ppDynamicInfo
-
-
 WintrustSetDefaultIncludePEPageHashes
 =====================================
 
@@ -65907,7 +62660,7 @@ Signature::
 Parameters::
 
     * int nBuff
-    * HKL FAR *lpList
+    * HKL *lpList
 
 
 GetKeyboardLayout
@@ -66694,15 +63447,6 @@ Signature::
     * Return value: LPARAM
 
 
-GetUnpredictedMessagePos
-========================
-
-Signature::
-
-    * Library: user32
-    * Return value: DWORD
-
-
 IsWow64Message
 ==============
 
@@ -67010,33 +63754,6 @@ Parameters::
 
 UnregisterPowerSettingNotification
 ==================================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HPOWERNOTIFY Handle
-
-
-RegisterSuspendResumeNotification
-=================================
-
-Signature::
-
-    * Library: user32
-    * Return value: HPOWERNOTIFY
-
-Parameters::
-
-    * HANDLE hRecipient
-    * DWORD Flags
-
-
-UnregisterSuspendResumeNotification
-===================================
 
 Signature::
 
@@ -69408,413 +66125,6 @@ Parameters::
     * PULONG pulFlags
 
 
-InitializeTouchInjection
-========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 maxCount
-    * DWORD dwMode
-
-
-InjectTouchInput
-================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 count
-    * const POINTER_TOUCH_INFO *contacts
-
-
-GetPointerType
-==============
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * POINTER_INPUT_TYPE *pointerType
-
-
-GetPointerCursorId
-==================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *cursorId
-
-
-GetPointerInfo
-==============
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * POINTER_INFO *pointerInfo
-
-
-GetPointerInfoHistory
-=====================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *entriesCount
-    * POINTER_INFO *pointerInfo
-
-
-GetPointerFrameInfo
-===================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *pointerCount
-    * POINTER_INFO *pointerInfo
-
-
-GetPointerFrameInfoHistory
-==========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *entriesCount
-    * UINT32 *pointerCount
-    * POINTER_INFO *pointerInfo
-
-
-GetPointerTouchInfo
-===================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * POINTER_TOUCH_INFO *touchInfo
-
-
-GetPointerTouchInfoHistory
-==========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *entriesCount
-    * POINTER_TOUCH_INFO *touchInfo
-
-
-GetPointerFrameTouchInfo
-========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *pointerCount
-    * POINTER_TOUCH_INFO *touchInfo
-
-
-GetPointerFrameTouchInfoHistory
-===============================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *entriesCount
-    * UINT32 *pointerCount
-    * POINTER_TOUCH_INFO *touchInfo
-
-
-GetPointerPenInfo
-=================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * POINTER_PEN_INFO *penInfo
-
-
-GetPointerPenInfoHistory
-========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *entriesCount
-    * POINTER_PEN_INFO *penInfo
-
-
-GetPointerFramePenInfo
-======================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *pointerCount
-    * POINTER_PEN_INFO *penInfo
-
-
-GetPointerFramePenInfoHistory
-=============================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 *entriesCount
-    * UINT32 *pointerCount
-    * POINTER_PEN_INFO *penInfo
-
-
-SkipPointerFrameMessages
-========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-
-
-RegisterPointerInputTarget
-==========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HWND hwnd
-    * POINTER_INPUT_TYPE pointerType
-
-
-UnregisterPointerInputTarget
-============================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HWND hwnd
-    * POINTER_INPUT_TYPE pointerType
-
-
-EnableMouseInPointer
-====================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * BOOL fEnable
-
-
-IsMouseInPointerEnabled
-=======================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-
-RegisterTouchHitTestingWindow
-=============================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HWND hwnd
-    * ULONG value
-
-
-EvaluateProximityToRect
-=======================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * const RECT *controlBoundingBox
-    * const TOUCH_HIT_TESTING_INPUT *pHitTestingInput
-    * TOUCH_HIT_TESTING_PROXIMITY_EVALUATION *pProximityEval
-
-
-EvaluateProximityToPolygon
-==========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 numVertices
-    * const POINT *controlPolygon
-    * const TOUCH_HIT_TESTING_INPUT *pHitTestingInput
-    * TOUCH_HIT_TESTING_PROXIMITY_EVALUATION *pProximityEval
-
-
-PackTouchHitTestingProximityEvaluation
-======================================
-
-Signature::
-
-    * Library: user32
-    * Return value: LRESULT
-
-Parameters::
-
-    * const TOUCH_HIT_TESTING_INPUT *pHitTestingInput
-    * const TOUCH_HIT_TESTING_PROXIMITY_EVALUATION *pProximityEval
-
-
-GetWindowFeedbackSetting
-========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HWND hwnd
-    * FEEDBACK_TYPE feedback
-    * DWORD dwFlags
-    * UINT32 *pSize
-    * VOID *config
-
-
-SetWindowFeedbackSetting
-========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HWND hwnd
-    * FEEDBACK_TYPE feedback
-    * DWORD dwFlags
-    * UINT32 size
-    * const VOID *configuration
-
-
-GetPointerInputTransform
-========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 historyCount
-    * INPUT_TRANSFORM *inputTransform
-
-
 GetLastInputInfo
 ================
 
@@ -69987,23 +66297,6 @@ Parameters::
     * UINT_PTR nIDEvent
     * UINT uElapse
     * TIMERPROC lpTimerFunc
-
-
-SetCoalescableTimer
-===================
-
-Signature::
-
-    * Library: user32
-    * Return value: UINT_PTR
-
-Parameters::
-
-    * HWND hWnd
-    * UINT_PTR nIDEvent
-    * UINT uElapse
-    * TIMERPROC lpTimerFunc
-    * ULONG uToleranceDelay
 
 
 KillTimer
@@ -72315,34 +68608,6 @@ Parameters::
     * LPPOINT lpPoint
 
 
-LogicalToPhysicalPointForPerMonitorDPI
-======================================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HWND hWnd
-    * LPPOINT lpPoint
-
-
-PhysicalToLogicalPointForPerMonitorDPI
-======================================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HWND hWnd
-    * LPPOINT lpPoint
-
-
 MapWindowPoints
 ===============
 
@@ -74036,7 +70301,7 @@ Parameters::
     * UINT wHow
     * const RECT *lpRect
     * UINT cKids
-    * const HWND FAR *lpKids
+    * const HWND *lpKids
 
 
 WinHelpA
@@ -74985,110 +71250,6 @@ Parameters::
     * UINT cbSizeHeader
 
 
-GetPointerDevices
-=================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 *deviceCount
-    * POINTER_DEVICE_INFO *pointerDevices
-
-
-GetPointerDevice
-================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE device
-    * POINTER_DEVICE_INFO *pointerDevice
-
-
-GetPointerDeviceProperties
-==========================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE device
-    * UINT32 *propertyCount
-    * POINTER_DEVICE_PROPERTY *pointerProperties
-
-
-RegisterPointerDeviceNotifications
-==================================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HWND window
-    * BOOL notifyRange
-
-
-GetPointerDeviceRects
-=====================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE device
-    * RECT *pointerDeviceRect
-    * RECT *displayRect
-
-
-GetPointerDeviceCursors
-=======================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE device
-    * UINT32 *cursorCount
-    * POINTER_DEVICE_CURSOR_INFO *deviceCursors
-
-
-GetRawPointerDeviceData
-=======================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * UINT32 pointerId
-    * UINT32 historyCount
-    * UINT32 propertiesCount
-    * POINTER_DEVICE_PROPERTY *pProperties
-    * LONG *pValues
-
-
 ChangeWindowMessageFilter
 =========================
 
@@ -75238,197 +71399,6 @@ Parameters::
     * HWND hWnd
 
 
-GetCurrentInputMessageSource
-============================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * INPUT_MESSAGE_SOURCE *inputMessageSource
-
-
-GetCIMSSM
-=========
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * INPUT_MESSAGE_SOURCE *inputMessageSource
-
-
-GetAutoRotationState
-====================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * PAR_STATE pState
-
-
-GetDisplayAutoRotationPreferences
-=================================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * ORIENTATION_PREFERENCE *pOrientation
-
-
-SetDisplayAutoRotationPreferences
-=================================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * ORIENTATION_PREFERENCE orientation
-
-
-IsImmersiveProcess
-==================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hProcess
-
-
-SetProcessRestrictionExemption
-==============================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * BOOL fEnableExemption
-
-
-WFDOpenHandle
-=============
-
-Signature::
-
-    * Library: wlanapi
-    * Return value: DWORD
-
-Parameters::
-
-    * DWORD dwClientVersion
-    * PDWORD pdwNegotiatedVersion
-    * PHANDLE phClientHandle
-
-
-WFDCloseHandle
-==============
-
-Signature::
-
-    * Library: wlanapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hClientHandle
-
-
-WFDStartOpenSession
-===================
-
-Signature::
-
-    * Library: wlanapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hClientHandle
-    * PDOT11_MAC_ADDRESS pDeviceAddress
-    * PVOID pvContext
-    * WFD_OPEN_SESSION_COMPLETE_CALLBACK pfnCallback
-    * PHANDLE phSessionHandle
-
-
-WFDCancelOpenSession
-====================
-
-Signature::
-
-    * Library: wlanapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hSessionHandle
-
-
-WFDOpenLegacySession
-====================
-
-Signature::
-
-    * Library: wlanapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hClientHandle
-    * PDOT11_MAC_ADDRESS pLegacyMacAddress
-    * HANDLE *phSessionHandle
-    * GUID *pGuidSessionInterface
-
-
-WFDCloseSession
-===============
-
-Signature::
-
-    * Library: wlanapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hSessionHandle
-
-
-WFDUpdateDeviceVisibility
-=========================
-
-Signature::
-
-    * Library: wlanapi
-    * Return value: DWORD
-
-Parameters::
-
-    * PDOT11_MAC_ADDRESS pDeviceAddress
-
-
 Wow64DisableWow64FsRedirection
 ==============================
 
@@ -75527,7 +71497,7 @@ Signature::
 Parameters::
 
     * LPGUID lpProviderId
-    * const WCHAR FAR *lpszProviderDllPath
+    * const WCHAR *lpszProviderDllPath
     * const LPWSAPROTOCOL_INFOW lpProtocolInfoList
     * DWORD dwNumberOfEntries
     * LPINT lpErrno
@@ -75544,7 +71514,7 @@ Signature::
 Parameters::
 
     * LPGUID lpProviderId
-    * WCHAR FAR *lpszProviderDllPath
+    * WCHAR *lpszProviderDllPath
     * LPINT lpProviderDllPathLen
     * LPINT lpErrno
 
@@ -75560,7 +71530,7 @@ Signature::
 Parameters::
 
     * LPGUID lpProviderId
-    * const WCHAR FAR *lpszProviderDllPath
+    * const WCHAR *lpszProviderDllPath
     * const LPWSAPROTOCOL_INFOW lpProtocolInfoList
     * DWORD dwNumberOfEntries
     * LPINT lpErrno
@@ -75770,32 +71740,6 @@ Parameters::
     * LPOVERLAPPED lpOverlapped
     * LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine
     * LPHANDLE lpHandle
-
-
-GetAddrInfoExCancel
-===================
-
-Signature::
-
-    * Library: ws2_32
-    * Return value: INT
-
-Parameters::
-
-    * LPHANDLE lpHandle
-
-
-GetAddrInfoExOverlappedResult
-=============================
-
-Signature::
-
-    * Library: ws2_32
-    * Return value: INT
-
-Parameters::
-
-    * LPOVERLAPPED lpOverlapped
 
 
 SetAddrInfoExA
