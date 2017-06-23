@@ -85,3 +85,12 @@
   - file.txt
     - CreateFile2
       - Reason: Minimum Windows 8
+
+# Notes
+
+  - Notepad: All files work except
+    - process.txt slows execution down significantly
+    - sync.txt prevents Notepad from running
+
+  - Internet Explorer
+

@@ -57,6 +57,8 @@ typedef struct _OBJECT_ATTRIBUTES {
 
 typedef void *HINTERNET;
 
+// evan: already defined in /usr/share/mingw-w64/include/ws2tcpip.h
+/*
 typedef struct addrinfo {
     int              ai_flags;
     int              ai_family;
@@ -78,6 +80,7 @@ typedef struct addrinfoW {
     struct sockaddr  *ai_addr;
     struct addrinfoW *ai_next;
 } ADDRINFOW, *PADDRINFOW;
+*/
 
 typedef enum _KEY_INFORMATION_CLASS {
     KeyBasicInformation            = 0,
@@ -467,6 +470,8 @@ typedef struct _FILE_FS_VOLUME_INFORMATION {
     WCHAR         VolumeLabel[1];
 } FILE_FS_VOLUME_INFORMATION, *PFILE_FS_VOLUME_INFORMATION;
 
+// evan: already defined in /usr/share/mingw-w64/include/minwinbase.h
+/*
 typedef enum _FILE_INFO_BY_HANDLE_CLASS {
     FileBasicInfo                   = 0,
     FileStandardInfo                = 1,
@@ -491,6 +496,7 @@ typedef enum _FILE_INFO_BY_HANDLE_CLASS {
     FileIdExtdDirectoryRestartInfo  = 20,
     MaximumFileInfoByHandlesClass
 } FILE_INFO_BY_HANDLE_CLASS, *PFILE_INFO_BY_HANDLE_CLASS;
+*/
 
 typedef enum _SYSTEM_INFORMATION_CLASS {
     SystemBasicInformation = 0,
@@ -755,6 +761,8 @@ static inline UNICODE_STRING *unistr_from_objattr(OBJECT_ATTRIBUTES *obj)
 
 #define MOD_NOREPEAT 0x4000
 
+// evan: already defined in /usr/share/mingw-w64/include/winbase.h
+/*
 typedef enum _COPYFILE2_MESSAGE_TYPE {
      COPYFILE2_CALLBACK_NONE = 0,
      COPYFILE2_CALLBACK_CHUNK_STARTED,
@@ -881,6 +889,7 @@ typedef struct _CREATEFILE2_EXTENDED_PARAMETERS {
     LPSECURITY_ATTRIBUTES lpSecurityAttributes; 
     HANDLE hTemplateFile;      
 } CREATEFILE2_EXTENDED_PARAMETERS, *PCREATEFILE2_EXTENDED_PARAMETERS, *LPCREATEFILE2_EXTENDED_PARAMETERS;
+*/
 
 typedef BOOL (CALLBACK* CALINFO_ENUMPROCEXEX)(LPWSTR, CALID, LPWSTR, LPARAM);
 
@@ -890,6 +899,8 @@ typedef BOOL (CALLBACK* TIMEFMT_ENUMPROCEX)(LPWSTR, LPARAM);
 
 typedef BOOL (CALLBACK* LOCALE_ENUMPROCEX)(LPWSTR, DWORD, LPARAM);
 
+// evan: already defined in /usr/share/mingw-w64/include/winnt.h
+/*
 typedef struct _PROCESSOR_NUMBER {
     WORD   Group;
     BYTE  Number;
@@ -915,6 +926,8 @@ typedef struct FILE_ID_DESCRIPTOR {
     } DUMMYUNIONNAME;
 } FILE_ID_DESCRIPTOR, *LPFILE_ID_DESCRIPTOR;
 
+*/
+
 typedef struct _WIN32_MEMORY_RANGE_ENTRY {
     PVOID VirtualAddress;
     SIZE_T NumberOfBytes;
@@ -929,5 +942,366 @@ BAD_MEMORY_CALLBACK_ROUTINE(
     );
 
 typedef BAD_MEMORY_CALLBACK_ROUTINE *PBAD_MEMORY_CALLBACK_ROUTINE;
+
+// evan: below are added to support newly hooked API calls
+/*
+// ./um/AccCtrl.h
+typedef enum _ACCESS_MODE
+{
+    NOT_USED_ACCESS = 0,
+    GRANT_ACCESS,
+    SET_ACCESS,
+    DENY_ACCESS,
+    REVOKE_ACCESS,
+    SET_AUDIT_SUCCESS,
+    SET_AUDIT_FAILURE
+} ACCESS_MODE;
+
+typedef enum _PROGRESS_INVOKE_SETTING {
+    ProgressInvokeNever = 1,    // Never invoke the progress function
+    ProgressInvokeEveryObject,  // Invoke for each object
+    ProgressInvokeOnError,      // Invoke only for each error case
+    ProgressCancelOperation,    // Stop propagation and return
+    ProgressRetryOperation,     // Retry operation on subtree
+#if (NTDDI_VERSION >= NTDDI_VISTA)
+    ProgressInvokePrePostError, // Invoke Pre, Post, Error
+#endif // (NTDDI_VERSION >= NTDDI_VISTA)
+} PROG_INVOKE_SETTING, *PPROG_INVOKE_SETTING;
+
+// ./shared/ws2def.h
+typedef struct addrinfoexA
+{
+    int                 ai_flags;       // AI_PASSIVE, AI_CANONNAME, AI_NUMERICHOST
+    int                 ai_family;      // PF_xxx
+    int                 ai_socktype;    // SOCK_xxx
+    int                 ai_protocol;    // 0 or IPPROTO_xxx for IPv4 and IPv6
+    size_t              ai_addrlen;     // Length of ai_addr
+    char               *ai_canonname;   // Canonical name for nodename
+    struct sockaddr    *ai_addr;        // Binary address
+    void               *ai_blob;
+    size_t              ai_bloblen;
+    LPGUID              ai_provider;
+    struct addrinfoexA *ai_next;        // Next structure in linked list
+} ADDRINFOEXA, *PADDRINFOEXA, *LPADDRINFOEXA;
+
+typedef struct addrinfoexW
+{
+    int                 ai_flags;       // AI_PASSIVE, AI_CANONNAME, AI_NUMERICHOST
+    int                 ai_family;      // PF_xxx
+    int                 ai_socktype;    // SOCK_xxx
+    int                 ai_protocol;    // 0 or IPPROTO_xxx for IPv4 and IPv6
+    size_t              ai_addrlen;     // Length of ai_addr
+    PWSTR               ai_canonname;   // Canonical name for nodename
+//  _Field_size_bytes_(ai_addrlen) struct sockaddr    *ai_addr;        // Binary address
+    struct sockaddr    *ai_addr;        // Binary address
+//  _Field_size_(ai_bloblen) void               *ai_blob;
+    void               *ai_blob;
+    size_t              ai_bloblen;
+    LPGUID              ai_provider;
+    struct addrinfoexW *ai_next;        // Next structure in linked list
+} ADDRINFOEXW, *PADDRINFOEXW, *LPADDRINFOEXW;
+
+// ./um/AuthZ.h
+DECLARE_HANDLE(AUTHZ_ACCESS_CHECK_RESULTS_HANDLE);
+DECLARE_HANDLE(AUTHZ_AUDIT_EVENT_HANDLE);
+DECLARE_HANDLE(AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE);
+DECLARE_HANDLE(AUTHZ_CLIENT_CONTEXT_HANDLE);
+DECLARE_HANDLE(AUTHZ_RESOURCE_MANAGER_HANDLE);
+DECLARE_HANDLE(AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE);
+typedef enum _AUTHZ_CONTEXT_INFORMATION_CLASS
+{
+    AuthzContextInfoUserSid = 1,
+    AuthzContextInfoGroupsSids,
+    AuthzContextInfoRestrictedSids,
+    AuthzContextInfoPrivileges,
+    AuthzContextInfoExpirationTime,
+    AuthzContextInfoServerContext,
+    AuthzContextInfoIdentifier,
+    AuthzContextInfoSource,
+    AuthzContextInfoAll,
+    AuthzContextInfoAuthenticationId,
+    AuthzContextInfoSecurityAttributes,
+    AuthzContextInfoDeviceSids,
+    AuthzContextInfoUserClaims,
+    AuthzContextInfoDeviceClaims,
+    AuthzContextInfoAppContainerSid,
+    AuthzContextInfoCapabilitySids
+} AUTHZ_CONTEXT_INFORMATION_CLASS;
+
+// ./um/avrt.h
+typedef enum _AVRT_PRIORITY
+{
+    AVRT_PRIORITY_VERYLOW = -2,
+    AVRT_PRIORITY_LOW,
+    AVRT_PRIORITY_NORMAL,
+    AVRT_PRIORITY_HIGH,
+    AVRT_PRIORITY_CRITICAL
+} AVRT_PRIORITY, *PAVRT_PRIORITY;
+
+// ./um/cryptxml.h
+typedef enum
+{
+    //
+    // CRYPT_XML_CHARSET_AUTO is supported only in CryptXmlOpenToDecode mode.
+    // The encoded XML character set will be determined by the parser from 
+    // the XML declaration or the best guess on the characters.
+    CRYPT_XML_CHARSET_AUTO        = 0,
+
+    CRYPT_XML_CHARSET_UTF8        = 1,
+
+    CRYPT_XML_CHARSET_UTF16LE     = 2,
+
+    CRYPT_XML_CHARSET_UTF16BE     = 3,
+}CRYPT_XML_CHARSET;
+
+typedef struct _CRYPT_XML_BLOB{
+    CRYPT_XML_CHARSET                   dwCharset;
+//  _Field_range_( 0, CRYPT_XML_BLOB_MAX )
+    ULONG                               cbData;    
+//  _Field_size_(cbData)
+    BYTE                                *pbData;    
+}CRYPT_XML_BLOB, *PCRYPT_XML_BLOB;
+
+typedef enum
+{
+    CRYPT_XML_PROPERTY_MAX_HEAP_SIZE        =   1,  // ULONG, sizeof(ULONG)
+    CRYPT_XML_PROPERTY_SIGNATURE_LOCATION   =   2,  // LPCWSTR*, sizeof(LPCWSTR)
+    CRYPT_XML_PROPERTY_MAX_SIGNATURES       =   3,  // ULONG, sizeof(ULONG)
+    CRYPT_XML_PROPERTY_DOC_DECLARATION      =   4,  // BOOL, sizeof(BOOL)
+    CRYPT_XML_PROPERTY_XML_OUTPUT_CHARSET   =   5,  // CRYPT_XML_CHARSET, sizeof(CRYPT_XML_CHARSET)
+}CRYPT_XML_PROPERTY_ID;
+
+typedef struct _CRYPT_XML_PROPERTY{
+    CRYPT_XML_PROPERTY_ID               dwPropId;
+//  _Field_size_bytes_( cbValue )
+    const void*                         pvValue;
+    ULONG                               cbValue;
+}CRYPT_XML_PROPERTY, *PCRYPT_XML_PROPERTY;
+
+typedef
+HRESULT
+(CALLBACK *PFN_CRYPT_XML_DATA_PROVIDER_READ)(
+                    void                *pvCallbackState,
+//  _Out_writes_bytes_to_( cbData, *pcbRead )
+                    BYTE                *pbData,
+                    ULONG               cbData,
+//  _Out_range_( 0, cbData )
+                    ULONG               *pcbRead
+    );
+
+typedef
+HRESULT
+(CALLBACK *PFN_CRYPT_XML_DATA_PROVIDER_CLOSE)(
+                    void                *pvCallbackState
+    );
+
+typedef struct _CRYPT_XML_DATA_PROVIDER{
+        void                            *pvCallbackState;
+        ULONG                           cbBufferSize;
+        PFN_CRYPT_XML_DATA_PROVIDER_READ pfnRead;
+        PFN_CRYPT_XML_DATA_PROVIDER_CLOSE pfnClose;
+}CRYPT_XML_DATA_PROVIDER, *PCRYPT_XML_DATA_PROVIDER;
+
+typedef struct _CRYPT_XML_ALGORITHM{
+    ULONG                               cbSize;    
+    LPCWSTR                             wszAlgorithm;
+    CRYPT_XML_BLOB                      Encoded;
+}CRYPT_XML_ALGORITHM, *PCRYPT_XML_ALGORITHM;
+
+typedef
+HRESULT
+(CALLBACK *PFN_CRYPT_XML_CREATE_TRANSFORM)(
+                    const CRYPT_XML_ALGORITHM *pTransform,
+                    CRYPT_XML_DATA_PROVIDER *pProviderIn,
+                    CRYPT_XML_DATA_PROVIDER *pProviderOut
+    );
+
+typedef struct _CRYPT_XML_TRANSFORM_INFO{
+    ULONG                               cbSize;    
+    LPCWSTR                             wszAlgorithm;
+    ULONG                               cbBufferSize;
+    DWORD                               dwFlags;
+    PFN_CRYPT_XML_CREATE_TRANSFORM      pfnCreateTransform;
+}CRYPT_XML_TRANSFORM_INFO, *PCRYPT_XML_TRANSFORM_INFO;
+
+typedef struct _CRYPT_XML_TRANSFORM_CHAIN_CONFIG{
+    ULONG                               cbSize;    
+    ULONG                               cTransformInfo;
+//  _Field_size_(cTransformInfo)
+    PCRYPT_XML_TRANSFORM_INFO           *rgpTransformInfo;
+} CRYPT_XML_TRANSFORM_CHAIN_CONFIG, *PCRYPT_XML_TRANSFORM_CHAIN_CONFIG;
+
+typedef void*   HCRYPTXML;
+
+// ./um/WinDNS.h
+typedef LONG    DNS_STATUS;
+
+typedef
+VOID
+(WINAPI *DNS_PROXY_COMPLETION_ROUTINE) (
+    void *completionContext,
+    DNS_STATUS status);
+
+typedef enum DNS_PROXY_INFORMATION_TYPE {
+                DNS_PROXY_INFORMATION_DIRECT,
+                DNS_PROXY_INFORMATION_DEFAULT_SETTINGS,
+                DNS_PROXY_INFORMATION_PROXY_NAME,
+                DNS_PROXY_INFORMATION_DOES_NOT_EXIST
+}   DNS_PROXY_INFORMATION_TYPE;
+
+typedef struct DNS_PROXY_INFORMATION {
+                ULONG version;  // Current version is 1
+                DNS_PROXY_INFORMATION_TYPE proxyInformationType;
+                PWSTR proxyName;
+} DNS_PROXY_INFORMATION;
+
+// ./um/AclAPI.h
+typedef void (*FN_PROGRESS) (
+    LPWSTR                     pObjectName,    // name of object just processed
+    DWORD                      Status,         // status of operation on object
+    PPROG_INVOKE_SETTING    pInvokeSetting, // Never, always,
+    PVOID                      Args,           // Caller specific data
+    BOOL                       SecuritySet     // Whether security was set
+);
+
+// ./um/wincrypt.h
+typedef void *HCERT_SERVER_OCSP_RESPONSE;
+typedef ULONG_PTR HCRYPTPROV_LEGACY;
+typedef ULONG_PTR HCRYPTPROV_OR_NCRYPT_KEY_HANDLE;
+
+// ./um/http.h
+typedef struct _HTTPAPI_VERSION
+{
+    USHORT HttpApiMajorVersion;
+    USHORT HttpApiMinorVersion;
+
+} HTTPAPI_VERSION, *PHTTPAPI_VERSION;
+
+typedef ULONGLONG      HTTP_OPAQUE_ID,         *PHTTP_OPAQUE_ID;
+typedef HTTP_OPAQUE_ID HTTP_REQUEST_ID,        *PHTTP_REQUEST_ID;
+typedef HTTP_OPAQUE_ID HTTP_CONNECTION_ID,     *PHTTP_CONNECTION_ID;
+
+typedef enum _HTTP_SERVER_PROPERTY
+{
+    //
+    // Used for enabling server side authentication.
+    //
+
+    HttpServerAuthenticationProperty,
+
+    //
+    // Used for enabling logging.
+    //
+
+    HttpServerLoggingProperty,
+
+    //
+    // Used for setting QoS properties.
+    //
+
+    HttpServerQosProperty,
+
+    //
+    // Used for configuring timeouts.
+    //
+
+    HttpServerTimeoutsProperty,
+
+    //
+    // Used for limiting request queue lengths.
+    //
+
+    HttpServerQueueLengthProperty,
+
+    //
+    // Used for manipulating the state.
+    //
+
+    HttpServerStateProperty,
+
+    //
+    // Used for modifying the verbosity level of 503 type responses
+    // generated by server side API.
+    //
+
+    HttpServer503VerbosityProperty,
+
+    //
+    // Used for manipulating Url Group to Request Queue association.
+    //
+
+    HttpServerBindingProperty,
+
+    //
+    // Extended authentication property.
+    //
+
+    HttpServerExtendedAuthenticationProperty,
+
+    //
+    // Listening endpoint property.
+    //
+
+    HttpServerListenEndpointProperty,
+
+    //
+    // Authentication channel binding property
+    //
+
+    HttpServerChannelBindProperty,
+
+    //
+    // IP Protection level policy for a Url Group.
+    //
+
+    HttpServerProtectionLevelProperty
+
+
+} HTTP_SERVER_PROPERTY, *PHTTP_SERVER_PROPERTY;
+
+typedef HTTP_OPAQUE_ID HTTP_SERVER_SESSION_ID, *PHTTP_SERVER_SESSION_ID;
+
+typedef enum _HTTP_SERVICE_CONFIG_ID
+{
+    HttpServiceConfigIPListenList,    // Set, Query & Delete.
+    HttpServiceConfigSSLCertInfo,     // Set, Query & Delete.
+    HttpServiceConfigUrlAclInfo,      // Set, Query & Delete.
+    HttpServiceConfigTimeout,         // Set, Query & Delete.
+    HttpServiceConfigCache,           // Set, Query & Delete.
+
+#if _WIN32_WINNT >= _WIN32_WINNT_WIN8
+
+    HttpServiceConfigSslSniCertInfo,  // Set, Query & Delete.
+    HttpServiceConfigSslCcsCertInfo,  // Set, Query & Delete.
+
+#endif
+
+    HttpServiceConfigMax
+
+} HTTP_SERVICE_CONFIG_ID, *PHTTP_SERVICE_CONFIG_ID;
+
+typedef ULONGLONG HTTP_URL_CONTEXT;
+
+typedef HTTP_OPAQUE_ID HTTP_URL_GROUP_ID,      *PHTTP_URL_GROUP_ID;
+
+// ./um/WinSock2.h
+#define WSAEVENT HANDLE
+typedef struct _WSAOVERLAPPED {
+    DWORD    Internal;
+    DWORD    InternalHigh;
+    DWORD    Offset;
+    DWORD    OffsetHigh;
+    WSAEVENT hEvent;
+} WSAOVERLAPPED, FAR * LPWSAOVERLAPPED;
+
+// ./um/WS2tcpip.h
+typedef
+void
+(CALLBACK * LPLOOKUPSERVICE_COMPLETION_ROUTINE)(
+    _In_      DWORD    dwError,
+    _In_      DWORD    dwBytes,
+    _In_      LPWSAOVERLAPPED lpOverlapped
+    );
+*/
 
 #endif

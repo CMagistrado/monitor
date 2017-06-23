@@ -81,11 +81,6 @@ Value::
     FileRemoteProtocolInfo
     FileFullDirectoryInfo
     FileFullDirectoryRestartInfo
-    FileStorageInfo
-    FileAlignmentInfo
-    FileIdInfo
-    FileIdExtdDirectoryInfo
-    FileIdExtdDirectoryRestartInfo
 
 
 NtCreateFile_DesiredAccess

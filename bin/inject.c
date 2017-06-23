@@ -24,6 +24,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <shlwapi.h>
 #include "../inc/ntapi.h"
 
+// evan: added for missing data type (UNICODE_STRING)
+#include "subauth.h"
+
 #define INJECT_NONE 0
 #define INJECT_CRT  1
 #define INJECT_APC  2

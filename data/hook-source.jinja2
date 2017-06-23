@@ -35,6 +35,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "sleep.h"
 #include "unhook.h"
 
+// evan: added includes for missing data types
+#include "accctrl.h"
+#include "ws2tcpip.h"
+#include "aclapi.h"
+#include "authz.h"
+#include "avrt.h"
+#include "wincrypt.h"
+#include "ws2ipdef.h"
+#include "cryptuiapi.h"
+#include "cryptxml.h"
+#include "windns.h"
+#include "http.h"
+#include "fileapi.h"
+#include "psapi.h"
+#include "wtsapi32.h"
+
 {% macro log_api(hook, ret='') -%}
     log_api(SIG_{{ hook.library }}_{{ hook.apiname }},
         {{ ret or hook.signature.is_success }},
