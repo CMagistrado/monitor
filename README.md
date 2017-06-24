@@ -9,7 +9,6 @@ If at first it doesn't compile, just try a second time!
 ## To compile
 Inside Linux shell:
 ```
-$ cd ..
 $ make
 ```
 
@@ -36,10 +35,16 @@ $ cd ./sigs/modeling
 $ python combine.py ../template/sigs.rst-full > ../sigs.rst 2>error
 ```
 
-Any API calls not found will be printed in "error"
+Any API calls not found in sigs.rst-full will be printed in "error"
 Note that the "error" file already exists. This is the output
 from the most recent run of combine.py and is kept for historic
 purposes.
+
+Combine.py searches through all \*.txt files within the modeling folder.
+Each txt file contains a list of names of API calls we wish to hook.
+This is easier to use than before, as you can automatically add new
+hooked API calls by name, rather than adding them (their signatures)
+manually by hand.
 
 Then recompile monitor.
 
@@ -65,6 +70,12 @@ the signature file for modeling behavior.
 
 ./get-symbols/parse.out is the output of running this script to retrieve
 ./sigs/template/sigs.rst-full. This is kept for historic reasons.
+
+Note that hook every single API call may not be beneficial for your particular
+needs. It will slow down the target program's execution and may be filled
+with noise that isn't sufficient to model the program's behavior.
+
+However, this is used to create the hooks used to model behaviors (see above).
 
 ## Other tools
 Inside Command Prompt (Windows):
@@ -107,37 +118,38 @@ error: aggregate value used where an integer was expected
          (uintptr_t) ret,
 ```
 
-**Missing types**
+**Missing types:**
+
 Had to add "#include <ws2ipdef.h>" to "/usr/share/mingw-w64/include/netioapi.h"
-because of missing SOCKADDR\_INET definition.
+because of missing SOCKADDR_INET definition.
 
 /usr/share/mingw-w64/include/cryptxml.h
-    - error: variable or field declared void
-    - Change it to "void \*pvPaddingInfo" on line 83
-    - Change it to "void \*pvExtraInfo" on line 84
+  - error: variable or field declared void
+  - Change it to "void \*pvPaddingInfo" on line 83
+  - Change it to "void \*pvExtraInfo" on line 84
 
-    - Commented out "CryptXmlDllVerifySignature" because could not find definition
-      of HCRYPTXML_PROV
-    - Commented out CRYPT_XML_CRYPTOGRAPHIC_INTERFACE
-    - Commented out CryptXmlDllGetInterface
+  - Commented out "CryptXmlDllVerifySignature" because could not find definition
+    of HCRYPTXML_PROV
+  - Commented out CRYPT_XML_CRYPTOGRAPHIC_INTERFACE
+  - Commented out CryptXmlDllGetInterface
 
-    - Had to move "CRYPT_XML_KEY_VALUE" to above "CRYPT_XML_KEY_INFO_ITEM" and past
-      a few variables because it wasn't ordered properly.
+  - Had to move "CRYPT\_XML_KEY_VALUE" to above "CRYPT_XML_KEY_INFO_ITEM" and past
+    a few variables because it wasn't ordered properly.
 
 /usr/share/mingw-w64/include/windns.h
-    - Added datatypes and functions (see comment "// evan:")
-    - E.g., I added DNS_PROXY_INFORMATION_TYPE data type (and others) because "DnsGetProxyInformation()"
-      required it.
+  - Added datatypes and functions (see comment "// evan:")
+  - E.g., I added DNS_PROXY_INFORMATION_TYPE data type (and others) because "DnsGetProxyInformation()"
+    required it.
 
 /usr/share/mingw-w64/include/wininet.h
-    - Commented out "#define HTTP\_VERSION \_\_MINGW\_NAME\_AW(HTTP\_VERSION)" because of
-      conflicting type (HTTP_VERSION) in http.h
+  - Commented out "#define HTTP_VERSION \_\_MINGW_NAME_AW(HTTP_VERSION)" because of
+    conflicting type (HTTP_VERSION) in http.h
 
 /usr/share/mingw-w64/include/http.h
-    - Added ";" at end of line 459 (HTTP_PROPERTY_FLAGS)
-    - Added HTTP_LOG_DATA data type
-    - Added HTTP_SERVICE_CONFIG_TIMEOUT_PARAM data type
-    - Added HTTP_URL_GROUP_ID and HTTP_SERVER_SESSION_ID data types
-    - Copied contents of HTTP_REQUEST_V1 directly into HTTP_REQUEST_V2 because the Windows
-      compiler handles this weird case. GCC does not.
-      - Did same with HTTP_RESPONSE_V1 and HTTP_RESPONSE_V2
+  - Added ";" at end of line 459 (HTTP_PROPERTY_FLAGS)
+  - Added HTTP_LOG_DATA data type
+  - Added HTTP_SERVICE_CONFIG_TIMEOUT_PARAM data type
+  - Added HTTP_URL_GROUP_ID and HTTP_SERVER_SESSION_ID data types
+  - Copied contents of HTTP_REQUEST_V1 directly into HTTP_REQUEST_V2 because the Windows
+    compiler handles this weird case. GCC does not.
+    - Did same with HTTP_RESPONSE_V1 and HTTP_RESPONSE_V2

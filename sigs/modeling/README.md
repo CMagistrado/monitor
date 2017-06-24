@@ -58,7 +58,7 @@
   - Authorization
     - https://msdn.microsoft.com/en-us/library/windows/desktop/aa375742(v=vs.85).aspx
 
-# Functions not included
+# Functions removed
 
   - auth.txt
     - AuthzInitializeResourceManager
@@ -86,11 +86,16 @@
     - CreateFile2
       - Reason: Minimum Windows 8
 
-# Notes
+# Tests
 
   - Notepad: All files work except
     - process.txt slows execution down significantly
     - sync.txt prevents Notepad from running
 
-  - Internet Explorer
+  - Internet Explorer: All files works except
+    - resource.txt causes it to crash after Internet Explorer has started
+    - service.txt causes it to crash after Internet Explorer has started
+    - I did not test process.txt and sync.txt like I did with Notepad, but since
+      Internet Explorer does many more things than Notepad I assume I will
+      see similar behavior.
 
