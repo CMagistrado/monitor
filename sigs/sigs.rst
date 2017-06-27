@@ -4,995 +4,329 @@ Signature::
     * Category: none
 
 
-AccessCheck
+AddDllDirectory
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DLL_DIRECTORY_COOKIE
+
+Parameters::
+
+    * PCWSTR NewDirectory
+
+
+DisableThreadLibraryCalls
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hLibModule
+
+
+FreeLibrary
 ===========
 
 Signature::
 
-    * Library: advapi32
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * HANDLE ClientToken
-    * DWORD DesiredAccess
-    * PGENERIC_MAPPING GenericMapping
-    * PPRIVILEGE_SET PrivilegeSet
-    * LPDWORD PrivilegeSetLength
-    * LPDWORD GrantedAccess
-    * LPBOOL AccessStatus
+    * HMODULE hLibModule
 
 
-AccessCheckAndAuditAlarmA
-=========================
+FreeLibraryAndExitThread
+========================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: DECLSPEC_NORETURN
 
 Parameters::
 
-    * LPCSTR SubsystemName
-    * LPVOID HandleId
-    * LPSTR ObjectTypeName
-    * LPSTR ObjectName
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * DWORD DesiredAccess
-    * PGENERIC_MAPPING GenericMapping
-    * BOOL ObjectCreation
-    * LPDWORD GrantedAccess
-    * LPBOOL AccessStatus
-    * LPBOOL pfGenerateOnClose
+    * HMODULE hLibModule
+    * DWORD dwExitCode
 
 
-AccessCheckAndAuditAlarmW
-=========================
+GetDllDirectoryA
+================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: DWORD
 
 Parameters::
 
-    * LPCWSTR SubsystemName
-    * LPVOID HandleId
-    * LPWSTR ObjectTypeName
-    * LPWSTR ObjectName
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * DWORD DesiredAccess
-    * PGENERIC_MAPPING GenericMapping
-    * BOOL ObjectCreation
-    * LPDWORD GrantedAccess
-    * LPBOOL AccessStatus
-    * LPBOOL pfGenerateOnClose
+    * DWORD nBufferLength
+    * LPSTR lpBuffer
 
 
-AccessCheckByType
-=================
+GetDllDirectoryW
+================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: DWORD
 
 Parameters::
 
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * PSID PrincipalSelfSid
-    * HANDLE ClientToken
-    * DWORD DesiredAccess
-    * POBJECT_TYPE_LIST ObjectTypeList
-    * DWORD ObjectTypeListLength
-    * PGENERIC_MAPPING GenericMapping
-    * PPRIVILEGE_SET PrivilegeSet
-    * LPDWORD PrivilegeSetLength
-    * LPDWORD GrantedAccess
-    * LPBOOL AccessStatus
+    * DWORD nBufferLength
+    * LPWSTR lpBuffer
 
 
-AccessCheckByTypeAndAuditAlarmA
-===============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR SubsystemName
-    * LPVOID HandleId
-    * LPCSTR ObjectTypeName
-    * LPCSTR ObjectName
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * PSID PrincipalSelfSid
-    * DWORD DesiredAccess
-    * AUDIT_EVENT_TYPE AuditType
-    * DWORD Flags
-    * POBJECT_TYPE_LIST ObjectTypeList
-    * DWORD ObjectTypeListLength
-    * PGENERIC_MAPPING GenericMapping
-    * BOOL ObjectCreation
-    * LPDWORD GrantedAccess
-    * LPBOOL AccessStatus
-    * LPBOOL pfGenerateOnClose
-
-
-AccessCheckByTypeAndAuditAlarmW
-===============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR SubsystemName
-    * LPVOID HandleId
-    * LPCWSTR ObjectTypeName
-    * LPCWSTR ObjectName
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * PSID PrincipalSelfSid
-    * DWORD DesiredAccess
-    * AUDIT_EVENT_TYPE AuditType
-    * DWORD Flags
-    * POBJECT_TYPE_LIST ObjectTypeList
-    * DWORD ObjectTypeListLength
-    * PGENERIC_MAPPING GenericMapping
-    * BOOL ObjectCreation
-    * LPDWORD GrantedAccess
-    * LPBOOL AccessStatus
-    * LPBOOL pfGenerateOnClose
-
-
-AccessCheckByTypeResultList
-===========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * PSID PrincipalSelfSid
-    * HANDLE ClientToken
-    * DWORD DesiredAccess
-    * POBJECT_TYPE_LIST ObjectTypeList
-    * DWORD ObjectTypeListLength
-    * PGENERIC_MAPPING GenericMapping
-    * PPRIVILEGE_SET PrivilegeSet
-    * LPDWORD PrivilegeSetLength
-    * LPDWORD GrantedAccessList
-    * LPDWORD AccessStatusList
-
-
-AccessCheckByTypeResultListAndAuditAlarmA
-=========================================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR SubsystemName
-    * LPVOID HandleId
-    * LPCSTR ObjectTypeName
-    * LPCSTR ObjectName
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * PSID PrincipalSelfSid
-    * DWORD DesiredAccess
-    * AUDIT_EVENT_TYPE AuditType
-    * DWORD Flags
-    * POBJECT_TYPE_LIST ObjectTypeList
-    * DWORD ObjectTypeListLength
-    * PGENERIC_MAPPING GenericMapping
-    * BOOL ObjectCreation
-    * LPDWORD GrantedAccess
-    * LPDWORD AccessStatusList
-    * LPBOOL pfGenerateOnClose
-
-
-AccessCheckByTypeResultListAndAuditAlarmW
-=========================================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR SubsystemName
-    * LPVOID HandleId
-    * LPCWSTR ObjectTypeName
-    * LPCWSTR ObjectName
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * PSID PrincipalSelfSid
-    * DWORD DesiredAccess
-    * AUDIT_EVENT_TYPE AuditType
-    * DWORD Flags
-    * POBJECT_TYPE_LIST ObjectTypeList
-    * DWORD ObjectTypeListLength
-    * PGENERIC_MAPPING GenericMapping
-    * BOOL ObjectCreation
-    * LPDWORD GrantedAccessList
-    * LPDWORD AccessStatusList
-    * LPBOOL pfGenerateOnClose
-
-
-AccessCheckByTypeResultListAndAuditAlarmByHandleA
-=================================================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR SubsystemName
-    * LPVOID HandleId
-    * HANDLE ClientToken
-    * LPCSTR ObjectTypeName
-    * LPCSTR ObjectName
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * PSID PrincipalSelfSid
-    * DWORD DesiredAccess
-    * AUDIT_EVENT_TYPE AuditType
-    * DWORD Flags
-    * POBJECT_TYPE_LIST ObjectTypeList
-    * DWORD ObjectTypeListLength
-    * PGENERIC_MAPPING GenericMapping
-    * BOOL ObjectCreation
-    * LPDWORD GrantedAccess
-    * LPDWORD AccessStatusList
-    * LPBOOL pfGenerateOnClose
-
-
-AccessCheckByTypeResultListAndAuditAlarmByHandleW
-=================================================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR SubsystemName
-    * LPVOID HandleId
-    * HANDLE ClientToken
-    * LPCWSTR ObjectTypeName
-    * LPCWSTR ObjectName
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * PSID PrincipalSelfSid
-    * DWORD DesiredAccess
-    * AUDIT_EVENT_TYPE AuditType
-    * DWORD Flags
-    * POBJECT_TYPE_LIST ObjectTypeList
-    * DWORD ObjectTypeListLength
-    * PGENERIC_MAPPING GenericMapping
-    * BOOL ObjectCreation
-    * LPDWORD GrantedAccessList
-    * LPDWORD AccessStatusList
-    * LPBOOL pfGenerateOnClose
-
-
-AddAccessAllowedAce
-===================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AccessMask
-    * PSID pSid
-
-
-AddAccessAllowedAceEx
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * DWORD AccessMask
-    * PSID pSid
-
-
-AddAccessAllowedObjectAce
-=========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * DWORD AccessMask
-    * GUID *ObjectTypeGuid
-    * GUID *InheritedObjectTypeGuid
-    * PSID pSid
-
-
-AddAccessDeniedAce
+GetModuleFileNameA
 ==================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: DWORD
 
 Parameters::
 
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AccessMask
-    * PSID pSid
+    * HMODULE hModule
+    * LPSTR lpFilename
+    * DWORD nSize
 
 
-AddAccessDeniedAceEx
+GetModuleFileNameW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HMODULE hModule
+    * LPWSTR lpFilename
+    * DWORD nSize
+
+
+GetModuleFileNameExA
 ====================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: BOOL
+    * Library: psapi
+    * Return value: DWORD
 
 Parameters::
 
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * DWORD AccessMask
-    * PSID pSid
+    * HANDLE hProcess
+    * HMODULE hModule
+    * LPSTR lpFilename
+    * DWORD nSize
 
 
-AddAccessDeniedObjectAce
-========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * DWORD AccessMask
-    * GUID *ObjectTypeGuid
-    * GUID *InheritedObjectTypeGuid
-    * PSID pSid
-
-
-AddAce
-======
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD dwStartingAceIndex
-    * LPVOID pAceList
-    * DWORD nAceListLength
-
-
-AddAuditAccessAce
-=================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD dwAccessMask
-    * PSID pSid
-    * BOOL bAuditSuccess
-    * BOOL bAuditFailure
-
-
-AddAuditAccessAceEx
-===================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * DWORD dwAccessMask
-    * PSID pSid
-    * BOOL bAuditSuccess
-    * BOOL bAuditFailure
-
-
-AddAuditAccessObjectAce
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * DWORD AccessMask
-    * GUID *ObjectTypeGuid
-    * GUID *InheritedObjectTypeGuid
-    * PSID pSid
-    * BOOL bAuditSuccess
-    * BOOL bAuditFailure
-
-
-AddConditionalAce
-=================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * UCHAR AceType
-    * DWORD AccessMask
-    * PSID pSid
-    * PWCHAR ConditionStr
-    * DWORD *ReturnLength
-
-
-AddMandatoryAce
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceRevision
-    * DWORD AceFlags
-    * DWORD MandatoryPolicy
-    * PSID pLabelSid
-
-
-AdjustTokenGroups
-=================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE TokenHandle
-    * BOOL ResetToDefault
-    * PTOKEN_GROUPS NewState
-    * DWORD BufferLength
-    * PTOKEN_GROUPS PreviousState
-    * PDWORD ReturnLength
-
-
-AdjustTokenPrivileges
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE TokenHandle
-    * BOOL DisableAllPrivileges
-    * PTOKEN_PRIVILEGES NewState
-    * DWORD BufferLength
-    * PTOKEN_PRIVILEGES PreviousState
-    * PDWORD ReturnLength
-
-
-AllocateAndInitializeSid
-========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSID_IDENTIFIER_AUTHORITY pIdentifierAuthority
-    * BYTE nSubAuthorityCount
-    * DWORD nSubAuthority0
-    * DWORD nSubAuthority1
-    * DWORD nSubAuthority2
-    * DWORD nSubAuthority3
-    * DWORD nSubAuthority4
-    * DWORD nSubAuthority5
-    * DWORD nSubAuthority6
-    * DWORD nSubAuthority7
-    * PSID *pSid
-
-
-AllocateLocallyUniqueId
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PLUID Luid
-
-
-AreAllAccessesGranted
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD GrantedAccess
-    * DWORD DesiredAccess
-
-
-AreAnyAccessesGranted
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD GrantedAccess
-    * DWORD DesiredAccess
-
-
-AuthzAccessCheck
-================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD Flags
-    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
-    * PAUTHZ_ACCESS_REQUEST pRequest
-    * AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * PSECURITY_DESCRIPTOR *OptionalSecurityDescriptorArray
-    * DWORD OptionalSecurityDescriptorCount
-    * PAUTHZ_ACCESS_REPLY pReply
-    * PAUTHZ_ACCESS_CHECK_RESULTS_HANDLE phAccessCheckResults
-
-
-AuthzAddSidsToContext
-=====================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
-    * PSID_AND_ATTRIBUTES Sids
-    * DWORD SidCount
-    * PSID_AND_ATTRIBUTES RestrictedSids
-    * DWORD RestrictedSidCount
-    * PAUTHZ_CLIENT_CONTEXT_HANDLE phNewAuthzClientContext
-
-
-AuthzCachedAccessCheck
-======================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD Flags
-    * AUTHZ_ACCESS_CHECK_RESULTS_HANDLE hAccessCheckResults
-    * PAUTHZ_ACCESS_REQUEST pRequest
-    * AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent
-    * PAUTHZ_ACCESS_REPLY pReply
-
-
-AuthzEnumerateSecurityEventSources
-==================================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD dwFlags
-    * PAUTHZ_SOURCE_SCHEMA_REGISTRATION Buffer
-    * PDWORD pdwCount
-    * PDWORD pdwLength
-
-
-AuthzFreeAuditEvent
-===================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent
-
-
-AuthzFreeContext
-================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
-
-
-AuthzFreeHandle
-===============
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * AUTHZ_ACCESS_CHECK_RESULTS_HANDLE hAccessCheckResults
-
-
-AuthzFreeResourceManager
-========================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * AUTHZ_RESOURCE_MANAGER_HANDLE hAuthzResourceManager
-
-
-AuthzGetInformationFromContext
-==============================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
-    * AUTHZ_CONTEXT_INFORMATION_CLASS InfoClass
-    * DWORD BufferSize
-    * PDWORD pSizeRequired
-    * PVOID Buffer
-
-
-AuthzInitializeContextFromAuthzContext
-======================================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD Flags
-    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
-    * PLARGE_INTEGER pExpirationTime
-    * LUID Identifier
-    * PVOID DynamicGroupArgs
-    * PAUTHZ_CLIENT_CONTEXT_HANDLE phNewAuthzClientContext
-
-
-AuthzInitializeContextFromSid
-=============================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD Flags
-    * PSID UserSid
-    * AUTHZ_RESOURCE_MANAGER_HANDLE hAuthzResourceManager
-    * PLARGE_INTEGER pExpirationTime
-    * LUID Identifier
-    * PVOID DynamicGroupArgs
-    * PAUTHZ_CLIENT_CONTEXT_HANDLE phAuthzClientContext
-
-
-AuthzInitializeContextFromToken
-===============================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD Flags
-    * HANDLE TokenHandle
-    * AUTHZ_RESOURCE_MANAGER_HANDLE hAuthzResourceManager
-    * PLARGE_INTEGER pExpirationTime
-    * LUID Identifier
-    * PVOID DynamicGroupArgs
-    * PAUTHZ_CLIENT_CONTEXT_HANDLE phAuthzClientContext
-
-
-AuthzInstallSecurityEventSource
-===============================
-
-Signature::
-
-    * Library: authz
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD dwFlags
-    * PAUTHZ_SOURCE_SCHEMA_REGISTRATION pRegistration
-
-
-AuthzOpenObjectAudit
+GetModuleFileNameExW
 ====================
 
 Signature::
 
-    * Library: authz
-    * Return value: BOOL
+    * Library: psapi
+    * Return value: DWORD
 
 Parameters::
 
-    * DWORD Flags
-    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
-    * PAUTHZ_ACCESS_REQUEST pRequest
-    * AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * PSECURITY_DESCRIPTOR *OptionalSecurityDescriptorArray
-    * DWORD OptionalSecurityDescriptorCount
-    * PAUTHZ_ACCESS_REPLY pReply
+    * HANDLE hProcess
+    * HMODULE hModule
+    * LPWSTR lpFilename
+    * DWORD nSize
 
 
-AuthzRegisterSecurityEventSource
-================================
+GetModuleHandleA
+================
 
 Signature::
 
-    * Library: authz
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: HMODULE
 
 Parameters::
 
-    * DWORD dwFlags
-    * PCWSTR szEventSourceName
-    * PAUTHZ_SECURITY_EVENT_PROVIDER_HANDLE phEventProvider
+    * LPCSTR lpModuleName
 
 
-AuthzReportSecurityEventFromParams
-==================================
+GetModuleHandleW
+================
 
 Signature::
 
-    * Library: authz
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: HMODULE
 
 Parameters::
 
-    * DWORD dwFlags
-    * AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE hEventProvider
-    * DWORD dwAuditId
-    * PSID pUserSid
-    * PAUDIT_PARAMS pParams
+    * LPCWSTR lpModuleName
 
 
-AuthzUninstallSecurityEventSource
-=================================
+GetModuleHandleExA
+==================
 
 Signature::
 
-    * Library: authz
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
     * DWORD dwFlags
-    * PCWSTR szEventSourceName
+    * LPCSTR lpModuleName
+    * HMODULE *phModule
 
 
-AuthzUnregisterSecurityEventSource
-==================================
+GetModuleHandleExW
+==================
 
 Signature::
 
-    * Library: authz
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
     * DWORD dwFlags
-    * PAUTHZ_SECURITY_EVENT_PROVIDER_HANDLE phEventProvider
+    * LPCWSTR lpModuleName
+    * HMODULE *phModule
 
 
-BuildExplicitAccessWithNameA
-============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PEXPLICIT_ACCESS_A pExplicitAccess
-    * LPSTR pTrusteeName
-    * DWORD AccessPermissions
-    * ACCESS_MODE AccessMode
-    * DWORD Inheritance
-
-
-BuildExplicitAccessWithNameW
-============================
+GetProcAddress
+==============
 
 Signature::
 
-    * Library: advapi32
-    * Return value: void
+    * Library: kernel32
+    * Return value: FARPROC
 
 Parameters::
 
-    * PEXPLICIT_ACCESS_W pExplicitAccess
-    * LPWSTR pTrusteeName
-    * DWORD AccessPermissions
-    * ACCESS_MODE AccessMode
-    * DWORD Inheritance
+    * HMODULE hModule
+    * LPCSTR lpProcName
 
 
-BuildImpersonateExplicitAccessWithNameA
-=======================================
+LoadLibraryA
+============
 
 Signature::
 
-    * Library: advapi32
-    * Return value: void
+    * Library: kernel32
+    * Return value: HMODULE
 
 Parameters::
 
-    * PEXPLICIT_ACCESS_A pExplicitAccess
-    * LPSTR pTrusteeName
-    * PTRUSTEE_A pTrustee
-    * DWORD AccessPermissions
-    * ACCESS_MODE AccessMode
-    * DWORD Inheritance
+    * LPCSTR lpLibFileName
 
 
-BuildImpersonateExplicitAccessWithNameW
-=======================================
+LoadLibraryW
+============
 
 Signature::
 
-    * Library: advapi32
-    * Return value: void
+    * Library: kernel32
+    * Return value: HMODULE
 
 Parameters::
 
-    * PEXPLICIT_ACCESS_W pExplicitAccess
-    * LPWSTR pTrusteeName
-    * PTRUSTEE_W pTrustee
-    * DWORD AccessPermissions
-    * ACCESS_MODE AccessMode
-    * DWORD Inheritance
+    * LPCWSTR lpLibFileName
 
 
-BuildImpersonateTrusteeA
+LoadLibraryExA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HMODULE
+
+Parameters::
+
+    * LPCSTR lpLibFileName
+    * HANDLE hFile
+    * DWORD dwFlags
+
+
+LoadLibraryExW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HMODULE
+
+Parameters::
+
+    * LPCWSTR lpLibFileName
+    * HANDLE hFile
+    * DWORD dwFlags
+
+
+RemoveDllDirectory
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * DLL_DIRECTORY_COOKIE Cookie
+
+
+SetDefaultDllDirectories
 ========================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: void
+    * Library: kernel32
+    * Return value: BOOL
 
 Parameters::
 
-    * PTRUSTEE_A pTrustee
-    * PTRUSTEE_A pImpersonateTrustee
+    * DWORD DirectoryFlags
 
 
-BuildImpersonateTrusteeW
-========================
+SetDllDirectoryA
+================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: void
+    * Library: kernel32
+    * Return value: BOOL
 
 Parameters::
 
-    * PTRUSTEE_W pTrustee
-    * PTRUSTEE_W pImpersonateTrustee
+    * LPCSTR lpPathName
 
 
-BuildSecurityDescriptorA
-========================
+SetDllDirectoryW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpPathName
+
+
+AddUsersToEncryptedFile
+=======================
 
 Signature::
 
@@ -1001,578 +335,524 @@ Signature::
 
 Parameters::
 
-    * PTRUSTEE_A pOwner
-    * PTRUSTEE_A pGroup
-    * ULONG cCountOfAccessEntries
-    * PEXPLICIT_ACCESS_A pListOfAccessEntries
-    * ULONG cCountOfAuditEntries
-    * PEXPLICIT_ACCESS_A pListOfAuditEntries
-    * PSECURITY_DESCRIPTOR pOldSD
-    * PULONG pSizeNewSD
-    * PSECURITY_DESCRIPTOR *pNewSD
+    * LPCWSTR lpFileName
+    * PENCRYPTION_CERTIFICATE_LIST pEncryptionCertificates
 
 
-BuildSecurityDescriptorW
-========================
+AreFileApisANSI
+===============
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PTRUSTEE_W pOwner
-    * PTRUSTEE_W pGroup
-    * ULONG cCountOfAccessEntries
-    * PEXPLICIT_ACCESS_W pListOfAccessEntries
-    * ULONG cCountOfAuditEntries
-    * PEXPLICIT_ACCESS_W pListOfAuditEntries
-    * PSECURITY_DESCRIPTOR pOldSD
-    * PULONG pSizeNewSD
-    * PSECURITY_DESCRIPTOR *pNewSD
-
-
-BuildTrusteeWithNameA
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PTRUSTEE_A pTrustee
-    * LPSTR pName
-
-
-BuildTrusteeWithNameW
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PTRUSTEE_W pTrustee
-    * LPWSTR pName
-
-
-BuildTrusteeWithObjectsAndNameA
-===============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PTRUSTEE_A pTrustee
-    * POBJECTS_AND_NAME_A pObjName
-    * SE_OBJECT_TYPE ObjectType
-    * LPSTR ObjectTypeName
-    * LPSTR InheritedObjectTypeName
-    * LPSTR Name
-
-
-BuildTrusteeWithObjectsAndNameW
-===============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PTRUSTEE_W pTrustee
-    * POBJECTS_AND_NAME_W pObjName
-    * SE_OBJECT_TYPE ObjectType
-    * LPWSTR ObjectTypeName
-    * LPWSTR InheritedObjectTypeName
-    * LPWSTR Name
-
-
-BuildTrusteeWithObjectsAndSidA
-==============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PTRUSTEE_A pTrustee
-    * POBJECTS_AND_SID pObjSid
-    * GUID *pObjectGuid
-    * GUID *pInheritedObjectGuid
-    * PSID pSid
-
-
-BuildTrusteeWithObjectsAndSidW
-==============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PTRUSTEE_W pTrustee
-    * POBJECTS_AND_SID pObjSid
-    * GUID *pObjectGuid
-    * GUID *pInheritedObjectGuid
-    * PSID pSid
-
-
-BuildTrusteeWithSidA
-====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PTRUSTEE_A pTrustee
-    * PSID pSid
-
-
-BuildTrusteeWithSidW
-====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PTRUSTEE_W pTrustee
-    * PSID pSid
-
-
-CheckTokenMembership
-====================
-
-Signature::
-
-    * Library: advapi32
+    * Library: kernel32
     * Return value: BOOL
 
-Parameters::
 
-    * HANDLE TokenHandle
-    * PSID SidToCheck
-    * PBOOL IsMember
-
-
-ConvertToAutoInheritPrivateObjectSecurity
-=========================================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR ParentDescriptor
-    * PSECURITY_DESCRIPTOR CurrentSecurityDescriptor
-    * PSECURITY_DESCRIPTOR *NewSecurityDescriptor
-    * GUID *ObjectType
-    * BOOLEAN IsDirectoryObject
-    * PGENERIC_MAPPING GenericMapping
-
-
-CopySid
-=======
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD nDestinationSidLength
-    * PSID pDestinationSid
-    * PSID pSourceSid
-
-
-CreatePrivateObjectSecurity
-===========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR ParentDescriptor
-    * PSECURITY_DESCRIPTOR CreatorDescriptor
-    * PSECURITY_DESCRIPTOR *NewDescriptor
-    * BOOL IsDirectoryObject
-    * HANDLE Token
-    * PGENERIC_MAPPING GenericMapping
-
-
-CreatePrivateObjectSecurityEx
-=============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR ParentDescriptor
-    * PSECURITY_DESCRIPTOR CreatorDescriptor
-    * PSECURITY_DESCRIPTOR *NewDescriptor
-    * GUID *ObjectType
-    * BOOL IsContainerObject
-    * ULONG AutoInheritFlags
-    * HANDLE Token
-    * PGENERIC_MAPPING GenericMapping
-
-
-CreatePrivateObjectSecurityWithMultipleInheritance
-==================================================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR ParentDescriptor
-    * PSECURITY_DESCRIPTOR CreatorDescriptor
-    * PSECURITY_DESCRIPTOR *NewDescriptor
-    * GUID **ObjectTypes
-    * ULONG GuidCount
-    * BOOL IsContainerObject
-    * ULONG AutoInheritFlags
-    * HANDLE Token
-    * PGENERIC_MAPPING GenericMapping
-
-
-CreateRestrictedToken
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE ExistingTokenHandle
-    * DWORD Flags
-    * DWORD DisableSidCount
-    * PSID_AND_ATTRIBUTES SidsToDisable
-    * DWORD DeletePrivilegeCount
-    * PLUID_AND_ATTRIBUTES PrivilegesToDelete
-    * DWORD RestrictedSidCount
-    * PSID_AND_ATTRIBUTES SidsToRestrict
-    * PHANDLE NewTokenHandle
-
-
-CreateWellKnownSid
-==================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * WELL_KNOWN_SID_TYPE WellKnownSidType
-    * PSID DomainSid
-    * PSID pSid
-    * DWORD *cbSid
-
-
-DeleteAce
-=========
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * DWORD dwAceIndex
-
-
-DestroyPrivateObjectSecurity
-============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR *ObjectDescriptor
-
-
-DuplicateToken
-==============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE ExistingTokenHandle
-    * SECURITY_IMPERSONATION_LEVEL ImpersonationLevel
-    * PHANDLE DuplicateTokenHandle
-
-
-DuplicateTokenEx
-================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hExistingToken
-    * DWORD dwDesiredAccess
-    * LPSECURITY_ATTRIBUTES lpTokenAttributes
-    * SECURITY_IMPERSONATION_LEVEL ImpersonationLevel
-    * TOKEN_TYPE TokenType
-    * PHANDLE phNewToken
-
-
-EqualDomainSid
-==============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSID pSid1
-    * PSID pSid2
-    * BOOL *pfEqual
-
-
-EqualPrefixSid
-==============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSID pSid1
-    * PSID pSid2
-
-
-EqualSid
+CancelIo
 ========
 
 Signature::
 
-    * Library: advapi32
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * PSID pSid1
-    * PSID pSid2
+    * HANDLE hFile
 
 
-FindFirstFreeAce
-================
+CancelIoEx
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPOVERLAPPED lpOverlapped
+
+
+CancelSynchronousIo
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+
+
+CheckNameLegalDOS8Dot3A
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpName
+    * LPSTR lpOemName
+    * DWORD OemNameSize
+    * PBOOL pbNameContainsSpaces
+    * PBOOL pbNameLegal
+
+
+CheckNameLegalDOS8Dot3W
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpName
+    * LPSTR lpOemName
+    * DWORD OemNameSize
+    * PBOOL pbNameContainsSpaces
+    * PBOOL pbNameLegal
+
+
+CloseEncryptedFileRaw
+=====================
 
 Signature::
 
     * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PVOID pvContext
+
+
+CopyFileA
+=========
+
+Signature::
+
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * PACL pAcl
-    * LPVOID *pAce
+    * LPCSTR lpExistingFileName
+    * LPCSTR lpNewFileName
+    * BOOL bFailIfExists
 
 
-FreeInheritedFromArray
+CopyFileW
+=========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpExistingFileName
+    * LPCWSTR lpNewFileName
+    * BOOL bFailIfExists
+
+
+CopyFileExA
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpExistingFileName
+    * LPCSTR lpNewFileName
+    * LPPROGRESS_ROUTINE lpProgressRoutine
+    * LPVOID lpData
+    * LPBOOL pbCancel
+    * DWORD dwCopyFlags
+
+
+CopyFileExW
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpExistingFileName
+    * LPCWSTR lpNewFileName
+    * LPPROGRESS_ROUTINE lpProgressRoutine
+    * LPVOID lpData
+    * LPBOOL pbCancel
+    * DWORD dwCopyFlags
+
+
+CopyFileTransactedA
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpExistingFileName
+    * LPCSTR lpNewFileName
+    * LPPROGRESS_ROUTINE lpProgressRoutine
+    * LPVOID lpData
+    * LPBOOL pbCancel
+    * DWORD dwCopyFlags
+    * HANDLE hTransaction
+
+
+CopyFileTransactedW
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpExistingFileName
+    * LPCWSTR lpNewFileName
+    * LPPROGRESS_ROUTINE lpProgressRoutine
+    * LPVOID lpData
+    * LPBOOL pbCancel
+    * DWORD dwCopyFlags
+    * HANDLE hTransaction
+
+
+CreateDirectoryA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpPathName
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+
+CreateDirectoryW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpPathName
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+
+CreateDirectoryExA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpTemplateDirectory
+    * LPCSTR lpNewDirectory
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+
+CreateDirectoryExW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpTemplateDirectory
+    * LPCWSTR lpNewDirectory
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+
+CreateDirectoryTransactedA
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpTemplateDirectory
+    * LPCSTR lpNewDirectory
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * HANDLE hTransaction
+
+
+CreateDirectoryTransactedW
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpTemplateDirectory
+    * LPCWSTR lpNewDirectory
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * HANDLE hTransaction
+
+
+CreateFileA
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * DWORD dwDesiredAccess
+    * DWORD dwShareMode
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * DWORD dwCreationDisposition
+    * DWORD dwFlagsAndAttributes
+    * HANDLE hTemplateFile
+
+
+CreateFileW
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * DWORD dwDesiredAccess
+    * DWORD dwShareMode
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * DWORD dwCreationDisposition
+    * DWORD dwFlagsAndAttributes
+    * HANDLE hTemplateFile
+
+
+CreateFileTransactedA
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * DWORD dwDesiredAccess
+    * DWORD dwShareMode
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * DWORD dwCreationDisposition
+    * DWORD dwFlagsAndAttributes
+    * HANDLE hTemplateFile
+    * HANDLE hTransaction
+    * PUSHORT pusMiniVersion
+    * PVOID lpExtendedParameter
+
+
+CreateFileTransactedW
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * DWORD dwDesiredAccess
+    * DWORD dwShareMode
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * DWORD dwCreationDisposition
+    * DWORD dwFlagsAndAttributes
+    * HANDLE hTemplateFile
+    * HANDLE hTransaction
+    * PUSHORT pusMiniVersion
+    * PVOID lpExtendedParameter
+
+
+CreateHardLinkA
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * LPCSTR lpExistingFileName
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+
+CreateHardLinkW
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * LPCWSTR lpExistingFileName
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+
+CreateHardLinkTransactedA
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * LPCSTR lpExistingFileName
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * HANDLE hTransaction
+
+
+CreateHardLinkTransactedW
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * LPCWSTR lpExistingFileName
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * HANDLE hTransaction
+
+
+CreateIoCompletionPort
 ======================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
+    * Library: kernel32
+    * Return value: HANDLE
 
 Parameters::
 
-    * PINHERITED_FROMW pInheritArray
-    * USHORT AceCnt
-    * PFN_OBJECT_MGR_FUNCTS pfnArray
+    * HANDLE FileHandle
+    * HANDLE ExistingCompletionPort
+    * ULONG_PTR CompletionKey
+    * DWORD NumberOfConcurrentThreads
 
 
-FreeSid
-=======
+CreateSymbolicLinkA
+===================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: PVOID
+    * Library: kernel32
+    * Return value: BOOLEAN
 
 Parameters::
 
-    * PSID pSid
+    * LPCSTR lpSymlinkFileName
+    * LPCSTR lpTargetFileName
+    * DWORD dwFlags
 
 
-GetAce
-======
+CreateSymbolicLinkW
+===================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: BOOLEAN
 
 Parameters::
 
-    * PACL pAcl
-    * DWORD dwAceIndex
-    * LPVOID *pAce
+    * LPCWSTR lpSymlinkFileName
+    * LPCWSTR lpTargetFileName
+    * DWORD dwFlags
 
 
-GetAclInformation
-=================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PACL pAcl
-    * LPVOID pAclInformation
-    * DWORD nAclInformationLength
-    * ACL_INFORMATION_CLASS dwAclInformationClass
-
-
-GetAuditedPermissionsFromAclA
+CreateSymbolicLinkTransactedA
 =============================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
+    * Library: kernel32
+    * Return value: BOOLEAN
 
 Parameters::
 
-    * PACL pacl
-    * PTRUSTEE_A pTrustee
-    * PACCESS_MASK pSuccessfulAuditedRights
-    * PACCESS_MASK pFailedAuditRights
+    * LPCSTR lpSymlinkFileName
+    * LPCSTR lpTargetFileName
+    * DWORD dwFlags
+    * HANDLE hTransaction
 
 
-GetAuditedPermissionsFromAclW
+CreateSymbolicLinkTransactedW
 =============================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
+    * Library: kernel32
+    * Return value: BOOLEAN
 
 Parameters::
 
-    * PACL pacl
-    * PTRUSTEE_W pTrustee
-    * PACCESS_MASK pSuccessfulAuditedRights
-    * PACCESS_MASK pFailedAuditRights
+    * LPCWSTR lpSymlinkFileName
+    * LPCWSTR lpTargetFileName
+    * DWORD dwFlags
+    * HANDLE hTransaction
 
 
-GetEffectiveRightsFromAclA
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PACL pacl
-    * PTRUSTEE_A pTrustee
-    * PACCESS_MASK pAccessRights
-
-
-GetEffectiveRightsFromAclW
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PACL pacl
-    * PTRUSTEE_W pTrustee
-    * PACCESS_MASK pAccessRights
-
-
-GetExplicitEntriesFromAclA
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PACL pacl
-    * PULONG pcCountOfExplicitEntries
-    * PEXPLICIT_ACCESS_A *pListOfExplicitEntries
-
-
-GetExplicitEntriesFromAclW
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PACL pacl
-    * PULONG pcCountOfExplicitEntries
-    * PEXPLICIT_ACCESS_W *pListOfExplicitEntries
-
-
-GetFileSecurityA
-================
+DecryptFileA
+============
 
 Signature::
 
@@ -1582,14 +862,11 @@ Signature::
 Parameters::
 
     * LPCSTR lpFileName
-    * SECURITY_INFORMATION RequestedInformation
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * DWORD nLength
-    * LPDWORD lpnLengthNeeded
+    * DWORD dwReserved
 
 
-GetFileSecurityW
-================
+DecryptFileW
+============
 
 Signature::
 
@@ -1599,1104 +876,443 @@ Signature::
 Parameters::
 
     * LPCWSTR lpFileName
-    * SECURITY_INFORMATION RequestedInformation
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * DWORD nLength
-    * LPDWORD lpnLengthNeeded
+    * DWORD dwReserved
 
 
-GetInheritanceSourceA
-=====================
+DeleteFileA
+===========
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * BOOL Container
-    * GUID **pObjectClassGuids
-    * DWORD GuidCount
-    * PACL pAcl
-    * PFN_OBJECT_MGR_FUNCTS pfnArray
-    * PGENERIC_MAPPING pGenericMapping
-    * PINHERITED_FROMA pInheritArray
-
-
-GetInheritanceSourceW
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPWSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * BOOL Container
-    * GUID **pObjectClassGuids
-    * DWORD GuidCount
-    * PACL pAcl
-    * PFN_OBJECT_MGR_FUNCTS pfnArray
-    * PGENERIC_MAPPING pGenericMapping
-    * PINHERITED_FROMW pInheritArray
-
-
-GetKernelObjectSecurity
-=======================
-
-Signature::
-
-    * Library: advapi32
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE Handle
-    * SECURITY_INFORMATION RequestedInformation
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * DWORD nLength
-    * LPDWORD lpnLengthNeeded
+    * LPCSTR lpFileName
 
 
-GetLengthSid
+DeleteFileW
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+
+
+DeleteFileTransactedA
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * HANDLE hTransaction
+
+
+DeleteFileTransactedW
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * HANDLE hTransaction
+
+
+DuplicateEncryptionInfoFile
+===========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR SrcFileName
+    * LPCWSTR DstFileName
+    * DWORD dwCreationDistribution
+    * DWORD dwAttributes
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+
+EncryptFileA
 ============
 
 Signature::
 
     * Library: advapi32
-    * Return value: DWORD
+    * Return value: BOOL
 
 Parameters::
 
-    * PSID pSid
+    * LPCSTR lpFileName
 
 
-GetMultipleTrusteeA
-===================
+EncryptFileW
+============
 
 Signature::
 
     * Library: advapi32
-    * Return value: PTRUSTEE_A
+    * Return value: BOOL
 
 Parameters::
 
-    * PTRUSTEE_A pTrustee
+    * LPCWSTR lpFileName
 
 
-GetMultipleTrusteeW
-===================
+EncryptionDisable
+=================
 
 Signature::
 
     * Library: advapi32
-    * Return value: PTRUSTEE_W
+    * Return value: BOOL
 
 Parameters::
 
-    * PTRUSTEE_W pTrustee
+    * LPCWSTR DirPath
+    * BOOL Disable
 
 
-GetMultipleTrusteeOperationA
-============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: MULTIPLE_TRUSTEE_OPERATION
-
-Parameters::
-
-    * PTRUSTEE_A pTrustee
-
-
-GetMultipleTrusteeOperationW
-============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: MULTIPLE_TRUSTEE_OPERATION
-
-Parameters::
-
-    * PTRUSTEE_W pTrustee
-
-
-GetNamedSecurityInfoA
+FileEncryptionStatusA
 =====================
 
 Signature::
 
     * Library: advapi32
-    * Return value: DWORD
+    * Return value: BOOL
 
 Parameters::
 
-    * LPCSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID *ppsidOwner
-    * PSID *ppsidGroup
-    * PACL *ppDacl
-    * PACL *ppSacl
-    * PSECURITY_DESCRIPTOR *ppSecurityDescriptor
+    * LPCSTR lpFileName
+    * LPDWORD lpStatus
 
 
-GetNamedSecurityInfoW
+FileEncryptionStatusW
 =====================
 
 Signature::
 
     * Library: advapi32
-    * Return value: DWORD
+    * Return value: BOOL
 
 Parameters::
 
-    * LPCWSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID *ppsidOwner
-    * PSID *ppsidGroup
-    * PACL *ppDacl
-    * PACL *ppSacl
-    * PSECURITY_DESCRIPTOR *ppSecurityDescriptor
+    * LPCWSTR lpFileName
+    * LPDWORD lpStatus
 
 
-GetPrivateObjectSecurity
+FindClose
+=========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFindFile
+
+
+FindCloseChangeNotification
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hChangeHandle
+
+
+FindFirstChangeNotificationA
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCSTR lpPathName
+    * BOOL bWatchSubtree
+    * DWORD dwNotifyFilter
+
+
+FindFirstChangeNotificationW
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR lpPathName
+    * BOOL bWatchSubtree
+    * DWORD dwNotifyFilter
+
+
+FindFirstFileA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * LPWIN32_FIND_DATAA lpFindFileData
+
+
+FindFirstFileW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * LPWIN32_FIND_DATAW lpFindFileData
+
+
+FindFirstFileExA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * FINDEX_INFO_LEVELS fInfoLevelId
+    * LPVOID lpFindFileData
+    * FINDEX_SEARCH_OPS fSearchOp
+    * LPVOID lpSearchFilter
+    * DWORD dwAdditionalFlags
+
+
+FindFirstFileExW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * FINDEX_INFO_LEVELS fInfoLevelId
+    * LPVOID lpFindFileData
+    * FINDEX_SEARCH_OPS fSearchOp
+    * LPVOID lpSearchFilter
+    * DWORD dwAdditionalFlags
+
+
+FindFirstFileNameTransactedW
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * DWORD dwFlags
+    * LPDWORD StringLength
+    * PWSTR LinkName
+    * HANDLE hTransaction
+
+
+FindFirstFileNameW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * DWORD dwFlags
+    * LPDWORD StringLength
+    * PWSTR LinkName
+
+
+FindFirstFileTransactedA
 ========================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: HANDLE
 
 Parameters::
 
-    * PSECURITY_DESCRIPTOR ObjectDescriptor
-    * SECURITY_INFORMATION SecurityInformation
-    * PSECURITY_DESCRIPTOR ResultantDescriptor
-    * DWORD DescriptorLength
-    * PDWORD ReturnLength
+    * LPCSTR lpFileName
+    * FINDEX_INFO_LEVELS fInfoLevelId
+    * LPVOID lpFindFileData
+    * FINDEX_SEARCH_OPS fSearchOp
+    * LPVOID lpSearchFilter
+    * DWORD dwAdditionalFlags
+    * HANDLE hTransaction
 
 
-GetSecurityDescriptorControl
-============================
+FindFirstFileTransactedW
+========================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: HANDLE
 
 Parameters::
 
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * PSECURITY_DESCRIPTOR_CONTROL pControl
-    * LPDWORD lpdwRevision
+    * LPCWSTR lpFileName
+    * FINDEX_INFO_LEVELS fInfoLevelId
+    * LPVOID lpFindFileData
+    * FINDEX_SEARCH_OPS fSearchOp
+    * LPVOID lpSearchFilter
+    * DWORD dwAdditionalFlags
+    * HANDLE hTransaction
 
 
-GetSecurityDescriptorDacl
-=========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * LPBOOL lpbDaclPresent
-    * PACL *pDacl
-    * LPBOOL lpbDaclDefaulted
-
-
-GetSecurityDescriptorGroup
+FindFirstStreamTransactedW
 ==========================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: BOOL
+    * Library: kernel32
+    * Return value: HANDLE
 
 Parameters::
 
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * PSID *pGroup
-    * LPBOOL lpbGroupDefaulted
+    * LPCWSTR lpFileName
+    * STREAM_INFO_LEVELS InfoLevel
+    * LPVOID lpFindStreamData
+    * DWORD dwFlags
+    * HANDLE hTransaction
 
 
-GetSecurityDescriptorLength
-===========================
+FindFirstStreamW
+================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
+    * Library: kernel32
+    * Return value: HANDLE
 
 Parameters::
 
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * LPCWSTR lpFileName
+    * STREAM_INFO_LEVELS InfoLevel
+    * LPVOID lpFindStreamData
+    * DWORD dwFlags
 
 
-GetSecurityDescriptorOwner
+FindNextChangeNotification
 ==========================
 
 Signature::
 
-    * Library: advapi32
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * PSID *pOwner
-    * LPBOOL lpbOwnerDefaulted
+    * HANDLE hChangeHandle
 
 
-GetSecurityDescriptorRMControl
-==============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * PUCHAR RMControl
-
-
-GetSecurityDescriptorSacl
-=========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * LPBOOL lpbSaclPresent
-    * PACL *pSacl
-    * LPBOOL lpbSaclDefaulted
-
-
-GetSecurityInfo
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE handle
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID *ppsidOwner
-    * PSID *ppsidGroup
-    * PACL *ppDacl
-    * PACL *ppSacl
-    * PSECURITY_DESCRIPTOR *ppSecurityDescriptor
-
-
-GetSidIdentifierAuthority
-=========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: PSID_IDENTIFIER_AUTHORITY
-
-Parameters::
-
-    * PSID pSid
-
-
-GetSidLengthRequired
-====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * UCHAR nSubAuthorityCount
-
-
-GetSidSubAuthority
-==================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: PDWORD
-
-Parameters::
-
-    * PSID pSid
-    * DWORD nSubAuthority
-
-
-GetSidSubAuthorityCount
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: PUCHAR
-
-Parameters::
-
-    * PSID pSid
-
-
-GetTokenInformation
-===================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE TokenHandle
-    * TOKEN_INFORMATION_CLASS TokenInformationClass
-    * LPVOID TokenInformation
-    * DWORD TokenInformationLength
-    * PDWORD ReturnLength
-
-
-GetTrusteeFormA
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: TRUSTEE_FORM
-
-Parameters::
-
-    * PTRUSTEE_A pTrustee
-
-
-GetTrusteeFormW
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: TRUSTEE_FORM
-
-Parameters::
-
-    * PTRUSTEE_W pTrustee
-
-
-GetTrusteeNameA
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LPSTR
-
-Parameters::
-
-    * PTRUSTEE_A pTrustee
-
-
-GetTrusteeNameW
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LPWSTR
-
-Parameters::
-
-    * PTRUSTEE_W pTrustee
-
-
-GetTrusteeTypeA
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: TRUSTEE_TYPE
-
-Parameters::
-
-    * PTRUSTEE_A pTrustee
-
-
-GetTrusteeTypeW
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: TRUSTEE_TYPE
-
-Parameters::
-
-    * PTRUSTEE_W pTrustee
-
-
-GetUserObjectSecurity
-=====================
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hObj
-    * PSECURITY_INFORMATION pSIRequested
-    * PSECURITY_DESCRIPTOR pSID
-    * DWORD nLength
-    * LPDWORD lpnLengthNeeded
-
-
-GetWindowsAccountDomainSid
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSID pSid
-    * PSID pDomainSid
-    * DWORD *cbDomainSid
-
-
-ImpersonateAnonymousToken
-=========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE ThreadHandle
-
-
-ImpersonateLoggedOnUser
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hToken
-
-
-ImpersonateNamedPipeClient
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hNamedPipe
-
-
-ImpersonateSelf
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * SECURITY_IMPERSONATION_LEVEL ImpersonationLevel
-
-
-InitializeAcl
+FindNextFileA
 =============
 
 Signature::
 
-    * Library: advapi32
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * PACL pAcl
-    * DWORD nAclLength
-    * DWORD dwAclRevision
+    * HANDLE hFindFile
+    * LPWIN32_FIND_DATAA lpFindFileData
 
 
-InitializeSecurityDescriptor
-============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * DWORD dwRevision
-
-
-InitializeSid
+FindNextFileW
 =============
 
 Signature::
 
-    * Library: advapi32
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * PSID Sid
-    * PSID_IDENTIFIER_AUTHORITY pIdentifierAuthority
-    * BYTE nSubAuthorityCount
+    * HANDLE hFindFile
+    * LPWIN32_FIND_DATAW lpFindFileData
 
 
-IsTokenRestricted
+FindNextFileNameW
 =================
 
 Signature::
 
-    * Library: advapi32
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE TokenHandle
+    * HANDLE hFindStream
+    * LPDWORD StringLength
+    * PWSTR LinkName
 
 
-IsValidAcl
-==========
+FindNextStreamW
+===============
 
 Signature::
 
-    * Library: advapi32
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * PACL pAcl
+    * HANDLE hFindStream
+    * LPVOID lpFindStreamData
 
 
-IsValidSecurityDescriptor
-=========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-
-
-IsValidSid
-==========
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSID pSid
-
-
-IsWellKnownSid
-==============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSID pSid
-    * WELL_KNOWN_SID_TYPE WellKnownSidType
-
-
-LookupAccountNameA
-==================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpSystemName
-    * LPCSTR lpAccountName
-    * PSID Sid
-    * LPDWORD cbSid
-    * LPSTR ReferencedDomainName
-    * LPDWORD cchReferencedDomainName
-    * PSID_NAME_USE peUse
-
-
-LookupAccountNameW
-==================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpSystemName
-    * LPCWSTR lpAccountName
-    * PSID Sid
-    * LPDWORD cbSid
-    * LPWSTR ReferencedDomainName
-    * LPDWORD cchReferencedDomainName
-    * PSID_NAME_USE peUse
-
-
-LookupAccountSidA
-=================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpSystemName
-    * PSID Sid
-    * LPSTR Name
-    * LPDWORD cchName
-    * LPSTR ReferencedDomainName
-    * LPDWORD cchReferencedDomainName
-    * PSID_NAME_USE peUse
-
-
-LookupAccountSidW
-=================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpSystemName
-    * PSID Sid
-    * LPWSTR Name
-    * LPDWORD cchName
-    * LPWSTR ReferencedDomainName
-    * LPDWORD cchReferencedDomainName
-    * PSID_NAME_USE peUse
-
-
-LookupAccountSidLocalA
-======================
-
-Signature::
-
-    * Library: sechost
-    * Return value: BOOL
-
-Parameters::
-
-    * PSID Sid
-    * LPSTR Name
-    * LPDWORD cchName
-    * LPSTR ReferencedDomainName
-    * LPDWORD cchReferencedDomainName
-    * PSID_NAME_USE peUse
-
-
-LookupAccountSidLocalW
-======================
-
-Signature::
-
-    * Library: sechost
-    * Return value: BOOL
-
-Parameters::
-
-    * PSID Sid
-    * LPWSTR Name
-    * LPDWORD cchName
-    * LPWSTR ReferencedDomainName
-    * LPDWORD cchReferencedDomainName
-    * PSID_NAME_USE peUse
-
-
-LookupPrivilegeDisplayNameA
-===========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpSystemName
-    * LPCSTR lpName
-    * LPSTR lpDisplayName
-    * LPDWORD cchDisplayName
-    * LPDWORD lpLanguageId
-
-
-LookupPrivilegeDisplayNameW
-===========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpSystemName
-    * LPCWSTR lpName
-    * LPWSTR lpDisplayName
-    * LPDWORD cchDisplayName
-    * LPDWORD lpLanguageId
-
-
-LookupPrivilegeNameA
-====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpSystemName
-    * PLUID lpLuid
-    * LPSTR lpName
-    * LPDWORD cchName
-
-
-LookupPrivilegeNameW
-====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpSystemName
-    * PLUID lpLuid
-    * LPWSTR lpName
-    * LPDWORD cchName
-
-
-LookupPrivilegeValueA
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpSystemName
-    * LPCSTR lpName
-    * PLUID lpLuid
-
-
-LookupPrivilegeValueW
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpSystemName
-    * LPCWSTR lpName
-    * PLUID lpLuid
-
-
-LookupSecurityDescriptorPartsA
-==============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PTRUSTEE_A *ppOwner
-    * PTRUSTEE_A *ppGroup
-    * PULONG pcCountOfAccessEntries
-    * PEXPLICIT_ACCESS_A *ppListOfAccessEntries
-    * PULONG pcCountOfAuditEntries
-    * PEXPLICIT_ACCESS_A *ppListOfAuditEntries
-    * PSECURITY_DESCRIPTOR pSD
-
-
-LookupSecurityDescriptorPartsW
-==============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PTRUSTEE_W *ppOwner
-    * PTRUSTEE_W *ppGroup
-    * PULONG pcCountOfAccessEntries
-    * PEXPLICIT_ACCESS_W *ppListOfAccessEntries
-    * PULONG pcCountOfAuditEntries
-    * PEXPLICIT_ACCESS_W *ppListOfAuditEntries
-    * PSECURITY_DESCRIPTOR pSD
-
-
-MakeAbsoluteSD
-==============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSelfRelativeSecurityDescriptor
-    * PSECURITY_DESCRIPTOR pAbsoluteSecurityDescriptor
-    * LPDWORD lpdwAbsoluteSecurityDescriptorSize
-    * PACL pDacl
-    * LPDWORD lpdwDaclSize
-    * PACL pSacl
-    * LPDWORD lpdwSaclSize
-    * PSID pOwner
-    * LPDWORD lpdwOwnerSize
-    * PSID pPrimaryGroup
-    * LPDWORD lpdwPrimaryGroupSize
-
-
-MakeSelfRelativeSD
-==================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pAbsoluteSecurityDescriptor
-    * PSECURITY_DESCRIPTOR pSelfRelativeSecurityDescriptor
-    * LPDWORD lpdwBufferLength
-
-
-MapGenericMask
-==============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * PDWORD AccessMask
-    * PGENERIC_MAPPING GenericMapping
-
-
-ObjectCloseAuditAlarmA
-======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR SubsystemName
-    * LPVOID HandleId
-    * BOOL GenerateOnClose
-
-
-ObjectCloseAuditAlarmW
-======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR SubsystemName
-    * LPVOID HandleId
-    * BOOL GenerateOnClose
-
-
-ObjectDeleteAuditAlarmA
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR SubsystemName
-    * LPVOID HandleId
-    * BOOL GenerateOnClose
-
-
-ObjectDeleteAuditAlarmW
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR SubsystemName
-    * LPVOID HandleId
-    * BOOL GenerateOnClose
-
-
-ObjectOpenAuditAlarmA
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR SubsystemName
-    * LPVOID HandleId
-    * LPSTR ObjectTypeName
-    * LPSTR ObjectName
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * HANDLE ClientToken
-    * DWORD DesiredAccess
-    * DWORD GrantedAccess
-    * PPRIVILEGE_SET Privileges
-    * BOOL ObjectCreation
-    * BOOL AccessGranted
-    * LPBOOL GenerateOnClose
-
-
-ObjectOpenAuditAlarmW
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR SubsystemName
-    * LPVOID HandleId
-    * LPWSTR ObjectTypeName
-    * LPWSTR ObjectName
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * HANDLE ClientToken
-    * DWORD DesiredAccess
-    * DWORD GrantedAccess
-    * PPRIVILEGE_SET Privileges
-    * BOOL ObjectCreation
-    * BOOL AccessGranted
-    * LPBOOL GenerateOnClose
-
-
-ObjectPrivilegeAuditAlarmA
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR SubsystemName
-    * LPVOID HandleId
-    * HANDLE ClientToken
-    * DWORD DesiredAccess
-    * PPRIVILEGE_SET Privileges
-    * BOOL AccessGranted
-
-
-ObjectPrivilegeAuditAlarmW
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR SubsystemName
-    * LPVOID HandleId
-    * HANDLE ClientToken
-    * DWORD DesiredAccess
-    * PPRIVILEGE_SET Privileges
-    * BOOL AccessGranted
-
-
-OpenProcessToken
+FlushFileBuffers
 ================
 
 Signature::
@@ -2706,12 +1322,954 @@ Signature::
 
 Parameters::
 
-    * HANDLE ProcessHandle
-    * DWORD DesiredAccess
-    * PHANDLE TokenHandle
+    * HANDLE hFile
 
 
-OpenThreadToken
+FreeEncryptionCertificateHashList
+=================================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PENCRYPTION_CERTIFICATE_HASH_LIST pUsers
+
+
+GetBinaryTypeA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpApplicationName
+    * LPDWORD lpBinaryType
+
+
+GetBinaryTypeW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpApplicationName
+    * LPDWORD lpBinaryType
+
+
+GetCompressedFileSizeA
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * LPDWORD lpFileSizeHigh
+
+
+GetCompressedFileSizeW
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * LPDWORD lpFileSizeHigh
+
+
+GetCompressedFileSizeTransactedA
+================================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * LPDWORD lpFileSizeHigh
+    * HANDLE hTransaction
+
+
+GetCompressedFileSizeTransactedW
+================================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * LPDWORD lpFileSizeHigh
+    * HANDLE hTransaction
+
+
+GetCurrentDirectoryA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD nBufferLength
+    * LPSTR lpBuffer
+
+
+GetCurrentDirectoryW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD nBufferLength
+    * LPWSTR lpBuffer
+
+
+GetFileAttributesA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpFileName
+
+
+GetFileAttributesW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpFileName
+
+
+GetFileAttributesExA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * GET_FILEEX_INFO_LEVELS fInfoLevelId
+    * LPVOID lpFileInformation
+
+
+GetFileAttributesExW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * GET_FILEEX_INFO_LEVELS fInfoLevelId
+    * LPVOID lpFileInformation
+
+
+GetFileAttributesTransactedA
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * GET_FILEEX_INFO_LEVELS fInfoLevelId
+    * LPVOID lpFileInformation
+    * HANDLE hTransaction
+
+
+GetFileAttributesTransactedW
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * GET_FILEEX_INFO_LEVELS fInfoLevelId
+    * LPVOID lpFileInformation
+    * HANDLE hTransaction
+
+
+GetFileBandwidthReservation
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPDWORD lpPeriodMilliseconds
+    * LPDWORD lpBytesPerPeriod
+    * LPBOOL pDiscardable
+    * LPDWORD lpTransferSize
+    * LPDWORD lpNumOutstandingRequests
+
+
+GetFileInformationByHandle
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPBY_HANDLE_FILE_INFORMATION lpFileInformation
+
+
+GetFileInformationByHandleEx
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * FILE_INFO_BY_HANDLE_CLASS FileInformationClass
+    * LPVOID lpFileInformation
+    * DWORD dwBufferSize
+
+
+GetFileSize
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hFile
+    * LPDWORD lpFileSizeHigh
+
+
+GetFileSizeEx
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * PLARGE_INTEGER lpFileSize
+
+
+GetFileType
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hFile
+
+
+GetFinalPathNameByHandleA
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hFile
+    * LPSTR lpszFilePath
+    * DWORD cchFilePath
+    * DWORD dwFlags
+
+
+GetFinalPathNameByHandleW
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hFile
+    * LPWSTR lpszFilePath
+    * DWORD cchFilePath
+    * DWORD dwFlags
+
+
+GetFullPathNameA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * DWORD nBufferLength
+    * LPSTR lpBuffer
+    * LPSTR *lpFilePart
+
+
+GetFullPathNameW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * DWORD nBufferLength
+    * LPWSTR lpBuffer
+    * LPWSTR *lpFilePart
+
+
+GetFullPathNameTransactedA
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * DWORD nBufferLength
+    * LPSTR lpBuffer
+    * LPSTR *lpFilePart
+    * HANDLE hTransaction
+
+
+GetFullPathNameTransactedW
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * DWORD nBufferLength
+    * LPWSTR lpBuffer
+    * LPWSTR *lpFilePart
+    * HANDLE hTransaction
+
+
+GetLongPathNameA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpszShortPath
+    * LPSTR lpszLongPath
+    * DWORD cchBuffer
+
+
+GetLongPathNameW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpszShortPath
+    * LPWSTR lpszLongPath
+    * DWORD cchBuffer
+
+
+GetLongPathNameTransactedA
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpszShortPath
+    * LPSTR lpszLongPath
+    * DWORD cchBuffer
+    * HANDLE hTransaction
+
+
+GetLongPathNameTransactedW
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpszShortPath
+    * LPWSTR lpszLongPath
+    * DWORD cchBuffer
+    * HANDLE hTransaction
+
+
+GetQueuedCompletionStatus
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE CompletionPort
+    * LPDWORD lpNumberOfBytesTransferred
+    * PULONG_PTR lpCompletionKey
+    * LPOVERLAPPED *lpOverlapped
+    * DWORD dwMilliseconds
+
+
+GetQueuedCompletionStatusEx
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE CompletionPort
+    * LPOVERLAPPED_ENTRY lpCompletionPortEntries
+    * ULONG ulCount
+    * PULONG ulNumEntriesRemoved
+    * DWORD dwMilliseconds
+    * BOOL fAlertable
+
+
+GetShortPathNameA
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpszLongPath
+    * LPSTR lpszShortPath
+    * DWORD cchBuffer
+
+
+GetShortPathNameW
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpszLongPath
+    * LPWSTR lpszShortPath
+    * DWORD cchBuffer
+
+
+GetTempFileNameA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPCSTR lpPathName
+    * LPCSTR lpPrefixString
+    * UINT uUnique
+    * LPSTR lpTempFileName
+
+
+GetTempFileNameW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPCWSTR lpPathName
+    * LPCWSTR lpPrefixString
+    * UINT uUnique
+    * LPWSTR lpTempFileName
+
+
+GetTempPathA
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD nBufferLength
+    * LPSTR lpBuffer
+
+
+GetTempPathW
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD nBufferLength
+    * LPWSTR lpBuffer
+
+
+LockFile
+========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * DWORD dwFileOffsetLow
+    * DWORD dwFileOffsetHigh
+    * DWORD nNumberOfBytesToLockLow
+    * DWORD nNumberOfBytesToLockHigh
+
+
+LockFileEx
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * DWORD dwFlags
+    * DWORD dwReserved
+    * DWORD nNumberOfBytesToLockLow
+    * DWORD nNumberOfBytesToLockHigh
+    * LPOVERLAPPED lpOverlapped
+
+
+MoveFileA
+=========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpExistingFileName
+    * LPCSTR lpNewFileName
+
+
+MoveFileW
+=========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpExistingFileName
+    * LPCWSTR lpNewFileName
+
+
+MoveFileExA
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpExistingFileName
+    * LPCSTR lpNewFileName
+    * DWORD dwFlags
+
+
+MoveFileExW
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpExistingFileName
+    * LPCWSTR lpNewFileName
+    * DWORD dwFlags
+
+
+MoveFileTransactedA
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpExistingFileName
+    * LPCSTR lpNewFileName
+    * LPPROGRESS_ROUTINE lpProgressRoutine
+    * LPVOID lpData
+    * DWORD dwFlags
+    * HANDLE hTransaction
+
+
+MoveFileTransactedW
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpExistingFileName
+    * LPCWSTR lpNewFileName
+    * LPPROGRESS_ROUTINE lpProgressRoutine
+    * LPVOID lpData
+    * DWORD dwFlags
+    * HANDLE hTransaction
+
+
+MoveFileWithProgressA
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpExistingFileName
+    * LPCSTR lpNewFileName
+    * LPPROGRESS_ROUTINE lpProgressRoutine
+    * LPVOID lpData
+    * DWORD dwFlags
+
+
+MoveFileWithProgressW
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpExistingFileName
+    * LPCWSTR lpNewFileName
+    * LPPROGRESS_ROUTINE lpProgressRoutine
+    * LPVOID lpData
+    * DWORD dwFlags
+
+
+OpenEncryptedFileRawA
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * ULONG ulFlags
+    * PVOID *pvContext
+
+
+OpenEncryptedFileRawW
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * ULONG ulFlags
+    * PVOID *pvContext
+
+
+OpenFile
+========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HFILE
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * LPOFSTRUCT lpReOpenBuff
+    * UINT uStyle
+
+
+OpenFileById
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * HANDLE hVolumeHint
+    * LPFILE_ID_DESCRIPTOR lpFileId
+    * DWORD dwDesiredAccess
+    * DWORD dwShareMode
+    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * DWORD dwFlagsAndAttributes
+
+
+PostQueuedCompletionStatus
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE CompletionPort
+    * DWORD dwNumberOfBytesTransferred
+    * ULONG_PTR dwCompletionKey
+    * LPOVERLAPPED lpOverlapped
+
+
+QueryRecoveryAgentsOnEncryptedFile
+==================================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * PENCRYPTION_CERTIFICATE_HASH_LIST *pRecoveryAgents
+
+
+QueryUsersOnEncryptedFile
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * PENCRYPTION_CERTIFICATE_HASH_LIST *pUsers
+
+
+ReOpenFile
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * HANDLE hOriginalFile
+    * DWORD dwDesiredAccess
+    * DWORD dwShareMode
+    * DWORD dwFlagsAndAttributes
+
+
+ReadDirectoryChangesW
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hDirectory
+    * LPVOID lpBuffer
+    * DWORD nBufferLength
+    * BOOL bWatchSubtree
+    * DWORD dwNotifyFilter
+    * LPDWORD lpBytesReturned
+    * LPOVERLAPPED lpOverlapped
+    * LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+
+
+ReadEncryptedFileRaw
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PFE_EXPORT_FUNC pfExportCallback
+    * PVOID pvCallbackContext
+    * PVOID pvContext
+
+
+ReadFile
+========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPVOID lpBuffer
+    * DWORD nNumberOfBytesToRead
+    * LPDWORD lpNumberOfBytesRead
+    * LPOVERLAPPED lpOverlapped
+
+
+ReadFileEx
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPVOID lpBuffer
+    * DWORD nNumberOfBytesToRead
+    * LPOVERLAPPED lpOverlapped
+    * LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+
+
+ReadFileScatter
 ===============
 
 Signature::
@@ -2721,29 +2279,771 @@ Signature::
 
 Parameters::
 
-    * HANDLE ThreadHandle
-    * DWORD DesiredAccess
-    * BOOL OpenAsSelf
-    * PHANDLE TokenHandle
+    * HANDLE hFile
+    * FILE_SEGMENT_ELEMENT aSegmentArray[]
+    * DWORD nNumberOfBytesToRead
+    * LPDWORD lpReserved
+    * LPOVERLAPPED lpOverlapped
 
 
-PrivilegeCheck
+RemoveDirectoryA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpPathName
+
+
+RemoveDirectoryW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpPathName
+
+
+RemoveDirectoryTransactedA
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpPathName
+    * HANDLE hTransaction
+
+
+RemoveDirectoryTransactedW
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpPathName
+    * HANDLE hTransaction
+
+
+RemoveUsersFromEncryptedFile
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * PENCRYPTION_CERTIFICATE_HASH_LIST pHashes
+
+
+ReplaceFileA
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpReplacedFileName
+    * LPCSTR lpReplacementFileName
+    * LPCSTR lpBackupFileName
+    * DWORD dwReplaceFlags
+    * LPVOID lpExclude
+    * LPVOID lpReserved
+
+
+ReplaceFileW
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpReplacedFileName
+    * LPCWSTR lpReplacementFileName
+    * LPCWSTR lpBackupFileName
+    * DWORD dwReplaceFlags
+    * LPVOID lpExclude
+    * LPVOID lpReserved
+
+
+SearchPathA
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpPath
+    * LPCSTR lpFileName
+    * LPCSTR lpExtension
+    * DWORD nBufferLength
+    * LPSTR lpBuffer
+    * LPSTR *lpFilePart
+
+
+SearchPathW
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpPath
+    * LPCWSTR lpFileName
+    * LPCWSTR lpExtension
+    * DWORD nBufferLength
+    * LPWSTR lpBuffer
+    * LPWSTR *lpFilePart
+
+
+SetCurrentDirectoryA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpPathName
+
+
+SetCurrentDirectoryW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpPathName
+
+
+SetEndOfFile
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+
+
+SetFileApisToANSI
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+
+SetFileApisToOEM
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+
+SetFileAttributesA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * DWORD dwFileAttributes
+
+
+SetFileAttributesW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * DWORD dwFileAttributes
+
+
+SetFileAttributesTransactedA
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * DWORD dwFileAttributes
+    * HANDLE hTransaction
+
+
+SetFileAttributesTransactedW
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * DWORD dwFileAttributes
+    * HANDLE hTransaction
+
+
+SetFileBandwidthReservation
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * DWORD nPeriodMilliseconds
+    * DWORD nBytesPerPeriod
+    * BOOL bDiscardable
+    * LPDWORD lpTransferSize
+    * LPDWORD lpNumOutstandingRequests
+
+
+SetFileCompletionNotificationModes
+==================================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE FileHandle
+    * UCHAR Flags
+
+
+SetFileInformationByHandle
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * FILE_INFO_BY_HANDLE_CLASS FileInformationClass
+    * LPVOID lpFileInformation
+    * DWORD dwBufferSize
+
+
+SetFileIoOverlappedRange
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE FileHandle
+    * PUCHAR OverlappedRangeStart
+    * ULONG Length
+
+
+SetFilePointer
 ==============
 
 Signature::
 
-    * Library: advapi32
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hFile
+    * LONG lDistanceToMove
+    * PLONG lpDistanceToMoveHigh
+    * DWORD dwMoveMethod
+
+
+SetFilePointerEx
+================
+
+Signature::
+
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE ClientToken
-    * PPRIVILEGE_SET RequiredPrivileges
-    * LPBOOL pfResult
+    * HANDLE hFile
+    * LARGE_INTEGER liDistanceToMove
+    * PLARGE_INTEGER lpNewFilePointer
+    * DWORD dwMoveMethod
 
 
-PrivilegedServiceAuditAlarmA
-============================
+SetFileShortNameA
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPCSTR lpShortName
+
+
+SetFileShortNameW
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPCWSTR lpShortName
+
+
+SetFileValidData
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LONGLONG ValidDataLength
+
+
+SetSearchPathMode
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD Flags
+
+
+SetUserFileEncryptionKey
+========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PENCRYPTION_CERTIFICATE pEncryptionCertificate
+
+
+UnlockFile
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * DWORD dwFileOffsetLow
+    * DWORD dwFileOffsetHigh
+    * DWORD nNumberOfBytesToUnlockLow
+    * DWORD nNumberOfBytesToUnlockHigh
+
+
+UnlockFileEx
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * DWORD dwReserved
+    * DWORD nNumberOfBytesToUnlockLow
+    * DWORD nNumberOfBytesToUnlockHigh
+    * LPOVERLAPPED lpOverlapped
+
+
+Wow64DisableWow64FsRedirection
+==============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PVOID *OldValue
+
+
+Wow64EnableWow64FsRedirection
+=============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOLEAN
+
+Parameters::
+
+    * BOOLEAN Wow64FsEnableRedirection
+
+
+Wow64RevertWow64FsRedirection
+=============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PVOID OlValue
+
+
+WriteEncryptedFileRaw
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PFE_IMPORT_FUNC pfImportCallback
+    * PVOID pvCallbackContext
+    * PVOID pvContext
+
+
+WriteFile
+=========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPCVOID lpBuffer
+    * DWORD nNumberOfBytesToWrite
+    * LPDWORD lpNumberOfBytesWritten
+    * LPOVERLAPPED lpOverlapped
+
+
+WriteFileEx
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPCVOID lpBuffer
+    * DWORD nNumberOfBytesToWrite
+    * LPOVERLAPPED lpOverlapped
+    * LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+
+
+WriteFileGather
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * FILE_SEGMENT_ELEMENT aSegmentArray[]
+    * DWORD nNumberOfBytesToWrite
+    * LPDWORD lpReserved
+    * LPOVERLAPPED lpOverlapped
+
+
+ChangeServiceConfigA
+====================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwServiceType
+    * DWORD dwStartType
+    * DWORD dwErrorControl
+    * LPCSTR lpBinaryPathName
+    * LPCSTR lpLoadOrderGroup
+    * LPDWORD lpdwTagId
+    * LPCSTR lpDependencies
+    * LPCSTR lpServiceStartName
+    * LPCSTR lpPassword
+    * LPCSTR lpDisplayName
+
+
+ChangeServiceConfigW
+====================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwServiceType
+    * DWORD dwStartType
+    * DWORD dwErrorControl
+    * LPCWSTR lpBinaryPathName
+    * LPCWSTR lpLoadOrderGroup
+    * LPDWORD lpdwTagId
+    * LPCWSTR lpDependencies
+    * LPCWSTR lpServiceStartName
+    * LPCWSTR lpPassword
+    * LPCWSTR lpDisplayName
+
+
+ChangeServiceConfig2A
+=====================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwInfoLevel
+    * LPVOID lpInfo
+
+
+ChangeServiceConfig2W
+=====================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwInfoLevel
+    * LPVOID lpInfo
+
+
+CloseServiceHandle
+==================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hSCObject
+
+
+ControlService
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwControl
+    * LPSERVICE_STATUS lpServiceStatus
+
+
+ControlServiceExA
+=================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwControl
+    * DWORD dwInfoLevel
+    * PVOID pControlParams
+
+
+ControlServiceExW
+=================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwControl
+    * DWORD dwInfoLevel
+    * PVOID pControlParams
+
+
+CreateServiceA
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    * SC_HANDLE hSCManager
+    * LPCSTR lpServiceName
+    * LPCSTR lpDisplayName
+    * DWORD dwDesiredAccess
+    * DWORD dwServiceType
+    * DWORD dwStartType
+    * DWORD dwErrorControl
+    * LPCSTR lpBinaryPathName
+    * LPCSTR lpLoadOrderGroup
+    * LPDWORD lpdwTagId
+    * LPCSTR lpDependencies
+    * LPCSTR lpServiceStartName
+    * LPCSTR lpPassword
+
+
+CreateServiceW
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    * SC_HANDLE hSCManager
+    * LPCWSTR lpServiceName
+    * LPCWSTR lpDisplayName
+    * DWORD dwDesiredAccess
+    * DWORD dwServiceType
+    * DWORD dwStartType
+    * DWORD dwErrorControl
+    * LPCWSTR lpBinaryPathName
+    * LPCWSTR lpLoadOrderGroup
+    * LPDWORD lpdwTagId
+    * LPCWSTR lpDependencies
+    * LPCWSTR lpServiceStartName
+    * LPCWSTR lpPassword
+
+
+DeleteService
+=============
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+
+
+EnumDependentServicesA
+======================
 
 Signature::
 
@@ -2752,15 +3052,16 @@ Signature::
 
 Parameters::
 
-    * LPCSTR SubsystemName
-    * LPCSTR ServiceName
-    * HANDLE ClientToken
-    * PPRIVILEGE_SET Privileges
-    * BOOL AccessGranted
+    * SC_HANDLE hService
+    * DWORD dwServiceState
+    * LPENUM_SERVICE_STATUSA lpServices
+    * DWORD cbBufSize
+    * LPDWORD pcbBytesNeeded
+    * LPDWORD lpServicesReturned
 
 
-PrivilegedServiceAuditAlarmW
-============================
+EnumDependentServicesW
+======================
 
 Signature::
 
@@ -2769,25 +3070,289 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR SubsystemName
-    * LPCWSTR ServiceName
-    * HANDLE ClientToken
-    * PPRIVILEGE_SET Privileges
-    * BOOL AccessGranted
+    * SC_HANDLE hService
+    * DWORD dwServiceState
+    * LPENUM_SERVICE_STATUSW lpServices
+    * DWORD cbBufSize
+    * LPDWORD pcbBytesNeeded
+    * LPDWORD lpServicesReturned
 
 
-QuerySecurityAccessMask
-=======================
+EnumServicesStatusExA
+=====================
 
 Signature::
 
     * Library: advapi32
-    * Return value: void
+    * Return value: BOOL
 
 Parameters::
 
-    * SECURITY_INFORMATION SecurityInformation
-    * LPDWORD DesiredAccess
+    * SC_HANDLE hSCManager
+    * SC_ENUM_TYPE InfoLevel
+    * DWORD dwServiceType
+    * DWORD dwServiceState
+    * LPBYTE lpServices
+    * DWORD cbBufSize
+    * LPDWORD pcbBytesNeeded
+    * LPDWORD lpServicesReturned
+    * LPDWORD lpResumeHandle
+    * LPCSTR pszGroupName
+
+
+EnumServicesStatusExW
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hSCManager
+    * SC_ENUM_TYPE InfoLevel
+    * DWORD dwServiceType
+    * DWORD dwServiceState
+    * LPBYTE lpServices
+    * DWORD cbBufSize
+    * LPDWORD pcbBytesNeeded
+    * LPDWORD lpServicesReturned
+    * LPDWORD lpResumeHandle
+    * LPCWSTR pszGroupName
+
+
+GetServiceDisplayNameA
+======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hSCManager
+    * LPCSTR lpServiceName
+    * LPSTR lpDisplayName
+    * LPDWORD lpcchBuffer
+
+
+GetServiceDisplayNameW
+======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hSCManager
+    * LPCWSTR lpServiceName
+    * LPWSTR lpDisplayName
+    * LPDWORD lpcchBuffer
+
+
+GetServiceKeyNameA
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hSCManager
+    * LPCSTR lpDisplayName
+    * LPSTR lpServiceName
+    * LPDWORD lpcchBuffer
+
+
+GetServiceKeyNameW
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hSCManager
+    * LPCWSTR lpDisplayName
+    * LPWSTR lpServiceName
+    * LPDWORD lpcchBuffer
+
+
+NotifyBootConfigStatus
+======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * BOOL BootAcceptable
+
+
+NotifyServiceStatusChangeA
+==========================
+
+Signature::
+
+    * Library: sechost
+    * Return value: DWORD
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwNotifyMask
+    * PSERVICE_NOTIFYA pNotifyBuffer
+
+
+NotifyServiceStatusChangeW
+==========================
+
+Signature::
+
+    * Library: sechost
+    * Return value: DWORD
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwNotifyMask
+    * PSERVICE_NOTIFYW pNotifyBuffer
+
+
+OpenSCManagerA
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    * LPCSTR lpMachineName
+    * LPCSTR lpDatabaseName
+    * DWORD dwDesiredAccess
+
+
+OpenSCManagerW
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    * LPCWSTR lpMachineName
+    * LPCWSTR lpDatabaseName
+    * DWORD dwDesiredAccess
+
+
+OpenServiceA
+============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    * SC_HANDLE hSCManager
+    * LPCSTR lpServiceName
+    * DWORD dwDesiredAccess
+
+
+OpenServiceW
+============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    * SC_HANDLE hSCManager
+    * LPCWSTR lpServiceName
+    * DWORD dwDesiredAccess
+
+
+QueryServiceConfigA
+===================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * LPQUERY_SERVICE_CONFIGA lpServiceConfig
+    * DWORD cbBufSize
+    * LPDWORD pcbBytesNeeded
+
+
+QueryServiceConfigW
+===================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * LPQUERY_SERVICE_CONFIGW lpServiceConfig
+    * DWORD cbBufSize
+    * LPDWORD pcbBytesNeeded
+
+
+QueryServiceConfig2A
+====================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwInfoLevel
+    * LPBYTE lpBuffer
+    * DWORD cbBufSize
+    * LPDWORD pcbBytesNeeded
+
+
+QueryServiceConfig2W
+====================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwInfoLevel
+    * LPBYTE lpBuffer
+    * DWORD cbBufSize
+    * LPDWORD pcbBytesNeeded
 
 
 QueryServiceObjectSecurity
@@ -2807,334 +3372,21 @@ Parameters::
     * LPDWORD pcbBytesNeeded
 
 
-RegGetKeySecurity
-=================
+QueryServiceStatusEx
+====================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * SECURITY_INFORMATION SecurityInformation
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * LPDWORD lpcbSecurityDescriptor
-
-
-RegSetKeySecurity
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * SECURITY_INFORMATION SecurityInformation
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-
-
-RevertToSelf
-============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-
-SetAclInformation
-=================
-
-Signature::
-
-    * Library: advapi32
+    * Library: sechost
     * Return value: BOOL
 
 Parameters::
 
-    * PACL pAcl
-    * LPVOID pAclInformation
-    * DWORD nAclInformationLength
-    * ACL_INFORMATION_CLASS dwAclInformationClass
-
-
-SetEntriesInAclA
-================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * ULONG cCountOfExplicitEntries
-    * PEXPLICIT_ACCESS_A pListOfExplicitEntries
-    * PACL OldAcl
-    * PACL *NewAcl
-
-
-SetEntriesInAclW
-================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * ULONG cCountOfExplicitEntries
-    * PEXPLICIT_ACCESS_W pListOfExplicitEntries
-    * PACL OldAcl
-    * PACL *NewAcl
-
-
-SetFileSecurityA
-================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * SECURITY_INFORMATION SecurityInformation
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-
-
-SetFileSecurityW
-================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * SECURITY_INFORMATION SecurityInformation
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-
-
-SetKernelObjectSecurity
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE Handle
-    * SECURITY_INFORMATION SecurityInformation
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-
-
-SetNamedSecurityInfoA
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID psidOwner
-    * PSID psidGroup
-    * PACL pDacl
-    * PACL pSacl
-
-
-SetNamedSecurityInfoW
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPWSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID psidOwner
-    * PSID psidGroup
-    * PACL pDacl
-    * PACL pSacl
-
-
-SetPrivateObjectSecurity
-========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * SECURITY_INFORMATION SecurityInformation
-    * PSECURITY_DESCRIPTOR ModificationDescriptor
-    * PSECURITY_DESCRIPTOR *ObjectsSecurityDescriptor
-    * PGENERIC_MAPPING GenericMapping
-    * HANDLE Token
-
-
-SetPrivateObjectSecurityEx
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * SECURITY_INFORMATION SecurityInformation
-    * PSECURITY_DESCRIPTOR ModificationDescriptor
-    * PSECURITY_DESCRIPTOR *ObjectsSecurityDescriptor
-    * ULONG AutoInheritFlags
-    * PGENERIC_MAPPING GenericMapping
-    * HANDLE Token
-
-
-SetSecurityAccessMask
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: void
-
-Parameters::
-
-    * SECURITY_INFORMATION SecurityInformation
-    * LPDWORD DesiredAccess
-
-
-SetSecurityDescriptorControl
-============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * SECURITY_DESCRIPTOR_CONTROL ControlBitsOfInterest
-    * SECURITY_DESCRIPTOR_CONTROL ControlBitsToSet
-
-
-SetSecurityDescriptorDacl
-=========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * BOOL bDaclPresent
-    * PACL pDacl
-    * BOOL bDaclDefaulted
-
-
-SetSecurityDescriptorGroup
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * PSID pGroup
-    * BOOL bGroupDefaulted
-
-
-SetSecurityDescriptorOwner
-==========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * PSID pOwner
-    * BOOL bOwnerDefaulted
-
-
-SetSecurityDescriptorRMControl
-==============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR SecurityDescriptor
-    * PUCHAR RMControl
-
-
-SetSecurityDescriptorSacl
-=========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * PSECURITY_DESCRIPTOR pSecurityDescriptor
-    * BOOL bSaclPresent
-    * PACL pSacl
-    * BOOL bSaclDefaulted
-
-
-SetSecurityInfo
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE handle
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID psidOwner
-    * PSID psidGroup
-    * PACL pDacl
-    * PACL pSacl
+    * SC_HANDLE hService
+    * SC_STATUS_TYPE InfoLevel
+    * LPBYTE lpBuffer
+    * DWORD cbBufSize
+    * LPDWORD pcbBytesNeeded
 
 
 SetServiceObjectSecurity
@@ -3152,7 +3404,281 @@ Parameters::
     * PSECURITY_DESCRIPTOR lpSecurityDescriptor
 
 
-SetThreadToken
+SetServiceStatus
+================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SERVICE_STATUS_HANDLE hServiceStatus
+    * LPSERVICE_STATUS lpServiceStatus
+
+
+StartServiceA
+=============
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwNumServiceArgs
+    * LPCSTR *lpServiceArgVectors
+
+
+StartServiceW
+=============
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * SC_HANDLE hService
+    * DWORD dwNumServiceArgs
+    * LPCWSTR *lpServiceArgVectors
+
+
+StartServiceCtrlDispatcherA
+===========================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * const SERVICE_TABLE_ENTRYA *lpServiceStartTable
+
+
+StartServiceCtrlDispatcherW
+===========================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * const SERVICE_TABLE_ENTRYW *lpServiceStartTable
+
+
+DnsHostnameToComputerNameA
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR Hostname
+    * LPSTR ComputerName
+    * LPDWORD nSize
+
+
+DnsHostnameToComputerNameW
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR Hostname
+    * LPWSTR ComputerName
+    * LPDWORD nSize
+
+
+EnumSystemFirmwareTables
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * DWORD FirmwareTableProviderSignature
+    * PVOID pFirmwareTableEnumBuffer
+    * DWORD BufferSize
+
+
+ExpandEnvironmentStringsA
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpSrc
+    * LPSTR lpDst
+    * DWORD nSize
+
+
+ExpandEnvironmentStringsW
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpSrc
+    * LPWSTR lpDst
+    * DWORD nSize
+
+
+GetComputerNameA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPSTR lpBuffer
+    * LPDWORD nSize
+
+
+GetComputerNameW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPWSTR lpBuffer
+    * LPDWORD nSize
+
+
+GetComputerNameExA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * COMPUTER_NAME_FORMAT NameType
+    * LPSTR lpBuffer
+    * LPDWORD nSize
+
+
+GetComputerNameExW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * COMPUTER_NAME_FORMAT NameType
+    * LPWSTR lpBuffer
+    * LPDWORD nSize
+
+
+GetCurrentHwProfileA
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPHW_PROFILE_INFOA lpHwProfileInfo
+
+
+GetCurrentHwProfileW
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPHW_PROFILE_INFOW lpHwProfileInfo
+
+
+GetFirmwareEnvironmentVariableA
+===============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpName
+    * LPCSTR lpGuid
+    * PVOID pBuffer
+    * DWORD nSize
+
+
+GetFirmwareEnvironmentVariableW
+===============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpName
+    * LPCWSTR lpGuid
+    * PVOID pBuffer
+    * DWORD nSize
+
+
+GetNativeSystemInfo
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * LPSYSTEM_INFO lpSystemInfo
+
+
+GetProductInfo
 ==============
 
 Signature::
@@ -3162,12 +3688,142 @@ Signature::
 
 Parameters::
 
-    * PHANDLE Thread
-    * HANDLE Token
+    * DWORD dwOSMajorVersion
+    * DWORD dwOSMinorVersion
+    * DWORD dwSpMajorVersion
+    * DWORD dwSpMinorVersion
+    * PDWORD pdwReturnedProductType
 
 
-SetTokenInformation
+GetSystemDirectoryA
 ===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPSTR lpBuffer
+    * UINT uSize
+
+
+GetSystemDirectoryW
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPWSTR lpBuffer
+    * UINT uSize
+
+
+GetSystemFirmwareTable
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * DWORD FirmwareTableProviderSignature
+    * DWORD FirmwareTableID
+    * PVOID pFirmwareTableBuffer
+    * DWORD BufferSize
+
+
+GetSystemInfo
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * LPSYSTEM_INFO lpSystemInfo
+
+
+GetSystemRegistryQuota
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PDWORD pdwQuotaAllowed
+    * PDWORD pdwQuotaUsed
+
+
+GetSystemWindowsDirectoryA
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPSTR lpBuffer
+    * UINT uSize
+
+
+GetSystemWindowsDirectoryW
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPWSTR lpBuffer
+    * UINT uSize
+
+
+GetSystemWow64DirectoryA
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPSTR lpBuffer
+    * UINT uSize
+
+
+GetSystemWow64DirectoryW
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPWSTR lpBuffer
+    * UINT uSize
+
+
+GetUserNameA
+============
 
 Signature::
 
@@ -3176,117 +3832,278 @@ Signature::
 
 Parameters::
 
-    * HANDLE TokenHandle
-    * TOKEN_INFORMATION_CLASS TokenInformationClass
-    * LPVOID TokenInformation
-    * DWORD TokenInformationLength
+    * LPSTR lpBuffer
+    * LPDWORD pcbBuffer
 
 
-SetUserObjectSecurity
-=====================
+GetUserNameW
+============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPWSTR lpBuffer
+    * LPDWORD pcbBuffer
+
+
+GetVersion
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+
+GetVersionExA
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPOSVERSIONINFOA lpVersionInformation
+
+
+GetVersionExW
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPOSVERSIONINFOW lpVersionInformation
+
+
+GetWindowsDirectoryA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPSTR lpBuffer
+    * UINT uSize
+
+
+GetWindowsDirectoryW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    * LPWSTR lpBuffer
+    * UINT uSize
+
+
+IsProcessorFeaturePresent
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD ProcessorFeature
+
+
+IsWow64Message
+==============
 
 Signature::
 
     * Library: user32
     * Return value: BOOL
 
-Parameters::
 
-    * HANDLE hObj
-    * PSECURITY_INFORMATION pSIRequested
-    * PSECURITY_DESCRIPTOR pSID
-
-
-TreeResetNamedSecurityInfoA
-===========================
+IsWow64Process
+==============
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
+    * Library: kernel32
+    * Return value: BOOL
 
 Parameters::
 
-    * LPSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID pOwner
-    * PSID pGroup
-    * PACL pDacl
-    * PACL pSacl
-    * BOOL KeepExplicit
-    * FN_PROGRESS fnProgress
-    * PROG_INVOKE_SETTING ProgressInvokeSetting
-    * PVOID Args
+    * HANDLE hProcess
+    * PBOOL Wow64Process
 
 
-TreeResetNamedSecurityInfoW
-===========================
+QueryPerformanceCounter
+=======================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
+    * Library: kernel32
+    * Return value: BOOL
 
 Parameters::
 
-    * LPWSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID pOwner
-    * PSID pGroup
-    * PACL pDacl
-    * PACL pSacl
-    * BOOL KeepExplicit
-    * FN_PROGRESS fnProgress
-    * PROG_INVOKE_SETTING ProgressInvokeSetting
-    * PVOID Args
+    * LARGE_INTEGER *lpPerformanceCount
 
 
-TreeSetNamedSecurityInfoA
+QueryPerformanceFrequency
 =========================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
+    * Library: kernel32
+    * Return value: BOOL
 
 Parameters::
 
-    * LPSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID pOwner
-    * PSID pGroup
-    * PACL pDacl
-    * PACL pSacl
-    * DWORD dwAction
-    * FN_PROGRESS fnProgress
-    * PROG_INVOKE_SETTING ProgressInvokeSetting
-    * PVOID Args
+    * LARGE_INTEGER *lpFrequency
 
 
-TreeSetNamedSecurityInfoW
-=========================
+SetComputerNameA
+================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: DWORD
+    * Library: kernel32
+    * Return value: BOOL
 
 Parameters::
 
-    * LPWSTR pObjectName
-    * SE_OBJECT_TYPE ObjectType
-    * SECURITY_INFORMATION SecurityInfo
-    * PSID pOwner
-    * PSID pGroup
-    * PACL pDacl
-    * PACL pSacl
-    * DWORD dwAction
-    * FN_PROGRESS fnProgress
-    * PROG_INVOKE_SETTING ProgressInvokeSetting
-    * PVOID Args
+    * LPCSTR lpComputerName
+
+
+SetComputerNameW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpComputerName
+
+
+SetComputerNameExA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * COMPUTER_NAME_FORMAT NameType
+    * LPCSTR lpBuffer
+
+
+SetComputerNameExW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * COMPUTER_NAME_FORMAT NameType
+    * LPCWSTR lpBuffer
+
+
+SetFirmwareEnvironmentVariableA
+===============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpName
+    * LPCSTR lpGuid
+    * PVOID pValue
+    * DWORD nSize
+
+
+SetFirmwareEnvironmentVariableW
+===============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpName
+    * LPCWSTR lpGuid
+    * PVOID pValue
+    * DWORD nSize
+
+
+VerSetConditionMask
+===================
+
+Signature::
+
+    * Library: ntdll
+    * Return value: ULONGLONG
+
+Parameters::
+
+    * ULONGLONG ConditionMask
+    * ULONG TypeMask
+    * UCHAR Condition
+
+
+VerifyVersionInfoA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPOSVERSIONINFOEXA lpVersionInformation
+    * DWORD dwTypeMask
+    * DWORDLONG dwlConditionMask
+
+
+VerifyVersionInfoW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPOSVERSIONINFOEXW lpVersionInformation
+    * DWORD dwTypeMask
+    * DWORDLONG dwlConditionMask
 
 
 CertAddCRLContextToStore
@@ -7681,33 +8498,7 @@ Parameters::
     * BOOL fIncludePEPageHashes
 
 
-AddDllDirectory
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DLL_DIRECTORY_COOKIE
-
-Parameters::
-
-    * PCWSTR NewDirectory
-
-
-DisableThreadLibraryCalls
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HMODULE hLibModule
-
-
-FreeLibrary
+CloseHandle
 ===========
 
 Signature::
@@ -7717,1280 +8508,1212 @@ Signature::
 
 Parameters::
 
-    * HMODULE hLibModule
+    * HANDLE hObject
 
 
-FreeLibraryAndExitThread
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DECLSPEC_NORETURN
-
-Parameters::
-
-    * HMODULE hLibModule
-    * DWORD dwExitCode
-
-
-GetDllDirectoryA
-================
+DuplicateHandle
+===============
 
 Signature::
 
     * Library: kernel32
-    * Return value: DWORD
+    * Return value: BOOL
 
 Parameters::
 
-    * DWORD nBufferLength
-    * LPSTR lpBuffer
+    * HANDLE hSourceProcessHandle
+    * HANDLE hSourceHandle
+    * HANDLE hTargetProcessHandle
+    * LPHANDLE lpTargetHandle
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * DWORD dwOptions
 
 
-GetDllDirectoryW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * DWORD nBufferLength
-    * LPWSTR lpBuffer
-
-
-GetModuleFileNameA
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HMODULE hModule
-    * LPSTR lpFilename
-    * DWORD nSize
-
-
-GetModuleFileNameW
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HMODULE hModule
-    * LPWSTR lpFilename
-    * DWORD nSize
-
-
-GetModuleFileNameExA
+GetHandleInformation
 ====================
 
 Signature::
 
-    * Library: psapi
-    * Return value: DWORD
+    * Library: kernel32
+    * Return value: BOOL
 
 Parameters::
 
-    * HANDLE hProcess
-    * HMODULE hModule
-    * LPSTR lpFilename
-    * DWORD nSize
+    * HANDLE hObject
+    * LPDWORD lpdwFlags
 
 
-GetModuleFileNameExW
+SetHandleInformation
 ====================
 
 Signature::
 
-    * Library: psapi
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hProcess
-    * HMODULE hModule
-    * LPWSTR lpFilename
-    * DWORD nSize
-
-
-GetModuleHandleA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HMODULE
-
-Parameters::
-
-    * LPCSTR lpModuleName
-
-
-GetModuleHandleW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HMODULE
-
-Parameters::
-
-    * LPCWSTR lpModuleName
-
-
-GetModuleHandleExA
-==================
-
-Signature::
-
     * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
+    * HANDLE hObject
+    * DWORD dwMask
     * DWORD dwFlags
-    * LPCSTR lpModuleName
-    * HMODULE *phModule
 
 
-GetModuleHandleExW
-==================
+RegCloseKey
+===========
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * DWORD dwFlags
-    * LPCWSTR lpModuleName
-    * HMODULE *phModule
+    * HKEY hKey
 
 
-GetProcAddress
-==============
+RegConnectRegistryA
+===================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: FARPROC
+    * Library: advapi32
+    * Return value: LSTATUS
 
 Parameters::
 
-    * HMODULE hModule
-    * LPCSTR lpProcName
+    * LPCSTR lpMachineName
+    * HKEY hKey
+    * PHKEY phkResult
 
 
-LoadLibraryA
+RegConnectRegistryW
+===================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * LPCWSTR lpMachineName
+    * HKEY hKey
+    * PHKEY phkResult
+
+
+RegCopyTreeA
 ============
 
 Signature::
 
-    * Library: kernel32
-    * Return value: HMODULE
+    * Library: advapi32
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCSTR lpLibFileName
+    * HKEY hKeySrc
+    * LPCSTR lpSubKey
+    * HKEY hKeyDest
 
 
-LoadLibraryW
+RegCopyTreeW
 ============
 
 Signature::
 
-    * Library: kernel32
-    * Return value: HMODULE
+    * Library: advapi32
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCWSTR lpLibFileName
+    * HKEY hKeySrc
+    * LPCWSTR lpSubKey
+    * HKEY hKeyDest
 
 
-LoadLibraryExA
-==============
+RegCreateKeyExA
+===============
 
 Signature::
 
     * Library: kernel32
-    * Return value: HMODULE
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCSTR lpLibFileName
-    * HANDLE hFile
-    * DWORD dwFlags
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * DWORD Reserved
+    * LPSTR lpClass
+    * DWORD dwOptions
+    * REGSAM samDesired
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * PHKEY phkResult
+    * LPDWORD lpdwDisposition
 
 
-LoadLibraryExW
-==============
+RegCreateKeyExW
+===============
 
 Signature::
 
     * Library: kernel32
-    * Return value: HMODULE
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCWSTR lpLibFileName
-    * HANDLE hFile
-    * DWORD dwFlags
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * DWORD Reserved
+    * LPWSTR lpClass
+    * DWORD dwOptions
+    * REGSAM samDesired
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * PHKEY phkResult
+    * LPDWORD lpdwDisposition
 
 
-RemoveDllDirectory
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * DLL_DIRECTORY_COOKIE Cookie
-
-
-SetDefaultDllDirectories
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD DirectoryFlags
-
-
-SetDllDirectoryA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpPathName
-
-
-SetDllDirectoryW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpPathName
-
-
-AddUsersToEncryptedFile
+RegCreateKeyTransactedA
 =======================
 
 Signature::
 
     * Library: advapi32
-    * Return value: DWORD
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCWSTR lpFileName
-    * PENCRYPTION_CERTIFICATE_LIST pEncryptionCertificates
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * DWORD Reserved
+    * LPSTR lpClass
+    * DWORD dwOptions
+    * REGSAM samDesired
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * PHKEY phkResult
+    * LPDWORD lpdwDisposition
+    * HANDLE hTransaction
+    * PVOID pExtendedParemeter
 
 
-AreFileApisANSI
+RegCreateKeyTransactedW
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * DWORD Reserved
+    * LPWSTR lpClass
+    * DWORD dwOptions
+    * REGSAM samDesired
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * PHKEY phkResult
+    * LPDWORD lpdwDisposition
+    * HANDLE hTransaction
+    * PVOID pExtendedParemeter
+
+
+RegDeleteKeyA
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpSubKey
+
+
+RegDeleteKeyW
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+
+
+RegDeleteKeyExA
 ===============
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * REGSAM samDesired
+    * DWORD Reserved
 
 
-CancelIo
-========
+RegDeleteKeyExW
+===============
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * HANDLE hFile
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * REGSAM samDesired
+    * DWORD Reserved
 
 
-CancelIoEx
-==========
+RegDeleteKeyTransactedA
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * REGSAM samDesired
+    * DWORD Reserved
+    * HANDLE hTransaction
+    * PVOID pExtendedParameter
+
+
+RegDeleteKeyTransactedW
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * REGSAM samDesired
+    * DWORD Reserved
+    * HANDLE hTransaction
+    * PVOID pExtendedParameter
+
+
+RegDeleteKeyValueA
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * LPCSTR lpValueName
+
+
+RegDeleteKeyValueW
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * LPCWSTR lpValueName
+
+
+RegDeleteTreeA
+==============
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * HANDLE hFile
-    * LPOVERLAPPED lpOverlapped
+    * HKEY hKey
+    * LPCSTR lpSubKey
 
 
-CancelSynchronousIo
-===================
+RegDeleteTreeW
+==============
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * HANDLE hThread
+    * HKEY hKey
+    * LPCWSTR lpSubKey
 
 
-CheckNameLegalDOS8Dot3A
+RegDeleteValueA
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpValueName
+
+
+RegDeleteValueW
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpValueName
+
+
+RegDisablePredefinedCache
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+
+RegDisablePredefinedCacheEx
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+
+RegDisableReflectionKey
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LONG
+
+Parameters::
+
+    * HKEY hBase
+
+
+RegEnableReflectionKey
+======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LONG
+
+Parameters::
+
+    * HKEY hBase
+
+
+RegEnumKeyExA
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * DWORD dwIndex
+    * LPSTR lpName
+    * LPDWORD lpcchName
+    * LPDWORD lpReserved
+    * LPSTR lpClass
+    * LPDWORD lpcchClass
+    * PFILETIME lpftLastWriteTime
+
+
+RegEnumKeyExW
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * DWORD dwIndex
+    * LPWSTR lpName
+    * LPDWORD lpcchName
+    * LPDWORD lpReserved
+    * LPWSTR lpClass
+    * LPDWORD lpcchClass
+    * PFILETIME lpftLastWriteTime
+
+
+RegEnumValueA
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * DWORD dwIndex
+    * LPSTR lpValueName
+    * LPDWORD lpcchValueName
+    * LPDWORD lpReserved
+    * LPDWORD lpType
+    * LPBYTE lpData
+    * LPDWORD lpcbData
+
+
+RegEnumValueW
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * DWORD dwIndex
+    * LPWSTR lpValueName
+    * LPDWORD lpcchValueName
+    * LPDWORD lpReserved
+    * LPDWORD lpType
+    * LPBYTE lpData
+    * LPDWORD lpcbData
+
+
+RegFlushKey
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+
+
+RegGetKeySecurity
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * SECURITY_INFORMATION SecurityInformation
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * LPDWORD lpcbSecurityDescriptor
+
+
+RegLoadKeyA
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * LPCSTR lpFile
+
+
+RegLoadKeyW
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * LPCWSTR lpFile
+
+
+RegLoadMUIStringA
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR pszValue
+    * LPSTR pszOutBuf
+    * DWORD cbOutBuf
+    * LPDWORD pcbData
+    * DWORD Flags
+    * LPCSTR pszDirectory
+
+
+RegLoadMUIStringW
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR pszValue
+    * LPWSTR pszOutBuf
+    * DWORD cbOutBuf
+    * LPDWORD pcbData
+    * DWORD Flags
+    * LPCWSTR pszDirectory
+
+
+RegNotifyChangeKeyValue
 =======================
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCSTR lpName
-    * LPSTR lpOemName
-    * DWORD OemNameSize
-    * PBOOL pbNameContainsSpaces
-    * PBOOL pbNameLegal
+    * HKEY hKey
+    * BOOL bWatchSubtree
+    * DWORD dwNotifyFilter
+    * HANDLE hEvent
+    * BOOL fAsynchronous
 
 
-CheckNameLegalDOS8Dot3W
-=======================
+RegOpenCurrentUser
+==================
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCWSTR lpName
-    * LPSTR lpOemName
-    * DWORD OemNameSize
-    * PBOOL pbNameContainsSpaces
-    * PBOOL pbNameLegal
+    * REGSAM samDesired
+    * PHKEY phkResult
 
 
-CloseEncryptedFileRaw
+RegOpenKeyExA
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * DWORD ulOptions
+    * REGSAM samDesired
+    * PHKEY phkResult
+
+
+RegOpenKeyExW
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * DWORD ulOptions
+    * REGSAM samDesired
+    * PHKEY phkResult
+
+
+RegOpenKeyTransactedA
 =====================
 
 Signature::
 
     * Library: advapi32
-    * Return value: void
+    * Return value: LSTATUS
 
 Parameters::
 
-    * PVOID pvContext
-
-
-CopyFileA
-=========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpExistingFileName
-    * LPCSTR lpNewFileName
-    * BOOL bFailIfExists
-
-
-CopyFileW
-=========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-    * BOOL bFailIfExists
-
-
-CopyFileExA
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpExistingFileName
-    * LPCSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * LPBOOL pbCancel
-    * DWORD dwCopyFlags
-
-
-CopyFileExW
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * LPBOOL pbCancel
-    * DWORD dwCopyFlags
-
-
-CopyFileTransactedA
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpExistingFileName
-    * LPCSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * LPBOOL pbCancel
-    * DWORD dwCopyFlags
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * DWORD ulOptions
+    * REGSAM samDesired
+    * PHKEY phkResult
     * HANDLE hTransaction
+    * PVOID pExtendedParemeter
 
 
-CopyFileTransactedW
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * LPBOOL pbCancel
-    * DWORD dwCopyFlags
-    * HANDLE hTransaction
-
-
-CreateDirectoryA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpPathName
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-
-
-CreateDirectoryW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpPathName
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-
-
-CreateDirectoryExA
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpTemplateDirectory
-    * LPCSTR lpNewDirectory
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-
-
-CreateDirectoryExW
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpTemplateDirectory
-    * LPCWSTR lpNewDirectory
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-
-
-CreateDirectoryTransactedA
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpTemplateDirectory
-    * LPCSTR lpNewDirectory
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * HANDLE hTransaction
-
-
-CreateDirectoryTransactedW
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpTemplateDirectory
-    * LPCWSTR lpNewDirectory
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * HANDLE hTransaction
-
-
-CreateFileA
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * DWORD dwDesiredAccess
-    * DWORD dwShareMode
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * DWORD dwCreationDisposition
-    * DWORD dwFlagsAndAttributes
-    * HANDLE hTemplateFile
-
-
-CreateFileW
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * DWORD dwDesiredAccess
-    * DWORD dwShareMode
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * DWORD dwCreationDisposition
-    * DWORD dwFlagsAndAttributes
-    * HANDLE hTemplateFile
-
-
-CreateFileTransactedA
+RegOpenKeyTransactedW
 =====================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: HANDLE
+    * Library: advapi32
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCSTR lpFileName
-    * DWORD dwDesiredAccess
-    * DWORD dwShareMode
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * DWORD dwCreationDisposition
-    * DWORD dwFlagsAndAttributes
-    * HANDLE hTemplateFile
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * DWORD ulOptions
+    * REGSAM samDesired
+    * PHKEY phkResult
     * HANDLE hTransaction
-    * PUSHORT pusMiniVersion
-    * PVOID lpExtendedParameter
+    * PVOID pExtendedParemeter
 
 
-CreateFileTransactedW
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * DWORD dwDesiredAccess
-    * DWORD dwShareMode
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * DWORD dwCreationDisposition
-    * DWORD dwFlagsAndAttributes
-    * HANDLE hTemplateFile
-    * HANDLE hTransaction
-    * PUSHORT pusMiniVersion
-    * PVOID lpExtendedParameter
-
-
-CreateHardLinkA
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * LPCSTR lpExistingFileName
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-
-
-CreateHardLinkW
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * LPCWSTR lpExistingFileName
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-
-
-CreateHardLinkTransactedA
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * LPCSTR lpExistingFileName
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * HANDLE hTransaction
-
-
-CreateHardLinkTransactedW
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * LPCWSTR lpExistingFileName
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * HANDLE hTransaction
-
-
-CreateIoCompletionPort
+RegOpenUserClassesRoot
 ======================
 
 Signature::
 
     * Library: kernel32
-    * Return value: HANDLE
+    * Return value: LSTATUS
 
 Parameters::
 
-    * HANDLE FileHandle
-    * HANDLE ExistingCompletionPort
-    * ULONG_PTR CompletionKey
-    * DWORD NumberOfConcurrentThreads
+    * HANDLE hToken
+    * DWORD dwOptions
+    * REGSAM samDesired
+    * PHKEY phkResult
 
 
-CreateSymbolicLinkA
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOLEAN
-
-Parameters::
-
-    * LPCSTR lpSymlinkFileName
-    * LPCSTR lpTargetFileName
-    * DWORD dwFlags
-
-
-CreateSymbolicLinkW
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOLEAN
-
-Parameters::
-
-    * LPCWSTR lpSymlinkFileName
-    * LPCWSTR lpTargetFileName
-    * DWORD dwFlags
-
-
-CreateSymbolicLinkTransactedA
-=============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOLEAN
-
-Parameters::
-
-    * LPCSTR lpSymlinkFileName
-    * LPCSTR lpTargetFileName
-    * DWORD dwFlags
-    * HANDLE hTransaction
-
-
-CreateSymbolicLinkTransactedW
-=============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOLEAN
-
-Parameters::
-
-    * LPCWSTR lpSymlinkFileName
-    * LPCWSTR lpTargetFileName
-    * DWORD dwFlags
-    * HANDLE hTransaction
-
-
-DecryptFileA
-============
+RegOverridePredefKey
+====================
 
 Signature::
 
     * Library: advapi32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCSTR lpFileName
-    * DWORD dwReserved
+    * HKEY hKey
+    * HKEY hNewHKey
 
 
-DecryptFileW
-============
+RegQueryInfoKeyA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPSTR lpClass
+    * LPDWORD lpcchClass
+    * LPDWORD lpReserved
+    * LPDWORD lpcSubKeys
+    * LPDWORD lpcbMaxSubKeyLen
+    * LPDWORD lpcbMaxClassLen
+    * LPDWORD lpcValues
+    * LPDWORD lpcbMaxValueNameLen
+    * LPDWORD lpcbMaxValueLen
+    * LPDWORD lpcbSecurityDescriptor
+    * PFILETIME lpftLastWriteTime
+
+
+RegQueryInfoKeyW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPWSTR lpClass
+    * LPDWORD lpcchClass
+    * LPDWORD lpReserved
+    * LPDWORD lpcSubKeys
+    * LPDWORD lpcbMaxSubKeyLen
+    * LPDWORD lpcbMaxClassLen
+    * LPDWORD lpcValues
+    * LPDWORD lpcbMaxValueNameLen
+    * LPDWORD lpcbMaxValueLen
+    * LPDWORD lpcbSecurityDescriptor
+    * PFILETIME lpftLastWriteTime
+
+
+RegQueryMultipleValuesA
+=======================
 
 Signature::
 
     * Library: advapi32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCWSTR lpFileName
-    * DWORD dwReserved
+    * HKEY hKey
+    * PVALENTA val_list
+    * DWORD num_vals
+    * LPSTR lpValueBuf
+    * LPDWORD ldwTotsize
 
 
-DeleteFileA
-===========
+RegQueryMultipleValuesW
+=======================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: BOOL
+    * Library: advapi32
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCSTR lpFileName
+    * HKEY hKey
+    * PVALENTW val_list
+    * DWORD num_vals
+    * LPWSTR lpValueBuf
+    * LPDWORD ldwTotsize
 
 
-DeleteFileW
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-
-
-DeleteFileTransactedA
+RegQueryReflectionKey
 =====================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: BOOL
+    * Library: advapi32
+    * Return value: LONG
 
 Parameters::
 
-    * LPCSTR lpFileName
-    * HANDLE hTransaction
+    * HKEY hBase
+    * BOOL *bIsReflectionDisabled
 
 
-DeleteFileTransactedW
-=====================
+RegQueryValueExA
+================
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCWSTR lpFileName
-    * HANDLE hTransaction
+    * HKEY hKey
+    * LPCSTR lpValueName
+    * LPDWORD lpReserved
+    * LPDWORD lpType
+    * LPBYTE lpData
+    * LPDWORD lpcbData
 
 
-DuplicateEncryptionInfoFile
-===========================
+RegQueryValueExW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpValueName
+    * LPDWORD lpReserved
+    * LPDWORD lpType
+    * LPBYTE lpData
+    * LPDWORD lpcbData
+
+
+RegReplaceKeyA
+==============
 
 Signature::
 
     * Library: advapi32
-    * Return value: DWORD
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCWSTR SrcFileName
-    * LPCWSTR DstFileName
-    * DWORD dwCreationDistribution
-    * DWORD dwAttributes
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * LPCSTR lpNewFile
+    * LPCSTR lpOldFile
+
+
+RegReplaceKeyW
+==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * LPCWSTR lpNewFile
+    * LPCWSTR lpOldFile
+
+
+RegRestoreKeyA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpFile
+    * DWORD dwFlags
+
+
+RegRestoreKeyW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpFile
+    * DWORD dwFlags
+
+
+RegSaveKeyA
+===========
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpFile
     * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
 
-EncryptFileA
-============
+RegSaveKeyW
+===========
 
 Signature::
 
     * Library: advapi32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * LPCSTR lpFileName
+    * HKEY hKey
+    * LPCWSTR lpFile
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
 
-EncryptFileW
-============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-
-
-EncryptionDisable
-=================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR DirPath
-    * BOOL Disable
-
-
-FileEncryptionStatusA
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * LPDWORD lpStatus
-
-
-FileEncryptionStatusW
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * LPDWORD lpStatus
-
-
-FindClose
-=========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFindFile
-
-
-FindCloseChangeNotification
-===========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hChangeHandle
-
-
-FindFirstChangeNotificationA
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCSTR lpPathName
-    * BOOL bWatchSubtree
-    * DWORD dwNotifyFilter
-
-
-FindFirstChangeNotificationW
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpPathName
-    * BOOL bWatchSubtree
-    * DWORD dwNotifyFilter
-
-
-FindFirstFileA
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * LPWIN32_FIND_DATAA lpFindFileData
-
-
-FindFirstFileW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * LPWIN32_FIND_DATAW lpFindFileData
-
-
-FindFirstFileExA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * FINDEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFindFileData
-    * FINDEX_SEARCH_OPS fSearchOp
-    * LPVOID lpSearchFilter
-    * DWORD dwAdditionalFlags
-
-
-FindFirstFileExW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * FINDEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFindFileData
-    * FINDEX_SEARCH_OPS fSearchOp
-    * LPVOID lpSearchFilter
-    * DWORD dwAdditionalFlags
-
-
-FindFirstFileNameTransactedW
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * DWORD dwFlags
-    * LPDWORD StringLength
-    * PWSTR LinkName
-    * HANDLE hTransaction
-
-
-FindFirstFileNameW
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * DWORD dwFlags
-    * LPDWORD StringLength
-    * PWSTR LinkName
-
-
-FindFirstFileTransactedA
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * FINDEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFindFileData
-    * FINDEX_SEARCH_OPS fSearchOp
-    * LPVOID lpSearchFilter
-    * DWORD dwAdditionalFlags
-    * HANDLE hTransaction
-
-
-FindFirstFileTransactedW
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * FINDEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFindFileData
-    * FINDEX_SEARCH_OPS fSearchOp
-    * LPVOID lpSearchFilter
-    * DWORD dwAdditionalFlags
-    * HANDLE hTransaction
-
-
-FindFirstStreamTransactedW
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * STREAM_INFO_LEVELS InfoLevel
-    * LPVOID lpFindStreamData
-    * DWORD dwFlags
-    * HANDLE hTransaction
-
-
-FindFirstStreamW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * STREAM_INFO_LEVELS InfoLevel
-    * LPVOID lpFindStreamData
-    * DWORD dwFlags
-
-
-FindNextChangeNotification
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hChangeHandle
-
-
-FindNextFileA
+RegSaveKeyExA
 =============
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * HANDLE hFindFile
-    * LPWIN32_FIND_DATAA lpFindFileData
+    * HKEY hKey
+    * LPCSTR lpFile
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * DWORD Flags
 
 
-FindNextFileW
+RegSaveKeyExW
 =============
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * HANDLE hFindFile
-    * LPWIN32_FIND_DATAW lpFindFileData
+    * HKEY hKey
+    * LPCWSTR lpFile
+    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    * DWORD Flags
 
 
-FindNextFileNameW
+RegSetKeySecurity
 =================
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: LSTATUS
 
 Parameters::
 
-    * HANDLE hFindStream
-    * LPDWORD StringLength
-    * PWSTR LinkName
+    * HKEY hKey
+    * SECURITY_INFORMATION SecurityInformation
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
 
 
-FindNextStreamW
+RegSetKeyValueA
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpSubKey
+    * LPCSTR lpValueName
+    * DWORD dwType
+    * LPCVOID lpData
+    * DWORD cbData
+
+
+RegSetKeyValueW
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+    * LPCWSTR lpValueName
+    * DWORD dwType
+    * LPCVOID lpData
+    * DWORD cbData
+
+
+RegSetValueExA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpValueName
+    * DWORD Reserved
+    * DWORD dwType
+    * const BYTE *lpData
+    * DWORD cbData
+
+
+RegSetValueExW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpValueName
+    * DWORD Reserved
+    * DWORD dwType
+    * const BYTE *lpData
+    * DWORD cbData
+
+
+RegUnLoadKeyA
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCSTR lpSubKey
+
+
+RegUnLoadKeyW
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    * HKEY hKey
+    * LPCWSTR lpSubKey
+
+
+CompareFileTime
 ===============
 
 Signature::
 
     * Library: kernel32
+    * Return value: LONG
+
+Parameters::
+
+    * const FILETIME *lpFileTime1
+    * const FILETIME *lpFileTime2
+
+
+DosDateTimeToFileTime
+=====================
+
+Signature::
+
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE hFindStream
-    * LPVOID lpFindStreamData
+    * WORD wFatDate
+    * WORD wFatTime
+    * LPFILETIME lpFileTime
 
 
-FlushFileBuffers
-================
+FileTimeToDosDateTime
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const FILETIME *lpFileTime
+    * LPWORD lpFatDate
+    * LPWORD lpFatTime
+
+
+FileTimeToLocalFileTime
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const FILETIME *lpFileTime
+    * LPFILETIME lpLocalFileTime
+
+
+FileTimeToSystemTime
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const FILETIME *lpFileTime
+    * LPSYSTEMTIME lpSystemTime
+
+
+GetDynamicTimeZoneInformation
+=============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * PDYNAMIC_TIME_ZONE_INFORMATION pTimeZoneInformation
+
+
+GetFileTime
+===========
 
 Signature::
 
@@ -9000,23 +9723,317 @@ Signature::
 Parameters::
 
     * HANDLE hFile
+    * LPFILETIME lpCreationTime
+    * LPFILETIME lpLastAccessTime
+    * LPFILETIME lpLastWriteTime
 
 
-FreeEncryptionCertificateHashList
+GetLocalTime
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * LPSYSTEMTIME lpSystemTime
+
+
+GetSystemTime
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * LPSYSTEMTIME lpSystemTime
+
+
+GetSystemTimeAdjustment
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PDWORD lpTimeAdjustment
+    * PDWORD lpTimeIncrement
+    * PBOOL lpTimeAdjustmentDisabled
+
+
+GetSystemTimeAsFileTime
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * LPFILETIME lpSystemTimeAsFileTime
+
+
+GetSystemTimes
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PFILETIME lpIdleTime
+    * PFILETIME lpKernelTime
+    * PFILETIME lpUserTime
+
+
+GetTickCount
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+
+GetTickCount64
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: ULONGLONG
+
+
+GetTimeFormatA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: int
+
+Parameters::
+
+    * LCID Locale
+    * DWORD dwFlags
+    * const SYSTEMTIME *lpTime
+    * LPCSTR lpFormat
+    * LPSTR lpTimeStr
+    * int cchTime
+
+
+GetTimeFormatW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: int
+
+Parameters::
+
+    * LCID Locale
+    * DWORD dwFlags
+    * const SYSTEMTIME *lpTime
+    * LPCWSTR lpFormat
+    * LPWSTR lpTimeStr
+    * int cchTime
+
+
+GetTimeZoneInformation
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPTIME_ZONE_INFORMATION lpTimeZoneInformation
+
+
+GetTimeZoneInformationForYear
+=============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * USHORT wYear
+    * PDYNAMIC_TIME_ZONE_INFORMATION pdtzi
+    * LPTIME_ZONE_INFORMATION ptzi
+
+
+LocalFileTimeToFileTime
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const FILETIME *lpLocalFileTime
+    * LPFILETIME lpFileTime
+
+
+QueryUnbiasedInterruptTime
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PULONGLONG UnbiasedTime
+
+
+SetDynamicTimeZoneInformation
+=============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
+
+
+SetFileTime
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * const FILETIME *lpCreationTime
+    * const FILETIME *lpLastAccessTime
+    * const FILETIME *lpLastWriteTime
+
+
+SetLocalTime
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const SYSTEMTIME *lpSystemTime
+
+
+SetSystemTime
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const SYSTEMTIME *lpSystemTime
+
+
+SetSystemTimeAdjustment
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD dwTimeAdjustment
+    * BOOL bTimeAdjustmentDisabled
+
+
+SetTimeZoneInformation
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const TIME_ZONE_INFORMATION *lpTimeZoneInformation
+
+
+SystemTimeToFileTime
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const SYSTEMTIME *lpSystemTime
+    * LPFILETIME lpFileTime
+
+
+SystemTimeToTzSpecificLocalTime
+===============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * const TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const SYSTEMTIME *lpUniversalTime
+    * LPSYSTEMTIME lpLocalTime
+
+
+SystemTimeToTzSpecificLocalTimeEx
 =================================
 
 Signature::
 
-    * Library: advapi32
-    * Return value: void
+    * Library: kernel32
+    * Return value: BOOL
 
 Parameters::
 
-    * PENCRYPTION_CERTIFICATE_HASH_LIST pUsers
+    * const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const SYSTEMTIME *lpUniversalTime
+    * LPSYSTEMTIME lpLocalTime
 
 
-GetBinaryTypeA
-==============
+TzSpecificLocalTimeToSystemTime
+===============================
 
 Signature::
 
@@ -9025,138 +10042,13 @@ Signature::
 
 Parameters::
 
-    * LPCSTR lpApplicationName
-    * LPDWORD lpBinaryType
+    * const TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const SYSTEMTIME *lpLocalTime
+    * LPSYSTEMTIME lpUniversalTime
 
 
-GetBinaryTypeW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpApplicationName
-    * LPDWORD lpBinaryType
-
-
-GetCompressedFileSizeA
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * LPDWORD lpFileSizeHigh
-
-
-GetCompressedFileSizeW
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * LPDWORD lpFileSizeHigh
-
-
-GetCompressedFileSizeTransactedA
-================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * LPDWORD lpFileSizeHigh
-    * HANDLE hTransaction
-
-
-GetCompressedFileSizeTransactedW
-================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * LPDWORD lpFileSizeHigh
-    * HANDLE hTransaction
-
-
-GetCurrentDirectoryA
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * DWORD nBufferLength
-    * LPSTR lpBuffer
-
-
-GetCurrentDirectoryW
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * DWORD nBufferLength
-    * LPWSTR lpBuffer
-
-
-GetFileAttributesA
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpFileName
-
-
-GetFileAttributesW
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpFileName
-
-
-GetFileAttributesExA
-====================
+TzSpecificLocalTimeToSystemTimeEx
+=================================
 
 Signature::
 
@@ -9165,1359 +10057,9 @@ Signature::
 
 Parameters::
 
-    * LPCSTR lpFileName
-    * GET_FILEEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFileInformation
-
-
-GetFileAttributesExW
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * GET_FILEEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFileInformation
-
-
-GetFileAttributesTransactedA
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * GET_FILEEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFileInformation
-    * HANDLE hTransaction
-
-
-GetFileAttributesTransactedW
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * GET_FILEEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFileInformation
-    * HANDLE hTransaction
-
-
-GetFileBandwidthReservation
-===========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPDWORD lpPeriodMilliseconds
-    * LPDWORD lpBytesPerPeriod
-    * LPBOOL pDiscardable
-    * LPDWORD lpTransferSize
-    * LPDWORD lpNumOutstandingRequests
-
-
-GetFileInformationByHandle
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPBY_HANDLE_FILE_INFORMATION lpFileInformation
-
-
-GetFileInformationByHandleEx
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * FILE_INFO_BY_HANDLE_CLASS FileInformationClass
-    * LPVOID lpFileInformation
-    * DWORD dwBufferSize
-
-
-GetFileSize
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hFile
-    * LPDWORD lpFileSizeHigh
-
-
-GetFileSizeEx
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * PLARGE_INTEGER lpFileSize
-
-
-GetFileType
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hFile
-
-
-GetFinalPathNameByHandleA
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hFile
-    * LPSTR lpszFilePath
-    * DWORD cchFilePath
-    * DWORD dwFlags
-
-
-GetFinalPathNameByHandleW
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hFile
-    * LPWSTR lpszFilePath
-    * DWORD cchFilePath
-    * DWORD dwFlags
-
-
-GetFullPathNameA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * DWORD nBufferLength
-    * LPSTR lpBuffer
-    * LPSTR *lpFilePart
-
-
-GetFullPathNameW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * DWORD nBufferLength
-    * LPWSTR lpBuffer
-    * LPWSTR *lpFilePart
-
-
-GetFullPathNameTransactedA
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * DWORD nBufferLength
-    * LPSTR lpBuffer
-    * LPSTR *lpFilePart
-    * HANDLE hTransaction
-
-
-GetFullPathNameTransactedW
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * DWORD nBufferLength
-    * LPWSTR lpBuffer
-    * LPWSTR *lpFilePart
-    * HANDLE hTransaction
-
-
-GetLongPathNameA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpszShortPath
-    * LPSTR lpszLongPath
-    * DWORD cchBuffer
-
-
-GetLongPathNameW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpszShortPath
-    * LPWSTR lpszLongPath
-    * DWORD cchBuffer
-
-
-GetLongPathNameTransactedA
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpszShortPath
-    * LPSTR lpszLongPath
-    * DWORD cchBuffer
-    * HANDLE hTransaction
-
-
-GetLongPathNameTransactedW
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpszShortPath
-    * LPWSTR lpszLongPath
-    * DWORD cchBuffer
-    * HANDLE hTransaction
-
-
-GetQueuedCompletionStatus
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE CompletionPort
-    * LPDWORD lpNumberOfBytesTransferred
-    * PULONG_PTR lpCompletionKey
-    * LPOVERLAPPED *lpOverlapped
-    * DWORD dwMilliseconds
-
-
-GetQueuedCompletionStatusEx
-===========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE CompletionPort
-    * LPOVERLAPPED_ENTRY lpCompletionPortEntries
-    * ULONG ulCount
-    * PULONG ulNumEntriesRemoved
-    * DWORD dwMilliseconds
-    * BOOL fAlertable
-
-
-GetShortPathNameA
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpszLongPath
-    * LPSTR lpszShortPath
-    * DWORD cchBuffer
-
-
-GetShortPathNameW
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpszLongPath
-    * LPWSTR lpszShortPath
-    * DWORD cchBuffer
-
-
-GetTempFileNameA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: UINT
-
-Parameters::
-
-    * LPCSTR lpPathName
-    * LPCSTR lpPrefixString
-    * UINT uUnique
-    * LPSTR lpTempFileName
-
-
-GetTempFileNameW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: UINT
-
-Parameters::
-
-    * LPCWSTR lpPathName
-    * LPCWSTR lpPrefixString
-    * UINT uUnique
-    * LPWSTR lpTempFileName
-
-
-GetTempPathA
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * DWORD nBufferLength
-    * LPSTR lpBuffer
-
-
-GetTempPathW
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * DWORD nBufferLength
-    * LPWSTR lpBuffer
-
-
-LockFile
-========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * DWORD dwFileOffsetLow
-    * DWORD dwFileOffsetHigh
-    * DWORD nNumberOfBytesToLockLow
-    * DWORD nNumberOfBytesToLockHigh
-
-
-LockFileEx
-==========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * DWORD dwFlags
-    * DWORD dwReserved
-    * DWORD nNumberOfBytesToLockLow
-    * DWORD nNumberOfBytesToLockHigh
-    * LPOVERLAPPED lpOverlapped
-
-
-MoveFileA
-=========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpExistingFileName
-    * LPCSTR lpNewFileName
-
-
-MoveFileW
-=========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-
-
-MoveFileExA
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpExistingFileName
-    * LPCSTR lpNewFileName
-    * DWORD dwFlags
-
-
-MoveFileExW
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-    * DWORD dwFlags
-
-
-MoveFileTransactedA
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpExistingFileName
-    * LPCSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * DWORD dwFlags
-    * HANDLE hTransaction
-
-
-MoveFileTransactedW
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * DWORD dwFlags
-    * HANDLE hTransaction
-
-
-MoveFileWithProgressA
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpExistingFileName
-    * LPCSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * DWORD dwFlags
-
-
-MoveFileWithProgressW
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * DWORD dwFlags
-
-
-OpenEncryptedFileRawA
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * ULONG ulFlags
-    * PVOID *pvContext
-
-
-OpenEncryptedFileRawW
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * ULONG ulFlags
-    * PVOID *pvContext
-
-
-OpenFile
-========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HFILE
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * LPOFSTRUCT lpReOpenBuff
-    * UINT uStyle
-
-
-OpenFileById
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * HANDLE hVolumeHint
-    * LPFILE_ID_DESCRIPTOR lpFileId
-    * DWORD dwDesiredAccess
-    * DWORD dwShareMode
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * DWORD dwFlagsAndAttributes
-
-
-PostQueuedCompletionStatus
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE CompletionPort
-    * DWORD dwNumberOfBytesTransferred
-    * ULONG_PTR dwCompletionKey
-    * LPOVERLAPPED lpOverlapped
-
-
-QueryRecoveryAgentsOnEncryptedFile
-==================================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * PENCRYPTION_CERTIFICATE_HASH_LIST *pRecoveryAgents
-
-
-QueryUsersOnEncryptedFile
-=========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * PENCRYPTION_CERTIFICATE_HASH_LIST *pUsers
-
-
-ReOpenFile
-==========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * HANDLE hOriginalFile
-    * DWORD dwDesiredAccess
-    * DWORD dwShareMode
-    * DWORD dwFlagsAndAttributes
-
-
-ReadDirectoryChangesW
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hDirectory
-    * LPVOID lpBuffer
-    * DWORD nBufferLength
-    * BOOL bWatchSubtree
-    * DWORD dwNotifyFilter
-    * LPDWORD lpBytesReturned
-    * LPOVERLAPPED lpOverlapped
-    * LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
-
-
-ReadEncryptedFileRaw
-====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PFE_EXPORT_FUNC pfExportCallback
-    * PVOID pvCallbackContext
-    * PVOID pvContext
-
-
-ReadFile
-========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPVOID lpBuffer
-    * DWORD nNumberOfBytesToRead
-    * LPDWORD lpNumberOfBytesRead
-    * LPOVERLAPPED lpOverlapped
-
-
-ReadFileEx
-==========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPVOID lpBuffer
-    * DWORD nNumberOfBytesToRead
-    * LPOVERLAPPED lpOverlapped
-    * LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
-
-
-ReadFileScatter
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * FILE_SEGMENT_ELEMENT aSegmentArray[]
-    * DWORD nNumberOfBytesToRead
-    * LPDWORD lpReserved
-    * LPOVERLAPPED lpOverlapped
-
-
-RemoveDirectoryA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpPathName
-
-
-RemoveDirectoryW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpPathName
-
-
-RemoveDirectoryTransactedA
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpPathName
-    * HANDLE hTransaction
-
-
-RemoveDirectoryTransactedW
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpPathName
-    * HANDLE hTransaction
-
-
-RemoveUsersFromEncryptedFile
-============================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * PENCRYPTION_CERTIFICATE_HASH_LIST pHashes
-
-
-ReplaceFileA
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpReplacedFileName
-    * LPCSTR lpReplacementFileName
-    * LPCSTR lpBackupFileName
-    * DWORD dwReplaceFlags
-    * LPVOID lpExclude
-    * LPVOID lpReserved
-
-
-ReplaceFileW
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpReplacedFileName
-    * LPCWSTR lpReplacementFileName
-    * LPCWSTR lpBackupFileName
-    * DWORD dwReplaceFlags
-    * LPVOID lpExclude
-    * LPVOID lpReserved
-
-
-SearchPathA
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpPath
-    * LPCSTR lpFileName
-    * LPCSTR lpExtension
-    * DWORD nBufferLength
-    * LPSTR lpBuffer
-    * LPSTR *lpFilePart
-
-
-SearchPathW
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpPath
-    * LPCWSTR lpFileName
-    * LPCWSTR lpExtension
-    * DWORD nBufferLength
-    * LPWSTR lpBuffer
-    * LPWSTR *lpFilePart
-
-
-SetCurrentDirectoryA
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpPathName
-
-
-SetCurrentDirectoryW
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpPathName
-
-
-SetEndOfFile
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-
-
-SetFileApisToANSI
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-
-SetFileApisToOEM
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-
-SetFileAttributesA
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * DWORD dwFileAttributes
-
-
-SetFileAttributesW
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * DWORD dwFileAttributes
-
-
-SetFileAttributesTransactedA
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR lpFileName
-    * DWORD dwFileAttributes
-    * HANDLE hTransaction
-
-
-SetFileAttributesTransactedW
-============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR lpFileName
-    * DWORD dwFileAttributes
-    * HANDLE hTransaction
-
-
-SetFileBandwidthReservation
-===========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * DWORD nPeriodMilliseconds
-    * DWORD nBytesPerPeriod
-    * BOOL bDiscardable
-    * LPDWORD lpTransferSize
-    * LPDWORD lpNumOutstandingRequests
-
-
-SetFileCompletionNotificationModes
-==================================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE FileHandle
-    * UCHAR Flags
-
-
-SetFileInformationByHandle
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * FILE_INFO_BY_HANDLE_CLASS FileInformationClass
-    * LPVOID lpFileInformation
-    * DWORD dwBufferSize
-
-
-SetFileIoOverlappedRange
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE FileHandle
-    * PUCHAR OverlappedRangeStart
-    * ULONG Length
-
-
-SetFilePointer
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hFile
-    * LONG lDistanceToMove
-    * PLONG lpDistanceToMoveHigh
-    * DWORD dwMoveMethod
-
-
-SetFilePointerEx
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LARGE_INTEGER liDistanceToMove
-    * PLARGE_INTEGER lpNewFilePointer
-    * DWORD dwMoveMethod
-
-
-SetFileShortNameA
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPCSTR lpShortName
-
-
-SetFileShortNameW
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPCWSTR lpShortName
-
-
-SetFileValidData
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LONGLONG ValidDataLength
-
-
-SetSearchPathMode
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * DWORD Flags
-
-
-SetUserFileEncryptionKey
-========================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PENCRYPTION_CERTIFICATE pEncryptionCertificate
-
-
-UnlockFile
-==========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * DWORD dwFileOffsetLow
-    * DWORD dwFileOffsetHigh
-    * DWORD nNumberOfBytesToUnlockLow
-    * DWORD nNumberOfBytesToUnlockHigh
-
-
-UnlockFileEx
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * DWORD dwReserved
-    * DWORD nNumberOfBytesToUnlockLow
-    * DWORD nNumberOfBytesToUnlockHigh
-    * LPOVERLAPPED lpOverlapped
-
-
-Wow64DisableWow64FsRedirection
-==============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PVOID *OldValue
-
-
-Wow64EnableWow64FsRedirection
-=============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOLEAN
-
-Parameters::
-
-    * BOOLEAN Wow64FsEnableRedirection
-
-
-Wow64RevertWow64FsRedirection
-=============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PVOID OlValue
-
-
-WriteEncryptedFileRaw
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: DWORD
-
-Parameters::
-
-    * PFE_IMPORT_FUNC pfImportCallback
-    * PVOID pvCallbackContext
-    * PVOID pvContext
-
-
-WriteFile
-=========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPCVOID lpBuffer
-    * DWORD nNumberOfBytesToWrite
-    * LPDWORD lpNumberOfBytesWritten
-    * LPOVERLAPPED lpOverlapped
-
-
-WriteFileEx
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPCVOID lpBuffer
-    * DWORD nNumberOfBytesToWrite
-    * LPOVERLAPPED lpOverlapped
-    * LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
-
-
-WriteFileGather
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * FILE_SEGMENT_ELEMENT aSegmentArray[]
-    * DWORD nNumberOfBytesToWrite
-    * LPDWORD lpReserved
-    * LPOVERLAPPED lpOverlapped
+    * const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * const SYSTEMTIME *lpLocalTime
+    * LPSYSTEMTIME lpUniversalTime
 
 
 CallMsgFilterA
@@ -10607,6 +10149,1367 @@ Signature::
 Parameters::
 
     * HHOOK hhk
+
+
+CancelWaitableTimer
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hTimer
+
+
+ChangeTimerQueueTimer
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE TimerQueue
+    * HANDLE Timer
+    * ULONG DueTime
+    * ULONG Period
+
+
+ClosePrivateNamespace
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOLEAN
+
+Parameters::
+
+    * HANDLE Handle
+    * ULONG Flags
+
+
+CreateEventA
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpEventAttributes
+    * BOOL bManualReset
+    * BOOL bInitialState
+    * LPCSTR lpName
+
+
+CreateEventW
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpEventAttributes
+    * BOOL bManualReset
+    * BOOL bInitialState
+    * LPCWSTR lpName
+
+
+CreateEventExA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpEventAttributes
+    * LPCSTR lpName
+    * DWORD dwFlags
+    * DWORD dwDesiredAccess
+
+
+CreateEventExW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpEventAttributes
+    * LPCWSTR lpName
+    * DWORD dwFlags
+    * DWORD dwDesiredAccess
+
+
+CreateMutexA
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpMutexAttributes
+    * BOOL bInitialOwner
+    * LPCSTR lpName
+
+
+CreateMutexW
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpMutexAttributes
+    * BOOL bInitialOwner
+    * LPCWSTR lpName
+
+
+CreateMutexExA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpMutexAttributes
+    * LPCSTR lpName
+    * DWORD dwFlags
+    * DWORD dwDesiredAccess
+
+
+CreateMutexExW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpMutexAttributes
+    * LPCWSTR lpName
+    * DWORD dwFlags
+    * DWORD dwDesiredAccess
+
+
+CreatePrivateNamespaceA
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpPrivateNamespaceAttributes
+    * LPVOID lpBoundaryDescriptor
+    * LPCSTR lpAliasPrefix
+
+
+CreatePrivateNamespaceW
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpPrivateNamespaceAttributes
+    * LPVOID lpBoundaryDescriptor
+    * LPCWSTR lpAliasPrefix
+
+
+CreateSemaphoreA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+    * LONG lInitialCount
+    * LONG lMaximumCount
+    * LPCSTR lpName
+
+
+CreateSemaphoreW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+    * LONG lInitialCount
+    * LONG lMaximumCount
+    * LPCWSTR lpName
+
+
+CreateSemaphoreExA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+    * LONG lInitialCount
+    * LONG lMaximumCount
+    * LPCSTR lpName
+    * DWORD dwFlags
+    * DWORD dwDesiredAccess
+
+
+CreateSemaphoreExW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+    * LONG lInitialCount
+    * LONG lMaximumCount
+    * LPCWSTR lpName
+    * DWORD dwFlags
+    * DWORD dwDesiredAccess
+
+
+CreateTimerQueue
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+
+CreateTimerQueueTimer
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PHANDLE phNewTimer
+    * HANDLE TimerQueue
+    * WAITORTIMERCALLBACK Callback
+    * PVOID Parameter
+    * DWORD DueTime
+    * DWORD Period
+    * ULONG Flags
+
+
+CreateWaitableTimerA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpTimerAttributes
+    * BOOL bManualReset
+    * LPCSTR lpTimerName
+
+
+CreateWaitableTimerW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpTimerAttributes
+    * BOOL bManualReset
+    * LPCWSTR lpTimerName
+
+
+CreateWaitableTimerExA
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpTimerAttributes
+    * LPCSTR lpTimerName
+    * DWORD dwFlags
+    * DWORD dwDesiredAccess
+
+
+CreateWaitableTimerExW
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpTimerAttributes
+    * LPCWSTR lpTimerName
+    * DWORD dwFlags
+    * DWORD dwDesiredAccess
+
+
+DeleteTimerQueue
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE TimerQueue
+
+
+DeleteTimerQueueEx
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE TimerQueue
+    * HANDLE CompletionEvent
+
+
+DeleteTimerQueueTimer
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE TimerQueue
+    * HANDLE Timer
+    * HANDLE CompletionEvent
+
+
+GetOverlappedResult
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hFile
+    * LPOVERLAPPED lpOverlapped
+    * LPDWORD lpNumberOfBytesTransferred
+    * BOOL bWait
+
+
+MsgWaitForMultipleObjects
+=========================
+
+Signature::
+
+    * Library: user32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD nCount
+    * const HANDLE *pHandles
+    * BOOL fWaitAll
+    * DWORD dwMilliseconds
+    * DWORD dwWakeMask
+
+
+MsgWaitForMultipleObjectsEx
+===========================
+
+Signature::
+
+    * Library: user32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD nCount
+    * const HANDLE *pHandles
+    * DWORD dwMilliseconds
+    * DWORD dwWakeMask
+    * DWORD dwFlags
+
+
+OpenEventA
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCSTR lpName
+
+
+OpenEventW
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCWSTR lpName
+
+
+OpenMutexA
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCSTR lpName
+
+
+OpenMutexW
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCWSTR lpName
+
+
+OpenPrivateNamespaceA
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPVOID lpBoundaryDescriptor
+    * LPCSTR lpAliasPrefix
+
+
+OpenPrivateNamespaceW
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPVOID lpBoundaryDescriptor
+    * LPCWSTR lpAliasPrefix
+
+
+OpenSemaphoreA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCSTR lpName
+
+
+OpenSemaphoreW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCWSTR lpName
+
+
+OpenWaitableTimerA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCSTR lpTimerName
+
+
+OpenWaitableTimerW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCWSTR lpTimerName
+
+
+PulseEvent
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hEvent
+
+
+QueueUserAPC
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * PAPCFUNC pfnAPC
+    * HANDLE hThread
+    * ULONG_PTR dwData
+
+
+RegisterWaitForSingleObject
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PHANDLE phNewWaitObject
+    * HANDLE hObject
+    * WAITORTIMERCALLBACK Callback
+    * PVOID Context
+    * ULONG dwMilliseconds
+    * ULONG dwFlags
+
+
+ReleaseMutex
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hMutex
+
+
+ReleaseSemaphore
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hSemaphore
+    * LONG lReleaseCount
+    * LPLONG lpPreviousCount
+
+
+ResetEvent
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hEvent
+
+
+SetEvent
+========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hEvent
+
+
+SetWaitableTimer
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hTimer
+    * const LARGE_INTEGER *lpDueTime
+    * LONG lPeriod
+    * PTIMERAPCROUTINE pfnCompletionRoutine
+    * LPVOID lpArgToCompletionRoutine
+    * BOOL fResume
+
+
+SetWaitableTimerEx
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hTimer
+    * const LARGE_INTEGER *lpDueTime
+    * LONG lPeriod
+    * PTIMERAPCROUTINE pfnCompletionRoutine
+    * LPVOID lpArgToCompletionRoutine
+    * PREASON_CONTEXT WakeContext
+    * ULONG TolerableDelay
+
+
+SignalObjectAndWait
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hObjectToSignal
+    * HANDLE hObjectToWaitOn
+    * DWORD dwMilliseconds
+    * BOOL bAlertable
+
+
+SleepConditionVariableCS
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PCONDITION_VARIABLE ConditionVariable
+    * PCRITICAL_SECTION CriticalSection
+    * DWORD dwMilliseconds
+
+
+SleepConditionVariableSRW
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PCONDITION_VARIABLE ConditionVariable
+    * PSRWLOCK SRWLock
+    * DWORD dwMilliseconds
+    * ULONG Flags
+
+
+UnregisterWait
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE WaitHandle
+
+
+UnregisterWaitEx
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE WaitHandle
+    * HANDLE CompletionEvent
+
+
+WaitForMultipleObjects
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD nCount
+    * const HANDLE *lpHandles
+    * BOOL bWaitAll
+    * DWORD dwMilliseconds
+
+
+WaitForMultipleObjectsEx
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD nCount
+    * const HANDLE *lpHandles
+    * BOOL bWaitAll
+    * DWORD dwMilliseconds
+    * BOOL bAlertable
+
+
+WaitForSingleObject
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hHandle
+    * DWORD dwMilliseconds
+
+
+WaitForSingleObjectEx
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hHandle
+    * DWORD dwMilliseconds
+    * BOOL bAlertable
+
+
+WakeAllConditionVariable
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PCONDITION_VARIABLE ConditionVariable
+
+
+WakeConditionVariable
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PCONDITION_VARIABLE ConditionVariable
+
+
+BeginUpdateResourceA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCSTR pFileName
+    * BOOL bDeleteExistingResources
+
+
+BeginUpdateResourceW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR pFileName
+    * BOOL bDeleteExistingResources
+
+
+CopyImage
+=========
+
+Signature::
+
+    * Library: user32
+    * Return value: HANDLE
+
+Parameters::
+
+    * HANDLE h
+    * UINT type
+    * int cx
+    * int cy
+    * UINT flags
+
+
+EndUpdateResourceA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hUpdate
+    * BOOL fDiscard
+
+
+EndUpdateResourceW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hUpdate
+    * BOOL fDiscard
+
+
+EnumResourceLanguagesA
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCSTR lpType
+    * LPCSTR lpName
+    * ENUMRESLANGPROCA lpEnumFunc
+    * LONG_PTR lParam
+
+
+EnumResourceLanguagesW
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCWSTR lpType
+    * LPCWSTR lpName
+    * ENUMRESLANGPROCW lpEnumFunc
+    * LONG_PTR lParam
+
+
+EnumResourceLanguagesExA
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCSTR lpType
+    * LPCSTR lpName
+    * ENUMRESLANGPROCA lpEnumFunc
+    * LONG_PTR lParam
+    * DWORD dwFlags
+    * LANGID LangId
+
+
+EnumResourceLanguagesExW
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCWSTR lpType
+    * LPCWSTR lpName
+    * ENUMRESLANGPROCW lpEnumFunc
+    * LONG_PTR lParam
+    * DWORD dwFlags
+    * LANGID LangId
+
+
+EnumResourceNamesA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCSTR lpType
+    * ENUMRESNAMEPROCA lpEnumFunc
+    * LONG_PTR lParam
+
+
+EnumResourceNamesW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCWSTR lpType
+    * ENUMRESNAMEPROCW lpEnumFunc
+    * LONG_PTR lParam
+
+
+EnumResourceNamesExA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCSTR lpType
+    * ENUMRESNAMEPROCA lpEnumFunc
+    * LONG_PTR lParam
+    * DWORD dwFlags
+    * LANGID LangId
+
+
+EnumResourceNamesExW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCWSTR lpType
+    * ENUMRESNAMEPROCW lpEnumFunc
+    * LONG_PTR lParam
+    * DWORD dwFlags
+    * LANGID LangId
+
+
+EnumResourceTypesA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * ENUMRESTYPEPROCA lpEnumFunc
+    * LONG_PTR lParam
+
+
+EnumResourceTypesW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * ENUMRESTYPEPROCW lpEnumFunc
+    * LONG_PTR lParam
+
+
+EnumResourceTypesExA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * ENUMRESTYPEPROCA lpEnumFunc
+    * LONG_PTR lParam
+    * DWORD dwFlags
+    * LANGID LangId
+
+
+EnumResourceTypesExW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HMODULE hModule
+    * ENUMRESTYPEPROCW lpEnumFunc
+    * LONG_PTR lParam
+    * DWORD dwFlags
+    * LANGID LangId
+
+
+FindResourceA
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HRSRC
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCSTR lpName
+    * LPCSTR lpType
+
+
+FindResourceW
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HRSRC
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCWSTR lpName
+    * LPCWSTR lpType
+
+
+FindResourceExA
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HRSRC
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCSTR lpType
+    * LPCSTR lpName
+    * WORD wLanguage
+
+
+FindResourceExW
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HRSRC
+
+Parameters::
+
+    * HMODULE hModule
+    * LPCWSTR lpType
+    * LPCWSTR lpName
+    * WORD wLanguage
+
+
+FreeResource
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HGLOBAL hResData
+
+
+LoadImageA
+==========
+
+Signature::
+
+    * Library: user32
+    * Return value: HANDLE
+
+Parameters::
+
+    * HINSTANCE hInst
+    * LPCSTR name
+    * UINT type
+    * int cx
+    * int cy
+    * UINT fuLoad
+
+
+LoadImageW
+==========
+
+Signature::
+
+    * Library: user32
+    * Return value: HANDLE
+
+Parameters::
+
+    * HINSTANCE hInst
+    * LPCWSTR name
+    * UINT type
+    * int cx
+    * int cy
+    * UINT fuLoad
+
+
+LoadResource
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HGLOBAL
+
+Parameters::
+
+    * HMODULE hModule
+    * HRSRC hResInfo
+
+
+LockResource
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPVOID
+
+Parameters::
+
+    * HGLOBAL hResData
+
+
+SizeofResource
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HMODULE hModule
+    * HRSRC hResInfo
+
+
+UpdateResourceA
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hUpdate
+    * LPCSTR lpType
+    * LPCSTR lpName
+    * WORD wLanguage
+    * LPVOID lpData
+    * DWORD cb
+
+
+UpdateResourceW
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hUpdate
+    * LPCWSTR lpType
+    * LPCWSTR lpName
+    * WORD wLanguage
+    * LPVOID lpData
+    * DWORD cb
 
 
 CommitUrlCacheEntryA
@@ -13697,2149 +14600,1410 @@ Parameters::
     * int protocol
 
 
-CloseHandle
+AccessCheck
 ===========
 
 Signature::
 
-    * Library: kernel32
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE hObject
-
-
-DuplicateHandle
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hSourceProcessHandle
-    * HANDLE hSourceHandle
-    * HANDLE hTargetProcessHandle
-    * LPHANDLE lpTargetHandle
-    * DWORD dwDesiredAccess
-    * BOOL bInheritHandle
-    * DWORD dwOptions
-
-
-GetHandleInformation
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hObject
-    * LPDWORD lpdwFlags
-
-
-SetHandleInformation
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hObject
-    * DWORD dwMask
-    * DWORD dwFlags
-
-
-GetSystemRegistryQuota
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PDWORD pdwQuotaAllowed
-    * PDWORD pdwQuotaUsed
-
-
-RegCloseKey
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-
-
-RegConnectRegistryA
-===================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * LPCSTR lpMachineName
-    * HKEY hKey
-    * PHKEY phkResult
-
-
-RegConnectRegistryW
-===================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * LPCWSTR lpMachineName
-    * HKEY hKey
-    * PHKEY phkResult
-
-
-RegCopyTreeA
-============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKeySrc
-    * LPCSTR lpSubKey
-    * HKEY hKeyDest
-
-
-RegCopyTreeW
-============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKeySrc
-    * LPCWSTR lpSubKey
-    * HKEY hKeyDest
-
-
-RegCreateKeyExA
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * DWORD Reserved
-    * LPSTR lpClass
-    * DWORD dwOptions
-    * REGSAM samDesired
-    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * PHKEY phkResult
-    * LPDWORD lpdwDisposition
-
-
-RegCreateKeyExW
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * DWORD Reserved
-    * LPWSTR lpClass
-    * DWORD dwOptions
-    * REGSAM samDesired
-    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * PHKEY phkResult
-    * LPDWORD lpdwDisposition
-
-
-RegCreateKeyTransactedA
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * DWORD Reserved
-    * LPSTR lpClass
-    * DWORD dwOptions
-    * REGSAM samDesired
-    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * PHKEY phkResult
-    * LPDWORD lpdwDisposition
-    * HANDLE hTransaction
-    * PVOID pExtendedParemeter
-
-
-RegCreateKeyTransactedW
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * DWORD Reserved
-    * LPWSTR lpClass
-    * DWORD dwOptions
-    * REGSAM samDesired
-    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * PHKEY phkResult
-    * LPDWORD lpdwDisposition
-    * HANDLE hTransaction
-    * PVOID pExtendedParemeter
-
-
-RegDeleteKeyA
-=============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-
-
-RegDeleteKeyW
-=============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-
-
-RegDeleteKeyExA
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * REGSAM samDesired
-    * DWORD Reserved
-
-
-RegDeleteKeyExW
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * REGSAM samDesired
-    * DWORD Reserved
-
-
-RegDeleteKeyTransactedA
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * REGSAM samDesired
-    * DWORD Reserved
-    * HANDLE hTransaction
-    * PVOID pExtendedParameter
-
-
-RegDeleteKeyTransactedW
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * REGSAM samDesired
-    * DWORD Reserved
-    * HANDLE hTransaction
-    * PVOID pExtendedParameter
-
-
-RegDeleteKeyValueA
-==================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * LPCSTR lpValueName
-
-
-RegDeleteKeyValueW
-==================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * LPCWSTR lpValueName
-
-
-RegDeleteTreeA
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-
-
-RegDeleteTreeW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-
-
-RegDeleteValueA
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpValueName
-
-
-RegDeleteValueW
-===============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpValueName
-
-
-RegDisablePredefinedCache
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * HANDLE ClientToken
+    * DWORD DesiredAccess
+    * PGENERIC_MAPPING GenericMapping
+    * PPRIVILEGE_SET PrivilegeSet
+    * LPDWORD PrivilegeSetLength
+    * LPDWORD GrantedAccess
+    * LPBOOL AccessStatus
+
+
+AccessCheckAndAuditAlarmA
 =========================
 
 Signature::
 
     * Library: advapi32
-    * Return value: LSTATUS
-
-
-RegDisablePredefinedCacheEx
-===========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-
-RegDisableReflectionKey
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LONG
-
-Parameters::
-
-    * HKEY hBase
-
-
-RegEnableReflectionKey
-======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LONG
-
-Parameters::
-
-    * HKEY hBase
-
-
-RegEnumKeyExA
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * DWORD dwIndex
-    * LPSTR lpName
-    * LPDWORD lpcchName
-    * LPDWORD lpReserved
-    * LPSTR lpClass
-    * LPDWORD lpcchClass
-    * PFILETIME lpftLastWriteTime
-
-
-RegEnumKeyExW
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * DWORD dwIndex
-    * LPWSTR lpName
-    * LPDWORD lpcchName
-    * LPDWORD lpReserved
-    * LPWSTR lpClass
-    * LPDWORD lpcchClass
-    * PFILETIME lpftLastWriteTime
-
-
-RegEnumValueA
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * DWORD dwIndex
-    * LPSTR lpValueName
-    * LPDWORD lpcchValueName
-    * LPDWORD lpReserved
-    * LPDWORD lpType
-    * LPBYTE lpData
-    * LPDWORD lpcbData
-
-
-RegEnumValueW
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * DWORD dwIndex
-    * LPWSTR lpValueName
-    * LPDWORD lpcchValueName
-    * LPDWORD lpReserved
-    * LPDWORD lpType
-    * LPBYTE lpData
-    * LPDWORD lpcbData
-
-
-RegFlushKey
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-
-
-RegLoadKeyA
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * LPCSTR lpFile
-
-
-RegLoadKeyW
-===========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * LPCWSTR lpFile
-
-
-RegLoadMUIStringA
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR pszValue
-    * LPSTR pszOutBuf
-    * DWORD cbOutBuf
-    * LPDWORD pcbData
-    * DWORD Flags
-    * LPCSTR pszDirectory
-
-
-RegLoadMUIStringW
-=================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR pszValue
-    * LPWSTR pszOutBuf
-    * DWORD cbOutBuf
-    * LPDWORD pcbData
-    * DWORD Flags
-    * LPCWSTR pszDirectory
-
-
-RegNotifyChangeKeyValue
-=======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * BOOL bWatchSubtree
-    * DWORD dwNotifyFilter
-    * HANDLE hEvent
-    * BOOL fAsynchronous
-
-
-RegOpenCurrentUser
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * REGSAM samDesired
-    * PHKEY phkResult
-
-
-RegOpenKeyExA
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * DWORD ulOptions
-    * REGSAM samDesired
-    * PHKEY phkResult
-
-
-RegOpenKeyExW
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * DWORD ulOptions
-    * REGSAM samDesired
-    * PHKEY phkResult
-
-
-RegOpenKeyTransactedA
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * DWORD ulOptions
-    * REGSAM samDesired
-    * PHKEY phkResult
-    * HANDLE hTransaction
-    * PVOID pExtendedParemeter
-
-
-RegOpenKeyTransactedW
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * DWORD ulOptions
-    * REGSAM samDesired
-    * PHKEY phkResult
-    * HANDLE hTransaction
-    * PVOID pExtendedParemeter
-
-
-RegOpenUserClassesRoot
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HANDLE hToken
-    * DWORD dwOptions
-    * REGSAM samDesired
-    * PHKEY phkResult
-
-
-RegOverridePredefKey
-====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * HKEY hNewHKey
-
-
-RegQueryInfoKeyA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPSTR lpClass
-    * LPDWORD lpcchClass
-    * LPDWORD lpReserved
-    * LPDWORD lpcSubKeys
-    * LPDWORD lpcbMaxSubKeyLen
-    * LPDWORD lpcbMaxClassLen
-    * LPDWORD lpcValues
-    * LPDWORD lpcbMaxValueNameLen
-    * LPDWORD lpcbMaxValueLen
-    * LPDWORD lpcbSecurityDescriptor
-    * PFILETIME lpftLastWriteTime
-
-
-RegQueryInfoKeyW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPWSTR lpClass
-    * LPDWORD lpcchClass
-    * LPDWORD lpReserved
-    * LPDWORD lpcSubKeys
-    * LPDWORD lpcbMaxSubKeyLen
-    * LPDWORD lpcbMaxClassLen
-    * LPDWORD lpcValues
-    * LPDWORD lpcbMaxValueNameLen
-    * LPDWORD lpcbMaxValueLen
-    * LPDWORD lpcbSecurityDescriptor
-    * PFILETIME lpftLastWriteTime
-
-
-RegQueryMultipleValuesA
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * PVALENTA val_list
-    * DWORD num_vals
-    * LPSTR lpValueBuf
-    * LPDWORD ldwTotsize
-
-
-RegQueryMultipleValuesW
-=======================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * PVALENTW val_list
-    * DWORD num_vals
-    * LPWSTR lpValueBuf
-    * LPDWORD ldwTotsize
-
-
-RegQueryReflectionKey
-=====================
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LONG
-
-Parameters::
-
-    * HKEY hBase
-    * BOOL *bIsReflectionDisabled
-
-
-RegQueryValueExA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpValueName
-    * LPDWORD lpReserved
-    * LPDWORD lpType
-    * LPBYTE lpData
-    * LPDWORD lpcbData
-
-
-RegQueryValueExW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpValueName
-    * LPDWORD lpReserved
-    * LPDWORD lpType
-    * LPBYTE lpData
-    * LPDWORD lpcbData
-
-
-RegReplaceKeyA
-==============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * LPCSTR lpNewFile
-    * LPCSTR lpOldFile
-
-
-RegReplaceKeyW
-==============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * LPCWSTR lpNewFile
-    * LPCWSTR lpOldFile
-
-
-RegRestoreKeyA
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpFile
-    * DWORD dwFlags
-
-
-RegRestoreKeyW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpFile
-    * DWORD dwFlags
-
-
-RegSaveKeyA
-===========
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpFile
-    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
-
-
-RegSaveKeyW
-===========
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpFile
-    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
-
-
-RegSaveKeyExA
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpFile
-    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * DWORD Flags
-
-
-RegSaveKeyExW
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpFile
-    * const LPSECURITY_ATTRIBUTES lpSecurityAttributes
-    * DWORD Flags
-
-
-RegSetKeyValueA
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-    * LPCSTR lpValueName
-    * DWORD dwType
-    * LPCVOID lpData
-    * DWORD cbData
-
-
-RegSetKeyValueW
-===============
-
-Signature::
-
-    * Library: advapi32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-    * LPCWSTR lpValueName
-    * DWORD dwType
-    * LPCVOID lpData
-    * DWORD cbData
-
-
-RegSetValueExA
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpValueName
-    * DWORD Reserved
-    * DWORD dwType
-    * const BYTE *lpData
-    * DWORD cbData
-
-
-RegSetValueExW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpValueName
-    * DWORD Reserved
-    * DWORD dwType
-    * const BYTE *lpData
-    * DWORD cbData
-
-
-RegUnLoadKeyA
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCSTR lpSubKey
-
-
-RegUnLoadKeyW
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: LSTATUS
-
-Parameters::
-
-    * HKEY hKey
-    * LPCWSTR lpSubKey
-
-
-CancelWaitableTimer
-===================
-
-Signature::
-
-    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE hTimer
-
-
-ChangeTimerQueueTimer
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE TimerQueue
-    * HANDLE Timer
-    * ULONG DueTime
-    * ULONG Period
-
-
-ClosePrivateNamespace
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOLEAN
-
-Parameters::
-
-    * HANDLE Handle
-    * ULONG Flags
-
-
-CreateEventA
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpEventAttributes
-    * BOOL bManualReset
-    * BOOL bInitialState
-    * LPCSTR lpName
-
-
-CreateEventW
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpEventAttributes
-    * BOOL bManualReset
-    * BOOL bInitialState
-    * LPCWSTR lpName
-
-
-CreateEventExA
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpEventAttributes
-    * LPCSTR lpName
-    * DWORD dwFlags
-    * DWORD dwDesiredAccess
-
-
-CreateEventExW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpEventAttributes
-    * LPCWSTR lpName
-    * DWORD dwFlags
-    * DWORD dwDesiredAccess
-
-
-CreateMutexA
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpMutexAttributes
-    * BOOL bInitialOwner
-    * LPCSTR lpName
-
-
-CreateMutexW
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpMutexAttributes
-    * BOOL bInitialOwner
-    * LPCWSTR lpName
-
-
-CreateMutexExA
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpMutexAttributes
-    * LPCSTR lpName
-    * DWORD dwFlags
-    * DWORD dwDesiredAccess
-
-
-CreateMutexExW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpMutexAttributes
-    * LPCWSTR lpName
-    * DWORD dwFlags
-    * DWORD dwDesiredAccess
-
-
-CreatePrivateNamespaceA
-=======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpPrivateNamespaceAttributes
-    * LPVOID lpBoundaryDescriptor
-    * LPCSTR lpAliasPrefix
-
-
-CreatePrivateNamespaceW
-=======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpPrivateNamespaceAttributes
-    * LPVOID lpBoundaryDescriptor
-    * LPCWSTR lpAliasPrefix
-
-
-CreateSemaphoreA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
-    * LONG lInitialCount
-    * LONG lMaximumCount
-    * LPCSTR lpName
-
-
-CreateSemaphoreW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
-    * LONG lInitialCount
-    * LONG lMaximumCount
-    * LPCWSTR lpName
-
-
-CreateSemaphoreExA
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
-    * LONG lInitialCount
-    * LONG lMaximumCount
-    * LPCSTR lpName
-    * DWORD dwFlags
-    * DWORD dwDesiredAccess
-
-
-CreateSemaphoreExW
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
-    * LONG lInitialCount
-    * LONG lMaximumCount
-    * LPCWSTR lpName
-    * DWORD dwFlags
-    * DWORD dwDesiredAccess
-
-
-CreateTimerQueue
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-
-CreateTimerQueueTimer
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PHANDLE phNewTimer
-    * HANDLE TimerQueue
-    * WAITORTIMERCALLBACK Callback
-    * PVOID Parameter
-    * DWORD DueTime
-    * DWORD Period
-    * ULONG Flags
-
-
-CreateWaitableTimerA
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpTimerAttributes
-    * BOOL bManualReset
-    * LPCSTR lpTimerName
-
-
-CreateWaitableTimerW
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpTimerAttributes
-    * BOOL bManualReset
-    * LPCWSTR lpTimerName
-
-
-CreateWaitableTimerExA
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpTimerAttributes
-    * LPCSTR lpTimerName
-    * DWORD dwFlags
-    * DWORD dwDesiredAccess
-
-
-CreateWaitableTimerExW
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPSECURITY_ATTRIBUTES lpTimerAttributes
-    * LPCWSTR lpTimerName
-    * DWORD dwFlags
-    * DWORD dwDesiredAccess
-
-
-DeleteTimerQueue
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE TimerQueue
-
-
-DeleteTimerQueueEx
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE TimerQueue
-    * HANDLE CompletionEvent
-
-
-DeleteTimerQueueTimer
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE TimerQueue
-    * HANDLE Timer
-    * HANDLE CompletionEvent
-
-
-GetOverlappedResult
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPOVERLAPPED lpOverlapped
-    * LPDWORD lpNumberOfBytesTransferred
-    * BOOL bWait
-
-
-MsgWaitForMultipleObjects
+    * LPCSTR SubsystemName
+    * LPVOID HandleId
+    * LPSTR ObjectTypeName
+    * LPSTR ObjectName
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * DWORD DesiredAccess
+    * PGENERIC_MAPPING GenericMapping
+    * BOOL ObjectCreation
+    * LPDWORD GrantedAccess
+    * LPBOOL AccessStatus
+    * LPBOOL pfGenerateOnClose
+
+
+AccessCheckAndAuditAlarmW
 =========================
 
 Signature::
 
-    * Library: user32
-    * Return value: DWORD
+    * Library: advapi32
+    * Return value: BOOL
 
 Parameters::
 
-    * DWORD nCount
-    * const HANDLE *pHandles
-    * BOOL fWaitAll
-    * DWORD dwMilliseconds
-    * DWORD dwWakeMask
+    * LPCWSTR SubsystemName
+    * LPVOID HandleId
+    * LPWSTR ObjectTypeName
+    * LPWSTR ObjectName
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * DWORD DesiredAccess
+    * PGENERIC_MAPPING GenericMapping
+    * BOOL ObjectCreation
+    * LPDWORD GrantedAccess
+    * LPBOOL AccessStatus
+    * LPBOOL pfGenerateOnClose
 
 
-MsgWaitForMultipleObjectsEx
+AccessCheckByType
+=================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * PSID PrincipalSelfSid
+    * HANDLE ClientToken
+    * DWORD DesiredAccess
+    * POBJECT_TYPE_LIST ObjectTypeList
+    * DWORD ObjectTypeListLength
+    * PGENERIC_MAPPING GenericMapping
+    * PPRIVILEGE_SET PrivilegeSet
+    * LPDWORD PrivilegeSetLength
+    * LPDWORD GrantedAccess
+    * LPBOOL AccessStatus
+
+
+AccessCheckByTypeAndAuditAlarmA
+===============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR SubsystemName
+    * LPVOID HandleId
+    * LPCSTR ObjectTypeName
+    * LPCSTR ObjectName
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * PSID PrincipalSelfSid
+    * DWORD DesiredAccess
+    * AUDIT_EVENT_TYPE AuditType
+    * DWORD Flags
+    * POBJECT_TYPE_LIST ObjectTypeList
+    * DWORD ObjectTypeListLength
+    * PGENERIC_MAPPING GenericMapping
+    * BOOL ObjectCreation
+    * LPDWORD GrantedAccess
+    * LPBOOL AccessStatus
+    * LPBOOL pfGenerateOnClose
+
+
+AccessCheckByTypeAndAuditAlarmW
+===============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR SubsystemName
+    * LPVOID HandleId
+    * LPCWSTR ObjectTypeName
+    * LPCWSTR ObjectName
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * PSID PrincipalSelfSid
+    * DWORD DesiredAccess
+    * AUDIT_EVENT_TYPE AuditType
+    * DWORD Flags
+    * POBJECT_TYPE_LIST ObjectTypeList
+    * DWORD ObjectTypeListLength
+    * PGENERIC_MAPPING GenericMapping
+    * BOOL ObjectCreation
+    * LPDWORD GrantedAccess
+    * LPBOOL AccessStatus
+    * LPBOOL pfGenerateOnClose
+
+
+AccessCheckByTypeResultList
 ===========================
 
 Signature::
 
-    * Library: user32
-    * Return value: DWORD
+    * Library: advapi32
+    * Return value: BOOL
 
 Parameters::
 
-    * DWORD nCount
-    * const HANDLE *pHandles
-    * DWORD dwMilliseconds
-    * DWORD dwWakeMask
-    * DWORD dwFlags
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * PSID PrincipalSelfSid
+    * HANDLE ClientToken
+    * DWORD DesiredAccess
+    * POBJECT_TYPE_LIST ObjectTypeList
+    * DWORD ObjectTypeListLength
+    * PGENERIC_MAPPING GenericMapping
+    * PPRIVILEGE_SET PrivilegeSet
+    * LPDWORD PrivilegeSetLength
+    * LPDWORD GrantedAccessList
+    * LPDWORD AccessStatusList
 
 
-OpenEventA
-==========
+AccessCheckByTypeResultListAndAuditAlarmA
+=========================================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: HANDLE
+    * Library: advapi32
+    * Return value: BOOL
 
 Parameters::
 
-    * DWORD dwDesiredAccess
-    * BOOL bInheritHandle
-    * LPCSTR lpName
+    * LPCSTR SubsystemName
+    * LPVOID HandleId
+    * LPCSTR ObjectTypeName
+    * LPCSTR ObjectName
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * PSID PrincipalSelfSid
+    * DWORD DesiredAccess
+    * AUDIT_EVENT_TYPE AuditType
+    * DWORD Flags
+    * POBJECT_TYPE_LIST ObjectTypeList
+    * DWORD ObjectTypeListLength
+    * PGENERIC_MAPPING GenericMapping
+    * BOOL ObjectCreation
+    * LPDWORD GrantedAccess
+    * LPDWORD AccessStatusList
+    * LPBOOL pfGenerateOnClose
 
 
-OpenEventW
-==========
+AccessCheckByTypeResultListAndAuditAlarmW
+=========================================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: HANDLE
+    * Library: advapi32
+    * Return value: BOOL
 
 Parameters::
 
-    * DWORD dwDesiredAccess
-    * BOOL bInheritHandle
-    * LPCWSTR lpName
+    * LPCWSTR SubsystemName
+    * LPVOID HandleId
+    * LPCWSTR ObjectTypeName
+    * LPCWSTR ObjectName
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * PSID PrincipalSelfSid
+    * DWORD DesiredAccess
+    * AUDIT_EVENT_TYPE AuditType
+    * DWORD Flags
+    * POBJECT_TYPE_LIST ObjectTypeList
+    * DWORD ObjectTypeListLength
+    * PGENERIC_MAPPING GenericMapping
+    * BOOL ObjectCreation
+    * LPDWORD GrantedAccessList
+    * LPDWORD AccessStatusList
+    * LPBOOL pfGenerateOnClose
 
 
-OpenMutexA
-==========
+AccessCheckByTypeResultListAndAuditAlarmByHandleA
+=================================================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: HANDLE
+    * Library: advapi32
+    * Return value: BOOL
 
 Parameters::
 
-    * DWORD dwDesiredAccess
-    * BOOL bInheritHandle
-    * LPCSTR lpName
+    * LPCSTR SubsystemName
+    * LPVOID HandleId
+    * HANDLE ClientToken
+    * LPCSTR ObjectTypeName
+    * LPCSTR ObjectName
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * PSID PrincipalSelfSid
+    * DWORD DesiredAccess
+    * AUDIT_EVENT_TYPE AuditType
+    * DWORD Flags
+    * POBJECT_TYPE_LIST ObjectTypeList
+    * DWORD ObjectTypeListLength
+    * PGENERIC_MAPPING GenericMapping
+    * BOOL ObjectCreation
+    * LPDWORD GrantedAccess
+    * LPDWORD AccessStatusList
+    * LPBOOL pfGenerateOnClose
 
 
-OpenMutexW
-==========
+AccessCheckByTypeResultListAndAuditAlarmByHandleW
+=================================================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: HANDLE
+    * Library: advapi32
+    * Return value: BOOL
 
 Parameters::
 
-    * DWORD dwDesiredAccess
-    * BOOL bInheritHandle
-    * LPCWSTR lpName
+    * LPCWSTR SubsystemName
+    * LPVOID HandleId
+    * HANDLE ClientToken
+    * LPCWSTR ObjectTypeName
+    * LPCWSTR ObjectName
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * PSID PrincipalSelfSid
+    * DWORD DesiredAccess
+    * AUDIT_EVENT_TYPE AuditType
+    * DWORD Flags
+    * POBJECT_TYPE_LIST ObjectTypeList
+    * DWORD ObjectTypeListLength
+    * PGENERIC_MAPPING GenericMapping
+    * BOOL ObjectCreation
+    * LPDWORD GrantedAccessList
+    * LPDWORD AccessStatusList
+    * LPBOOL pfGenerateOnClose
 
 
-OpenPrivateNamespaceA
+AddAccessAllowedAce
+===================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AccessMask
+    * PSID pSid
+
+
+AddAccessAllowedAceEx
 =====================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: HANDLE
+    * Library: advapi32
+    * Return value: BOOL
 
 Parameters::
 
-    * LPVOID lpBoundaryDescriptor
-    * LPCSTR lpAliasPrefix
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AceFlags
+    * DWORD AccessMask
+    * PSID pSid
 
 
-OpenPrivateNamespaceW
+AddAccessAllowedObjectAce
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AceFlags
+    * DWORD AccessMask
+    * GUID *ObjectTypeGuid
+    * GUID *InheritedObjectTypeGuid
+    * PSID pSid
+
+
+AddAccessDeniedAce
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AccessMask
+    * PSID pSid
+
+
+AddAccessDeniedAceEx
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AceFlags
+    * DWORD AccessMask
+    * PSID pSid
+
+
+AddAccessDeniedObjectAce
+========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AceFlags
+    * DWORD AccessMask
+    * GUID *ObjectTypeGuid
+    * GUID *InheritedObjectTypeGuid
+    * PSID pSid
+
+
+AddAce
+======
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD dwStartingAceIndex
+    * LPVOID pAceList
+    * DWORD nAceListLength
+
+
+AddAuditAccessAce
+=================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD dwAccessMask
+    * PSID pSid
+    * BOOL bAuditSuccess
+    * BOOL bAuditFailure
+
+
+AddAuditAccessAceEx
+===================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AceFlags
+    * DWORD dwAccessMask
+    * PSID pSid
+    * BOOL bAuditSuccess
+    * BOOL bAuditFailure
+
+
+AddAuditAccessObjectAce
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AceFlags
+    * DWORD AccessMask
+    * GUID *ObjectTypeGuid
+    * GUID *InheritedObjectTypeGuid
+    * PSID pSid
+    * BOOL bAuditSuccess
+    * BOOL bAuditFailure
+
+
+AddConditionalAce
+=================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AceFlags
+    * UCHAR AceType
+    * DWORD AccessMask
+    * PSID pSid
+    * PWCHAR ConditionStr
+    * DWORD *ReturnLength
+
+
+AddMandatoryAce
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceRevision
+    * DWORD AceFlags
+    * DWORD MandatoryPolicy
+    * PSID pLabelSid
+
+
+AdjustTokenGroups
+=================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE TokenHandle
+    * BOOL ResetToDefault
+    * PTOKEN_GROUPS NewState
+    * DWORD BufferLength
+    * PTOKEN_GROUPS PreviousState
+    * PDWORD ReturnLength
+
+
+AdjustTokenPrivileges
 =====================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * LPVOID lpBoundaryDescriptor
-    * LPCWSTR lpAliasPrefix
-
-
-OpenSemaphoreA
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * DWORD dwDesiredAccess
-    * BOOL bInheritHandle
-    * LPCSTR lpName
-
-
-OpenSemaphoreW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * DWORD dwDesiredAccess
-    * BOOL bInheritHandle
-    * LPCWSTR lpName
-
-
-OpenWaitableTimerA
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * DWORD dwDesiredAccess
-    * BOOL bInheritHandle
-    * LPCSTR lpTimerName
-
-
-OpenWaitableTimerW
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: HANDLE
-
-Parameters::
-
-    * DWORD dwDesiredAccess
-    * BOOL bInheritHandle
-    * LPCWSTR lpTimerName
-
-
-PulseEvent
-==========
-
-Signature::
-
-    * Library: kernel32
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE hEvent
+    * HANDLE TokenHandle
+    * BOOL DisableAllPrivileges
+    * PTOKEN_PRIVILEGES NewState
+    * DWORD BufferLength
+    * PTOKEN_PRIVILEGES PreviousState
+    * PDWORD ReturnLength
 
 
-QueueUserAPC
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * PAPCFUNC pfnAPC
-    * HANDLE hThread
-    * ULONG_PTR dwData
-
-
-RegisterWaitForSingleObject
-===========================
+AllocateAndInitializeSid
+========================
 
 Signature::
 
-    * Library: kernel32
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
 
-    * PHANDLE phNewWaitObject
-    * HANDLE hObject
-    * WAITORTIMERCALLBACK Callback
-    * PVOID Context
-    * ULONG dwMilliseconds
-    * ULONG dwFlags
+    * PSID_IDENTIFIER_AUTHORITY pIdentifierAuthority
+    * BYTE nSubAuthorityCount
+    * DWORD nSubAuthority0
+    * DWORD nSubAuthority1
+    * DWORD nSubAuthority2
+    * DWORD nSubAuthority3
+    * DWORD nSubAuthority4
+    * DWORD nSubAuthority5
+    * DWORD nSubAuthority6
+    * DWORD nSubAuthority7
+    * PSID *pSid
 
 
-ReleaseMutex
-============
+AllocateLocallyUniqueId
+=======================
 
 Signature::
 
-    * Library: kernel32
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE hMutex
+    * PLUID Luid
 
 
-ReleaseSemaphore
+AreAllAccessesGranted
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD GrantedAccess
+    * DWORD DesiredAccess
+
+
+AreAnyAccessesGranted
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD GrantedAccess
+    * DWORD DesiredAccess
+
+
+AuthzAccessCheck
 ================
 
 Signature::
 
-    * Library: kernel32
+    * Library: authz
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE hSemaphore
-    * LONG lReleaseCount
-    * LPLONG lpPreviousCount
+    * DWORD Flags
+    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
+    * PAUTHZ_ACCESS_REQUEST pRequest
+    * AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * PSECURITY_DESCRIPTOR *OptionalSecurityDescriptorArray
+    * DWORD OptionalSecurityDescriptorCount
+    * PAUTHZ_ACCESS_REPLY pReply
+    * PAUTHZ_ACCESS_CHECK_RESULTS_HANDLE phAccessCheckResults
 
 
-ResetEvent
-==========
+AuthzAddSidsToContext
+=====================
 
 Signature::
 
-    * Library: kernel32
+    * Library: authz
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE hEvent
+    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
+    * PSID_AND_ATTRIBUTES Sids
+    * DWORD SidCount
+    * PSID_AND_ATTRIBUTES RestrictedSids
+    * DWORD RestrictedSidCount
+    * PAUTHZ_CLIENT_CONTEXT_HANDLE phNewAuthzClientContext
 
 
-SetEvent
+AuthzCachedAccessCheck
+======================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD Flags
+    * AUTHZ_ACCESS_CHECK_RESULTS_HANDLE hAccessCheckResults
+    * PAUTHZ_ACCESS_REQUEST pRequest
+    * AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent
+    * PAUTHZ_ACCESS_REPLY pReply
+
+
+AuthzEnumerateSecurityEventSources
+==================================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD dwFlags
+    * PAUTHZ_SOURCE_SCHEMA_REGISTRATION Buffer
+    * PDWORD pdwCount
+    * PDWORD pdwLength
+
+
+AuthzFreeAuditEvent
+===================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent
+
+
+AuthzFreeContext
+================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
+
+
+AuthzFreeHandle
+===============
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * AUTHZ_ACCESS_CHECK_RESULTS_HANDLE hAccessCheckResults
+
+
+AuthzFreeResourceManager
+========================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * AUTHZ_RESOURCE_MANAGER_HANDLE hAuthzResourceManager
+
+
+AuthzGetInformationFromContext
+==============================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
+    * AUTHZ_CONTEXT_INFORMATION_CLASS InfoClass
+    * DWORD BufferSize
+    * PDWORD pSizeRequired
+    * PVOID Buffer
+
+
+AuthzInitializeContextFromAuthzContext
+======================================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD Flags
+    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
+    * PLARGE_INTEGER pExpirationTime
+    * LUID Identifier
+    * PVOID DynamicGroupArgs
+    * PAUTHZ_CLIENT_CONTEXT_HANDLE phNewAuthzClientContext
+
+
+AuthzInitializeContextFromSid
+=============================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD Flags
+    * PSID UserSid
+    * AUTHZ_RESOURCE_MANAGER_HANDLE hAuthzResourceManager
+    * PLARGE_INTEGER pExpirationTime
+    * LUID Identifier
+    * PVOID DynamicGroupArgs
+    * PAUTHZ_CLIENT_CONTEXT_HANDLE phAuthzClientContext
+
+
+AuthzInitializeContextFromToken
+===============================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD Flags
+    * HANDLE TokenHandle
+    * AUTHZ_RESOURCE_MANAGER_HANDLE hAuthzResourceManager
+    * PLARGE_INTEGER pExpirationTime
+    * LUID Identifier
+    * PVOID DynamicGroupArgs
+    * PAUTHZ_CLIENT_CONTEXT_HANDLE phAuthzClientContext
+
+
+AuthzInstallSecurityEventSource
+===============================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD dwFlags
+    * PAUTHZ_SOURCE_SCHEMA_REGISTRATION pRegistration
+
+
+AuthzOpenObjectAudit
+====================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD Flags
+    * AUTHZ_CLIENT_CONTEXT_HANDLE hAuthzClientContext
+    * PAUTHZ_ACCESS_REQUEST pRequest
+    * AUTHZ_AUDIT_EVENT_HANDLE hAuditEvent
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * PSECURITY_DESCRIPTOR *OptionalSecurityDescriptorArray
+    * DWORD OptionalSecurityDescriptorCount
+    * PAUTHZ_ACCESS_REPLY pReply
+
+
+AuthzRegisterSecurityEventSource
+================================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD dwFlags
+    * PCWSTR szEventSourceName
+    * PAUTHZ_SECURITY_EVENT_PROVIDER_HANDLE phEventProvider
+
+
+AuthzReportSecurityEventFromParams
+==================================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD dwFlags
+    * AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE hEventProvider
+    * DWORD dwAuditId
+    * PSID pUserSid
+    * PAUDIT_PARAMS pParams
+
+
+AuthzUninstallSecurityEventSource
+=================================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD dwFlags
+    * PCWSTR szEventSourceName
+
+
+AuthzUnregisterSecurityEventSource
+==================================
+
+Signature::
+
+    * Library: authz
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD dwFlags
+    * PAUTHZ_SECURITY_EVENT_PROVIDER_HANDLE phEventProvider
+
+
+BuildExplicitAccessWithNameA
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PEXPLICIT_ACCESS_A pExplicitAccess
+    * LPSTR pTrusteeName
+    * DWORD AccessPermissions
+    * ACCESS_MODE AccessMode
+    * DWORD Inheritance
+
+
+BuildExplicitAccessWithNameW
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PEXPLICIT_ACCESS_W pExplicitAccess
+    * LPWSTR pTrusteeName
+    * DWORD AccessPermissions
+    * ACCESS_MODE AccessMode
+    * DWORD Inheritance
+
+
+BuildImpersonateExplicitAccessWithNameA
+=======================================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PEXPLICIT_ACCESS_A pExplicitAccess
+    * LPSTR pTrusteeName
+    * PTRUSTEE_A pTrustee
+    * DWORD AccessPermissions
+    * ACCESS_MODE AccessMode
+    * DWORD Inheritance
+
+
+BuildImpersonateExplicitAccessWithNameW
+=======================================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PEXPLICIT_ACCESS_W pExplicitAccess
+    * LPWSTR pTrusteeName
+    * PTRUSTEE_W pTrustee
+    * DWORD AccessPermissions
+    * ACCESS_MODE AccessMode
+    * DWORD Inheritance
+
+
+BuildImpersonateTrusteeA
+========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+    * PTRUSTEE_A pImpersonateTrustee
+
+
+BuildImpersonateTrusteeW
+========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+    * PTRUSTEE_W pImpersonateTrustee
+
+
+BuildSecurityDescriptorA
+========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PTRUSTEE_A pOwner
+    * PTRUSTEE_A pGroup
+    * ULONG cCountOfAccessEntries
+    * PEXPLICIT_ACCESS_A pListOfAccessEntries
+    * ULONG cCountOfAuditEntries
+    * PEXPLICIT_ACCESS_A pListOfAuditEntries
+    * PSECURITY_DESCRIPTOR pOldSD
+    * PULONG pSizeNewSD
+    * PSECURITY_DESCRIPTOR *pNewSD
+
+
+BuildSecurityDescriptorW
+========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PTRUSTEE_W pOwner
+    * PTRUSTEE_W pGroup
+    * ULONG cCountOfAccessEntries
+    * PEXPLICIT_ACCESS_W pListOfAccessEntries
+    * ULONG cCountOfAuditEntries
+    * PEXPLICIT_ACCESS_W pListOfAuditEntries
+    * PSECURITY_DESCRIPTOR pOldSD
+    * PULONG pSizeNewSD
+    * PSECURITY_DESCRIPTOR *pNewSD
+
+
+BuildTrusteeWithNameA
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+    * LPSTR pName
+
+
+BuildTrusteeWithNameW
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+    * LPWSTR pName
+
+
+BuildTrusteeWithObjectsAndNameA
+===============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+    * POBJECTS_AND_NAME_A pObjName
+    * SE_OBJECT_TYPE ObjectType
+    * LPSTR ObjectTypeName
+    * LPSTR InheritedObjectTypeName
+    * LPSTR Name
+
+
+BuildTrusteeWithObjectsAndNameW
+===============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+    * POBJECTS_AND_NAME_W pObjName
+    * SE_OBJECT_TYPE ObjectType
+    * LPWSTR ObjectTypeName
+    * LPWSTR InheritedObjectTypeName
+    * LPWSTR Name
+
+
+BuildTrusteeWithObjectsAndSidA
+==============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+    * POBJECTS_AND_SID pObjSid
+    * GUID *pObjectGuid
+    * GUID *pInheritedObjectGuid
+    * PSID pSid
+
+
+BuildTrusteeWithObjectsAndSidW
+==============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+    * POBJECTS_AND_SID pObjSid
+    * GUID *pObjectGuid
+    * GUID *pInheritedObjectGuid
+    * PSID pSid
+
+
+BuildTrusteeWithSidA
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+    * PSID pSid
+
+
+BuildTrusteeWithSidW
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+    * PSID pSid
+
+
+CheckTokenMembership
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE TokenHandle
+    * PSID SidToCheck
+    * PBOOL IsMember
+
+
+ConvertToAutoInheritPrivateObjectSecurity
+=========================================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR ParentDescriptor
+    * PSECURITY_DESCRIPTOR CurrentSecurityDescriptor
+    * PSECURITY_DESCRIPTOR *NewSecurityDescriptor
+    * GUID *ObjectType
+    * BOOLEAN IsDirectoryObject
+    * PGENERIC_MAPPING GenericMapping
+
+
+CopySid
+=======
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD nDestinationSidLength
+    * PSID pDestinationSid
+    * PSID pSourceSid
+
+
+CreatePrivateObjectSecurity
+===========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR ParentDescriptor
+    * PSECURITY_DESCRIPTOR CreatorDescriptor
+    * PSECURITY_DESCRIPTOR *NewDescriptor
+    * BOOL IsDirectoryObject
+    * HANDLE Token
+    * PGENERIC_MAPPING GenericMapping
+
+
+CreatePrivateObjectSecurityEx
+=============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR ParentDescriptor
+    * PSECURITY_DESCRIPTOR CreatorDescriptor
+    * PSECURITY_DESCRIPTOR *NewDescriptor
+    * GUID *ObjectType
+    * BOOL IsContainerObject
+    * ULONG AutoInheritFlags
+    * HANDLE Token
+    * PGENERIC_MAPPING GenericMapping
+
+
+CreatePrivateObjectSecurityWithMultipleInheritance
+==================================================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR ParentDescriptor
+    * PSECURITY_DESCRIPTOR CreatorDescriptor
+    * PSECURITY_DESCRIPTOR *NewDescriptor
+    * GUID **ObjectTypes
+    * ULONG GuidCount
+    * BOOL IsContainerObject
+    * ULONG AutoInheritFlags
+    * HANDLE Token
+    * PGENERIC_MAPPING GenericMapping
+
+
+CreateRestrictedToken
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE ExistingTokenHandle
+    * DWORD Flags
+    * DWORD DisableSidCount
+    * PSID_AND_ATTRIBUTES SidsToDisable
+    * DWORD DeletePrivilegeCount
+    * PLUID_AND_ATTRIBUTES PrivilegesToDelete
+    * DWORD RestrictedSidCount
+    * PSID_AND_ATTRIBUTES SidsToRestrict
+    * PHANDLE NewTokenHandle
+
+
+CreateWellKnownSid
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * WELL_KNOWN_SID_TYPE WellKnownSidType
+    * PSID DomainSid
+    * PSID pSid
+    * DWORD *cbSid
+
+
+DeleteAce
+=========
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD dwAceIndex
+
+
+DestroyPrivateObjectSecurity
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR *ObjectDescriptor
+
+
+DuplicateToken
+==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE ExistingTokenHandle
+    * SECURITY_IMPERSONATION_LEVEL ImpersonationLevel
+    * PHANDLE DuplicateTokenHandle
+
+
+DuplicateTokenEx
+================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hExistingToken
+    * DWORD dwDesiredAccess
+    * LPSECURITY_ATTRIBUTES lpTokenAttributes
+    * SECURITY_IMPERSONATION_LEVEL ImpersonationLevel
+    * TOKEN_TYPE TokenType
+    * PHANDLE phNewToken
+
+
+EqualDomainSid
+==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSID pSid1
+    * PSID pSid2
+    * BOOL *pfEqual
+
+
+EqualPrefixSid
+==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSID pSid1
+    * PSID pSid2
+
+
+EqualSid
 ========
 
 Signature::
 
-    * Library: kernel32
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
 
-    * HANDLE hEvent
+    * PSID pSid1
+    * PSID pSid2
 
 
-SetWaitableTimer
+FindFirstFreeAce
 ================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hTimer
-    * const LARGE_INTEGER *lpDueTime
-    * LONG lPeriod
-    * PTIMERAPCROUTINE pfnCompletionRoutine
-    * LPVOID lpArgToCompletionRoutine
-    * BOOL fResume
-
-
-SetWaitableTimerEx
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hTimer
-    * const LARGE_INTEGER *lpDueTime
-    * LONG lPeriod
-    * PTIMERAPCROUTINE pfnCompletionRoutine
-    * LPVOID lpArgToCompletionRoutine
-    * PREASON_CONTEXT WakeContext
-    * ULONG TolerableDelay
-
-
-SignalObjectAndWait
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hObjectToSignal
-    * HANDLE hObjectToWaitOn
-    * DWORD dwMilliseconds
-    * BOOL bAlertable
-
-
-SleepConditionVariableCS
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PCONDITION_VARIABLE ConditionVariable
-    * PCRITICAL_SECTION CriticalSection
-    * DWORD dwMilliseconds
-
-
-SleepConditionVariableSRW
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PCONDITION_VARIABLE ConditionVariable
-    * PSRWLOCK SRWLock
-    * DWORD dwMilliseconds
-    * ULONG Flags
-
-
-UnregisterWait
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE WaitHandle
-
-
-UnregisterWaitEx
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE WaitHandle
-    * HANDLE CompletionEvent
-
-
-WaitForMultipleObjects
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * DWORD nCount
-    * const HANDLE *lpHandles
-    * BOOL bWaitAll
-    * DWORD dwMilliseconds
-
-
-WaitForMultipleObjectsEx
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * DWORD nCount
-    * const HANDLE *lpHandles
-    * BOOL bWaitAll
-    * DWORD dwMilliseconds
-    * BOOL bAlertable
-
-
-WaitForSingleObject
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hHandle
-    * DWORD dwMilliseconds
-
-
-WaitForSingleObjectEx
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * HANDLE hHandle
-    * DWORD dwMilliseconds
-    * BOOL bAlertable
-
-
-WakeAllConditionVariable
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-Parameters::
-
-    * PCONDITION_VARIABLE ConditionVariable
-
-
-WakeConditionVariable
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-Parameters::
-
-    * PCONDITION_VARIABLE ConditionVariable
-
-
-DnsHostnameToComputerNameA
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCSTR Hostname
-    * LPSTR ComputerName
-    * LPDWORD nSize
-
-
-DnsHostnameToComputerNameW
-==========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPCWSTR Hostname
-    * LPWSTR ComputerName
-    * LPDWORD nSize
-
-
-EnumSystemFirmwareTables
-========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: UINT
-
-Parameters::
-
-    * DWORD FirmwareTableProviderSignature
-    * PVOID pFirmwareTableEnumBuffer
-    * DWORD BufferSize
-
-
-ExpandEnvironmentStringsA
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpSrc
-    * LPSTR lpDst
-    * DWORD nSize
-
-
-ExpandEnvironmentStringsW
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpSrc
-    * LPWSTR lpDst
-    * DWORD nSize
-
-
-GetComputerNameA
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPSTR lpBuffer
-    * LPDWORD nSize
-
-
-GetComputerNameW
-================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPWSTR lpBuffer
-    * LPDWORD nSize
-
-
-GetComputerNameExA
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * COMPUTER_NAME_FORMAT NameType
-    * LPSTR lpBuffer
-    * LPDWORD nSize
-
-
-GetComputerNameExW
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * COMPUTER_NAME_FORMAT NameType
-    * LPWSTR lpBuffer
-    * LPDWORD nSize
-
-
-GetCurrentHwProfileA
-====================
 
 Signature::
 
@@ -15848,11 +16012,40 @@ Signature::
 
 Parameters::
 
-    * LPHW_PROFILE_INFOA lpHwProfileInfo
+    * PACL pAcl
+    * LPVOID *pAce
 
 
-GetCurrentHwProfileW
-====================
+FreeInheritedFromArray
+======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PINHERITED_FROMW pInheritArray
+    * USHORT AceCnt
+    * PFN_OBJECT_MGR_FUNCTS pfnArray
+
+
+FreeSid
+=======
+
+Signature::
+
+    * Library: advapi32
+    * Return value: PVOID
+
+Parameters::
+
+    * PSID pSid
+
+
+GetAce
+======
 
 Signature::
 
@@ -15861,200 +16054,321 @@ Signature::
 
 Parameters::
 
-    * LPHW_PROFILE_INFOW lpHwProfileInfo
+    * PACL pAcl
+    * DWORD dwAceIndex
+    * LPVOID *pAce
 
 
-GetFirmwareEnvironmentVariableA
-===============================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCSTR lpName
-    * LPCSTR lpGuid
-    * PVOID pBuffer
-    * DWORD nSize
-
-
-GetFirmwareEnvironmentVariableW
-===============================
+GetAclInformation
+=================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPCWSTR lpName
-    * LPCWSTR lpGuid
-    * PVOID pBuffer
-    * DWORD nSize
-
-
-GetNativeSystemInfo
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-Parameters::
-
-    * LPSYSTEM_INFO lpSystemInfo
-
-
-GetProductInfo
-==============
-
-Signature::
-
-    * Library: kernel32
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
 
-    * DWORD dwOSMajorVersion
-    * DWORD dwOSMinorVersion
-    * DWORD dwSpMajorVersion
-    * DWORD dwSpMinorVersion
-    * PDWORD pdwReturnedProductType
+    * PACL pAcl
+    * LPVOID pAclInformation
+    * DWORD nAclInformationLength
+    * ACL_INFORMATION_CLASS dwAclInformationClass
 
 
-GetSystemDirectoryA
-===================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: UINT
-
-Parameters::
-
-    * LPSTR lpBuffer
-    * UINT uSize
-
-
-GetSystemDirectoryW
-===================
+GetAuditedPermissionsFromAclA
+=============================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: UINT
+    * Library: advapi32
+    * Return value: DWORD
 
 Parameters::
 
-    * LPWSTR lpBuffer
-    * UINT uSize
+    * PACL pacl
+    * PTRUSTEE_A pTrustee
+    * PACCESS_MASK pSuccessfulAuditedRights
+    * PACCESS_MASK pFailedAuditRights
 
 
-GetSystemFirmwareTable
-======================
+GetAuditedPermissionsFromAclW
+=============================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: UINT
+    * Library: advapi32
+    * Return value: DWORD
 
 Parameters::
 
-    * DWORD FirmwareTableProviderSignature
-    * DWORD FirmwareTableID
-    * PVOID pFirmwareTableBuffer
-    * DWORD BufferSize
+    * PACL pacl
+    * PTRUSTEE_W pTrustee
+    * PACCESS_MASK pSuccessfulAuditedRights
+    * PACCESS_MASK pFailedAuditRights
 
 
-GetSystemInfo
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-Parameters::
-
-    * LPSYSTEM_INFO lpSystemInfo
-
-
-GetSystemWindowsDirectoryA
+GetEffectiveRightsFromAclA
 ==========================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: UINT
+    * Library: advapi32
+    * Return value: DWORD
 
 Parameters::
 
-    * LPSTR lpBuffer
-    * UINT uSize
+    * PACL pacl
+    * PTRUSTEE_A pTrustee
+    * PACCESS_MASK pAccessRights
 
 
-GetSystemWindowsDirectoryW
+GetEffectiveRightsFromAclW
 ==========================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: UINT
+    * Library: advapi32
+    * Return value: DWORD
 
 Parameters::
 
-    * LPWSTR lpBuffer
-    * UINT uSize
+    * PACL pacl
+    * PTRUSTEE_W pTrustee
+    * PACCESS_MASK pAccessRights
 
 
-GetSystemWow64DirectoryA
-========================
+GetExplicitEntriesFromAclA
+==========================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: UINT
+    * Library: advapi32
+    * Return value: DWORD
 
 Parameters::
 
-    * LPSTR lpBuffer
-    * UINT uSize
+    * PACL pacl
+    * PULONG pcCountOfExplicitEntries
+    * PEXPLICIT_ACCESS_A *pListOfExplicitEntries
 
 
-GetSystemWow64DirectoryW
-========================
+GetExplicitEntriesFromAclW
+==========================
 
 Signature::
 
-    * Library: kernel32
-    * Return value: UINT
+    * Library: advapi32
+    * Return value: DWORD
 
 Parameters::
 
-    * LPWSTR lpBuffer
-    * UINT uSize
+    * PACL pacl
+    * PULONG pcCountOfExplicitEntries
+    * PEXPLICIT_ACCESS_W *pListOfExplicitEntries
 
 
-GetUserNameA
+GetFileSecurityA
+================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * SECURITY_INFORMATION RequestedInformation
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * DWORD nLength
+    * LPDWORD lpnLengthNeeded
+
+
+GetFileSecurityW
+================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * SECURITY_INFORMATION RequestedInformation
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * DWORD nLength
+    * LPDWORD lpnLengthNeeded
+
+
+GetInheritanceSourceA
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * BOOL Container
+    * GUID **pObjectClassGuids
+    * DWORD GuidCount
+    * PACL pAcl
+    * PFN_OBJECT_MGR_FUNCTS pfnArray
+    * PGENERIC_MAPPING pGenericMapping
+    * PINHERITED_FROMA pInheritArray
+
+
+GetInheritanceSourceW
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPWSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * BOOL Container
+    * GUID **pObjectClassGuids
+    * DWORD GuidCount
+    * PACL pAcl
+    * PFN_OBJECT_MGR_FUNCTS pfnArray
+    * PGENERIC_MAPPING pGenericMapping
+    * PINHERITED_FROMW pInheritArray
+
+
+GetKernelObjectSecurity
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE Handle
+    * SECURITY_INFORMATION RequestedInformation
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * DWORD nLength
+    * LPDWORD lpnLengthNeeded
+
+
+GetLengthSid
 ============
 
 Signature::
 
     * Library: advapi32
-    * Return value: BOOL
+    * Return value: DWORD
 
 Parameters::
 
-    * LPSTR lpBuffer
-    * LPDWORD pcbBuffer
+    * PSID pSid
 
 
-GetUserNameW
-============
+GetMultipleTrusteeA
+===================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: PTRUSTEE_A
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+
+
+GetMultipleTrusteeW
+===================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: PTRUSTEE_W
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+
+
+GetMultipleTrusteeOperationA
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: MULTIPLE_TRUSTEE_OPERATION
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+
+
+GetMultipleTrusteeOperationW
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: MULTIPLE_TRUSTEE_OPERATION
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+
+
+GetNamedSecurityInfoA
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID *ppsidOwner
+    * PSID *ppsidGroup
+    * PACL *ppDacl
+    * PACL *ppSacl
+    * PSECURITY_DESCRIPTOR *ppSecurityDescriptor
+
+
+GetNamedSecurityInfoW
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID *ppsidOwner
+    * PSID *ppsidGroup
+    * PACL *ppDacl
+    * PACL *ppSacl
+    * PSECURITY_DESCRIPTOR *ppSecurityDescriptor
+
+
+GetPrivateObjectSecurity
+========================
 
 Signature::
 
@@ -16063,97 +16377,1453 @@ Signature::
 
 Parameters::
 
-    * LPWSTR lpBuffer
-    * LPDWORD pcbBuffer
+    * PSECURITY_DESCRIPTOR ObjectDescriptor
+    * SECURITY_INFORMATION SecurityInformation
+    * PSECURITY_DESCRIPTOR ResultantDescriptor
+    * DWORD DescriptorLength
+    * PDWORD ReturnLength
 
 
-GetVersion
-==========
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-
-GetVersionExA
-=============
+GetSecurityDescriptorControl
+============================
 
 Signature::
 
-    * Library: kernel32
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
 
-    * LPOSVERSIONINFOA lpVersionInformation
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * PSECURITY_DESCRIPTOR_CONTROL pControl
+    * LPDWORD lpdwRevision
 
 
-GetVersionExW
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LPOSVERSIONINFOW lpVersionInformation
-
-
-GetWindowsDirectoryA
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: UINT
-
-Parameters::
-
-    * LPSTR lpBuffer
-    * UINT uSize
-
-
-GetWindowsDirectoryW
-====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: UINT
-
-Parameters::
-
-    * LPWSTR lpBuffer
-    * UINT uSize
-
-
-IsProcessorFeaturePresent
+GetSecurityDescriptorDacl
 =========================
 
 Signature::
 
-    * Library: kernel32
+    * Library: advapi32
     * Return value: BOOL
 
 Parameters::
 
-    * DWORD ProcessorFeature
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * LPBOOL lpbDaclPresent
+    * PACL *pDacl
+    * LPBOOL lpbDaclDefaulted
 
 
-IsWow64Message
-==============
+GetSecurityDescriptorGroup
+==========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * PSID *pGroup
+    * LPBOOL lpbGroupDefaulted
+
+
+GetSecurityDescriptorLength
+===========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+
+
+GetSecurityDescriptorOwner
+==========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * PSID *pOwner
+    * LPBOOL lpbOwnerDefaulted
+
+
+GetSecurityDescriptorRMControl
+==============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * PUCHAR RMControl
+
+
+GetSecurityDescriptorSacl
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * LPBOOL lpbSaclPresent
+    * PACL *pSacl
+    * LPBOOL lpbSaclDefaulted
+
+
+GetSecurityInfo
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE handle
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID *ppsidOwner
+    * PSID *ppsidGroup
+    * PACL *ppDacl
+    * PACL *ppSacl
+    * PSECURITY_DESCRIPTOR *ppSecurityDescriptor
+
+
+GetSidIdentifierAuthority
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: PSID_IDENTIFIER_AUTHORITY
+
+Parameters::
+
+    * PSID pSid
+
+
+GetSidLengthRequired
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * UCHAR nSubAuthorityCount
+
+
+GetSidSubAuthority
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: PDWORD
+
+Parameters::
+
+    * PSID pSid
+    * DWORD nSubAuthority
+
+
+GetSidSubAuthorityCount
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: PUCHAR
+
+Parameters::
+
+    * PSID pSid
+
+
+GetTokenInformation
+===================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE TokenHandle
+    * TOKEN_INFORMATION_CLASS TokenInformationClass
+    * LPVOID TokenInformation
+    * DWORD TokenInformationLength
+    * PDWORD ReturnLength
+
+
+GetTrusteeFormA
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: TRUSTEE_FORM
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+
+
+GetTrusteeFormW
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: TRUSTEE_FORM
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+
+
+GetTrusteeNameA
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LPSTR
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+
+
+GetTrusteeNameW
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LPWSTR
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+
+
+GetTrusteeTypeA
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: TRUSTEE_TYPE
+
+Parameters::
+
+    * PTRUSTEE_A pTrustee
+
+
+GetTrusteeTypeW
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: TRUSTEE_TYPE
+
+Parameters::
+
+    * PTRUSTEE_W pTrustee
+
+
+GetUserObjectSecurity
+=====================
 
 Signature::
 
     * Library: user32
     * Return value: BOOL
 
+Parameters::
 
-IsWow64Process
+    * HANDLE hObj
+    * PSECURITY_INFORMATION pSIRequested
+    * PSECURITY_DESCRIPTOR pSID
+    * DWORD nLength
+    * LPDWORD lpnLengthNeeded
+
+
+GetWindowsAccountDomainSid
+==========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSID pSid
+    * PSID pDomainSid
+    * DWORD *cbDomainSid
+
+
+ImpersonateAnonymousToken
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE ThreadHandle
+
+
+ImpersonateLoggedOnUser
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hToken
+
+
+ImpersonateNamedPipeClient
+==========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hNamedPipe
+
+
+ImpersonateSelf
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * SECURITY_IMPERSONATION_LEVEL ImpersonationLevel
+
+
+InitializeAcl
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * DWORD nAclLength
+    * DWORD dwAclRevision
+
+
+InitializeSecurityDescriptor
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * DWORD dwRevision
+
+
+InitializeSid
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSID Sid
+    * PSID_IDENTIFIER_AUTHORITY pIdentifierAuthority
+    * BYTE nSubAuthorityCount
+
+
+IsTokenRestricted
+=================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE TokenHandle
+
+
+IsValidAcl
+==========
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+
+
+IsValidSecurityDescriptor
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+
+
+IsValidSid
+==========
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSID pSid
+
+
+IsWellKnownSid
 ==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSID pSid
+    * WELL_KNOWN_SID_TYPE WellKnownSidType
+
+
+LookupAccountNameA
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpSystemName
+    * LPCSTR lpAccountName
+    * PSID Sid
+    * LPDWORD cbSid
+    * LPSTR ReferencedDomainName
+    * LPDWORD cchReferencedDomainName
+    * PSID_NAME_USE peUse
+
+
+LookupAccountNameW
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpSystemName
+    * LPCWSTR lpAccountName
+    * PSID Sid
+    * LPDWORD cbSid
+    * LPWSTR ReferencedDomainName
+    * LPDWORD cchReferencedDomainName
+    * PSID_NAME_USE peUse
+
+
+LookupAccountSidA
+=================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpSystemName
+    * PSID Sid
+    * LPSTR Name
+    * LPDWORD cchName
+    * LPSTR ReferencedDomainName
+    * LPDWORD cchReferencedDomainName
+    * PSID_NAME_USE peUse
+
+
+LookupAccountSidW
+=================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpSystemName
+    * PSID Sid
+    * LPWSTR Name
+    * LPDWORD cchName
+    * LPWSTR ReferencedDomainName
+    * LPDWORD cchReferencedDomainName
+    * PSID_NAME_USE peUse
+
+
+LookupAccountSidLocalA
+======================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * PSID Sid
+    * LPSTR Name
+    * LPDWORD cchName
+    * LPSTR ReferencedDomainName
+    * LPDWORD cchReferencedDomainName
+    * PSID_NAME_USE peUse
+
+
+LookupAccountSidLocalW
+======================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    * PSID Sid
+    * LPWSTR Name
+    * LPDWORD cchName
+    * LPWSTR ReferencedDomainName
+    * LPDWORD cchReferencedDomainName
+    * PSID_NAME_USE peUse
+
+
+LookupPrivilegeDisplayNameA
+===========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpSystemName
+    * LPCSTR lpName
+    * LPSTR lpDisplayName
+    * LPDWORD cchDisplayName
+    * LPDWORD lpLanguageId
+
+
+LookupPrivilegeDisplayNameW
+===========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpSystemName
+    * LPCWSTR lpName
+    * LPWSTR lpDisplayName
+    * LPDWORD cchDisplayName
+    * LPDWORD lpLanguageId
+
+
+LookupPrivilegeNameA
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpSystemName
+    * PLUID lpLuid
+    * LPSTR lpName
+    * LPDWORD cchName
+
+
+LookupPrivilegeNameW
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpSystemName
+    * PLUID lpLuid
+    * LPWSTR lpName
+    * LPDWORD cchName
+
+
+LookupPrivilegeValueA
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpSystemName
+    * LPCSTR lpName
+    * PLUID lpLuid
+
+
+LookupPrivilegeValueW
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpSystemName
+    * LPCWSTR lpName
+    * PLUID lpLuid
+
+
+LookupSecurityDescriptorPartsA
+==============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PTRUSTEE_A *ppOwner
+    * PTRUSTEE_A *ppGroup
+    * PULONG pcCountOfAccessEntries
+    * PEXPLICIT_ACCESS_A *ppListOfAccessEntries
+    * PULONG pcCountOfAuditEntries
+    * PEXPLICIT_ACCESS_A *ppListOfAuditEntries
+    * PSECURITY_DESCRIPTOR pSD
+
+
+LookupSecurityDescriptorPartsW
+==============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PTRUSTEE_W *ppOwner
+    * PTRUSTEE_W *ppGroup
+    * PULONG pcCountOfAccessEntries
+    * PEXPLICIT_ACCESS_W *ppListOfAccessEntries
+    * PULONG pcCountOfAuditEntries
+    * PEXPLICIT_ACCESS_W *ppListOfAuditEntries
+    * PSECURITY_DESCRIPTOR pSD
+
+
+MakeAbsoluteSD
+==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSelfRelativeSecurityDescriptor
+    * PSECURITY_DESCRIPTOR pAbsoluteSecurityDescriptor
+    * LPDWORD lpdwAbsoluteSecurityDescriptorSize
+    * PACL pDacl
+    * LPDWORD lpdwDaclSize
+    * PACL pSacl
+    * LPDWORD lpdwSaclSize
+    * PSID pOwner
+    * LPDWORD lpdwOwnerSize
+    * PSID pPrimaryGroup
+    * LPDWORD lpdwPrimaryGroupSize
+
+
+MakeSelfRelativeSD
+==================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pAbsoluteSecurityDescriptor
+    * PSECURITY_DESCRIPTOR pSelfRelativeSecurityDescriptor
+    * LPDWORD lpdwBufferLength
+
+
+MapGenericMask
+==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * PDWORD AccessMask
+    * PGENERIC_MAPPING GenericMapping
+
+
+ObjectCloseAuditAlarmA
+======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR SubsystemName
+    * LPVOID HandleId
+    * BOOL GenerateOnClose
+
+
+ObjectCloseAuditAlarmW
+======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR SubsystemName
+    * LPVOID HandleId
+    * BOOL GenerateOnClose
+
+
+ObjectDeleteAuditAlarmA
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR SubsystemName
+    * LPVOID HandleId
+    * BOOL GenerateOnClose
+
+
+ObjectDeleteAuditAlarmW
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR SubsystemName
+    * LPVOID HandleId
+    * BOOL GenerateOnClose
+
+
+ObjectOpenAuditAlarmA
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR SubsystemName
+    * LPVOID HandleId
+    * LPSTR ObjectTypeName
+    * LPSTR ObjectName
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * HANDLE ClientToken
+    * DWORD DesiredAccess
+    * DWORD GrantedAccess
+    * PPRIVILEGE_SET Privileges
+    * BOOL ObjectCreation
+    * BOOL AccessGranted
+    * LPBOOL GenerateOnClose
+
+
+ObjectOpenAuditAlarmW
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR SubsystemName
+    * LPVOID HandleId
+    * LPWSTR ObjectTypeName
+    * LPWSTR ObjectName
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * HANDLE ClientToken
+    * DWORD DesiredAccess
+    * DWORD GrantedAccess
+    * PPRIVILEGE_SET Privileges
+    * BOOL ObjectCreation
+    * BOOL AccessGranted
+    * LPBOOL GenerateOnClose
+
+
+ObjectPrivilegeAuditAlarmA
+==========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR SubsystemName
+    * LPVOID HandleId
+    * HANDLE ClientToken
+    * DWORD DesiredAccess
+    * PPRIVILEGE_SET Privileges
+    * BOOL AccessGranted
+
+
+ObjectPrivilegeAuditAlarmW
+==========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR SubsystemName
+    * LPVOID HandleId
+    * HANDLE ClientToken
+    * DWORD DesiredAccess
+    * PPRIVILEGE_SET Privileges
+    * BOOL AccessGranted
+
+
+OpenProcessToken
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE ProcessHandle
+    * DWORD DesiredAccess
+    * PHANDLE TokenHandle
+
+
+OpenThreadToken
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE ThreadHandle
+    * DWORD DesiredAccess
+    * BOOL OpenAsSelf
+    * PHANDLE TokenHandle
+
+
+PrivilegeCheck
+==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE ClientToken
+    * PPRIVILEGE_SET RequiredPrivileges
+    * LPBOOL pfResult
+
+
+PrivilegedServiceAuditAlarmA
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR SubsystemName
+    * LPCSTR ServiceName
+    * HANDLE ClientToken
+    * PPRIVILEGE_SET Privileges
+    * BOOL AccessGranted
+
+
+PrivilegedServiceAuditAlarmW
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR SubsystemName
+    * LPCWSTR ServiceName
+    * HANDLE ClientToken
+    * PPRIVILEGE_SET Privileges
+    * BOOL AccessGranted
+
+
+QuerySecurityAccessMask
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * SECURITY_INFORMATION SecurityInformation
+    * LPDWORD DesiredAccess
+
+
+RevertToSelf
+============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+
+SetAclInformation
+=================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PACL pAcl
+    * LPVOID pAclInformation
+    * DWORD nAclInformationLength
+    * ACL_INFORMATION_CLASS dwAclInformationClass
+
+
+SetEntriesInAclA
+================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * ULONG cCountOfExplicitEntries
+    * PEXPLICIT_ACCESS_A pListOfExplicitEntries
+    * PACL OldAcl
+    * PACL *NewAcl
+
+
+SetEntriesInAclW
+================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * ULONG cCountOfExplicitEntries
+    * PEXPLICIT_ACCESS_W pListOfExplicitEntries
+    * PACL OldAcl
+    * PACL *NewAcl
+
+
+SetFileSecurityA
+================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpFileName
+    * SECURITY_INFORMATION SecurityInformation
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+
+
+SetFileSecurityW
+================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpFileName
+    * SECURITY_INFORMATION SecurityInformation
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+
+
+SetKernelObjectSecurity
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE Handle
+    * SECURITY_INFORMATION SecurityInformation
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+
+
+SetNamedSecurityInfoA
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID psidOwner
+    * PSID psidGroup
+    * PACL pDacl
+    * PACL pSacl
+
+
+SetNamedSecurityInfoW
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPWSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID psidOwner
+    * PSID psidGroup
+    * PACL pDacl
+    * PACL pSacl
+
+
+SetPrivateObjectSecurity
+========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * SECURITY_INFORMATION SecurityInformation
+    * PSECURITY_DESCRIPTOR ModificationDescriptor
+    * PSECURITY_DESCRIPTOR *ObjectsSecurityDescriptor
+    * PGENERIC_MAPPING GenericMapping
+    * HANDLE Token
+
+
+SetPrivateObjectSecurityEx
+==========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * SECURITY_INFORMATION SecurityInformation
+    * PSECURITY_DESCRIPTOR ModificationDescriptor
+    * PSECURITY_DESCRIPTOR *ObjectsSecurityDescriptor
+    * ULONG AutoInheritFlags
+    * PGENERIC_MAPPING GenericMapping
+    * HANDLE Token
+
+
+SetSecurityAccessMask
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: void
+
+Parameters::
+
+    * SECURITY_INFORMATION SecurityInformation
+    * LPDWORD DesiredAccess
+
+
+SetSecurityDescriptorControl
+============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * SECURITY_DESCRIPTOR_CONTROL ControlBitsOfInterest
+    * SECURITY_DESCRIPTOR_CONTROL ControlBitsToSet
+
+
+SetSecurityDescriptorDacl
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * BOOL bDaclPresent
+    * PACL pDacl
+    * BOOL bDaclDefaulted
+
+
+SetSecurityDescriptorGroup
+==========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * PSID pGroup
+    * BOOL bGroupDefaulted
+
+
+SetSecurityDescriptorOwner
+==========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * PSID pOwner
+    * BOOL bOwnerDefaulted
+
+
+SetSecurityDescriptorRMControl
+==============================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR SecurityDescriptor
+    * PUCHAR RMControl
+
+
+SetSecurityDescriptorSacl
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSECURITY_DESCRIPTOR pSecurityDescriptor
+    * BOOL bSaclPresent
+    * PACL pSacl
+    * BOOL bSaclDefaulted
+
+
+SetSecurityInfo
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE handle
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID psidOwner
+    * PSID psidGroup
+    * PACL pDacl
+    * PACL pSacl
+
+
+SetThreadToken
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PHANDLE Thread
+    * HANDLE Token
+
+
+SetTokenInformation
+===================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE TokenHandle
+    * TOKEN_INFORMATION_CLASS TokenInformationClass
+    * LPVOID TokenInformation
+    * DWORD TokenInformationLength
+
+
+SetUserObjectSecurity
+=====================
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hObj
+    * PSECURITY_INFORMATION pSIRequested
+    * PSECURITY_DESCRIPTOR pSID
+
+
+TreeResetNamedSecurityInfoA
+===========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID pOwner
+    * PSID pGroup
+    * PACL pDacl
+    * PACL pSacl
+    * BOOL KeepExplicit
+    * FN_PROGRESS fnProgress
+    * PROG_INVOKE_SETTING ProgressInvokeSetting
+    * PVOID Args
+
+
+TreeResetNamedSecurityInfoW
+===========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPWSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID pOwner
+    * PSID pGroup
+    * PACL pDacl
+    * PACL pSacl
+    * BOOL KeepExplicit
+    * FN_PROGRESS fnProgress
+    * PROG_INVOKE_SETTING ProgressInvokeSetting
+    * PVOID Args
+
+
+TreeSetNamedSecurityInfoA
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID pOwner
+    * PSID pGroup
+    * PACL pDacl
+    * PACL pSacl
+    * DWORD dwAction
+    * FN_PROGRESS fnProgress
+    * PROG_INVOKE_SETTING ProgressInvokeSetting
+    * PVOID Args
+
+
+TreeSetNamedSecurityInfoW
+=========================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPWSTR pObjectName
+    * SE_OBJECT_TYPE ObjectType
+    * SECURITY_INFORMATION SecurityInfo
+    * PSID pOwner
+    * PSID pGroup
+    * PACL pDacl
+    * PACL pSacl
+    * DWORD dwAction
+    * FN_PROGRESS fnProgress
+    * PROG_INVOKE_SETTING ProgressInvokeSetting
+    * PVOID Args
+
+
+AllocateUserPhysicalPagesNuma
+=============================
 
 Signature::
 
@@ -16163,24 +17833,13 @@ Signature::
 Parameters::
 
     * HANDLE hProcess
-    * PBOOL Wow64Process
+    * PULONG_PTR NumberOfPages
+    * PULONG_PTR PageArray
+    * DWORD nndPreferred
 
 
-QueryPerformanceCounter
-=======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * LARGE_INTEGER *lpPerformanceCount
-
-
-QueryPerformanceFrequency
-=========================
+AssignProcessToJobObject
+========================
 
 Signature::
 
@@ -16189,81 +17848,230 @@ Signature::
 
 Parameters::
 
-    * LARGE_INTEGER *lpFrequency
+    * HANDLE hJob
+    * HANDLE hProcess
 
 
-SetComputerNameA
-================
+AttachThreadInput
+=================
 
 Signature::
 
-    * Library: kernel32
+    * Library: user32
     * Return value: BOOL
 
 Parameters::
 
-    * LPCSTR lpComputerName
+    * DWORD idAttach
+    * DWORD idAttachTo
+    * BOOL fAttach
 
 
-SetComputerNameW
-================
+AvQuerySystemResponsiveness
+===========================
 
 Signature::
 
-    * Library: kernel32
+    * Library: avrt
     * Return value: BOOL
 
 Parameters::
 
-    * LPCWSTR lpComputerName
+    * HANDLE AvrtHandle
+    * PULONG SystemResponsivenessValue
 
 
-SetComputerNameExA
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * COMPUTER_NAME_FORMAT NameType
-    * LPCSTR lpBuffer
-
-
-SetComputerNameExW
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * COMPUTER_NAME_FORMAT NameType
-    * LPCWSTR lpBuffer
-
-
-SetFirmwareEnvironmentVariableA
+AvRevertMmThreadCharacteristics
 ===============================
 
 Signature::
 
-    * Library: kernel32
+    * Library: avrt
     * Return value: BOOL
 
 Parameters::
 
-    * LPCSTR lpName
-    * LPCSTR lpGuid
-    * PVOID pValue
-    * DWORD nSize
+    * HANDLE AvrtHandle
 
 
-SetFirmwareEnvironmentVariableW
-===============================
+AvRtCreateThreadOrderingGroup
+=============================
+
+Signature::
+
+    * Library: avrt
+    * Return value: BOOL
+
+Parameters::
+
+    * PHANDLE Context
+    * PLARGE_INTEGER Period
+    * GUID *ThreadOrderingGuid
+    * PLARGE_INTEGER Timeout
+
+
+AvRtCreateThreadOrderingGroupExA
+================================
+
+Signature::
+
+    * Library: avrt
+    * Return value: BOOL
+
+Parameters::
+
+    * PHANDLE Context
+    * PLARGE_INTEGER Period
+    * GUID *ThreadOrderingGuid
+    * PLARGE_INTEGER Timeout
+    * LPCSTR TaskName
+
+
+AvRtCreateThreadOrderingGroupExW
+================================
+
+Signature::
+
+    * Library: avrt
+    * Return value: BOOL
+
+Parameters::
+
+    * PHANDLE Context
+    * PLARGE_INTEGER Period
+    * GUID *ThreadOrderingGuid
+    * PLARGE_INTEGER Timeout
+    * LPCWSTR TaskName
+
+
+AvRtDeleteThreadOrderingGroup
+=============================
+
+Signature::
+
+    * Library: avrt
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE Context
+
+
+AvRtJoinThreadOrderingGroup
+===========================
+
+Signature::
+
+    * Library: avrt
+    * Return value: BOOL
+
+Parameters::
+
+    * PHANDLE Context
+    * GUID *ThreadOrderingGuid
+    * BOOL Before
+
+
+AvRtLeaveThreadOrderingGroup
+============================
+
+Signature::
+
+    * Library: avrt
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE Context
+
+
+AvRtWaitOnThreadOrderingGroup
+=============================
+
+Signature::
+
+    * Library: avrt
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE Context
+
+
+AvSetMmMaxThreadCharacteristicsA
+================================
+
+Signature::
+
+    * Library: avrt
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCSTR FirstTask
+    * LPCSTR SecondTask
+    * LPDWORD TaskIndex
+
+
+AvSetMmMaxThreadCharacteristicsW
+================================
+
+Signature::
+
+    * Library: avrt
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR FirstTask
+    * LPCWSTR SecondTask
+    * LPDWORD TaskIndex
+
+
+AvSetMmThreadCharacteristicsA
+=============================
+
+Signature::
+
+    * Library: avrt
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCSTR TaskName
+    * LPDWORD TaskIndex
+
+
+AvSetMmThreadCharacteristicsW
+=============================
+
+Signature::
+
+    * Library: avrt
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPCWSTR TaskName
+    * LPDWORD TaskIndex
+
+
+AvSetMmThreadPriority
+=====================
+
+Signature::
+
+    * Library: avrt
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE AvrtHandle
+    * AVRT_PRIORITY Priority
+
+
+BindIoCompletionCallback
+========================
 
 Signature::
 
@@ -16272,28 +18080,12 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpName
-    * LPCWSTR lpGuid
-    * PVOID pValue
-    * DWORD nSize
+    * HANDLE FileHandle
+    * LPOVERLAPPED_COMPLETION_ROUTINE Function
+    * ULONG Flags
 
 
-VerSetConditionMask
-===================
-
-Signature::
-
-    * Library: ntdll
-    * Return value: ULONGLONG
-
-Parameters::
-
-    * ULONGLONG ConditionMask
-    * ULONG TypeMask
-    * UCHAR Condition
-
-
-VerifyVersionInfoA
+CallbackMayRunLong
 ==================
 
 Signature::
@@ -16303,42 +18095,213 @@ Signature::
 
 Parameters::
 
-    * LPOSVERSIONINFOEXA lpVersionInformation
-    * DWORD dwTypeMask
-    * DWORDLONG dwlConditionMask
+    * PTP_CALLBACK_INSTANCE pci
 
 
-VerifyVersionInfoW
+CancelThreadpoolIo
 ==================
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
+    * Return value: void
 
 Parameters::
 
-    * LPOSVERSIONINFOEXW lpVersionInformation
-    * DWORD dwTypeMask
-    * DWORDLONG dwlConditionMask
+    * PTP_IO pio
 
 
-CompareFileTime
+CloseThreadpool
 ===============
 
 Signature::
 
     * Library: kernel32
-    * Return value: LONG
+    * Return value: void
 
 Parameters::
 
-    * const FILETIME *lpFileTime1
-    * const FILETIME *lpFileTime2
+    * PTP_POOL ptpp
 
 
-DosDateTimeToFileTime
-=====================
+CloseThreadpoolCleanupGroup
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_CLEANUP_GROUP ptpcg
+
+
+CloseThreadpoolCleanupGroupMembers
+==================================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_CLEANUP_GROUP ptpcg
+    * BOOL fCancelPendingCallbacks
+    * PVOID pvCleanupContext
+
+
+CloseThreadpoolIo
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_IO pio
+
+
+CloseThreadpoolTimer
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_TIMER pti
+
+
+CloseThreadpoolWait
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_WAIT pwa
+
+
+CloseThreadpoolWork
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_WORK pwk
+
+
+ConvertFiberToThread
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+
+ConvertThreadToFiber
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPVOID
+
+Parameters::
+
+    * LPVOID lpParameter
+
+
+ConvertThreadToFiberEx
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPVOID
+
+Parameters::
+
+    * LPVOID lpParameter
+    * DWORD dwFlags
+
+
+CreateFiber
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPVOID
+
+Parameters::
+
+    * SIZE_T dwStackSize
+    * LPFIBER_START_ROUTINE lpStartAddress
+    * LPVOID lpParameter
+
+
+CreateFiberEx
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPVOID
+
+Parameters::
+
+    * SIZE_T dwStackCommitSize
+    * SIZE_T dwStackReserveSize
+    * DWORD dwFlags
+    * LPFIBER_START_ROUTINE lpStartAddress
+    * LPVOID lpParameter
+
+
+CreateJobObjectA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpJobAttributes
+    * LPCSTR lpName
+
+
+CreateJobObjectW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpJobAttributes
+    * LPCWSTR lpName
+
+
+CreateProcessA
+==============
 
 Signature::
 
@@ -16347,28 +18310,20 @@ Signature::
 
 Parameters::
 
-    * WORD wFatDate
-    * WORD wFatTime
-    * LPFILETIME lpFileTime
+    * LPCSTR lpApplicationName
+    * LPSTR lpCommandLine
+    * LPSECURITY_ATTRIBUTES lpProcessAttributes
+    * LPSECURITY_ATTRIBUTES lpThreadAttributes
+    * BOOL bInheritHandles
+    * DWORD dwCreationFlags
+    * LPVOID lpEnvironment
+    * LPCSTR lpCurrentDirectory
+    * LPSTARTUPINFOA lpStartupInfo
+    * LPPROCESS_INFORMATION lpProcessInformation
 
 
-FileTimeToDosDateTime
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * const FILETIME *lpFileTime
-    * LPWORD lpFatDate
-    * LPWORD lpFatTime
-
-
-FileTimeToLocalFileTime
-=======================
+CreateProcessW
+==============
 
 Signature::
 
@@ -16377,11 +18332,42 @@ Signature::
 
 Parameters::
 
-    * const FILETIME *lpFileTime
-    * LPFILETIME lpLocalFileTime
+    * LPCWSTR lpApplicationName
+    * LPWSTR lpCommandLine
+    * LPSECURITY_ATTRIBUTES lpProcessAttributes
+    * LPSECURITY_ATTRIBUTES lpThreadAttributes
+    * BOOL bInheritHandles
+    * DWORD dwCreationFlags
+    * LPVOID lpEnvironment
+    * LPCWSTR lpCurrentDirectory
+    * LPSTARTUPINFOW lpStartupInfo
+    * LPPROCESS_INFORMATION lpProcessInformation
 
 
-FileTimeToSystemTime
+CreateProcessAsUserA
+====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hToken
+    * LPCSTR lpApplicationName
+    * LPSTR lpCommandLine
+    * LPSECURITY_ATTRIBUTES lpProcessAttributes
+    * LPSECURITY_ATTRIBUTES lpThreadAttributes
+    * BOOL bInheritHandles
+    * DWORD dwCreationFlags
+    * LPVOID lpEnvironment
+    * LPCSTR lpCurrentDirectory
+    * LPSTARTUPINFOA lpStartupInfo
+    * LPPROCESS_INFORMATION lpProcessInformation
+
+
+CreateProcessAsUserW
 ====================
 
 Signature::
@@ -16391,191 +18377,382 @@ Signature::
 
 Parameters::
 
-    * const FILETIME *lpFileTime
-    * LPSYSTEMTIME lpSystemTime
+    * HANDLE hToken
+    * LPCWSTR lpApplicationName
+    * LPWSTR lpCommandLine
+    * LPSECURITY_ATTRIBUTES lpProcessAttributes
+    * LPSECURITY_ATTRIBUTES lpThreadAttributes
+    * BOOL bInheritHandles
+    * DWORD dwCreationFlags
+    * LPVOID lpEnvironment
+    * LPCWSTR lpCurrentDirectory
+    * LPSTARTUPINFOW lpStartupInfo
+    * LPPROCESS_INFORMATION lpProcessInformation
 
 
-GetDynamicTimeZoneInformation
-=============================
+CreateProcessWithLogonW
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpUsername
+    * LPCWSTR lpDomain
+    * LPCWSTR lpPassword
+    * DWORD dwLogonFlags
+    * LPCWSTR lpApplicationName
+    * LPWSTR lpCommandLine
+    * DWORD dwCreationFlags
+    * LPVOID lpEnvironment
+    * LPCWSTR lpCurrentDirectory
+    * LPSTARTUPINFOW lpStartupInfo
+    * LPPROCESS_INFORMATION lpProcessInformation
+
+
+CreateProcessWithTokenW
+=======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hToken
+    * DWORD dwLogonFlags
+    * LPCWSTR lpApplicationName
+    * LPWSTR lpCommandLine
+    * DWORD dwCreationFlags
+    * LPVOID lpEnvironment
+    * LPCWSTR lpCurrentDirectory
+    * LPSTARTUPINFOW lpStartupInfo
+    * LPPROCESS_INFORMATION lpProcessInformation
+
+
+CreateRemoteThread
+==================
 
 Signature::
 
     * Library: kernel32
-    * Return value: DWORD
+    * Return value: HANDLE
 
 Parameters::
 
-    * PDYNAMIC_TIME_ZONE_INFORMATION pTimeZoneInformation
+    * HANDLE hProcess
+    * LPSECURITY_ATTRIBUTES lpThreadAttributes
+    * SIZE_T dwStackSize
+    * LPTHREAD_START_ROUTINE lpStartAddress
+    * LPVOID lpParameter
+    * DWORD dwCreationFlags
+    * LPDWORD lpThreadId
 
 
-GetFileTime
+CreateRemoteThreadEx
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * HANDLE hProcess
+    * LPSECURITY_ATTRIBUTES lpThreadAttributes
+    * SIZE_T dwStackSize
+    * LPTHREAD_START_ROUTINE lpStartAddress
+    * LPVOID lpParameter
+    * DWORD dwCreationFlags
+    * LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
+    * LPDWORD lpThreadId
+
+
+CreateThread
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * LPSECURITY_ATTRIBUTES lpThreadAttributes
+    * SIZE_T dwStackSize
+    * LPTHREAD_START_ROUTINE lpStartAddress
+    * LPVOID lpParameter
+    * DWORD dwCreationFlags
+    * LPDWORD lpThreadId
+
+
+CreateThreadpool
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: PTP_POOL
+
+Parameters::
+
+    * PVOID reserved
+
+
+CreateThreadpoolCleanupGroup
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: PTP_CLEANUP_GROUP
+
+
+CreateThreadpoolIo
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: PTP_IO
+
+Parameters::
+
+    * HANDLE fl
+    * PTP_WIN32_IO_CALLBACK pfnio
+    * PVOID pv
+    * PTP_CALLBACK_ENVIRON pcbe
+
+
+CreateThreadpoolTimer
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: PTP_TIMER
+
+Parameters::
+
+    * PTP_TIMER_CALLBACK pfnti
+    * PVOID pv
+    * PTP_CALLBACK_ENVIRON pcbe
+
+
+CreateThreadpoolWait
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: PTP_WAIT
+
+Parameters::
+
+    * PTP_WAIT_CALLBACK pfnwa
+    * PVOID pv
+    * PTP_CALLBACK_ENVIRON pcbe
+
+
+CreateThreadpoolWork
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: PTP_WORK
+
+Parameters::
+
+    * PTP_WORK_CALLBACK pfnwk
+    * PVOID pv
+    * PTP_CALLBACK_ENVIRON pcbe
+
+
+DeleteFiber
 ===========
 
 Signature::
 
     * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * HANDLE hFile
-    * LPFILETIME lpCreationTime
-    * LPFILETIME lpLastAccessTime
-    * LPFILETIME lpLastWriteTime
-
-
-GetLocalTime
-============
-
-Signature::
-
-    * Library: kernel32
     * Return value: void
 
 Parameters::
 
-    * LPSYSTEMTIME lpSystemTime
+    * LPVOID lpFiber
 
 
-GetSystemTime
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-Parameters::
-
-    * LPSYSTEMTIME lpSystemTime
-
-
-GetSystemTimeAdjustment
-=======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PDWORD lpTimeAdjustment
-    * PDWORD lpTimeIncrement
-    * PBOOL lpTimeAdjustmentDisabled
-
-
-GetSystemTimeAsFileTime
-=======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-Parameters::
-
-    * LPFILETIME lpSystemTimeAsFileTime
-
-
-GetSystemTimes
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * PFILETIME lpIdleTime
-    * PFILETIME lpKernelTime
-    * PFILETIME lpUserTime
-
-
-GetTickCount
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-
-GetTickCount64
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: ULONGLONG
-
-
-GetTimeFormatA
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: int
-
-Parameters::
-
-    * LCID Locale
-    * DWORD dwFlags
-    * const SYSTEMTIME *lpTime
-    * LPCSTR lpFormat
-    * LPSTR lpTimeStr
-    * int cchTime
-
-
-GetTimeFormatW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: int
-
-Parameters::
-
-    * LCID Locale
-    * DWORD dwFlags
-    * const SYSTEMTIME *lpTime
-    * LPCWSTR lpFormat
-    * LPWSTR lpTimeStr
-    * int cchTime
-
-
-GetTimeZoneInformation
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-Parameters::
-
-    * LPTIME_ZONE_INFORMATION lpTimeZoneInformation
-
-
-GetTimeZoneInformationForYear
+DeleteProcThreadAttributeList
 =============================
 
 Signature::
 
     * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
+
+
+DisassociateCurrentThreadFromCallback
+=====================================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_CALLBACK_INSTANCE pci
+
+
+EmptyWorkingSet
+===============
+
+Signature::
+
+    * Library: psapi
     * Return value: BOOL
 
 Parameters::
 
-    * USHORT wYear
-    * PDYNAMIC_TIME_ZONE_INFORMATION pdtzi
-    * LPTIME_ZONE_INFORMATION ptzi
+    * HANDLE hProcess
 
 
-LocalFileTimeToFileTime
+EnumDeviceDrivers
+=================
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * LPVOID *lpImageBase
+    * DWORD cb
+    * LPDWORD lpcbNeeded
+
+
+EnumPageFilesA
+==============
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * PENUM_PAGE_FILE_CALLBACKA pCallBackRoutine
+    * LPVOID pContext
+
+
+EnumPageFilesW
+==============
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * PENUM_PAGE_FILE_CALLBACKW pCallBackRoutine
+    * LPVOID pContext
+
+
+EnumProcessModules
+==================
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * HMODULE *lphModule
+    * DWORD cb
+    * LPDWORD lpcbNeeded
+
+
+EnumProcessModulesEx
+====================
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * HMODULE *lphModule
+    * DWORD cb
+    * LPDWORD lpcbNeeded
+    * DWORD dwFilterFlag
+
+
+EnumProcesses
+=============
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD *lpidProcess
+    * DWORD cb
+    * LPDWORD lpcbNeeded
+
+
+ExitProcess
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DECLSPEC_NORETURN
+
+Parameters::
+
+    * UINT uExitCode
+
+
+ExitThread
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DECLSPEC_NORETURN
+
+Parameters::
+
+    * DWORD dwExitCode
+
+
+FlushProcessWriteBuffers
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+
+FreeEnvironmentStringsA
 =======================
 
 Signature::
@@ -16585,11 +18762,416 @@ Signature::
 
 Parameters::
 
-    * const FILETIME *lpLocalFileTime
-    * LPFILETIME lpFileTime
+    * LPCH penv
 
 
-QueryUnbiasedInterruptTime
+FreeEnvironmentStringsW
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPWCH penv
+
+
+FreeLibraryWhenCallbackReturns
+==============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_CALLBACK_INSTANCE pci
+    * HMODULE mod
+
+
+GetActiveProcessorCount
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * WORD GroupNumber
+
+
+GetActiveProcessorGroupCount
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: WORD
+
+
+GetCommandLineA
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPSTR
+
+
+GetCommandLineW
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPWSTR
+
+
+GetCurrentProcess
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+
+GetCurrentProcessId
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+
+GetCurrentProcessorNumber
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+
+GetCurrentProcessorNumberEx
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PPROCESSOR_NUMBER ProcNumber
+
+
+GetCurrentThread
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+
+GetCurrentThreadId
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+
+GetDeviceDriverBaseNameA
+========================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * LPVOID ImageBase
+    * LPSTR lpFilename
+    * DWORD nSize
+
+
+GetDeviceDriverBaseNameW
+========================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * LPVOID ImageBase
+    * LPWSTR lpBaseName
+    * DWORD nSize
+
+
+GetDeviceDriverFileNameA
+========================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * LPVOID ImageBase
+    * LPSTR lpFilename
+    * DWORD nSize
+
+
+GetDeviceDriverFileNameW
+========================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * LPVOID ImageBase
+    * LPWSTR lpFilename
+    * DWORD nSize
+
+
+GetEnvironmentStrings
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPCH
+
+
+GetEnvironmentStringsW
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPWCH
+
+
+GetEnvironmentVariableA
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCSTR lpName
+    * LPSTR lpBuffer
+    * DWORD nSize
+
+
+GetEnvironmentVariableW
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * LPCWSTR lpName
+    * LPWSTR lpBuffer
+    * DWORD nSize
+
+
+GetExitCodeProcess
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * LPDWORD lpExitCode
+
+
+GetExitCodeThread
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * LPDWORD lpExitCode
+
+
+GetGuiResources
+===============
+
+Signature::
+
+    * Library: user32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hProcess
+    * DWORD uiFlags
+
+
+GetLogicalProcessorInformation
+==============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PSYSTEM_LOGICAL_PROCESSOR_INFORMATION Buffer
+    * PDWORD ReturnedLength
+
+
+GetLogicalProcessorInformationEx
+================================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LOGICAL_PROCESSOR_RELATIONSHIP RelationshipType
+    * PSYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX Buffer
+    * PDWORD ReturnedLength
+
+
+GetMappedFileNameA
+==================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hProcess
+    * LPVOID lpv
+    * LPSTR lpFilename
+    * DWORD nSize
+
+
+GetMappedFileNameW
+==================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hProcess
+    * LPVOID lpv
+    * LPWSTR lpFilename
+    * DWORD nSize
+
+
+GetMaximumProcessorCount
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * WORD GroupNumber
+
+
+GetMaximumProcessorGroupCount
+=============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: WORD
+
+
+GetModuleBaseNameA
+==================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hProcess
+    * HMODULE hModule
+    * LPSTR lpBaseName
+    * DWORD nSize
+
+
+GetModuleBaseNameW
+==================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hProcess
+    * HMODULE hModule
+    * LPWSTR lpBaseName
+    * DWORD nSize
+
+
+GetModuleInformation
+====================
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * HMODULE hModule
+    * LPMODULEINFO lpmodinfo
+    * DWORD cb
+
+
+GetNumaAvailableMemoryNode
 ==========================
 
 Signature::
@@ -16599,11 +19181,12 @@ Signature::
 
 Parameters::
 
-    * PULONGLONG UnbiasedTime
+    * UCHAR Node
+    * PULONGLONG AvailableBytes
 
 
-SetDynamicTimeZoneInformation
-=============================
+GetNumaAvailableMemoryNodeEx
+============================
 
 Signature::
 
@@ -16612,11 +19195,25 @@ Signature::
 
 Parameters::
 
-    * const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
+    * USHORT Node
+    * PULONGLONG AvailableBytes
 
 
-SetFileTime
-===========
+GetNumaHighestNodeNumber
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PULONG HighestNodeNumber
+
+
+GetNumaNodeNumberFromHandle
+===========================
 
 Signature::
 
@@ -16626,13 +19223,11 @@ Signature::
 Parameters::
 
     * HANDLE hFile
-    * const FILETIME *lpCreationTime
-    * const FILETIME *lpLastAccessTime
-    * const FILETIME *lpLastWriteTime
+    * PUSHORT NodeNumber
 
 
-SetLocalTime
-============
+GetNumaNodeProcessorMask
+========================
 
 Signature::
 
@@ -16641,24 +19236,12 @@ Signature::
 
 Parameters::
 
-    * const SYSTEMTIME *lpSystemTime
+    * UCHAR Node
+    * PULONGLONG ProcessorMask
 
 
-SetSystemTime
-=============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * const SYSTEMTIME *lpSystemTime
-
-
-SetSystemTimeAdjustment
-=======================
+GetNumaNodeProcessorMaskEx
+==========================
 
 Signature::
 
@@ -16667,24 +19250,11 @@ Signature::
 
 Parameters::
 
-    * DWORD dwTimeAdjustment
-    * BOOL bTimeAdjustmentDisabled
+    * USHORT Node
+    * PGROUP_AFFINITY ProcessorMask
 
 
-SetTimeZoneInformation
-======================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    * const TIME_ZONE_INFORMATION *lpTimeZoneInformation
-
-
-SystemTimeToFileTime
+GetNumaProcessorNode
 ====================
 
 Signature::
@@ -16694,12 +19264,12 @@ Signature::
 
 Parameters::
 
-    * const SYSTEMTIME *lpSystemTime
-    * LPFILETIME lpFileTime
+    * UCHAR Processor
+    * PUCHAR NodeNumber
 
 
-SystemTimeToTzSpecificLocalTime
-===============================
+GetNumaProcessorNodeEx
+======================
 
 Signature::
 
@@ -16708,12 +19278,454 @@ Signature::
 
 Parameters::
 
-    * const TIME_ZONE_INFORMATION *lpTimeZoneInformation
-    * const SYSTEMTIME *lpUniversalTime
-    * LPSYSTEMTIME lpLocalTime
+    * PPROCESSOR_NUMBER Processor
+    * PUSHORT NodeNumber
 
 
-SystemTimeToTzSpecificLocalTimeEx
+GetNumaProximityNode
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * ULONG ProximityId
+    * PUCHAR NodeNumber
+
+
+GetNumaProximityNodeEx
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * ULONG ProximityId
+    * PUSHORT NodeNumber
+
+
+GetPerformanceInfo
+==================
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * PPERFORMANCE_INFORMATION pPerformanceInformation
+    * DWORD cb
+
+
+GetPriorityClass
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hProcess
+
+
+GetProcessAffinityMask
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PDWORD_PTR lpProcessAffinityMask
+    * PDWORD_PTR lpSystemAffinityMask
+
+
+GetProcessGroupAffinity
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PUSHORT GroupCount
+    * PUSHORT GroupArray
+
+
+GetProcessHandleCount
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PDWORD pdwHandleCount
+
+
+GetProcessId
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE Process
+
+
+GetProcessIdOfThread
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE Thread
+
+
+GetProcessImageFileNameA
+========================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hProcess
+    * LPSTR lpImageFileName
+    * DWORD nSize
+
+
+GetProcessImageFileNameW
+========================
+
+Signature::
+
+    * Library: psapi
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hProcess
+    * LPWSTR lpImageFileName
+    * DWORD nSize
+
+
+GetProcessIoCounters
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PIO_COUNTERS lpIoCounters
+
+
+GetProcessMemoryInfo
+====================
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE Process
+    * PPROCESS_MEMORY_COUNTERS ppsmemCounters
+    * DWORD cb
+
+
+GetProcessPriorityBoost
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PBOOL pDisablePriorityBoost
+
+
+GetProcessShutdownParameters
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPDWORD lpdwLevel
+    * LPDWORD lpdwFlags
+
+
+GetProcessTimes
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * LPFILETIME lpCreationTime
+    * LPFILETIME lpExitTime
+    * LPFILETIME lpKernelTime
+    * LPFILETIME lpUserTime
+
+
+GetProcessVersion
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD ProcessId
+
+
+GetProcessWorkingSetSize
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PSIZE_T lpMinimumWorkingSetSize
+    * PSIZE_T lpMaximumWorkingSetSize
+
+
+GetProcessWorkingSetSizeEx
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PSIZE_T lpMinimumWorkingSetSize
+    * PSIZE_T lpMaximumWorkingSetSize
+    * PDWORD Flags
+
+
+GetProcessorSystemCycleTime
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * USHORT Group
+    * PSYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION Buffer
+    * PDWORD ReturnedLength
+
+
+GetStartupInfoA
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * LPSTARTUPINFOA lpStartupInfo
+
+
+GetStartupInfoW
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * LPSTARTUPINFOW lpStartupInfo
+
+
+GetThreadGroupAffinity
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * PGROUP_AFFINITY GroupAffinity
+
+
+GetThreadIOPendingFlag
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * PBOOL lpIOIsPending
+
+
+GetThreadId
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE Thread
+
+
+GetThreadIdealProcessorEx
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * PPROCESSOR_NUMBER lpIdealProcessor
+
+
+GetThreadPriority
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: int
+
+Parameters::
+
+    * HANDLE hThread
+
+
+GetThreadPriorityBoost
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * PBOOL pDisablePriorityBoost
+
+
+GetThreadTimes
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * LPFILETIME lpCreationTime
+    * LPFILETIME lpExitTime
+    * LPFILETIME lpKernelTime
+    * LPFILETIME lpUserTime
+
+
+GetWsChanges
+============
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PPSAPI_WS_WATCH_INFORMATION lpWatchInfo
+    * DWORD cb
+
+
+GetWsChangesEx
+==============
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PPSAPI_WS_WATCH_INFORMATION_EX lpWatchInfoEx
+    * PDWORD cb
+
+
+InitializeProcThreadAttributeList
 =================================
 
 Signature::
@@ -16723,12 +19735,77 @@ Signature::
 
 Parameters::
 
-    * const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
-    * const SYSTEMTIME *lpUniversalTime
-    * LPSYSTEMTIME lpLocalTime
+    * LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
+    * DWORD dwAttributeCount
+    * DWORD dwFlags
+    * PSIZE_T lpSize
 
 
-TzSpecificLocalTimeToSystemTime
+InitializeProcessForWsWatch
+===========================
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+
+
+IsProcessInJob
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE ProcessHandle
+    * HANDLE JobHandle
+    * PBOOL Result
+
+
+IsThreadAFiber
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+
+IsThreadpoolTimerSet
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PTP_TIMER pti
+
+
+LeaveCriticalSectionWhenCallbackReturns
+=======================================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_CALLBACK_INSTANCE pci
+    * PCRITICAL_SECTION pcs
+
+
+NeedCurrentDirectoryForExePathA
 ===============================
 
 Signature::
@@ -16738,13 +19815,11 @@ Signature::
 
 Parameters::
 
-    * const TIME_ZONE_INFORMATION *lpTimeZoneInformation
-    * const SYSTEMTIME *lpLocalTime
-    * LPSYSTEMTIME lpUniversalTime
+    * LPCSTR ExeName
 
 
-TzSpecificLocalTimeToSystemTimeEx
-=================================
+NeedCurrentDirectoryForExePathW
+===============================
 
 Signature::
 
@@ -16753,8 +19828,988 @@ Signature::
 
 Parameters::
 
-    * const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
-    * const SYSTEMTIME *lpLocalTime
-    * LPSYSTEMTIME lpUniversalTime
+    * LPCWSTR ExeName
+
+
+OpenJobObjectA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCSTR lpName
+
+
+OpenJobObjectW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * LPCWSTR lpName
+
+
+OpenProcess
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * DWORD dwProcessId
+
+
+OpenThread
+==========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    * DWORD dwDesiredAccess
+    * BOOL bInheritHandle
+    * DWORD dwThreadId
+
+
+Process32First
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hSnapshot
+    * LPPROCESSENTRY32 lppe
+
+
+Process32FirstW
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hSnapshot
+    * LPPROCESSENTRY32W lppe
+
+
+Process32Next
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hSnapshot
+    * LPPROCESSENTRY32 lppe
+
+
+Process32NextW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hSnapshot
+    * LPPROCESSENTRY32W lppe
+
+
+QueryFullProcessImageNameA
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * DWORD dwFlags
+    * LPSTR lpExeName
+    * PDWORD lpdwSize
+
+
+QueryFullProcessImageNameW
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * DWORD dwFlags
+    * LPWSTR lpExeName
+    * PDWORD lpdwSize
+
+
+QueryIdleProcessorCycleTime
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PULONG BufferLength
+    * PULONG64 ProcessorIdleCycleTime
+
+
+QueryIdleProcessorCycleTimeEx
+=============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * USHORT Group
+    * PULONG BufferLength
+    * PULONG64 ProcessorIdleCycleTime
+
+
+QueryInformationJobObject
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hJob
+    * JOBOBJECTINFOCLASS JobObjectInformationClass
+    * LPVOID lpJobObjectInformation
+    * DWORD cbJobObjectInformationLength
+    * LPDWORD lpReturnLength
+
+
+QueryProcessAffinityUpdateMode
+==============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * LPDWORD lpdwFlags
+
+
+QueryProcessCycleTime
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE ProcessHandle
+    * PULONG64 CycleTime
+
+
+QueryThreadCycleTime
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE ThreadHandle
+    * PULONG64 CycleTime
+
+
+QueryThreadpoolStackInformation
+===============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PTP_POOL ptpp
+    * PTP_POOL_STACK_INFORMATION ptpsi
+
+
+QueryWorkingSet
+===============
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PVOID pv
+    * DWORD cb
+
+
+QueryWorkingSetEx
+=================
+
+Signature::
+
+    * Library: psapi
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * PVOID pv
+    * DWORD cb
+
+
+QueueUserWorkItem
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPTHREAD_START_ROUTINE Function
+    * PVOID Context
+    * ULONG Flags
+
+
+ReleaseMutexWhenCallbackReturns
+===============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_CALLBACK_INSTANCE pci
+    * HANDLE mut
+
+
+ReleaseSemaphoreWhenCallbackReturns
+===================================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_CALLBACK_INSTANCE pci
+    * HANDLE sem
+    * DWORD crel
+
+
+ResumeThread
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hThread
+
+
+SetEnvironmentVariableA
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCSTR lpName
+    * LPCSTR lpValue
+
+
+SetEnvironmentVariableW
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPCWSTR lpName
+    * LPCWSTR lpValue
+
+
+SetEventWhenCallbackReturns
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_CALLBACK_INSTANCE pci
+    * HANDLE evt
+
+
+SetInformationJobObject
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hJob
+    * JOBOBJECTINFOCLASS JobObjectInformationClass
+    * LPVOID lpJobObjectInformation
+    * DWORD cbJobObjectInformationLength
+
+
+SetPriorityClass
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * DWORD dwPriorityClass
+
+
+SetProcessAffinityMask
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * DWORD_PTR dwProcessAffinityMask
+
+
+SetProcessAffinityUpdateMode
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * DWORD dwFlags
+
+
+SetProcessPriorityBoost
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * BOOL bDisablePriorityBoost
+
+
+SetProcessShutdownParameters
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * DWORD dwLevel
+    * DWORD dwFlags
+
+
+SetProcessWorkingSetSize
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * SIZE_T dwMinimumWorkingSetSize
+    * SIZE_T dwMaximumWorkingSetSize
+
+
+SetProcessWorkingSetSizeEx
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * SIZE_T dwMinimumWorkingSetSize
+    * SIZE_T dwMaximumWorkingSetSize
+    * DWORD Flags
+
+
+SetThreadAffinityMask
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD_PTR
+
+Parameters::
+
+    * HANDLE hThread
+    * DWORD_PTR dwThreadAffinityMask
+
+
+SetThreadGroupAffinity
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * const GROUP_AFFINITY *GroupAffinity
+    * PGROUP_AFFINITY PreviousGroupAffinity
+
+
+SetThreadIdealProcessor
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hThread
+    * DWORD dwIdealProcessor
+
+
+SetThreadIdealProcessorEx
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * PPROCESSOR_NUMBER lpIdealProcessor
+    * PPROCESSOR_NUMBER lpPreviousIdealProcessor
+
+
+SetThreadPriority
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * int nPriority
+
+
+SetThreadPriorityBoost
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * BOOL bDisablePriorityBoost
+
+
+SetThreadStackGuarantee
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PULONG StackSizeInBytes
+
+
+SetThreadpoolStackInformation
+=============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PTP_POOL ptpp
+    * PTP_POOL_STACK_INFORMATION ptpsi
+
+
+SetThreadpoolThreadMaximum
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_POOL ptpp
+    * DWORD cthrdMost
+
+
+SetThreadpoolThreadMinimum
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PTP_POOL ptpp
+    * DWORD cthrdMic
+
+
+SetThreadpoolTimer
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_TIMER pti
+    * PFILETIME pftDueTime
+    * DWORD msPeriod
+    * DWORD msWindowLength
+
+
+SetThreadpoolWait
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_WAIT pwa
+    * HANDLE h
+    * PFILETIME pftTimeout
+
+
+Sleep
+=====
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * DWORD dwMilliseconds
+
+
+SleepEx
+=======
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * DWORD dwMilliseconds
+    * BOOL bAlertable
+
+
+StartThreadpoolIo
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_IO pio
+
+
+SubmitThreadpoolWork
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_WORK pwk
+
+
+SuspendThread
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hThread
+
+
+SwitchToFiber
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * LPVOID lpFiber
+
+
+SwitchToThread
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+
+TerminateJobObject
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hJob
+    * UINT uExitCode
+
+
+TerminateProcess
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hProcess
+    * UINT uExitCode
+
+
+TerminateThread
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hThread
+    * DWORD dwExitCode
+
+
+TrySubmitThreadpoolCallback
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * PTP_SIMPLE_CALLBACK pfns
+    * PVOID pv
+    * PTP_CALLBACK_ENVIRON pcbe
+
+
+UpdateProcThreadAttribute
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    * LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
+    * DWORD dwFlags
+    * DWORD_PTR Attribute
+    * PVOID lpValue
+    * SIZE_T cbSize
+    * PVOID lpPreviousValue
+    * PSIZE_T lpReturnSize
+
+
+UserHandleGrantAccess
+=====================
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hUserHandle
+    * HANDLE hJob
+    * BOOL bGrant
+
+
+VirtualAllocExNuma
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LPVOID
+
+Parameters::
+
+    * HANDLE hProcess
+    * LPVOID lpAddress
+    * SIZE_T dwSize
+    * DWORD flAllocationType
+    * DWORD flProtect
+    * DWORD nndPreferred
+
+
+WTSEnumerateProcessesA
+======================
+
+Signature::
+
+    * Library: wtsapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hServer
+    * DWORD Reserved
+    * DWORD Version
+    * PWTS_PROCESS_INFOA *ppProcessInfo
+    * DWORD *pCount
+
+
+WTSEnumerateProcessesW
+======================
+
+Signature::
+
+    * Library: wtsapi32
+    * Return value: BOOL
+
+Parameters::
+
+    * HANDLE hServer
+    * DWORD Reserved
+    * DWORD Version
+    * PWTS_PROCESS_INFOW *ppProcessInfo
+    * DWORD *pCount
+
+
+WaitForInputIdle
+================
+
+Signature::
+
+    * Library: user32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hProcess
+    * DWORD dwMilliseconds
+
+
+WaitForThreadpoolIoCallbacks
+============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_IO pio
+    * BOOL fCancelPendingCallbacks
+
+
+WaitForThreadpoolTimerCallbacks
+===============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_TIMER pti
+    * BOOL fCancelPendingCallbacks
+
+
+WaitForThreadpoolWaitCallbacks
+==============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_WAIT pwa
+    * BOOL fCancelPendingCallbacks
+
+
+WaitForThreadpoolWorkCallbacks
+==============================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: void
+
+Parameters::
+
+    * PTP_WORK pwk
+    * BOOL fCancelPendingCallbacks
+
+
+Wow64SuspendThread
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    * HANDLE hThread
 
 
