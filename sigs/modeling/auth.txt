@@ -98,12 +98,12 @@ CreatePrivateObjectSecurityWithMultipleInheritance
 CreateRestrictedToken
 CreateSecurityPage
 CreateWellKnownSid
-DeleteAce
-DestroyPrivateObjectSecurity
-DSCreateSecurityPage
 DSCreateISecurityInfoObject
 DSCreateISecurityInfoObjectEx
+DSCreateSecurityPage
 DSEditSecurity
+DeleteAce
+DestroyPrivateObjectSecurity
 DuplicateToken
 DuplicateTokenEx
 EditSecurity

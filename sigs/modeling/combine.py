@@ -106,6 +106,8 @@ def _main():
     fns = get_files()
 
     # Iterate over API list
+    #TODO : for debugging
+    fns = ['auth.txt','crypto.txt','dll.txt','file.txt','hook.txt','network.txt','object.txt','registry.txt','sync.txt','system-info.txt','time.txt']
     for fn in fns:
         sys.stderr.write('Scanning {0}\n'.format(fn))
 

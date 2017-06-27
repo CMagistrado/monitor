@@ -1,8 +1,8 @@
+CBTProc
 CallMsgFilter
 CallNextHookEx
 CallWndProc
 CallWndRetProc
-CBTProc
 DebugProc
 ForegroundIdleProc
 GetMsgProc

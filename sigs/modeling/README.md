@@ -86,6 +86,197 @@
     - CreateFile2
       - Reason: Minimum Windows 8
 
+  - process.txt
+    - Because these were not found in malware sources and are probably useless:
+      - FlsAlloc
+      - FlsFree
+      - FlsGetValue
+      - FlsSetValue
+
+      - TlsAlloc
+      - TlsFree
+      - TlsGetValue
+      - TlsSetValue
+
+  - sync.txt
+    - These interfere with the monitor, causing it to crash:
+      - DeleteCriticalSection
+      - EnterCriticalSection
+      - InitializeCriticalSection
+      - InitializeCriticalSectionAndSpinCount
+      - InitializeCriticalSectionEx
+      - LeaveCriticalSection
+      - SetCriticalSectionSpinCount
+      - TryEnterCriticalSection
+
+    - These slow the target program down
+      - AcquireSRWLockExclusive
+      - AcquireSRWLockShared
+      - InitializeSRWLock
+      - ReleaseSRWLockExclusive
+      - ReleaseSRWLockShared
+      - TryAcquireSRWLockExclusive
+      - TryAcquireSRWLockShared
+
+      - InitOnceBeginInitialize
+      - InitOnceComplete
+      - InitOnceExecuteOnce
+      - InitOnceInitialize
+      - InitializeConditionVariable
+
+      - AddIntegrityLabelToBoundaryDescriptor
+      - AddSIDToBoundaryDescriptor
+      - CreateBoundaryDescriptor
+      - DeleteBoundaryDescriptor
+
+      - InitializeSListHead
+      - QueryDepthSList
+
+      - RtlFirstEntrySList
+      - RtlInitializeSListHead
+      - RtlInterlockedFlushSList
+      - RtlInterlockedPopEntrySList
+      - RtlInterlockedPushEntrySList
+      - RtlQueryDepthSList
+
+      - InterlockedAdd
+      - InterlockedAdd64
+      - InterlockedAddAcquire
+      - InterlockedAddAcquire64
+      - InterlockedAddNoFence
+      - InterlockedAddNoFence64
+      - InterlockedAddRelease
+      - InterlockedAddRelease64
+      - InterlockedAnd
+      - InterlockedAnd16
+      - InterlockedAnd16Acquire
+      - InterlockedAnd16NoFence
+      - InterlockedAnd16Release
+      - InterlockedAnd64
+      - InterlockedAnd64Acquire
+      - InterlockedAnd64NoFence
+      - InterlockedAnd64Release
+      - InterlockedAnd8
+      - InterlockedAnd8Acquire
+      - InterlockedAnd8NoFence
+      - InterlockedAnd8Release
+      - InterlockedAndAcquire
+      - InterlockedAndNoFence
+      - InterlockedAndRelease
+      - InterlockedBitTestAndComplement
+      - InterlockedBitTestAndComplement64
+      - InterlockedBitTestAndReset
+      - InterlockedBitTestAndReset64
+      - InterlockedBitTestAndResetAcquire
+      - InterlockedBitTestAndResetRelease
+      - InterlockedBitTestAndSet
+      - InterlockedBitTestAndSet64
+      - InterlockedBitTestAndSetAcquire
+      - InterlockedBitTestAndSetRelease
+      - InterlockedCompare64Exchange128
+      - InterlockedCompare64ExchangeAcquire128
+      - InterlockedCompare64ExchangeRelease128
+      - InterlockedCompareExchange
+      - InterlockedCompareExchange128
+      - InterlockedCompareExchange16
+      - InterlockedCompareExchange16Acquire
+      - InterlockedCompareExchange16NoFence
+      - InterlockedCompareExchange16Release
+      - InterlockedCompareExchange64
+      - InterlockedCompareExchangeAcquire
+      - InterlockedCompareExchangeAcquire64
+      - InterlockedCompareExchangeNoFence
+      - InterlockedCompareExchangeNoFence64
+      - InterlockedCompareExchangePointer
+      - InterlockedCompareExchangePointerAcquire
+      - InterlockedCompareExchangePointerNoFence
+      - InterlockedCompareExchangePointerRelease
+      - InterlockedCompareExchangeRelease
+      - InterlockedCompareExchangeRelease64
+      - InterlockedDecrement
+      - InterlockedDecrement16
+      - InterlockedDecrement16Acquire
+      - InterlockedDecrement16NoFence
+      - InterlockedDecrement16Release
+      - InterlockedDecrement64
+      - InterlockedDecrementAcquire
+      - InterlockedDecrementAcquire64
+      - InterlockedDecrementNoFence
+      - InterlockedDecrementNoFence64
+      - InterlockedDecrementRelease
+      - InterlockedDecrementRelease64
+      - InterlockedExchange
+      - InterlockedExchange16
+      - InterlockedExchange16Acquire
+      - InterlockedExchange16NoFence
+      - InterlockedExchange64
+      - InterlockedExchange8
+      - InterlockedExchangeAcquire
+      - InterlockedExchangeAcquire64
+      - InterlockedExchangeAdd
+      - InterlockedExchangeAdd64
+      - InterlockedExchangeAddAcquire
+      - InterlockedExchangeAddAcquire64
+      - InterlockedExchangeAddNoFence
+      - InterlockedExchangeAddNoFence64
+      - InterlockedExchangeAddRelease
+      - InterlockedExchangeAddRelease64
+      - InterlockedExchangeNoFence
+      - InterlockedExchangeNoFence64
+      - InterlockedExchangePointer
+      - InterlockedExchangePointerAcquire
+      - InterlockedExchangePointerNoFence
+      - InterlockedExchangeSubtract
+      - InterlockedFlushSList
+      - InterlockedIncrement
+      - InterlockedIncrement16
+      - InterlockedIncrement16Acquire
+      - InterlockedIncrement16NoFence
+      - InterlockedIncrement16Release
+      - InterlockedIncrement64
+      - InterlockedIncrementAcquire
+      - InterlockedIncrementAcquire64
+      - InterlockedIncrementNoFence
+      - InterlockedIncrementNoFence64
+      - InterlockedIncrementRelease
+      - InterlockedIncrementRelease64
+      - InterlockedOr
+      - InterlockedOr16
+      - InterlockedOr16Acquire
+      - InterlockedOr16NoFence
+      - InterlockedOr16Release
+      - InterlockedOr64
+      - InterlockedOr64Acquire
+      - InterlockedOr64NoFence
+      - InterlockedOr64Release
+      - InterlockedOr8
+      - InterlockedOr8Acquire
+      - InterlockedOr8NoFence
+      - InterlockedOr8Release
+      - InterlockedOrAcquire
+      - InterlockedOrNoFence
+      - InterlockedOrRelease
+      - InterlockedPopEntrySList
+      - InterlockedPushEntrySList
+      - InterlockedPushListSList
+      - InterlockedPushListSListEx
+      - InterlockedXor
+      - InterlockedXor16
+      - InterlockedXor16Acquire
+      - InterlockedXor16NoFence
+      - InterlockedXor16Release
+      - InterlockedXor64
+      - InterlockedXor64Acquire
+      - InterlockedXor64NoFence
+      - InterlockedXor64Release
+      - InterlockedXor8
+      - InterlockedXor8Acquire
+      - InterlockedXor8NoFence
+      - InterlockedXor8Release
+      - InterlockedXorAcquire
+      - InterlockedXorNoFence
+      - InterlockedXorRelease
+
 # Tests
 
   - Notepad: All files work except

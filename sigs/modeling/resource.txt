@@ -3,13 +3,13 @@ CopyImage
 EndUpdateResource
 EnumResLangProc
 EnumResNameProc
+EnumResTypeProc
 EnumResourceLanguages
 EnumResourceLanguagesEx
 EnumResourceNames
 EnumResourceNamesEx
 EnumResourceTypes
 EnumResourceTypesEx
-EnumResTypeProc
 FindResource
 FindResourceEx
 FreeResource

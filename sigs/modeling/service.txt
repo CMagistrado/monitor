@@ -1,11 +1,3 @@
-Handler
-HandlerEx
-RegisterServiceCtrlHandler
-RegisterServiceCtrlHandlerEx
-ServiceMain
-SetServiceBits
-SetServiceStatus
-StartServiceCtrlDispatcher
 ChangeServiceConfig
 ChangeServiceConfig2
 CloseServiceHandle
@@ -17,6 +9,8 @@ EnumDependentServices
 EnumServicesStatusEx
 GetServiceDisplayName
 GetServiceKeyName
+Handler
+HandlerEx
 NotifyBootConfigStatus
 NotifyServiceStatusChange
 OpenSCManager
@@ -26,5 +20,11 @@ QueryServiceConfig2
 QueryServiceDynamicInformation
 QueryServiceObjectSecurity
 QueryServiceStatusEx
+RegisterServiceCtrlHandler
+RegisterServiceCtrlHandlerEx
+ServiceMain
+SetServiceBits
 SetServiceObjectSecurity
+SetServiceStatus
 StartService
+StartServiceCtrlDispatcher

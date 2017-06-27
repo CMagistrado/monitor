@@ -35,8 +35,8 @@ SetComputerNameEx
 SetFirmwareEnvironmentVariable
 SetFirmwareEnvironmentVariableEx
 TranslateName
-VerifyVersionInfo
 VerSetConditionMask
+VerifyVersionInfo
 Wow64DisableWow64FsRedirection
 Wow64EnableWow64FsRedirection
 Wow64RevertWow64FsRedirection
