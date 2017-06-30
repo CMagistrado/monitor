@@ -1,69 +1,60 @@
-AuthzInitializeResourceManagerEx not found in DLL
-AuthzInitializeRemoteResourceManager not found in DLL
-AuthzInitializeCompoundContext not found in DLL
 Can't handle AuthzModifySecurityAttributes yet
 Can't handle AuthzModifyClaims yet
 Can't handle AuthzModifySids yet
-AuthzSetAppContainerInformation not found in DLL
 Can't handle AuthzInitializeObjectAccessAuditEvent yet
 Can't handle AuthzInitializeObjectAccessAuditEvent2 yet
 Can't handle AuthzReportSecurityEvent yet
-AuthzRegisterCapChangeNotification not found in DLL
-AuthzUnregisterCapChangeNotification not found in DLL
-AuthzFreeCentralAccessPolicyCache not found in DLL
 AuxUlibInitialize not found in DLL
 AuxUlibSetSystemFileCacheSize not found in DLL
 AuxUlibIsDLLSynchronizationHeld not found in DLL
-BemCreateReference no library name
-BemCreateContractFrom no library name
-BemCopyReference no library name
-BemFreeReference no library name
-BemFreeContract no library name
-BluetoothFindFirstRadio not found in DLL
-BluetoothFindNextRadio not found in DLL
-BluetoothFindRadioClose not found in DLL
-BluetoothGetRadioInfo not found in DLL
-BluetoothFindFirstDevice not found in DLL
-BluetoothFindNextDevice not found in DLL
-BluetoothFindDeviceClose not found in DLL
-BluetoothGetDeviceInfo not found in DLL
-BluetoothUpdateDeviceRecord not found in DLL
-BluetoothRemoveDevice not found in DLL
+BemCreateReference not found in DLL
+BemCreateContractFrom not found in DLL
+BemCopyReference not found in DLL
+BemFreeReference not found in DLL
+BemFreeContract not found in DLL
+BluetoothFindFirstRadio no library name
+BluetoothFindNextRadio no library name
+BluetoothFindRadioClose no library name
+BluetoothGetRadioInfo no library name
+BluetoothFindFirstDevice no library name
+BluetoothFindNextDevice no library name
+BluetoothFindDeviceClose no library name
+BluetoothGetDeviceInfo no library name
+BluetoothUpdateDeviceRecord no library name
+BluetoothRemoveDevice no library name
 BluetoothSelectDevices not found in DLL
 BluetoothSelectDevicesFree not found in DLL
 BluetoothDisplayDeviceProperties not found in DLL
 BluetoothAuthenticateDevice not found in DLL
 BluetoothAuthenticateDeviceEx not found in DLL
 BluetoothAuthenticateMultipleDevices not found in DLL
-BluetoothSetServiceState not found in DLL
-BluetoothEnumerateInstalledServices not found in DLL
-BluetoothEnableDiscovery not found in DLL
-BluetoothIsDiscoverable not found in DLL
-BluetoothEnableIncomingConnections not found in DLL
-BluetoothIsConnectable not found in DLL
-BluetoothRegisterForAuthentication not found in DLL
-BluetoothRegisterForAuthenticationEx not found in DLL
-BluetoothUnregisterAuthentication not found in DLL
-BluetoothSendAuthenticationResponse not found in DLL
-BluetoothSendAuthenticationResponseEx not found in DLL
-BluetoothSdpGetElementData not found in DLL
-BluetoothSdpGetContainerElementData not found in DLL
-BluetoothSdpGetAttributeValue not found in DLL
-BluetoothSdpGetString not found in DLL
-BluetoothSdpEnumAttributes not found in DLL
-BluetoothSetLocalServiceInfo not found in DLL
-BluetoothIsVersionAvailable not found in DLL
+BluetoothSetServiceState no library name
+BluetoothEnumerateInstalledServices no library name
+BluetoothEnableDiscovery no library name
+BluetoothIsDiscoverable no library name
+BluetoothEnableIncomingConnections no library name
+BluetoothIsConnectable no library name
+BluetoothRegisterForAuthentication no library name
+BluetoothRegisterForAuthenticationEx no library name
+BluetoothUnregisterAuthentication no library name
+BluetoothSendAuthenticationResponse no library name
+BluetoothSendAuthenticationResponseEx no library name
+BluetoothSdpGetElementData no library name
+BluetoothSdpGetContainerElementData no library name
+BluetoothSdpGetAttributeValue no library name
+BluetoothSdpGetString no library name
+BluetoothSdpEnumAttributes no library name
+BluetoothSetLocalServiceInfo no library name
+BluetoothIsVersionAvailable no library name
 PstGetTrustAnchors no library name
-PstGetTrustAnchorsEx not found in DLL
-PstGetCertificateChain not found in DLL
+PstGetTrustAnchorsEx no library name
+PstGetCertificateChain no library name
 PstGetCertificates no library name
 PstAcquirePrivateKey no library name
 PstValidate no library name
 PstMapCertificate no library name
 PstGetUserNameForCertificate no library name
 CM_WaitNoPendingInstallEvents not found in DLL
-CM_Register_Notification not found in DLL
-CM_Unregister_Notification not found in DLL
 ClfsMgmtRegisterManagedClient not found in DLL
 ClfsMgmtDeregisterManagedClient not found in DLL
 ClfsMgmtTailAdvanceFailure not found in DLL
@@ -73,66 +64,13 @@ ClfsMgmtQueryPolicy not found in DLL
 ClfsMgmtRemovePolicy not found in DLL
 ClfsMgmtSetLogFileSize not found in DLL
 ClfsMgmtSetLogFileSizeAsClient not found in DLL
-CreateClusterNotifyPortV2 not found in DLL
-RegisterClusterNotifyV2 not found in DLL
-GetNotifyEventHandle not found in DLL
-GetClusterNotifyV2 not found in DLL
-PauseClusterNodeEx not found in DLL
-ResumeClusterNodeEx not found in DLL
-CreateClusterGroupEx not found in DLL
-ClusterGroupOpenEnumEx not found in DLL
-ClusterGroupGetEnumCountEx not found in DLL
-ClusterGroupEnumEx not found in DLL
-ClusterGroupCloseEnumEx not found in DLL
-ClusterResourceOpenEnumEx not found in DLL
-ClusterResourceGetEnumCountEx not found in DLL
-ClusterResourceEnumEx not found in DLL
-ClusterResourceCloseEnumEx not found in DLL
-MoveClusterGroupEx not found in DLL
-ClusterSharedVolumeSetSnapshotState not found in DLL
-ClusterRegSyncDatabase not found in DLL
-CreateCompressor not found in DLL
-SetCompressorInformation not found in DLL
-QueryCompressorInformation not found in DLL
-ResetCompressor not found in DLL
-CloseCompressor not found in DLL
-CreateDecompressor not found in DLL
-SetDecompressorInformation not found in DLL
-QueryDecompressorInformation not found in DLL
-Decompress not found in DLL
-ResetDecompressor not found in DLL
-CloseDecompressor not found in DLL
-StackWalkEx not found in DLL
-SymFunctionTableAccess64AccessRoutines not found in DLL
-SymGetLineFromInlineContext not found in DLL
-SymGetLineFromInlineContextW not found in DLL
-SymAddrIncludeInlineTrace not found in DLL
-SymCompareInlineTrace not found in DLL
-SymQueryInlineTrace not found in DLL
 SymGetLineFromAddrW not found in DLL
 SymGetLineNextW not found in DLL
 SymGetLinePrevW not found in DLL
-SymSetScopeFromInlineContext not found in DLL
-SymFromInlineContext not found in DLL
-SymFromInlineContextW not found in DLL
-SymEnumSymbolsEx not found in DLL
-SymEnumSymbolsExW not found in DLL
 SymGetSymNextW64 not found in DLL
 SymGetSymNextW not found in DLL
 SymGetSymPrevW64 not found in DLL
 SymGetSymPrevW not found in DLL
-SetCheckUserInterruptShared not found in DLL
-SetSymLoadError not found in DLL
-ReportSymbolLoadSummary not found in DLL
-RemoveInvalidModuleList not found in DLL
-RangeMapCreate not found in DLL
-RangeMapFree not found in DLL
-RangeMapAddPeImageSections not found in DLL
-RangeMapRemove not found in DLL
-RangeMapRead not found in DLL
-RangeMapWrite not found in DLL
-CryptProtectDataNoUI not found in DLL
-CryptUnprotectDataNoUI not found in DLL
 Can't handle DsQuoteRdnValue yet
 Can't handle DsUnquoteRdnValue yet
 Can't handle DsGetRdnW yet
@@ -143,8 +81,6 @@ EasEncryptProvGetDeviceLockoutData not found in DLL
 EasEncryptProvValidateDeviceLockoutState not found in DLL
 EasEncryptProvUpdateDeviceLockoutState not found in DLL
 EasEncryptProvDisableDeviceLockoutState not found in DLL
-EasRegisterEncryptionProvider not found in DLL
-EasUnRegisterEncryptionProvider not found in DLL
 MappingGetServices no library name
 MappingFreeServices no library name
 MappingRecognizeText no library name
@@ -158,14 +94,6 @@ FaxExtRegisterForEvents not found in DLL
 FaxExtUnregisterForEvents not found in DLL
 FaxExtFreeBuffer not found in DLL
 Can't handle FaxExtInitializeConfig yet
-FhServiceOpenPipe not found in DLL
-FhServiceClosePipe not found in DLL
-FhServiceStartBackup not found in DLL
-FhServiceStopBackup not found in DLL
-FhServiceReloadConfiguration not found in DLL
-FhServiceBlockBackup not found in DLL
-FhServiceUnblockBackup not found in DLL
-CreateFile2 no library name
 FilterLoad no library name
 FilterUnload no library name
 FilterCreate no library name
@@ -376,7 +304,6 @@ FwpsAleEndpointGetSecurityInfo0 not found in DLL
 FwpsAleEndpointSetSecurityInfo0 not found in DLL
 HtmlHelpA not found in DLL
 HtmlHelpW not found in DLL
-HttpPrepareUrl not found in DLL
 InitCompression not found in DLL
 DeInitCompression not found in DLL
 CreateCompression not found in DLL
@@ -391,60 +318,13 @@ Can	 handle IcmpSendEcho2Ex yet
 Can	 handle Icmp6SendEcho2 yet
 Icmp6ParseReplies not found in DLL
 SetShellNext not found in DLL
-StackWalkEx not found in DLL
-SymFunctionTableAccess64AccessRoutines not found in DLL
-SymGetLineFromInlineContext not found in DLL
-SymGetLineFromInlineContextW not found in DLL
-SymAddrIncludeInlineTrace not found in DLL
-SymCompareInlineTrace not found in DLL
-SymQueryInlineTrace not found in DLL
 SymGetLineFromAddrW not found in DLL
 SymGetLineNextW not found in DLL
 SymGetLinePrevW not found in DLL
-SymSetScopeFromInlineContext not found in DLL
-SymFromInlineContext not found in DLL
-SymFromInlineContextW not found in DLL
-SymEnumSymbolsEx not found in DLL
-SymEnumSymbolsExW not found in DLL
 SymGetSymNextW64 not found in DLL
 SymGetSymNextW not found in DLL
 SymGetSymPrevW64 not found in DLL
 SymGetSymPrevW not found in DLL
-SetCheckUserInterruptShared not found in DLL
-SetSymLoadError not found in DLL
-ReportSymbolLoadSummary not found in DLL
-RemoveInvalidModuleList not found in DLL
-RangeMapCreate not found in DLL
-RangeMapFree not found in DLL
-RangeMapAddPeImageSections not found in DLL
-RangeMapRemove not found in DLL
-RangeMapRead not found in DLL
-RangeMapWrite not found in DLL
-CreateInteractionContext not found in DLL
-DestroyInteractionContext not found in DLL
-RegisterOutputCallbackInteractionContext not found in DLL
-SetInteractionConfigurationInteractionContext not found in DLL
-GetInteractionConfigurationInteractionContext not found in DLL
-SetPropertyInteractionContext not found in DLL
-GetPropertyInteractionContext not found in DLL
-SetInertiaParameterInteractionContext not found in DLL
-GetInertiaParameterInteractionContext not found in DLL
-SetCrossSlideParametersInteractionContext not found in DLL
-GetCrossSlideParameterInteractionContext not found in DLL
-SetMouseWheelParameterInteractionContext not found in DLL
-GetMouseWheelParameterInteractionContext not found in DLL
-ResetInteractionContext not found in DLL
-GetStateInteractionContext not found in DLL
-AddPointerInteractionContext not found in DLL
-RemovePointerInteractionContext not found in DLL
-ProcessPointerFramesInteractionContext not found in DLL
-BufferPointerPacketsInteractionContext not found in DLL
-ProcessBufferedPacketsInteractionContext not found in DLL
-ProcessInertiaInteractionContext not found in DLL
-StopInteractionContext not found in DLL
-SetPivotInteractionContext not found in DLL
-InterlockedPushListSListEx not found in DLL
-GetOverlappedResultEx not found in DLL
 GetNumberOfInterfaces not found in DLL
 GetIfEntry not found in DLL
 GetIfTable not found in DLL
@@ -525,14 +405,7 @@ LookupPersistentTcpPortReservation not found in DLL
 LookupPersistentUdpPortReservation not found in DLL
 ParseNetworkString not found in DLL
 Can't handle joyGetNumDevs yet
-PrefetchVirtualMemory not found in DLL
-UnmapViewOfFileEx not found in DLL
-CreateFileMappingFromApp not found in DLL
-MapViewOfFileFromApp not found in DLL
-GetMemoryErrorHandlingCapabilities no library name
 BAD_MEMORY_CALLBACK_ROUTINE not found in DLL
-RegisterBadMemoryNotification no library name
-UnregisterBadMemoryNotification no library name
 Can't handle waveOutGetNumDevs yet
 Can't handle waveOutGetVolume yet
 Can't handle waveOutSetVolume yet
@@ -593,7 +466,6 @@ Can't handle midiInGetID yet
 Can't handle midiInMessage yet
 Can't handle auxGetNumDevs yet
 Can't handle mixerGetNumDevs yet
-sndOpenSound not found in DLL
 AllocFixupInfo not found in DLL
 AllocConnections not found in DLL
 AllocCountedString not found in DLL
@@ -610,78 +482,46 @@ FreeNapComponentRegistrationInfoArray not found in DLL
 FreeSystemHealthAgentState not found in DLL
 InitializeNapAgentNotifier not found in DLL
 UninitializeNapAgentNotifier not found in DLL
-NCryptKeyDerivation not found in DLL
-NCryptRegisterProtectionDescriptorName not found in DLL
-NCryptQueryProtectionDescriptorName not found in DLL
-NCryptCreateProtectionDescriptor not found in DLL
-NCryptCloseProtectionDescriptor not found in DLL
-NCryptGetProtectionDescriptorInfo not found in DLL
-NCryptProtectSecret not found in DLL
-NCryptUnprotectSecret not found in DLL
-NCryptStreamOpenToProtect not found in DLL
-NCryptStreamOpenToUnprotect not found in DLL
-NCryptStreamUpdate not found in DLL
-NCryptStreamClose not found in DLL
-NetworkIsolationSetupAppContainerBinaries not found in DLL
-NetworkIsolationRegisterForAppContainerChanges not found in DLL
-NetworkIsolationUnregisterForAppContainerChanges not found in DLL
-NetworkIsolationFreeAppContainers not found in DLL
-NetworkIsolationEnumAppContainers not found in DLL
-NetworkIsolationGetAppContainerConfig not found in DLL
-NetworkIsolationSetAppContainerConfig not found in DLL
-NetworkIsolationDiagnoseConnectFailureAndGetInfo not found in DLL
+NetworkIsolationSetupAppContainerBinaries no library name
+NetworkIsolationRegisterForAppContainerChanges no library name
+NetworkIsolationUnregisterForAppContainerChanges no library name
+NetworkIsolationFreeAppContainers no library name
+NetworkIsolationEnumAppContainers no library name
+NetworkIsolationGetAppContainerConfig no library name
+NetworkIsolationSetAppContainerConfig no library name
+NetworkIsolationDiagnoseConnectFailureAndGetInfo no library name
 GetNtmsMediaPoolNameA not found in DLL
 GetNtmsMediaPoolNameW not found in DLL
 GetNtmsUIOptionsA not found in DLL
 GetNtmsUIOptionsW not found in DLL
 GetVolumesFromDriveW not found in DLL
 GetVolumesFromDriveA not found in DLL
-OOBEComplete not found in DLL
-RegisterWaitUntilOOBECompleted not found in DLL
-UnregisterWaitUntilOOBECompleted not found in DLL
-PathIsUNCEx not found in DLL
-PathCchIsRoot not found in DLL
-PathCchAddBackslashEx not found in DLL
-PathCchAddBackslash not found in DLL
-PathCchRemoveBackslashEx not found in DLL
-PathCchRemoveBackslash not found in DLL
-PathCchSkipRoot not found in DLL
-PathCchStripToRoot not found in DLL
-PathCchRemoveFileSpec not found in DLL
-PathCchFindExtension not found in DLL
-PathCchAddExtension not found in DLL
-PathCchRenameExtension not found in DLL
-PathCchRemoveExtension not found in DLL
-PathCchCanonicalizeEx not found in DLL
-PathCchCanonicalize not found in DLL
-PathCchCombineEx not found in DLL
-PathCchCombine not found in DLL
-PathCchAppendEx not found in DLL
-PathCchAppend not found in DLL
-PathCchStripPrefix not found in DLL
-PathAllocCombine not found in DLL
-PathAllocCanonicalize not found in DLL
-PowerDeterminePlatformRoleEx not found in DLL
-PowerRegisterSuspendResumeNotification not found in DLL
-PowerUnregisterSuspendResumeNotification not found in DLL
+PathIsUNCEx no library name
+PathCchIsRoot no library name
+PathCchAddBackslashEx no library name
+PathCchAddBackslash no library name
+PathCchRemoveBackslashEx no library name
+PathCchRemoveBackslash no library name
+PathCchSkipRoot no library name
+PathCchStripToRoot no library name
+PathCchRemoveFileSpec no library name
+PathCchFindExtension no library name
+PathCchAddExtension no library name
+PathCchRenameExtension no library name
+PathCchRemoveExtension no library name
+PathCchCanonicalizeEx no library name
+PathCchCanonicalize no library name
+PathCchCombineEx no library name
+PathCchCombine no library name
+PathCchAppendEx no library name
+PathCchAppend no library name
+PathCchStripPrefix no library name
+PathAllocCombine no library name
+PathAllocCanonicalize no library name
 RegisterForPrintAsyncNotifications not found in DLL
 Can't handle UnRegisterForPrintAsyncNotifications yet
 CreatePrintAsyncNotifyChannel not found in DLL
-GetCurrentThreadStackLimits no library name
-SetProcessMitigationPolicy no library name
-GetProcessMitigationPolicy no library name
-GetThreadInformation no library name
-SetThreadInformation no library name
-IsProcessCritical not found in DLL
 ResUtilGetExpandSzValue not found in DLL
-ResUtilSetValueEx not found in DLL
-ResUtilSetResourceServiceStartParametersEx not found in DLL
-ResUtilEnumResourcesEx2 not found in DLL
-ResUtilGetResourceDependencyEx not found in DLL
-ResUtilGetResourceDependencyByNameEx not found in DLL
-ResUtilGetResourceDependencyByClassEx not found in DLL
-ResUtilGetResourceNameDependencyEx not found in DLL
-ResUtilGetCoreClusterResourcesEx not found in DLL
 I_RpcNsGetBuffer no library name
 I_RpcNsSendReceive no library name
 I_RpcNsRaiseException no library name
@@ -721,70 +561,21 @@ RtlVirtualUnwind not found in DLL
 RtlUnwindEx not found in DLL
 SslGenerateKeyPair not found in DLL
 SslGetDefaultIssuers not found in DLL
-SslGetServerIdentity not found in DLL
-GetAppContainerNamedObjectPath not found in DLL
-AddResourceAttributeAce not found in DLL
-AddScopedPolicyIDAce not found in DLL
-CheckTokenCapability not found in DLL
-GetAppContainerAce not found in DLL
-CheckTokenMembershipEx not found in DLL
-SetCachedSigningLevel not found in DLL
-GetCachedSigningLevel not found in DLL
 Can't handle SetupWriteTextLog yet
 Can't handle SetupWriteTextLogError yet
-SLGetActiveLicenseInfo not found in DLL
-SLDepositStoreToken not found in DLL
-SLGenerateOfflineInstallationIdEx not found in DLL
-SLDepositOfflineConfirmationIdEx not found in DLL
-SLGetGenuineInformationEx not found in DLL
-SLGatherMigrationBlob not found in DLL
-SLGatherMigrationBlobEx not found in DLL
-SLDepositMigrationBlob not found in DLL
-RegisterAppInstance not found in DLL
 WSCWriteProviderOrder32 not found in DLL
 WSCWriteNameSpaceOrder32 not found in DLL
-EnterSynchronizationBarrier no library name
-InitializeSynchronizationBarrier no library name
-DeleteSynchronizationBarrier no library name
 WaitOnAddress no library name
 WakeByAddressSingle no library name
 WakeByAddressAll no library name
-GetOsSafeBootMode not found in DLL
-GetSystemTimePreciseAsFileTime not found in DLL
-DnsHostnameToComputerNameExW not found in DLL
-SetComputerNameEx2W not found in DLL
-InstallELAMCertificateInfo not found in DLL
-SetThreadpoolTimerEx not found in DLL
-SetThreadpoolWaitEx not found in DLL
+GetOsSafeBootMode no library name
 Can't handle timeGetTime yet
-EnumDynamicTimeZoneInformation not found in DLL
-GetDynamicTimeZoneInformationEffectiveYears not found in DLL
 UalStart not found in DLL
 UalStop not found in DLL
 UalInstrument not found in DLL
 UalRegisterProduct not found in DLL
 _In_reads_ not found in DLL
-GenerateGPNotification not found in DLL
-CreateAppContainerProfile not found in DLL
-DeleteAppContainerProfile not found in DLL
-GetAppContainerRegistryLocation not found in DLL
-GetAppContainerFolderPath not found in DLL
-DeriveAppContainerSidFromAppContainerName not found in DLL
 Can't handle VerSetConditionMask yet
-GetAllAttachedVirtualDiskPhysicalPaths not found in DLL
-EnumerateVirtualDiskMetadata not found in DLL
-GetVirtualDiskMetadata not found in DLL
-SetVirtualDiskMetadata not found in DLL
-DeleteVirtualDiskMetadata not found in DLL
-ResizeVirtualDisk not found in DLL
-MirrorVirtualDisk not found in DLL
-BreakMirrorVirtualDisk not found in DLL
-AddVirtualDiskParent not found in DLL
-WcmQueryProperty not found in DLL
-WcmSetProperty not found in DLL
-WcmGetProfileList not found in DLL
-WcmSetProfileList not found in DLL
-WcmFreeMemory not found in DLL
 WinMain not found in DLL
 wWinMain not found in DLL
 CalloutOnFiberStack not found in DLL
@@ -802,23 +593,9 @@ DeleteUmsThreadContext not found in DLL
 CreateUmsThreadContext not found in DLL
 EnterUmsSchedulingMode not found in DLL
 GetUmsSystemThreadInformation not found in DLL
-GetProcessInformation not found in DLL
-SetProcessInformation not found in DLL
-LoadPackagedLibrary not found in DLL
-GetFirmwareEnvironmentVariableExA not found in DLL
-GetFirmwareEnvironmentVariableExW not found in DLL
-SetFirmwareEnvironmentVariableExA not found in DLL
-SetFirmwareEnvironmentVariableExW not found in DLL
-GetFirmwareType not found in DLL
-IsNativeVhdBoot not found in DLL
-GlobalAddAtomExA not found in DLL
-GlobalAddAtomExW not found in DLL
-CopyFile2 no library name
-OperationStart not found in DLL
-OperationEnd not found in DLL
 Can't handle UnregisterApplicationRecoveryCallback yet
 Can't handle UnregisterApplicationRestart yet
-WbioQueryEngineInterface not found in DLL
+WbioQueryEngineInterface no library name
 CryptExportPKCS8Ex not found in DLL
 Can't handle FindCertsByIssuer yet
 EngFreePrivateUserMem not found in DLL
@@ -831,9 +608,6 @@ EngReadStateEvent not found in DLL
 EngQuerySystemAttribute not found in DLL
 EngQueryDeviceAttribute not found in DLL
 DNS_QUERY_COMPLETION_ROUTINE not found in DLL
-DnsQueryEx not found in DLL
-DnsCancelQuery not found in DLL
-CeipIsOptedIn not found in DLL
 FaxConnectFaxServerA no library name
 FaxConnectFaxServerW no library name
 FaxClose no library name
@@ -909,7 +683,6 @@ Can't handle GetUserDefaultLangID yet
 Can't handle GetSystemDefaultLCID yet
 Can't handle GetUserDefaultLCID yet
 Can't handle GetThreadUILanguage yet
-IsValidNLSVersion no library name
 Can't handle Int64ShraMod32 yet
 _rotl8 not found in DLL
 RtlUnwind2 not found in DLL
@@ -940,13 +713,8 @@ RtlLookupFunctionEntry not found in DLL
 RtlRestoreContext not found in DLL
 RtlVirtualUnwind not found in DLL
 RtlUnwindEx not found in DLL
-RtlInterlockedPushListSListEx not found in DLL
-RtlCrc32 not found in DLL
-RtlCrc64 not found in DLL
 Can't handle RegGetValueA yet
 Can't handle RegGetValueW yet
-CheckForHiberboot not found in DLL
-GetHostNameW not found in DLL
 Can't handle WSACleanup yet
 Can't handle WSAGetLastError yet
 Can't handle WSAIsBlocking yet
@@ -954,6 +722,7 @@ Can't handle WSAUnhookBlockingHook yet
 Can't handle WSACancelBlockingCall yet
 Can't handle WSACreateEvent yet
 InitializeMonitorEx not found in DLL
+InitializePrintMonitor not found in DLL
 EnumPrintersA not found in DLL
 GetSpoolFileHandle not found in DLL
 CommitSpoolData not found in DLL
@@ -1021,56 +790,20 @@ DeletePrinterConnectionA not found in DLL
 AddPrintProvidorA not found in DLL
 DeletePrintProvidorA not found in DLL
 GetPrintExecutionData not found in DLL
-GetJobNamedPropertyValue not found in DLL
-FreePrintPropertyValue not found in DLL
 Can't handle FreePrintNamedPropertyArray yet
 SetJobNamedProperty not found in DLL
-DeleteJobNamedProperty not found in DLL
 EnumJobNamedProperties not found in DLL
 GetPrintOutputInfo not found in DLL
 Can't handle RegisterServiceCtrlHandlerA yet
 Can't handle RegisterServiceCtrlHandlerW yet
 Can't handle RegisterServiceCtrlHandlerExA yet
 Can't handle RegisterServiceCtrlHandlerExW yet
-QueryServiceDynamicInformation not found in DLL
 Can't handle wvsprintfA yet
 Can't handle wvsprintfW yet
 Can't handle wsprintfA yet
 Can't handle wsprintfW yet
 Can't handle DrawFrameControl yet
-GetUnpredictedMessagePos not found in DLL
-RegisterSuspendResumeNotification not found in DLL
-UnregisterSuspendResumeNotification not found in DLL
 Can't handle SetDoubleClickTime yet
-InitializeTouchInjection not found in DLL
-InjectTouchInput not found in DLL
-GetPointerType not found in DLL
-GetPointerCursorId not found in DLL
-GetPointerInfo not found in DLL
-GetPointerInfoHistory not found in DLL
-GetPointerFrameInfo not found in DLL
-GetPointerFrameInfoHistory not found in DLL
-GetPointerTouchInfo not found in DLL
-GetPointerTouchInfoHistory not found in DLL
-GetPointerFrameTouchInfo not found in DLL
-GetPointerFrameTouchInfoHistory not found in DLL
-GetPointerPenInfo not found in DLL
-GetPointerPenInfoHistory not found in DLL
-GetPointerFramePenInfo not found in DLL
-GetPointerFramePenInfoHistory not found in DLL
-SkipPointerFrameMessages not found in DLL
-RegisterPointerInputTarget not found in DLL
-UnregisterPointerInputTarget not found in DLL
-EnableMouseInPointer not found in DLL
-IsMouseInPointerEnabled not found in DLL
-RegisterTouchHitTestingWindow not found in DLL
-EvaluateProximityToRect not found in DLL
-EvaluateProximityToPolygon not found in DLL
-PackTouchHitTestingProximityEvaluation not found in DLL
-GetWindowFeedbackSetting not found in DLL
-SetWindowFeedbackSetting not found in DLL
-GetPointerInputTransform not found in DLL
-SetCoalescableTimer not found in DLL
 Can't handle CalculatePopupWindowPosition yet
 Can't handle GetMenuInfo yet
 Can't handle SetMenuInfo yet
@@ -1078,8 +811,6 @@ Can't handle SetWindowContextHelpId yet
 Can't handle GetWindowContextHelpId yet
 Can't handle SetMenuContextHelpId yet
 Can't handle GetMenuContextHelpId yet
-LogicalToPhysicalPointForPerMonitorDPI not found in DLL
-PhysicalToLogicalPointForPerMonitorDPI not found in DLL
 GetWindowLongPtrA not found in DLL
 GetWindowLongPtrW not found in DLL
 SetWindowLongPtrA not found in DLL
@@ -1090,21 +821,7 @@ SetClassLongPtrA not found in DLL
 SetClassLongPtrW not found in DLL
 CopyCursor not found in DLL
 _In_reads_opt_ not found in DLL
-GetPointerDevices not found in DLL
-GetPointerDevice not found in DLL
-GetPointerDeviceProperties not found in DLL
-RegisterPointerDeviceNotifications not found in DLL
-GetPointerDeviceRects not found in DLL
-GetPointerDeviceCursors not found in DLL
-GetRawPointerDeviceData not found in DLL
-GetCurrentInputMessageSource not found in DLL
-GetCIMSSM not found in DLL
-GetAutoRotationState not found in DLL
-GetDisplayAutoRotationPreferences not found in DLL
 GetDisplayAutoRotationPreferencesByProcessId not found in DLL
-SetDisplayAutoRotationPreferences not found in DLL
-IsImmersiveProcess not found in DLL
-SetProcessRestrictionExemption not found in DLL
 WlxNegotiate not found in DLL
 WlxInitialize not found in DLL
 WlxDisplaySASNotice not found in DLL
@@ -1126,13 +843,6 @@ WlxRemoveStatusMessage not found in DLL
 WlxGetConsoleSwitchCredentials not found in DLL
 WlxReconnectNotify not found in DLL
 WlxDisconnectNotify not found in DLL
-WFDOpenHandle not found in DLL
-WFDCloseHandle not found in DLL
-WFDStartOpenSession not found in DLL
-WFDCancelOpenSession not found in DLL
-WFDOpenLegacySession not found in DLL
-WFDCloseSession not found in DLL
-WFDUpdateDeviceVisibility not found in DLL
 WnvOpen not found in DLL
 WnvRequestNotification not found in DLL
 WSCEnumProtocols32 not found in DLL
@@ -1163,8 +873,6 @@ WSCInstallNameSpace32 not found in DLL
 WSCInstallNameSpaceEx32 not found in DLL
 WSCUnInstallNameSpace32 not found in DLL
 WSCEnableNSProvider32 not found in DLL
-GetAddrInfoExCancel not found in DLL
-GetAddrInfoExOverlappedResult not found in DLL
 WSASetSocketSecurity not found in DLL
 WSAQuerySocketSecurity not found in DLL
 WSASetSocketPeerTargetName not found in DLL

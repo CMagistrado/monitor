@@ -27,9 +27,7 @@ ConvertThreadToFiber
 ConvertThreadToFiberEx
 CreateFiber
 CreateFiberEx
-CreateJobObject
 CreateProcess
-CreateProcessAsUser
 CreateProcessWithLogonW
 CreateProcessWithTokenW
 CreateRemoteThread

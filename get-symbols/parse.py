@@ -257,7 +257,7 @@ def get_api(out,fd,apicall_to_dll,written_names,rv,name):
                 fa.write('\n')
                 fa.write('Parameters::\n\n')
                 for p in param:
-                    fa.write('    * {0}\n'.format(p))
+                    fa.write('    ** {0}\n'.format(p))
 
             fa.write('\n\n')
 

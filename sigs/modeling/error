@@ -13,13 +13,10 @@ Scanning dll.txt
    GetDllDirectory was not found in ../templates/sigs.rst-full
    GetModuleFileName was not found in ../templates/sigs.rst-full
    GetModuleFileNameEx was not found in ../templates/sigs.rst-full
-   GetModuleHandle was not found in ../templates/sigs.rst-full
-   GetModuleHandleEx was not found in ../templates/sigs.rst-full
    GetProcAddressA was not found in ../templates/sigs.rst-full
    GetProcAddressW was not found in ../templates/sigs.rst-full
    LoadLibrary was not found in ../templates/sigs.rst-full
    LoadLibraryEx was not found in ../templates/sigs.rst-full
-   LoadPackagedLibrary was not found in ../templates/sigs.rst-full
    LoadPackagedLibraryA was not found in ../templates/sigs.rst-full
    LoadPackagedLibraryW was not found in ../templates/sigs.rst-full
    RemoveDllDirectoryA was not found in ../templates/sigs.rst-full
@@ -42,9 +39,6 @@ Scanning file.txt
    CloseEncryptedFileRawA was not found in ../templates/sigs.rst-full
    CloseEncryptedFileRawW was not found in ../templates/sigs.rst-full
    CopyFile was not found in ../templates/sigs.rst-full
-   CopyFile2 was not found in ../templates/sigs.rst-full
-   CopyFile2A was not found in ../templates/sigs.rst-full
-   CopyFile2W was not found in ../templates/sigs.rst-full
    CopyFile2ProgressRoutine was not found in ../templates/sigs.rst-full
    CopyFile2ProgressRoutineA was not found in ../templates/sigs.rst-full
    CopyFile2ProgressRoutineW was not found in ../templates/sigs.rst-full
@@ -81,8 +75,6 @@ Scanning file.txt
    FileIOCompletionRoutineW was not found in ../templates/sigs.rst-full
    FindCloseA was not found in ../templates/sigs.rst-full
    FindCloseW was not found in ../templates/sigs.rst-full
-   FindCloseChangeNotificationA was not found in ../templates/sigs.rst-full
-   FindCloseChangeNotificationW was not found in ../templates/sigs.rst-full
    FindFirstChangeNotification was not found in ../templates/sigs.rst-full
    FindFirstFile was not found in ../templates/sigs.rst-full
    FindFirstFileEx was not found in ../templates/sigs.rst-full
@@ -129,7 +121,6 @@ Scanning file.txt
    GetFileTypeA was not found in ../templates/sigs.rst-full
    GetFileTypeW was not found in ../templates/sigs.rst-full
    GetFinalPathNameByHandle was not found in ../templates/sigs.rst-full
-   GetFullPathName was not found in ../templates/sigs.rst-full
    GetFullPathNameTransacted was not found in ../templates/sigs.rst-full
    GetLongPathName was not found in ../templates/sigs.rst-full
    GetLongPathNameTransacted was not found in ../templates/sigs.rst-full
@@ -196,8 +187,6 @@ Scanning file.txt
    RemoveDirectoryTransacted was not found in ../templates/sigs.rst-full
    RemoveUsersFromEncryptedFileA was not found in ../templates/sigs.rst-full
    RemoveUsersFromEncryptedFileW was not found in ../templates/sigs.rst-full
-   ReplaceFile was not found in ../templates/sigs.rst-full
-   SearchPath was not found in ../templates/sigs.rst-full
    SetCurrentDirectory was not found in ../templates/sigs.rst-full
    SetEndOfFileA was not found in ../templates/sigs.rst-full
    SetEndOfFileW was not found in ../templates/sigs.rst-full
@@ -307,11 +296,9 @@ Scanning service.txt
    NotifyBootConfigStatusA was not found in ../templates/sigs.rst-full
    NotifyBootConfigStatusW was not found in ../templates/sigs.rst-full
    NotifyServiceStatusChange was not found in ../templates/sigs.rst-full
-   OpenSCManager was not found in ../templates/sigs.rst-full
    OpenService was not found in ../templates/sigs.rst-full
    QueryServiceConfig was not found in ../templates/sigs.rst-full
    QueryServiceConfig2 was not found in ../templates/sigs.rst-full
-   QueryServiceDynamicInformation was not found in ../templates/sigs.rst-full
    QueryServiceDynamicInformationA was not found in ../templates/sigs.rst-full
    QueryServiceDynamicInformationW was not found in ../templates/sigs.rst-full
    QueryServiceObjectSecurityA was not found in ../templates/sigs.rst-full
@@ -337,13 +324,11 @@ Scanning service.txt
    StartService was not found in ../templates/sigs.rst-full
    StartServiceCtrlDispatcher was not found in ../templates/sigs.rst-full
 Scanning system-info.txt
-   CeipIsOptedIn was not found in ../templates/sigs.rst-full
    CeipIsOptedInA was not found in ../templates/sigs.rst-full
    CeipIsOptedInW was not found in ../templates/sigs.rst-full
    DnsHostnameToComputerName was not found in ../templates/sigs.rst-full
    EnumSystemFirmwareTablesA was not found in ../templates/sigs.rst-full
    EnumSystemFirmwareTablesW was not found in ../templates/sigs.rst-full
-   ExpandEnvironmentStrings was not found in ../templates/sigs.rst-full
    GetComputerName was not found in ../templates/sigs.rst-full
    GetComputerNameEx was not found in ../templates/sigs.rst-full
    GetComputerObjectName was not found in ../templates/sigs.rst-full
@@ -352,9 +337,6 @@ Scanning system-info.txt
    GetCurrentHwProfile was not found in ../templates/sigs.rst-full
    GetFirmwareEnvironmentVariable was not found in ../templates/sigs.rst-full
    GetFirmwareEnvironmentVariableEx was not found in ../templates/sigs.rst-full
-   GetFirmwareEnvironmentVariableExA was not found in ../templates/sigs.rst-full
-   GetFirmwareEnvironmentVariableExW was not found in ../templates/sigs.rst-full
-   GetFirmwareType was not found in ../templates/sigs.rst-full
    GetFirmwareTypeA was not found in ../templates/sigs.rst-full
    GetFirmwareTypeW was not found in ../templates/sigs.rst-full
    GetIntegratedDisplaySize was not found in ../templates/sigs.rst-full
@@ -364,15 +346,12 @@ Scanning system-info.txt
    GetNativeSystemInfoW was not found in ../templates/sigs.rst-full
    GetProductInfoA was not found in ../templates/sigs.rst-full
    GetProductInfoW was not found in ../templates/sigs.rst-full
-   GetSystemDirectory was not found in ../templates/sigs.rst-full
    GetSystemFirmwareTableA was not found in ../templates/sigs.rst-full
    GetSystemFirmwareTableW was not found in ../templates/sigs.rst-full
    GetSystemInfoA was not found in ../templates/sigs.rst-full
    GetSystemInfoW was not found in ../templates/sigs.rst-full
    GetSystemRegistryQuotaA was not found in ../templates/sigs.rst-full
    GetSystemRegistryQuotaW was not found in ../templates/sigs.rst-full
-   GetSystemWindowsDirectory was not found in ../templates/sigs.rst-full
-   GetSystemWow64Directory was not found in ../templates/sigs.rst-full
    GetUserName was not found in ../templates/sigs.rst-full
    GetUserNameEx was not found in ../templates/sigs.rst-full
    GetUserNameExA was not found in ../templates/sigs.rst-full
@@ -381,7 +360,6 @@ Scanning system-info.txt
    GetVersionW was not found in ../templates/sigs.rst-full
    GetVersionEx was not found in ../templates/sigs.rst-full
    GetWindowsDirectory was not found in ../templates/sigs.rst-full
-   IsNativeVhdBoot was not found in ../templates/sigs.rst-full
    IsNativeVhdBootA was not found in ../templates/sigs.rst-full
    IsNativeVhdBootW was not found in ../templates/sigs.rst-full
    IsProcessorFeaturePresentA was not found in ../templates/sigs.rst-full
@@ -401,8 +379,6 @@ Scanning system-info.txt
    SetComputerNameEx was not found in ../templates/sigs.rst-full
    SetFirmwareEnvironmentVariable was not found in ../templates/sigs.rst-full
    SetFirmwareEnvironmentVariableEx was not found in ../templates/sigs.rst-full
-   SetFirmwareEnvironmentVariableExA was not found in ../templates/sigs.rst-full
-   SetFirmwareEnvironmentVariableExW was not found in ../templates/sigs.rst-full
    TranslateName was not found in ../templates/sigs.rst-full
    TranslateNameA was not found in ../templates/sigs.rst-full
    TranslateNameW was not found in ../templates/sigs.rst-full
@@ -415,1141 +391,6 @@ Scanning system-info.txt
    Wow64EnableWow64FsRedirectionW was not found in ../templates/sigs.rst-full
    Wow64RevertWow64FsRedirectionA was not found in ../templates/sigs.rst-full
    Wow64RevertWow64FsRedirectionW was not found in ../templates/sigs.rst-full
-Scanning crypto.txt
-   A_SHAFinal was not found in ../templates/sigs.rst-full
-   A_SHAFinalA was not found in ../templates/sigs.rst-full
-   A_SHAFinalW was not found in ../templates/sigs.rst-full
-   A_SHAInit was not found in ../templates/sigs.rst-full
-   A_SHAInitA was not found in ../templates/sigs.rst-full
-   A_SHAInitW was not found in ../templates/sigs.rst-full
-   A_SHAUpdate was not found in ../templates/sigs.rst-full
-   A_SHAUpdateA was not found in ../templates/sigs.rst-full
-   A_SHAUpdateW was not found in ../templates/sigs.rst-full
-   CPAcquireContext was not found in ../templates/sigs.rst-full
-   CPAcquireContextA was not found in ../templates/sigs.rst-full
-   CPAcquireContextW was not found in ../templates/sigs.rst-full
-   CPCreateHash was not found in ../templates/sigs.rst-full
-   CPCreateHashA was not found in ../templates/sigs.rst-full
-   CPCreateHashW was not found in ../templates/sigs.rst-full
-   CPDecrypt was not found in ../templates/sigs.rst-full
-   CPDecryptA was not found in ../templates/sigs.rst-full
-   CPDecryptW was not found in ../templates/sigs.rst-full
-   CPDeriveKey was not found in ../templates/sigs.rst-full
-   CPDeriveKeyA was not found in ../templates/sigs.rst-full
-   CPDeriveKeyW was not found in ../templates/sigs.rst-full
-   CPDestroyHash was not found in ../templates/sigs.rst-full
-   CPDestroyHashA was not found in ../templates/sigs.rst-full
-   CPDestroyHashW was not found in ../templates/sigs.rst-full
-   CPDestroyKey was not found in ../templates/sigs.rst-full
-   CPDestroyKeyA was not found in ../templates/sigs.rst-full
-   CPDestroyKeyW was not found in ../templates/sigs.rst-full
-   CPDuplicateHash was not found in ../templates/sigs.rst-full
-   CPDuplicateHashA was not found in ../templates/sigs.rst-full
-   CPDuplicateHashW was not found in ../templates/sigs.rst-full
-   CPDuplicateKey was not found in ../templates/sigs.rst-full
-   CPDuplicateKeyA was not found in ../templates/sigs.rst-full
-   CPDuplicateKeyW was not found in ../templates/sigs.rst-full
-   CPEncrypt was not found in ../templates/sigs.rst-full
-   CPEncryptA was not found in ../templates/sigs.rst-full
-   CPEncryptW was not found in ../templates/sigs.rst-full
-   CPExportKey was not found in ../templates/sigs.rst-full
-   CPExportKeyA was not found in ../templates/sigs.rst-full
-   CPExportKeyW was not found in ../templates/sigs.rst-full
-   CPGenKey was not found in ../templates/sigs.rst-full
-   CPGenKeyA was not found in ../templates/sigs.rst-full
-   CPGenKeyW was not found in ../templates/sigs.rst-full
-   CPGenRandom was not found in ../templates/sigs.rst-full
-   CPGenRandomA was not found in ../templates/sigs.rst-full
-   CPGenRandomW was not found in ../templates/sigs.rst-full
-   CPGetHashParam was not found in ../templates/sigs.rst-full
-   CPGetHashParamA was not found in ../templates/sigs.rst-full
-   CPGetHashParamW was not found in ../templates/sigs.rst-full
-   CPGetKeyParam was not found in ../templates/sigs.rst-full
-   CPGetKeyParamA was not found in ../templates/sigs.rst-full
-   CPGetKeyParamW was not found in ../templates/sigs.rst-full
-   CPGetProvParam was not found in ../templates/sigs.rst-full
-   CPGetProvParamA was not found in ../templates/sigs.rst-full
-   CPGetProvParamW was not found in ../templates/sigs.rst-full
-   CPGetUserKey was not found in ../templates/sigs.rst-full
-   CPGetUserKeyA was not found in ../templates/sigs.rst-full
-   CPGetUserKeyW was not found in ../templates/sigs.rst-full
-   CPHashData was not found in ../templates/sigs.rst-full
-   CPHashDataA was not found in ../templates/sigs.rst-full
-   CPHashDataW was not found in ../templates/sigs.rst-full
-   CPHashSessionKey was not found in ../templates/sigs.rst-full
-   CPHashSessionKeyA was not found in ../templates/sigs.rst-full
-   CPHashSessionKeyW was not found in ../templates/sigs.rst-full
-   CPImportKey was not found in ../templates/sigs.rst-full
-   CPImportKeyA was not found in ../templates/sigs.rst-full
-   CPImportKeyW was not found in ../templates/sigs.rst-full
-   CPReleaseContext was not found in ../templates/sigs.rst-full
-   CPReleaseContextA was not found in ../templates/sigs.rst-full
-   CPReleaseContextW was not found in ../templates/sigs.rst-full
-   CPSetHashParam was not found in ../templates/sigs.rst-full
-   CPSetHashParamA was not found in ../templates/sigs.rst-full
-   CPSetHashParamW was not found in ../templates/sigs.rst-full
-   CPSetKeyParam was not found in ../templates/sigs.rst-full
-   CPSetKeyParamA was not found in ../templates/sigs.rst-full
-   CPSetKeyParamW was not found in ../templates/sigs.rst-full
-   CPSetProvParam was not found in ../templates/sigs.rst-full
-   CPSetProvParamA was not found in ../templates/sigs.rst-full
-   CPSetProvParamW was not found in ../templates/sigs.rst-full
-   CPSignHash was not found in ../templates/sigs.rst-full
-   CPSignHashA was not found in ../templates/sigs.rst-full
-   CPSignHashW was not found in ../templates/sigs.rst-full
-   CPVerifySignature was not found in ../templates/sigs.rst-full
-   CPVerifySignatureA was not found in ../templates/sigs.rst-full
-   CPVerifySignatureW was not found in ../templates/sigs.rst-full
-   CRYPT_ENUM_KEYID_PROP was not found in ../templates/sigs.rst-full
-   CRYPT_ENUM_KEYID_PROPA was not found in ../templates/sigs.rst-full
-   CRYPT_ENUM_KEYID_PROPW was not found in ../templates/sigs.rst-full
-   CRYPT_ENUM_OID_FUNCTION was not found in ../templates/sigs.rst-full
-   CRYPT_ENUM_OID_FUNCTIONA was not found in ../templates/sigs.rst-full
-   CRYPT_ENUM_OID_FUNCTIONW was not found in ../templates/sigs.rst-full
-   CRYPT_ENUM_OID_INFO was not found in ../templates/sigs.rst-full
-   CRYPT_ENUM_OID_INFOA was not found in ../templates/sigs.rst-full
-   CRYPT_ENUM_OID_INFOW was not found in ../templates/sigs.rst-full
-   CertAddCRLContextToStoreA was not found in ../templates/sigs.rst-full
-   CertAddCRLContextToStoreW was not found in ../templates/sigs.rst-full
-   CertAddCRLLinkToStoreA was not found in ../templates/sigs.rst-full
-   CertAddCRLLinkToStoreW was not found in ../templates/sigs.rst-full
-   CertAddCTLContextToStoreA was not found in ../templates/sigs.rst-full
-   CertAddCTLContextToStoreW was not found in ../templates/sigs.rst-full
-   CertAddCTLLinkToStoreA was not found in ../templates/sigs.rst-full
-   CertAddCTLLinkToStoreW was not found in ../templates/sigs.rst-full
-   CertAddCertificateContextToStoreA was not found in ../templates/sigs.rst-full
-   CertAddCertificateContextToStoreW was not found in ../templates/sigs.rst-full
-   CertAddCertificateLinkToStoreA was not found in ../templates/sigs.rst-full
-   CertAddCertificateLinkToStoreW was not found in ../templates/sigs.rst-full
-   CertAddEncodedCRLToStoreA was not found in ../templates/sigs.rst-full
-   CertAddEncodedCRLToStoreW was not found in ../templates/sigs.rst-full
-   CertAddEncodedCTLToStoreA was not found in ../templates/sigs.rst-full
-   CertAddEncodedCTLToStoreW was not found in ../templates/sigs.rst-full
-   CertAddEncodedCertificateToStoreA was not found in ../templates/sigs.rst-full
-   CertAddEncodedCertificateToStoreW was not found in ../templates/sigs.rst-full
-   CertAddEnhancedKeyUsageIdentifierA was not found in ../templates/sigs.rst-full
-   CertAddEnhancedKeyUsageIdentifierW was not found in ../templates/sigs.rst-full
-   CertAddRefServerOcspResponseA was not found in ../templates/sigs.rst-full
-   CertAddRefServerOcspResponseW was not found in ../templates/sigs.rst-full
-   CertAddRefServerOcspResponseContextA was not found in ../templates/sigs.rst-full
-   CertAddRefServerOcspResponseContextW was not found in ../templates/sigs.rst-full
-   CertAddSerializedElementToStoreA was not found in ../templates/sigs.rst-full
-   CertAddSerializedElementToStoreW was not found in ../templates/sigs.rst-full
-   CertAddStoreToCollectionA was not found in ../templates/sigs.rst-full
-   CertAddStoreToCollectionW was not found in ../templates/sigs.rst-full
-   CertAlgIdToOIDA was not found in ../templates/sigs.rst-full
-   CertAlgIdToOIDW was not found in ../templates/sigs.rst-full
-   CertChainFindByIssuerCallback was not found in ../templates/sigs.rst-full
-   CertChainFindByIssuerCallbackA was not found in ../templates/sigs.rst-full
-   CertChainFindByIssuerCallbackW was not found in ../templates/sigs.rst-full
-   CertCloseServerOcspResponseA was not found in ../templates/sigs.rst-full
-   CertCloseServerOcspResponseW was not found in ../templates/sigs.rst-full
-   CertCloseStoreA was not found in ../templates/sigs.rst-full
-   CertCloseStoreW was not found in ../templates/sigs.rst-full
-   CertCompareCertificateA was not found in ../templates/sigs.rst-full
-   CertCompareCertificateW was not found in ../templates/sigs.rst-full
-   CertCompareCertificateNameA was not found in ../templates/sigs.rst-full
-   CertCompareCertificateNameW was not found in ../templates/sigs.rst-full
-   CertCompareIntegerBlobA was not found in ../templates/sigs.rst-full
-   CertCompareIntegerBlobW was not found in ../templates/sigs.rst-full
-   CertComparePublicKeyInfoA was not found in ../templates/sigs.rst-full
-   CertComparePublicKeyInfoW was not found in ../templates/sigs.rst-full
-   CertControlStoreA was not found in ../templates/sigs.rst-full
-   CertControlStoreW was not found in ../templates/sigs.rst-full
-   CertCreateCRLContextA was not found in ../templates/sigs.rst-full
-   CertCreateCRLContextW was not found in ../templates/sigs.rst-full
-   CertCreateCTLContextA was not found in ../templates/sigs.rst-full
-   CertCreateCTLContextW was not found in ../templates/sigs.rst-full
-   CertCreateCTLEntryFromCertificateContextPropertiesA was not found in ../templates/sigs.rst-full
-   CertCreateCTLEntryFromCertificateContextPropertiesW was not found in ../templates/sigs.rst-full
-   CertCreateCertificateChainEngineA was not found in ../templates/sigs.rst-full
-   CertCreateCertificateChainEngineW was not found in ../templates/sigs.rst-full
-   CertCreateCertificateContextA was not found in ../templates/sigs.rst-full
-   CertCreateCertificateContextW was not found in ../templates/sigs.rst-full
-   CertCreateContextA was not found in ../templates/sigs.rst-full
-   CertCreateContextW was not found in ../templates/sigs.rst-full
-   CertCreateSelfSignCertificateA was not found in ../templates/sigs.rst-full
-   CertCreateSelfSignCertificateW was not found in ../templates/sigs.rst-full
-   CertDeleteCRLFromStoreA was not found in ../templates/sigs.rst-full
-   CertDeleteCRLFromStoreW was not found in ../templates/sigs.rst-full
-   CertDeleteCTLFromStoreA was not found in ../templates/sigs.rst-full
-   CertDeleteCTLFromStoreW was not found in ../templates/sigs.rst-full
-   CertDeleteCertificateFromStoreA was not found in ../templates/sigs.rst-full
-   CertDeleteCertificateFromStoreW was not found in ../templates/sigs.rst-full
-   CertDllOpenStoreProv was not found in ../templates/sigs.rst-full
-   CertDllOpenStoreProvA was not found in ../templates/sigs.rst-full
-   CertDllOpenStoreProvW was not found in ../templates/sigs.rst-full
-   CertDuplicateCRLContextA was not found in ../templates/sigs.rst-full
-   CertDuplicateCRLContextW was not found in ../templates/sigs.rst-full
-   CertDuplicateCTLContextA was not found in ../templates/sigs.rst-full
-   CertDuplicateCTLContextW was not found in ../templates/sigs.rst-full
-   CertDuplicateCertificateChainA was not found in ../templates/sigs.rst-full
-   CertDuplicateCertificateChainW was not found in ../templates/sigs.rst-full
-   CertDuplicateCertificateContextA was not found in ../templates/sigs.rst-full
-   CertDuplicateCertificateContextW was not found in ../templates/sigs.rst-full
-   CertDuplicateStoreA was not found in ../templates/sigs.rst-full
-   CertDuplicateStoreW was not found in ../templates/sigs.rst-full
-   CertEnumCRLContextPropertiesA was not found in ../templates/sigs.rst-full
-   CertEnumCRLContextPropertiesW was not found in ../templates/sigs.rst-full
-   CertEnumCRLsInStoreA was not found in ../templates/sigs.rst-full
-   CertEnumCRLsInStoreW was not found in ../templates/sigs.rst-full
-   CertEnumCTLContextPropertiesA was not found in ../templates/sigs.rst-full
-   CertEnumCTLContextPropertiesW was not found in ../templates/sigs.rst-full
-   CertEnumCTLsInStoreA was not found in ../templates/sigs.rst-full
-   CertEnumCTLsInStoreW was not found in ../templates/sigs.rst-full
-   CertEnumCertificateContextPropertiesA was not found in ../templates/sigs.rst-full
-   CertEnumCertificateContextPropertiesW was not found in ../templates/sigs.rst-full
-   CertEnumCertificatesInStoreA was not found in ../templates/sigs.rst-full
-   CertEnumCertificatesInStoreW was not found in ../templates/sigs.rst-full
-   CertEnumPhysicalStoreA was not found in ../templates/sigs.rst-full
-   CertEnumPhysicalStoreW was not found in ../templates/sigs.rst-full
-   CertEnumPhysicalStoreCallback was not found in ../templates/sigs.rst-full
-   CertEnumPhysicalStoreCallbackA was not found in ../templates/sigs.rst-full
-   CertEnumPhysicalStoreCallbackW was not found in ../templates/sigs.rst-full
-   CertEnumSubjectInSortedCTLA was not found in ../templates/sigs.rst-full
-   CertEnumSubjectInSortedCTLW was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreA was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreW was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreCallback was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreCallbackA was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreCallbackW was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreLocationA was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreLocationW was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreLocationCallback was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreLocationCallbackA was not found in ../templates/sigs.rst-full
-   CertEnumSystemStoreLocationCallbackW was not found in ../templates/sigs.rst-full
-   CertFindAttributeA was not found in ../templates/sigs.rst-full
-   CertFindAttributeW was not found in ../templates/sigs.rst-full
-   CertFindCRLInStoreA was not found in ../templates/sigs.rst-full
-   CertFindCRLInStoreW was not found in ../templates/sigs.rst-full
-   CertFindCTLInStoreA was not found in ../templates/sigs.rst-full
-   CertFindCTLInStoreW was not found in ../templates/sigs.rst-full
-   CertFindCertificateInCRLA was not found in ../templates/sigs.rst-full
-   CertFindCertificateInCRLW was not found in ../templates/sigs.rst-full
-   CertFindCertificateInStoreA was not found in ../templates/sigs.rst-full
-   CertFindCertificateInStoreW was not found in ../templates/sigs.rst-full
-   CertFindChainInStoreA was not found in ../templates/sigs.rst-full
-   CertFindChainInStoreW was not found in ../templates/sigs.rst-full
-   CertFindExtensionA was not found in ../templates/sigs.rst-full
-   CertFindExtensionW was not found in ../templates/sigs.rst-full
-   CertFindRDNAttrA was not found in ../templates/sigs.rst-full
-   CertFindRDNAttrW was not found in ../templates/sigs.rst-full
-   CertFindSubjectInCTLA was not found in ../templates/sigs.rst-full
-   CertFindSubjectInCTLW was not found in ../templates/sigs.rst-full
-   CertFindSubjectInSortedCTLA was not found in ../templates/sigs.rst-full
-   CertFindSubjectInSortedCTLW was not found in ../templates/sigs.rst-full
-   CertFreeCRLContextA was not found in ../templates/sigs.rst-full
-   CertFreeCRLContextW was not found in ../templates/sigs.rst-full
-   CertFreeCTLContextA was not found in ../templates/sigs.rst-full
-   CertFreeCTLContextW was not found in ../templates/sigs.rst-full
-   CertFreeCertificateChainA was not found in ../templates/sigs.rst-full
-   CertFreeCertificateChainW was not found in ../templates/sigs.rst-full
-   CertFreeCertificateChainEngineA was not found in ../templates/sigs.rst-full
-   CertFreeCertificateChainEngineW was not found in ../templates/sigs.rst-full
-   CertFreeCertificateChainListA was not found in ../templates/sigs.rst-full
-   CertFreeCertificateChainListW was not found in ../templates/sigs.rst-full
-   CertFreeCertificateContextA was not found in ../templates/sigs.rst-full
-   CertFreeCertificateContextW was not found in ../templates/sigs.rst-full
-   CertGetCRLContextPropertyA was not found in ../templates/sigs.rst-full
-   CertGetCRLContextPropertyW was not found in ../templates/sigs.rst-full
-   CertGetCRLFromStoreA was not found in ../templates/sigs.rst-full
-   CertGetCRLFromStoreW was not found in ../templates/sigs.rst-full
-   CertGetCTLContextPropertyA was not found in ../templates/sigs.rst-full
-   CertGetCTLContextPropertyW was not found in ../templates/sigs.rst-full
-   CertGetCertificateChainA was not found in ../templates/sigs.rst-full
-   CertGetCertificateChainW was not found in ../templates/sigs.rst-full
-   CertGetCertificateContextPropertyA was not found in ../templates/sigs.rst-full
-   CertGetCertificateContextPropertyW was not found in ../templates/sigs.rst-full
-   CertGetEnhancedKeyUsageA was not found in ../templates/sigs.rst-full
-   CertGetEnhancedKeyUsageW was not found in ../templates/sigs.rst-full
-   CertGetIntendedKeyUsageA was not found in ../templates/sigs.rst-full
-   CertGetIntendedKeyUsageW was not found in ../templates/sigs.rst-full
-   CertGetIssuerCertificateFromStoreA was not found in ../templates/sigs.rst-full
-   CertGetIssuerCertificateFromStoreW was not found in ../templates/sigs.rst-full
-   CertGetNameString was not found in ../templates/sigs.rst-full
-   CertGetPublicKeyLengthA was not found in ../templates/sigs.rst-full
-   CertGetPublicKeyLengthW was not found in ../templates/sigs.rst-full
-   CertGetServerOcspResponseContextA was not found in ../templates/sigs.rst-full
-   CertGetServerOcspResponseContextW was not found in ../templates/sigs.rst-full
-   CertGetStorePropertyA was not found in ../templates/sigs.rst-full
-   CertGetStorePropertyW was not found in ../templates/sigs.rst-full
-   CertGetSubjectCertificateFromStoreA was not found in ../templates/sigs.rst-full
-   CertGetSubjectCertificateFromStoreW was not found in ../templates/sigs.rst-full
-   CertGetValidUsagesA was not found in ../templates/sigs.rst-full
-   CertGetValidUsagesW was not found in ../templates/sigs.rst-full
-   CertIsRDNAttrsInCertificateNameA was not found in ../templates/sigs.rst-full
-   CertIsRDNAttrsInCertificateNameW was not found in ../templates/sigs.rst-full
-   CertIsValidCRLForCertificateA was not found in ../templates/sigs.rst-full
-   CertIsValidCRLForCertificateW was not found in ../templates/sigs.rst-full
-   CertNameToStr was not found in ../templates/sigs.rst-full
-   CertOIDToAlgIdA was not found in ../templates/sigs.rst-full
-   CertOIDToAlgIdW was not found in ../templates/sigs.rst-full
-   CertOpenServerOcspResponseA was not found in ../templates/sigs.rst-full
-   CertOpenServerOcspResponseW was not found in ../templates/sigs.rst-full
-   CertOpenStoreA was not found in ../templates/sigs.rst-full
-   CertOpenStoreW was not found in ../templates/sigs.rst-full
-   CertOpenSystemStore was not found in ../templates/sigs.rst-full
-   CertRDNValueToStr was not found in ../templates/sigs.rst-full
-   CertRegisterPhysicalStoreA was not found in ../templates/sigs.rst-full
-   CertRegisterPhysicalStoreW was not found in ../templates/sigs.rst-full
-   CertRegisterSystemStoreA was not found in ../templates/sigs.rst-full
-   CertRegisterSystemStoreW was not found in ../templates/sigs.rst-full
-   CertRemoveEnhancedKeyUsageIdentifierA was not found in ../templates/sigs.rst-full
-   CertRemoveEnhancedKeyUsageIdentifierW was not found in ../templates/sigs.rst-full
-   CertRemoveStoreFromCollectionA was not found in ../templates/sigs.rst-full
-   CertRemoveStoreFromCollectionW was not found in ../templates/sigs.rst-full
-   CertRetrieveLogoOrBiometricInfoA was not found in ../templates/sigs.rst-full
-   CertRetrieveLogoOrBiometricInfoW was not found in ../templates/sigs.rst-full
-   CertSaveStoreA was not found in ../templates/sigs.rst-full
-   CertSaveStoreW was not found in ../templates/sigs.rst-full
-   CertSelectCertificateChainsA was not found in ../templates/sigs.rst-full
-   CertSelectCertificateChainsW was not found in ../templates/sigs.rst-full
-   CertSerializeCRLStoreElementA was not found in ../templates/sigs.rst-full
-   CertSerializeCRLStoreElementW was not found in ../templates/sigs.rst-full
-   CertSerializeCTLStoreElementA was not found in ../templates/sigs.rst-full
-   CertSerializeCTLStoreElementW was not found in ../templates/sigs.rst-full
-   CertSerializeCertificateStoreElementA was not found in ../templates/sigs.rst-full
-   CertSerializeCertificateStoreElementW was not found in ../templates/sigs.rst-full
-   CertSetCRLContextPropertyA was not found in ../templates/sigs.rst-full
-   CertSetCRLContextPropertyW was not found in ../templates/sigs.rst-full
-   CertSetCTLContextPropertyA was not found in ../templates/sigs.rst-full
-   CertSetCTLContextPropertyW was not found in ../templates/sigs.rst-full
-   CertSetCertificateContextPropertiesFromCTLEntryA was not found in ../templates/sigs.rst-full
-   CertSetCertificateContextPropertiesFromCTLEntryW was not found in ../templates/sigs.rst-full
-   CertSetCertificateContextPropertyA was not found in ../templates/sigs.rst-full
-   CertSetCertificateContextPropertyW was not found in ../templates/sigs.rst-full
-   CertSetEnhancedKeyUsageA was not found in ../templates/sigs.rst-full
-   CertSetEnhancedKeyUsageW was not found in ../templates/sigs.rst-full
-   CertSetStorePropertyA was not found in ../templates/sigs.rst-full
-   CertSetStorePropertyW was not found in ../templates/sigs.rst-full
-   CertSrvBackupClose was not found in ../templates/sigs.rst-full
-   CertSrvBackupCloseA was not found in ../templates/sigs.rst-full
-   CertSrvBackupCloseW was not found in ../templates/sigs.rst-full
-   CertSrvBackupEnd was not found in ../templates/sigs.rst-full
-   CertSrvBackupEndA was not found in ../templates/sigs.rst-full
-   CertSrvBackupEndW was not found in ../templates/sigs.rst-full
-   CertSrvBackupFree was not found in ../templates/sigs.rst-full
-   CertSrvBackupFreeA was not found in ../templates/sigs.rst-full
-   CertSrvBackupFreeW was not found in ../templates/sigs.rst-full
-   CertSrvBackupGetBackupLogs was not found in ../templates/sigs.rst-full
-   CertSrvBackupGetBackupLogsA was not found in ../templates/sigs.rst-full
-   CertSrvBackupGetBackupLogsW was not found in ../templates/sigs.rst-full
-   CertSrvBackupGetDatabaseNames was not found in ../templates/sigs.rst-full
-   CertSrvBackupGetDatabaseNamesA was not found in ../templates/sigs.rst-full
-   CertSrvBackupGetDatabaseNamesW was not found in ../templates/sigs.rst-full
-   CertSrvBackupGetDynamicFileList was not found in ../templates/sigs.rst-full
-   CertSrvBackupGetDynamicFileListA was not found in ../templates/sigs.rst-full
-   CertSrvBackupGetDynamicFileListW was not found in ../templates/sigs.rst-full
-   CertSrvBackupOpenFile was not found in ../templates/sigs.rst-full
-   CertSrvBackupOpenFileA was not found in ../templates/sigs.rst-full
-   CertSrvBackupOpenFileW was not found in ../templates/sigs.rst-full
-   CertSrvBackupPrepare was not found in ../templates/sigs.rst-full
-   CertSrvBackupPrepareA was not found in ../templates/sigs.rst-full
-   CertSrvBackupPrepareW was not found in ../templates/sigs.rst-full
-   CertSrvBackupRead was not found in ../templates/sigs.rst-full
-   CertSrvBackupReadA was not found in ../templates/sigs.rst-full
-   CertSrvBackupReadW was not found in ../templates/sigs.rst-full
-   CertSrvBackupTruncateLogs was not found in ../templates/sigs.rst-full
-   CertSrvBackupTruncateLogsA was not found in ../templates/sigs.rst-full
-   CertSrvBackupTruncateLogsW was not found in ../templates/sigs.rst-full
-   CertSrvIsServerOnline was not found in ../templates/sigs.rst-full
-   CertSrvIsServerOnlineA was not found in ../templates/sigs.rst-full
-   CertSrvIsServerOnlineW was not found in ../templates/sigs.rst-full
-   CertSrvRestoreEnd was not found in ../templates/sigs.rst-full
-   CertSrvRestoreEndA was not found in ../templates/sigs.rst-full
-   CertSrvRestoreEndW was not found in ../templates/sigs.rst-full
-   CertSrvRestoreGetDatabaseLocations was not found in ../templates/sigs.rst-full
-   CertSrvRestoreGetDatabaseLocationsA was not found in ../templates/sigs.rst-full
-   CertSrvRestoreGetDatabaseLocationsW was not found in ../templates/sigs.rst-full
-   CertSrvRestorePrepare was not found in ../templates/sigs.rst-full
-   CertSrvRestorePrepareA was not found in ../templates/sigs.rst-full
-   CertSrvRestorePrepareW was not found in ../templates/sigs.rst-full
-   CertSrvRestoreRegister was not found in ../templates/sigs.rst-full
-   CertSrvRestoreRegisterA was not found in ../templates/sigs.rst-full
-   CertSrvRestoreRegisterW was not found in ../templates/sigs.rst-full
-   CertSrvRestoreRegisterComplete was not found in ../templates/sigs.rst-full
-   CertSrvRestoreRegisterCompleteA was not found in ../templates/sigs.rst-full
-   CertSrvRestoreRegisterCompleteW was not found in ../templates/sigs.rst-full
-   CertSrvRestoreRegisterThroughFile was not found in ../templates/sigs.rst-full
-   CertSrvRestoreRegisterThroughFileA was not found in ../templates/sigs.rst-full
-   CertSrvRestoreRegisterThroughFileW was not found in ../templates/sigs.rst-full
-   CertSrvServerControl was not found in ../templates/sigs.rst-full
-   CertSrvServerControlA was not found in ../templates/sigs.rst-full
-   CertSrvServerControlW was not found in ../templates/sigs.rst-full
-   CertStoreProvCloseCallback was not found in ../templates/sigs.rst-full
-   CertStoreProvCloseCallbackA was not found in ../templates/sigs.rst-full
-   CertStoreProvCloseCallbackW was not found in ../templates/sigs.rst-full
-   CertStoreProvControl was not found in ../templates/sigs.rst-full
-   CertStoreProvControlA was not found in ../templates/sigs.rst-full
-   CertStoreProvControlW was not found in ../templates/sigs.rst-full
-   CertStoreProvDeleteCRLCallback was not found in ../templates/sigs.rst-full
-   CertStoreProvDeleteCRLCallbackA was not found in ../templates/sigs.rst-full
-   CertStoreProvDeleteCRLCallbackW was not found in ../templates/sigs.rst-full
-   CertStoreProvDeleteCTL was not found in ../templates/sigs.rst-full
-   CertStoreProvDeleteCTLA was not found in ../templates/sigs.rst-full
-   CertStoreProvDeleteCTLW was not found in ../templates/sigs.rst-full
-   CertStoreProvDeleteCertCallback was not found in ../templates/sigs.rst-full
-   CertStoreProvDeleteCertCallbackA was not found in ../templates/sigs.rst-full
-   CertStoreProvDeleteCertCallbackW was not found in ../templates/sigs.rst-full
-   CertStoreProvFindCRL was not found in ../templates/sigs.rst-full
-   CertStoreProvFindCRLA was not found in ../templates/sigs.rst-full
-   CertStoreProvFindCRLW was not found in ../templates/sigs.rst-full
-   CertStoreProvFindCTL was not found in ../templates/sigs.rst-full
-   CertStoreProvFindCTLA was not found in ../templates/sigs.rst-full
-   CertStoreProvFindCTLW was not found in ../templates/sigs.rst-full
-   CertStoreProvFindCert was not found in ../templates/sigs.rst-full
-   CertStoreProvFindCertA was not found in ../templates/sigs.rst-full
-   CertStoreProvFindCertW was not found in ../templates/sigs.rst-full
-   CertStoreProvFreeFindCRL was not found in ../templates/sigs.rst-full
-   CertStoreProvFreeFindCRLA was not found in ../templates/sigs.rst-full
-   CertStoreProvFreeFindCRLW was not found in ../templates/sigs.rst-full
-   CertStoreProvFreeFindCTL was not found in ../templates/sigs.rst-full
-   CertStoreProvFreeFindCTLA was not found in ../templates/sigs.rst-full
-   CertStoreProvFreeFindCTLW was not found in ../templates/sigs.rst-full
-   CertStoreProvFreeFindCert was not found in ../templates/sigs.rst-full
-   CertStoreProvFreeFindCertA was not found in ../templates/sigs.rst-full
-   CertStoreProvFreeFindCertW was not found in ../templates/sigs.rst-full
-   CertStoreProvGetCRLProperty was not found in ../templates/sigs.rst-full
-   CertStoreProvGetCRLPropertyA was not found in ../templates/sigs.rst-full
-   CertStoreProvGetCRLPropertyW was not found in ../templates/sigs.rst-full
-   CertStoreProvGetCTLProperty was not found in ../templates/sigs.rst-full
-   CertStoreProvGetCTLPropertyA was not found in ../templates/sigs.rst-full
-   CertStoreProvGetCTLPropertyW was not found in ../templates/sigs.rst-full
-   CertStoreProvGetCertProperty was not found in ../templates/sigs.rst-full
-   CertStoreProvGetCertPropertyA was not found in ../templates/sigs.rst-full
-   CertStoreProvGetCertPropertyW was not found in ../templates/sigs.rst-full
-   CertStoreProvReadCRLCallback was not found in ../templates/sigs.rst-full
-   CertStoreProvReadCRLCallbackA was not found in ../templates/sigs.rst-full
-   CertStoreProvReadCRLCallbackW was not found in ../templates/sigs.rst-full
-   CertStoreProvReadCTL was not found in ../templates/sigs.rst-full
-   CertStoreProvReadCTLA was not found in ../templates/sigs.rst-full
-   CertStoreProvReadCTLW was not found in ../templates/sigs.rst-full
-   CertStoreProvReadCertCallback was not found in ../templates/sigs.rst-full
-   CertStoreProvReadCertCallbackA was not found in ../templates/sigs.rst-full
-   CertStoreProvReadCertCallbackW was not found in ../templates/sigs.rst-full
-   CertStoreProvSetCRLPropertyCallback was not found in ../templates/sigs.rst-full
-   CertStoreProvSetCRLPropertyCallbackA was not found in ../templates/sigs.rst-full
-   CertStoreProvSetCRLPropertyCallbackW was not found in ../templates/sigs.rst-full
-   CertStoreProvSetCTLProperty was not found in ../templates/sigs.rst-full
-   CertStoreProvSetCTLPropertyA was not found in ../templates/sigs.rst-full
-   CertStoreProvSetCTLPropertyW was not found in ../templates/sigs.rst-full
-   CertStoreProvSetCertPropertyCallback was not found in ../templates/sigs.rst-full
-   CertStoreProvSetCertPropertyCallbackA was not found in ../templates/sigs.rst-full
-   CertStoreProvSetCertPropertyCallbackW was not found in ../templates/sigs.rst-full
-   CertStoreProvWriteCRLCallback was not found in ../templates/sigs.rst-full
-   CertStoreProvWriteCRLCallbackA was not found in ../templates/sigs.rst-full
-   CertStoreProvWriteCRLCallbackW was not found in ../templates/sigs.rst-full
-   CertStoreProvWriteCTL was not found in ../templates/sigs.rst-full
-   CertStoreProvWriteCTLA was not found in ../templates/sigs.rst-full
-   CertStoreProvWriteCTLW was not found in ../templates/sigs.rst-full
-   CertStoreProvWriteCertCallback was not found in ../templates/sigs.rst-full
-   CertStoreProvWriteCertCallbackA was not found in ../templates/sigs.rst-full
-   CertStoreProvWriteCertCallbackW was not found in ../templates/sigs.rst-full
-   CertStrToName was not found in ../templates/sigs.rst-full
-   CertUnregisterPhysicalStoreA was not found in ../templates/sigs.rst-full
-   CertUnregisterPhysicalStoreW was not found in ../templates/sigs.rst-full
-   CertUnregisterSystemStoreA was not found in ../templates/sigs.rst-full
-   CertUnregisterSystemStoreW was not found in ../templates/sigs.rst-full
-   CertVerifyCRLRevocationA was not found in ../templates/sigs.rst-full
-   CertVerifyCRLRevocationW was not found in ../templates/sigs.rst-full
-   CertVerifyCRLTimeValidityA was not found in ../templates/sigs.rst-full
-   CertVerifyCRLTimeValidityW was not found in ../templates/sigs.rst-full
-   CertVerifyCTLUsageA was not found in ../templates/sigs.rst-full
-   CertVerifyCTLUsageW was not found in ../templates/sigs.rst-full
-   CertVerifyCertificateChainPolicyA was not found in ../templates/sigs.rst-full
-   CertVerifyCertificateChainPolicyW was not found in ../templates/sigs.rst-full
-   CertVerifyRevocationA was not found in ../templates/sigs.rst-full
-   CertVerifyRevocationW was not found in ../templates/sigs.rst-full
-   CertVerifySubjectCertificateContextA was not found in ../templates/sigs.rst-full
-   CertVerifySubjectCertificateContextW was not found in ../templates/sigs.rst-full
-   CertVerifyTimeValidityA was not found in ../templates/sigs.rst-full
-   CertVerifyTimeValidityW was not found in ../templates/sigs.rst-full
-   CertVerifyValidityNestingA was not found in ../templates/sigs.rst-full
-   CertVerifyValidityNestingW was not found in ../templates/sigs.rst-full
-   CryptAcquireContext was not found in ../templates/sigs.rst-full
-   CryptBinaryToString was not found in ../templates/sigs.rst-full
-   CryptCATAdminAcquireContext was not found in ../templates/sigs.rst-full
-   CryptCATAdminAcquireContextA was not found in ../templates/sigs.rst-full
-   CryptCATAdminAcquireContextW was not found in ../templates/sigs.rst-full
-   CryptCATAdminAcquireContext2 was not found in ../templates/sigs.rst-full
-   CryptCATAdminAcquireContext2A was not found in ../templates/sigs.rst-full
-   CryptCATAdminAcquireContext2W was not found in ../templates/sigs.rst-full
-   CryptCATAdminAddCatalog was not found in ../templates/sigs.rst-full
-   CryptCATAdminAddCatalogA was not found in ../templates/sigs.rst-full
-   CryptCATAdminAddCatalogW was not found in ../templates/sigs.rst-full
-   CryptCATAdminCalcHashFromFileHandle was not found in ../templates/sigs.rst-full
-   CryptCATAdminCalcHashFromFileHandleA was not found in ../templates/sigs.rst-full
-   CryptCATAdminCalcHashFromFileHandleW was not found in ../templates/sigs.rst-full
-   CryptCATAdminCalcHashFromFileHandle2 was not found in ../templates/sigs.rst-full
-   CryptCATAdminCalcHashFromFileHandle2A was not found in ../templates/sigs.rst-full
-   CryptCATAdminCalcHashFromFileHandle2W was not found in ../templates/sigs.rst-full
-   CryptCATAdminEnumCatalogFromHash was not found in ../templates/sigs.rst-full
-   CryptCATAdminEnumCatalogFromHashA was not found in ../templates/sigs.rst-full
-   CryptCATAdminEnumCatalogFromHashW was not found in ../templates/sigs.rst-full
-   CryptCATAdminReleaseCatalogContext was not found in ../templates/sigs.rst-full
-   CryptCATAdminReleaseCatalogContextA was not found in ../templates/sigs.rst-full
-   CryptCATAdminReleaseCatalogContextW was not found in ../templates/sigs.rst-full
-   CryptCATAdminReleaseContext was not found in ../templates/sigs.rst-full
-   CryptCATAdminReleaseContextA was not found in ../templates/sigs.rst-full
-   CryptCATAdminReleaseContextW was not found in ../templates/sigs.rst-full
-   CryptCATAdminRemoveCatalog was not found in ../templates/sigs.rst-full
-   CryptCATAdminRemoveCatalogA was not found in ../templates/sigs.rst-full
-   CryptCATAdminRemoveCatalogW was not found in ../templates/sigs.rst-full
-   CryptCATAdminResolveCatalogPath was not found in ../templates/sigs.rst-full
-   CryptCATAdminResolveCatalogPathA was not found in ../templates/sigs.rst-full
-   CryptCATAdminResolveCatalogPathW was not found in ../templates/sigs.rst-full
-   CryptCATCDFClose was not found in ../templates/sigs.rst-full
-   CryptCATCDFCloseA was not found in ../templates/sigs.rst-full
-   CryptCATCDFCloseW was not found in ../templates/sigs.rst-full
-   CryptCATCDFEnumAttributesWithCDFTag was not found in ../templates/sigs.rst-full
-   CryptCATCDFEnumAttributesWithCDFTagA was not found in ../templates/sigs.rst-full
-   CryptCATCDFEnumAttributesWithCDFTagW was not found in ../templates/sigs.rst-full
-   CryptCATCDFEnumCatAttributes was not found in ../templates/sigs.rst-full
-   CryptCATCDFEnumCatAttributesA was not found in ../templates/sigs.rst-full
-   CryptCATCDFEnumCatAttributesW was not found in ../templates/sigs.rst-full
-   CryptCATCDFEnumMembersByCDFTagEx was not found in ../templates/sigs.rst-full
-   CryptCATCDFEnumMembersByCDFTagExA was not found in ../templates/sigs.rst-full
-   CryptCATCDFEnumMembersByCDFTagExW was not found in ../templates/sigs.rst-full
-   CryptCATCDFOpen was not found in ../templates/sigs.rst-full
-   CryptCATCDFOpenA was not found in ../templates/sigs.rst-full
-   CryptCATCDFOpenW was not found in ../templates/sigs.rst-full
-   CryptCATCatalogInfoFromContext was not found in ../templates/sigs.rst-full
-   CryptCATCatalogInfoFromContextA was not found in ../templates/sigs.rst-full
-   CryptCATCatalogInfoFromContextW was not found in ../templates/sigs.rst-full
-   CryptCATClose was not found in ../templates/sigs.rst-full
-   CryptCATCloseA was not found in ../templates/sigs.rst-full
-   CryptCATCloseW was not found in ../templates/sigs.rst-full
-   CryptCATEnumerateAttr was not found in ../templates/sigs.rst-full
-   CryptCATEnumerateAttrA was not found in ../templates/sigs.rst-full
-   CryptCATEnumerateAttrW was not found in ../templates/sigs.rst-full
-   CryptCATEnumerateCatAttr was not found in ../templates/sigs.rst-full
-   CryptCATEnumerateCatAttrA was not found in ../templates/sigs.rst-full
-   CryptCATEnumerateCatAttrW was not found in ../templates/sigs.rst-full
-   CryptCATEnumerateMember was not found in ../templates/sigs.rst-full
-   CryptCATEnumerateMemberA was not found in ../templates/sigs.rst-full
-   CryptCATEnumerateMemberW was not found in ../templates/sigs.rst-full
-   CryptCATGetAttrInfo was not found in ../templates/sigs.rst-full
-   CryptCATGetAttrInfoA was not found in ../templates/sigs.rst-full
-   CryptCATGetAttrInfoW was not found in ../templates/sigs.rst-full
-   CryptCATGetMemberInfo was not found in ../templates/sigs.rst-full
-   CryptCATGetMemberInfoA was not found in ../templates/sigs.rst-full
-   CryptCATGetMemberInfoW was not found in ../templates/sigs.rst-full
-   CryptCATOpen was not found in ../templates/sigs.rst-full
-   CryptCATOpenA was not found in ../templates/sigs.rst-full
-   CryptCATOpenW was not found in ../templates/sigs.rst-full
-   CryptContextAddRefA was not found in ../templates/sigs.rst-full
-   CryptContextAddRefW was not found in ../templates/sigs.rst-full
-   CryptCreateHashA was not found in ../templates/sigs.rst-full
-   CryptCreateHashW was not found in ../templates/sigs.rst-full
-   CryptCreateKeyIdentifierFromCSPA was not found in ../templates/sigs.rst-full
-   CryptCreateKeyIdentifierFromCSPW was not found in ../templates/sigs.rst-full
-   CryptDecodeMessageA was not found in ../templates/sigs.rst-full
-   CryptDecodeMessageW was not found in ../templates/sigs.rst-full
-   CryptDecodeObjectA was not found in ../templates/sigs.rst-full
-   CryptDecodeObjectW was not found in ../templates/sigs.rst-full
-   CryptDecodeObjectExA was not found in ../templates/sigs.rst-full
-   CryptDecodeObjectExW was not found in ../templates/sigs.rst-full
-   CryptDecryptA was not found in ../templates/sigs.rst-full
-   CryptDecryptW was not found in ../templates/sigs.rst-full
-   CryptDecryptAndVerifyMessageSignatureA was not found in ../templates/sigs.rst-full
-   CryptDecryptAndVerifyMessageSignatureW was not found in ../templates/sigs.rst-full
-   CryptDecryptMessageA was not found in ../templates/sigs.rst-full
-   CryptDecryptMessageW was not found in ../templates/sigs.rst-full
-   CryptDeriveKeyA was not found in ../templates/sigs.rst-full
-   CryptDeriveKeyW was not found in ../templates/sigs.rst-full
-   CryptDestroyHashA was not found in ../templates/sigs.rst-full
-   CryptDestroyHashW was not found in ../templates/sigs.rst-full
-   CryptDestroyKeyA was not found in ../templates/sigs.rst-full
-   CryptDestroyKeyW was not found in ../templates/sigs.rst-full
-   CryptDuplicateHashA was not found in ../templates/sigs.rst-full
-   CryptDuplicateHashW was not found in ../templates/sigs.rst-full
-   CryptDuplicateKeyA was not found in ../templates/sigs.rst-full
-   CryptDuplicateKeyW was not found in ../templates/sigs.rst-full
-   CryptEncodeObjectA was not found in ../templates/sigs.rst-full
-   CryptEncodeObjectW was not found in ../templates/sigs.rst-full
-   CryptEncodeObjectExA was not found in ../templates/sigs.rst-full
-   CryptEncodeObjectExW was not found in ../templates/sigs.rst-full
-   CryptEncryptA was not found in ../templates/sigs.rst-full
-   CryptEncryptW was not found in ../templates/sigs.rst-full
-   CryptEncryptMessageA was not found in ../templates/sigs.rst-full
-   CryptEncryptMessageW was not found in ../templates/sigs.rst-full
-   CryptEnumKeyIdentifierPropertiesA was not found in ../templates/sigs.rst-full
-   CryptEnumKeyIdentifierPropertiesW was not found in ../templates/sigs.rst-full
-   CryptEnumOIDFunctionA was not found in ../templates/sigs.rst-full
-   CryptEnumOIDFunctionW was not found in ../templates/sigs.rst-full
-   CryptEnumOIDInfoA was not found in ../templates/sigs.rst-full
-   CryptEnumOIDInfoW was not found in ../templates/sigs.rst-full
-   CryptEnumProviderTypes was not found in ../templates/sigs.rst-full
-   CryptEnumProviders was not found in ../templates/sigs.rst-full
-   CryptExportKeyA was not found in ../templates/sigs.rst-full
-   CryptExportKeyW was not found in ../templates/sigs.rst-full
-   CryptExportPKCS8A was not found in ../templates/sigs.rst-full
-   CryptExportPKCS8W was not found in ../templates/sigs.rst-full
-   CryptExportPKCS8Ex was not found in ../templates/sigs.rst-full
-   CryptExportPKCS8ExA was not found in ../templates/sigs.rst-full
-   CryptExportPKCS8ExW was not found in ../templates/sigs.rst-full
-   CryptExportPublicKeyInfoA was not found in ../templates/sigs.rst-full
-   CryptExportPublicKeyInfoW was not found in ../templates/sigs.rst-full
-   CryptExportPublicKeyInfoExA was not found in ../templates/sigs.rst-full
-   CryptExportPublicKeyInfoExW was not found in ../templates/sigs.rst-full
-   CryptExportPublicKeyInfoFromBCryptKeyHandleA was not found in ../templates/sigs.rst-full
-   CryptExportPublicKeyInfoFromBCryptKeyHandleW was not found in ../templates/sigs.rst-full
-   CryptFindCertificateKeyProvInfoA was not found in ../templates/sigs.rst-full
-   CryptFindCertificateKeyProvInfoW was not found in ../templates/sigs.rst-full
-   CryptFindLocalizedNameA was not found in ../templates/sigs.rst-full
-   CryptFindLocalizedNameW was not found in ../templates/sigs.rst-full
-   CryptFindOIDInfoA was not found in ../templates/sigs.rst-full
-   CryptFindOIDInfoW was not found in ../templates/sigs.rst-full
-   CryptFormatObjectA was not found in ../templates/sigs.rst-full
-   CryptFormatObjectW was not found in ../templates/sigs.rst-full
-   CryptFreeOIDFunctionAddressA was not found in ../templates/sigs.rst-full
-   CryptFreeOIDFunctionAddressW was not found in ../templates/sigs.rst-full
-   CryptGenKeyA was not found in ../templates/sigs.rst-full
-   CryptGenKeyW was not found in ../templates/sigs.rst-full
-   CryptGenRandomA was not found in ../templates/sigs.rst-full
-   CryptGenRandomW was not found in ../templates/sigs.rst-full
-   CryptGetDefaultOIDDllListA was not found in ../templates/sigs.rst-full
-   CryptGetDefaultOIDDllListW was not found in ../templates/sigs.rst-full
-   CryptGetDefaultOIDFunctionAddressA was not found in ../templates/sigs.rst-full
-   CryptGetDefaultOIDFunctionAddressW was not found in ../templates/sigs.rst-full
-   CryptGetDefaultProvider was not found in ../templates/sigs.rst-full
-   CryptGetHashParamA was not found in ../templates/sigs.rst-full
-   CryptGetHashParamW was not found in ../templates/sigs.rst-full
-   CryptGetKeyIdentifierPropertyA was not found in ../templates/sigs.rst-full
-   CryptGetKeyIdentifierPropertyW was not found in ../templates/sigs.rst-full
-   CryptGetKeyParamA was not found in ../templates/sigs.rst-full
-   CryptGetKeyParamW was not found in ../templates/sigs.rst-full
-   CryptGetMessageCertificatesA was not found in ../templates/sigs.rst-full
-   CryptGetMessageCertificatesW was not found in ../templates/sigs.rst-full
-   CryptGetMessageSignerCountA was not found in ../templates/sigs.rst-full
-   CryptGetMessageSignerCountW was not found in ../templates/sigs.rst-full
-   CryptGetOIDFunctionAddressA was not found in ../templates/sigs.rst-full
-   CryptGetOIDFunctionAddressW was not found in ../templates/sigs.rst-full
-   CryptGetOIDFunctionValueA was not found in ../templates/sigs.rst-full
-   CryptGetOIDFunctionValueW was not found in ../templates/sigs.rst-full
-   CryptGetObjectUrlA was not found in ../templates/sigs.rst-full
-   CryptGetObjectUrlW was not found in ../templates/sigs.rst-full
-   CryptGetProvParamA was not found in ../templates/sigs.rst-full
-   CryptGetProvParamW was not found in ../templates/sigs.rst-full
-   CryptGetSignerCertificateCallback was not found in ../templates/sigs.rst-full
-   CryptGetSignerCertificateCallbackA was not found in ../templates/sigs.rst-full
-   CryptGetSignerCertificateCallbackW was not found in ../templates/sigs.rst-full
-   CryptGetUserKeyA was not found in ../templates/sigs.rst-full
-   CryptGetUserKeyW was not found in ../templates/sigs.rst-full
-   CryptHashCertificateA was not found in ../templates/sigs.rst-full
-   CryptHashCertificateW was not found in ../templates/sigs.rst-full
-   CryptHashCertificate2A was not found in ../templates/sigs.rst-full
-   CryptHashCertificate2W was not found in ../templates/sigs.rst-full
-   CryptHashDataA was not found in ../templates/sigs.rst-full
-   CryptHashDataW was not found in ../templates/sigs.rst-full
-   CryptHashMessageA was not found in ../templates/sigs.rst-full
-   CryptHashMessageW was not found in ../templates/sigs.rst-full
-   CryptHashPublicKeyInfoA was not found in ../templates/sigs.rst-full
-   CryptHashPublicKeyInfoW was not found in ../templates/sigs.rst-full
-   CryptHashSessionKeyA was not found in ../templates/sigs.rst-full
-   CryptHashSessionKeyW was not found in ../templates/sigs.rst-full
-   CryptHashToBeSignedA was not found in ../templates/sigs.rst-full
-   CryptHashToBeSignedW was not found in ../templates/sigs.rst-full
-   CryptImportKeyA was not found in ../templates/sigs.rst-full
-   CryptImportKeyW was not found in ../templates/sigs.rst-full
-   CryptImportPKCS8A was not found in ../templates/sigs.rst-full
-   CryptImportPKCS8W was not found in ../templates/sigs.rst-full
-   CryptImportPublicKeyInfoA was not found in ../templates/sigs.rst-full
-   CryptImportPublicKeyInfoW was not found in ../templates/sigs.rst-full
-   CryptImportPublicKeyInfoExA was not found in ../templates/sigs.rst-full
-   CryptImportPublicKeyInfoExW was not found in ../templates/sigs.rst-full
-   CryptImportPublicKeyInfoEx2A was not found in ../templates/sigs.rst-full
-   CryptImportPublicKeyInfoEx2W was not found in ../templates/sigs.rst-full
-   CryptInitOIDFunctionSetA was not found in ../templates/sigs.rst-full
-   CryptInitOIDFunctionSetW was not found in ../templates/sigs.rst-full
-   CryptInstallDefaultContextA was not found in ../templates/sigs.rst-full
-   CryptInstallDefaultContextW was not found in ../templates/sigs.rst-full
-   CryptInstallOIDFunctionAddressA was not found in ../templates/sigs.rst-full
-   CryptInstallOIDFunctionAddressW was not found in ../templates/sigs.rst-full
-   CryptMemAllocA was not found in ../templates/sigs.rst-full
-   CryptMemAllocW was not found in ../templates/sigs.rst-full
-   CryptMemFreeA was not found in ../templates/sigs.rst-full
-   CryptMemFreeW was not found in ../templates/sigs.rst-full
-   CryptMemReallocA was not found in ../templates/sigs.rst-full
-   CryptMemReallocW was not found in ../templates/sigs.rst-full
-   CryptMsgCalculateEncodedLengthA was not found in ../templates/sigs.rst-full
-   CryptMsgCalculateEncodedLengthW was not found in ../templates/sigs.rst-full
-   CryptMsgCloseA was not found in ../templates/sigs.rst-full
-   CryptMsgCloseW was not found in ../templates/sigs.rst-full
-   CryptMsgControlA was not found in ../templates/sigs.rst-full
-   CryptMsgControlW was not found in ../templates/sigs.rst-full
-   CryptMsgCountersignA was not found in ../templates/sigs.rst-full
-   CryptMsgCountersignW was not found in ../templates/sigs.rst-full
-   CryptMsgCountersignEncodedA was not found in ../templates/sigs.rst-full
-   CryptMsgCountersignEncodedW was not found in ../templates/sigs.rst-full
-   CryptMsgDuplicateA was not found in ../templates/sigs.rst-full
-   CryptMsgDuplicateW was not found in ../templates/sigs.rst-full
-   CryptMsgEncodeAndSignCTLA was not found in ../templates/sigs.rst-full
-   CryptMsgEncodeAndSignCTLW was not found in ../templates/sigs.rst-full
-   CryptMsgGetAndVerifySignerA was not found in ../templates/sigs.rst-full
-   CryptMsgGetAndVerifySignerW was not found in ../templates/sigs.rst-full
-   CryptMsgGetParamA was not found in ../templates/sigs.rst-full
-   CryptMsgGetParamW was not found in ../templates/sigs.rst-full
-   CryptMsgOpenToDecodeA was not found in ../templates/sigs.rst-full
-   CryptMsgOpenToDecodeW was not found in ../templates/sigs.rst-full
-   CryptMsgOpenToEncodeA was not found in ../templates/sigs.rst-full
-   CryptMsgOpenToEncodeW was not found in ../templates/sigs.rst-full
-   CryptMsgSignCTLA was not found in ../templates/sigs.rst-full
-   CryptMsgSignCTLW was not found in ../templates/sigs.rst-full
-   CryptMsgUpdateA was not found in ../templates/sigs.rst-full
-   CryptMsgUpdateW was not found in ../templates/sigs.rst-full
-   CryptMsgVerifyCountersignatureEncodedA was not found in ../templates/sigs.rst-full
-   CryptMsgVerifyCountersignatureEncodedW was not found in ../templates/sigs.rst-full
-   CryptMsgVerifyCountersignatureEncodedExA was not found in ../templates/sigs.rst-full
-   CryptMsgVerifyCountersignatureEncodedExW was not found in ../templates/sigs.rst-full
-   CryptProtectDataA was not found in ../templates/sigs.rst-full
-   CryptProtectDataW was not found in ../templates/sigs.rst-full
-   CryptProtectMemoryA was not found in ../templates/sigs.rst-full
-   CryptProtectMemoryW was not found in ../templates/sigs.rst-full
-   CryptQueryObjectA was not found in ../templates/sigs.rst-full
-   CryptQueryObjectW was not found in ../templates/sigs.rst-full
-   CryptRegisterDefaultOIDFunctionA was not found in ../templates/sigs.rst-full
-   CryptRegisterDefaultOIDFunctionW was not found in ../templates/sigs.rst-full
-   CryptRegisterOIDFunctionA was not found in ../templates/sigs.rst-full
-   CryptRegisterOIDFunctionW was not found in ../templates/sigs.rst-full
-   CryptRegisterOIDInfoA was not found in ../templates/sigs.rst-full
-   CryptRegisterOIDInfoW was not found in ../templates/sigs.rst-full
-   CryptReleaseContextA was not found in ../templates/sigs.rst-full
-   CryptReleaseContextW was not found in ../templates/sigs.rst-full
-   CryptRetrieveObjectByUrl was not found in ../templates/sigs.rst-full
-   CryptSIPAddProvider was not found in ../templates/sigs.rst-full
-   CryptSIPAddProviderA was not found in ../templates/sigs.rst-full
-   CryptSIPAddProviderW was not found in ../templates/sigs.rst-full
-   CryptSIPCreateIndirectData was not found in ../templates/sigs.rst-full
-   CryptSIPCreateIndirectDataA was not found in ../templates/sigs.rst-full
-   CryptSIPCreateIndirectDataW was not found in ../templates/sigs.rst-full
-   CryptSIPGetCaps was not found in ../templates/sigs.rst-full
-   CryptSIPGetCapsA was not found in ../templates/sigs.rst-full
-   CryptSIPGetCapsW was not found in ../templates/sigs.rst-full
-   CryptSIPGetSignedDataMsg was not found in ../templates/sigs.rst-full
-   CryptSIPGetSignedDataMsgA was not found in ../templates/sigs.rst-full
-   CryptSIPGetSignedDataMsgW was not found in ../templates/sigs.rst-full
-   CryptSIPLoad was not found in ../templates/sigs.rst-full
-   CryptSIPLoadA was not found in ../templates/sigs.rst-full
-   CryptSIPLoadW was not found in ../templates/sigs.rst-full
-   CryptSIPPutSignedDataMsg was not found in ../templates/sigs.rst-full
-   CryptSIPPutSignedDataMsgA was not found in ../templates/sigs.rst-full
-   CryptSIPPutSignedDataMsgW was not found in ../templates/sigs.rst-full
-   CryptSIPRemoveProvider was not found in ../templates/sigs.rst-full
-   CryptSIPRemoveProviderA was not found in ../templates/sigs.rst-full
-   CryptSIPRemoveProviderW was not found in ../templates/sigs.rst-full
-   CryptSIPRemoveSignedDataMsg was not found in ../templates/sigs.rst-full
-   CryptSIPRemoveSignedDataMsgA was not found in ../templates/sigs.rst-full
-   CryptSIPRemoveSignedDataMsgW was not found in ../templates/sigs.rst-full
-   CryptSIPRetrieveSubjectGuid was not found in ../templates/sigs.rst-full
-   CryptSIPRetrieveSubjectGuidA was not found in ../templates/sigs.rst-full
-   CryptSIPRetrieveSubjectGuidW was not found in ../templates/sigs.rst-full
-   CryptSIPRetrieveSubjectGuidForCatalogFile was not found in ../templates/sigs.rst-full
-   CryptSIPRetrieveSubjectGuidForCatalogFileA was not found in ../templates/sigs.rst-full
-   CryptSIPRetrieveSubjectGuidForCatalogFileW was not found in ../templates/sigs.rst-full
-   CryptSIPVerifyIndirectData was not found in ../templates/sigs.rst-full
-   CryptSIPVerifyIndirectDataA was not found in ../templates/sigs.rst-full
-   CryptSIPVerifyIndirectDataW was not found in ../templates/sigs.rst-full
-   CryptSetHashParamA was not found in ../templates/sigs.rst-full
-   CryptSetHashParamW was not found in ../templates/sigs.rst-full
-   CryptSetKeyIdentifierPropertyA was not found in ../templates/sigs.rst-full
-   CryptSetKeyIdentifierPropertyW was not found in ../templates/sigs.rst-full
-   CryptSetKeyParamA was not found in ../templates/sigs.rst-full
-   CryptSetKeyParamW was not found in ../templates/sigs.rst-full
-   CryptSetOIDFunctionValueA was not found in ../templates/sigs.rst-full
-   CryptSetOIDFunctionValueW was not found in ../templates/sigs.rst-full
-   CryptSetProvParamA was not found in ../templates/sigs.rst-full
-   CryptSetProvParamW was not found in ../templates/sigs.rst-full
-   CryptSetProvider was not found in ../templates/sigs.rst-full
-   CryptSignAndEncodeCertificateA was not found in ../templates/sigs.rst-full
-   CryptSignAndEncodeCertificateW was not found in ../templates/sigs.rst-full
-   CryptSignAndEncryptMessageA was not found in ../templates/sigs.rst-full
-   CryptSignAndEncryptMessageW was not found in ../templates/sigs.rst-full
-   CryptSignCertificateA was not found in ../templates/sigs.rst-full
-   CryptSignCertificateW was not found in ../templates/sigs.rst-full
-   CryptSignHash was not found in ../templates/sigs.rst-full
-   CryptSignMessageA was not found in ../templates/sigs.rst-full
-   CryptSignMessageW was not found in ../templates/sigs.rst-full
-   CryptSignMessageWithKeyA was not found in ../templates/sigs.rst-full
-   CryptSignMessageWithKeyW was not found in ../templates/sigs.rst-full
-   CryptStringToBinary was not found in ../templates/sigs.rst-full
-   CryptUIDlgCertMgrA was not found in ../templates/sigs.rst-full
-   CryptUIDlgCertMgrW was not found in ../templates/sigs.rst-full
-   CryptUIDlgSelectCertificate was not found in ../templates/sigs.rst-full
-   CryptUIDlgSelectCertificateA was not found in ../templates/sigs.rst-full
-   CryptUIDlgSelectCertificateW was not found in ../templates/sigs.rst-full
-   CryptUIDlgSelectCertificateFromStoreA was not found in ../templates/sigs.rst-full
-   CryptUIDlgSelectCertificateFromStoreW was not found in ../templates/sigs.rst-full
-   CryptUIDlgViewCertificate was not found in ../templates/sigs.rst-full
-   CryptUIDlgViewContextA was not found in ../templates/sigs.rst-full
-   CryptUIDlgViewContextW was not found in ../templates/sigs.rst-full
-   CryptUIDlgViewSignerInfo was not found in ../templates/sigs.rst-full
-   CryptUIDlgViewSignerInfoA was not found in ../templates/sigs.rst-full
-   CryptUIDlgViewSignerInfoW was not found in ../templates/sigs.rst-full
-   CryptUIWizDigitalSignA was not found in ../templates/sigs.rst-full
-   CryptUIWizDigitalSignW was not found in ../templates/sigs.rst-full
-   CryptUIWizExportA was not found in ../templates/sigs.rst-full
-   CryptUIWizExportW was not found in ../templates/sigs.rst-full
-   CryptUIWizFreeDigitalSignContextA was not found in ../templates/sigs.rst-full
-   CryptUIWizFreeDigitalSignContextW was not found in ../templates/sigs.rst-full
-   CryptUIWizImportA was not found in ../templates/sigs.rst-full
-   CryptUIWizImportW was not found in ../templates/sigs.rst-full
-   CryptUninstallDefaultContextA was not found in ../templates/sigs.rst-full
-   CryptUninstallDefaultContextW was not found in ../templates/sigs.rst-full
-   CryptUnprotectDataA was not found in ../templates/sigs.rst-full
-   CryptUnprotectDataW was not found in ../templates/sigs.rst-full
-   CryptUnprotectMemoryA was not found in ../templates/sigs.rst-full
-   CryptUnprotectMemoryW was not found in ../templates/sigs.rst-full
-   CryptUnregisterDefaultOIDFunctionA was not found in ../templates/sigs.rst-full
-   CryptUnregisterDefaultOIDFunctionW was not found in ../templates/sigs.rst-full
-   CryptUnregisterOIDFunctionA was not found in ../templates/sigs.rst-full
-   CryptUnregisterOIDFunctionW was not found in ../templates/sigs.rst-full
-   CryptUnregisterOIDInfoA was not found in ../templates/sigs.rst-full
-   CryptUnregisterOIDInfoW was not found in ../templates/sigs.rst-full
-   CryptUpdateProtectedStateA was not found in ../templates/sigs.rst-full
-   CryptUpdateProtectedStateW was not found in ../templates/sigs.rst-full
-   CryptVerifyCertificateSignatureA was not found in ../templates/sigs.rst-full
-   CryptVerifyCertificateSignatureW was not found in ../templates/sigs.rst-full
-   CryptVerifyCertificateSignatureExA was not found in ../templates/sigs.rst-full
-   CryptVerifyCertificateSignatureExW was not found in ../templates/sigs.rst-full
-   CryptVerifyDetachedMessageHashA was not found in ../templates/sigs.rst-full
-   CryptVerifyDetachedMessageHashW was not found in ../templates/sigs.rst-full
-   CryptVerifyDetachedMessageSignatureA was not found in ../templates/sigs.rst-full
-   CryptVerifyDetachedMessageSignatureW was not found in ../templates/sigs.rst-full
-   CryptVerifyMessageHashA was not found in ../templates/sigs.rst-full
-   CryptVerifyMessageHashW was not found in ../templates/sigs.rst-full
-   CryptVerifyMessageSignatureA was not found in ../templates/sigs.rst-full
-   CryptVerifyMessageSignatureW was not found in ../templates/sigs.rst-full
-   CryptVerifyMessageSignatureWithKeyA was not found in ../templates/sigs.rst-full
-   CryptVerifyMessageSignatureWithKeyW was not found in ../templates/sigs.rst-full
-   CryptVerifySignature was not found in ../templates/sigs.rst-full
-   CryptXmlAddObject was not found in ../templates/sigs.rst-full
-   CryptXmlAddObjectA was not found in ../templates/sigs.rst-full
-   CryptXmlAddObjectW was not found in ../templates/sigs.rst-full
-   CryptXmlClose was not found in ../templates/sigs.rst-full
-   CryptXmlCloseA was not found in ../templates/sigs.rst-full
-   CryptXmlCloseW was not found in ../templates/sigs.rst-full
-   CryptXmlCreateReference was not found in ../templates/sigs.rst-full
-   CryptXmlCreateReferenceA was not found in ../templates/sigs.rst-full
-   CryptXmlCreateReferenceW was not found in ../templates/sigs.rst-full
-   CryptXmlDigestReference was not found in ../templates/sigs.rst-full
-   CryptXmlDigestReferenceA was not found in ../templates/sigs.rst-full
-   CryptXmlDigestReferenceW was not found in ../templates/sigs.rst-full
-   CryptXmlDllCloseDigest was not found in ../templates/sigs.rst-full
-   CryptXmlDllCloseDigestA was not found in ../templates/sigs.rst-full
-   CryptXmlDllCloseDigestW was not found in ../templates/sigs.rst-full
-   CryptXmlDllCreateDigest was not found in ../templates/sigs.rst-full
-   CryptXmlDllCreateDigestA was not found in ../templates/sigs.rst-full
-   CryptXmlDllCreateDigestW was not found in ../templates/sigs.rst-full
-   CryptXmlDllCreateKey was not found in ../templates/sigs.rst-full
-   CryptXmlDllCreateKeyA was not found in ../templates/sigs.rst-full
-   CryptXmlDllCreateKeyW was not found in ../templates/sigs.rst-full
-   CryptXmlDllDigestData was not found in ../templates/sigs.rst-full
-   CryptXmlDllDigestDataA was not found in ../templates/sigs.rst-full
-   CryptXmlDllDigestDataW was not found in ../templates/sigs.rst-full
-   CryptXmlDllEncodeAlgorithm was not found in ../templates/sigs.rst-full
-   CryptXmlDllEncodeAlgorithmA was not found in ../templates/sigs.rst-full
-   CryptXmlDllEncodeAlgorithmW was not found in ../templates/sigs.rst-full
-   CryptXmlDllEncodeKeyValue was not found in ../templates/sigs.rst-full
-   CryptXmlDllEncodeKeyValueA was not found in ../templates/sigs.rst-full
-   CryptXmlDllEncodeKeyValueW was not found in ../templates/sigs.rst-full
-   CryptXmlDllFinalizeDigest was not found in ../templates/sigs.rst-full
-   CryptXmlDllFinalizeDigestA was not found in ../templates/sigs.rst-full
-   CryptXmlDllFinalizeDigestW was not found in ../templates/sigs.rst-full
-   CryptXmlDllGetAlgorithmInfo was not found in ../templates/sigs.rst-full
-   CryptXmlDllGetAlgorithmInfoA was not found in ../templates/sigs.rst-full
-   CryptXmlDllGetAlgorithmInfoW was not found in ../templates/sigs.rst-full
-   CryptXmlDllGetInterface was not found in ../templates/sigs.rst-full
-   CryptXmlDllGetInterfaceA was not found in ../templates/sigs.rst-full
-   CryptXmlDllGetInterfaceW was not found in ../templates/sigs.rst-full
-   CryptXmlDllSignData was not found in ../templates/sigs.rst-full
-   CryptXmlDllSignDataA was not found in ../templates/sigs.rst-full
-   CryptXmlDllSignDataW was not found in ../templates/sigs.rst-full
-   CryptXmlDllVerifySignature was not found in ../templates/sigs.rst-full
-   CryptXmlDllVerifySignatureA was not found in ../templates/sigs.rst-full
-   CryptXmlDllVerifySignatureW was not found in ../templates/sigs.rst-full
-   CryptXmlEncodeA was not found in ../templates/sigs.rst-full
-   CryptXmlEncodeW was not found in ../templates/sigs.rst-full
-   CryptXmlGetAlgorithmInfo was not found in ../templates/sigs.rst-full
-   CryptXmlGetAlgorithmInfoA was not found in ../templates/sigs.rst-full
-   CryptXmlGetAlgorithmInfoW was not found in ../templates/sigs.rst-full
-   CryptXmlGetDocContext was not found in ../templates/sigs.rst-full
-   CryptXmlGetDocContextA was not found in ../templates/sigs.rst-full
-   CryptXmlGetDocContextW was not found in ../templates/sigs.rst-full
-   CryptXmlGetReference was not found in ../templates/sigs.rst-full
-   CryptXmlGetReferenceA was not found in ../templates/sigs.rst-full
-   CryptXmlGetReferenceW was not found in ../templates/sigs.rst-full
-   CryptXmlGetSignature was not found in ../templates/sigs.rst-full
-   CryptXmlGetSignatureA was not found in ../templates/sigs.rst-full
-   CryptXmlGetSignatureW was not found in ../templates/sigs.rst-full
-   CryptXmlGetStatus was not found in ../templates/sigs.rst-full
-   CryptXmlGetStatusA was not found in ../templates/sigs.rst-full
-   CryptXmlGetStatusW was not found in ../templates/sigs.rst-full
-   CryptXmlGetTransformsA was not found in ../templates/sigs.rst-full
-   CryptXmlGetTransformsW was not found in ../templates/sigs.rst-full
-   CryptXmlImportPublicKey was not found in ../templates/sigs.rst-full
-   CryptXmlImportPublicKeyA was not found in ../templates/sigs.rst-full
-   CryptXmlImportPublicKeyW was not found in ../templates/sigs.rst-full
-   CryptXmlOpenToDecodeA was not found in ../templates/sigs.rst-full
-   CryptXmlOpenToDecodeW was not found in ../templates/sigs.rst-full
-   CryptXmlOpenToEncodeA was not found in ../templates/sigs.rst-full
-   CryptXmlOpenToEncodeW was not found in ../templates/sigs.rst-full
-   CryptXmlSetHMACSecret was not found in ../templates/sigs.rst-full
-   CryptXmlSetHMACSecretA was not found in ../templates/sigs.rst-full
-   CryptXmlSetHMACSecretW was not found in ../templates/sigs.rst-full
-   CryptXmlSign was not found in ../templates/sigs.rst-full
-   CryptXmlSignA was not found in ../templates/sigs.rst-full
-   CryptXmlSignW was not found in ../templates/sigs.rst-full
-   CryptXmlVerifySignature was not found in ../templates/sigs.rst-full
-   CryptXmlVerifySignatureA was not found in ../templates/sigs.rst-full
-   CryptXmlVerifySignatureW was not found in ../templates/sigs.rst-full
-   FreeCryptProvFromCert was not found in ../templates/sigs.rst-full
-   FreeCryptProvFromCertA was not found in ../templates/sigs.rst-full
-   FreeCryptProvFromCertW was not found in ../templates/sigs.rst-full
-   FreeCryptProvFromCertEx was not found in ../templates/sigs.rst-full
-   FreeCryptProvFromCertExA was not found in ../templates/sigs.rst-full
-   FreeCryptProvFromCertExW was not found in ../templates/sigs.rst-full
-   GetCryptProvFromCert was not found in ../templates/sigs.rst-full
-   GetCryptProvFromCertA was not found in ../templates/sigs.rst-full
-   GetCryptProvFromCertW was not found in ../templates/sigs.rst-full
-   GetEncSChannel was not found in ../templates/sigs.rst-full
-   GetEncSChannelA was not found in ../templates/sigs.rst-full
-   GetEncSChannelW was not found in ../templates/sigs.rst-full
-   GetFriendlyNameOfCert was not found in ../templates/sigs.rst-full
-   IsCatalogFile was not found in ../templates/sigs.rst-full
-   IsCatalogFileA was not found in ../templates/sigs.rst-full
-   IsCatalogFileW was not found in ../templates/sigs.rst-full
-   It was not found in ../templates/sigs.rst-full
-   ItA was not found in ../templates/sigs.rst-full
-   ItW was not found in ../templates/sigs.rst-full
-   OffloadModExpo was not found in ../templates/sigs.rst-full
-   OffloadModExpoA was not found in ../templates/sigs.rst-full
-   OffloadModExpoW was not found in ../templates/sigs.rst-full
-   OpenPersonalTrustDBDialog was not found in ../templates/sigs.rst-full
-   OpenPersonalTrustDBDialogA was not found in ../templates/sigs.rst-full
-   OpenPersonalTrustDBDialogW was not found in ../templates/sigs.rst-full
-   PCRYPT_DECRYPT_PRIVATE_KEY_FUNC was not found in ../templates/sigs.rst-full
-   PCRYPT_DECRYPT_PRIVATE_KEY_FUNCA was not found in ../templates/sigs.rst-full
-   PCRYPT_DECRYPT_PRIVATE_KEY_FUNCW was not found in ../templates/sigs.rst-full
-   PCRYPT_ENCRYPT_PRIVATE_KEY_FUNC was not found in ../templates/sigs.rst-full
-   PCRYPT_ENCRYPT_PRIVATE_KEY_FUNCA was not found in ../templates/sigs.rst-full
-   PCRYPT_ENCRYPT_PRIVATE_KEY_FUNCW was not found in ../templates/sigs.rst-full
-   PCRYPT_RESOLVE_HCRYPTPROV_FUNC was not found in ../templates/sigs.rst-full
-   PCRYPT_RESOLVE_HCRYPTPROV_FUNCA was not found in ../templates/sigs.rst-full
-   PCRYPT_RESOLVE_HCRYPTPROV_FUNCW was not found in ../templates/sigs.rst-full
-   PFNCCERTDISPLAYPROC was not found in ../templates/sigs.rst-full
-   PFNCCERTDISPLAYPROCA was not found in ../templates/sigs.rst-full
-   PFNCCERTDISPLAYPROCW was not found in ../templates/sigs.rst-full
-   PFNCFILTERPROC was not found in ../templates/sigs.rst-full
-   PFNCFILTERPROCA was not found in ../templates/sigs.rst-full
-   PFNCFILTERPROCW was not found in ../templates/sigs.rst-full
-   PFNCMFILTERPROC was not found in ../templates/sigs.rst-full
-   PFNCMFILTERPROCA was not found in ../templates/sigs.rst-full
-   PFNCMFILTERPROCW was not found in ../templates/sigs.rst-full
-   PFNCMHOOKPROC was not found in ../templates/sigs.rst-full
-   PFNCMHOOKPROCA was not found in ../templates/sigs.rst-full
-   PFNCMHOOKPROCW was not found in ../templates/sigs.rst-full
-   PFN_CDF_PARSE_ERROR_CALLBACK was not found in ../templates/sigs.rst-full
-   PFN_CDF_PARSE_ERROR_CALLBACKA was not found in ../templates/sigs.rst-full
-   PFN_CDF_PARSE_ERROR_CALLBACKW was not found in ../templates/sigs.rst-full
-   PFN_CERT_CREATE_CONTEXT_SORT_FUNC was not found in ../templates/sigs.rst-full
-   PFN_CERT_CREATE_CONTEXT_SORT_FUNCA was not found in ../templates/sigs.rst-full
-   PFN_CERT_CREATE_CONTEXT_SORT_FUNCW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_CNG_IMPORT_CONTENT_ENCRYPT_KEY was not found in ../templates/sigs.rst-full
-   PFN_CMSG_CNG_IMPORT_CONTENT_ENCRYPT_KEYA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_CNG_IMPORT_CONTENT_ENCRYPT_KEYW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_CNG_IMPORT_KEY_AGREE was not found in ../templates/sigs.rst-full
-   PFN_CMSG_CNG_IMPORT_KEY_AGREEA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_CNG_IMPORT_KEY_AGREEW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_CNG_IMPORT_KEY_TRANS was not found in ../templates/sigs.rst-full
-   PFN_CMSG_CNG_IMPORT_KEY_TRANSA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_CNG_IMPORT_KEY_TRANSW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_EXPORT_KEY_AGREE was not found in ../templates/sigs.rst-full
-   PFN_CMSG_EXPORT_KEY_AGREEA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_EXPORT_KEY_AGREEW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_EXPORT_KEY_TRANS was not found in ../templates/sigs.rst-full
-   PFN_CMSG_EXPORT_KEY_TRANSA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_EXPORT_KEY_TRANSW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_EXPORT_MAIL_LIST was not found in ../templates/sigs.rst-full
-   PFN_CMSG_EXPORT_MAIL_LISTA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_EXPORT_MAIL_LISTW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_GEN_CONTENT_ENCRYPT_KEY was not found in ../templates/sigs.rst-full
-   PFN_CMSG_GEN_CONTENT_ENCRYPT_KEYA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_GEN_CONTENT_ENCRYPT_KEYW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_IMPORT_KEY_AGREE was not found in ../templates/sigs.rst-full
-   PFN_CMSG_IMPORT_KEY_AGREEA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_IMPORT_KEY_AGREEW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_IMPORT_KEY_TRANS was not found in ../templates/sigs.rst-full
-   PFN_CMSG_IMPORT_KEY_TRANSA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_IMPORT_KEY_TRANSW was not found in ../templates/sigs.rst-full
-   PFN_CMSG_IMPORT_MAIL_LIST was not found in ../templates/sigs.rst-full
-   PFN_CMSG_IMPORT_MAIL_LISTA was not found in ../templates/sigs.rst-full
-   PFN_CMSG_IMPORT_MAIL_LISTW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_EX2_FUNC was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_EX2_FUNCA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_EXPORT_PUBLIC_KEY_INFO_EX2_FUNCW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNC was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNCA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_EXTRACT_ENCODED_SIGNATURE_PARAMETERS_FUNCW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSH was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSHA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FLUSHW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREEA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREEW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIER was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIERA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_IDENTIFIERW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORDA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORDW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GETA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GETW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZE was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZEA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_INITIALIZEW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASEA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASEW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_SIGN_AND_ENCODE_HASH_FUNC was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_SIGN_AND_ENCODE_HASH_FUNCA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_SIGN_AND_ENCODE_HASH_FUNCW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_VERIFY_ENCODED_SIGNATURE_FUNC was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_VERIFY_ENCODED_SIGNATURE_FUNCA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_VERIFY_ENCODED_SIGNATURE_FUNCW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_CREATE_TRANSFORM was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_CREATE_TRANSFORMA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_CREATE_TRANSFORMW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_DATA_PROVIDER_CLOSE was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_DATA_PROVIDER_CLOSEA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_DATA_PROVIDER_CLOSEW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_DATA_PROVIDER_READ was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_DATA_PROVIDER_READA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_DATA_PROVIDER_READW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_ENUM_ALG_INFO was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_ENUM_ALG_INFOA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_ENUM_ALG_INFOW was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_WRITE_CALLBACK was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_WRITE_CALLBACKA was not found in ../templates/sigs.rst-full
-   PFN_CRYPT_XML_WRITE_CALLBACKW was not found in ../templates/sigs.rst-full
-   PFN_IMPORT_PUBLIC_KEY_INFO_EX2_FUNC was not found in ../templates/sigs.rst-full
-   PFN_IMPORT_PUBLIC_KEY_INFO_EX2_FUNCA was not found in ../templates/sigs.rst-full
-   PFN_IMPORT_PUBLIC_KEY_INFO_EX2_FUNCW was not found in ../templates/sigs.rst-full
-   PFXExportCertStoreA was not found in ../templates/sigs.rst-full
-   PFXExportCertStoreW was not found in ../templates/sigs.rst-full
-   PFXExportCertStoreExA was not found in ../templates/sigs.rst-full
-   PFXExportCertStoreExW was not found in ../templates/sigs.rst-full
-   PFXImportCertStoreA was not found in ../templates/sigs.rst-full
-   PFXImportCertStoreW was not found in ../templates/sigs.rst-full
-   PFXIsPFXBlobA was not found in ../templates/sigs.rst-full
-   PFXIsPFXBlobW was not found in ../templates/sigs.rst-full
-   PFXVerifyPasswordA was not found in ../templates/sigs.rst-full
-   PFXVerifyPasswordW was not found in ../templates/sigs.rst-full
-   PvkFreeCryptProv was not found in ../templates/sigs.rst-full
-   PvkFreeCryptProvA was not found in ../templates/sigs.rst-full
-   PvkFreeCryptProvW was not found in ../templates/sigs.rst-full
-   PvkGetCryptProv was not found in ../templates/sigs.rst-full
-   PvkGetCryptProvA was not found in ../templates/sigs.rst-full
-   PvkGetCryptProvW was not found in ../templates/sigs.rst-full
-   PvkPrivateKeyAcquireContextFromMemory was not found in ../templates/sigs.rst-full
-   PvkPrivateKeyAcquireContextFromMemoryA was not found in ../templates/sigs.rst-full
-   PvkPrivateKeyAcquireContextFromMemoryW was not found in ../templates/sigs.rst-full
-   PvkPrivateKeySave was not found in ../templates/sigs.rst-full
-   PvkPrivateKeySaveA was not found in ../templates/sigs.rst-full
-   PvkPrivateKeySaveW was not found in ../templates/sigs.rst-full
-   RKeyCloseKeyService was not found in ../templates/sigs.rst-full
-   RKeyCloseKeyServiceA was not found in ../templates/sigs.rst-full
-   RKeyCloseKeyServiceW was not found in ../templates/sigs.rst-full
-   RKeyOpenKeyService was not found in ../templates/sigs.rst-full
-   RKeyOpenKeyServiceA was not found in ../templates/sigs.rst-full
-   RKeyOpenKeyServiceW was not found in ../templates/sigs.rst-full
-   RKeyPFXInstall was not found in ../templates/sigs.rst-full
-   RKeyPFXInstallA was not found in ../templates/sigs.rst-full
-   RKeyPFXInstallW was not found in ../templates/sigs.rst-full
-   SignError was not found in ../templates/sigs.rst-full
-   SignErrorA was not found in ../templates/sigs.rst-full
-   SignErrorW was not found in ../templates/sigs.rst-full
-   SignerFreeSignerContext was not found in ../templates/sigs.rst-full
-   SignerFreeSignerContextA was not found in ../templates/sigs.rst-full
-   SignerFreeSignerContextW was not found in ../templates/sigs.rst-full
-   SignerSign was not found in ../templates/sigs.rst-full
-   SignerSignA was not found in ../templates/sigs.rst-full
-   SignerSignW was not found in ../templates/sigs.rst-full
-   SignerSignEx was not found in ../templates/sigs.rst-full
-   SignerSignExA was not found in ../templates/sigs.rst-full
-   SignerSignExW was not found in ../templates/sigs.rst-full
-   SignerSignEx2 was not found in ../templates/sigs.rst-full
-   SignerSignEx2A was not found in ../templates/sigs.rst-full
-   SignerSignEx2W was not found in ../templates/sigs.rst-full
-   SignerTimeStamp was not found in ../templates/sigs.rst-full
-   SignerTimeStampA was not found in ../templates/sigs.rst-full
-   SignerTimeStampW was not found in ../templates/sigs.rst-full
-   SignerTimeStampEx was not found in ../templates/sigs.rst-full
-   SignerTimeStampExA was not found in ../templates/sigs.rst-full
-   SignerTimeStampExW was not found in ../templates/sigs.rst-full
-   SignerTimeStampEx2 was not found in ../templates/sigs.rst-full
-   SignerTimeStampEx2A was not found in ../templates/sigs.rst-full
-   SignerTimeStampEx2W was not found in ../templates/sigs.rst-full
-   SignerTimeStampEx3 was not found in ../templates/sigs.rst-full
-   SignerTimeStampEx3A was not found in ../templates/sigs.rst-full
-   SignerTimeStampEx3W was not found in ../templates/sigs.rst-full
-   WTHelperCertCheckValidSignature was not found in ../templates/sigs.rst-full
-   WTHelperCertCheckValidSignatureA was not found in ../templates/sigs.rst-full
-   WTHelperCertCheckValidSignatureW was not found in ../templates/sigs.rst-full
-   WTHelperCertFindIssuerCertificate was not found in ../templates/sigs.rst-full
-   WTHelperCertFindIssuerCertificateA was not found in ../templates/sigs.rst-full
-   WTHelperCertFindIssuerCertificateW was not found in ../templates/sigs.rst-full
-   WTHelperCertIsSelfSigned was not found in ../templates/sigs.rst-full
-   WTHelperCertIsSelfSignedA was not found in ../templates/sigs.rst-full
-   WTHelperCertIsSelfSignedW was not found in ../templates/sigs.rst-full
-   WTHelperGetFileHash was not found in ../templates/sigs.rst-full
-   WTHelperGetFileHashA was not found in ../templates/sigs.rst-full
-   WTHelperGetFileHashW was not found in ../templates/sigs.rst-full
-   WTHelperGetProvCertFromChain was not found in ../templates/sigs.rst-full
-   WTHelperGetProvCertFromChainA was not found in ../templates/sigs.rst-full
-   WTHelperGetProvCertFromChainW was not found in ../templates/sigs.rst-full
-   WTHelperGetProvPrivateDataFromChain was not found in ../templates/sigs.rst-full
-   WTHelperGetProvPrivateDataFromChainA was not found in ../templates/sigs.rst-full
-   WTHelperGetProvPrivateDataFromChainW was not found in ../templates/sigs.rst-full
-   WTHelperGetProvSignerFromChain was not found in ../templates/sigs.rst-full
-   WTHelperGetProvSignerFromChainA was not found in ../templates/sigs.rst-full
-   WTHelperGetProvSignerFromChainW was not found in ../templates/sigs.rst-full
-   WTHelperProvDataFromStateData was not found in ../templates/sigs.rst-full
-   WTHelperProvDataFromStateDataA was not found in ../templates/sigs.rst-full
-   WTHelperProvDataFromStateDataW was not found in ../templates/sigs.rst-full
-   WinVerifyTrust was not found in ../templates/sigs.rst-full
-   WinVerifyTrustA was not found in ../templates/sigs.rst-full
-   WinVerifyTrustW was not found in ../templates/sigs.rst-full
-   WinVerifyTrustEx was not found in ../templates/sigs.rst-full
-   WinVerifyTrustExA was not found in ../templates/sigs.rst-full
-   WinVerifyTrustExW was not found in ../templates/sigs.rst-full
-   WintrustAddActionID was not found in ../templates/sigs.rst-full
-   WintrustAddActionIDA was not found in ../templates/sigs.rst-full
-   WintrustAddActionIDW was not found in ../templates/sigs.rst-full
-   WintrustAddDefaultForUsage was not found in ../templates/sigs.rst-full
-   WintrustAddDefaultForUsageA was not found in ../templates/sigs.rst-full
-   WintrustAddDefaultForUsageW was not found in ../templates/sigs.rst-full
-   WintrustGetDefaultForUsage was not found in ../templates/sigs.rst-full
-   WintrustGetDefaultForUsageA was not found in ../templates/sigs.rst-full
-   WintrustGetDefaultForUsageW was not found in ../templates/sigs.rst-full
-   WintrustGetRegPolicyFlags was not found in ../templates/sigs.rst-full
-   WintrustGetRegPolicyFlagsA was not found in ../templates/sigs.rst-full
-   WintrustGetRegPolicyFlagsW was not found in ../templates/sigs.rst-full
-   WintrustLoadFunctionPointers was not found in ../templates/sigs.rst-full
-   WintrustLoadFunctionPointersA was not found in ../templates/sigs.rst-full
-   WintrustLoadFunctionPointersW was not found in ../templates/sigs.rst-full
-   WintrustRemoveActionID was not found in ../templates/sigs.rst-full
-   WintrustRemoveActionIDA was not found in ../templates/sigs.rst-full
-   WintrustRemoveActionIDW was not found in ../templates/sigs.rst-full
-   WintrustSetDefaultIncludePEPageHashesA was not found in ../templates/sigs.rst-full
-   WintrustSetDefaultIncludePEPageHashesW was not found in ../templates/sigs.rst-full
-   WintrustSetRegPolicyFlags was not found in ../templates/sigs.rst-full
-   WintrustSetRegPolicyFlagsA was not found in ../templates/sigs.rst-full
-   WintrustSetRegPolicyFlagsW was not found in ../templates/sigs.rst-full
-   pCryptSIPGetCaps was not found in ../templates/sigs.rst-full
-   pCryptSIPGetCapsA was not found in ../templates/sigs.rst-full
-   pCryptSIPGetCapsW was not found in ../templates/sigs.rst-full
 Scanning object.txt
    CloseHandleA was not found in ../templates/sigs.rst-full
    CloseHandleW was not found in ../templates/sigs.rst-full
@@ -1597,7 +438,6 @@ Scanning registry.txt
    RegDisableReflectionKeyW was not found in ../templates/sigs.rst-full
    RegEnableReflectionKeyA was not found in ../templates/sigs.rst-full
    RegEnableReflectionKeyW was not found in ../templates/sigs.rst-full
-   RegEnumKeyEx was not found in ../templates/sigs.rst-full
    RegEnumValue was not found in ../templates/sigs.rst-full
    RegFlushKeyA was not found in ../templates/sigs.rst-full
    RegFlushKeyW was not found in ../templates/sigs.rst-full
@@ -1607,7 +447,6 @@ Scanning registry.txt
    RegGetValueA was not found in ../templates/sigs.rst-full
    RegGetValueW was not found in ../templates/sigs.rst-full
    RegLoadKey was not found in ../templates/sigs.rst-full
-   RegLoadMUIString was not found in ../templates/sigs.rst-full
    RegNotifyChangeKeyValueA was not found in ../templates/sigs.rst-full
    RegNotifyChangeKeyValueW was not found in ../templates/sigs.rst-full
    RegOpenCurrentUserA was not found in ../templates/sigs.rst-full
@@ -1618,7 +457,6 @@ Scanning registry.txt
    RegOpenUserClassesRootW was not found in ../templates/sigs.rst-full
    RegOverridePredefKeyA was not found in ../templates/sigs.rst-full
    RegOverridePredefKeyW was not found in ../templates/sigs.rst-full
-   RegQueryInfoKey was not found in ../templates/sigs.rst-full
    RegQueryMultipleValues was not found in ../templates/sigs.rst-full
    RegQueryReflectionKeyA was not found in ../templates/sigs.rst-full
    RegQueryReflectionKeyW was not found in ../templates/sigs.rst-full
@@ -1727,7 +565,6 @@ Scanning time.txt
    ConvertPerformanceCounterToAuxiliaryCounterW was not found in ../templates/sigs.rst-full
    DosDateTimeToFileTimeA was not found in ../templates/sigs.rst-full
    DosDateTimeToFileTimeW was not found in ../templates/sigs.rst-full
-   EnumDynamicTimeZoneInformation was not found in ../templates/sigs.rst-full
    EnumDynamicTimeZoneInformationA was not found in ../templates/sigs.rst-full
    EnumDynamicTimeZoneInformationW was not found in ../templates/sigs.rst-full
    FileTimeToDosDateTimeA was not found in ../templates/sigs.rst-full
@@ -1738,7 +575,6 @@ Scanning time.txt
    FileTimeToSystemTimeW was not found in ../templates/sigs.rst-full
    GetDynamicTimeZoneInformationA was not found in ../templates/sigs.rst-full
    GetDynamicTimeZoneInformationW was not found in ../templates/sigs.rst-full
-   GetDynamicTimeZoneInformationEffectiveYears was not found in ../templates/sigs.rst-full
    GetDynamicTimeZoneInformationEffectiveYearsA was not found in ../templates/sigs.rst-full
    GetDynamicTimeZoneInformationEffectiveYearsW was not found in ../templates/sigs.rst-full
    GetFileTimeA was not found in ../templates/sigs.rst-full
@@ -1896,20 +732,11 @@ Scanning sync.txt
    ChangeTimerQueueTimerW was not found in ../templates/sigs.rst-full
    ClosePrivateNamespaceA was not found in ../templates/sigs.rst-full
    ClosePrivateNamespaceW was not found in ../templates/sigs.rst-full
-   CreateEvent was not found in ../templates/sigs.rst-full
-   CreateEventEx was not found in ../templates/sigs.rst-full
-   CreateMutex was not found in ../templates/sigs.rst-full
-   CreateMutexEx was not found in ../templates/sigs.rst-full
    CreatePrivateNamespace was not found in ../templates/sigs.rst-full
-   CreateSemaphore was not found in ../templates/sigs.rst-full
-   CreateSemaphoreEx was not found in ../templates/sigs.rst-full
    CreateTimerQueueA was not found in ../templates/sigs.rst-full
    CreateTimerQueueW was not found in ../templates/sigs.rst-full
    CreateTimerQueueTimerA was not found in ../templates/sigs.rst-full
    CreateTimerQueueTimerW was not found in ../templates/sigs.rst-full
-   CreateWaitableTimer was not found in ../templates/sigs.rst-full
-   CreateWaitableTimerEx was not found in ../templates/sigs.rst-full
-   DeleteSynchronizationBarrier was not found in ../templates/sigs.rst-full
    DeleteSynchronizationBarrierA was not found in ../templates/sigs.rst-full
    DeleteSynchronizationBarrierW was not found in ../templates/sigs.rst-full
    DeleteTimerQueueA was not found in ../templates/sigs.rst-full
@@ -1918,15 +745,12 @@ Scanning sync.txt
    DeleteTimerQueueExW was not found in ../templates/sigs.rst-full
    DeleteTimerQueueTimerA was not found in ../templates/sigs.rst-full
    DeleteTimerQueueTimerW was not found in ../templates/sigs.rst-full
-   EnterSynchronizationBarrier was not found in ../templates/sigs.rst-full
    EnterSynchronizationBarrierA was not found in ../templates/sigs.rst-full
    EnterSynchronizationBarrierW was not found in ../templates/sigs.rst-full
    GetOverlappedResultA was not found in ../templates/sigs.rst-full
    GetOverlappedResultW was not found in ../templates/sigs.rst-full
-   GetOverlappedResultEx was not found in ../templates/sigs.rst-full
    GetOverlappedResultExA was not found in ../templates/sigs.rst-full
    GetOverlappedResultExW was not found in ../templates/sigs.rst-full
-   InitializeSynchronizationBarrier was not found in ../templates/sigs.rst-full
    InitializeSynchronizationBarrierA was not found in ../templates/sigs.rst-full
    InitializeSynchronizationBarrierW was not found in ../templates/sigs.rst-full
    MsgWaitForMultipleObjectsA was not found in ../templates/sigs.rst-full
@@ -1993,38 +817,6 @@ Scanning sync.txt
    WakeByAddressSingleW was not found in ../templates/sigs.rst-full
    WakeConditionVariableA was not found in ../templates/sigs.rst-full
    WakeConditionVariableW was not found in ../templates/sigs.rst-full
-Scanning resource.txt
-   BeginUpdateResource was not found in ../templates/sigs.rst-full
-   CopyImageA was not found in ../templates/sigs.rst-full
-   CopyImageW was not found in ../templates/sigs.rst-full
-   EndUpdateResource was not found in ../templates/sigs.rst-full
-   EnumResLangProc was not found in ../templates/sigs.rst-full
-   EnumResLangProcA was not found in ../templates/sigs.rst-full
-   EnumResLangProcW was not found in ../templates/sigs.rst-full
-   EnumResNameProc was not found in ../templates/sigs.rst-full
-   EnumResNameProcA was not found in ../templates/sigs.rst-full
-   EnumResNameProcW was not found in ../templates/sigs.rst-full
-   EnumResTypeProc was not found in ../templates/sigs.rst-full
-   EnumResTypeProcA was not found in ../templates/sigs.rst-full
-   EnumResTypeProcW was not found in ../templates/sigs.rst-full
-   EnumResourceLanguages was not found in ../templates/sigs.rst-full
-   EnumResourceLanguagesEx was not found in ../templates/sigs.rst-full
-   EnumResourceNames was not found in ../templates/sigs.rst-full
-   EnumResourceNamesEx was not found in ../templates/sigs.rst-full
-   EnumResourceTypes was not found in ../templates/sigs.rst-full
-   EnumResourceTypesEx was not found in ../templates/sigs.rst-full
-   FindResource was not found in ../templates/sigs.rst-full
-   FindResourceEx was not found in ../templates/sigs.rst-full
-   FreeResourceA was not found in ../templates/sigs.rst-full
-   FreeResourceW was not found in ../templates/sigs.rst-full
-   LoadImage was not found in ../templates/sigs.rst-full
-   LoadResourceA was not found in ../templates/sigs.rst-full
-   LoadResourceW was not found in ../templates/sigs.rst-full
-   LockResourceA was not found in ../templates/sigs.rst-full
-   LockResourceW was not found in ../templates/sigs.rst-full
-   SizeofResourceA was not found in ../templates/sigs.rst-full
-   SizeofResourceW was not found in ../templates/sigs.rst-full
-   UpdateResource was not found in ../templates/sigs.rst-full
 Scanning network.txt
    AcceptEx was not found in ../templates/sigs.rst-full
    AcceptExA was not found in ../templates/sigs.rst-full
@@ -2041,10 +833,6 @@ Scanning network.txt
    CleanupCredentialCache was not found in ../templates/sigs.rst-full
    CleanupCredentialCacheA was not found in ../templates/sigs.rst-full
    CleanupCredentialCacheW was not found in ../templates/sigs.rst-full
-   CommitUrlCacheEntryAA was not found in ../templates/sigs.rst-full
-   CommitUrlCacheEntryAW was not found in ../templates/sigs.rst-full
-   CommitUrlCacheEntryWA was not found in ../templates/sigs.rst-full
-   CommitUrlCacheEntryWW was not found in ../templates/sigs.rst-full
    ConnectEx was not found in ../templates/sigs.rst-full
    ConnectExA was not found in ../templates/sigs.rst-full
    ConnectExW was not found in ../templates/sigs.rst-full
@@ -2744,7 +1532,6 @@ Scanning network.txt
    DnsAcquireContextHandle was not found in ../templates/sigs.rst-full
    DnsAcquireContextHandleA was not found in ../templates/sigs.rst-full
    DnsAcquireContextHandleW was not found in ../templates/sigs.rst-full
-   DnsCancelQuery was not found in ../templates/sigs.rst-full
    DnsCancelQueryA was not found in ../templates/sigs.rst-full
    DnsCancelQueryW was not found in ../templates/sigs.rst-full
    DnsExtractRecordsFromMessage was not found in ../templates/sigs.rst-full
@@ -2767,7 +1554,6 @@ Scanning network.txt
    DnsQueryW was not found in ../templates/sigs.rst-full
    DnsQueryConfigA was not found in ../templates/sigs.rst-full
    DnsQueryConfigW was not found in ../templates/sigs.rst-full
-   DnsQueryEx was not found in ../templates/sigs.rst-full
    DnsQueryExA was not found in ../templates/sigs.rst-full
    DnsQueryExW was not found in ../templates/sigs.rst-full
    DnsRecordCompareA was not found in ../templates/sigs.rst-full
@@ -2881,15 +1667,10 @@ Scanning network.txt
    GetAdaptersInfo was not found in ../templates/sigs.rst-full
    GetAdaptersInfoA was not found in ../templates/sigs.rst-full
    GetAdaptersInfoW was not found in ../templates/sigs.rst-full
-   GetAddrInfoEx was not found in ../templates/sigs.rst-full
-   GetAddrInfoExCancel was not found in ../templates/sigs.rst-full
    GetAddrInfoExCancelA was not found in ../templates/sigs.rst-full
    GetAddrInfoExCancelW was not found in ../templates/sigs.rst-full
-   GetAddrInfoExOverlappedResult was not found in ../templates/sigs.rst-full
    GetAddrInfoExOverlappedResultA was not found in ../templates/sigs.rst-full
    GetAddrInfoExOverlappedResultW was not found in ../templates/sigs.rst-full
-   GetAddrInfoWA was not found in ../templates/sigs.rst-full
-   GetAddrInfoWW was not found in ../templates/sigs.rst-full
    GetAddressByName was not found in ../templates/sigs.rst-full
    GetAddressByNameA was not found in ../templates/sigs.rst-full
    GetAddressByNameW was not found in ../templates/sigs.rst-full
@@ -2914,7 +1695,6 @@ Scanning network.txt
    GetFriendlyIfIndex was not found in ../templates/sigs.rst-full
    GetFriendlyIfIndexA was not found in ../templates/sigs.rst-full
    GetFriendlyIfIndexW was not found in ../templates/sigs.rst-full
-   GetHostNameW was not found in ../templates/sigs.rst-full
    GetHostNameWA was not found in ../templates/sigs.rst-full
    GetHostNameWW was not found in ../templates/sigs.rst-full
    GetIcmpStatistics was not found in ../templates/sigs.rst-full
@@ -3024,8 +1804,6 @@ Scanning network.txt
    GetUnicastIpAddressTable was not found in ../templates/sigs.rst-full
    GetUnicastIpAddressTableA was not found in ../templates/sigs.rst-full
    GetUnicastIpAddressTableW was not found in ../templates/sigs.rst-full
-   GetUrlCacheEntryInfo was not found in ../templates/sigs.rst-full
-   GetUrlCacheEntryInfoEx was not found in ../templates/sigs.rst-full
    GetUrlCacheGroupAttribute was not found in ../templates/sigs.rst-full
    GetUrlCacheGroupAttributeA was not found in ../templates/sigs.rst-full
    GetUrlCacheGroupAttributeW was not found in ../templates/sigs.rst-full
@@ -3082,7 +1860,6 @@ Scanning network.txt
    HttpOpenRequest was not found in ../templates/sigs.rst-full
    HttpOpenRequestA was not found in ../templates/sigs.rst-full
    HttpOpenRequestW was not found in ../templates/sigs.rst-full
-   HttpPrepareUrl was not found in ../templates/sigs.rst-full
    HttpPrepareUrlA was not found in ../templates/sigs.rst-full
    HttpPrepareUrlW was not found in ../templates/sigs.rst-full
    HttpQueryInfo was not found in ../templates/sigs.rst-full
@@ -3193,7 +1970,6 @@ Scanning network.txt
    InternetConnectA was not found in ../templates/sigs.rst-full
    InternetConnectW was not found in ../templates/sigs.rst-full
    InternetCrackUrl was not found in ../templates/sigs.rst-full
-   InternetCreateUrl was not found in ../templates/sigs.rst-full
    InternetDeInitializeAutoProxyDll was not found in ../templates/sigs.rst-full
    InternetDeInitializeAutoProxyDllA was not found in ../templates/sigs.rst-full
    InternetDeInitializeAutoProxyDllW was not found in ../templates/sigs.rst-full
@@ -3209,10 +1985,6 @@ Scanning network.txt
    InternetFindNextFile was not found in ../templates/sigs.rst-full
    InternetFindNextFileA was not found in ../templates/sigs.rst-full
    InternetFindNextFileW was not found in ../templates/sigs.rst-full
-   InternetGetConnectedState was not found in ../templates/sigs.rst-full
-   InternetGetConnectedStateA was not found in ../templates/sigs.rst-full
-   InternetGetConnectedStateW was not found in ../templates/sigs.rst-full
-   InternetGetConnectedStateEx was not found in ../templates/sigs.rst-full
    InternetGetCookie was not found in ../templates/sigs.rst-full
    InternetGetCookieEx was not found in ../templates/sigs.rst-full
    InternetGetLastResponseInfo was not found in ../templates/sigs.rst-full
@@ -4704,8 +3476,6 @@ Scanning network.txt
    gai_strerror was not found in ../templates/sigs.rst-full
    gai_strerrorA was not found in ../templates/sigs.rst-full
    gai_strerrorW was not found in ../templates/sigs.rst-full
-   getaddrinfoA was not found in ../templates/sigs.rst-full
-   getaddrinfoW was not found in ../templates/sigs.rst-full
    gethostbyaddrA was not found in ../templates/sigs.rst-full
    gethostbyaddrW was not found in ../templates/sigs.rst-full
    gethostbynameA was not found in ../templates/sigs.rst-full
@@ -4796,438 +3566,6 @@ Scanning network.txt
    shutdownW was not found in ../templates/sigs.rst-full
    socketA was not found in ../templates/sigs.rst-full
    socketW was not found in ../templates/sigs.rst-full
-Scanning auth.txt
-   AccessCheckA was not found in ../templates/sigs.rst-full
-   AccessCheckW was not found in ../templates/sigs.rst-full
-   AccessCheckAndAuditAlarm was not found in ../templates/sigs.rst-full
-   AccessCheckByTypeA was not found in ../templates/sigs.rst-full
-   AccessCheckByTypeW was not found in ../templates/sigs.rst-full
-   AccessCheckByTypeAndAuditAlarm was not found in ../templates/sigs.rst-full
-   AccessCheckByTypeResultListA was not found in ../templates/sigs.rst-full
-   AccessCheckByTypeResultListW was not found in ../templates/sigs.rst-full
-   AccessCheckByTypeResultListAndAuditAlarm was not found in ../templates/sigs.rst-full
-   AccessCheckByTypeResultListAndAuditAlarmByHandle was not found in ../templates/sigs.rst-full
-   AddAccessAllowedAceA was not found in ../templates/sigs.rst-full
-   AddAccessAllowedAceW was not found in ../templates/sigs.rst-full
-   AddAccessAllowedAceExA was not found in ../templates/sigs.rst-full
-   AddAccessAllowedAceExW was not found in ../templates/sigs.rst-full
-   AddAccessAllowedObjectAceA was not found in ../templates/sigs.rst-full
-   AddAccessAllowedObjectAceW was not found in ../templates/sigs.rst-full
-   AddAccessDeniedAceA was not found in ../templates/sigs.rst-full
-   AddAccessDeniedAceW was not found in ../templates/sigs.rst-full
-   AddAccessDeniedAceExA was not found in ../templates/sigs.rst-full
-   AddAccessDeniedAceExW was not found in ../templates/sigs.rst-full
-   AddAccessDeniedObjectAceA was not found in ../templates/sigs.rst-full
-   AddAccessDeniedObjectAceW was not found in ../templates/sigs.rst-full
-   AddAceA was not found in ../templates/sigs.rst-full
-   AddAceW was not found in ../templates/sigs.rst-full
-   AddAuditAccessAceA was not found in ../templates/sigs.rst-full
-   AddAuditAccessAceW was not found in ../templates/sigs.rst-full
-   AddAuditAccessAceExA was not found in ../templates/sigs.rst-full
-   AddAuditAccessAceExW was not found in ../templates/sigs.rst-full
-   AddAuditAccessObjectAceA was not found in ../templates/sigs.rst-full
-   AddAuditAccessObjectAceW was not found in ../templates/sigs.rst-full
-   AddConditionalAceA was not found in ../templates/sigs.rst-full
-   AddConditionalAceW was not found in ../templates/sigs.rst-full
-   AddMandatoryAceA was not found in ../templates/sigs.rst-full
-   AddMandatoryAceW was not found in ../templates/sigs.rst-full
-   AddResourceAttributeAce was not found in ../templates/sigs.rst-full
-   AddResourceAttributeAceA was not found in ../templates/sigs.rst-full
-   AddResourceAttributeAceW was not found in ../templates/sigs.rst-full
-   AddScopedPolicyIDAce was not found in ../templates/sigs.rst-full
-   AddScopedPolicyIDAceA was not found in ../templates/sigs.rst-full
-   AddScopedPolicyIDAceW was not found in ../templates/sigs.rst-full
-   AdjustTokenGroupsA was not found in ../templates/sigs.rst-full
-   AdjustTokenGroupsW was not found in ../templates/sigs.rst-full
-   AdjustTokenPrivilegesA was not found in ../templates/sigs.rst-full
-   AdjustTokenPrivilegesW was not found in ../templates/sigs.rst-full
-   AllocateAndInitializeSidA was not found in ../templates/sigs.rst-full
-   AllocateAndInitializeSidW was not found in ../templates/sigs.rst-full
-   AllocateLocallyUniqueIdA was not found in ../templates/sigs.rst-full
-   AllocateLocallyUniqueIdW was not found in ../templates/sigs.rst-full
-   AreAllAccessesGrantedA was not found in ../templates/sigs.rst-full
-   AreAllAccessesGrantedW was not found in ../templates/sigs.rst-full
-   AreAnyAccessesGrantedA was not found in ../templates/sigs.rst-full
-   AreAnyAccessesGrantedW was not found in ../templates/sigs.rst-full
-   AuditComputeEffectivePolicyBySid was not found in ../templates/sigs.rst-full
-   AuditComputeEffectivePolicyBySidA was not found in ../templates/sigs.rst-full
-   AuditComputeEffectivePolicyBySidW was not found in ../templates/sigs.rst-full
-   AuditComputeEffectivePolicyByToken was not found in ../templates/sigs.rst-full
-   AuditComputeEffectivePolicyByTokenA was not found in ../templates/sigs.rst-full
-   AuditComputeEffectivePolicyByTokenW was not found in ../templates/sigs.rst-full
-   AuditEnumerateCategories was not found in ../templates/sigs.rst-full
-   AuditEnumerateCategoriesA was not found in ../templates/sigs.rst-full
-   AuditEnumerateCategoriesW was not found in ../templates/sigs.rst-full
-   AuditEnumeratePerUserPolicy was not found in ../templates/sigs.rst-full
-   AuditEnumeratePerUserPolicyA was not found in ../templates/sigs.rst-full
-   AuditEnumeratePerUserPolicyW was not found in ../templates/sigs.rst-full
-   AuditEnumerateSubCategories was not found in ../templates/sigs.rst-full
-   AuditEnumerateSubCategoriesA was not found in ../templates/sigs.rst-full
-   AuditEnumerateSubCategoriesW was not found in ../templates/sigs.rst-full
-   AuditFree was not found in ../templates/sigs.rst-full
-   AuditFreeA was not found in ../templates/sigs.rst-full
-   AuditFreeW was not found in ../templates/sigs.rst-full
-   AuditLookupCategoryGuidFromCategoryId was not found in ../templates/sigs.rst-full
-   AuditLookupCategoryGuidFromCategoryIdA was not found in ../templates/sigs.rst-full
-   AuditLookupCategoryGuidFromCategoryIdW was not found in ../templates/sigs.rst-full
-   AuditLookupCategoryIdFromCategoryGuid was not found in ../templates/sigs.rst-full
-   AuditLookupCategoryIdFromCategoryGuidA was not found in ../templates/sigs.rst-full
-   AuditLookupCategoryIdFromCategoryGuidW was not found in ../templates/sigs.rst-full
-   AuditLookupCategoryName was not found in ../templates/sigs.rst-full
-   AuditLookupCategoryNameA was not found in ../templates/sigs.rst-full
-   AuditLookupCategoryNameW was not found in ../templates/sigs.rst-full
-   AuditLookupSubCategoryName was not found in ../templates/sigs.rst-full
-   AuditLookupSubCategoryNameA was not found in ../templates/sigs.rst-full
-   AuditLookupSubCategoryNameW was not found in ../templates/sigs.rst-full
-   AuditQueryGlobalSacl was not found in ../templates/sigs.rst-full
-   AuditQueryGlobalSaclA was not found in ../templates/sigs.rst-full
-   AuditQueryGlobalSaclW was not found in ../templates/sigs.rst-full
-   AuditQueryPerUserPolicy was not found in ../templates/sigs.rst-full
-   AuditQueryPerUserPolicyA was not found in ../templates/sigs.rst-full
-   AuditQueryPerUserPolicyW was not found in ../templates/sigs.rst-full
-   AuditQuerySecurity was not found in ../templates/sigs.rst-full
-   AuditQuerySecurityA was not found in ../templates/sigs.rst-full
-   AuditQuerySecurityW was not found in ../templates/sigs.rst-full
-   AuditQuerySystemPolicy was not found in ../templates/sigs.rst-full
-   AuditQuerySystemPolicyA was not found in ../templates/sigs.rst-full
-   AuditQuerySystemPolicyW was not found in ../templates/sigs.rst-full
-   AuditSetGlobalSacl was not found in ../templates/sigs.rst-full
-   AuditSetGlobalSaclA was not found in ../templates/sigs.rst-full
-   AuditSetGlobalSaclW was not found in ../templates/sigs.rst-full
-   AuditSetPerUserPolicy was not found in ../templates/sigs.rst-full
-   AuditSetPerUserPolicyA was not found in ../templates/sigs.rst-full
-   AuditSetPerUserPolicyW was not found in ../templates/sigs.rst-full
-   AuditSetSecurity was not found in ../templates/sigs.rst-full
-   AuditSetSecurityA was not found in ../templates/sigs.rst-full
-   AuditSetSecurityW was not found in ../templates/sigs.rst-full
-   AuditSetSystemPolicy was not found in ../templates/sigs.rst-full
-   AuditSetSystemPolicyA was not found in ../templates/sigs.rst-full
-   AuditSetSystemPolicyW was not found in ../templates/sigs.rst-full
-   AuthzAccessCheckA was not found in ../templates/sigs.rst-full
-   AuthzAccessCheckW was not found in ../templates/sigs.rst-full
-   AuthzAccessCheckCallback was not found in ../templates/sigs.rst-full
-   AuthzAccessCheckCallbackA was not found in ../templates/sigs.rst-full
-   AuthzAccessCheckCallbackW was not found in ../templates/sigs.rst-full
-   AuthzAddSidsToContextA was not found in ../templates/sigs.rst-full
-   AuthzAddSidsToContextW was not found in ../templates/sigs.rst-full
-   AuthzCachedAccessCheckA was not found in ../templates/sigs.rst-full
-   AuthzCachedAccessCheckW was not found in ../templates/sigs.rst-full
-   AuthzComputeGroupsCallback was not found in ../templates/sigs.rst-full
-   AuthzComputeGroupsCallbackA was not found in ../templates/sigs.rst-full
-   AuthzComputeGroupsCallbackW was not found in ../templates/sigs.rst-full
-   AuthzEnumerateSecurityEventSourcesA was not found in ../templates/sigs.rst-full
-   AuthzEnumerateSecurityEventSourcesW was not found in ../templates/sigs.rst-full
-   AuthzFreeAuditEventA was not found in ../templates/sigs.rst-full
-   AuthzFreeAuditEventW was not found in ../templates/sigs.rst-full
-   AuthzFreeCentralAccessPolicyCache was not found in ../templates/sigs.rst-full
-   AuthzFreeCentralAccessPolicyCacheA was not found in ../templates/sigs.rst-full
-   AuthzFreeCentralAccessPolicyCacheW was not found in ../templates/sigs.rst-full
-   AuthzFreeCentralAccessPolicyCallback was not found in ../templates/sigs.rst-full
-   AuthzFreeCentralAccessPolicyCallbackA was not found in ../templates/sigs.rst-full
-   AuthzFreeCentralAccessPolicyCallbackW was not found in ../templates/sigs.rst-full
-   AuthzFreeContextA was not found in ../templates/sigs.rst-full
-   AuthzFreeContextW was not found in ../templates/sigs.rst-full
-   AuthzFreeGroupsCallback was not found in ../templates/sigs.rst-full
-   AuthzFreeGroupsCallbackA was not found in ../templates/sigs.rst-full
-   AuthzFreeGroupsCallbackW was not found in ../templates/sigs.rst-full
-   AuthzFreeHandleA was not found in ../templates/sigs.rst-full
-   AuthzFreeHandleW was not found in ../templates/sigs.rst-full
-   AuthzFreeResourceManagerA was not found in ../templates/sigs.rst-full
-   AuthzFreeResourceManagerW was not found in ../templates/sigs.rst-full
-   AuthzGetCentralAccessPolicyCallback was not found in ../templates/sigs.rst-full
-   AuthzGetCentralAccessPolicyCallbackA was not found in ../templates/sigs.rst-full
-   AuthzGetCentralAccessPolicyCallbackW was not found in ../templates/sigs.rst-full
-   AuthzGetInformationFromContextA was not found in ../templates/sigs.rst-full
-   AuthzGetInformationFromContextW was not found in ../templates/sigs.rst-full
-   AuthzInitializeCompoundContext was not found in ../templates/sigs.rst-full
-   AuthzInitializeCompoundContextA was not found in ../templates/sigs.rst-full
-   AuthzInitializeCompoundContextW was not found in ../templates/sigs.rst-full
-   AuthzInitializeContextFromAuthzContextA was not found in ../templates/sigs.rst-full
-   AuthzInitializeContextFromAuthzContextW was not found in ../templates/sigs.rst-full
-   AuthzInitializeContextFromSidA was not found in ../templates/sigs.rst-full
-   AuthzInitializeContextFromSidW was not found in ../templates/sigs.rst-full
-   AuthzInitializeContextFromTokenA was not found in ../templates/sigs.rst-full
-   AuthzInitializeContextFromTokenW was not found in ../templates/sigs.rst-full
-   AuthzInitializeObjectAccessAuditEvent was not found in ../templates/sigs.rst-full
-   AuthzInitializeObjectAccessAuditEventA was not found in ../templates/sigs.rst-full
-   AuthzInitializeObjectAccessAuditEventW was not found in ../templates/sigs.rst-full
-   AuthzInitializeObjectAccessAuditEvent2 was not found in ../templates/sigs.rst-full
-   AuthzInitializeObjectAccessAuditEvent2A was not found in ../templates/sigs.rst-full
-   AuthzInitializeObjectAccessAuditEvent2W was not found in ../templates/sigs.rst-full
-   AuthzInstallSecurityEventSourceA was not found in ../templates/sigs.rst-full
-   AuthzInstallSecurityEventSourceW was not found in ../templates/sigs.rst-full
-   AuthzModifyClaims was not found in ../templates/sigs.rst-full
-   AuthzModifyClaimsA was not found in ../templates/sigs.rst-full
-   AuthzModifyClaimsW was not found in ../templates/sigs.rst-full
-   AuthzModifySecurityAttributes was not found in ../templates/sigs.rst-full
-   AuthzModifySecurityAttributesA was not found in ../templates/sigs.rst-full
-   AuthzModifySecurityAttributesW was not found in ../templates/sigs.rst-full
-   AuthzModifySids was not found in ../templates/sigs.rst-full
-   AuthzModifySidsA was not found in ../templates/sigs.rst-full
-   AuthzModifySidsW was not found in ../templates/sigs.rst-full
-   AuthzOpenObjectAuditA was not found in ../templates/sigs.rst-full
-   AuthzOpenObjectAuditW was not found in ../templates/sigs.rst-full
-   AuthzRegisterSecurityEventSourceA was not found in ../templates/sigs.rst-full
-   AuthzRegisterSecurityEventSourceW was not found in ../templates/sigs.rst-full
-   AuthzReportSecurityEvent was not found in ../templates/sigs.rst-full
-   AuthzReportSecurityEventA was not found in ../templates/sigs.rst-full
-   AuthzReportSecurityEventW was not found in ../templates/sigs.rst-full
-   AuthzReportSecurityEventFromParamsA was not found in ../templates/sigs.rst-full
-   AuthzReportSecurityEventFromParamsW was not found in ../templates/sigs.rst-full
-   AuthzSetAppContainerInformation was not found in ../templates/sigs.rst-full
-   AuthzSetAppContainerInformationA was not found in ../templates/sigs.rst-full
-   AuthzSetAppContainerInformationW was not found in ../templates/sigs.rst-full
-   AuthzUninstallSecurityEventSourceA was not found in ../templates/sigs.rst-full
-   AuthzUninstallSecurityEventSourceW was not found in ../templates/sigs.rst-full
-   AuthzUnregisterSecurityEventSourceA was not found in ../templates/sigs.rst-full
-   AuthzUnregisterSecurityEventSourceW was not found in ../templates/sigs.rst-full
-   BuildExplicitAccessWithName was not found in ../templates/sigs.rst-full
-   BuildImpersonateExplicitAccessWithName was not found in ../templates/sigs.rst-full
-   BuildImpersonateTrustee was not found in ../templates/sigs.rst-full
-   BuildSecurityDescriptor was not found in ../templates/sigs.rst-full
-   BuildTrusteeWithName was not found in ../templates/sigs.rst-full
-   BuildTrusteeWithObjectsAndName was not found in ../templates/sigs.rst-full
-   BuildTrusteeWithObjectsAndSid was not found in ../templates/sigs.rst-full
-   BuildTrusteeWithSid was not found in ../templates/sigs.rst-full
-   CheckTokenCapability was not found in ../templates/sigs.rst-full
-   CheckTokenCapabilityA was not found in ../templates/sigs.rst-full
-   CheckTokenCapabilityW was not found in ../templates/sigs.rst-full
-   CheckTokenMembershipA was not found in ../templates/sigs.rst-full
-   CheckTokenMembershipW was not found in ../templates/sigs.rst-full
-   CheckTokenMembershipEx was not found in ../templates/sigs.rst-full
-   CheckTokenMembershipExA was not found in ../templates/sigs.rst-full
-   CheckTokenMembershipExW was not found in ../templates/sigs.rst-full
-   ConvertSecurityDescriptorToStringSecurityDescriptor was not found in ../templates/sigs.rst-full
-   ConvertSecurityDescriptorToStringSecurityDescriptorA was not found in ../templates/sigs.rst-full
-   ConvertSecurityDescriptorToStringSecurityDescriptorW was not found in ../templates/sigs.rst-full
-   ConvertSidToStringSid was not found in ../templates/sigs.rst-full
-   ConvertSidToStringSidA was not found in ../templates/sigs.rst-full
-   ConvertSidToStringSidW was not found in ../templates/sigs.rst-full
-   ConvertStringSecurityDescriptorToSecurityDescriptor was not found in ../templates/sigs.rst-full
-   ConvertStringSecurityDescriptorToSecurityDescriptorA was not found in ../templates/sigs.rst-full
-   ConvertStringSecurityDescriptorToSecurityDescriptorW was not found in ../templates/sigs.rst-full
-   ConvertStringSidToSid was not found in ../templates/sigs.rst-full
-   ConvertStringSidToSidA was not found in ../templates/sigs.rst-full
-   ConvertStringSidToSidW was not found in ../templates/sigs.rst-full
-   ConvertToAutoInheritPrivateObjectSecurityA was not found in ../templates/sigs.rst-full
-   ConvertToAutoInheritPrivateObjectSecurityW was not found in ../templates/sigs.rst-full
-   CopySidA was not found in ../templates/sigs.rst-full
-   CopySidW was not found in ../templates/sigs.rst-full
-   CreatePrivateObjectSecurityA was not found in ../templates/sigs.rst-full
-   CreatePrivateObjectSecurityW was not found in ../templates/sigs.rst-full
-   CreatePrivateObjectSecurityExA was not found in ../templates/sigs.rst-full
-   CreatePrivateObjectSecurityExW was not found in ../templates/sigs.rst-full
-   CreatePrivateObjectSecurityWithMultipleInheritanceA was not found in ../templates/sigs.rst-full
-   CreatePrivateObjectSecurityWithMultipleInheritanceW was not found in ../templates/sigs.rst-full
-   CreateRestrictedTokenA was not found in ../templates/sigs.rst-full
-   CreateRestrictedTokenW was not found in ../templates/sigs.rst-full
-   CreateSecurityPage was not found in ../templates/sigs.rst-full
-   CreateSecurityPageA was not found in ../templates/sigs.rst-full
-   CreateSecurityPageW was not found in ../templates/sigs.rst-full
-   CreateWellKnownSidA was not found in ../templates/sigs.rst-full
-   CreateWellKnownSidW was not found in ../templates/sigs.rst-full
-   DSCreateISecurityInfoObject was not found in ../templates/sigs.rst-full
-   DSCreateISecurityInfoObjectA was not found in ../templates/sigs.rst-full
-   DSCreateISecurityInfoObjectW was not found in ../templates/sigs.rst-full
-   DSCreateISecurityInfoObjectEx was not found in ../templates/sigs.rst-full
-   DSCreateISecurityInfoObjectExA was not found in ../templates/sigs.rst-full
-   DSCreateISecurityInfoObjectExW was not found in ../templates/sigs.rst-full
-   DSCreateSecurityPage was not found in ../templates/sigs.rst-full
-   DSCreateSecurityPageA was not found in ../templates/sigs.rst-full
-   DSCreateSecurityPageW was not found in ../templates/sigs.rst-full
-   DSEditSecurity was not found in ../templates/sigs.rst-full
-   DSEditSecurityA was not found in ../templates/sigs.rst-full
-   DSEditSecurityW was not found in ../templates/sigs.rst-full
-   DeleteAceA was not found in ../templates/sigs.rst-full
-   DeleteAceW was not found in ../templates/sigs.rst-full
-   DestroyPrivateObjectSecurityA was not found in ../templates/sigs.rst-full
-   DestroyPrivateObjectSecurityW was not found in ../templates/sigs.rst-full
-   DuplicateTokenA was not found in ../templates/sigs.rst-full
-   DuplicateTokenW was not found in ../templates/sigs.rst-full
-   DuplicateTokenExA was not found in ../templates/sigs.rst-full
-   DuplicateTokenExW was not found in ../templates/sigs.rst-full
-   EditSecurity was not found in ../templates/sigs.rst-full
-   EditSecurityA was not found in ../templates/sigs.rst-full
-   EditSecurityW was not found in ../templates/sigs.rst-full
-   EditSecurityAdvanced was not found in ../templates/sigs.rst-full
-   EditSecurityAdvancedA was not found in ../templates/sigs.rst-full
-   EditSecurityAdvancedW was not found in ../templates/sigs.rst-full
-   EqualDomainSidA was not found in ../templates/sigs.rst-full
-   EqualDomainSidW was not found in ../templates/sigs.rst-full
-   EqualPrefixSidA was not found in ../templates/sigs.rst-full
-   EqualPrefixSidW was not found in ../templates/sigs.rst-full
-   EqualSidA was not found in ../templates/sigs.rst-full
-   EqualSidW was not found in ../templates/sigs.rst-full
-   FindFirstFreeAceA was not found in ../templates/sigs.rst-full
-   FindFirstFreeAceW was not found in ../templates/sigs.rst-full
-   FreeInheritedFromArrayA was not found in ../templates/sigs.rst-full
-   FreeInheritedFromArrayW was not found in ../templates/sigs.rst-full
-   FreeSidA was not found in ../templates/sigs.rst-full
-   FreeSidW was not found in ../templates/sigs.rst-full
-   GetAceA was not found in ../templates/sigs.rst-full
-   GetAceW was not found in ../templates/sigs.rst-full
-   GetAclInformationA was not found in ../templates/sigs.rst-full
-   GetAclInformationW was not found in ../templates/sigs.rst-full
-   GetAppContainerNamedObjectPath was not found in ../templates/sigs.rst-full
-   GetAppContainerNamedObjectPathA was not found in ../templates/sigs.rst-full
-   GetAppContainerNamedObjectPathW was not found in ../templates/sigs.rst-full
-   GetAuditedPermissionsFromAcl was not found in ../templates/sigs.rst-full
-   GetCurrentProcessToken was not found in ../templates/sigs.rst-full
-   GetCurrentProcessTokenA was not found in ../templates/sigs.rst-full
-   GetCurrentProcessTokenW was not found in ../templates/sigs.rst-full
-   GetCurrentThreadEffectiveToken was not found in ../templates/sigs.rst-full
-   GetCurrentThreadEffectiveTokenA was not found in ../templates/sigs.rst-full
-   GetCurrentThreadEffectiveTokenW was not found in ../templates/sigs.rst-full
-   GetCurrentThreadToken was not found in ../templates/sigs.rst-full
-   GetCurrentThreadTokenA was not found in ../templates/sigs.rst-full
-   GetCurrentThreadTokenW was not found in ../templates/sigs.rst-full
-   GetEffectiveRightsFromAcl was not found in ../templates/sigs.rst-full
-   GetExplicitEntriesFromAcl was not found in ../templates/sigs.rst-full
-   GetFileSecurity was not found in ../templates/sigs.rst-full
-   GetInheritanceSource was not found in ../templates/sigs.rst-full
-   GetKernelObjectSecurityA was not found in ../templates/sigs.rst-full
-   GetKernelObjectSecurityW was not found in ../templates/sigs.rst-full
-   GetLengthSidA was not found in ../templates/sigs.rst-full
-   GetLengthSidW was not found in ../templates/sigs.rst-full
-   GetMultipleTrustee was not found in ../templates/sigs.rst-full
-   GetMultipleTrusteeOperation was not found in ../templates/sigs.rst-full
-   GetNamedSecurityInfo was not found in ../templates/sigs.rst-full
-   GetPrivateObjectSecurityA was not found in ../templates/sigs.rst-full
-   GetPrivateObjectSecurityW was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorControlA was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorControlW was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorDaclA was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorDaclW was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorGroupA was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorGroupW was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorLengthA was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorLengthW was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorOwnerA was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorOwnerW was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorRMControlA was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorRMControlW was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorSaclA was not found in ../templates/sigs.rst-full
-   GetSecurityDescriptorSaclW was not found in ../templates/sigs.rst-full
-   GetSecurityInfoA was not found in ../templates/sigs.rst-full
-   GetSecurityInfoW was not found in ../templates/sigs.rst-full
-   GetSidIdentifierAuthorityA was not found in ../templates/sigs.rst-full
-   GetSidIdentifierAuthorityW was not found in ../templates/sigs.rst-full
-   GetSidLengthRequiredA was not found in ../templates/sigs.rst-full
-   GetSidLengthRequiredW was not found in ../templates/sigs.rst-full
-   GetSidSubAuthorityA was not found in ../templates/sigs.rst-full
-   GetSidSubAuthorityW was not found in ../templates/sigs.rst-full
-   GetSidSubAuthorityCountA was not found in ../templates/sigs.rst-full
-   GetSidSubAuthorityCountW was not found in ../templates/sigs.rst-full
-   GetTokenInformationA was not found in ../templates/sigs.rst-full
-   GetTokenInformationW was not found in ../templates/sigs.rst-full
-   GetTrusteeForm was not found in ../templates/sigs.rst-full
-   GetTrusteeName was not found in ../templates/sigs.rst-full
-   GetTrusteeType was not found in ../templates/sigs.rst-full
-   GetUserObjectSecurityA was not found in ../templates/sigs.rst-full
-   GetUserObjectSecurityW was not found in ../templates/sigs.rst-full
-   GetWindowsAccountDomainSidA was not found in ../templates/sigs.rst-full
-   GetWindowsAccountDomainSidW was not found in ../templates/sigs.rst-full
-   ImpersonateAnonymousTokenA was not found in ../templates/sigs.rst-full
-   ImpersonateAnonymousTokenW was not found in ../templates/sigs.rst-full
-   ImpersonateLoggedOnUserA was not found in ../templates/sigs.rst-full
-   ImpersonateLoggedOnUserW was not found in ../templates/sigs.rst-full
-   ImpersonateNamedPipeClientA was not found in ../templates/sigs.rst-full
-   ImpersonateNamedPipeClientW was not found in ../templates/sigs.rst-full
-   ImpersonateSelfA was not found in ../templates/sigs.rst-full
-   ImpersonateSelfW was not found in ../templates/sigs.rst-full
-   InitializeAclA was not found in ../templates/sigs.rst-full
-   InitializeAclW was not found in ../templates/sigs.rst-full
-   InitializeSecurityDescriptorA was not found in ../templates/sigs.rst-full
-   InitializeSecurityDescriptorW was not found in ../templates/sigs.rst-full
-   InitializeSidA was not found in ../templates/sigs.rst-full
-   InitializeSidW was not found in ../templates/sigs.rst-full
-   IsTokenRestrictedA was not found in ../templates/sigs.rst-full
-   IsTokenRestrictedW was not found in ../templates/sigs.rst-full
-   IsValidAclA was not found in ../templates/sigs.rst-full
-   IsValidAclW was not found in ../templates/sigs.rst-full
-   IsValidSecurityDescriptorA was not found in ../templates/sigs.rst-full
-   IsValidSecurityDescriptorW was not found in ../templates/sigs.rst-full
-   IsValidSidA was not found in ../templates/sigs.rst-full
-   IsValidSidW was not found in ../templates/sigs.rst-full
-   IsWellKnownSidA was not found in ../templates/sigs.rst-full
-   IsWellKnownSidW was not found in ../templates/sigs.rst-full
-   LookupAccountName was not found in ../templates/sigs.rst-full
-   LookupAccountSid was not found in ../templates/sigs.rst-full
-   LookupAccountSidLocal was not found in ../templates/sigs.rst-full
-   LookupPrivilegeDisplayName was not found in ../templates/sigs.rst-full
-   LookupPrivilegeName was not found in ../templates/sigs.rst-full
-   LookupPrivilegeValue was not found in ../templates/sigs.rst-full
-   LookupSecurityDescriptorParts was not found in ../templates/sigs.rst-full
-   MakeAbsoluteSDA was not found in ../templates/sigs.rst-full
-   MakeAbsoluteSDW was not found in ../templates/sigs.rst-full
-   MakeSelfRelativeSDA was not found in ../templates/sigs.rst-full
-   MakeSelfRelativeSDW was not found in ../templates/sigs.rst-full
-   MapGenericMaskA was not found in ../templates/sigs.rst-full
-   MapGenericMaskW was not found in ../templates/sigs.rst-full
-   NtCompareTokens was not found in ../templates/sigs.rst-full
-   NtCompareTokensA was not found in ../templates/sigs.rst-full
-   NtCompareTokensW was not found in ../templates/sigs.rst-full
-   ObjectCloseAuditAlarm was not found in ../templates/sigs.rst-full
-   ObjectDeleteAuditAlarm was not found in ../templates/sigs.rst-full
-   ObjectOpenAuditAlarm was not found in ../templates/sigs.rst-full
-   ObjectPrivilegeAuditAlarm was not found in ../templates/sigs.rst-full
-   OpenProcessTokenA was not found in ../templates/sigs.rst-full
-   OpenProcessTokenW was not found in ../templates/sigs.rst-full
-   OpenThreadTokenA was not found in ../templates/sigs.rst-full
-   OpenThreadTokenW was not found in ../templates/sigs.rst-full
-   PrivilegeCheckA was not found in ../templates/sigs.rst-full
-   PrivilegeCheckW was not found in ../templates/sigs.rst-full
-   PrivilegedServiceAuditAlarm was not found in ../templates/sigs.rst-full
-   QuerySecurityAccessMaskA was not found in ../templates/sigs.rst-full
-   QuerySecurityAccessMaskW was not found in ../templates/sigs.rst-full
-   QueryServiceObjectSecurityA was not found in ../templates/sigs.rst-full
-   QueryServiceObjectSecurityW was not found in ../templates/sigs.rst-full
-   RegGetKeySecurityA was not found in ../templates/sigs.rst-full
-   RegGetKeySecurityW was not found in ../templates/sigs.rst-full
-   RegSetKeySecurityA was not found in ../templates/sigs.rst-full
-   RegSetKeySecurityW was not found in ../templates/sigs.rst-full
-   RevertToSelfA was not found in ../templates/sigs.rst-full
-   RevertToSelfW was not found in ../templates/sigs.rst-full
-   RtlConvertSidToUnicodeString was not found in ../templates/sigs.rst-full
-   RtlConvertSidToUnicodeStringA was not found in ../templates/sigs.rst-full
-   RtlConvertSidToUnicodeStringW was not found in ../templates/sigs.rst-full
-   SetAclInformationA was not found in ../templates/sigs.rst-full
-   SetAclInformationW was not found in ../templates/sigs.rst-full
-   SetEntriesInAcl was not found in ../templates/sigs.rst-full
-   SetFileSecurity was not found in ../templates/sigs.rst-full
-   SetKernelObjectSecurityA was not found in ../templates/sigs.rst-full
-   SetKernelObjectSecurityW was not found in ../templates/sigs.rst-full
-   SetNamedSecurityInfo was not found in ../templates/sigs.rst-full
-   SetPrivateObjectSecurityA was not found in ../templates/sigs.rst-full
-   SetPrivateObjectSecurityW was not found in ../templates/sigs.rst-full
-   SetPrivateObjectSecurityExA was not found in ../templates/sigs.rst-full
-   SetPrivateObjectSecurityExW was not found in ../templates/sigs.rst-full
-   SetSecurityAccessMaskA was not found in ../templates/sigs.rst-full
-   SetSecurityAccessMaskW was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorControlA was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorControlW was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorDaclA was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorDaclW was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorGroupA was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorGroupW was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorOwnerA was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorOwnerW was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorRMControlA was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorRMControlW was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorSaclA was not found in ../templates/sigs.rst-full
-   SetSecurityDescriptorSaclW was not found in ../templates/sigs.rst-full
-   SetSecurityInfoA was not found in ../templates/sigs.rst-full
-   SetSecurityInfoW was not found in ../templates/sigs.rst-full
-   SetServiceObjectSecurityA was not found in ../templates/sigs.rst-full
-   SetServiceObjectSecurityW was not found in ../templates/sigs.rst-full
-   SetThreadTokenA was not found in ../templates/sigs.rst-full
-   SetThreadTokenW was not found in ../templates/sigs.rst-full
-   SetTokenInformationA was not found in ../templates/sigs.rst-full
-   SetTokenInformationW was not found in ../templates/sigs.rst-full
-   SetUserObjectSecurityA was not found in ../templates/sigs.rst-full
-   SetUserObjectSecurityW was not found in ../templates/sigs.rst-full
-   TreeResetNamedSecurityInfo was not found in ../templates/sigs.rst-full
-   TreeSetNamedSecurityInfo was not found in ../templates/sigs.rst-full
 Scanning process.txt
    AllocateUserPhysicalPagesNumaA was not found in ../templates/sigs.rst-full
    AllocateUserPhysicalPagesNumaW was not found in ../templates/sigs.rst-full
@@ -5284,9 +3622,7 @@ Scanning process.txt
    CreateFiberW was not found in ../templates/sigs.rst-full
    CreateFiberExA was not found in ../templates/sigs.rst-full
    CreateFiberExW was not found in ../templates/sigs.rst-full
-   CreateJobObject was not found in ../templates/sigs.rst-full
    CreateProcess was not found in ../templates/sigs.rst-full
-   CreateProcessAsUser was not found in ../templates/sigs.rst-full
    CreateProcessWithLogonWA was not found in ../templates/sigs.rst-full
    CreateProcessWithLogonWW was not found in ../templates/sigs.rst-full
    CreateProcessWithTokenWA was not found in ../templates/sigs.rst-full
@@ -5447,7 +3783,6 @@ Scanning process.txt
    GetProcessIoCountersW was not found in ../templates/sigs.rst-full
    GetProcessMemoryInfoA was not found in ../templates/sigs.rst-full
    GetProcessMemoryInfoW was not found in ../templates/sigs.rst-full
-   GetProcessMitigationPolicy was not found in ../templates/sigs.rst-full
    GetProcessMitigationPolicyA was not found in ../templates/sigs.rst-full
    GetProcessMitigationPolicyW was not found in ../templates/sigs.rst-full
    GetProcessPriorityBoostA was not found in ../templates/sigs.rst-full
@@ -5476,7 +3811,6 @@ Scanning process.txt
    GetThreadIdW was not found in ../templates/sigs.rst-full
    GetThreadIdealProcessorExA was not found in ../templates/sigs.rst-full
    GetThreadIdealProcessorExW was not found in ../templates/sigs.rst-full
-   GetThreadInformation was not found in ../templates/sigs.rst-full
    GetThreadInformationA was not found in ../templates/sigs.rst-full
    GetThreadInformationW was not found in ../templates/sigs.rst-full
    GetThreadPriorityA was not found in ../templates/sigs.rst-full
@@ -5502,7 +3836,6 @@ Scanning process.txt
    InitializeThreadpoolEnvironment was not found in ../templates/sigs.rst-full
    InitializeThreadpoolEnvironmentA was not found in ../templates/sigs.rst-full
    InitializeThreadpoolEnvironmentW was not found in ../templates/sigs.rst-full
-   IsImmersiveProcess was not found in ../templates/sigs.rst-full
    IsImmersiveProcessA was not found in ../templates/sigs.rst-full
    IsImmersiveProcessW was not found in ../templates/sigs.rst-full
    IsProcessInJobA was not found in ../templates/sigs.rst-full
@@ -5571,15 +3904,12 @@ Scanning process.txt
    SetProcessAffinityMaskW was not found in ../templates/sigs.rst-full
    SetProcessAffinityUpdateModeA was not found in ../templates/sigs.rst-full
    SetProcessAffinityUpdateModeW was not found in ../templates/sigs.rst-full
-   SetProcessInformation was not found in ../templates/sigs.rst-full
    SetProcessInformationA was not found in ../templates/sigs.rst-full
    SetProcessInformationW was not found in ../templates/sigs.rst-full
-   SetProcessMitigationPolicy was not found in ../templates/sigs.rst-full
    SetProcessMitigationPolicyA was not found in ../templates/sigs.rst-full
    SetProcessMitigationPolicyW was not found in ../templates/sigs.rst-full
    SetProcessPriorityBoostA was not found in ../templates/sigs.rst-full
    SetProcessPriorityBoostW was not found in ../templates/sigs.rst-full
-   SetProcessRestrictionExemption was not found in ../templates/sigs.rst-full
    SetProcessRestrictionExemptionA was not found in ../templates/sigs.rst-full
    SetProcessRestrictionExemptionW was not found in ../templates/sigs.rst-full
    SetProcessShutdownParametersA was not found in ../templates/sigs.rst-full
@@ -5602,7 +3932,6 @@ Scanning process.txt
    SetThreadIdealProcessorW was not found in ../templates/sigs.rst-full
    SetThreadIdealProcessorExA was not found in ../templates/sigs.rst-full
    SetThreadIdealProcessorExW was not found in ../templates/sigs.rst-full
-   SetThreadInformation was not found in ../templates/sigs.rst-full
    SetThreadInformationA was not found in ../templates/sigs.rst-full
    SetThreadInformationW was not found in ../templates/sigs.rst-full
    SetThreadPriorityA was not found in ../templates/sigs.rst-full
@@ -5637,12 +3966,10 @@ Scanning process.txt
    SetThreadpoolThreadMinimumW was not found in ../templates/sigs.rst-full
    SetThreadpoolTimerA was not found in ../templates/sigs.rst-full
    SetThreadpoolTimerW was not found in ../templates/sigs.rst-full
-   SetThreadpoolTimerEx was not found in ../templates/sigs.rst-full
    SetThreadpoolTimerExA was not found in ../templates/sigs.rst-full
    SetThreadpoolTimerExW was not found in ../templates/sigs.rst-full
    SetThreadpoolWaitA was not found in ../templates/sigs.rst-full
    SetThreadpoolWaitW was not found in ../templates/sigs.rst-full
-   SetThreadpoolWaitEx was not found in ../templates/sigs.rst-full
    SetThreadpoolWaitExA was not found in ../templates/sigs.rst-full
    SetThreadpoolWaitExW was not found in ../templates/sigs.rst-full
    SetUmsThreadInformation was not found in ../templates/sigs.rst-full

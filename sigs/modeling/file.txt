@@ -6,7 +6,6 @@ CancelSynchronousIo
 CheckNameLegalDOS8Dot3
 CloseEncryptedFileRaw
 CopyFile
-CopyFile2
 CopyFile2ProgressRoutine
 CopyFileEx
 CopyFileTransacted
@@ -31,7 +30,6 @@ ExportCallback
 FileEncryptionStatus
 FileIOCompletionRoutine
 FindClose
-FindCloseChangeNotification
 FindFirstChangeNotification
 FindFirstFile
 FindFirstFileEx
@@ -61,7 +59,6 @@ GetFileSize
 GetFileSizeEx
 GetFileType
 GetFinalPathNameByHandle
-GetFullPathName
 GetFullPathNameTransacted
 GetLongPathName
 GetLongPathNameTransacted
@@ -98,8 +95,6 @@ ReadFileScatter
 RemoveDirectory
 RemoveDirectoryTransacted
 RemoveUsersFromEncryptedFile
-ReplaceFile
-SearchPath
 SetCurrentDirectory
 SetEndOfFile
 SetFileApisToANSI

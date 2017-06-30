@@ -16,7 +16,7 @@ NOTE: This will compile this binary for Windows 7. To change,
 change the Makefile's "\_WIN32\_WINNT" value to something
 else: https://msdn.microsoft.com/en-us/library/6sehtctf.aspx
 
-## To use old signatures (from original monitor)
+## To use old signatures (from original monitor) in common with the full signatures (the ones we can scan and hook)
 Inside Linux shell:
 ```
 $ cd ./sigs/
@@ -137,9 +137,19 @@ because of missing SOCKADDR_INET definition.
     a few variables because it wasn't ordered properly.
 
 /usr/share/mingw-w64/include/windns.h
-  - Added datatypes and functions (see comment "// evan:")
   - E.g., I added DNS_PROXY_INFORMATION_TYPE data type (and others) because "DnsGetProxyInformation()"
     required it.
+  - Added DNS_ADDR_MAX_SOCKADDR_LENGTH
+  - Added DNS_ADDR
+  - Added DNS_ADDR_ARRAY
+  - Added DNS_PROXY_COMPLETION_ROUTINE
+  - Added DNS_QUERY_RESULT
+  - Added DNS_QUERY_COMPLETION_ROUTINE
+  - Added PDNS_QUERY_COMPLETION_ROUTINE
+  - Added DNS_QUERY_REQUEST
+  - Added DNS_QUERY_CANCEL
+  - Added DNS_PROXY_INFORMATION_TYPE
+  - Added DNS_PROXY_INFORMATION
 
 /usr/share/mingw-w64/include/wininet.h
   - Commented out "#define HTTP_VERSION \_\_MINGW_NAME_AW(HTTP_VERSION)" because of

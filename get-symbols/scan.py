@@ -14,16 +14,16 @@ def get_rst_files(path):
                 yield os.path.join(root,f)
 
 def usage():
-    print 'usage: python scan.py'
+    print 'usage: python scan.py sigs-folder'
     sys.exit(1)
 
 def _main():
-    if len(sys.argv) != 1:
+    if len(sys.argv) != 2:
         usage()
 
     # Read in APIs hooked
     api = list()
-    fns = get_rst_files('../sigs/')
+    fns = get_rst_files(sys.argv[1])
     for f in fns:
         with open(f,'r') as fr:
             for line in fr:

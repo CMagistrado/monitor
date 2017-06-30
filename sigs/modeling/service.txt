@@ -13,7 +13,6 @@ Handler
 HandlerEx
 NotifyBootConfigStatus
 NotifyServiceStatusChange
-OpenSCManager
 OpenService
 QueryServiceConfig
 QueryServiceConfig2

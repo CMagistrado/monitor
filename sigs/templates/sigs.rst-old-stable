@@ -14,11 +14,11 @@ Signature::
 
 Parameters::
 
-    * HANDLE hConsoleOutput
-    * const VOID *lpBuffer
-    * DWORD nNumberOfCharsToWrite
-    * LPDWORD lpNumberOfCharsWritten
-    * LPVOID lpReserved
+    ** HANDLE hConsoleOutput
+    ** const VOID *lpBuffer
+    ** DWORD nNumberOfCharsToWrite
+    ** LPDWORD lpNumberOfCharsWritten
+    ** LPVOID lpReserved
 
 
 WriteConsoleW
@@ -31,11 +31,11 @@ Signature::
 
 Parameters::
 
-    * HANDLE hConsoleOutput
-    * const VOID *lpBuffer
-    * DWORD nNumberOfCharsToWrite
-    * LPDWORD lpNumberOfCharsWritten
-    * LPVOID lpReserved
+    ** HANDLE hConsoleOutput
+    ** const VOID *lpBuffer
+    ** DWORD nNumberOfCharsToWrite
+    ** LPDWORD lpNumberOfCharsWritten
+    ** LPVOID lpReserved
 
 
 IsDebuggerPresent
@@ -57,7 +57,75 @@ Signature::
 
 Parameters::
 
-    * LPCSTR lpOutputString
+    ** LPCSTR lpOutputString
+
+
+CryptProtectData
+================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: BOOL
+
+Parameters::
+
+    ** DATA_BLOB *pDataIn
+    ** LPCWSTR szDataDescr
+    ** DATA_BLOB *pOptionalEntropy
+    ** PVOID pvReserved
+    ** CRYPTPROTECT_PROMPTSTRUCT *pPromptStruct
+    ** DWORD dwFlags
+    ** DATA_BLOB *pDataOut
+
+
+CryptUnprotectData
+==================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: BOOL
+
+Parameters::
+
+    ** DATA_BLOB *pDataIn
+    ** LPWSTR *ppszDataDescr
+    ** DATA_BLOB *pOptionalEntropy
+    ** PVOID pvReserved
+    ** CRYPTPROTECT_PROMPTSTRUCT *pPromptStruct
+    ** DWORD dwFlags
+    ** DATA_BLOB *pDataOut
+
+
+CryptProtectMemory
+==================
+
+Signature::
+
+    * Library: dpapi
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPVOID pDataIn
+    ** DWORD cbDataIn
+    ** DWORD dwFlags
+
+
+CryptUnprotectMemory
+====================
+
+Signature::
+
+    * Library: dpapi
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPVOID pDataIn
+    ** DWORD cbDataIn
+    ** DWORD dwFlags
 
 
 SetUnhandledExceptionFilter
@@ -70,7 +138,7 @@ Signature::
 
 Parameters::
 
-    * LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter
+    ** LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter
 
 
 SetErrorMode
@@ -83,7 +151,7 @@ Signature::
 
 Parameters::
 
-    * UINT uMode
+    ** UINT uMode
 
 
 CreateDirectoryW
@@ -96,8 +164,8 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpPathName
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    ** LPCWSTR lpPathName
+    ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
 
 DeleteFileW
@@ -110,7 +178,7 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpFileName
+    ** LPCWSTR lpFileName
 
 
 FindFirstFileExA
@@ -123,12 +191,12 @@ Signature::
 
 Parameters::
 
-    * LPCSTR lpFileName
-    * FINDEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFindFileData
-    * FINDEX_SEARCH_OPS fSearchOp
-    * LPVOID lpSearchFilter
-    * DWORD dwAdditionalFlags
+    ** LPCSTR lpFileName
+    ** FINDEX_INFO_LEVELS fInfoLevelId
+    ** LPVOID lpFindFileData
+    ** FINDEX_SEARCH_OPS fSearchOp
+    ** LPVOID lpSearchFilter
+    ** DWORD dwAdditionalFlags
 
 
 FindFirstFileExW
@@ -141,12 +209,12 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpFileName
-    * FINDEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFindFileData
-    * FINDEX_SEARCH_OPS fSearchOp
-    * LPVOID lpSearchFilter
-    * DWORD dwAdditionalFlags
+    ** LPCWSTR lpFileName
+    ** FINDEX_INFO_LEVELS fInfoLevelId
+    ** LPVOID lpFindFileData
+    ** FINDEX_SEARCH_OPS fSearchOp
+    ** LPVOID lpSearchFilter
+    ** DWORD dwAdditionalFlags
 
 
 GetDiskFreeSpaceW
@@ -159,11 +227,11 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpRootPathName
-    * LPDWORD lpSectorsPerCluster
-    * LPDWORD lpBytesPerSector
-    * LPDWORD lpNumberOfFreeClusters
-    * LPDWORD lpTotalNumberOfClusters
+    ** LPCWSTR lpRootPathName
+    ** LPDWORD lpSectorsPerCluster
+    ** LPDWORD lpBytesPerSector
+    ** LPDWORD lpNumberOfFreeClusters
+    ** LPDWORD lpTotalNumberOfClusters
 
 
 GetDiskFreeSpaceExW
@@ -176,10 +244,10 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpDirectoryName
-    * PULARGE_INTEGER lpFreeBytesAvailableToCaller
-    * PULARGE_INTEGER lpTotalNumberOfBytes
-    * PULARGE_INTEGER lpTotalNumberOfFreeBytes
+    ** LPCWSTR lpDirectoryName
+    ** PULARGE_INTEGER lpFreeBytesAvailableToCaller
+    ** PULARGE_INTEGER lpTotalNumberOfBytes
+    ** PULARGE_INTEGER lpTotalNumberOfFreeBytes
 
 
 GetFileAttributesW
@@ -192,7 +260,7 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpFileName
+    ** LPCWSTR lpFileName
 
 
 GetFileAttributesExW
@@ -205,9 +273,9 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpFileName
-    * GET_FILEEX_INFO_LEVELS fInfoLevelId
-    * LPVOID lpFileInformation
+    ** LPCWSTR lpFileName
+    ** GET_FILEEX_INFO_LEVELS fInfoLevelId
+    ** LPVOID lpFileInformation
 
 
 GetFileInformationByHandle
@@ -220,8 +288,8 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
-    * LPBY_HANDLE_FILE_INFORMATION lpFileInformation
+    ** HANDLE hFile
+    ** LPBY_HANDLE_FILE_INFORMATION lpFileInformation
 
 
 GetFileSize
@@ -234,8 +302,8 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
-    * LPDWORD lpFileSizeHigh
+    ** HANDLE hFile
+    ** LPDWORD lpFileSizeHigh
 
 
 GetFileSizeEx
@@ -248,8 +316,8 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
-    * PLARGE_INTEGER lpFileSize
+    ** HANDLE hFile
+    ** PLARGE_INTEGER lpFileSize
 
 
 GetFileType
@@ -262,7 +330,7 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
+    ** HANDLE hFile
 
 
 GetShortPathNameW
@@ -275,9 +343,9 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpszLongPath
-    * LPWSTR lpszShortPath
-    * DWORD cchBuffer
+    ** LPCWSTR lpszLongPath
+    ** LPWSTR lpszShortPath
+    ** DWORD cchBuffer
 
 
 GetVolumePathNameW
@@ -290,9 +358,9 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpszFileName
-    * LPWSTR lpszVolumePathName
-    * DWORD cchBufferLength
+    ** LPCWSTR lpszFileName
+    ** LPWSTR lpszVolumePathName
+    ** DWORD cchBufferLength
 
 
 RemoveDirectoryA
@@ -305,7 +373,7 @@ Signature::
 
 Parameters::
 
-    * LPCSTR lpPathName
+    ** LPCSTR lpPathName
 
 
 RemoveDirectoryW
@@ -318,7 +386,7 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpPathName
+    ** LPCWSTR lpPathName
 
 
 SetEndOfFile
@@ -331,7 +399,7 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
+    ** HANDLE hFile
 
 
 SetFileAttributesW
@@ -344,8 +412,8 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpFileName
-    * DWORD dwFileAttributes
+    ** LPCWSTR lpFileName
+    ** DWORD dwFileAttributes
 
 
 SetFileInformationByHandle
@@ -358,10 +426,10 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
-    * FILE_INFO_BY_HANDLE_CLASS FileInformationClass
-    * LPVOID lpFileInformation
-    * DWORD dwBufferSize
+    ** HANDLE hFile
+    ** FILE_INFO_BY_HANDLE_CLASS FileInformationClass
+    ** LPVOID lpFileInformation
+    ** DWORD dwBufferSize
 
 
 SetFilePointer
@@ -374,10 +442,10 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
-    * LONG lDistanceToMove
-    * PLONG lpDistanceToMoveHigh
-    * DWORD dwMoveMethod
+    ** HANDLE hFile
+    ** LONG lDistanceToMove
+    ** PLONG lpDistanceToMoveHigh
+    ** DWORD dwMoveMethod
 
 
 SetFilePointerEx
@@ -390,10 +458,10 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
-    * LARGE_INTEGER liDistanceToMove
-    * PLARGE_INTEGER lpNewFilePointer
-    * DWORD dwMoveMethod
+    ** HANDLE hFile
+    ** LARGE_INTEGER liDistanceToMove
+    ** PLARGE_INTEGER lpNewFilePointer
+    ** DWORD dwMoveMethod
 
 
 SetFileTime
@@ -406,10 +474,10 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
-    * const FILETIME *lpCreationTime
-    * const FILETIME *lpLastAccessTime
-    * const FILETIME *lpLastWriteTime
+    ** HANDLE hFile
+    ** const FILETIME *lpCreationTime
+    ** const FILETIME *lpLastAccessTime
+    ** const FILETIME *lpLastWriteTime
 
 
 GetTempPathW
@@ -422,8 +490,8 @@ Signature::
 
 Parameters::
 
-    * DWORD nBufferLength
-    * LPWSTR lpBuffer
+    ** DWORD nBufferLength
+    ** LPWSTR lpBuffer
 
 
 GetVolumeNameForVolumeMountPointW
@@ -436,9 +504,9 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpszVolumeMountPoint
-    * LPWSTR lpszVolumeName
-    * DWORD cchBufferLength
+    ** LPCWSTR lpszVolumeMountPoint
+    ** LPWSTR lpszVolumeName
+    ** DWORD cchBufferLength
 
 
 GetVolumePathNamesForVolumeNameW
@@ -451,10 +519,10 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpszVolumeName
-    * LPWCH lpszVolumePathNames
-    * DWORD cchBufferLength
-    * PDWORD lpcchReturnLength
+    ** LPCWSTR lpszVolumeName
+    ** LPWCH lpszVolumePathNames
+    ** DWORD cchBufferLength
+    ** PDWORD lpcchReturnLength
 
 
 DeviceIoControl
@@ -467,14 +535,14 @@ Signature::
 
 Parameters::
 
-    * HANDLE hDevice
-    * DWORD dwIoControlCode
-    * LPVOID lpInBuffer
-    * DWORD nInBufferSize
-    * LPVOID lpOutBuffer
-    * DWORD nOutBufferSize
-    * LPDWORD lpBytesReturned
-    * LPOVERLAPPED lpOverlapped
+    ** HANDLE hDevice
+    ** DWORD dwIoControlCode
+    ** LPVOID lpInBuffer
+    ** DWORD nInBufferSize
+    ** LPVOID lpOutBuffer
+    ** DWORD nOutBufferSize
+    ** LPDWORD lpBytesReturned
+    ** LPOVERLAPPED lpOverlapped
 
 
 FindResourceExW
@@ -487,10 +555,10 @@ Signature::
 
 Parameters::
 
-    * HMODULE hModule
-    * LPCWSTR lpType
-    * LPCWSTR lpName
-    * WORD wLanguage
+    ** HMODULE hModule
+    ** LPCWSTR lpType
+    ** LPCWSTR lpName
+    ** WORD wLanguage
 
 
 LoadResource
@@ -503,8 +571,40 @@ Signature::
 
 Parameters::
 
-    * HMODULE hModule
-    * HRSRC hResInfo
+    ** HMODULE hModule
+    ** HRSRC hResInfo
+
+
+LoadStringA
+===========
+
+Signature::
+
+    * Library: user32
+    * Return value: int
+
+Parameters::
+
+    ** HINSTANCE hInstance
+    ** UINT uID
+    ** LPSTR lpBuffer
+    ** int cchBufferMax
+
+
+LoadStringW
+===========
+
+Signature::
+
+    * Library: user32
+    * Return value: int
+
+Parameters::
+
+    ** HINSTANCE hInstance
+    ** UINT uID
+    ** LPWSTR lpBuffer
+    ** int cchBufferMax
 
 
 SizeofResource
@@ -517,8 +617,8 @@ Signature::
 
 Parameters::
 
-    * HMODULE hModule
-    * HRSRC hResInfo
+    ** HMODULE hModule
+    ** HRSRC hResInfo
 
 
 ReadProcessMemory
@@ -531,11 +631,11 @@ Signature::
 
 Parameters::
 
-    * HANDLE hProcess
-    * LPCVOID lpBaseAddress
-    * LPVOID lpBuffer
-    * SIZE_T nSize
-    * SIZE_T *lpNumberOfBytesRead
+    ** HANDLE hProcess
+    ** LPCVOID lpBaseAddress
+    ** LPVOID lpBuffer
+    ** SIZE_T nSize
+    ** SIZE_T *lpNumberOfBytesRead
 
 
 WriteProcessMemory
@@ -548,11 +648,11 @@ Signature::
 
 Parameters::
 
-    * HANDLE hProcess
-    * LPVOID lpBaseAddress
-    * LPCVOID lpBuffer
-    * SIZE_T nSize
-    * SIZE_T *lpNumberOfBytesWritten
+    ** HANDLE hProcess
+    ** LPVOID lpBaseAddress
+    ** LPCVOID lpBuffer
+    ** SIZE_T nSize
+    ** SIZE_T *lpNumberOfBytesWritten
 
 
 SearchPathW
@@ -565,12 +665,12 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpPath
-    * LPCWSTR lpFileName
-    * LPCWSTR lpExtension
-    * DWORD nBufferLength
-    * LPWSTR lpBuffer
-    * LPWSTR *lpFilePart
+    ** LPCWSTR lpPath
+    ** LPCWSTR lpFileName
+    ** LPCWSTR lpExtension
+    ** DWORD nBufferLength
+    ** LPWSTR lpBuffer
+    ** LPWSTR *lpFilePart
 
 
 CreateThread
@@ -583,12 +683,12 @@ Signature::
 
 Parameters::
 
-    * LPSECURITY_ATTRIBUTES lpThreadAttributes
-    * SIZE_T dwStackSize
-    * LPTHREAD_START_ROUTINE lpStartAddress
-    * LPVOID lpParameter
-    * DWORD dwCreationFlags
-    * LPDWORD lpThreadId
+    ** LPSECURITY_ATTRIBUTES lpThreadAttributes
+    ** SIZE_T dwStackSize
+    ** LPTHREAD_START_ROUTINE lpStartAddress
+    ** LPVOID lpParameter
+    ** DWORD dwCreationFlags
+    ** LPDWORD lpThreadId
 
 
 CreateRemoteThread
@@ -601,13 +701,13 @@ Signature::
 
 Parameters::
 
-    * HANDLE hProcess
-    * LPSECURITY_ATTRIBUTES lpThreadAttributes
-    * SIZE_T dwStackSize
-    * LPTHREAD_START_ROUTINE lpStartAddress
-    * LPVOID lpParameter
-    * DWORD dwCreationFlags
-    * LPDWORD lpThreadId
+    ** HANDLE hProcess
+    ** LPSECURITY_ATTRIBUTES lpThreadAttributes
+    ** SIZE_T dwStackSize
+    ** LPTHREAD_START_ROUTINE lpStartAddress
+    ** LPVOID lpParameter
+    ** DWORD dwCreationFlags
+    ** LPDWORD lpThreadId
 
 
 CreateRemoteThreadEx
@@ -620,14 +720,14 @@ Signature::
 
 Parameters::
 
-    * HANDLE hProcess
-    * LPSECURITY_ATTRIBUTES lpThreadAttributes
-    * SIZE_T dwStackSize
-    * LPTHREAD_START_ROUTINE lpStartAddress
-    * LPVOID lpParameter
-    * DWORD dwCreationFlags
-    * LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
-    * LPDWORD lpThreadId
+    ** HANDLE hProcess
+    ** LPSECURITY_ATTRIBUTES lpThreadAttributes
+    ** SIZE_T dwStackSize
+    ** LPTHREAD_START_ROUTINE lpStartAddress
+    ** LPVOID lpParameter
+    ** DWORD dwCreationFlags
+    ** LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
+    ** LPDWORD lpThreadId
 
 
 GlobalMemoryStatusEx
@@ -640,7 +740,7 @@ Signature::
 
 Parameters::
 
-    * LPMEMORYSTATUSEX lpBuffer
+    ** LPMEMORYSTATUSEX lpBuffer
 
 
 GetSystemTime
@@ -653,7 +753,7 @@ Signature::
 
 Parameters::
 
-    * LPSYSTEMTIME lpSystemTime
+    ** LPSYSTEMTIME lpSystemTime
 
 
 GetSystemTimeAsFileTime
@@ -666,7 +766,7 @@ Signature::
 
 Parameters::
 
-    * LPFILETIME lpSystemTimeAsFileTime
+    ** LPFILETIME lpSystemTimeAsFileTime
 
 
 GetLocalTime
@@ -679,7 +779,7 @@ Signature::
 
 Parameters::
 
-    * LPSYSTEMTIME lpSystemTime
+    ** LPSYSTEMTIME lpSystemTime
 
 
 GetSystemInfo
@@ -692,7 +792,7 @@ Signature::
 
 Parameters::
 
-    * LPSYSTEM_INFO lpSystemInfo
+    ** LPSYSTEM_INFO lpSystemInfo
 
 
 GetTickCount
@@ -714,8 +814,8 @@ Signature::
 
 Parameters::
 
-    * LPSTR lpBuffer
-    * UINT uSize
+    ** LPSTR lpBuffer
+    ** UINT uSize
 
 
 GetSystemDirectoryW
@@ -728,8 +828,8 @@ Signature::
 
 Parameters::
 
-    * LPWSTR lpBuffer
-    * UINT uSize
+    ** LPWSTR lpBuffer
+    ** UINT uSize
 
 
 GetSystemWindowsDirectoryA
@@ -742,8 +842,8 @@ Signature::
 
 Parameters::
 
-    * LPSTR lpBuffer
-    * UINT uSize
+    ** LPSTR lpBuffer
+    ** UINT uSize
 
 
 GetSystemWindowsDirectoryW
@@ -756,8 +856,8 @@ Signature::
 
 Parameters::
 
-    * LPWSTR lpBuffer
-    * UINT uSize
+    ** LPWSTR lpBuffer
+    ** UINT uSize
 
 
 GetNativeSystemInfo
@@ -770,7 +870,7 @@ Signature::
 
 Parameters::
 
-    * LPSYSTEM_INFO lpSystemInfo
+    ** LPSYSTEM_INFO lpSystemInfo
 
 
 GetTimeZoneInformation
@@ -783,7 +883,105 @@ Signature::
 
 Parameters::
 
-    * LPTIME_ZONE_INFORMATION lpTimeZoneInformation
+    ** LPTIME_ZONE_INFORMATION lpTimeZoneInformation
+
+
+CreateToolhelp32Snapshot
+========================
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: HANDLE
+
+Parameters::
+
+    ** DWORD dwFlags
+    ** DWORD th32ProcessID
+
+
+Process32FirstW
+===============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hSnapshot
+    ** LPPROCESSENTRY32W lppe
+
+
+Process32NextW
+==============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hSnapshot
+    ** LPPROCESSENTRY32W lppe
+
+
+Thread32First
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hSnapshot
+    ** LPTHREADENTRY32 lpte
+
+
+Thread32Next
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hSnapshot
+    ** LPTHREADENTRY32 lpte
+
+
+Module32FirstW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hSnapshot
+    ** LPMODULEENTRY32W lpme
+
+
+Module32NextW
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hSnapshot
+    ** LPMODULEENTRY32W lpme
 
 
 GlobalMemoryStatus
@@ -796,7 +994,7 @@ Signature::
 
 Parameters::
 
-    * LPMEMORYSTATUS lpBuffer
+    ** LPMEMORYSTATUS lpBuffer
 
 
 FindResourceA
@@ -809,9 +1007,9 @@ Signature::
 
 Parameters::
 
-    * HMODULE hModule
-    * LPCSTR lpName
-    * LPCSTR lpType
+    ** HMODULE hModule
+    ** LPCSTR lpName
+    ** LPCSTR lpType
 
 
 FindResourceW
@@ -824,9 +1022,9 @@ Signature::
 
 Parameters::
 
-    * HMODULE hModule
-    * LPCWSTR lpName
-    * LPCWSTR lpType
+    ** HMODULE hModule
+    ** LPCWSTR lpName
+    ** LPCWSTR lpType
 
 
 FindResourceExA
@@ -839,10 +1037,10 @@ Signature::
 
 Parameters::
 
-    * HMODULE hModule
-    * LPCSTR lpType
-    * LPCSTR lpName
-    * WORD wLanguage
+    ** HMODULE hModule
+    ** LPCSTR lpType
+    ** LPCSTR lpName
+    ** WORD wLanguage
 
 
 CreateDirectoryExW
@@ -855,9 +1053,9 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpTemplateDirectory
-    * LPCWSTR lpNewDirectory
-    * LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    ** LPCWSTR lpTemplateDirectory
+    ** LPCWSTR lpNewDirectory
+    ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
 
 CopyFileA
@@ -870,9 +1068,9 @@ Signature::
 
 Parameters::
 
-    * LPCSTR lpExistingFileName
-    * LPCSTR lpNewFileName
-    * BOOL bFailIfExists
+    ** LPCSTR lpExistingFileName
+    ** LPCSTR lpNewFileName
+    ** BOOL bFailIfExists
 
 
 CopyFileW
@@ -885,9 +1083,9 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-    * BOOL bFailIfExists
+    ** LPCWSTR lpExistingFileName
+    ** LPCWSTR lpNewFileName
+    ** BOOL bFailIfExists
 
 
 CopyFileExW
@@ -900,12 +1098,12 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * LPBOOL pbCancel
-    * DWORD dwCopyFlags
+    ** LPCWSTR lpExistingFileName
+    ** LPCWSTR lpNewFileName
+    ** LPPROGRESS_ROUTINE lpProgressRoutine
+    ** LPVOID lpData
+    ** LPBOOL pbCancel
+    ** DWORD dwCopyFlags
 
 
 MoveFileWithProgressW
@@ -918,11 +1116,45 @@ Signature::
 
 Parameters::
 
-    * LPCWSTR lpExistingFileName
-    * LPCWSTR lpNewFileName
-    * LPPROGRESS_ROUTINE lpProgressRoutine
-    * LPVOID lpData
-    * DWORD dwFlags
+    ** LPCWSTR lpExistingFileName
+    ** LPCWSTR lpNewFileName
+    ** LPPROGRESS_ROUTINE lpProgressRoutine
+    ** LPVOID lpData
+    ** DWORD dwFlags
+
+
+LookupAccountSidW
+=================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCWSTR lpSystemName
+    ** PSID Sid
+    ** LPWSTR Name
+    ** LPDWORD cchName
+    ** LPWSTR ReferencedDomainName
+    ** LPDWORD cchReferencedDomainName
+    ** PSID_NAME_USE peUse
+
+
+LookupPrivilegeValueW
+=====================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCWSTR lpSystemName
+    ** LPCWSTR lpName
+    ** PLUID lpLuid
 
 
 GetComputerNameA
@@ -935,8 +1167,8 @@ Signature::
 
 Parameters::
 
-    * LPSTR lpBuffer
-    * LPDWORD nSize
+    ** LPSTR lpBuffer
+    ** LPDWORD nSize
 
 
 GetComputerNameW
@@ -949,8 +1181,36 @@ Signature::
 
 Parameters::
 
-    * LPWSTR lpBuffer
-    * LPDWORD nSize
+    ** LPWSTR lpBuffer
+    ** LPDWORD nSize
+
+
+GetUserNameA
+============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPSTR lpBuffer
+    ** LPDWORD pcbBuffer
+
+
+GetUserNameW
+============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPWSTR lpBuffer
+    ** LPDWORD pcbBuffer
 
 
 CreateActCtxW
@@ -963,7 +1223,7 @@ Signature::
 
 Parameters::
 
-    * PCACTCTXW pActCtx
+    ** PCACTCTXW pActCtx
 
 
 GetFileInformationByHandleEx
@@ -976,9 +1236,1791 @@ Signature::
 
 Parameters::
 
-    * HANDLE hFile
-    * FILE_INFO_BY_HANDLE_CLASS FileInformationClass
-    * LPVOID lpFileInformation
-    * DWORD dwBufferSize
+    ** HANDLE hFile
+    ** FILE_INFO_BY_HANDLE_CLASS FileInformationClass
+    ** LPVOID lpFileInformation
+    ** DWORD dwBufferSize
+
+
+CryptAcquireContextA
+====================
+
+Signature::
+
+    * Library: cryptsp
+    * Return value: BOOL
+
+Parameters::
+
+    ** HCRYPTPROV *phProv
+    ** LPCSTR szContainer
+    ** LPCSTR szProvider
+    ** DWORD dwProvType
+    ** DWORD dwFlags
+
+
+CryptAcquireContextW
+====================
+
+Signature::
+
+    * Library: cryptsp
+    * Return value: BOOL
+
+Parameters::
+
+    ** HCRYPTPROV *phProv
+    ** LPCWSTR szContainer
+    ** LPCWSTR szProvider
+    ** DWORD dwProvType
+    ** DWORD dwFlags
+
+
+CryptGenKey
+===========
+
+Signature::
+
+    * Library: cryptsp
+    * Return value: BOOL
+
+Parameters::
+
+    ** HCRYPTPROV hProv
+    ** ALG_ID Algid
+    ** DWORD dwFlags
+    ** HCRYPTKEY *phKey
+
+
+CryptExportKey
+==============
+
+Signature::
+
+    * Library: cryptsp
+    * Return value: BOOL
+
+Parameters::
+
+    ** HCRYPTKEY hKey
+    ** HCRYPTKEY hExpKey
+    ** DWORD dwBlobType
+    ** DWORD dwFlags
+    ** BYTE *pbData
+    ** DWORD *pdwDataLen
+
+
+CryptEncrypt
+============
+
+Signature::
+
+    * Library: cryptsp
+    * Return value: BOOL
+
+Parameters::
+
+    ** HCRYPTKEY hKey
+    ** HCRYPTHASH hHash
+    ** BOOL Final
+    ** DWORD dwFlags
+    ** BYTE *pbData
+    ** DWORD *pdwDataLen
+    ** DWORD dwBufLen
+
+
+CryptDecrypt
+============
+
+Signature::
+
+    * Library: cryptsp
+    * Return value: BOOL
+
+Parameters::
+
+    ** HCRYPTKEY hKey
+    ** HCRYPTHASH hHash
+    ** BOOL Final
+    ** DWORD dwFlags
+    ** BYTE *pbData
+    ** DWORD *pdwDataLen
+
+
+CryptCreateHash
+===============
+
+Signature::
+
+    * Library: cryptsp
+    * Return value: BOOL
+
+Parameters::
+
+    ** HCRYPTPROV hProv
+    ** ALG_ID Algid
+    ** HCRYPTKEY hKey
+    ** DWORD dwFlags
+    ** HCRYPTHASH *phHash
+
+
+CryptHashData
+=============
+
+Signature::
+
+    * Library: cryptsp
+    * Return value: BOOL
+
+Parameters::
+
+    ** HCRYPTHASH hHash
+    ** const BYTE *pbData
+    ** DWORD dwDataLen
+    ** DWORD dwFlags
+
+
+CryptDecodeObjectEx
+===================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: BOOL
+
+Parameters::
+
+    ** DWORD dwCertEncodingType
+    ** LPCSTR lpszStructType
+    ** const BYTE *pbEncoded
+    ** DWORD cbEncoded
+    ** DWORD dwFlags
+    ** PCRYPT_DECODE_PARA pDecodePara
+    ** void *pvStructInfo
+    ** DWORD *pcbStructInfo
+
+
+CertOpenStore
+=============
+
+Signature::
+
+    * Library: crypt32
+    * Return value: HCERTSTORE
+
+Parameters::
+
+    ** LPCSTR lpszStoreProvider
+    ** DWORD dwEncodingType
+    ** HCRYPTPROV_LEGACY hCryptProv
+    ** DWORD dwFlags
+    ** const void *pvPara
+
+
+CertCreateCertificateContext
+============================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: PCCERT_CONTEXT
+
+Parameters::
+
+    ** DWORD dwCertEncodingType
+    ** const BYTE *pbCertEncoded
+    ** DWORD cbCertEncoded
+
+
+CertControlStore
+================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HCERTSTORE hCertStore
+    ** DWORD dwFlags
+    ** DWORD dwCtrlType
+    ** void *pvCtrlPara
+
+
+CryptEncryptMessage
+===================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: BOOL
+
+Parameters::
+
+    ** PCRYPT_ENCRYPT_MESSAGE_PARA pEncryptPara
+    ** DWORD cRecipientCert
+    ** PCCERT_CONTEXT rgpRecipientCert[]
+    ** const BYTE *pbToBeEncrypted
+    ** DWORD cbToBeEncrypted
+    ** BYTE *pbEncryptedBlob
+    ** DWORD *pcbEncryptedBlob
+
+
+CryptDecryptMessage
+===================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: BOOL
+
+Parameters::
+
+    ** PCRYPT_DECRYPT_MESSAGE_PARA pDecryptPara
+    ** const BYTE *pbEncryptedBlob
+    ** DWORD cbEncryptedBlob
+    ** BYTE *pbDecrypted
+    ** DWORD *pcbDecrypted
+    ** PCCERT_CONTEXT *ppXchgCert
+
+
+CryptDecodeMessage
+==================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: BOOL
+
+Parameters::
+
+    ** DWORD dwMsgTypeFlags
+    ** PCRYPT_DECRYPT_MESSAGE_PARA pDecryptPara
+    ** PCRYPT_VERIFY_MESSAGE_PARA pVerifyPara
+    ** DWORD dwSignerIndex
+    ** const BYTE *pbEncodedBlob
+    ** DWORD cbEncodedBlob
+    ** DWORD dwPrevInnerContentType
+    ** DWORD *pdwMsgType
+    ** DWORD *pdwInnerContentType
+    ** BYTE *pbDecoded
+    ** DWORD *pcbDecoded
+    ** PCCERT_CONTEXT *ppXchgCert
+    ** PCCERT_CONTEXT *ppSignerCert
+
+
+CryptHashMessage
+================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: BOOL
+
+Parameters::
+
+    ** PCRYPT_HASH_MESSAGE_PARA pHashPara
+    ** BOOL fDetachedHash
+    ** DWORD cToBeHashed
+    ** const BYTE *rgpbToBeHashed[]
+    ** DWORD rgcbToBeHashed[]
+    ** BYTE *pbHashedBlob
+    ** DWORD *pcbHashedBlob
+    ** BYTE *pbComputedHash
+    ** DWORD *pcbComputedHash
+
+
+CertOpenSystemStoreA
+====================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: HCERTSTORE
+
+Parameters::
+
+    ** HCRYPTPROV_LEGACY hProv
+    ** LPCSTR szSubsystemProtocol
+
+
+CertOpenSystemStoreW
+====================
+
+Signature::
+
+    * Library: crypt32
+    * Return value: HCERTSTORE
+
+Parameters::
+
+    ** HCRYPTPROV_LEGACY hProv
+    ** LPCWSTR szSubsystemProtocol
+
+
+DnsQuery_A
+==========
+
+Signature::
+
+    * Library: dnsapi
+    * Return value: DNS_STATUS
+
+Parameters::
+
+    ** PCSTR pszName
+    ** WORD wType
+    ** DWORD Options
+    ** PVOID pExtra
+    ** PDNS_RECORD *ppQueryResults
+    ** PVOID *pReserved
+
+
+DnsQuery_UTF8
+=============
+
+Signature::
+
+    * Library: dnsapi
+    * Return value: DNS_STATUS
+
+Parameters::
+
+    ** PCSTR pszName
+    ** WORD wType
+    ** DWORD Options
+    ** PVOID pExtra
+    ** PDNS_RECORD *ppQueryResults
+    ** PVOID *pReserved
+
+
+DnsQuery_W
+==========
+
+Signature::
+
+    * Library: dnsapi
+    * Return value: DNS_STATUS
+
+Parameters::
+
+    ** PCWSTR pszName
+    ** WORD wType
+    ** DWORD Options
+    ** PVOID pExtra
+    ** PDNS_RECORD *ppQueryResults
+    ** PVOID *pReserved
+
+
+InternetCrackUrlA
+=================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCSTR lpszUrl
+    ** DWORD dwUrlLength
+    ** DWORD dwFlags
+    ** LPURL_COMPONENTSA lpUrlComponents
+
+
+InternetCrackUrlW
+=================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCWSTR lpszUrl
+    ** DWORD dwUrlLength
+    ** DWORD dwFlags
+    ** LPURL_COMPONENTSW lpUrlComponents
+
+
+HttpQueryInfoA
+==============
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** HINTERNET hRequest
+    ** DWORD dwInfoLevel
+    ** LPVOID lpBuffer
+    ** LPDWORD lpdwBufferLength
+    ** LPDWORD lpdwIndex
+
+
+InternetGetConnectedStateExA
+============================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPDWORD lpdwFlags
+    ** LPSTR lpszConnectionName
+    ** DWORD cchNameLen
+    ** DWORD dwReserved
+
+
+InternetGetConnectedStateExW
+============================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPDWORD lpdwFlags
+    ** LPWSTR lpszConnectionName
+    ** DWORD cchNameLen
+    ** DWORD dwReserved
+
+
+RegCloseKey
+===========
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+
+
+RegCreateKeyExA
+===============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpSubKey
+    ** DWORD Reserved
+    ** LPSTR lpClass
+    ** DWORD dwOptions
+    ** REGSAM samDesired
+    ** const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    ** PHKEY phkResult
+    ** LPDWORD lpdwDisposition
+
+
+RegCreateKeyExW
+===============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpSubKey
+    ** DWORD Reserved
+    ** LPWSTR lpClass
+    ** DWORD dwOptions
+    ** REGSAM samDesired
+    ** const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    ** PHKEY phkResult
+    ** LPDWORD lpdwDisposition
+
+
+RegDeleteKeyA
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpSubKey
+
+
+RegDeleteKeyW
+=============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpSubKey
+
+
+RegDeleteValueA
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpValueName
+
+
+RegDeleteValueW
+===============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpValueName
+
+
+RegEnumKeyW
+===========
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** DWORD dwIndex
+    ** LPWSTR lpName
+    ** DWORD cchName
+
+
+RegEnumKeyExA
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** DWORD dwIndex
+    ** LPSTR lpName
+    ** LPDWORD lpcchName
+    ** LPDWORD lpReserved
+    ** LPSTR lpClass
+    ** LPDWORD lpcchClass
+    ** PFILETIME lpftLastWriteTime
+
+
+RegEnumKeyExW
+=============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** DWORD dwIndex
+    ** LPWSTR lpName
+    ** LPDWORD lpcchName
+    ** LPDWORD lpReserved
+    ** LPWSTR lpClass
+    ** LPDWORD lpcchClass
+    ** PFILETIME lpftLastWriteTime
+
+
+RegEnumValueA
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** DWORD dwIndex
+    ** LPSTR lpValueName
+    ** LPDWORD lpcchValueName
+    ** LPDWORD lpReserved
+    ** LPDWORD lpType
+    ** LPBYTE lpData
+    ** LPDWORD lpcbData
+
+
+RegEnumValueW
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** DWORD dwIndex
+    ** LPWSTR lpValueName
+    ** LPDWORD lpcchValueName
+    ** LPDWORD lpReserved
+    ** LPDWORD lpType
+    ** LPBYTE lpData
+    ** LPDWORD lpcbData
+
+
+RegOpenKeyExA
+=============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpSubKey
+    ** DWORD ulOptions
+    ** REGSAM samDesired
+    ** PHKEY phkResult
+
+
+RegOpenKeyExW
+=============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpSubKey
+    ** DWORD ulOptions
+    ** REGSAM samDesired
+    ** PHKEY phkResult
+
+
+RegQueryInfoKeyA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPSTR lpClass
+    ** LPDWORD lpcchClass
+    ** LPDWORD lpReserved
+    ** LPDWORD lpcSubKeys
+    ** LPDWORD lpcbMaxSubKeyLen
+    ** LPDWORD lpcbMaxClassLen
+    ** LPDWORD lpcValues
+    ** LPDWORD lpcbMaxValueNameLen
+    ** LPDWORD lpcbMaxValueLen
+    ** LPDWORD lpcbSecurityDescriptor
+    ** PFILETIME lpftLastWriteTime
+
+
+RegQueryInfoKeyW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPWSTR lpClass
+    ** LPDWORD lpcchClass
+    ** LPDWORD lpReserved
+    ** LPDWORD lpcSubKeys
+    ** LPDWORD lpcbMaxSubKeyLen
+    ** LPDWORD lpcbMaxClassLen
+    ** LPDWORD lpcValues
+    ** LPDWORD lpcbMaxValueNameLen
+    ** LPDWORD lpcbMaxValueLen
+    ** LPDWORD lpcbSecurityDescriptor
+    ** PFILETIME lpftLastWriteTime
+
+
+RegQueryValueExA
+================
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpValueName
+    ** LPDWORD lpReserved
+    ** LPDWORD lpType
+    ** LPBYTE lpData
+    ** LPDWORD lpcbData
+
+
+RegQueryValueExW
+================
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpValueName
+    ** LPDWORD lpReserved
+    ** LPDWORD lpType
+    ** LPBYTE lpData
+    ** LPDWORD lpcbData
+
+
+RegSetValueExA
+==============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpValueName
+    ** DWORD Reserved
+    ** DWORD dwType
+    ** const BYTE *lpData
+    ** DWORD cbData
+
+
+RegSetValueExW
+==============
+
+Signature::
+
+    * Library: rtmpal
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpValueName
+    ** DWORD Reserved
+    ** DWORD dwType
+    ** const BYTE *lpData
+    ** DWORD cbData
+
+
+accept
+======
+
+Signature::
+
+    * Library: wsock32
+    * Return value: SOCKET
+
+Parameters::
+
+    ** SOCKET s
+    ** struct sockaddr *addr
+    ** int *addrlen
+
+
+bind
+====
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** const struct sockaddr *name
+    ** int namelen
+
+
+closesocket
+===========
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+
+
+connect
+=======
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** const struct sockaddr *name
+    ** int namelen
+
+
+ioctlsocket
+===========
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** long cmd
+    ** u_long *argp
+
+
+getsockname
+===========
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** struct sockaddr *name
+    ** int *namelen
+
+
+listen
+======
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** int backlog
+
+
+recv
+====
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** char *buf
+    ** int len
+    ** int flags
+
+
+recvfrom
+========
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** char *buf
+    ** int len
+    ** int flags
+    ** struct sockaddr *from
+    ** int *fromlen
+
+
+select
+======
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** int nfds
+    ** fd_set *readfds
+    ** fd_set *writefds
+    ** fd_set *exceptfds
+    ** const struct timeval *timeout
+
+
+send
+====
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** const char *buf
+    ** int len
+    ** int flags
+
+
+sendto
+======
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** const char *buf
+    ** int len
+    ** int flags
+    ** const struct sockaddr *to
+    ** int tolen
+
+
+setsockopt
+==========
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** int level
+    ** int optname
+    ** const char *optval
+    ** int optlen
+
+
+shutdown
+========
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** int how
+
+
+socket
+======
+
+Signature::
+
+    * Library: wsock32
+    * Return value: SOCKET
+
+Parameters::
+
+    ** int af
+    ** int type
+    ** int protocol
+
+
+gethostbyname
+=============
+
+Signature::
+
+    * Library: wsock32
+    * Return value: struct hostent FAR *
+
+Parameters::
+
+    ** const char *name
+
+
+WSAStartup
+==========
+
+Signature::
+
+    * Library: wsock32
+    * Return value: int
+
+Parameters::
+
+    ** WORD wVersionRequested
+    ** LPWSADATA lpWSAData
+
+
+WSAAccept
+=========
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: SOCKET
+
+Parameters::
+
+    ** SOCKET s
+    ** struct sockaddr *addr
+    ** LPINT addrlen
+    ** LPCONDITIONPROC lpfnCondition
+    ** DWORD_PTR dwCallbackData
+
+
+WSAConnect
+==========
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** const struct sockaddr *name
+    ** int namelen
+    ** LPWSABUF lpCallerData
+    ** LPWSABUF lpCalleeData
+    ** LPQOS lpSQOS
+    ** LPQOS lpGQOS
+
+
+WSARecv
+=======
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** LPWSABUF lpBuffers
+    ** DWORD dwBufferCount
+    ** LPDWORD lpNumberOfBytesRecvd
+    ** LPDWORD lpFlags
+    ** LPWSAOVERLAPPED lpOverlapped
+    ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+
+
+WSARecvFrom
+===========
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** LPWSABUF lpBuffers
+    ** DWORD dwBufferCount
+    ** LPDWORD lpNumberOfBytesRecvd
+    ** LPDWORD lpFlags
+    ** struct sockaddr *lpFrom
+    ** LPINT lpFromlen
+    ** LPWSAOVERLAPPED lpOverlapped
+    ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+
+
+WSASend
+=======
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** LPWSABUF lpBuffers
+    ** DWORD dwBufferCount
+    ** LPDWORD lpNumberOfBytesSent
+    ** DWORD dwFlags
+    ** LPWSAOVERLAPPED lpOverlapped
+    ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+
+
+WSASendTo
+=========
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: int
+
+Parameters::
+
+    ** SOCKET s
+    ** LPWSABUF lpBuffers
+    ** DWORD dwBufferCount
+    ** LPDWORD lpNumberOfBytesSent
+    ** DWORD dwFlags
+    ** const struct sockaddr *lpTo
+    ** int iTolen
+    ** LPWSAOVERLAPPED lpOverlapped
+    ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+
+
+WSASocketA
+==========
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: SOCKET
+
+Parameters::
+
+    ** int af
+    ** int type
+    ** int protocol
+    ** LPWSAPROTOCOL_INFOA lpProtocolInfo
+    ** GROUP g
+    ** DWORD dwFlags
+
+
+WSASocketW
+==========
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: SOCKET
+
+Parameters::
+
+    ** int af
+    ** int type
+    ** int protocol
+    ** LPWSAPROTOCOL_INFOW lpProtocolInfo
+    ** GROUP g
+    ** DWORD dwFlags
+
+
+ControlService
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    ** SC_HANDLE hService
+    ** DWORD dwControl
+    ** LPSERVICE_STATUS lpServiceStatus
+
+
+CreateServiceA
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    ** SC_HANDLE hSCManager
+    ** LPCSTR lpServiceName
+    ** LPCSTR lpDisplayName
+    ** DWORD dwDesiredAccess
+    ** DWORD dwServiceType
+    ** DWORD dwStartType
+    ** DWORD dwErrorControl
+    ** LPCSTR lpBinaryPathName
+    ** LPCSTR lpLoadOrderGroup
+    ** LPDWORD lpdwTagId
+    ** LPCSTR lpDependencies
+    ** LPCSTR lpServiceStartName
+    ** LPCSTR lpPassword
+
+
+CreateServiceW
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    ** SC_HANDLE hSCManager
+    ** LPCWSTR lpServiceName
+    ** LPCWSTR lpDisplayName
+    ** DWORD dwDesiredAccess
+    ** DWORD dwServiceType
+    ** DWORD dwStartType
+    ** DWORD dwErrorControl
+    ** LPCWSTR lpBinaryPathName
+    ** LPCWSTR lpLoadOrderGroup
+    ** LPDWORD lpdwTagId
+    ** LPCWSTR lpDependencies
+    ** LPCWSTR lpServiceStartName
+    ** LPCWSTR lpPassword
+
+
+DeleteService
+=============
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    ** SC_HANDLE hService
+
+
+EnumServicesStatusA
+===================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    ** SC_HANDLE hSCManager
+    ** DWORD dwServiceType
+    ** DWORD dwServiceState
+    ** LPENUM_SERVICE_STATUSA lpServices
+    ** DWORD cbBufSize
+    ** LPDWORD pcbBytesNeeded
+    ** LPDWORD lpServicesReturned
+    ** LPDWORD lpResumeHandle
+
+
+EnumServicesStatusW
+===================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    ** SC_HANDLE hSCManager
+    ** DWORD dwServiceType
+    ** DWORD dwServiceState
+    ** LPENUM_SERVICE_STATUSW lpServices
+    ** DWORD cbBufSize
+    ** LPDWORD pcbBytesNeeded
+    ** LPDWORD lpServicesReturned
+    ** LPDWORD lpResumeHandle
+
+
+NotifyBootConfigStatus
+======================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    ** BOOL BootAcceptable
+
+
+OpenSCManagerA
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    ** LPCSTR lpMachineName
+    ** LPCSTR lpDatabaseName
+    ** DWORD dwDesiredAccess
+
+
+OpenSCManagerW
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    ** LPCWSTR lpMachineName
+    ** LPCWSTR lpDatabaseName
+    ** DWORD dwDesiredAccess
+
+
+OpenServiceA
+============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    ** SC_HANDLE hSCManager
+    ** LPCSTR lpServiceName
+    ** DWORD dwDesiredAccess
+
+
+OpenServiceW
+============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    ** SC_HANDLE hSCManager
+    ** LPCWSTR lpServiceName
+    ** DWORD dwDesiredAccess
+
+
+StartServiceCtrlDispatcherW
+===========================
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    ** const SERVICE_TABLE_ENTRYW *lpServiceStartTable
+
+
+StartServiceA
+=============
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    ** SC_HANDLE hService
+    ** DWORD dwNumServiceArgs
+    ** LPCSTR *lpServiceArgVectors
+
+
+StartServiceW
+=============
+
+Signature::
+
+    * Library: sechost
+    * Return value: BOOL
+
+Parameters::
+
+    ** SC_HANDLE hService
+    ** DWORD dwNumServiceArgs
+    ** LPCWSTR *lpServiceArgVectors
+
+
+RegisterHotKey
+==============
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HWND hWnd
+    ** int id
+    ** UINT fsModifiers
+    ** UINT vk
+
+
+ExitWindowsEx
+=============
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    ** UINT uFlags
+    ** DWORD dwReason
+
+
+SendNotifyMessageA
+==================
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HWND hWnd
+    ** UINT Msg
+    ** WPARAM wParam
+    ** LPARAM lParam
+
+
+SendNotifyMessageW
+==================
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HWND hWnd
+    ** UINT Msg
+    ** WPARAM wParam
+    ** LPARAM lParam
+
+
+GetKeyState
+===========
+
+Signature::
+
+    * Library: user32
+    * Return value: SHORT
+
+Parameters::
+
+    ** int nVirtKey
+
+
+GetAsyncKeyState
+================
+
+Signature::
+
+    * Library: user32
+    * Return value: SHORT
+
+Parameters::
+
+    ** int vKey
+
+
+GetKeyboardState
+================
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    ** PBYTE lpKeyState
+
+
+GetSystemMetrics
+================
+
+Signature::
+
+    * Library: user32
+    * Return value: int
+
+Parameters::
+
+    ** int nIndex
+
+
+DrawTextExA
+===========
+
+Signature::
+
+    * Library: user32
+    * Return value: int
+
+Parameters::
+
+    ** HDC hdc
+    ** LPSTR lpchText
+    ** int cchText
+    ** LPRECT lprc
+    ** UINT format
+    ** LPDRAWTEXTPARAMS lpdtp
+
+
+DrawTextExW
+===========
+
+Signature::
+
+    * Library: user32
+    * Return value: int
+
+Parameters::
+
+    ** HDC hdc
+    ** LPWSTR lpchText
+    ** int cchText
+    ** LPRECT lprc
+    ** UINT format
+    ** LPDRAWTEXTPARAMS lpdtp
+
+
+GetForegroundWindow
+===================
+
+Signature::
+
+    * Library: user32
+    * Return value: HWND
+
+
+GetCursorPos
+============
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPPOINT lpPoint
+
+
+FindWindowA
+===========
+
+Signature::
+
+    * Library: user32
+    * Return value: HWND
+
+Parameters::
+
+    ** LPCSTR lpClassName
+    ** LPCSTR lpWindowName
+
+
+FindWindowW
+===========
+
+Signature::
+
+    * Library: user32
+    * Return value: HWND
+
+Parameters::
+
+    ** LPCWSTR lpClassName
+    ** LPCWSTR lpWindowName
+
+
+FindWindowExA
+=============
+
+Signature::
+
+    * Library: user32
+    * Return value: HWND
+
+Parameters::
+
+    ** HWND hWndParent
+    ** HWND hWndChildAfter
+    ** LPCSTR lpszClass
+    ** LPCSTR lpszWindow
+
+
+FindWindowExW
+=============
+
+Signature::
+
+    * Library: user32
+    * Return value: HWND
+
+Parameters::
+
+    ** HWND hWndParent
+    ** HWND hWndChildAfter
+    ** LPCWSTR lpszClass
+    ** LPCWSTR lpszWindow
+
+
+EnumWindows
+===========
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    ** WNDENUMPROC lpEnumFunc
+    ** LPARAM lParam
+
+
+SetWindowsHookExA
+=================
+
+Signature::
+
+    * Library: user32
+    * Return value: HHOOK
+
+Parameters::
+
+    ** int idHook
+    ** HOOKPROC lpfn
+    ** HINSTANCE hmod
+    ** DWORD dwThreadId
+
+
+SetWindowsHookExW
+=================
+
+Signature::
+
+    * Library: user32
+    * Return value: HHOOK
+
+Parameters::
+
+    ** int idHook
+    ** HOOKPROC lpfn
+    ** HINSTANCE hmod
+    ** DWORD dwThreadId
+
+
+UnhookWindowsHookEx
+===================
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HHOOK hhk
+
+
+getaddrinfo
+===========
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: INT
+
+Parameters::
+
+    ** PCSTR pNodeName
+    ** PCSTR pServiceName
+    ** const ADDRINFOA *pHints
+    ** PADDRINFOA *ppResult
+
+
+GetAddrInfoW
+============
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: INT
+
+Parameters::
+
+    ** PCWSTR pNodeName
+    ** PCWSTR pServiceName
+    ** const ADDRINFOW *pHints
+    ** PADDRINFOW *ppResult
 
 

@@ -49,13 +49,13 @@
   - Hook
     - https://msdn.microsoft.com/en-us/library/windows/desktop/ff468842(v=vs.85).aspx
 
-  - Resource
+  - Resource - not used at the moment
     - https://msdn.microsoft.com/en-us/library/windows/desktop/ff468902(v=vs.85).aspx
 
-  - Cryptography
+  - Cryptography - not used at the moment
     - https://msdn.microsoft.com/en-us/library/windows/desktop/aa380252(v=vs.85).aspx
 
-  - Authorization
+  - Authorization - not used at the moment
     - https://msdn.microsoft.com/en-us/library/windows/desktop/aa375742(v=vs.85).aspx
 
 # Functions removed
@@ -82,11 +82,40 @@
     - CertSelectionGetSerializedBlob
       - Reason: Mingw-gcc doesn't have cryptdlg.h
 
+  - dll.txt
+    - These interfere with the monitor, causing it to crash:
+      - GetModuleHandle
+      - GetModuleHandleEx
+
   - file.txt
     - CreateFile2
       - Reason: Minimum Windows 8
+    - CopyFile2
+      - Reason: Minimum Windows 8
+    - These interfere with the monitor, causing it to crash:
+      - SearchPath
+      - GetFullPathName
+      - FindCloseChangeNotification
+      - ReplaceFile
+
+  - network.txt
+    - These interfere with the monitor, causing it to crash:
+      - GetAddrInfoW
+      - getaddrinfo
+      - InternetCreateUrl
+      - GetAddrInfoEx
+      - GetUrlCacheEntryInfo
+      - GetUrlCacheEntryInfoEx
+      - InternetGetConnectedState
+      - InternetGetConnectedStateEx
+      - CommitUrlCacheEntryA
+      - CommitUrlCacheEntryW
 
   - process.txt
+    - These interfere with the monitor, causing it to crash:
+      - CreateJobObject
+      - CreateProcessAsUser
+
     - Because these were not found in malware sources and are probably useless:
       - FlsAlloc
       - FlsFree
@@ -98,6 +127,16 @@
       - TlsGetValue
       - TlsSetValue
 
+  - registry.txt
+    - These interfere with the monitor, causing it to crash:
+      - RegQueryInfoKey
+      - RegEnumKeyEx
+      - RegLoadMUIString
+
+  - service.txt
+    - These interfere with the monitor, causing it to crash:
+      - OpenSCManager
+
   - sync.txt
     - These interfere with the monitor, causing it to crash:
       - DeleteCriticalSection
@@ -108,6 +147,15 @@
       - LeaveCriticalSection
       - SetCriticalSectionSpinCount
       - TryEnterCriticalSection
+
+      - CreateEvent
+      - CreateEventEx
+      - CreateMutex
+      - CreateMutexEx
+      - CreateSemaphore
+      - CreateSemaphoreEx
+      - CreateWaitableTimer
+      - CreateWaitableTimerEx
 
     - These slow the target program down
       - AcquireSRWLockExclusive
@@ -277,16 +325,21 @@
       - InterlockedXorNoFence
       - InterlockedXorRelease
 
+  - system-info.txt
+    - These interfere with the monitor, causing it to crash:
+      - ExpandEnvironmentStrings
+      - GetSystemWindowsDirectory
+      - GetSystemWow64Directory
+      - GetSystemDirectory
+
 # Tests
 
-  - Notepad: All files work except
-    - process.txt slows execution down significantly
-    - sync.txt prevents Notepad from running
+  - Successful: No crash or early termination of target process
+    - Notepad.exe
+      - Saved file to Desktop
 
-  - Internet Explorer: All files works except
-    - resource.txt causes it to crash after Internet Explorer has started
-    - service.txt causes it to crash after Internet Explorer has started
-    - I did not test process.txt and sync.txt like I did with Notepad, but since
-      Internet Explorer does many more things than Notepad I assume I will
-      see similar behavior.
-
+    - Internet Explorer
+      - Visited many webpages
+      - Played videos (youtube)
+      - Downloaded files (PDF)
+      - Clicked on many links
