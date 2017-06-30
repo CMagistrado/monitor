@@ -28,6 +28,7 @@ ConvertThreadToFiberEx
 CreateFiber
 CreateFiberEx
 CreateProcess
+CreateProcessInternal
 CreateProcessWithLogonW
 CreateProcessWithTokenW
 CreateRemoteThread

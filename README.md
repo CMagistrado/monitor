@@ -77,6 +77,17 @@ with noise that isn't sufficient to model the program's behavior.
 
 However, this is used to create the hooks used to model behaviors (see above).
 
+Also note that this will remove all efforts to communicate back to the
+analyzer (e.g., to tell it to hook into a child process). You must add
+this back in after rescanning. See all lines in ./sigs/template/sigs.rst-full
+that call pipe().
+
+There were some calls hooked by Cuckoo's old signatures that my parser didn't pickup:
+  - CreateProcessInternalW
+  - SetContextThread
+  - IWbemServices_ExecMethod
+  - URLDownloadToFileW
+
 ## Other tools
 Inside Command Prompt (Windows):
 ```
@@ -108,6 +119,82 @@ $ python match.py
     # Example
     $ python match.py monitor-debug-1054.txt
 ```
+
+## Detection Logic (used by analyzer.py)
+
+A process needs to be tracked:
+  - CreateProcessA
+  - CreateProcessW
+  - CreateProcessAsUserW
+  - CreateProcessAsUserA
+  - CreateProcessWithLogonW
+  - CreateProcessWithTokenW
+  - CreateProecessInternalW
+
+  - CreateThread
+  - CreateRemoteThread
+  - CreateRemoteThreadEx
+  - ResumeThread
+  - SetContextThread
+  - QueueUserAPC
+
+  - SendNotifyMessageA
+  - SendNotifyMessageW
+
+  - IWbemServices_ExecMethod
+
+  - **Unsure of where these fit:**
+    - NtMapViewOfSection
+
+A process terminated:
+  - TerminateProcess
+
+A file was created:
+  - WriteFile
+  - WriteFileEx
+  - WriteFileGather
+  - CopyFileA
+  - CopyFileW
+  - CopyFileExA
+  - CopyFileExW
+  - CopyFileTransactedA
+  - CopyFileTransactedW
+
+  - URLDownloadToFileW
+
+  - **Add?**
+    - CreateHardLinkA
+    - CreateHardLinkW
+    - CreateHardLinkTransactedA
+    - CreateHardLinkTransactedW
+
+A file was moved:
+  - MoveFileA
+  - MoveFileW
+  - MoveFileExA
+  - MoveFileExW
+  - MoveFileWithProgressA
+  - MoveFileWithProgressW
+  - MoveFileTransactedA
+  - MoveFileTransactedW
+  - ReplaceFileA
+  - ReplaceFileW
+
+A file was deleted:
+  - MoveFileWithProgressA
+  - MoveFileWithProgressW
+  - DeleteFileA
+  - DeleteFileW
+  - DeleteFileTransactedA
+  - DeleteFileTransactedW
+  - ReplaceFileA
+  - ReplaceFileW
+
+  - **Unsure of where these fit:**
+    - NtSetInformationFile
+
+When to dump memory:
+  - ResumeThread
 
 ## Issues
 **Cause `make` to error:**

@@ -14125,6 +14125,22 @@ Parameters::
 
     ** LPCSTR lpFileName
 
+Pre::
+
+    wchar_t *filepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpFileName  , -1, NULL , 0 );
+    WCHAR wstr[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpFileName  , -1, wstr , wchars_num );
+
+    path_get_full_pathW(wstr, filepath);
+    pipe("FILE_DEL:%Z", filepath);
+
+Post::
+
+    free_unicode_buffer(filepath);
+
 
 DeleteFileW
 ===========
@@ -14137,6 +14153,16 @@ Signature::
 Parameters::
 
     ** LPCWSTR lpFileName
+
+Pre::
+
+    wchar_t *filepath = get_unicode_buffer();
+    path_get_full_pathW(lpFileName, filepath);
+    pipe("FILE_DEL:%Z", filepath);
+
+Post::
+
+    free_unicode_buffer(filepath);
 
 
 DeleteVolumeMountPointW
@@ -15114,6 +15140,17 @@ Parameters::
     ** LPDWORD lpNumberOfBytesWritten
     ** LPOVERLAPPED lpOverlapped
 
+Post::
+
+    wchar_t *filepath = get_unicode_buffer();
+
+    if(NT_SUCCESS(ret) != FALSE &&
+            path_get_full_path_handle(hFile, filepath) != 0) {
+        pipe("FILE_NEW:%Z", filepath);
+    }
+
+    free_unicode_buffer(filepath);
+
 
 WriteFileEx
 ===========
@@ -15131,6 +15168,17 @@ Parameters::
     ** LPOVERLAPPED lpOverlapped
     ** LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
 
+Post::
+
+    wchar_t *filepath = get_unicode_buffer();
+
+    if(NT_SUCCESS(ret) != FALSE &&
+            path_get_full_path_handle(hFile, filepath) != 0) {
+        pipe("FILE_NEW:%Z", filepath);
+    }
+
+    free_unicode_buffer(filepath);
+
 
 WriteFileGather
 ===============
@@ -15147,6 +15195,17 @@ Parameters::
     ** DWORD nNumberOfBytesToWrite
     ** LPDWORD lpReserved
     ** LPOVERLAPPED lpOverlapped
+
+Post::
+
+    wchar_t *filepath = get_unicode_buffer();
+
+    if(NT_SUCCESS(ret) != FALSE &&
+            path_get_full_path_handle(hFile, filepath) != 0) {
+        pipe("FILE_NEW:%Z", filepath);
+    }
+
+    free_unicode_buffer(filepath);
 
 
 GetTempPathW
@@ -19622,7 +19681,7 @@ MapViewOfFile
 Signature::
 
     * Library: rtmpal
-    * Return value: __out_data_source
+    * Return value: LPVOID
 
 Parameters::
 
@@ -19632,6 +19691,18 @@ Parameters::
     ** DWORD dwFileOffsetLow
     ** SIZE_T dwNumberOfBytesToMap
 
+TODO
+Middle::
+
+    uint32_t pid = pid_from_process_handle(ProcessHandle);
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        pipe("PROCESS:%d", pid);
+        sleep_skip_disable();
+    }
+
 
 MapViewOfFileEx
 ===============
@@ -19639,7 +19710,7 @@ MapViewOfFileEx
 Signature::
 
     * Library: kernel32
-    * Return value: __out_data_source
+    * Return value: LPVOID
 
 Parameters::
 
@@ -24488,6 +24559,16 @@ Parameters::
     ** HANDLE hThread
     ** ULONG_PTR dwData
 
+Pre::
+
+    pipe("PROCESS:%d", pid_from_thread_handle(hThread));
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        sleep_skip_disable();
+    }
+
 
 GetProcessTimes
 ===============
@@ -24550,6 +24631,17 @@ Parameters::
     ** HANDLE hProcess
     ** UINT uExitCode
 
+Pre::
+
+    uint32_t pid = pid_from_process_handle(hProcess);
+
+    // If the process handle is a nullptr then it will kill all threads in
+    // the current process except for the current one. TODO Should we have
+    // any special handling for that? Perhaps the unhook detection logic?
+    if(hProcess != NULL) {
+        pipe("KILL:%d", pid);
+    }
+
 
 GetExitCodeProcess
 ==================
@@ -24591,6 +24683,12 @@ Parameters::
     ** DWORD dwCreationFlags
     ** LPDWORD lpThreadId
 
+Post::
+
+    uint32_t pid = pid_from_thread_handle(ret);
+    pipe("PROCESS:%d", pid);
+    sleep_skip_disable();
+
 
 CreateRemoteThread
 ==================
@@ -24609,6 +24707,15 @@ Parameters::
     ** LPVOID lpParameter
     ** DWORD dwCreationFlags
     ** LPDWORD lpThreadId
+
+Middle::
+
+    uint32_t pid = pid_from_process_handle(hProcess);
+
+Post::
+
+    pipe("PROCESS:%d", pid);
+    sleep_skip_disable();
 
 
 GetCurrentThread
@@ -24765,6 +24872,20 @@ Parameters::
 
     ** HANDLE hThread
 
+Pre::
+
+    uint32_t pid = pid_from_thread_handle(hThread);
+    if(pid != get_current_process_id()) {
+        pipe("PROCESS:%d", pid);
+        pipe("DUMPMEM:%d", pid);
+    }
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        sleep_skip_disable();
+    }
+
 
 TlsAlloc
 ========
@@ -24836,6 +24957,17 @@ Parameters::
     ** LPSTARTUPINFOA lpStartupInfo
     ** LPPROCESS_INFORMATION lpProcessInformation
 
+Middle::
+
+    uint32_t pid = lpProcessInformation->dwProcessId;
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        pipe("PROCESS:%d", pid);
+        sleep_skip_disable();
+    }
+
 
 CreateProcessW
 ==============
@@ -24857,6 +24989,17 @@ Parameters::
     ** LPCWSTR lpCurrentDirectory
     ** LPSTARTUPINFOW lpStartupInfo
     ** LPPROCESS_INFORMATION lpProcessInformation
+
+Middle::
+
+    uint32_t pid = lpProcessInformation->dwProcessId;
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        pipe("PROCESS:%d", pid);
+        sleep_skip_disable();
+    }
 
 
 SetProcessShutdownParameters
@@ -24920,6 +25063,17 @@ Parameters::
     ** LPCWSTR lpCurrentDirectory
     ** LPSTARTUPINFOW lpStartupInfo
     ** LPPROCESS_INFORMATION lpProcessInformation
+
+Middle::
+
+    uint32_t pid = lpProcessInformation->dwProcessId;
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        pipe("PROCESS:%d", pid);
+        sleep_skip_disable();
+    }
 
 
 SetThreadToken
@@ -25163,6 +25317,15 @@ Parameters::
     ** DWORD dwCreationFlags
     ** LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
     ** LPDWORD lpThreadId
+
+Middle::
+
+    uint32_t pid = pid_from_process_handle(hProcess);
+
+Post::
+
+    pipe("PROCESS:%d", pid);
+    sleep_skip_disable();
 
 
 GetCurrentThreadStackLimits
@@ -48040,6 +48203,22 @@ Parameters::
     ** LPCSTR lpFileName
     ** HANDLE hTransaction
 
+Pre::
+
+    wchar_t *filepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpFileName  , -1, NULL , 0 );
+    WCHAR wstr[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpFileName  , -1, wstr , wchars_num );
+
+    path_get_full_pathW(wstr, filepath);
+    pipe("FILE_DEL:%Z", filepath);
+
+Post::
+
+    free_unicode_buffer(filepath);
+
 
 DeleteFileTransactedW
 =====================
@@ -48053,6 +48232,16 @@ Parameters::
 
     ** LPCWSTR lpFileName
     ** HANDLE hTransaction
+
+Pre::
+
+    wchar_t *filepath = get_unicode_buffer();
+    path_get_full_pathW(lpFileName, filepath);
+    pipe("FILE_DEL:%Z", filepath);
+
+Post::
+
+    free_unicode_buffer(filepath);
 
 
 CheckNameLegalDOS8Dot3A
@@ -48141,6 +48330,27 @@ Parameters::
     ** LPCSTR lpNewFileName
     ** BOOL bFailIfExists
 
+Pre::
+
+    wchar_t *newfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, NULL , 0 );
+    WCHAR wstr_n[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, wstr_n , wchars_num );
+
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(wstr_n, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        pipe("FILE_NEW:%Z", newfilepath);
+    }
+
+    free_unicode_buffer(newfilepath);
+
 
 CopyFileW
 =========
@@ -48155,6 +48365,21 @@ Parameters::
     ** LPCWSTR lpExistingFileName
     ** LPCWSTR lpNewFileName
     ** BOOL bFailIfExists
+
+Pre::
+
+    wchar_t *newfilepath = get_unicode_buffer();
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(lpNewFileName, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        pipe("FILE_NEW:%Z", newfilepath);
+    }
+
+    free_unicode_buffer(newfilepath);
 
 
 CopyFileExA
@@ -48174,6 +48399,27 @@ Parameters::
     ** LPBOOL pbCancel
     ** DWORD dwCopyFlags
 
+Pre::
+
+    wchar_t *newfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, NULL , 0 );
+    WCHAR wstr_n[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, wstr_n , wchars_num );
+
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(wstr_n, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        pipe("FILE_NEW:%Z", newfilepath);
+    }
+
+    free_unicode_buffer(newfilepath);
+
 
 CopyFileExW
 ===========
@@ -48191,6 +48437,21 @@ Parameters::
     ** LPVOID lpData
     ** LPBOOL pbCancel
     ** DWORD dwCopyFlags
+
+Pre::
+
+    wchar_t *newfilepath = get_unicode_buffer();
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(lpNewFileName, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        pipe("FILE_NEW:%Z", newfilepath);
+    }
+
+    free_unicode_buffer(newfilepath);
 
 
 CopyFileTransactedA
@@ -48211,6 +48472,27 @@ Parameters::
     ** DWORD dwCopyFlags
     ** HANDLE hTransaction
 
+Pre::
+
+    wchar_t *newfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, NULL , 0 );
+    WCHAR wstr_n[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, wstr_n , wchars_num );
+
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(wstr_n, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        pipe("FILE_NEW:%Z", newfilepath);
+    }
+
+    free_unicode_buffer(newfilepath);
+
 
 CopyFileTransactedW
 ===================
@@ -48229,6 +48511,21 @@ Parameters::
     ** LPBOOL pbCancel
     ** DWORD dwCopyFlags
     ** HANDLE hTransaction
+
+Pre::
+
+    wchar_t *newfilepath = get_unicode_buffer();
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(lpNewFileName, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        pipe("FILE_NEW:%Z", newfilepath);
+    }
+
+    free_unicode_buffer(newfilepath);
 
 
 CopyFile2
@@ -48259,6 +48556,42 @@ Parameters::
     ** LPCSTR lpExistingFileName
     ** LPCSTR lpNewFileName
 
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpExistingFileName  , -1, NULL , 0 );
+    WCHAR wstr_e[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpExistingFileName  , -1, wstr_e , wchars_num );
+
+    path_get_full_pathW(wstr_e, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, NULL , 0 );
+    WCHAR wstr_n[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, wstr_n , wchars_num );
+
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(wstr_n, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        if(lpNewFileName == NULL) {
+            pipe("FILE_DEL:%Z", oldfilepath);
+        }
+        else {
+            pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+        }
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
+
 
 MoveFileW
 =========
@@ -48272,6 +48605,30 @@ Parameters::
 
     ** LPCWSTR lpExistingFileName
     ** LPCWSTR lpNewFileName
+
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+    path_get_full_pathW(lpExistingFileName, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(lpNewFileName, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        if(lpNewFileName == NULL) {
+            pipe("FILE_DEL:%Z", oldfilepath);
+        }
+        else {
+            pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+        }
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
 
 
 MoveFileExA
@@ -48288,6 +48645,42 @@ Parameters::
     ** LPCSTR lpNewFileName
     ** DWORD dwFlags
 
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpExistingFileName  , -1, NULL , 0 );
+    WCHAR wstr_e[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpExistingFileName  , -1, wstr_e , wchars_num );
+
+    path_get_full_pathW(wstr_e, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, NULL , 0 );
+    WCHAR wstr_n[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, wstr_n , wchars_num );
+
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(wstr_n, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        if(lpNewFileName == NULL) {
+            pipe("FILE_DEL:%Z", oldfilepath);
+        }
+        else {
+            pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+        }
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
+
 
 MoveFileExW
 ===========
@@ -48302,6 +48695,30 @@ Parameters::
     ** LPCWSTR lpExistingFileName
     ** LPCWSTR lpNewFileName
     ** DWORD dwFlags
+
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+    path_get_full_pathW(lpExistingFileName, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(lpNewFileName, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        if(lpNewFileName == NULL) {
+            pipe("FILE_DEL:%Z", oldfilepath);
+        }
+        else {
+            pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+        }
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
 
 
 MoveFileWithProgressA
@@ -48320,6 +48737,42 @@ Parameters::
     ** LPVOID lpData
     ** DWORD dwFlags
 
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpExistingFileName  , -1, NULL , 0 );
+    WCHAR wstr_e[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpExistingFileName  , -1, wstr_e , wchars_num );
+
+    path_get_full_pathW(wstr_e, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, NULL , 0 );
+    WCHAR wstr_n[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, wstr_n , wchars_num );
+
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(wstr_n, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        if(lpNewFileName == NULL) {
+            pipe("FILE_DEL:%Z", oldfilepath);
+        }
+        else {
+            pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+        }
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
+
 
 MoveFileWithProgressW
 =====================
@@ -48336,6 +48789,30 @@ Parameters::
     ** LPPROGRESS_ROUTINE lpProgressRoutine
     ** LPVOID lpData
     ** DWORD dwFlags
+
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+    path_get_full_pathW(lpExistingFileName, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(lpNewFileName, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        if(lpNewFileName == NULL) {
+            pipe("FILE_DEL:%Z", oldfilepath);
+        }
+        else {
+            pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+        }
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
 
 
 MoveFileTransactedA
@@ -48355,6 +48832,42 @@ Parameters::
     ** DWORD dwFlags
     ** HANDLE hTransaction
 
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpExistingFileName  , -1, NULL , 0 );
+    WCHAR wstr_e[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpExistingFileName  , -1, wstr_e , wchars_num );
+
+    path_get_full_pathW(wstr_e, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, NULL , 0 );
+    WCHAR wstr_n[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpNewFileName  , -1, wstr_n , wchars_num );
+
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(wstr_n, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        if(lpNewFileName == NULL) {
+            pipe("FILE_DEL:%Z", oldfilepath);
+        }
+        else {
+            pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+        }
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
+
 
 MoveFileTransactedW
 ===================
@@ -48372,6 +48885,30 @@ Parameters::
     ** LPVOID lpData
     ** DWORD dwFlags
     ** HANDLE hTransaction
+
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+    path_get_full_pathW(lpExistingFileName, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+    if(lpNewFileName != NULL) {
+        path_get_full_pathW(lpNewFileName, newfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        if(lpNewFileName == NULL) {
+            pipe("FILE_DEL:%Z", oldfilepath);
+        }
+        else {
+            pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+        }
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
 
 
 ReplaceFileA
@@ -48391,6 +48928,56 @@ Parameters::
     ** LPVOID lpExclude
     ** LPVOID lpReserved
 
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpReplacementFileName  , -1, NULL , 0 );
+    WCHAR wstr_e[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpReplacementFileName  , -1, wstr_e , wchars_num );
+
+    path_get_full_pathW(wstr_e, oldfilepath);
+
+
+    wchar_t *newfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpReplacedFileName  , -1, NULL , 0 );
+    WCHAR wstr_n[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpReplacedFileName  , -1, wstr_n , wchars_num );
+
+    if(lpReplacedFileName != NULL) {
+        path_get_full_pathW(wstr_n, newfilepath);
+    }
+
+    wchar_t *backupfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpBackupFileName  , -1, NULL , 0 );
+    WCHAR wstr_b[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpBackupFileName  , -1, wstr_b , wchars_num );
+
+    if(lpBackupFileName != NULL) {
+        path_get_full_pathW(wstr_b, backupfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        pipe("FILE_DEL:%Z", newfilepath);
+
+        if (lpBackupFileName != NULL) {
+            pipe("FILE_NEW:%Z", backupfilepath);
+        }
+
+        pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
+    free_unicode_buffer(backupfilepath);
+
 
 ReplaceFileW
 ============
@@ -48408,6 +48995,37 @@ Parameters::
     ** DWORD dwReplaceFlags
     ** LPVOID lpExclude
     ** LPVOID lpReserved
+
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+    path_get_full_pathW(lpReplacementFileName, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+    if(lpReplacedFileName != NULL) {
+        path_get_full_pathW(lpReplacedFileName, newfilepath);
+    }
+
+    wchar_t *backupfilepath = get_unicode_buffer();
+    if(lpBackupFileName != NULL) {
+        path_get_full_pathW(lpBackupFileName, backupfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        pipe("FILE_DEL:%Z", newfilepath);
+
+        if (lpBackupFileName != NULL) {
+            pipe("FILE_NEW:%Z", backupfilepath);
+        }
+
+        pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
+    free_unicode_buffer(backupfilepath);
 
 
 CreateHardLinkA
@@ -49465,7 +50083,7 @@ MapViewOfFileExNuma
 Signature::
 
     * Library: kernel32
-    * Return value: __out_data_source
+    * Return value: LPVOID
 
 Parameters::
 
@@ -50195,6 +50813,17 @@ Parameters::
     ** LPSTARTUPINFOA lpStartupInfo
     ** LPPROCESS_INFORMATION lpProcessInformation
 
+Middle::
+
+    uint32_t pid = lpProcessInformation->dwProcessId;
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        pipe("PROCESS:%d", pid);
+        sleep_skip_disable();
+    }
+
 
 CreateProcessWithLogonW
 =======================
@@ -50218,6 +50847,17 @@ Parameters::
     ** LPSTARTUPINFOW lpStartupInfo
     ** LPPROCESS_INFORMATION lpProcessInformation
 
+Middle::
+
+    uint32_t pid = lpProcessInformation->dwProcessId;
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        pipe("PROCESS:%d", pid);
+        sleep_skip_disable();
+    }
+
 
 CreateProcessWithTokenW
 =======================
@@ -50238,6 +50878,17 @@ Parameters::
     ** LPCWSTR lpCurrentDirectory
     ** LPSTARTUPINFOW lpStartupInfo
     ** LPPROCESS_INFORMATION lpProcessInformation
+
+Middle::
+
+    uint32_t pid = lpProcessInformation->dwProcessId;
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        pipe("PROCESS:%d", pid);
+        sleep_skip_disable();
+    }
 
 
 IsTokenUntrusted
@@ -66786,6 +67437,14 @@ Parameters::
     ** WPARAM wParam
     ** LPARAM lParam
 
+Pre::
+
+    uint32_t pid = 0, tid;
+
+    // TODO Will this still happen before the notify message is executed?
+    tid = get_window_thread_process_id(hWnd, &pid);
+    pipe("PROCESS2:%d,%d,%d", pid, tid, HOOK_MODE_ALL);
+
 
 SendNotifyMessageW
 ==================
@@ -66801,6 +67460,14 @@ Parameters::
     ** UINT Msg
     ** WPARAM wParam
     ** LPARAM lParam
+
+Pre::
+
+    uint32_t pid = 0, tid;
+
+    // TODO Will this still happen before the notify message is executed?
+    tid = get_window_thread_process_id(hWnd, &pid);
+    pipe("PROCESS2:%d,%d,%d", pid, tid, HOOK_MODE_ALL);
 
 
 SendMessageCallbackA
@@ -76610,5 +77277,218 @@ Parameters::
 
     ** ULONG SessionId
     ** PHANDLE phToken
+
+
+CreateProcessInternalW
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Logging: always
+    * Mode: exploit
+    * Return value: BOOL
+    * Special: true
+
+Parameters::
+
+    *  LPVOID lpUnknown1
+    *  LPWSTR lpApplicationName
+    ** LPWSTR lpCommandLine command_line
+    *  LPSECURITY_ATTRIBUTES lpProcessAttributes
+    *  LPSECURITY_ATTRIBUTES lpThreadAttributes
+    ** BOOL bInheritHandles inherit_handles
+    *  DWORD dwCreationFlags
+    *  LPVOID lpEnvironment
+    ** LPWSTR lpCurrentDirectory current_directory
+    *  LPSTARTUPINFO lpStartupInfo
+    *  LPPROCESS_INFORMATION lpProcessInformation
+    *  LPVOID lpUnknown2
+
+Flags::
+
+    creation_flags creation_flags
+
+Ensure::
+
+    lpProcessInformation
+
+Pre::
+
+    // Ensure the CREATE_SUSPENDED flag is set when calling
+    // the original function.
+    DWORD creation_flags = dwCreationFlags;
+    dwCreationFlags |= CREATE_SUSPENDED;
+
+    wchar_t *filepath = get_unicode_buffer();
+    path_get_full_pathW(lpApplicationName, filepath);
+
+Interesting::
+
+    u filepath
+    u command_line
+    i inherit_handles
+    i creation_flags
+    u current_directory
+
+Middle::
+
+    int track = 0;
+
+    if(ret != FALSE) {
+        uint32_t mode = HOOK_MODE_ALL;
+
+        const wchar_t *command_line = lpCommandLine;
+        if(command_line == NULL) {
+            command_line = lpApplicationName;
+        }
+
+        // Let's ask nicely whether we want to propagate execution into this
+        // new process and if so, in what monitoring mode.
+        if(monitor_mode_should_propagate(command_line, &mode) == 0) {
+            pipe("PROCESS2:%d,%d,%d",
+                lpProcessInformation->dwProcessId,
+                lpProcessInformation->dwThreadId,
+                mode);
+            track = 1;
+        }
+    }
+
+Logging::
+
+    u filepath filepath
+    u filepath_r lpApplicationName
+    i creation_flags creation_flags
+    i process_identifier lpProcessInformation->dwProcessId
+    i thread_identifier lpProcessInformation->dwThreadId
+    p process_handle lpProcessInformation->hProcess
+    p thread_handle lpProcessInformation->hThread
+    i track track
+
+Post::
+
+    if(ret != FALSE) {
+        // If the CREATE_SUSPENDED flag was not set then we have to resume
+        // the main thread ourselves.
+        if((creation_flags & CREATE_SUSPENDED) == 0) {
+            ResumeThread(lpProcessInformation->hThread);
+        }
+
+        sleep_skip_disable();
+    }
+
+    free_unicode_buffer(filepath);
+
+
+SetContextThread
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hThread
+    ** const CONTEXT *lpContext
+
+Middle::
+
+    uint32_t pid = pid_from_thread_handle(ThreadHandle);
+
+Post::
+
+    pipe("PROCESS:%d", pid);
+    sleep_skip_disable();
+
+
+IWbemServices_ExecMethod
+========================
+
+Parameters::
+
+    *  IWbemServices *This
+    ** const wchar_t *strObjectPath class
+    ** const wchar_t *strMethodName method
+    ** long lFlags flags
+    *  IWbemContext *pCtx
+    *  IWbemClassObject *pInParams
+    *  IWbemClassObject **ppOutParams
+    *  IWbemCallResult **ppCallResult
+
+Pre::
+
+    int adjusted = -1; uint32_t creation_flags = 0;
+
+    // We adjust some parameters for Win32_Process::Create so we can follow
+    // the newly created process cleanly.
+    if(wcscmp(strObjectPath, L"Win32_Process") == 0 &&
+            wcscmp(strMethodName, L"Create") == 0) {
+        adjusted = wmi_win32_process_create_pre(
+            This, pInParams, &creation_flags
+        );
+    }
+
+Post::
+
+    HRESULT hr; VARIANT vt; uint32_t pid = 0, tid = 0;
+
+    if(adjusted == 0 && SUCCEEDED(ret) != FALSE) {
+        vt.vt = VT_EMPTY;
+        hr = (*ppOutParams)->lpVtbl->Get(
+            *ppOutParams, L"ProcessId", 0, &vt, NULL, NULL
+        );
+        if(SUCCEEDED(hr) != FALSE && vt.vt == VT_I4) {
+            pid = vt.uintVal; tid = first_tid_from_pid(pid);
+            pipe("PROCESS2:%d,%d,%d", pid, tid, HOOK_MODE_ALL);
+        }
+
+        if((creation_flags & CREATE_SUSPENDED) == 0 && tid != 0) {
+            resume_thread_identifier(tid);
+        }
+
+        sleep_skip_disable();
+    }
+
+
+URLDownloadToFileW
+==================
+
+Signature::
+
+    * Library: urlmon
+    * Return value: HRESULT
+
+Parameters::
+
+    *  LPUNKNOWN pCaller
+    ** LPWSTR szURL url
+    *  LPWSTR szFileName
+    *  DWORD dwReserved
+    *  LPVOID lpfnCB
+
+Interesting::
+
+    u url
+    u filepath
+
+Pre::
+
+    wchar_t *filepath = get_unicode_buffer();
+    path_get_full_pathW(szFileName, filepath);
+
+Logging::
+
+    u filepath filepath
+    u filepath_r szFileName
+
+Post::
+
+    if(ret == S_OK) {
+        pipe("FILE_NEW:%Z", filepath);
+    }
+
+    free_unicode_buffer(filepath);
 
 

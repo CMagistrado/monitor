@@ -187,6 +187,7 @@ Scanning file.txt
    RemoveDirectoryTransacted was not found in ../templates/sigs.rst-full
    RemoveUsersFromEncryptedFileA was not found in ../templates/sigs.rst-full
    RemoveUsersFromEncryptedFileW was not found in ../templates/sigs.rst-full
+   ReplaceFile was not found in ../templates/sigs.rst-full
    SetCurrentDirectory was not found in ../templates/sigs.rst-full
    SetEndOfFileA was not found in ../templates/sigs.rst-full
    SetEndOfFileW was not found in ../templates/sigs.rst-full
@@ -3566,6 +3567,8 @@ Scanning network.txt
    shutdownW was not found in ../templates/sigs.rst-full
    socketA was not found in ../templates/sigs.rst-full
    socketW was not found in ../templates/sigs.rst-full
+   URLDownloadToFile was not found in ../templates/sigs.rst-full
+   URLDownloadToFileA was not found in ../templates/sigs.rst-full
 Scanning process.txt
    AllocateUserPhysicalPagesNumaA was not found in ../templates/sigs.rst-full
    AllocateUserPhysicalPagesNumaW was not found in ../templates/sigs.rst-full
@@ -3623,6 +3626,8 @@ Scanning process.txt
    CreateFiberExA was not found in ../templates/sigs.rst-full
    CreateFiberExW was not found in ../templates/sigs.rst-full
    CreateProcess was not found in ../templates/sigs.rst-full
+   CreateProcessInternal was not found in ../templates/sigs.rst-full
+   CreateProcessInternalA was not found in ../templates/sigs.rst-full
    CreateProcessWithLogonWA was not found in ../templates/sigs.rst-full
    CreateProcessWithLogonWW was not found in ../templates/sigs.rst-full
    CreateProcessWithTokenWA was not found in ../templates/sigs.rst-full

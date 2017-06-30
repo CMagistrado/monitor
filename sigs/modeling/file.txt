@@ -95,6 +95,7 @@ ReadFileScatter
 RemoveDirectory
 RemoveDirectoryTransacted
 RemoveUsersFromEncryptedFile
+ReplaceFile
 SetCurrentDirectory
 SetEndOfFile
 SetFileApisToANSI

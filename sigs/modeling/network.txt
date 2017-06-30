@@ -976,3 +976,4 @@ setsockopt
 setsourcefilter
 shutdown
 socket
+URLDownloadToFile
