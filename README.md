@@ -122,7 +122,7 @@ $ python match.py
 
 ## Detection Logic (used by analyzer.py)
 
-A process needs to be tracked:
+**A process needs to be tracked:**
   - CreateProcessA
   - CreateProcessW
   - CreateProcessAsUserW
@@ -146,10 +146,10 @@ A process needs to be tracked:
   - **Unsure of where these fit:**
     - NtMapViewOfSection
 
-A process terminated:
+**A process terminated:**
   - TerminateProcess
 
-A file was created:
+**A file was created:**
   - WriteFile
   - WriteFileEx
   - WriteFileGather
@@ -168,7 +168,7 @@ A file was created:
     - CreateHardLinkTransactedA
     - CreateHardLinkTransactedW
 
-A file was moved:
+**A file was moved:**
   - MoveFileA
   - MoveFileW
   - MoveFileExA
@@ -180,7 +180,7 @@ A file was moved:
   - ReplaceFileA
   - ReplaceFileW
 
-A file was deleted:
+**A file was deleted:**
   - MoveFileWithProgressA
   - MoveFileWithProgressW
   - DeleteFileA
@@ -193,7 +193,7 @@ A file was deleted:
   - **Unsure of where these fit:**
     - NtSetInformationFile
 
-When to dump memory:
+**When to dump memory:**
   - ResumeThread
 
 ## Issues
@@ -210,7 +210,7 @@ error: aggregate value used where an integer was expected
 Had to add "#include <ws2ipdef.h>" to "/usr/share/mingw-w64/include/netioapi.h"
 because of missing SOCKADDR_INET definition.
 
-/usr/share/mingw-w64/include/cryptxml.h
+**/usr/share/mingw-w64/include/cryptxml.h**
   - error: variable or field declared void
   - Change it to "void \*pvPaddingInfo" on line 83
   - Change it to "void \*pvExtraInfo" on line 84
@@ -223,7 +223,7 @@ because of missing SOCKADDR_INET definition.
   - Had to move "CRYPT\_XML_KEY_VALUE" to above "CRYPT_XML_KEY_INFO_ITEM" and past
     a few variables because it wasn't ordered properly.
 
-/usr/share/mingw-w64/include/windns.h
+**/usr/share/mingw-w64/include/windns.h**
   - E.g., I added DNS_PROXY_INFORMATION_TYPE data type (and others) because "DnsGetProxyInformation()"
     required it.
   - Added DNS_ADDR_MAX_SOCKADDR_LENGTH
@@ -238,11 +238,11 @@ because of missing SOCKADDR_INET definition.
   - Added DNS_PROXY_INFORMATION_TYPE
   - Added DNS_PROXY_INFORMATION
 
-/usr/share/mingw-w64/include/wininet.h
+**/usr/share/mingw-w64/include/wininet.h**
   - Commented out "#define HTTP_VERSION \_\_MINGW_NAME_AW(HTTP_VERSION)" because of
     conflicting type (HTTP_VERSION) in http.h
 
-/usr/share/mingw-w64/include/http.h
+**/usr/share/mingw-w64/include/http.h**
   - Added ";" at end of line 459 (HTTP_PROPERTY_FLAGS)
   - Added HTTP_LOG_DATA data type
   - Added HTTP_SERVICE_CONFIG_TIMEOUT_PARAM data type
