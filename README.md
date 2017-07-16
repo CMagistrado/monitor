@@ -88,6 +88,12 @@ There were some calls hooked by Cuckoo's old signatures that my parser didn't pi
   - IWbemServices_ExecMethod
   - URLDownloadToFileW
 
+In addition, I modified ExitProcess and ExitThread and FreeLibraryAndExitThread
+return values to be void. Were originally DECLSPEC_NORETURN.
+
+Corrected URLDownloadToFile by changing the last argument's type from LPVOID
+to LPBINDSTATUSCALLBACK
+
 ## Other tools
 Inside Command Prompt (Windows):
 ```
