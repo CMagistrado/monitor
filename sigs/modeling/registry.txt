@@ -5,7 +5,6 @@ AssocQueryStringByKey
 RegCloseKey
 RegConnectRegistry
 RegCopyTree
-RegCreateKeyEx
 RegCreateKeyTransacted
 RegDeleteKey
 RegDeleteKeyEx
@@ -24,13 +23,11 @@ RegGetValue
 RegLoadKey
 RegNotifyChangeKeyValue
 RegOpenCurrentUser
-RegOpenKeyEx
 RegOpenKeyTransacted
 RegOpenUserClassesRoot
 RegOverridePredefKey
 RegQueryMultipleValues
 RegQueryReflectionKey
-RegQueryValueEx
 RegReplaceKey
 RegRestoreKey
 RegSaveKey

@@ -173,7 +173,7 @@ GetSecurityInfo
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: DWORD
 
 Parameters::
@@ -8495,7 +8495,7 @@ GetDateFormatA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -12540,7 +12540,7 @@ IsDebuggerPresent
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 
@@ -12549,7 +12549,7 @@ DebugBreak
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 
@@ -12558,7 +12558,7 @@ OutputDebugStringA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -12571,7 +12571,7 @@ OutputDebugStringW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -13714,7 +13714,7 @@ RaiseException
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -13730,7 +13730,7 @@ UnhandledExceptionFilter
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LONG
 
 Parameters::
@@ -13743,7 +13743,7 @@ SetUnhandledExceptionFilter
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LPTOP_LEVEL_EXCEPTION_FILTER
 
 Parameters::
@@ -13756,8 +13756,8 @@ GetLastError
 
 Signature::
 
-    * Library: rtmpal
-    * Return value: _Post_equals_last_error_
+    * Library: kernel32
+    * Return value: DWORD
 
 
 SetLastError
@@ -13765,7 +13765,7 @@ SetLastError
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -14037,7 +14037,7 @@ CreateDirectoryA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14051,7 +14051,7 @@ CreateDirectoryW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14065,7 +14065,7 @@ CreateFileA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -14084,7 +14084,7 @@ CreateFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -14118,7 +14118,7 @@ DeleteFileA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14147,7 +14147,7 @@ DeleteFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14197,7 +14197,7 @@ FindClose
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14267,7 +14267,7 @@ FindFirstFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -14358,7 +14358,7 @@ FindNextFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14518,7 +14518,7 @@ GetFileAttributesW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -14546,7 +14546,7 @@ GetFileAttributesExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14561,7 +14561,7 @@ GetFileInformationByHandle
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14589,7 +14589,7 @@ GetFileSizeEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14603,7 +14603,7 @@ GetFileTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14899,7 +14899,7 @@ ReadFile
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -14963,7 +14963,7 @@ RemoveDirectoryW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15003,7 +15003,7 @@ SetFileAttributesW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15033,7 +15033,7 @@ SetFilePointer
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -15049,7 +15049,7 @@ SetFilePointerEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15065,7 +15065,7 @@ SetFileTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15129,7 +15129,7 @@ WriteFile
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15213,7 +15213,7 @@ GetTempPathW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -15414,7 +15414,7 @@ CloseHandle
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15427,7 +15427,7 @@ DuplicateHandle
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15475,7 +15475,7 @@ HeapCreate
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -15490,7 +15490,7 @@ HeapDestroy
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15503,7 +15503,7 @@ HeapAlloc
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LPVOID
 
 Parameters::
@@ -15518,7 +15518,7 @@ HeapReAlloc
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LPVOID
 
 Parameters::
@@ -15534,7 +15534,7 @@ HeapFree
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -15548,7 +15548,7 @@ HeapSize
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: SIZE_T
 
 Parameters::
@@ -15607,7 +15607,7 @@ GetProcessHeap
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 
@@ -15670,7 +15670,7 @@ HeapSetInformation
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -17337,7 +17337,7 @@ InitializeSListHead
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -17350,7 +17350,7 @@ InterlockedPopEntrySList
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: PSLIST_ENTRY
 
 Parameters::
@@ -17363,7 +17363,7 @@ InterlockedPushEntrySList
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: PSLIST_ENTRY
 
 Parameters::
@@ -17406,7 +17406,7 @@ QueryDepthSList
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: USHORT
 
 Parameters::
@@ -18845,7 +18845,7 @@ DisableThreadLibraryCalls
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -18892,7 +18892,7 @@ FreeLibrary
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -18932,7 +18932,7 @@ GetModuleFileNameA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -18947,7 +18947,7 @@ GetModuleFileNameW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -18975,7 +18975,7 @@ GetModuleHandleW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
@@ -19018,7 +19018,7 @@ GetProcAddress
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: FARPROC
 
 Parameters::
@@ -19032,7 +19032,7 @@ LoadLibraryExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
@@ -19047,7 +19047,7 @@ LoadLibraryExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
@@ -19516,7 +19516,7 @@ VirtualProtect
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -19532,7 +19532,7 @@ VirtualQuery
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: SIZE_T
 
 Parameters::
@@ -19647,7 +19647,7 @@ CreateFileMappingW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -19665,7 +19665,7 @@ OpenFileMappingW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -19680,7 +19680,7 @@ MapViewOfFile
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LPVOID
 
 Parameters::
@@ -19729,7 +19729,7 @@ UnmapViewOfFile
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24378,7 +24378,7 @@ SetEnvironmentVariableW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24580,7 +24580,7 @@ GetCurrentProcess
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 
@@ -24589,7 +24589,7 @@ GetCurrentProcessId
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 
@@ -24611,7 +24611,7 @@ TerminateProcess
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24659,7 +24659,7 @@ CreateThread
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -24711,7 +24711,7 @@ GetCurrentThread
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 
@@ -24720,7 +24720,7 @@ GetCurrentThreadId
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 
@@ -24744,7 +24744,7 @@ SetThreadPriority
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24758,7 +24758,7 @@ SetThreadPriorityBoost
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24786,7 +24786,7 @@ GetThreadPriority
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -24826,7 +24826,7 @@ GetExitCodeThread
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24880,7 +24880,7 @@ TlsAlloc
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 
@@ -24889,7 +24889,7 @@ TlsGetValue
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: LPVOID
 
 Parameters::
@@ -24902,7 +24902,7 @@ TlsSetValue
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -24916,7 +24916,7 @@ TlsFree
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -25441,7 +25441,7 @@ IsProcessorFeaturePresent
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -25666,7 +25666,7 @@ QueryPerformanceCounter
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -25679,7 +25679,7 @@ QueryPerformanceFrequency
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37415,7 +37415,7 @@ MultiByteToWideChar
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -37433,7 +37433,7 @@ WideCharToMultiByte
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -37466,7 +37466,7 @@ ReleaseSRWLockExclusive
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37492,7 +37492,7 @@ AcquireSRWLockExclusive
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37544,7 +37544,7 @@ InitializeCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37557,7 +37557,7 @@ EnterCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37570,7 +37570,7 @@ LeaveCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37583,7 +37583,7 @@ InitializeCriticalSectionAndSpinCount
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37597,7 +37597,7 @@ InitializeCriticalSectionEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37626,7 +37626,7 @@ TryEnterCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37639,7 +37639,7 @@ DeleteCriticalSection
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37712,7 +37712,7 @@ InitializeConditionVariable
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37738,7 +37738,7 @@ WakeAllConditionVariable
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -37751,7 +37751,7 @@ SleepConditionVariableCS
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37782,7 +37782,7 @@ SetEvent
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37795,7 +37795,7 @@ ResetEvent
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37808,7 +37808,7 @@ ReleaseSemaphore
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37823,7 +37823,7 @@ ReleaseMutex
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -37836,7 +37836,7 @@ WaitForSingleObject
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -37864,7 +37864,7 @@ WaitForSingleObjectEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -37879,7 +37879,7 @@ WaitForMultipleObjectsEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -37911,7 +37911,7 @@ CreateMutexW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -37957,7 +37957,7 @@ CreateEventW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -38236,7 +38236,7 @@ SignalObjectAndWait
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -38261,7 +38261,7 @@ GlobalMemoryStatusEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -38274,7 +38274,7 @@ GetSystemTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -38287,7 +38287,7 @@ GetSystemTimeAsFileTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -38300,7 +38300,7 @@ GetLocalTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -38326,7 +38326,7 @@ GetSystemInfo
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -38339,7 +38339,7 @@ GetTickCount
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 
@@ -38348,7 +38348,7 @@ GetTickCount64
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: ULONGLONG
 
 
@@ -38526,7 +38526,7 @@ GetVersionExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -38598,7 +38598,7 @@ VerSetConditionMask
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: ULONGLONG
 
 Parameters::
@@ -42449,7 +42449,7 @@ FileTimeToSystemTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -42463,7 +42463,7 @@ SystemTimeToFileTime
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -42477,7 +42477,7 @@ GetTimeZoneInformation
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -42603,7 +42603,7 @@ CreateToolhelp32Snapshot
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -42690,7 +42690,7 @@ Process32FirstW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -42704,7 +42704,7 @@ Process32NextW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -43559,7 +43559,7 @@ EncodePointer
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: PVOID
 
 Parameters::
@@ -43572,7 +43572,7 @@ DecodePointer
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: PVOID
 
 Parameters::
@@ -44636,7 +44636,7 @@ LocalAlloc
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HLOCAL
 
 Parameters::
@@ -44730,7 +44730,7 @@ LocalFree
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HLOCAL
 
 Parameters::
@@ -44860,7 +44860,7 @@ GetProcessAffinityMask
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -44875,7 +44875,7 @@ SetProcessAffinityMask
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -45068,7 +45068,7 @@ SetThreadAffinityMask
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD_PTR
 
 Parameters::
@@ -45379,7 +45379,7 @@ WaitForMultipleObjects
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -45785,7 +45785,7 @@ FormatMessageW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: DWORD
 
 Parameters::
@@ -46053,7 +46053,7 @@ lstrcmpW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -46081,7 +46081,7 @@ lstrcmpiW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -46181,7 +46181,7 @@ lstrlenA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -46194,7 +46194,7 @@ lstrlenW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: int
 
 Parameters::
@@ -46440,7 +46440,7 @@ CreateSemaphoreW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HANDLE
 
 Parameters::
@@ -46616,7 +46616,7 @@ LoadLibraryA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
@@ -46629,7 +46629,7 @@ LoadLibraryW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: HMODULE
 
 Parameters::
@@ -46716,7 +46716,7 @@ FatalAppExitW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: void
 
 Parameters::
@@ -48345,7 +48345,7 @@ CopyFileW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -48675,7 +48675,7 @@ MoveFileExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -50089,7 +50089,7 @@ IsBadReadPtr
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -50103,7 +50103,7 @@ IsBadWritePtr
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -50592,7 +50592,7 @@ GetComputerNameW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -51101,7 +51101,7 @@ GetSystemPowerStatus
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -51896,7 +51896,7 @@ GetFileInformationByHandleEx
 
 Signature::
 
-    * Library: rtmpal
+    * Library: kernel32
     * Return value: BOOL
 
 Parameters::
@@ -61421,7 +61421,7 @@ RegCloseKey
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -61588,7 +61588,7 @@ RegCreateKeyExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -61609,7 +61609,7 @@ RegCreateKeyExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -61690,7 +61690,7 @@ RegDeleteKeyW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -61892,7 +61892,7 @@ RegEnumKeyExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -62058,7 +62058,7 @@ RegOpenKeyExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -62075,7 +62075,7 @@ RegOpenKeyExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -62244,7 +62244,7 @@ RegQueryValueExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -62262,7 +62262,7 @@ RegQueryValueExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -62436,7 +62436,7 @@ RegSetValueExA
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::
@@ -62454,7 +62454,7 @@ RegSetValueExW
 
 Signature::
 
-    * Library: rtmpal
+    * Library: advapi32
     * Return value: LSTATUS
 
 Parameters::

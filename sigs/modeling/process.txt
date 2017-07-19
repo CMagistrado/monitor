@@ -160,7 +160,6 @@ QueueUserWorkItem
 ReleaseMutexWhenCallbackReturns
 ReleaseSemaphoreWhenCallbackReturns
 ResumeThread
-SetEnvironmentVariable
 SetEventWhenCallbackReturns
 SetInformationJobObject
 SetPriorityClass

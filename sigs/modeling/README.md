@@ -86,6 +86,7 @@
     - These interfere with the monitor, causing it to crash:
       - GetModuleHandle
       - GetModuleHandleEx
+      - GetProcAddress
 
   - file.txt
     - CreateFile2
@@ -114,6 +115,7 @@
     - These interfere with the monitor, causing it to crash:
       - CreateJobObject
       - CreateProcessAsUser
+      - SetEnvironmentVariable
 
     - Because these were not found in malware sources and are probably useless:
       - FlsAlloc
@@ -137,6 +139,13 @@
       - RegQueryInfoKey
       - RegEnumKeyEx
       - RegLoadMUIString
+
+      - RegQueryValue
+      - RegQueryValueEx
+      - RegOpenKey
+      - RegOpenKeyEx
+      - RegCreateKey
+      - RegCreateKeyEx
 
   - service.txt
     - These interfere with the monitor, causing it to crash:

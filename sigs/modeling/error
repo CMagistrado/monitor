@@ -13,8 +13,6 @@ Scanning dll.txt
    GetDllDirectory was not found in ../template/sigs.rst-full
    GetModuleFileName was not found in ../template/sigs.rst-full
    GetModuleFileNameEx was not found in ../template/sigs.rst-full
-   GetProcAddressA was not found in ../template/sigs.rst-full
-   GetProcAddressW was not found in ../template/sigs.rst-full
    LoadLibrary was not found in ../template/sigs.rst-full
    LoadLibraryEx was not found in ../template/sigs.rst-full
    LoadPackagedLibraryA was not found in ../template/sigs.rst-full
@@ -411,7 +409,6 @@ Scanning registry.txt
    RegCloseKeyW was not found in ../template/sigs.rst-full
    RegConnectRegistry was not found in ../template/sigs.rst-full
    RegCopyTree was not found in ../template/sigs.rst-full
-   RegCreateKeyEx was not found in ../template/sigs.rst-full
    RegCreateKeyTransacted was not found in ../template/sigs.rst-full
    RegDeleteKey was not found in ../template/sigs.rst-full
    RegDeleteKeyEx was not found in ../template/sigs.rst-full
@@ -440,7 +437,6 @@ Scanning registry.txt
    RegNotifyChangeKeyValueW was not found in ../template/sigs.rst-full
    RegOpenCurrentUserA was not found in ../template/sigs.rst-full
    RegOpenCurrentUserW was not found in ../template/sigs.rst-full
-   RegOpenKeyEx was not found in ../template/sigs.rst-full
    RegOpenKeyTransacted was not found in ../template/sigs.rst-full
    RegOpenUserClassesRootA was not found in ../template/sigs.rst-full
    RegOpenUserClassesRootW was not found in ../template/sigs.rst-full
@@ -449,7 +445,6 @@ Scanning registry.txt
    RegQueryMultipleValues was not found in ../template/sigs.rst-full
    RegQueryReflectionKeyA was not found in ../template/sigs.rst-full
    RegQueryReflectionKeyW was not found in ../template/sigs.rst-full
-   RegQueryValueEx was not found in ../template/sigs.rst-full
    RegReplaceKey was not found in ../template/sigs.rst-full
    RegRestoreKey was not found in ../template/sigs.rst-full
    RegSaveKey was not found in ../template/sigs.rst-full
@@ -771,14 +766,6 @@ Scanning sync.txt
    UnregisterWaitW was not found in ../template/sigs.rst-full
    UnregisterWaitExA was not found in ../template/sigs.rst-full
    UnregisterWaitExW was not found in ../template/sigs.rst-full
-   WaitForMultipleObjectsA was not found in ../template/sigs.rst-full
-   WaitForMultipleObjectsW was not found in ../template/sigs.rst-full
-   WaitForMultipleObjectsExA was not found in ../template/sigs.rst-full
-   WaitForMultipleObjectsExW was not found in ../template/sigs.rst-full
-   WaitForSingleObjectA was not found in ../template/sigs.rst-full
-   WaitForSingleObjectW was not found in ../template/sigs.rst-full
-   WaitForSingleObjectExA was not found in ../template/sigs.rst-full
-   WaitForSingleObjectExW was not found in ../template/sigs.rst-full
    WaitOnAddress was not found in ../template/sigs.rst-full
    WaitOnAddressA was not found in ../template/sigs.rst-full
    WaitOnAddressW was not found in ../template/sigs.rst-full
@@ -3868,7 +3855,6 @@ Scanning process.txt
    ReleaseSemaphoreWhenCallbackReturnsW was not found in ../template/sigs.rst-full
    ResumeThreadA was not found in ../template/sigs.rst-full
    ResumeThreadW was not found in ../template/sigs.rst-full
-   SetEnvironmentVariable was not found in ../template/sigs.rst-full
    SetEventWhenCallbackReturnsA was not found in ../template/sigs.rst-full
    SetEventWhenCallbackReturnsW was not found in ../template/sigs.rst-full
    SetInformationJobObjectA was not found in ../template/sigs.rst-full

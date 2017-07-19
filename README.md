@@ -94,6 +94,8 @@ return values to be void. Were originally DECLSPEC_NORETURN.
 Corrected URLDownloadToFile by changing the last argument's type from LPVOID
 to LPBINDSTATUSCALLBACK
 
+Corrected GetLastError's return value to DWORD from _Post_equals_last_error_
+
 ## Other tools
 Inside Command Prompt (Windows):
 ```
