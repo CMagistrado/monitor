@@ -68,8 +68,6 @@ GetActiveProcessorGroupCount
 GetCommandLine
 GetCurrentProcess
 GetCurrentProcessId
-GetCurrentProcessorNumber
-GetCurrentProcessorNumberEx
 GetCurrentThread
 GetCurrentThreadId
 GetCurrentUmsThread
@@ -86,7 +84,6 @@ GetMappedFileName
 GetMaximumProcessorCount
 GetMaximumProcessorGroupCount
 GetModuleBaseName
-GetModuleFileNameEx
 GetModuleInformation
 GetNextUmsListItem
 GetNumaAvailableMemoryNode
@@ -160,7 +157,6 @@ QueryUmsThreadInformation
 QueryWorkingSet
 QueryWorkingSetEx
 QueueUserWorkItem
-RegisterWaitForSingleObject
 ReleaseMutexWhenCallbackReturns
 ReleaseSemaphoreWhenCallbackReturns
 ResumeThread
@@ -226,7 +222,6 @@ TpSetCallbackThreadpool
 TrySubmitThreadpoolCallback
 UmsSchedulerProc
 UmsThreadYield
-UnregisterWaitEx
 UpdateProcThreadAttribute
 UserHandleGrantAccess
 VirtualAllocExNuma

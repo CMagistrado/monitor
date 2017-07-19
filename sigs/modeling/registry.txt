@@ -2,7 +2,6 @@ AssocCreate
 AssocQueryKey
 AssocQueryString
 AssocQueryStringByKey
-GetSystemRegistryQuota
 RegCloseKey
 RegConnectRegistry
 RegCopyTree

@@ -96,7 +96,6 @@
       - SearchPath
       - GetFullPathName
       - FindCloseChangeNotification
-      - ReplaceFile
 
   - network.txt
     - These interfere with the monitor, causing it to crash:
@@ -126,6 +125,12 @@
       - TlsFree
       - TlsGetValue
       - TlsSetValue
+
+    - These slow the target program down
+      - MsgWaitForMultipleObjects
+      - MsgWaitForMultipleObjectsEx
+      - GetCurrentProcessorNumber
+      - GetCurrentProcessorNumberEx
 
   - registry.txt
     - These interfere with the monitor, causing it to crash:
@@ -332,14 +337,17 @@
       - GetSystemWow64Directory
       - GetSystemDirectory
 
+  - time.txt
+    - These interfere with the monitor, causing it to crash:
+      - GetTimeFormat
+      - FileTimeToDosDateTime
+
 # Tests
+  - Notepad.exe
+    - Successful: No crash or early termination of target process
+    - Saved many files to Desktop
 
-  - Successful: No crash or early termination of target process
-    - Notepad.exe
-      - Saved file to Desktop
-
-    - Internet Explorer
-      - Visited many webpages
-      - Played videos (youtube)
-      - Downloaded files (PDF)
-      - Clicked on many links
+  - Internet Explorer
+    - Crashes before it can start up fully
+    - Traces one process, spawns off another process and attempts to trace that as well.
+      This is where it crashes

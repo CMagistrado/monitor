@@ -95,7 +95,6 @@ ReadFileScatter
 RemoveDirectory
 RemoveDirectoryTransacted
 RemoveUsersFromEncryptedFile
-ReplaceFile
 SetCurrentDirectory
 SetEndOfFile
 SetFileApisToANSI
@@ -134,3 +133,4 @@ WriteEncryptedFileRaw
 WriteFile
 WriteFileEx
 WriteFileGather
+ReplaceFile

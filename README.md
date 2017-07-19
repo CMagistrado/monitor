@@ -135,7 +135,7 @@ $ python match.py
   - CreateProcessAsUserA
   - CreateProcessWithLogonW
   - CreateProcessWithTokenW
-  - CreateProecessInternalW
+  - CreateProcessInternalW
 
   - CreateThread
   - CreateRemoteThread
@@ -149,7 +149,7 @@ $ python match.py
 
   - IWbemServices_ExecMethod
 
-  - **Unsure of where these fit:**
+  - **Unsure of where this fits (from old monitor):**
     - NtMapViewOfSection
 
 **A process terminated:**
@@ -168,7 +168,7 @@ $ python match.py
 
   - URLDownloadToFileW
 
-  - **Add?**
+  - **Should we add?:**
     - CreateHardLinkA
     - CreateHardLinkW
     - CreateHardLinkTransactedA
@@ -196,7 +196,7 @@ $ python match.py
   - ReplaceFileA
   - ReplaceFileW
 
-  - **Unsure of where these fit:**
+  - **Unsure of where this fits (from old monitor):**
     - NtSetInformationFile
 
 **When to dump memory:**

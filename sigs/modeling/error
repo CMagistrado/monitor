@@ -187,7 +187,6 @@ Scanning file.txt
    RemoveDirectoryTransacted was not found in ../template/sigs.rst-full
    RemoveUsersFromEncryptedFileA was not found in ../template/sigs.rst-full
    RemoveUsersFromEncryptedFileW was not found in ../template/sigs.rst-full
-   ReplaceFile was not found in ../template/sigs.rst-full
    SetCurrentDirectory was not found in ../template/sigs.rst-full
    SetEndOfFileA was not found in ../template/sigs.rst-full
    SetEndOfFileW was not found in ../template/sigs.rst-full
@@ -273,6 +272,7 @@ Scanning file.txt
    WriteFileExW was not found in ../template/sigs.rst-full
    WriteFileGatherA was not found in ../template/sigs.rst-full
    WriteFileGatherW was not found in ../template/sigs.rst-full
+   ReplaceFile was not found in ../template/sigs.rst-full
 Scanning service.txt
    ChangeServiceConfig was not found in ../template/sigs.rst-full
    ChangeServiceConfig2 was not found in ../template/sigs.rst-full
@@ -365,10 +365,6 @@ Scanning system-info.txt
    IsNativeVhdBootW was not found in ../template/sigs.rst-full
    IsProcessorFeaturePresentA was not found in ../template/sigs.rst-full
    IsProcessorFeaturePresentW was not found in ../template/sigs.rst-full
-   IsWow64MessageA was not found in ../template/sigs.rst-full
-   IsWow64MessageW was not found in ../template/sigs.rst-full
-   IsWow64ProcessA was not found in ../template/sigs.rst-full
-   IsWow64ProcessW was not found in ../template/sigs.rst-full
    QueryPerformanceCounterA was not found in ../template/sigs.rst-full
    QueryPerformanceCounterW was not found in ../template/sigs.rst-full
    QueryPerformanceFrequencyA was not found in ../template/sigs.rst-full
@@ -386,12 +382,6 @@ Scanning system-info.txt
    VerSetConditionMaskA was not found in ../template/sigs.rst-full
    VerSetConditionMaskW was not found in ../template/sigs.rst-full
    VerifyVersionInfo was not found in ../template/sigs.rst-full
-   Wow64DisableWow64FsRedirectionA was not found in ../template/sigs.rst-full
-   Wow64DisableWow64FsRedirectionW was not found in ../template/sigs.rst-full
-   Wow64EnableWow64FsRedirectionA was not found in ../template/sigs.rst-full
-   Wow64EnableWow64FsRedirectionW was not found in ../template/sigs.rst-full
-   Wow64RevertWow64FsRedirectionA was not found in ../template/sigs.rst-full
-   Wow64RevertWow64FsRedirectionW was not found in ../template/sigs.rst-full
 Scanning object.txt
    CloseHandleA was not found in ../template/sigs.rst-full
    CloseHandleW was not found in ../template/sigs.rst-full
@@ -417,8 +407,6 @@ Scanning registry.txt
    AssocQueryStringByKey was not found in ../template/sigs.rst-full
    AssocQueryStringByKeyA was not found in ../template/sigs.rst-full
    AssocQueryStringByKeyW was not found in ../template/sigs.rst-full
-   GetSystemRegistryQuotaA was not found in ../template/sigs.rst-full
-   GetSystemRegistryQuotaW was not found in ../template/sigs.rst-full
    RegCloseKeyA was not found in ../template/sigs.rst-full
    RegCloseKeyW was not found in ../template/sigs.rst-full
    RegConnectRegistry was not found in ../template/sigs.rst-full
@@ -568,8 +556,6 @@ Scanning time.txt
    DosDateTimeToFileTimeW was not found in ../template/sigs.rst-full
    EnumDynamicTimeZoneInformationA was not found in ../template/sigs.rst-full
    EnumDynamicTimeZoneInformationW was not found in ../template/sigs.rst-full
-   FileTimeToDosDateTimeA was not found in ../template/sigs.rst-full
-   FileTimeToDosDateTimeW was not found in ../template/sigs.rst-full
    FileTimeToLocalFileTimeA was not found in ../template/sigs.rst-full
    FileTimeToLocalFileTimeW was not found in ../template/sigs.rst-full
    FileTimeToSystemTimeA was not found in ../template/sigs.rst-full
@@ -594,7 +580,6 @@ Scanning time.txt
    GetTickCountW was not found in ../template/sigs.rst-full
    GetTickCount64A was not found in ../template/sigs.rst-full
    GetTickCount64W was not found in ../template/sigs.rst-full
-   GetTimeFormat was not found in ../template/sigs.rst-full
    GetTimeSysInfoFunc was not found in ../template/sigs.rst-full
    GetTimeSysInfoFuncA was not found in ../template/sigs.rst-full
    GetTimeSysInfoFuncW was not found in ../template/sigs.rst-full
@@ -619,10 +604,6 @@ Scanning time.txt
    QueryInterruptTimePrecise was not found in ../template/sigs.rst-full
    QueryInterruptTimePreciseA was not found in ../template/sigs.rst-full
    QueryInterruptTimePreciseW was not found in ../template/sigs.rst-full
-   QueryPerformanceCounterA was not found in ../template/sigs.rst-full
-   QueryPerformanceCounterW was not found in ../template/sigs.rst-full
-   QueryPerformanceFrequencyA was not found in ../template/sigs.rst-full
-   QueryPerformanceFrequencyW was not found in ../template/sigs.rst-full
    QueryUnbiasedInterruptTimeA was not found in ../template/sigs.rst-full
    QueryUnbiasedInterruptTimeW was not found in ../template/sigs.rst-full
    QueryUnbiasedInterruptTimePrecise was not found in ../template/sigs.rst-full
@@ -754,10 +735,6 @@ Scanning sync.txt
    GetOverlappedResultExW was not found in ../template/sigs.rst-full
    InitializeSynchronizationBarrierA was not found in ../template/sigs.rst-full
    InitializeSynchronizationBarrierW was not found in ../template/sigs.rst-full
-   MsgWaitForMultipleObjectsA was not found in ../template/sigs.rst-full
-   MsgWaitForMultipleObjectsW was not found in ../template/sigs.rst-full
-   MsgWaitForMultipleObjectsExA was not found in ../template/sigs.rst-full
-   MsgWaitForMultipleObjectsExW was not found in ../template/sigs.rst-full
    OpenEvent was not found in ../template/sigs.rst-full
    OpenMutex was not found in ../template/sigs.rst-full
    OpenPrivateNamespace was not found in ../template/sigs.rst-full
@@ -3712,10 +3689,6 @@ Scanning process.txt
    GetCurrentProcessW was not found in ../template/sigs.rst-full
    GetCurrentProcessIdA was not found in ../template/sigs.rst-full
    GetCurrentProcessIdW was not found in ../template/sigs.rst-full
-   GetCurrentProcessorNumberA was not found in ../template/sigs.rst-full
-   GetCurrentProcessorNumberW was not found in ../template/sigs.rst-full
-   GetCurrentProcessorNumberExA was not found in ../template/sigs.rst-full
-   GetCurrentProcessorNumberExW was not found in ../template/sigs.rst-full
    GetCurrentThreadA was not found in ../template/sigs.rst-full
    GetCurrentThreadW was not found in ../template/sigs.rst-full
    GetCurrentThreadIdA was not found in ../template/sigs.rst-full
@@ -3743,7 +3716,6 @@ Scanning process.txt
    GetMaximumProcessorGroupCountA was not found in ../template/sigs.rst-full
    GetMaximumProcessorGroupCountW was not found in ../template/sigs.rst-full
    GetModuleBaseName was not found in ../template/sigs.rst-full
-   GetModuleFileNameEx was not found in ../template/sigs.rst-full
    GetModuleInformationA was not found in ../template/sigs.rst-full
    GetModuleInformationW was not found in ../template/sigs.rst-full
    GetNextUmsListItem was not found in ../template/sigs.rst-full
@@ -3890,8 +3862,6 @@ Scanning process.txt
    QueryWorkingSetExW was not found in ../template/sigs.rst-full
    QueueUserWorkItemA was not found in ../template/sigs.rst-full
    QueueUserWorkItemW was not found in ../template/sigs.rst-full
-   RegisterWaitForSingleObjectA was not found in ../template/sigs.rst-full
-   RegisterWaitForSingleObjectW was not found in ../template/sigs.rst-full
    ReleaseMutexWhenCallbackReturnsA was not found in ../template/sigs.rst-full
    ReleaseMutexWhenCallbackReturnsW was not found in ../template/sigs.rst-full
    ReleaseSemaphoreWhenCallbackReturnsA was not found in ../template/sigs.rst-full
@@ -4044,8 +4014,6 @@ Scanning process.txt
    UmsThreadYield was not found in ../template/sigs.rst-full
    UmsThreadYieldA was not found in ../template/sigs.rst-full
    UmsThreadYieldW was not found in ../template/sigs.rst-full
-   UnregisterWaitExA was not found in ../template/sigs.rst-full
-   UnregisterWaitExW was not found in ../template/sigs.rst-full
    UpdateProcThreadAttributeA was not found in ../template/sigs.rst-full
    UpdateProcThreadAttributeW was not found in ../template/sigs.rst-full
    UserHandleGrantAccessA was not found in ../template/sigs.rst-full

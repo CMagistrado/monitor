@@ -18906,7 +18906,7 @@ FreeLibraryAndExitThread
 Signature::
 
     * Library: kernel32
-    * Return value: DECLSPEC_NORETURN
+    * Return value: void
 
 Parameters::
 
@@ -19690,18 +19690,6 @@ Parameters::
     ** DWORD dwFileOffsetHigh
     ** DWORD dwFileOffsetLow
     ** SIZE_T dwNumberOfBytesToMap
-
-TODO
-Middle::
-
-    uint32_t pid = pid_from_process_handle(ProcessHandle);
-
-Post::
-
-    if(NT_SUCCESS(ret) != FALSE) {
-        pipe("PROCESS:%d", pid);
-        sleep_skip_disable();
-    }
 
 
 MapViewOfFileEx
@@ -24611,7 +24599,7 @@ ExitProcess
 Signature::
 
     * Library: kernel32
-    * Return value: DECLSPEC_NORETURN
+    * Return value: void
 
 Parameters::
 
@@ -24812,7 +24800,7 @@ ExitThread
 Signature::
 
     * Library: kernel32
-    * Return value: DECLSPEC_NORETURN
+    * Return value: void
 
 Parameters::
 
@@ -77466,7 +77454,7 @@ Parameters::
     ** LPWSTR szURL url
     *  LPWSTR szFileName
     *  DWORD dwReserved
-    *  LPVOID lpfnCB
+    *  LPBINDSTATUSCALLBACK lpfnCB
 
 Interesting::
 

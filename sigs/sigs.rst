@@ -49,7 +49,7 @@ FreeLibraryAndExitThread
 Signature::
 
     * Library: kernel32
-    * Return value: DECLSPEC_NORETURN
+    * Return value: void
 
 Parameters::
 
@@ -2667,84 +2667,6 @@ Parameters::
     ** PENCRYPTION_CERTIFICATE_HASH_LIST pHashes
 
 
-ReplaceFileA
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    ** LPCSTR lpReplacedFileName
-    ** LPCSTR lpReplacementFileName
-    ** LPCSTR lpBackupFileName
-    ** DWORD dwReplaceFlags
-    ** LPVOID lpExclude
-    ** LPVOID lpReserved
-
-Pre::
-
-    wchar_t *oldfilepath = get_unicode_buffer();
-
-    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
-    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpReplacementFileName  , -1, NULL , 0 );
-    WCHAR wstr_e[wchars_num];
-    MultiByteToWideChar( CP_UTF8 , 0 , lpReplacementFileName  , -1, wstr_e , wchars_num );
-
-    path_get_full_pathW(wstr_e, oldfilepath);
-
-
-ReplaceFileW
-============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    ** LPCWSTR lpReplacedFileName
-    ** LPCWSTR lpReplacementFileName
-    ** LPCWSTR lpBackupFileName
-    ** DWORD dwReplaceFlags
-    ** LPVOID lpExclude
-    ** LPVOID lpReserved
-
-Pre::
-
-    wchar_t *oldfilepath = get_unicode_buffer();
-    path_get_full_pathW(lpReplacementFileName, oldfilepath);
-
-    wchar_t *newfilepath = get_unicode_buffer();
-    if(lpReplacedFileName != NULL) {
-        path_get_full_pathW(lpReplacedFileName, newfilepath);
-    }
-
-    wchar_t *backupfilepath = get_unicode_buffer();
-    if(lpBackupFileName != NULL) {
-        path_get_full_pathW(lpBackupFileName, backupfilepath);
-    }
-
-Post::
-
-    if(ret != FALSE) {
-        pipe("FILE_DEL:%Z", newfilepath);
-
-        if (lpBackupFileName != NULL) {
-            pipe("FILE_NEW:%Z", backupfilepath);
-        }
-
-        pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
-    }
-
-    free_unicode_buffer(oldfilepath);
-    free_unicode_buffer(newfilepath);
-    free_unicode_buffer(backupfilepath);
-
-
 SetCurrentDirectoryA
 ====================
 
@@ -3193,6 +3115,84 @@ Post::
     }
 
     free_unicode_buffer(filepath);
+
+
+ReplaceFileA
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCSTR lpReplacedFileName
+    ** LPCSTR lpReplacementFileName
+    ** LPCSTR lpBackupFileName
+    ** DWORD dwReplaceFlags
+    ** LPVOID lpExclude
+    ** LPVOID lpReserved
+
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+
+    // From https://stackoverflow.com/questions/22706166/how-to-convert-lpcstr-to-wchar#22706856
+    int wchars_num =  MultiByteToWideChar( CP_UTF8 , 0 , lpReplacementFileName  , -1, NULL , 0 );
+    WCHAR wstr_e[wchars_num];
+    MultiByteToWideChar( CP_UTF8 , 0 , lpReplacementFileName  , -1, wstr_e , wchars_num );
+
+    path_get_full_pathW(wstr_e, oldfilepath);
+
+
+ReplaceFileW
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCWSTR lpReplacedFileName
+    ** LPCWSTR lpReplacementFileName
+    ** LPCWSTR lpBackupFileName
+    ** DWORD dwReplaceFlags
+    ** LPVOID lpExclude
+    ** LPVOID lpReserved
+
+Pre::
+
+    wchar_t *oldfilepath = get_unicode_buffer();
+    path_get_full_pathW(lpReplacementFileName, oldfilepath);
+
+    wchar_t *newfilepath = get_unicode_buffer();
+    if(lpReplacedFileName != NULL) {
+        path_get_full_pathW(lpReplacedFileName, newfilepath);
+    }
+
+    wchar_t *backupfilepath = get_unicode_buffer();
+    if(lpBackupFileName != NULL) {
+        path_get_full_pathW(lpBackupFileName, backupfilepath);
+    }
+
+Post::
+
+    if(ret != FALSE) {
+        pipe("FILE_DEL:%Z", newfilepath);
+
+        if (lpBackupFileName != NULL) {
+            pipe("FILE_NEW:%Z", backupfilepath);
+        }
+
+        pipe("FILE_MOVE:%Z::%Z", oldfilepath, newfilepath);
+    }
+
+    free_unicode_buffer(oldfilepath);
+    free_unicode_buffer(newfilepath);
+    free_unicode_buffer(backupfilepath);
 
 
 ChangeServiceConfigA
@@ -4216,29 +4216,6 @@ Signature::
 Parameters::
 
     ** DWORD ProcessorFeature
-
-
-IsWow64Message
-==============
-
-Signature::
-
-    * Library: user32
-    * Return value: BOOL
-
-
-IsWow64Process
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    ** HANDLE hProcess
-    ** PBOOL Wow64Process
 
 
 QueryPerformanceCounter
@@ -5478,21 +5455,6 @@ Parameters::
     ** PDYNAMIC_TIME_ZONE_INFORMATION lpTimeZoneInformation
 
 
-FileTimeToDosDateTime
-=====================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: BOOL
-
-Parameters::
-
-    ** const FILETIME *lpFileTime
-    ** LPWORD lpFatDate
-    ** LPWORD lpFatTime
-
-
 FileTimeToLocalFileTime
 =======================
 
@@ -5650,42 +5612,6 @@ Signature::
 
     * Library: rtmpal
     * Return value: ULONGLONG
-
-
-GetTimeFormatA
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: int
-
-Parameters::
-
-    ** LCID Locale
-    ** DWORD dwFlags
-    ** const SYSTEMTIME *lpTime
-    ** LPCSTR lpFormat
-    ** LPSTR lpTimeStr
-    ** int cchTime
-
-
-GetTimeFormatW
-==============
-
-Signature::
-
-    * Library: kernel32
-    * Return value: int
-
-Parameters::
-
-    ** LCID Locale
-    ** DWORD dwFlags
-    ** const SYSTEMTIME *lpTime
-    ** LPCWSTR lpFormat
-    ** LPWSTR lpTimeStr
-    ** int cchTime
 
 
 GetTimeZoneInformation
@@ -6204,40 +6130,6 @@ Parameters::
     ** LPSYNCHRONIZATION_BARRIER lpBarrier
     ** LONG lTotalThreads
     ** LONG lSpinCount
-
-
-MsgWaitForMultipleObjects
-=========================
-
-Signature::
-
-    * Library: user32
-    * Return value: DWORD
-
-Parameters::
-
-    ** DWORD nCount
-    ** const HANDLE *pHandles
-    ** BOOL fWaitAll
-    ** DWORD dwMilliseconds
-    ** DWORD dwWakeMask
-
-
-MsgWaitForMultipleObjectsEx
-===========================
-
-Signature::
-
-    * Library: user32
-    * Return value: DWORD
-
-Parameters::
-
-    ** DWORD nCount
-    ** const HANDLE *pHandles
-    ** DWORD dwMilliseconds
-    ** DWORD dwWakeMask
-    ** DWORD dwFlags
 
 
 OpenEventA
@@ -9633,7 +9525,7 @@ Parameters::
     ** LPWSTR szURL url
     *  LPWSTR szFileName
     *  DWORD dwReserved
-    *  LPVOID lpfnCB
+    *  LPBINDSTATUSCALLBACK lpfnCB
 
 Interesting::
 
@@ -10655,7 +10547,7 @@ ExitProcess
 Signature::
 
     * Library: kernel32
-    * Return value: DECLSPEC_NORETURN
+    * Return value: void
 
 Parameters::
 
@@ -10668,7 +10560,7 @@ ExitThread
 Signature::
 
     * Library: kernel32
-    * Return value: DECLSPEC_NORETURN
+    * Return value: void
 
 Parameters::
 
@@ -10780,28 +10672,6 @@ Signature::
 
     * Library: rtmpal
     * Return value: DWORD
-
-
-GetCurrentProcessorNumber
-=========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
-
-
-GetCurrentProcessorNumberEx
-===========================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: void
-
-Parameters::
-
-    ** PPROCESSOR_NUMBER ProcNumber
 
 
 GetCurrentThread
@@ -11766,6 +11636,29 @@ Signature::
 Parameters::
 
     ** PTP_TIMER pti
+
+
+IsWow64Message
+==============
+
+Signature::
+
+    * Library: user32
+    * Return value: BOOL
+
+
+IsWow64Process
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hProcess
+    ** PBOOL Wow64Process
 
 
 LeaveCriticalSectionWhenCallbackReturns

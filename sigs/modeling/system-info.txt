@@ -21,8 +21,6 @@ GetVersionEx
 GetWindowsDirectory
 IsNativeVhdBoot
 IsProcessorFeaturePresent
-IsWow64Message
-IsWow64Process
 QueryPerformanceCounter
 QueryPerformanceFrequency
 RtlGetSuiteMask
@@ -33,6 +31,3 @@ SetFirmwareEnvironmentVariableEx
 TranslateName
 VerSetConditionMask
 VerifyVersionInfo
-Wow64DisableWow64FsRedirection
-Wow64EnableWow64FsRedirection
-Wow64RevertWow64FsRedirection

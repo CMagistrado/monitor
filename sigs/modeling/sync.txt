@@ -13,8 +13,6 @@ EnterSynchronizationBarrier
 GetOverlappedResult
 GetOverlappedResultEx
 InitializeSynchronizationBarrier
-MsgWaitForMultipleObjects
-MsgWaitForMultipleObjectsEx
 OpenEvent
 OpenMutex
 OpenPrivateNamespace
