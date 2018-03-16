@@ -61,7 +61,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         0,
         hash,
         {%- endif %}
-        &lasterror
+        &lasterror,
+	eip
     {%- if hook.prelog: -%}
         ,
         prelen, prebuf

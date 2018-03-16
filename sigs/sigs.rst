@@ -16,6 +16,15 @@ Parameters::
 
     ** PCWSTR NewDirectory
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DisableThreadLibraryCalls
 =========================
@@ -29,6 +38,15 @@ Parameters::
 
     ** HMODULE hLibModule
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FreeLibrary
 ===========
@@ -41,6 +59,15 @@ Signature::
 Parameters::
 
     ** HMODULE hLibModule
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FreeLibraryAndExitThread
@@ -56,6 +83,15 @@ Parameters::
     ** HMODULE hLibModule
     ** DWORD dwExitCode
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetDllDirectoryA
 ================
@@ -70,6 +106,15 @@ Parameters::
     ** DWORD nBufferLength
     ** LPSTR lpBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetDllDirectoryW
 ================
@@ -83,6 +128,15 @@ Parameters::
 
     ** DWORD nBufferLength
     ** LPWSTR lpBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetModuleFileNameA
@@ -99,6 +153,15 @@ Parameters::
     ** LPSTR lpFilename
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetModuleFileNameW
 ==================
@@ -113,6 +176,15 @@ Parameters::
     ** HMODULE hModule
     ** LPWSTR lpFilename
     ** DWORD nSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetModuleFileNameExA
@@ -130,6 +202,15 @@ Parameters::
     ** LPSTR lpFilename
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetModuleFileNameExW
 ====================
@@ -146,6 +227,15 @@ Parameters::
     ** LPWSTR lpFilename
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 LoadLibraryA
 ============
@@ -159,6 +249,15 @@ Parameters::
 
     ** LPCSTR lpLibFileName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 LoadLibraryW
 ============
@@ -171,6 +270,15 @@ Signature::
 Parameters::
 
     ** LPCWSTR lpLibFileName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 LoadLibraryExA
@@ -187,6 +295,15 @@ Parameters::
     ** HANDLE hFile
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 LoadLibraryExW
 ==============
@@ -202,6 +319,15 @@ Parameters::
     ** HANDLE hFile
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 LoadPackagedLibrary
 ===================
@@ -216,6 +342,15 @@ Parameters::
     ** LPCWSTR lpwLibFileName
     ** DWORD Reserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RemoveDllDirectory
 ==================
@@ -228,6 +363,15 @@ Signature::
 Parameters::
 
     ** DLL_DIRECTORY_COOKIE Cookie
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetDefaultDllDirectories
@@ -242,6 +386,15 @@ Parameters::
 
     ** DWORD DirectoryFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetDllDirectoryA
 ================
@@ -255,6 +408,15 @@ Parameters::
 
     ** LPCSTR lpPathName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetDllDirectoryW
 ================
@@ -267,6 +429,15 @@ Signature::
 Parameters::
 
     ** LPCWSTR lpPathName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 AddUsersToEncryptedFile
@@ -282,6 +453,15 @@ Parameters::
     ** LPCWSTR lpFileName
     ** PENCRYPTION_CERTIFICATE_LIST pEncryptionCertificates
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AreFileApisANSI
 ===============
@@ -290,6 +470,15 @@ Signature::
 
     * Library: kernel32
     * Return value: BOOL
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CancelIo
@@ -303,6 +492,15 @@ Signature::
 Parameters::
 
     ** HANDLE hFile
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CancelIoEx
@@ -318,6 +516,15 @@ Parameters::
     ** HANDLE hFile
     ** LPOVERLAPPED lpOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CancelSynchronousIo
 ===================
@@ -330,6 +537,15 @@ Signature::
 Parameters::
 
     ** HANDLE hThread
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CheckNameLegalDOS8Dot3A
@@ -348,6 +564,15 @@ Parameters::
     ** PBOOL pbNameContainsSpaces
     ** PBOOL pbNameLegal
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CheckNameLegalDOS8Dot3W
 =======================
@@ -365,6 +590,15 @@ Parameters::
     ** PBOOL pbNameContainsSpaces
     ** PBOOL pbNameLegal
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CloseEncryptedFileRaw
 =====================
@@ -377,6 +611,15 @@ Signature::
 Parameters::
 
     ** PVOID pvContext
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CopyFileA
@@ -394,6 +637,13 @@ Parameters::
     ** BOOL bFailIfExists
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *newfilepath = get_unicode_buffer();
 
@@ -431,6 +681,13 @@ Parameters::
 
 Pre::
 
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
     wchar_t *newfilepath = get_unicode_buffer();
     if(lpNewFileName != NULL) {
         path_get_full_pathW(lpNewFileName, newfilepath);
@@ -463,6 +720,13 @@ Parameters::
     ** DWORD dwCopyFlags
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *newfilepath = get_unicode_buffer();
 
@@ -503,6 +767,13 @@ Parameters::
 
 Pre::
 
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
     wchar_t *newfilepath = get_unicode_buffer();
     if(lpNewFileName != NULL) {
         path_get_full_pathW(lpNewFileName, newfilepath);
@@ -536,6 +807,13 @@ Parameters::
     ** HANDLE hTransaction
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *newfilepath = get_unicode_buffer();
 
@@ -577,6 +855,13 @@ Parameters::
 
 Pre::
 
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
     wchar_t *newfilepath = get_unicode_buffer();
     if(lpNewFileName != NULL) {
         path_get_full_pathW(lpNewFileName, newfilepath);
@@ -604,6 +889,15 @@ Parameters::
     ** LPCSTR lpPathName
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateDirectoryW
 ================
@@ -617,6 +911,15 @@ Parameters::
 
     ** LPCWSTR lpPathName
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateDirectoryExA
@@ -633,6 +936,15 @@ Parameters::
     ** LPCSTR lpNewDirectory
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateDirectoryExW
 ==================
@@ -647,6 +959,15 @@ Parameters::
     ** LPCWSTR lpTemplateDirectory
     ** LPCWSTR lpNewDirectory
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateDirectoryTransactedA
@@ -664,6 +985,15 @@ Parameters::
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateDirectoryTransactedW
 ==========================
@@ -679,6 +1009,15 @@ Parameters::
     ** LPCWSTR lpNewDirectory
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
     ** HANDLE hTransaction
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateFileA
@@ -699,6 +1038,15 @@ Parameters::
     ** DWORD dwFlagsAndAttributes
     ** HANDLE hTemplateFile
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateFileW
 ===========
@@ -717,6 +1065,15 @@ Parameters::
     ** DWORD dwCreationDisposition
     ** DWORD dwFlagsAndAttributes
     ** HANDLE hTemplateFile
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateFileTransactedA
@@ -740,6 +1097,15 @@ Parameters::
     ** PUSHORT pusMiniVersion
     ** PVOID lpExtendedParameter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateFileTransactedW
 =====================
@@ -762,6 +1128,15 @@ Parameters::
     ** PUSHORT pusMiniVersion
     ** PVOID lpExtendedParameter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateHardLinkA
 ===============
@@ -777,6 +1152,15 @@ Parameters::
     ** LPCSTR lpExistingFileName
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateHardLinkW
 ===============
@@ -791,6 +1175,15 @@ Parameters::
     ** LPCWSTR lpFileName
     ** LPCWSTR lpExistingFileName
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateHardLinkTransactedA
@@ -808,6 +1201,15 @@ Parameters::
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateHardLinkTransactedW
 =========================
@@ -823,6 +1225,15 @@ Parameters::
     ** LPCWSTR lpExistingFileName
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
     ** HANDLE hTransaction
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateIoCompletionPort
@@ -840,6 +1251,15 @@ Parameters::
     ** ULONG_PTR CompletionKey
     ** DWORD NumberOfConcurrentThreads
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateSymbolicLinkA
 ===================
@@ -855,6 +1275,15 @@ Parameters::
     ** LPCSTR lpTargetFileName
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateSymbolicLinkW
 ===================
@@ -869,6 +1298,15 @@ Parameters::
     ** LPCWSTR lpSymlinkFileName
     ** LPCWSTR lpTargetFileName
     ** DWORD dwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateSymbolicLinkTransactedA
@@ -886,6 +1324,15 @@ Parameters::
     ** DWORD dwFlags
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateSymbolicLinkTransactedW
 =============================
@@ -902,6 +1349,15 @@ Parameters::
     ** DWORD dwFlags
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DecryptFileA
 ============
@@ -915,6 +1371,15 @@ Parameters::
 
     ** LPCSTR lpFileName
     ** DWORD dwReserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DecryptFileW
@@ -930,6 +1395,15 @@ Parameters::
     ** LPCWSTR lpFileName
     ** DWORD dwReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DeleteFileA
 ===========
@@ -944,6 +1418,13 @@ Parameters::
     ** LPCSTR lpFileName
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *filepath = get_unicode_buffer();
 
@@ -974,6 +1455,13 @@ Parameters::
 
 Pre::
 
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
     wchar_t *filepath = get_unicode_buffer();
     path_get_full_pathW(lpFileName, filepath);
     pipe("FILE_DEL:%Z", filepath);
@@ -997,6 +1485,13 @@ Parameters::
     ** HANDLE hTransaction
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *filepath = get_unicode_buffer();
 
@@ -1028,6 +1523,13 @@ Parameters::
 
 Pre::
 
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
     wchar_t *filepath = get_unicode_buffer();
     path_get_full_pathW(lpFileName, filepath);
     pipe("FILE_DEL:%Z", filepath);
@@ -1053,6 +1555,15 @@ Parameters::
     ** DWORD dwAttributes
     ** const LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EncryptFileA
 ============
@@ -1066,6 +1577,15 @@ Parameters::
 
     ** LPCSTR lpFileName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EncryptFileW
 ============
@@ -1078,6 +1598,15 @@ Signature::
 Parameters::
 
     ** LPCWSTR lpFileName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 EncryptionDisable
@@ -1093,6 +1622,15 @@ Parameters::
     ** LPCWSTR DirPath
     ** BOOL Disable
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FileEncryptionStatusA
 =====================
@@ -1106,6 +1644,15 @@ Parameters::
 
     ** LPCSTR lpFileName
     ** LPDWORD lpStatus
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FileEncryptionStatusW
@@ -1121,6 +1668,15 @@ Parameters::
     ** LPCWSTR lpFileName
     ** LPDWORD lpStatus
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindClose
 =========
@@ -1133,6 +1689,15 @@ Signature::
 Parameters::
 
     ** HANDLE hFindFile
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FindFirstChangeNotificationA
@@ -1149,6 +1714,15 @@ Parameters::
     ** BOOL bWatchSubtree
     ** DWORD dwNotifyFilter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindFirstChangeNotificationW
 ============================
@@ -1164,6 +1738,15 @@ Parameters::
     ** BOOL bWatchSubtree
     ** DWORD dwNotifyFilter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindFirstFileA
 ==============
@@ -1178,6 +1761,15 @@ Parameters::
     ** LPCSTR lpFileName
     ** LPWIN32_FIND_DATAA lpFindFileData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindFirstFileW
 ==============
@@ -1191,6 +1783,15 @@ Parameters::
 
     ** LPCWSTR lpFileName
     ** LPWIN32_FIND_DATAW lpFindFileData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FindFirstFileExA
@@ -1210,6 +1811,15 @@ Parameters::
     ** LPVOID lpSearchFilter
     ** DWORD dwAdditionalFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindFirstFileExW
 ================
@@ -1228,6 +1838,15 @@ Parameters::
     ** LPVOID lpSearchFilter
     ** DWORD dwAdditionalFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindFirstFileNameTransactedW
 ============================
@@ -1245,6 +1864,15 @@ Parameters::
     ** PWSTR LinkName
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindFirstFileNameW
 ==================
@@ -1260,6 +1888,15 @@ Parameters::
     ** DWORD dwFlags
     ** LPDWORD StringLength
     ** PWSTR LinkName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FindFirstFileTransactedA
@@ -1280,6 +1917,15 @@ Parameters::
     ** DWORD dwAdditionalFlags
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindFirstFileTransactedW
 ========================
@@ -1299,6 +1945,15 @@ Parameters::
     ** DWORD dwAdditionalFlags
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindFirstStreamTransactedW
 ==========================
@@ -1316,6 +1971,15 @@ Parameters::
     ** DWORD dwFlags
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindFirstStreamW
 ================
@@ -1332,6 +1996,15 @@ Parameters::
     ** LPVOID lpFindStreamData
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindNextChangeNotification
 ==========================
@@ -1344,6 +2017,15 @@ Signature::
 Parameters::
 
     ** HANDLE hChangeHandle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FindNextFileA
@@ -1359,6 +2041,15 @@ Parameters::
     ** HANDLE hFindFile
     ** LPWIN32_FIND_DATAA lpFindFileData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindNextFileW
 =============
@@ -1372,6 +2063,15 @@ Parameters::
 
     ** HANDLE hFindFile
     ** LPWIN32_FIND_DATAW lpFindFileData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FindNextFileNameW
@@ -1388,6 +2088,15 @@ Parameters::
     ** LPDWORD StringLength
     ** PWSTR LinkName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindNextStreamW
 ===============
@@ -1402,6 +2111,15 @@ Parameters::
     ** HANDLE hFindStream
     ** LPVOID lpFindStreamData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FlushFileBuffers
 ================
@@ -1415,6 +2133,15 @@ Parameters::
 
     ** HANDLE hFile
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FreeEncryptionCertificateHashList
 =================================
@@ -1427,6 +2154,15 @@ Signature::
 Parameters::
 
     ** PENCRYPTION_CERTIFICATE_HASH_LIST pUsers
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetBinaryTypeA
@@ -1442,6 +2178,15 @@ Parameters::
     ** LPCSTR lpApplicationName
     ** LPDWORD lpBinaryType
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetBinaryTypeW
 ==============
@@ -1455,6 +2200,15 @@ Parameters::
 
     ** LPCWSTR lpApplicationName
     ** LPDWORD lpBinaryType
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetCompressedFileSizeA
@@ -1470,6 +2224,15 @@ Parameters::
     ** LPCSTR lpFileName
     ** LPDWORD lpFileSizeHigh
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetCompressedFileSizeW
 ======================
@@ -1483,6 +2246,15 @@ Parameters::
 
     ** LPCWSTR lpFileName
     ** LPDWORD lpFileSizeHigh
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetCompressedFileSizeTransactedA
@@ -1499,6 +2271,15 @@ Parameters::
     ** LPDWORD lpFileSizeHigh
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetCompressedFileSizeTransactedW
 ================================
@@ -1514,6 +2295,15 @@ Parameters::
     ** LPDWORD lpFileSizeHigh
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetCurrentDirectoryA
 ====================
@@ -1527,6 +2317,15 @@ Parameters::
 
     ** DWORD nBufferLength
     ** LPSTR lpBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetCurrentDirectoryW
@@ -1542,6 +2341,15 @@ Parameters::
     ** DWORD nBufferLength
     ** LPWSTR lpBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFileAttributesA
 ==================
@@ -1555,6 +2363,15 @@ Parameters::
 
     ** LPCSTR lpFileName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFileAttributesW
 ==================
@@ -1567,6 +2384,15 @@ Signature::
 Parameters::
 
     ** LPCWSTR lpFileName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFileAttributesExA
@@ -1583,6 +2409,15 @@ Parameters::
     ** GET_FILEEX_INFO_LEVELS fInfoLevelId
     ** LPVOID lpFileInformation
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFileAttributesExW
 ====================
@@ -1597,6 +2432,15 @@ Parameters::
     ** LPCWSTR lpFileName
     ** GET_FILEEX_INFO_LEVELS fInfoLevelId
     ** LPVOID lpFileInformation
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFileAttributesTransactedA
@@ -1614,6 +2458,15 @@ Parameters::
     ** LPVOID lpFileInformation
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFileAttributesTransactedW
 ============================
@@ -1629,6 +2482,15 @@ Parameters::
     ** GET_FILEEX_INFO_LEVELS fInfoLevelId
     ** LPVOID lpFileInformation
     ** HANDLE hTransaction
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFileBandwidthReservation
@@ -1648,6 +2510,15 @@ Parameters::
     ** LPDWORD lpTransferSize
     ** LPDWORD lpNumOutstandingRequests
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFileInformationByHandle
 ==========================
@@ -1661,6 +2532,15 @@ Parameters::
 
     ** HANDLE hFile
     ** LPBY_HANDLE_FILE_INFORMATION lpFileInformation
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFileInformationByHandleEx
@@ -1678,6 +2558,15 @@ Parameters::
     ** LPVOID lpFileInformation
     ** DWORD dwBufferSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFileSize
 ===========
@@ -1691,6 +2580,15 @@ Parameters::
 
     ** HANDLE hFile
     ** LPDWORD lpFileSizeHigh
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFileSizeEx
@@ -1706,6 +2604,15 @@ Parameters::
     ** HANDLE hFile
     ** PLARGE_INTEGER lpFileSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFileType
 ===========
@@ -1718,6 +2625,15 @@ Signature::
 Parameters::
 
     ** HANDLE hFile
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFinalPathNameByHandleA
@@ -1735,6 +2651,15 @@ Parameters::
     ** DWORD cchFilePath
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFinalPathNameByHandleW
 =========================
@@ -1750,6 +2675,15 @@ Parameters::
     ** LPWSTR lpszFilePath
     ** DWORD cchFilePath
     ** DWORD dwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFullPathNameTransactedA
@@ -1768,6 +2702,15 @@ Parameters::
     ** LPSTR *lpFilePart
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFullPathNameTransactedW
 ==========================
@@ -1785,6 +2728,15 @@ Parameters::
     ** LPWSTR *lpFilePart
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetLongPathNameA
 ================
@@ -1800,6 +2752,15 @@ Parameters::
     ** LPSTR lpszLongPath
     ** DWORD cchBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetLongPathNameW
 ================
@@ -1814,6 +2775,15 @@ Parameters::
     ** LPCWSTR lpszShortPath
     ** LPWSTR lpszLongPath
     ** DWORD cchBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetLongPathNameTransactedA
@@ -1831,6 +2801,15 @@ Parameters::
     ** DWORD cchBuffer
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetLongPathNameTransactedW
 ==========================
@@ -1846,6 +2825,15 @@ Parameters::
     ** LPWSTR lpszLongPath
     ** DWORD cchBuffer
     ** HANDLE hTransaction
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetQueuedCompletionStatus
@@ -1863,6 +2851,15 @@ Parameters::
     ** PULONG_PTR lpCompletionKey
     ** LPOVERLAPPED *lpOverlapped
     ** DWORD dwMilliseconds
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetQueuedCompletionStatusEx
@@ -1882,6 +2879,15 @@ Parameters::
     ** DWORD dwMilliseconds
     ** BOOL fAlertable
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetShortPathNameA
 =================
@@ -1897,6 +2903,15 @@ Parameters::
     ** LPSTR lpszShortPath
     ** DWORD cchBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetShortPathNameW
 =================
@@ -1911,6 +2926,15 @@ Parameters::
     ** LPCWSTR lpszLongPath
     ** LPWSTR lpszShortPath
     ** DWORD cchBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetTempFileNameA
@@ -1928,6 +2952,15 @@ Parameters::
     ** UINT uUnique
     ** LPSTR lpTempFileName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetTempFileNameW
 ================
@@ -1944,6 +2977,15 @@ Parameters::
     ** UINT uUnique
     ** LPWSTR lpTempFileName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetTempPathA
 ============
@@ -1958,6 +3000,15 @@ Parameters::
     ** DWORD nBufferLength
     ** LPSTR lpBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetTempPathW
 ============
@@ -1971,6 +3022,15 @@ Parameters::
 
     ** DWORD nBufferLength
     ** LPWSTR lpBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 LockFile
@@ -1988,6 +3048,15 @@ Parameters::
     ** DWORD dwFileOffsetHigh
     ** DWORD nNumberOfBytesToLockLow
     ** DWORD nNumberOfBytesToLockHigh
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 LockFileEx
@@ -2007,6 +3076,15 @@ Parameters::
     ** DWORD nNumberOfBytesToLockHigh
     ** LPOVERLAPPED lpOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 MoveFileA
 =========
@@ -2022,6 +3100,13 @@ Parameters::
     ** LPCSTR lpNewFileName
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *oldfilepath = get_unicode_buffer();
 
@@ -2073,6 +3158,13 @@ Parameters::
 
 Pre::
 
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
     wchar_t *oldfilepath = get_unicode_buffer();
     path_get_full_pathW(lpExistingFileName, oldfilepath);
 
@@ -2111,6 +3203,13 @@ Parameters::
     ** DWORD dwFlags
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *oldfilepath = get_unicode_buffer();
 
@@ -2163,6 +3262,13 @@ Parameters::
 
 Pre::
 
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
     wchar_t *oldfilepath = get_unicode_buffer();
     path_get_full_pathW(lpExistingFileName, oldfilepath);
 
@@ -2204,6 +3310,13 @@ Parameters::
     ** HANDLE hTransaction
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *oldfilepath = get_unicode_buffer();
 
@@ -2259,6 +3372,13 @@ Parameters::
 
 Pre::
 
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
     wchar_t *oldfilepath = get_unicode_buffer();
     path_get_full_pathW(lpExistingFileName, oldfilepath);
 
@@ -2299,6 +3419,13 @@ Parameters::
     ** DWORD dwFlags
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *oldfilepath = get_unicode_buffer();
 
@@ -2353,6 +3480,13 @@ Parameters::
 
 Pre::
 
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
     wchar_t *oldfilepath = get_unicode_buffer();
     path_get_full_pathW(lpExistingFileName, oldfilepath);
 
@@ -2390,6 +3524,15 @@ Parameters::
     ** ULONG ulFlags
     ** PVOID *pvContext
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenEncryptedFileRawW
 =====================
@@ -2405,6 +3548,15 @@ Parameters::
     ** ULONG ulFlags
     ** PVOID *pvContext
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenFile
 ========
@@ -2419,6 +3571,15 @@ Parameters::
     ** LPCSTR lpFileName
     ** LPOFSTRUCT lpReOpenBuff
     ** UINT uStyle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 OpenFileById
@@ -2438,6 +3599,15 @@ Parameters::
     ** LPSECURITY_ATTRIBUTES lpSecurityAttributes
     ** DWORD dwFlagsAndAttributes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 PostQueuedCompletionStatus
 ==========================
@@ -2454,6 +3624,15 @@ Parameters::
     ** ULONG_PTR dwCompletionKey
     ** LPOVERLAPPED lpOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryRecoveryAgentsOnEncryptedFile
 ==================================
@@ -2468,6 +3647,15 @@ Parameters::
     ** LPCWSTR lpFileName
     ** PENCRYPTION_CERTIFICATE_HASH_LIST *pRecoveryAgents
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryUsersOnEncryptedFile
 =========================
@@ -2481,6 +3669,15 @@ Parameters::
 
     ** LPCWSTR lpFileName
     ** PENCRYPTION_CERTIFICATE_HASH_LIST *pUsers
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ReOpenFile
@@ -2497,6 +3694,15 @@ Parameters::
     ** DWORD dwDesiredAccess
     ** DWORD dwShareMode
     ** DWORD dwFlagsAndAttributes
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ReadDirectoryChangesW
@@ -2518,6 +3724,15 @@ Parameters::
     ** LPOVERLAPPED lpOverlapped
     ** LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ReadEncryptedFileRaw
 ====================
@@ -2532,6 +3747,15 @@ Parameters::
     ** PFE_EXPORT_FUNC pfExportCallback
     ** PVOID pvCallbackContext
     ** PVOID pvContext
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ReadFile
@@ -2550,6 +3774,15 @@ Parameters::
     ** LPDWORD lpNumberOfBytesRead
     ** LPOVERLAPPED lpOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ReadFileEx
 ==========
@@ -2566,6 +3799,15 @@ Parameters::
     ** DWORD nNumberOfBytesToRead
     ** LPOVERLAPPED lpOverlapped
     ** LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ReadFileScatter
@@ -2584,6 +3826,15 @@ Parameters::
     ** LPDWORD lpReserved
     ** LPOVERLAPPED lpOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RemoveDirectoryA
 ================
@@ -2597,6 +3848,15 @@ Parameters::
 
     ** LPCSTR lpPathName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RemoveDirectoryW
 ================
@@ -2609,6 +3869,15 @@ Signature::
 Parameters::
 
     ** LPCWSTR lpPathName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RemoveDirectoryTransactedA
@@ -2624,6 +3893,15 @@ Parameters::
     ** LPCSTR lpPathName
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RemoveDirectoryTransactedW
 ==========================
@@ -2637,6 +3915,15 @@ Parameters::
 
     ** LPCWSTR lpPathName
     ** HANDLE hTransaction
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RemoveUsersFromEncryptedFile
@@ -2652,6 +3939,15 @@ Parameters::
     ** LPCWSTR lpFileName
     ** PENCRYPTION_CERTIFICATE_HASH_LIST pHashes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetCurrentDirectoryA
 ====================
@@ -2664,6 +3960,15 @@ Signature::
 Parameters::
 
     ** LPCSTR lpPathName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetCurrentDirectoryW
@@ -2678,6 +3983,15 @@ Parameters::
 
     ** LPCWSTR lpPathName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetEndOfFile
 ============
@@ -2691,6 +4005,15 @@ Parameters::
 
     ** HANDLE hFile
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFileApisToANSI
 =================
@@ -2700,6 +4023,15 @@ Signature::
     * Library: kernel32
     * Return value: void
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFileApisToOEM
 ================
@@ -2708,6 +4040,15 @@ Signature::
 
     * Library: kernel32
     * Return value: void
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetFileAttributesA
@@ -2723,6 +4064,15 @@ Parameters::
     ** LPCSTR lpFileName
     ** DWORD dwFileAttributes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFileAttributesW
 ==================
@@ -2736,6 +4086,15 @@ Parameters::
 
     ** LPCWSTR lpFileName
     ** DWORD dwFileAttributes
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetFileAttributesTransactedA
@@ -2752,6 +4111,15 @@ Parameters::
     ** DWORD dwFileAttributes
     ** HANDLE hTransaction
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFileAttributesTransactedW
 ============================
@@ -2766,6 +4134,15 @@ Parameters::
     ** LPCWSTR lpFileName
     ** DWORD dwFileAttributes
     ** HANDLE hTransaction
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetFileBandwidthReservation
@@ -2785,6 +4162,15 @@ Parameters::
     ** LPDWORD lpTransferSize
     ** LPDWORD lpNumOutstandingRequests
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFileCompletionNotificationModes
 ==================================
@@ -2798,6 +4184,15 @@ Parameters::
 
     ** HANDLE FileHandle
     ** UCHAR Flags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetFileInformationByHandle
@@ -2815,6 +4210,15 @@ Parameters::
     ** LPVOID lpFileInformation
     ** DWORD dwBufferSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFileIoOverlappedRange
 ========================
@@ -2829,6 +4233,15 @@ Parameters::
     ** HANDLE FileHandle
     ** PUCHAR OverlappedRangeStart
     ** ULONG Length
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetFilePointer
@@ -2846,6 +4259,15 @@ Parameters::
     ** PLONG lpDistanceToMoveHigh
     ** DWORD dwMoveMethod
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFilePointerEx
 ================
@@ -2862,6 +4284,15 @@ Parameters::
     ** PLARGE_INTEGER lpNewFilePointer
     ** DWORD dwMoveMethod
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFileShortNameA
 =================
@@ -2875,6 +4306,15 @@ Parameters::
 
     ** HANDLE hFile
     ** LPCSTR lpShortName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetFileShortNameW
@@ -2890,6 +4330,15 @@ Parameters::
     ** HANDLE hFile
     ** LPCWSTR lpShortName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFileValidData
 ================
@@ -2904,6 +4353,15 @@ Parameters::
     ** HANDLE hFile
     ** LONGLONG ValidDataLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetSearchPathMode
 =================
@@ -2917,6 +4375,15 @@ Parameters::
 
     ** DWORD Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetUserFileEncryptionKey
 ========================
@@ -2929,6 +4396,15 @@ Signature::
 Parameters::
 
     ** PENCRYPTION_CERTIFICATE pEncryptionCertificate
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 UnlockFile
@@ -2947,6 +4423,15 @@ Parameters::
     ** DWORD nNumberOfBytesToUnlockLow
     ** DWORD nNumberOfBytesToUnlockHigh
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 UnlockFileEx
 ============
@@ -2964,6 +4449,15 @@ Parameters::
     ** DWORD nNumberOfBytesToUnlockHigh
     ** LPOVERLAPPED lpOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 Wow64DisableWow64FsRedirection
 ==============================
@@ -2976,6 +4470,15 @@ Signature::
 Parameters::
 
     ** PVOID *OldValue
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 Wow64EnableWow64FsRedirection
@@ -2990,6 +4493,15 @@ Parameters::
 
     ** BOOLEAN Wow64FsEnableRedirection
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 Wow64RevertWow64FsRedirection
 =============================
@@ -3002,6 +4514,15 @@ Signature::
 Parameters::
 
     ** PVOID OlValue
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WriteEncryptedFileRaw
@@ -3017,6 +4538,15 @@ Parameters::
     ** PFE_IMPORT_FUNC pfImportCallback
     ** PVOID pvCallbackContext
     ** PVOID pvContext
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WriteFile
@@ -3046,6 +4576,15 @@ Post::
 
     free_unicode_buffer(filepath);
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WriteFileEx
 ===========
@@ -3073,6 +4612,15 @@ Post::
     }
 
     free_unicode_buffer(filepath);
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WriteFileGather
@@ -3102,6 +4650,15 @@ Post::
 
     free_unicode_buffer(filepath);
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ReplaceFileA
 ============
@@ -3121,6 +4678,13 @@ Parameters::
     ** LPVOID lpReserved
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *oldfilepath = get_unicode_buffer();
 
@@ -3150,6 +4714,13 @@ Parameters::
     ** LPVOID lpReserved
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *oldfilepath = get_unicode_buffer();
     path_get_full_pathW(lpReplacementFileName, oldfilepath);
@@ -3203,6 +4774,15 @@ Parameters::
     ** LPCSTR lpPassword
     ** LPCSTR lpDisplayName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ChangeServiceConfigW
 ====================
@@ -3226,6 +4806,15 @@ Parameters::
     ** LPCWSTR lpPassword
     ** LPCWSTR lpDisplayName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ChangeServiceConfig2A
 =====================
@@ -3240,6 +4829,15 @@ Parameters::
     ** SC_HANDLE hService
     ** DWORD dwInfoLevel
     ** LPVOID lpInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ChangeServiceConfig2W
@@ -3256,6 +4854,15 @@ Parameters::
     ** DWORD dwInfoLevel
     ** LPVOID lpInfo
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CloseServiceHandle
 ==================
@@ -3268,6 +4875,15 @@ Signature::
 Parameters::
 
     ** SC_HANDLE hSCObject
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ControlService
@@ -3283,6 +4899,15 @@ Parameters::
     ** SC_HANDLE hService
     ** DWORD dwControl
     ** LPSERVICE_STATUS lpServiceStatus
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ControlServiceExA
@@ -3300,6 +4925,15 @@ Parameters::
     ** DWORD dwInfoLevel
     ** PVOID pControlParams
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ControlServiceExW
 =================
@@ -3315,6 +4949,15 @@ Parameters::
     ** DWORD dwControl
     ** DWORD dwInfoLevel
     ** PVOID pControlParams
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateServiceA
@@ -3341,6 +4984,15 @@ Parameters::
     ** LPCSTR lpServiceStartName
     ** LPCSTR lpPassword
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateServiceW
 ==============
@@ -3366,6 +5018,15 @@ Parameters::
     ** LPCWSTR lpServiceStartName
     ** LPCWSTR lpPassword
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DeleteService
 =============
@@ -3378,6 +5039,15 @@ Signature::
 Parameters::
 
     ** SC_HANDLE hService
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 EnumDependentServicesA
@@ -3397,6 +5067,15 @@ Parameters::
     ** LPDWORD pcbBytesNeeded
     ** LPDWORD lpServicesReturned
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EnumDependentServicesW
 ======================
@@ -3414,6 +5093,15 @@ Parameters::
     ** DWORD cbBufSize
     ** LPDWORD pcbBytesNeeded
     ** LPDWORD lpServicesReturned
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 EnumServicesStatusExA
@@ -3437,6 +5125,15 @@ Parameters::
     ** LPDWORD lpResumeHandle
     ** LPCSTR pszGroupName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EnumServicesStatusExW
 =====================
@@ -3459,6 +5156,15 @@ Parameters::
     ** LPDWORD lpResumeHandle
     ** LPCWSTR pszGroupName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetServiceDisplayNameA
 ======================
@@ -3474,6 +5180,15 @@ Parameters::
     ** LPCSTR lpServiceName
     ** LPSTR lpDisplayName
     ** LPDWORD lpcchBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetServiceDisplayNameW
@@ -3491,6 +5206,15 @@ Parameters::
     ** LPWSTR lpDisplayName
     ** LPDWORD lpcchBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetServiceKeyNameA
 ==================
@@ -3506,6 +5230,15 @@ Parameters::
     ** LPCSTR lpDisplayName
     ** LPSTR lpServiceName
     ** LPDWORD lpcchBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetServiceKeyNameW
@@ -3523,6 +5256,15 @@ Parameters::
     ** LPWSTR lpServiceName
     ** LPDWORD lpcchBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 NotifyBootConfigStatus
 ======================
@@ -3535,6 +5277,15 @@ Signature::
 Parameters::
 
     ** BOOL BootAcceptable
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 NotifyServiceStatusChangeA
@@ -3551,6 +5302,15 @@ Parameters::
     ** DWORD dwNotifyMask
     ** PSERVICE_NOTIFYA pNotifyBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 NotifyServiceStatusChangeW
 ==========================
@@ -3565,6 +5325,15 @@ Parameters::
     ** SC_HANDLE hService
     ** DWORD dwNotifyMask
     ** PSERVICE_NOTIFYW pNotifyBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 OpenServiceA
@@ -3581,6 +5350,15 @@ Parameters::
     ** LPCSTR lpServiceName
     ** DWORD dwDesiredAccess
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenServiceW
 ============
@@ -3595,6 +5373,15 @@ Parameters::
     ** SC_HANDLE hSCManager
     ** LPCWSTR lpServiceName
     ** DWORD dwDesiredAccess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueryServiceConfigA
@@ -3612,6 +5399,15 @@ Parameters::
     ** DWORD cbBufSize
     ** LPDWORD pcbBytesNeeded
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryServiceConfigW
 ===================
@@ -3627,6 +5423,15 @@ Parameters::
     ** LPQUERY_SERVICE_CONFIGW lpServiceConfig
     ** DWORD cbBufSize
     ** LPDWORD pcbBytesNeeded
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueryServiceConfig2A
@@ -3645,6 +5450,15 @@ Parameters::
     ** DWORD cbBufSize
     ** LPDWORD pcbBytesNeeded
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryServiceConfig2W
 ====================
@@ -3662,6 +5476,15 @@ Parameters::
     ** DWORD cbBufSize
     ** LPDWORD pcbBytesNeeded
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryServiceDynamicInformation
 ==============================
@@ -3676,6 +5499,15 @@ Parameters::
     ** SERVICE_STATUS_HANDLE hServiceStatus
     ** DWORD dwInfoLevel
     ** PVOID *ppDynamicInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueryServiceObjectSecurity
@@ -3694,6 +5526,15 @@ Parameters::
     ** DWORD cbBufSize
     ** LPDWORD pcbBytesNeeded
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryServiceStatusEx
 ====================
@@ -3711,6 +5552,15 @@ Parameters::
     ** DWORD cbBufSize
     ** LPDWORD pcbBytesNeeded
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetServiceObjectSecurity
 ========================
@@ -3726,6 +5576,15 @@ Parameters::
     ** SECURITY_INFORMATION dwSecurityInformation
     ** PSECURITY_DESCRIPTOR lpSecurityDescriptor
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetServiceStatus
 ================
@@ -3739,6 +5598,15 @@ Parameters::
 
     ** SERVICE_STATUS_HANDLE hServiceStatus
     ** LPSERVICE_STATUS lpServiceStatus
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 StartServiceA
@@ -3755,6 +5623,15 @@ Parameters::
     ** DWORD dwNumServiceArgs
     ** LPCSTR *lpServiceArgVectors
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 StartServiceW
 =============
@@ -3770,6 +5647,15 @@ Parameters::
     ** DWORD dwNumServiceArgs
     ** LPCWSTR *lpServiceArgVectors
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 StartServiceCtrlDispatcherA
 ===========================
@@ -3782,6 +5668,15 @@ Signature::
 Parameters::
 
     ** const SERVICE_TABLE_ENTRYA *lpServiceStartTable
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 StartServiceCtrlDispatcherW
@@ -3796,6 +5691,15 @@ Parameters::
 
     ** const SERVICE_TABLE_ENTRYW *lpServiceStartTable
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CeipIsOptedIn
 =============
@@ -3804,6 +5708,15 @@ Signature::
 
     * Library: kernel32
     * Return value: BOOL
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DnsHostnameToComputerNameA
@@ -3820,6 +5733,15 @@ Parameters::
     ** LPSTR ComputerName
     ** LPDWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DnsHostnameToComputerNameW
 ==========================
@@ -3834,6 +5756,15 @@ Parameters::
     ** LPCWSTR Hostname
     ** LPWSTR ComputerName
     ** LPDWORD nSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 EnumSystemFirmwareTables
@@ -3850,6 +5781,15 @@ Parameters::
     ** PVOID pFirmwareTableEnumBuffer
     ** DWORD BufferSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetComputerNameA
 ================
@@ -3864,6 +5804,15 @@ Parameters::
     ** LPSTR lpBuffer
     ** LPDWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetComputerNameW
 ================
@@ -3877,6 +5826,15 @@ Parameters::
 
     ** LPWSTR lpBuffer
     ** LPDWORD nSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetComputerNameExA
@@ -3893,6 +5851,15 @@ Parameters::
     ** LPSTR lpBuffer
     ** LPDWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetComputerNameExW
 ==================
@@ -3908,6 +5875,15 @@ Parameters::
     ** LPWSTR lpBuffer
     ** LPDWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetCurrentHwProfileA
 ====================
@@ -3921,6 +5897,15 @@ Parameters::
 
     ** LPHW_PROFILE_INFOA lpHwProfileInfo
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetCurrentHwProfileW
 ====================
@@ -3933,6 +5918,15 @@ Signature::
 Parameters::
 
     ** LPHW_PROFILE_INFOW lpHwProfileInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFirmwareEnvironmentVariableA
@@ -3950,6 +5944,15 @@ Parameters::
     ** PVOID pBuffer
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFirmwareEnvironmentVariableW
 ===============================
@@ -3965,6 +5968,15 @@ Parameters::
     ** LPCWSTR lpGuid
     ** PVOID pBuffer
     ** DWORD nSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFirmwareEnvironmentVariableExA
@@ -3983,6 +5995,15 @@ Parameters::
     ** DWORD nSize
     ** PDWORD pdwAttribubutes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFirmwareEnvironmentVariableExW
 =================================
@@ -4000,6 +6021,15 @@ Parameters::
     ** DWORD nSize
     ** PDWORD pdwAttribubutes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetFirmwareType
 ===============
@@ -4013,6 +6043,15 @@ Parameters::
 
     ** PFIRMWARE_TYPE FirmwareType
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetNativeSystemInfo
 ===================
@@ -4025,6 +6064,15 @@ Signature::
 Parameters::
 
     ** LPSYSTEM_INFO lpSystemInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetProductInfo
@@ -4043,6 +6091,15 @@ Parameters::
     ** DWORD dwSpMinorVersion
     ** PDWORD pdwReturnedProductType
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetSystemFirmwareTable
 ======================
@@ -4059,6 +6116,15 @@ Parameters::
     ** PVOID pFirmwareTableBuffer
     ** DWORD BufferSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetSystemInfo
 =============
@@ -4071,6 +6137,15 @@ Signature::
 Parameters::
 
     ** LPSYSTEM_INFO lpSystemInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetSystemRegistryQuota
@@ -4086,6 +6161,15 @@ Parameters::
     ** PDWORD pdwQuotaAllowed
     ** PDWORD pdwQuotaUsed
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetUserNameA
 ============
@@ -4099,6 +6183,15 @@ Parameters::
 
     ** LPSTR lpBuffer
     ** LPDWORD pcbBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetUserNameW
@@ -4114,6 +6207,15 @@ Parameters::
     ** LPWSTR lpBuffer
     ** LPDWORD pcbBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetVersion
 ==========
@@ -4122,6 +6224,15 @@ Signature::
 
     * Library: kernel32
     * Return value: DWORD
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetVersionExA
@@ -4136,6 +6247,15 @@ Parameters::
 
     ** LPOSVERSIONINFOA lpVersionInformation
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetVersionExW
 =============
@@ -4148,6 +6268,15 @@ Signature::
 Parameters::
 
     ** LPOSVERSIONINFOW lpVersionInformation
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetWindowsDirectoryA
@@ -4163,6 +6292,15 @@ Parameters::
     ** LPSTR lpBuffer
     ** UINT uSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetWindowsDirectoryW
 ====================
@@ -4177,6 +6315,15 @@ Parameters::
     ** LPWSTR lpBuffer
     ** UINT uSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 IsNativeVhdBoot
 ===============
@@ -4189,6 +6336,15 @@ Signature::
 Parameters::
 
     ** PBOOL NativeVhdBoot
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 IsProcessorFeaturePresent
@@ -4203,6 +6359,15 @@ Parameters::
 
     ** DWORD ProcessorFeature
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryPerformanceCounter
 =======================
@@ -4215,6 +6380,15 @@ Signature::
 Parameters::
 
     ** LARGE_INTEGER *lpPerformanceCount
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueryPerformanceFrequency
@@ -4229,6 +6403,15 @@ Parameters::
 
     ** LARGE_INTEGER *lpFrequency
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetComputerNameA
 ================
@@ -4242,6 +6425,15 @@ Parameters::
 
     ** LPCSTR lpComputerName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetComputerNameW
 ================
@@ -4254,6 +6446,15 @@ Signature::
 Parameters::
 
     ** LPCWSTR lpComputerName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetComputerNameExA
@@ -4269,6 +6470,15 @@ Parameters::
     ** COMPUTER_NAME_FORMAT NameType
     ** LPCSTR lpBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetComputerNameExW
 ==================
@@ -4282,6 +6492,15 @@ Parameters::
 
     ** COMPUTER_NAME_FORMAT NameType
     ** LPCWSTR lpBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetFirmwareEnvironmentVariableA
@@ -4299,6 +6518,15 @@ Parameters::
     ** PVOID pValue
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFirmwareEnvironmentVariableW
 ===============================
@@ -4314,6 +6542,15 @@ Parameters::
     ** LPCWSTR lpGuid
     ** PVOID pValue
     ** DWORD nSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetFirmwareEnvironmentVariableExA
@@ -4332,6 +6569,15 @@ Parameters::
     ** DWORD nSize
     ** DWORD dwAttributes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetFirmwareEnvironmentVariableExW
 =================================
@@ -4349,6 +6595,15 @@ Parameters::
     ** DWORD nSize
     ** DWORD dwAttributes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 VerSetConditionMask
 ===================
@@ -4363,6 +6618,15 @@ Parameters::
     ** ULONGLONG ConditionMask
     ** ULONG TypeMask
     ** UCHAR Condition
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 VerifyVersionInfoA
@@ -4379,6 +6643,15 @@ Parameters::
     ** DWORD dwTypeMask
     ** DWORDLONG dwlConditionMask
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 VerifyVersionInfoW
 ==================
@@ -4394,6 +6667,15 @@ Parameters::
     ** DWORD dwTypeMask
     ** DWORDLONG dwlConditionMask
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CloseHandle
 ===========
@@ -4406,6 +6688,15 @@ Signature::
 Parameters::
 
     ** HANDLE hObject
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DuplicateHandle
@@ -4426,6 +6717,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** DWORD dwOptions
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetHandleInformation
 ====================
@@ -4439,6 +6739,15 @@ Parameters::
 
     ** HANDLE hObject
     ** LPDWORD lpdwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetHandleInformation
@@ -4455,6 +6764,15 @@ Parameters::
     ** DWORD dwMask
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegCloseKey
 ===========
@@ -4467,6 +6785,15 @@ Signature::
 Parameters::
 
     ** HKEY hKey
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegConnectRegistryA
@@ -4483,6 +6810,15 @@ Parameters::
     ** HKEY hKey
     ** PHKEY phkResult
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegConnectRegistryW
 ===================
@@ -4497,6 +6833,15 @@ Parameters::
     ** LPCWSTR lpMachineName
     ** HKEY hKey
     ** PHKEY phkResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegCopyTreeA
@@ -4513,6 +6858,15 @@ Parameters::
     ** LPCSTR lpSubKey
     ** HKEY hKeyDest
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegCopyTreeW
 ============
@@ -4527,6 +6881,15 @@ Parameters::
     ** HKEY hKeySrc
     ** LPCWSTR lpSubKey
     ** HKEY hKeyDest
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegCreateKeyTransactedA
@@ -4551,6 +6914,15 @@ Parameters::
     ** HANDLE hTransaction
     ** PVOID pExtendedParemeter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegCreateKeyTransactedW
 =======================
@@ -4574,6 +6946,15 @@ Parameters::
     ** HANDLE hTransaction
     ** PVOID pExtendedParemeter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegDeleteKeyA
 =============
@@ -4588,6 +6969,15 @@ Parameters::
     ** HKEY hKey
     ** LPCSTR lpSubKey
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegDeleteKeyW
 =============
@@ -4601,6 +6991,15 @@ Parameters::
 
     ** HKEY hKey
     ** LPCWSTR lpSubKey
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegDeleteKeyExA
@@ -4618,6 +7017,15 @@ Parameters::
     ** REGSAM samDesired
     ** DWORD Reserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegDeleteKeyExW
 ===============
@@ -4633,6 +7041,15 @@ Parameters::
     ** LPCWSTR lpSubKey
     ** REGSAM samDesired
     ** DWORD Reserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegDeleteKeyTransactedA
@@ -4652,6 +7069,15 @@ Parameters::
     ** HANDLE hTransaction
     ** PVOID pExtendedParameter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegDeleteKeyTransactedW
 =======================
@@ -4670,6 +7096,15 @@ Parameters::
     ** HANDLE hTransaction
     ** PVOID pExtendedParameter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegDeleteKeyValueA
 ==================
@@ -4684,6 +7119,15 @@ Parameters::
     ** HKEY hKey
     ** LPCSTR lpSubKey
     ** LPCSTR lpValueName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegDeleteKeyValueW
@@ -4700,6 +7144,15 @@ Parameters::
     ** LPCWSTR lpSubKey
     ** LPCWSTR lpValueName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegDeleteTreeA
 ==============
@@ -4713,6 +7166,15 @@ Parameters::
 
     ** HKEY hKey
     ** LPCSTR lpSubKey
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegDeleteTreeW
@@ -4728,6 +7190,15 @@ Parameters::
     ** HKEY hKey
     ** LPCWSTR lpSubKey
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegDeleteValueA
 ===============
@@ -4741,6 +7212,15 @@ Parameters::
 
     ** HKEY hKey
     ** LPCSTR lpValueName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegDeleteValueW
@@ -4756,6 +7236,15 @@ Parameters::
     ** HKEY hKey
     ** LPCWSTR lpValueName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegDisablePredefinedCache
 =========================
@@ -4765,6 +7254,15 @@ Signature::
     * Library: advapi32
     * Return value: LSTATUS
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegDisablePredefinedCacheEx
 ===========================
@@ -4773,6 +7271,15 @@ Signature::
 
     * Library: kernel32
     * Return value: LSTATUS
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegDisableReflectionKey
@@ -4787,6 +7294,15 @@ Parameters::
 
     ** HKEY hBase
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegEnableReflectionKey
 ======================
@@ -4799,6 +7315,15 @@ Signature::
 Parameters::
 
     ** HKEY hBase
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegEnumValueA
@@ -4820,6 +7345,15 @@ Parameters::
     ** LPBYTE lpData
     ** LPDWORD lpcbData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegEnumValueW
 =============
@@ -4840,6 +7374,15 @@ Parameters::
     ** LPBYTE lpData
     ** LPDWORD lpcbData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegFlushKey
 ===========
@@ -4852,6 +7395,15 @@ Signature::
 Parameters::
 
     ** HKEY hKey
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegGetKeySecurity
@@ -4869,6 +7421,15 @@ Parameters::
     ** PSECURITY_DESCRIPTOR pSecurityDescriptor
     ** LPDWORD lpcbSecurityDescriptor
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegLoadKeyA
 ===========
@@ -4884,6 +7445,15 @@ Parameters::
     ** LPCSTR lpSubKey
     ** LPCSTR lpFile
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegLoadKeyW
 ===========
@@ -4898,6 +7468,15 @@ Parameters::
     ** HKEY hKey
     ** LPCWSTR lpSubKey
     ** LPCWSTR lpFile
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegNotifyChangeKeyValue
@@ -4916,6 +7495,15 @@ Parameters::
     ** HANDLE hEvent
     ** BOOL fAsynchronous
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegOpenCurrentUser
 ==================
@@ -4929,6 +7517,15 @@ Parameters::
 
     ** REGSAM samDesired
     ** PHKEY phkResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegOpenKeyTransactedA
@@ -4949,6 +7546,15 @@ Parameters::
     ** HANDLE hTransaction
     ** PVOID pExtendedParemeter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegOpenKeyTransactedW
 =====================
@@ -4968,6 +7574,15 @@ Parameters::
     ** HANDLE hTransaction
     ** PVOID pExtendedParemeter
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegOpenUserClassesRoot
 ======================
@@ -4984,6 +7599,15 @@ Parameters::
     ** REGSAM samDesired
     ** PHKEY phkResult
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegOverridePredefKey
 ====================
@@ -4997,6 +7621,15 @@ Parameters::
 
     ** HKEY hKey
     ** HKEY hNewHKey
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegQueryMultipleValuesA
@@ -5015,6 +7648,15 @@ Parameters::
     ** LPSTR lpValueBuf
     ** LPDWORD ldwTotsize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegQueryMultipleValuesW
 =======================
@@ -5032,6 +7674,15 @@ Parameters::
     ** LPWSTR lpValueBuf
     ** LPDWORD ldwTotsize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegQueryReflectionKey
 =====================
@@ -5045,6 +7696,15 @@ Parameters::
 
     ** HKEY hBase
     ** BOOL *bIsReflectionDisabled
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegReplaceKeyA
@@ -5062,6 +7722,15 @@ Parameters::
     ** LPCSTR lpNewFile
     ** LPCSTR lpOldFile
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegReplaceKeyW
 ==============
@@ -5078,6 +7747,15 @@ Parameters::
     ** LPCWSTR lpNewFile
     ** LPCWSTR lpOldFile
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegRestoreKeyA
 ==============
@@ -5092,6 +7770,15 @@ Parameters::
     ** HKEY hKey
     ** LPCSTR lpFile
     ** DWORD dwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegRestoreKeyW
@@ -5108,6 +7795,15 @@ Parameters::
     ** LPCWSTR lpFile
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegSaveKeyA
 ===========
@@ -5123,6 +7819,15 @@ Parameters::
     ** LPCSTR lpFile
     ** const LPSECURITY_ATTRIBUTES lpSecurityAttributes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegSaveKeyW
 ===========
@@ -5137,6 +7842,15 @@ Parameters::
     ** HKEY hKey
     ** LPCWSTR lpFile
     ** const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegSaveKeyExA
@@ -5154,6 +7868,15 @@ Parameters::
     ** const LPSECURITY_ATTRIBUTES lpSecurityAttributes
     ** DWORD Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegSaveKeyExW
 =============
@@ -5170,6 +7893,15 @@ Parameters::
     ** const LPSECURITY_ATTRIBUTES lpSecurityAttributes
     ** DWORD Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegSetKeySecurity
 =================
@@ -5184,6 +7916,15 @@ Parameters::
     ** HKEY hKey
     ** SECURITY_INFORMATION SecurityInformation
     ** PSECURITY_DESCRIPTOR pSecurityDescriptor
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegSetKeyValueA
@@ -5203,6 +7944,15 @@ Parameters::
     ** LPCVOID lpData
     ** DWORD cbData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegSetKeyValueW
 ===============
@@ -5220,6 +7970,15 @@ Parameters::
     ** DWORD dwType
     ** LPCVOID lpData
     ** DWORD cbData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegSetValueExA
@@ -5239,6 +7998,15 @@ Parameters::
     ** const BYTE *lpData
     ** DWORD cbData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegSetValueExW
 ==============
@@ -5257,6 +8025,15 @@ Parameters::
     ** const BYTE *lpData
     ** DWORD cbData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RegUnLoadKeyA
 =============
@@ -5270,6 +8047,15 @@ Parameters::
 
     ** HKEY hKey
     ** LPCSTR lpSubKey
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RegUnLoadKeyW
@@ -5285,6 +8071,15 @@ Parameters::
     ** HKEY hKey
     ** LPCWSTR lpSubKey
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CompareFileTime
 ===============
@@ -5298,6 +8093,15 @@ Parameters::
 
     ** const FILETIME *lpFileTime1
     ** const FILETIME *lpFileTime2
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DosDateTimeToFileTime
@@ -5314,6 +8118,15 @@ Parameters::
     ** WORD wFatTime
     ** LPFILETIME lpFileTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EnumDynamicTimeZoneInformation
 ==============================
@@ -5327,6 +8140,15 @@ Parameters::
 
     ** const DWORD dwIndex
     ** PDYNAMIC_TIME_ZONE_INFORMATION lpTimeZoneInformation
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FileTimeToLocalFileTime
@@ -5342,6 +8164,15 @@ Parameters::
     ** const FILETIME *lpFileTime
     ** LPFILETIME lpLocalFileTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FileTimeToSystemTime
 ====================
@@ -5356,6 +8187,15 @@ Parameters::
     ** const FILETIME *lpFileTime
     ** LPSYSTEMTIME lpSystemTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetDynamicTimeZoneInformation
 =============================
@@ -5368,6 +8208,15 @@ Signature::
 Parameters::
 
     ** PDYNAMIC_TIME_ZONE_INFORMATION pTimeZoneInformation
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetDynamicTimeZoneInformationEffectiveYears
@@ -5383,6 +8232,15 @@ Parameters::
     ** const PDYNAMIC_TIME_ZONE_INFORMATION lpTimeZoneInformation
     ** LPDWORD FirstYear
     ** LPDWORD LastYear
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetFileTime
@@ -5400,6 +8258,15 @@ Parameters::
     ** LPFILETIME lpLastAccessTime
     ** LPFILETIME lpLastWriteTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetLocalTime
 ============
@@ -5413,6 +8280,15 @@ Parameters::
 
     ** LPSYSTEMTIME lpSystemTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetSystemTime
 =============
@@ -5425,6 +8301,15 @@ Signature::
 Parameters::
 
     ** LPSYSTEMTIME lpSystemTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetSystemTimeAdjustment
@@ -5441,6 +8326,15 @@ Parameters::
     ** PDWORD lpTimeIncrement
     ** PBOOL lpTimeAdjustmentDisabled
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetSystemTimeAsFileTime
 =======================
@@ -5453,6 +8347,15 @@ Signature::
 Parameters::
 
     ** LPFILETIME lpSystemTimeAsFileTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetSystemTimes
@@ -5469,6 +8372,15 @@ Parameters::
     ** PFILETIME lpKernelTime
     ** PFILETIME lpUserTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetTickCount
 ============
@@ -5478,6 +8390,15 @@ Signature::
     * Library: kernel32
     * Return value: DWORD
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetTickCount64
 ==============
@@ -5486,6 +8407,15 @@ Signature::
 
     * Library: kernel32
     * Return value: ULONGLONG
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetTimeZoneInformation
@@ -5499,6 +8429,15 @@ Signature::
 Parameters::
 
     ** LPTIME_ZONE_INFORMATION lpTimeZoneInformation
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetTimeZoneInformationForYear
@@ -5515,6 +8454,15 @@ Parameters::
     ** PDYNAMIC_TIME_ZONE_INFORMATION pdtzi
     ** LPTIME_ZONE_INFORMATION ptzi
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 LocalFileTimeToFileTime
 =======================
@@ -5529,6 +8477,15 @@ Parameters::
     ** const FILETIME *lpLocalFileTime
     ** LPFILETIME lpFileTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryUnbiasedInterruptTime
 ==========================
@@ -5542,6 +8499,15 @@ Parameters::
 
     ** PULONGLONG UnbiasedTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetDynamicTimeZoneInformation
 =============================
@@ -5554,6 +8520,15 @@ Signature::
 Parameters::
 
     ** const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetFileTime
@@ -5571,6 +8546,15 @@ Parameters::
     ** const FILETIME *lpLastAccessTime
     ** const FILETIME *lpLastWriteTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetLocalTime
 ============
@@ -5584,6 +8568,15 @@ Parameters::
 
     ** const SYSTEMTIME *lpSystemTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetSystemTime
 =============
@@ -5596,6 +8589,15 @@ Signature::
 Parameters::
 
     ** const SYSTEMTIME *lpSystemTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetSystemTimeAdjustment
@@ -5611,6 +8613,15 @@ Parameters::
     ** DWORD dwTimeAdjustment
     ** BOOL bTimeAdjustmentDisabled
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetTimeZoneInformation
 ======================
@@ -5623,6 +8634,15 @@ Signature::
 Parameters::
 
     ** const TIME_ZONE_INFORMATION *lpTimeZoneInformation
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SystemTimeToFileTime
@@ -5637,6 +8657,15 @@ Parameters::
 
     ** const SYSTEMTIME *lpSystemTime
     ** LPFILETIME lpFileTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SystemTimeToTzSpecificLocalTime
@@ -5653,6 +8682,15 @@ Parameters::
     ** const SYSTEMTIME *lpUniversalTime
     ** LPSYSTEMTIME lpLocalTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SystemTimeToTzSpecificLocalTimeEx
 =================================
@@ -5667,6 +8705,15 @@ Parameters::
     ** const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
     ** const SYSTEMTIME *lpUniversalTime
     ** LPSYSTEMTIME lpLocalTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 TzSpecificLocalTimeToSystemTime
@@ -5683,6 +8730,15 @@ Parameters::
     ** const SYSTEMTIME *lpLocalTime
     ** LPSYSTEMTIME lpUniversalTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 TzSpecificLocalTimeToSystemTimeEx
 =================================
@@ -5698,6 +8754,15 @@ Parameters::
     ** const SYSTEMTIME *lpLocalTime
     ** LPSYSTEMTIME lpUniversalTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CallMsgFilterA
 ==============
@@ -5712,6 +8777,15 @@ Parameters::
     ** LPMSG lpMsg
     ** int nCode
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CallMsgFilterW
 ==============
@@ -5725,6 +8799,15 @@ Parameters::
 
     ** LPMSG lpMsg
     ** int nCode
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CallNextHookEx
@@ -5742,6 +8825,15 @@ Parameters::
     ** WPARAM wParam
     ** LPARAM lParam
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetWindowsHookExA
 =================
@@ -5757,6 +8849,15 @@ Parameters::
     ** HOOKPROC lpfn
     ** HINSTANCE hmod
     ** DWORD dwThreadId
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetWindowsHookExW
@@ -5774,6 +8875,15 @@ Parameters::
     ** HINSTANCE hmod
     ** DWORD dwThreadId
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 UnhookWindowsHookEx
 ===================
@@ -5787,6 +8897,15 @@ Parameters::
 
     ** HHOOK hhk
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CancelWaitableTimer
 ===================
@@ -5799,6 +8918,15 @@ Signature::
 Parameters::
 
     ** HANDLE hTimer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ChangeTimerQueueTimer
@@ -5816,6 +8944,15 @@ Parameters::
     ** ULONG DueTime
     ** ULONG Period
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ClosePrivateNamespace
 =====================
@@ -5829,6 +8966,15 @@ Parameters::
 
     ** HANDLE Handle
     ** ULONG Flags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreatePrivateNamespaceA
@@ -5845,6 +8991,15 @@ Parameters::
     ** LPVOID lpBoundaryDescriptor
     ** LPCSTR lpAliasPrefix
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreatePrivateNamespaceW
 =======================
@@ -5860,6 +9015,15 @@ Parameters::
     ** LPVOID lpBoundaryDescriptor
     ** LPCWSTR lpAliasPrefix
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateTimerQueue
 ================
@@ -5868,6 +9032,15 @@ Signature::
 
     * Library: kernel32
     * Return value: HANDLE
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateTimerQueueTimer
@@ -5888,6 +9061,15 @@ Parameters::
     ** DWORD Period
     ** ULONG Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DeleteSynchronizationBarrier
 ============================
@@ -5900,6 +9082,15 @@ Signature::
 Parameters::
 
     ** LPSYNCHRONIZATION_BARRIER lpBarrier
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DeleteTimerQueue
@@ -5914,6 +9105,15 @@ Parameters::
 
     ** HANDLE TimerQueue
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DeleteTimerQueueEx
 ==================
@@ -5927,6 +9127,15 @@ Parameters::
 
     ** HANDLE TimerQueue
     ** HANDLE CompletionEvent
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DeleteTimerQueueTimer
@@ -5943,6 +9152,15 @@ Parameters::
     ** HANDLE Timer
     ** HANDLE CompletionEvent
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EnterSynchronizationBarrier
 ===========================
@@ -5956,6 +9174,15 @@ Parameters::
 
     ** LPSYNCHRONIZATION_BARRIER lpBarrier
     ** DWORD dwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetOverlappedResult
@@ -5972,6 +9199,15 @@ Parameters::
     ** LPOVERLAPPED lpOverlapped
     ** LPDWORD lpNumberOfBytesTransferred
     ** BOOL bWait
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetOverlappedResultEx
@@ -5990,6 +9226,15 @@ Parameters::
     ** DWORD dwMilliseconds
     ** BOOL bAlertable
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InitializeSynchronizationBarrier
 ================================
@@ -6004,6 +9249,15 @@ Parameters::
     ** LPSYNCHRONIZATION_BARRIER lpBarrier
     ** LONG lTotalThreads
     ** LONG lSpinCount
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 OpenEventA
@@ -6020,6 +9274,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** LPCSTR lpName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenEventW
 ==========
@@ -6034,6 +9297,15 @@ Parameters::
     ** DWORD dwDesiredAccess
     ** BOOL bInheritHandle
     ** LPCWSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 OpenMutexA
@@ -6050,6 +9322,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** LPCSTR lpName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenMutexW
 ==========
@@ -6065,6 +9346,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** LPCWSTR lpName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenPrivateNamespaceA
 =====================
@@ -6079,6 +9369,15 @@ Parameters::
     ** LPVOID lpBoundaryDescriptor
     ** LPCSTR lpAliasPrefix
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenPrivateNamespaceW
 =====================
@@ -6092,6 +9391,15 @@ Parameters::
 
     ** LPVOID lpBoundaryDescriptor
     ** LPCWSTR lpAliasPrefix
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 OpenSemaphoreA
@@ -6108,6 +9416,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** LPCSTR lpName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenSemaphoreW
 ==============
@@ -6122,6 +9439,15 @@ Parameters::
     ** DWORD dwDesiredAccess
     ** BOOL bInheritHandle
     ** LPCWSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 OpenWaitableTimerA
@@ -6138,6 +9464,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** LPCSTR lpTimerName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenWaitableTimerW
 ==================
@@ -6153,6 +9488,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** LPCWSTR lpTimerName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 PulseEvent
 ==========
@@ -6165,6 +9509,15 @@ Signature::
 Parameters::
 
     ** HANDLE hEvent
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueueUserAPC
@@ -6182,6 +9535,13 @@ Parameters::
     ** ULONG_PTR dwData
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     pipe("PROCESS:%d", pid_from_thread_handle(hThread));
 
@@ -6209,6 +9569,15 @@ Parameters::
     ** ULONG dwMilliseconds
     ** ULONG dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ReleaseMutex
 ============
@@ -6221,6 +9590,15 @@ Signature::
 Parameters::
 
     ** HANDLE hMutex
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ReleaseSemaphore
@@ -6237,6 +9615,15 @@ Parameters::
     ** LONG lReleaseCount
     ** LPLONG lpPreviousCount
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ResetEvent
 ==========
@@ -6250,6 +9637,15 @@ Parameters::
 
     ** HANDLE hEvent
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetEvent
 ========
@@ -6262,6 +9658,15 @@ Signature::
 Parameters::
 
     ** HANDLE hEvent
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetWaitableTimer
@@ -6280,6 +9685,15 @@ Parameters::
     ** PTIMERAPCROUTINE pfnCompletionRoutine
     ** LPVOID lpArgToCompletionRoutine
     ** BOOL fResume
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetWaitableTimerEx
@@ -6300,6 +9714,15 @@ Parameters::
     ** PREASON_CONTEXT WakeContext
     ** ULONG TolerableDelay
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SignalObjectAndWait
 ===================
@@ -6316,6 +9739,15 @@ Parameters::
     ** DWORD dwMilliseconds
     ** BOOL bAlertable
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SleepConditionVariableCS
 ========================
@@ -6330,6 +9762,15 @@ Parameters::
     ** PCONDITION_VARIABLE ConditionVariable
     ** PCRITICAL_SECTION CriticalSection
     ** DWORD dwMilliseconds
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SleepConditionVariableSRW
@@ -6347,6 +9788,15 @@ Parameters::
     ** DWORD dwMilliseconds
     ** ULONG Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 UnregisterWait
 ==============
@@ -6359,6 +9809,15 @@ Signature::
 Parameters::
 
     ** HANDLE WaitHandle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 UnregisterWaitEx
@@ -6374,6 +9833,113 @@ Parameters::
     ** HANDLE WaitHandle
     ** HANDLE CompletionEvent
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+WaitForMultipleObjects
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** DWORD nCount
+    ** const HANDLE *lpHandles
+    ** BOOL bWaitAll
+    ** DWORD dwMilliseconds
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+WaitForMultipleObjectsEx
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** DWORD nCount
+    ** const HANDLE *lpHandles
+    ** BOOL bWaitAll
+    ** DWORD dwMilliseconds
+    ** BOOL bAlertable
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+WaitForSingleObject
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** HANDLE hHandle
+    ** DWORD dwMilliseconds
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+WaitForSingleObjectEx
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** HANDLE hHandle
+    ** DWORD dwMilliseconds
+    ** BOOL bAlertable
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WakeAllConditionVariable
 ========================
@@ -6386,6 +9952,15 @@ Signature::
 Parameters::
 
     ** PCONDITION_VARIABLE ConditionVariable
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WakeConditionVariable
@@ -6400,6 +9975,15 @@ Parameters::
 
     ** PCONDITION_VARIABLE ConditionVariable
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DnsCancelQuery
 ==============
@@ -6412,6 +9996,15 @@ Signature::
 Parameters::
 
     ** PDNS_QUERY_CANCEL pCancelHandle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DnsFree
@@ -6427,6 +10020,15 @@ Parameters::
     ** PVOID pData
     ** DNS_FREE_TYPE FreeType
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DnsFreeProxyName
 ================
@@ -6439,6 +10041,15 @@ Signature::
 Parameters::
 
     ** PWSTR proxyName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DnsGetProxyInformation
@@ -6456,6 +10067,15 @@ Parameters::
     ** DNS_PROXY_INFORMATION *defaultProxyInformation
     ** DNS_PROXY_COMPLETION_ROUTINE completionRoutine
     ** void *completionContext
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DnsQueryConfig
@@ -6475,6 +10095,15 @@ Parameters::
     ** PVOID pBuffer
     ** PDWORD pBufLen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DnsQueryEx
 ==========
@@ -6490,6 +10119,15 @@ Parameters::
     ** PDNS_QUERY_RESULT pQueryResults
     ** PDNS_QUERY_CANCEL pCancelHandle
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DnsRecordCompare
 ================
@@ -6503,6 +10141,15 @@ Parameters::
 
     ** PDNS_RECORD pRecord1
     ** PDNS_RECORD pRecord2
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DnsRecordCopyEx
@@ -6519,6 +10166,15 @@ Parameters::
     ** DNS_CHARSET CharSetIn
     ** DNS_CHARSET CharSetOut
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DnsRecordListFree
 =================
@@ -6532,6 +10188,15 @@ Parameters::
 
     ** PDNS_RECORD pRecordList
     ** DNS_FREE_TYPE FreeType
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DnsRecordSetCompare
@@ -6549,6 +10214,15 @@ Parameters::
     ** PDNS_RECORD *ppDiff1
     ** PDNS_RECORD *ppDiff2
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DnsRecordSetCopyEx
 ==================
@@ -6564,6 +10238,15 @@ Parameters::
     ** DNS_CHARSET CharSetIn
     ** DNS_CHARSET CharSetOut
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DnsReleaseContextHandle
 =======================
@@ -6576,6 +10259,15 @@ Signature::
 Parameters::
 
     ** HANDLE hContext
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DnsReplaceRecordSetA
@@ -6594,6 +10286,15 @@ Parameters::
     ** PVOID pExtraInfo
     ** PVOID pReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DnsReplaceRecordSetW
 ====================
@@ -6611,6 +10312,15 @@ Parameters::
     ** PVOID pExtraInfo
     ** PVOID pReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindNextUrlCacheEntryA
 ======================
@@ -6626,6 +10336,15 @@ Parameters::
     ** LPINTERNET_CACHE_ENTRY_INFOA lpNextCacheEntryInfo
     ** LPDWORD lpcbCacheEntryInfo
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindNextUrlCacheEntryW
 ======================
@@ -6640,6 +10359,15 @@ Parameters::
     ** HANDLE hEnumHandle
     ** LPINTERNET_CACHE_ENTRY_INFOW lpNextCacheEntryInfo
     ** LPDWORD lpcbCacheEntryInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FindNextUrlCacheEntryExA
@@ -6659,6 +10387,15 @@ Parameters::
     ** LPDWORD lpcbGroupAttributes
     ** LPVOID lpReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FindNextUrlCacheEntryExW
 ========================
@@ -6677,6 +10414,15 @@ Parameters::
     ** LPDWORD lpcbGroupAttributes
     ** LPVOID lpReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FreeAddrInfoEx
 ==============
@@ -6689,6 +10435,15 @@ Signature::
 Parameters::
 
     ** PADDRINFOEXA pAddrInfoEx
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FreeAddrInfoExW
@@ -6703,6 +10458,15 @@ Parameters::
 
     ** PADDRINFOEXW pAddrInfoEx
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FreeAddrInfoW
 =============
@@ -6715,6 +10479,15 @@ Signature::
 Parameters::
 
     ** PADDRINFOW pAddrInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetAddrInfoExCancel
@@ -6729,6 +10502,15 @@ Parameters::
 
     ** LPHANDLE lpHandle
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetAddrInfoExOverlappedResult
 =============================
@@ -6741,6 +10523,15 @@ Signature::
 Parameters::
 
     ** LPOVERLAPPED lpOverlapped
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetHostNameW
@@ -6755,6 +10546,15 @@ Parameters::
 
     ** PWSTR name
     ** int namelen
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetNameInfoW
@@ -6775,6 +10575,15 @@ Parameters::
     ** DWORD ServiceBufferSize
     ** INT Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpAddFragmentToCache
 ======================
@@ -6792,6 +10601,15 @@ Parameters::
     ** PHTTP_CACHE_POLICY pCachePolicy
     ** LPOVERLAPPED pOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpAddUrl
 ==========
@@ -6806,6 +10624,15 @@ Parameters::
     ** HANDLE ReqQueueHandle
     ** PCWSTR pFullyQualifiedUrl
     ** PVOID pReserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpAddUrlToUrlGroup
@@ -6823,6 +10650,15 @@ Parameters::
     ** HTTP_URL_CONTEXT UrlContext
     ** ULONG Reserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpCloseRequestQueue
 =====================
@@ -6835,6 +10671,15 @@ Signature::
 Parameters::
 
     ** HANDLE ReqQueueHandle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpCloseServerSession
@@ -6849,6 +10694,15 @@ Parameters::
 
     ** HTTP_SERVER_SESSION_ID ServerSessionId
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpCloseUrlGroup
 =================
@@ -6861,6 +10715,15 @@ Signature::
 Parameters::
 
     ** HTTP_URL_GROUP_ID UrlGroupId
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpCreateHttpHandle
@@ -6875,6 +10738,15 @@ Parameters::
 
     ** PHANDLE pReqQueueHandle
     ** ULONG Reserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpCreateRequestQueue
@@ -6893,6 +10765,15 @@ Parameters::
     ** ULONG Flags
     ** PHANDLE pReqQueueHandle
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpCreateServerSession
 =======================
@@ -6908,6 +10789,15 @@ Parameters::
     ** PHTTP_SERVER_SESSION_ID pServerSessionId
     ** ULONG Reserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpCreateUrlGroup
 ==================
@@ -6922,6 +10812,15 @@ Parameters::
     ** HTTP_SERVER_SESSION_ID ServerSessionId
     ** PHTTP_URL_GROUP_ID pUrlGroupId
     ** ULONG Reserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpDeleteServiceConfiguration
@@ -6940,6 +10839,15 @@ Parameters::
     ** ULONG ConfigInformationLength
     ** LPOVERLAPPED pOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpFlushResponseCache
 ======================
@@ -6956,6 +10864,15 @@ Parameters::
     ** ULONG Flags
     ** LPOVERLAPPED pOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpInitialize
 ==============
@@ -6970,6 +10887,15 @@ Parameters::
     ** HTTPAPI_VERSION Version
     ** ULONG Flags
     ** PVOID pReserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpPrepareUrl
@@ -6986,6 +10912,15 @@ Parameters::
     ** ULONG Flags
     ** PCWSTR Url
     ** PWSTR *PreparedUrl
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpQueryInfoA
@@ -7004,6 +10939,15 @@ Parameters::
     ** LPDWORD lpdwBufferLength
     ** LPDWORD lpdwIndex
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpQueryInfoW
 ==============
@@ -7020,6 +10964,15 @@ Parameters::
     ** LPVOID lpBuffer
     ** LPDWORD lpdwBufferLength
     ** LPDWORD lpdwIndex
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpQueryRequestQueueProperty
@@ -7040,6 +10993,15 @@ Parameters::
     ** PULONG pReturnLength
     ** PVOID pReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpQueryServerSessionProperty
 ==============================
@@ -7056,6 +11018,15 @@ Parameters::
     ** PVOID pPropertyInformation
     ** ULONG PropertyInformationLength
     ** PULONG pReturnLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpQueryServiceConfiguration
@@ -7077,6 +11048,15 @@ Parameters::
     ** PULONG pReturnLength
     ** LPOVERLAPPED pOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpQueryUrlGroupProperty
 =========================
@@ -7093,6 +11073,15 @@ Parameters::
     ** PVOID pPropertyInformation
     ** ULONG PropertyInformationLength
     ** PULONG pReturnLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpReadFragmentFromCache
@@ -7113,6 +11102,15 @@ Parameters::
     ** PULONG pBytesRead
     ** LPOVERLAPPED pOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpReceiveClientCertificate
 ============================
@@ -7131,6 +11129,15 @@ Parameters::
     ** ULONG SslClientCertInfoSize
     ** PULONG pBytesReceived
     ** LPOVERLAPPED pOverlapped
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpReceiveHttpRequest
@@ -7151,6 +11158,15 @@ Parameters::
     ** PULONG pBytesReturned
     ** LPOVERLAPPED pOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpReceiveRequestEntityBody
 ============================
@@ -7170,6 +11186,15 @@ Parameters::
     ** PULONG pBytesReturned
     ** LPOVERLAPPED pOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpRemoveUrl
 =============
@@ -7183,6 +11208,15 @@ Parameters::
 
     ** HANDLE ReqQueueHandle
     ** PCWSTR pFullyQualifiedUrl
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpRemoveUrlFromUrlGroup
@@ -7198,6 +11232,15 @@ Parameters::
     ** HTTP_URL_GROUP_ID UrlGroupId
     ** PCWSTR pFullyQualifiedUrl
     ** ULONG Flags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpSendHttpResponse
@@ -7221,6 +11264,15 @@ Parameters::
     ** LPOVERLAPPED pOverlapped
     ** PHTTP_LOG_DATA pLogData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpSendResponseEntityBody
 ==========================
@@ -7243,6 +11295,15 @@ Parameters::
     ** LPOVERLAPPED pOverlapped
     ** PHTTP_LOG_DATA pLogData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpSetRequestQueueProperty
 ===========================
@@ -7261,6 +11322,15 @@ Parameters::
     ** ULONG Reserved
     ** PVOID pReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpSetServerSessionProperty
 ============================
@@ -7276,6 +11346,15 @@ Parameters::
     ** HTTP_SERVER_PROPERTY Property
     ** PVOID pPropertyInformation
     ** ULONG PropertyInformationLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpSetServiceConfiguration
@@ -7294,6 +11373,15 @@ Parameters::
     ** ULONG ConfigInformationLength
     ** LPOVERLAPPED pOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpSetUrlGroupProperty
 =======================
@@ -7310,6 +11398,15 @@ Parameters::
     ** PVOID pPropertyInformation
     ** ULONG PropertyInformationLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpShutdownRequestQueue
 ========================
@@ -7322,6 +11419,15 @@ Signature::
 Parameters::
 
     ** HANDLE ReqQueueHandle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpTerminate
@@ -7337,6 +11443,15 @@ Parameters::
     ** ULONG Flags
     ** PVOID pReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 HttpWaitForDemandStart
 ======================
@@ -7350,6 +11465,15 @@ Parameters::
 
     ** HANDLE ReqQueueHandle
     ** LPOVERLAPPED pOverlapped
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 HttpWaitForDisconnect
@@ -7366,6 +11490,15 @@ Parameters::
     ** HTTP_CONNECTION_ID ConnectionId
     ** LPOVERLAPPED pOverlapped
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 IcmpCloseHandle
 ===============
@@ -7379,6 +11512,15 @@ Parameters::
 
     ** HANDLE IcmpHandle
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 IcmpCreateFile
 ==============
@@ -7387,6 +11529,15 @@ Signature::
 
     * Library: icmp
     * Return value: HANDLE
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 IcmpParseReplies
@@ -7401,6 +11552,15 @@ Parameters::
 
     ** LPVOID ReplyBuffer
     ** DWORD ReplySize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 IcmpSendEcho
@@ -7422,6 +11582,15 @@ Parameters::
     ** DWORD ReplySize
     ** DWORD Timeout
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InetNtopW
 =========
@@ -7438,6 +11607,15 @@ Parameters::
     ** PWSTR pStringBuf
     ** size_t StringBufSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InetPtonW
 =========
@@ -7452,6 +11630,15 @@ Parameters::
     ** INT Family
     ** PCWSTR pszAddrString
     ** PVOID pAddrBuf
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 InternetCanonicalizeUrlA
@@ -7469,6 +11656,15 @@ Parameters::
     ** LPDWORD lpdwBufferLength
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetCanonicalizeUrlW
 ========================
@@ -7485,6 +11681,15 @@ Parameters::
     ** LPDWORD lpdwBufferLength
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetCheckConnectionA
 ========================
@@ -7500,6 +11705,15 @@ Parameters::
     ** DWORD dwFlags
     ** DWORD dwReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetCheckConnectionW
 ========================
@@ -7514,6 +11728,15 @@ Parameters::
     ** LPCWSTR lpszUrl
     ** DWORD dwFlags
     ** DWORD dwReserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 InternetCombineUrlA
@@ -7532,6 +11755,15 @@ Parameters::
     ** LPDWORD lpdwBufferLength
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetCombineUrlW
 ===================
@@ -7549,6 +11781,15 @@ Parameters::
     ** LPDWORD lpdwBufferLength
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetCrackUrlA
 =================
@@ -7564,6 +11805,15 @@ Parameters::
     ** DWORD dwUrlLength
     ** DWORD dwFlags
     ** LPURL_COMPONENTSA lpUrlComponents
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 InternetCrackUrlW
@@ -7581,6 +11831,15 @@ Parameters::
     ** DWORD dwFlags
     ** LPURL_COMPONENTSW lpUrlComponents
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetGetCookieA
 ==================
@@ -7597,6 +11856,15 @@ Parameters::
     ** LPSTR lpszCookieData
     ** LPDWORD lpdwSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetGetCookieW
 ==================
@@ -7612,6 +11880,15 @@ Parameters::
     ** LPCWSTR lpszCookieName
     ** LPWSTR lpszCookieData
     ** LPDWORD lpdwSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 InternetGetCookieExA
@@ -7631,6 +11908,15 @@ Parameters::
     ** DWORD dwFlags
     ** LPVOID lpReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetGetCookieExW
 ====================
@@ -7649,6 +11935,15 @@ Parameters::
     ** DWORD dwFlags
     ** LPVOID lpReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetGetLastResponseInfoA
 ============================
@@ -7663,6 +11958,15 @@ Parameters::
     ** LPDWORD lpdwError
     ** LPSTR lpszBuffer
     ** LPDWORD lpdwBufferLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 InternetGetLastResponseInfoW
@@ -7679,6 +11983,15 @@ Parameters::
     ** LPWSTR lpszBuffer
     ** LPDWORD lpdwBufferLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetSetCookieA
 ==================
@@ -7694,6 +12007,15 @@ Parameters::
     ** LPCSTR lpszCookieName
     ** LPCSTR lpszCookieData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InternetSetCookieW
 ==================
@@ -7708,6 +12030,15 @@ Parameters::
     ** LPCWSTR lpszUrl
     ** LPCWSTR lpszCookieName
     ** LPCWSTR lpszCookieData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ReadUrlCacheEntryStream
@@ -7726,6 +12057,15 @@ Parameters::
     ** LPDWORD lpdwLen
     ** DWORD Reserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RetrieveUrlCacheEntryFileA
 ==========================
@@ -7741,6 +12081,15 @@ Parameters::
     ** LPINTERNET_CACHE_ENTRY_INFOA lpCacheEntryInfo
     ** LPDWORD lpcbCacheEntryInfo
     ** DWORD dwReserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 RetrieveUrlCacheEntryFileW
@@ -7758,6 +12107,15 @@ Parameters::
     ** LPDWORD lpcbCacheEntryInfo
     ** DWORD dwReserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RpcCertGeneratePrincipalNameA
 =============================
@@ -7773,6 +12131,15 @@ Parameters::
     ** DWORD Flags
     ** RPC_CSTR *pBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 RpcCertGeneratePrincipalNameW
 =============================
@@ -7787,6 +12154,15 @@ Parameters::
     ** PCCERT_CONTEXT Context
     ** DWORD Flags
     ** RPC_WSTR *pBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetAddrInfoExA
@@ -7812,6 +12188,15 @@ Parameters::
     ** LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine
     ** LPHANDLE lpNameHandle
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetAddrInfoExW
 ==============
@@ -7836,6 +12221,15 @@ Parameters::
     ** LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine
     ** LPHANDLE lpNameHandle
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 UnlockUrlCacheEntryStream
 =========================
@@ -7849,6 +12243,15 @@ Parameters::
 
     ** HANDLE hUrlCacheStream
     ** DWORD Reserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAAccept
@@ -7867,6 +12270,15 @@ Parameters::
     ** LPCONDITIONPROC lpfnCondition
     ** DWORD_PTR dwCallbackData
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAAddressToStringA
 ===================
@@ -7884,6 +12296,15 @@ Parameters::
     ** LPSTR lpszAddressString
     ** LPDWORD lpdwAddressStringLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAAddressToStringW
 ===================
@@ -7900,6 +12321,15 @@ Parameters::
     ** LPWSAPROTOCOL_INFOW lpProtocolInfo
     ** LPWSTR lpszAddressString
     ** LPDWORD lpdwAddressStringLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAAsyncGetHostByAddr
@@ -7920,6 +12350,15 @@ Parameters::
     ** char *buf
     ** int buflen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAAsyncGetHostByName
 =====================
@@ -7936,6 +12375,15 @@ Parameters::
     ** const char *name
     ** char *buf
     ** int buflen
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAAsyncGetProtoByName
@@ -7954,6 +12402,15 @@ Parameters::
     ** char *buf
     ** int buflen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAAsyncGetProtoByNumber
 ========================
@@ -7970,6 +12427,15 @@ Parameters::
     ** int number
     ** char *buf
     ** int buflen
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAAsyncGetServByName
@@ -7989,6 +12455,15 @@ Parameters::
     ** char *buf
     ** int buflen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAAsyncGetServByPort
 =====================
@@ -8007,6 +12482,15 @@ Parameters::
     ** char *buf
     ** int buflen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAAsyncSelect
 ==============
@@ -8023,6 +12507,15 @@ Parameters::
     ** u_int wMsg
     ** long lEvent
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSACancelAsyncRequest
 =====================
@@ -8036,6 +12529,15 @@ Parameters::
 
     ** HANDLE hAsyncTaskHandle
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSACloseEvent
 =============
@@ -8048,6 +12550,15 @@ Signature::
 Parameters::
 
     ** WSAEVENT hEvent
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAConnect
@@ -8068,6 +12579,15 @@ Parameters::
     ** LPQOS lpSQOS
     ** LPQOS lpGQOS
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSADuplicateSocketA
 ===================
@@ -8082,6 +12602,15 @@ Parameters::
     ** SOCKET s
     ** DWORD dwProcessId
     ** LPWSAPROTOCOL_INFOA lpProtocolInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSADuplicateSocketW
@@ -8098,6 +12627,15 @@ Parameters::
     ** DWORD dwProcessId
     ** LPWSAPROTOCOL_INFOW lpProtocolInfo
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAEnumNameSpaceProvidersA
 ==========================
@@ -8111,6 +12649,15 @@ Parameters::
 
     ** LPDWORD lpdwBufferLength
     ** LPWSANAMESPACE_INFOA lpnspBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAEnumNameSpaceProvidersW
@@ -8126,6 +12673,15 @@ Parameters::
     ** LPDWORD lpdwBufferLength
     ** LPWSANAMESPACE_INFOW lpnspBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAEnumNameSpaceProvidersExA
 ============================
@@ -8140,6 +12696,15 @@ Parameters::
     ** LPDWORD lpdwBufferLength
     ** LPWSANAMESPACE_INFOEXA lpnspBuffer
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAEnumNameSpaceProvidersExW
 ============================
@@ -8153,6 +12718,15 @@ Parameters::
 
     ** LPDWORD lpdwBufferLength
     ** LPWSANAMESPACE_INFOEXW lpnspBuffer
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAEnumNetworkEvents
@@ -8169,6 +12743,15 @@ Parameters::
     ** WSAEVENT hEventObject
     ** LPWSANETWORKEVENTS lpNetworkEvents
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAEnumProtocolsA
 =================
@@ -8183,6 +12766,15 @@ Parameters::
     ** LPINT lpiProtocols
     ** LPWSAPROTOCOL_INFOA lpProtocolBuffer
     ** LPDWORD lpdwBufferLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAEnumProtocolsW
@@ -8199,6 +12791,15 @@ Parameters::
     ** LPWSAPROTOCOL_INFOW lpProtocolBuffer
     ** LPDWORD lpdwBufferLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAEventSelect
 ==============
@@ -8213,6 +12814,15 @@ Parameters::
     ** SOCKET s
     ** WSAEVENT hEventObject
     ** long lNetworkEvents
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAGetOverlappedResult
@@ -8231,6 +12841,15 @@ Parameters::
     ** BOOL fWait
     ** LPDWORD lpdwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAGetQOSByName
 ===============
@@ -8245,6 +12864,15 @@ Parameters::
     ** SOCKET s
     ** LPWSABUF lpQOSName
     ** LPQOS lpQOS
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAGetServiceClassInfoA
@@ -8262,6 +12890,15 @@ Parameters::
     ** LPDWORD lpdwBufSize
     ** LPWSASERVICECLASSINFOA lpServiceClassInfo
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAGetServiceClassInfoW
 =======================
@@ -8278,6 +12915,15 @@ Parameters::
     ** LPDWORD lpdwBufSize
     ** LPWSASERVICECLASSINFOW lpServiceClassInfo
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAGetServiceClassNameByClassIdA
 ================================
@@ -8292,6 +12938,15 @@ Parameters::
     ** LPGUID lpServiceClassId
     ** LPSTR lpszServiceClassName
     ** LPDWORD lpdwBufferLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAGetServiceClassNameByClassIdW
@@ -8308,6 +12963,15 @@ Parameters::
     ** LPWSTR lpszServiceClassName
     ** LPDWORD lpdwBufferLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAHtonl
 ========
@@ -8322,6 +12986,15 @@ Parameters::
     ** SOCKET s
     ** u_long hostlong
     ** u_long *lpnetlong
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAHtons
@@ -8338,6 +13011,15 @@ Parameters::
     ** u_short hostshort
     ** u_short *lpnetshort
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAInstallServiceClassA
 =======================
@@ -8351,6 +13033,15 @@ Parameters::
 
     ** LPWSASERVICECLASSINFOA lpServiceClassInfo
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAInstallServiceClassW
 =======================
@@ -8363,6 +13054,15 @@ Signature::
 Parameters::
 
     ** LPWSASERVICECLASSINFOW lpServiceClassInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAIoctl
@@ -8385,6 +13085,15 @@ Parameters::
     ** LPWSAOVERLAPPED lpOverlapped
     ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAJoinLeaf
 ===========
@@ -8405,6 +13114,15 @@ Parameters::
     ** LPQOS lpGQOS
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSALookupServiceBeginA
 ======================
@@ -8419,6 +13137,15 @@ Parameters::
     ** LPWSAQUERYSETA lpqsRestrictions
     ** DWORD dwControlFlags
     ** LPHANDLE lphLookup
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSALookupServiceBeginW
@@ -8435,6 +13162,15 @@ Parameters::
     ** DWORD dwControlFlags
     ** LPHANDLE lphLookup
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSALookupServiceEnd
 ===================
@@ -8447,6 +13183,15 @@ Signature::
 Parameters::
 
     ** HANDLE hLookup
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSALookupServiceNextA
@@ -8464,6 +13209,15 @@ Parameters::
     ** LPDWORD lpdwBufferLength
     ** LPWSAQUERYSETA lpqsResults
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSALookupServiceNextW
 =====================
@@ -8479,6 +13233,15 @@ Parameters::
     ** DWORD dwControlFlags
     ** LPDWORD lpdwBufferLength
     ** LPWSAQUERYSETW lpqsResults
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSANSPIoctl
@@ -8500,6 +13263,15 @@ Parameters::
     ** LPDWORD lpcbBytesReturned
     ** LPWSACOMPLETION lpCompletion
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSANtohl
 ========
@@ -8514,6 +13286,15 @@ Parameters::
     ** SOCKET s
     ** u_long netlong
     ** u_long *lphostlong
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSANtohs
@@ -8530,6 +13311,15 @@ Parameters::
     ** u_short netshort
     ** u_short *lphostshort
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAPoll
 =======
@@ -8545,6 +13335,15 @@ Parameters::
     ** ULONG fds
     ** INT timeout
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAProviderConfigChange
 =======================
@@ -8559,6 +13358,15 @@ Parameters::
     ** LPHANDLE lpNotificationHandle
     ** LPWSAOVERLAPPED lpOverlapped
     ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSARecv
@@ -8579,6 +13387,15 @@ Parameters::
     ** LPWSAOVERLAPPED lpOverlapped
     ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSARecvDisconnect
 =================
@@ -8592,6 +13409,15 @@ Parameters::
 
     ** SOCKET s
     ** LPWSABUF lpInboundDisconnectData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSARecvFrom
@@ -8614,6 +13440,15 @@ Parameters::
     ** LPWSAOVERLAPPED lpOverlapped
     ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSARemoveServiceClass
 =====================
@@ -8627,6 +13462,15 @@ Parameters::
 
     ** LPGUID lpServiceClassId
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAResetEvent
 =============
@@ -8639,6 +13483,15 @@ Signature::
 Parameters::
 
     ** WSAEVENT hEvent
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSASend
@@ -8659,6 +13512,15 @@ Parameters::
     ** LPWSAOVERLAPPED lpOverlapped
     ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSASendDisconnect
 =================
@@ -8672,6 +13534,15 @@ Parameters::
 
     ** SOCKET s
     ** LPWSABUF lpOutboundDisconnectData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSASendTo
@@ -8694,6 +13565,15 @@ Parameters::
     ** LPWSAOVERLAPPED lpOverlapped
     ** LPWSAOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSASetEvent
 ===========
@@ -8707,6 +13587,15 @@ Parameters::
 
     ** WSAEVENT hEvent
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSASetLastError
 ===============
@@ -8719,6 +13608,15 @@ Signature::
 Parameters::
 
     ** int iError
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSASetServiceA
@@ -8735,6 +13633,15 @@ Parameters::
     ** WSAESETSERVICEOP essoperation
     ** DWORD dwControlFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSASetServiceW
 ==============
@@ -8749,6 +13656,15 @@ Parameters::
     ** LPWSAQUERYSETW lpqsRegInfo
     ** WSAESETSERVICEOP essoperation
     ** DWORD dwControlFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSASocketA
@@ -8768,6 +13684,15 @@ Parameters::
     ** GROUP g
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSASocketW
 ==========
@@ -8786,6 +13711,15 @@ Parameters::
     ** GROUP g
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAStartup
 ==========
@@ -8799,6 +13733,15 @@ Parameters::
 
     ** WORD wVersionRequested
     ** LPWSADATA lpWSAData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAStringToAddressA
@@ -8817,6 +13760,15 @@ Parameters::
     ** LPSOCKADDR lpAddress
     ** LPINT lpAddressLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WSAStringToAddressW
 ===================
@@ -8833,6 +13785,15 @@ Parameters::
     ** LPWSAPROTOCOL_INFOW lpProtocolInfo
     ** LPSOCKADDR lpAddress
     ** LPINT lpAddressLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WSAWaitForMultipleEvents
@@ -8851,6 +13812,15 @@ Parameters::
     ** DWORD dwTimeout
     ** BOOL fAlertable
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 accept
 ======
@@ -8865,6 +13835,15 @@ Parameters::
     ** SOCKET s
     ** struct sockaddr *addr
     ** int *addrlen
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 bind
@@ -8881,6 +13860,15 @@ Parameters::
     ** const struct sockaddr *name
     ** int namelen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 closesocket
 ===========
@@ -8893,6 +13881,15 @@ Signature::
 Parameters::
 
     ** SOCKET s
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 connect
@@ -8909,6 +13906,15 @@ Parameters::
     ** const struct sockaddr *name
     ** int namelen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 freeaddrinfo
 ============
@@ -8921,6 +13927,15 @@ Signature::
 Parameters::
 
     ** PADDRINFOA pAddrInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 gethostbyaddr
@@ -8937,6 +13952,15 @@ Parameters::
     ** int len
     ** int type
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 gethostbyname
 =============
@@ -8949,6 +13973,15 @@ Signature::
 Parameters::
 
     ** const char *name
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 gethostname
@@ -8963,6 +13996,15 @@ Parameters::
 
     ** char *name
     ** int namelen
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 getnameinfo
@@ -8983,6 +14025,15 @@ Parameters::
     ** DWORD ServiceBufferSize
     ** INT Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 getpeername
 ===========
@@ -8998,6 +14049,15 @@ Parameters::
     ** struct sockaddr *name
     ** int *namelen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 getprotobyname
 ==============
@@ -9011,6 +14071,15 @@ Parameters::
 
     ** const char *name
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 getprotobynumber
 ================
@@ -9023,6 +14092,15 @@ Signature::
 Parameters::
 
     ** int number
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 getservbyname
@@ -9038,6 +14116,15 @@ Parameters::
     ** const char *name
     ** const char *proto
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 getservbyport
 =============
@@ -9051,6 +14138,15 @@ Parameters::
 
     ** int port
     ** const char *proto
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 getsockname
@@ -9066,6 +14162,15 @@ Parameters::
     ** SOCKET s
     ** struct sockaddr *name
     ** int *namelen
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 getsockopt
@@ -9084,6 +14189,15 @@ Parameters::
     ** char *optval
     ** int *optlen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 htonl
 =====
@@ -9096,6 +14210,15 @@ Signature::
 Parameters::
 
     ** u_long hostlong
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 htons
@@ -9110,6 +14233,15 @@ Parameters::
 
     ** u_short hostshort
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 inet_addr
 =========
@@ -9123,6 +14255,15 @@ Parameters::
 
     ** const char *cp
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 inet_ntoa
 =========
@@ -9135,6 +14276,15 @@ Signature::
 Parameters::
 
     ** struct in_addr in
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ioctlsocket
@@ -9151,6 +14301,15 @@ Parameters::
     ** long cmd
     ** u_long *argp
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 listen
 ======
@@ -9165,6 +14324,15 @@ Parameters::
     ** SOCKET s
     ** int backlog
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ntohl
 =====
@@ -9178,6 +14346,15 @@ Parameters::
 
     ** u_long netlong
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ntohs
 =====
@@ -9190,6 +14367,15 @@ Signature::
 Parameters::
 
     ** u_short netshort
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 recv
@@ -9206,6 +14392,15 @@ Parameters::
     ** char *buf
     ** int len
     ** int flags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 recvfrom
@@ -9225,6 +14420,15 @@ Parameters::
     ** struct sockaddr *from
     ** int *fromlen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 select
 ======
@@ -9242,6 +14446,15 @@ Parameters::
     ** fd_set *exceptfds
     ** const struct timeval *timeout
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 send
 ====
@@ -9257,6 +14470,15 @@ Parameters::
     ** const char *buf
     ** int len
     ** int flags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 sendto
@@ -9276,6 +14498,15 @@ Parameters::
     ** const struct sockaddr *to
     ** int tolen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 setsockopt
 ==========
@@ -9293,6 +14524,15 @@ Parameters::
     ** const char *optval
     ** int optlen
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 shutdown
 ========
@@ -9306,6 +14546,15 @@ Parameters::
 
     ** SOCKET s
     ** int how
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 socket
@@ -9321,6 +14570,15 @@ Parameters::
     ** int af
     ** int type
     ** int protocol
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 URLDownloadToFileW
@@ -9345,6 +14603,13 @@ Interesting::
     u filepath
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     wchar_t *filepath = get_unicode_buffer();
     path_get_full_pathW(szFileName, filepath);
@@ -9378,6 +14643,15 @@ Parameters::
     ** PULONG_PTR PageArray
     ** DWORD nndPreferred
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AssignProcessToJobObject
 ========================
@@ -9391,6 +14665,15 @@ Parameters::
 
     ** HANDLE hJob
     ** HANDLE hProcess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 AttachThreadInput
@@ -9407,6 +14690,15 @@ Parameters::
     ** DWORD idAttachTo
     ** BOOL fAttach
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AvQuerySystemResponsiveness
 ===========================
@@ -9421,6 +14713,15 @@ Parameters::
     ** HANDLE AvrtHandle
     ** PULONG SystemResponsivenessValue
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AvRevertMmThreadCharacteristics
 ===============================
@@ -9433,6 +14734,15 @@ Signature::
 Parameters::
 
     ** HANDLE AvrtHandle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 AvRtCreateThreadOrderingGroup
@@ -9449,6 +14759,15 @@ Parameters::
     ** PLARGE_INTEGER Period
     ** GUID *ThreadOrderingGuid
     ** PLARGE_INTEGER Timeout
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 AvRtCreateThreadOrderingGroupExA
@@ -9467,6 +14786,15 @@ Parameters::
     ** PLARGE_INTEGER Timeout
     ** LPCSTR TaskName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AvRtCreateThreadOrderingGroupExW
 ================================
@@ -9484,6 +14812,15 @@ Parameters::
     ** PLARGE_INTEGER Timeout
     ** LPCWSTR TaskName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AvRtDeleteThreadOrderingGroup
 =============================
@@ -9496,6 +14833,15 @@ Signature::
 Parameters::
 
     ** HANDLE Context
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 AvRtJoinThreadOrderingGroup
@@ -9512,6 +14858,15 @@ Parameters::
     ** GUID *ThreadOrderingGuid
     ** BOOL Before
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AvRtLeaveThreadOrderingGroup
 ============================
@@ -9525,6 +14880,15 @@ Parameters::
 
     ** HANDLE Context
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AvRtWaitOnThreadOrderingGroup
 =============================
@@ -9537,6 +14901,15 @@ Signature::
 Parameters::
 
     ** HANDLE Context
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 AvSetMmMaxThreadCharacteristicsA
@@ -9553,6 +14926,15 @@ Parameters::
     ** LPCSTR SecondTask
     ** LPDWORD TaskIndex
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AvSetMmMaxThreadCharacteristicsW
 ================================
@@ -9568,6 +14950,15 @@ Parameters::
     ** LPCWSTR SecondTask
     ** LPDWORD TaskIndex
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AvSetMmThreadCharacteristicsA
 =============================
@@ -9581,6 +14972,15 @@ Parameters::
 
     ** LPCSTR TaskName
     ** LPDWORD TaskIndex
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 AvSetMmThreadCharacteristicsW
@@ -9596,6 +14996,15 @@ Parameters::
     ** LPCWSTR TaskName
     ** LPDWORD TaskIndex
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 AvSetMmThreadPriority
 =====================
@@ -9609,6 +15018,15 @@ Parameters::
 
     ** HANDLE AvrtHandle
     ** AVRT_PRIORITY Priority
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 BindIoCompletionCallback
@@ -9625,6 +15043,15 @@ Parameters::
     ** LPOVERLAPPED_COMPLETION_ROUTINE Function
     ** ULONG Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CallbackMayRunLong
 ==================
@@ -9637,6 +15064,15 @@ Signature::
 Parameters::
 
     ** PTP_CALLBACK_INSTANCE pci
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CancelThreadpoolIo
@@ -9651,6 +15087,15 @@ Parameters::
 
     ** PTP_IO pio
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CloseThreadpool
 ===============
@@ -9664,6 +15109,15 @@ Parameters::
 
     ** PTP_POOL ptpp
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CloseThreadpoolCleanupGroup
 ===========================
@@ -9676,6 +15130,15 @@ Signature::
 Parameters::
 
     ** PTP_CLEANUP_GROUP ptpcg
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CloseThreadpoolCleanupGroupMembers
@@ -9692,6 +15155,15 @@ Parameters::
     ** BOOL fCancelPendingCallbacks
     ** PVOID pvCleanupContext
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CloseThreadpoolIo
 =================
@@ -9704,6 +15176,15 @@ Signature::
 Parameters::
 
     ** PTP_IO pio
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CloseThreadpoolTimer
@@ -9718,6 +15199,15 @@ Parameters::
 
     ** PTP_TIMER pti
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CloseThreadpoolWait
 ===================
@@ -9730,6 +15220,15 @@ Signature::
 Parameters::
 
     ** PTP_WAIT pwa
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CloseThreadpoolWork
@@ -9744,6 +15243,15 @@ Parameters::
 
     ** PTP_WORK pwk
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ConvertFiberToThread
 ====================
@@ -9752,6 +15260,15 @@ Signature::
 
     * Library: kernel32
     * Return value: BOOL
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ConvertThreadToFiber
@@ -9765,6 +15282,15 @@ Signature::
 Parameters::
 
     ** LPVOID lpParameter
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ConvertThreadToFiberEx
@@ -9780,6 +15306,15 @@ Parameters::
     ** LPVOID lpParameter
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateFiber
 ===========
@@ -9794,6 +15329,15 @@ Parameters::
     ** SIZE_T dwStackSize
     ** LPFIBER_START_ROUTINE lpStartAddress
     ** LPVOID lpParameter
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateFiberEx
@@ -9811,6 +15355,15 @@ Parameters::
     ** DWORD dwFlags
     ** LPFIBER_START_ROUTINE lpStartAddress
     ** LPVOID lpParameter
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateProcessA
@@ -9845,6 +15398,15 @@ Post::
         sleep_skip_disable();
     }
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateProcessW
 ==============
@@ -9877,6 +15439,15 @@ Post::
         pipe("PROCESS:%d", pid);
         sleep_skip_disable();
     }
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateProcessInternalW
@@ -9914,6 +15485,13 @@ Ensure::
     lpProcessInformation
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     // Ensure the CREATE_SUSPENDED flag is set when calling
     // the original function.
@@ -10013,6 +15591,15 @@ Post::
         sleep_skip_disable();
     }
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateProcessWithTokenW
 =======================
@@ -10045,6 +15632,15 @@ Post::
         sleep_skip_disable();
     }
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateRemoteThread
 ==================
@@ -10072,6 +15668,15 @@ Post::
 
     pipe("PROCESS:%d", pid);
     sleep_skip_disable();
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateRemoteThreadEx
@@ -10102,6 +15707,15 @@ Post::
     pipe("PROCESS:%d", pid);
     sleep_skip_disable();
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateThread
 ============
@@ -10126,6 +15740,15 @@ Post::
     pipe("PROCESS:%d", pid);
     sleep_skip_disable();
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateThreadpool
 ================
@@ -10139,6 +15762,15 @@ Parameters::
 
     ** PVOID reserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateThreadpoolCleanupGroup
 ============================
@@ -10147,6 +15779,15 @@ Signature::
 
     * Library: kernel32
     * Return value: PTP_CLEANUP_GROUP
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateThreadpoolIo
@@ -10164,6 +15805,15 @@ Parameters::
     ** PVOID pv
     ** PTP_CALLBACK_ENVIRON pcbe
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateThreadpoolTimer
 =====================
@@ -10178,6 +15828,15 @@ Parameters::
     ** PTP_TIMER_CALLBACK pfnti
     ** PVOID pv
     ** PTP_CALLBACK_ENVIRON pcbe
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 CreateThreadpoolWait
@@ -10194,6 +15853,15 @@ Parameters::
     ** PVOID pv
     ** PTP_CALLBACK_ENVIRON pcbe
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 CreateThreadpoolWork
 ====================
@@ -10209,6 +15877,15 @@ Parameters::
     ** PVOID pv
     ** PTP_CALLBACK_ENVIRON pcbe
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DeleteFiber
 ===========
@@ -10221,6 +15898,15 @@ Signature::
 Parameters::
 
     ** LPVOID lpFiber
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 DeleteProcThreadAttributeList
@@ -10235,6 +15921,15 @@ Parameters::
 
     ** LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 DisassociateCurrentThreadFromCallback
 =====================================
@@ -10248,6 +15943,15 @@ Parameters::
 
     ** PTP_CALLBACK_INSTANCE pci
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EmptyWorkingSet
 ===============
@@ -10260,6 +15964,15 @@ Signature::
 Parameters::
 
     ** HANDLE hProcess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 EnumDeviceDrivers
@@ -10276,6 +15989,15 @@ Parameters::
     ** DWORD cb
     ** LPDWORD lpcbNeeded
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EnumPageFilesA
 ==============
@@ -10290,6 +16012,15 @@ Parameters::
     ** PENUM_PAGE_FILE_CALLBACKA pCallBackRoutine
     ** LPVOID pContext
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EnumPageFilesW
 ==============
@@ -10303,6 +16034,15 @@ Parameters::
 
     ** PENUM_PAGE_FILE_CALLBACKW pCallBackRoutine
     ** LPVOID pContext
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 EnumProcessModules
@@ -10319,6 +16059,15 @@ Parameters::
     ** HMODULE *lphModule
     ** DWORD cb
     ** LPDWORD lpcbNeeded
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 EnumProcessModulesEx
@@ -10337,6 +16086,15 @@ Parameters::
     ** LPDWORD lpcbNeeded
     ** DWORD dwFilterFlag
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 EnumProcesses
 =============
@@ -10352,6 +16110,15 @@ Parameters::
     ** DWORD cb
     ** LPDWORD lpcbNeeded
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ExitProcess
 ===========
@@ -10364,6 +16131,15 @@ Signature::
 Parameters::
 
     ** UINT uExitCode
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ExitThread
@@ -10378,6 +16154,15 @@ Parameters::
 
     ** DWORD dwExitCode
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FlushProcessWriteBuffers
 ========================
@@ -10386,6 +16171,15 @@ Signature::
 
     * Library: kernel32
     * Return value: void
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FreeEnvironmentStringsA
@@ -10400,6 +16194,15 @@ Parameters::
 
     ** LPCH penv
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 FreeEnvironmentStringsW
 =======================
@@ -10412,6 +16215,15 @@ Signature::
 Parameters::
 
     ** LPWCH penv
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 FreeLibraryWhenCallbackReturns
@@ -10427,6 +16239,15 @@ Parameters::
     ** PTP_CALLBACK_INSTANCE pci
     ** HMODULE mod
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetActiveProcessorCount
 =======================
@@ -10440,6 +16261,15 @@ Parameters::
 
     ** WORD GroupNumber
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetActiveProcessorGroupCount
 ============================
@@ -10448,6 +16278,15 @@ Signature::
 
     * Library: kernel32
     * Return value: WORD
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetCommandLineA
@@ -10458,6 +16297,15 @@ Signature::
     * Library: kernel32
     * Return value: LPSTR
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetCommandLineW
 ===============
@@ -10466,6 +16314,15 @@ Signature::
 
     * Library: kernel32
     * Return value: LPWSTR
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetCurrentProcess
@@ -10476,6 +16333,15 @@ Signature::
     * Library: kernel32
     * Return value: HANDLE
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetCurrentProcessId
 ===================
@@ -10484,6 +16350,15 @@ Signature::
 
     * Library: kernel32
     * Return value: DWORD
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetCurrentThread
@@ -10494,6 +16369,15 @@ Signature::
     * Library: kernel32
     * Return value: HANDLE
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetCurrentThreadId
 ==================
@@ -10502,6 +16386,15 @@ Signature::
 
     * Library: kernel32
     * Return value: DWORD
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetDeviceDriverBaseNameA
@@ -10518,6 +16411,15 @@ Parameters::
     ** LPSTR lpFilename
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetDeviceDriverBaseNameW
 ========================
@@ -10532,6 +16434,15 @@ Parameters::
     ** LPVOID ImageBase
     ** LPWSTR lpBaseName
     ** DWORD nSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetDeviceDriverFileNameA
@@ -10548,6 +16459,15 @@ Parameters::
     ** LPSTR lpFilename
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetDeviceDriverFileNameW
 ========================
@@ -10563,6 +16483,15 @@ Parameters::
     ** LPWSTR lpFilename
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetEnvironmentStrings
 =====================
@@ -10572,6 +16501,15 @@ Signature::
     * Library: kernel32
     * Return value: LPCH
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetEnvironmentStringsW
 ======================
@@ -10580,6 +16518,15 @@ Signature::
 
     * Library: kernel32
     * Return value: LPWCH
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetEnvironmentVariableA
@@ -10596,6 +16543,15 @@ Parameters::
     ** LPSTR lpBuffer
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetEnvironmentVariableW
 =======================
@@ -10611,6 +16567,15 @@ Parameters::
     ** LPWSTR lpBuffer
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetExitCodeProcess
 ==================
@@ -10624,6 +16589,15 @@ Parameters::
 
     ** HANDLE hProcess
     ** LPDWORD lpExitCode
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetExitCodeThread
@@ -10639,6 +16613,15 @@ Parameters::
     ** HANDLE hThread
     ** LPDWORD lpExitCode
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetGuiResources
 ===============
@@ -10652,6 +16635,15 @@ Parameters::
 
     ** HANDLE hProcess
     ** DWORD uiFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetLogicalProcessorInformation
@@ -10667,6 +16659,15 @@ Parameters::
     ** PSYSTEM_LOGICAL_PROCESSOR_INFORMATION Buffer
     ** PDWORD ReturnedLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetLogicalProcessorInformationEx
 ================================
@@ -10681,6 +16682,15 @@ Parameters::
     ** LOGICAL_PROCESSOR_RELATIONSHIP RelationshipType
     ** PSYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX Buffer
     ** PDWORD ReturnedLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetMappedFileNameA
@@ -10698,6 +16708,15 @@ Parameters::
     ** LPSTR lpFilename
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetMappedFileNameW
 ==================
@@ -10714,6 +16733,15 @@ Parameters::
     ** LPWSTR lpFilename
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetMaximumProcessorCount
 ========================
@@ -10727,6 +16755,15 @@ Parameters::
 
     ** WORD GroupNumber
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetMaximumProcessorGroupCount
 =============================
@@ -10735,6 +16772,15 @@ Signature::
 
     * Library: kernel32
     * Return value: WORD
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetModuleBaseNameA
@@ -10752,6 +16798,15 @@ Parameters::
     ** LPSTR lpBaseName
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetModuleBaseNameW
 ==================
@@ -10767,6 +16822,15 @@ Parameters::
     ** HMODULE hModule
     ** LPWSTR lpBaseName
     ** DWORD nSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetModuleInformation
@@ -10784,6 +16848,15 @@ Parameters::
     ** LPMODULEINFO lpmodinfo
     ** DWORD cb
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetNumaAvailableMemoryNode
 ==========================
@@ -10797,6 +16870,15 @@ Parameters::
 
     ** UCHAR Node
     ** PULONGLONG AvailableBytes
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetNumaAvailableMemoryNodeEx
@@ -10812,6 +16894,15 @@ Parameters::
     ** USHORT Node
     ** PULONGLONG AvailableBytes
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetNumaHighestNodeNumber
 ========================
@@ -10824,6 +16915,15 @@ Signature::
 Parameters::
 
     ** PULONG HighestNodeNumber
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetNumaNodeNumberFromHandle
@@ -10839,6 +16939,15 @@ Parameters::
     ** HANDLE hFile
     ** PUSHORT NodeNumber
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetNumaNodeProcessorMask
 ========================
@@ -10852,6 +16961,15 @@ Parameters::
 
     ** UCHAR Node
     ** PULONGLONG ProcessorMask
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetNumaNodeProcessorMaskEx
@@ -10867,6 +16985,15 @@ Parameters::
     ** USHORT Node
     ** PGROUP_AFFINITY ProcessorMask
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetNumaProcessorNode
 ====================
@@ -10880,6 +17007,15 @@ Parameters::
 
     ** UCHAR Processor
     ** PUCHAR NodeNumber
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetNumaProcessorNodeEx
@@ -10895,6 +17031,15 @@ Parameters::
     ** PPROCESSOR_NUMBER Processor
     ** PUSHORT NodeNumber
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetNumaProximityNode
 ====================
@@ -10908,6 +17053,15 @@ Parameters::
 
     ** ULONG ProximityId
     ** PUCHAR NodeNumber
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetNumaProximityNodeEx
@@ -10923,6 +17077,15 @@ Parameters::
     ** ULONG ProximityId
     ** PUSHORT NodeNumber
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetPerformanceInfo
 ==================
@@ -10937,6 +17100,15 @@ Parameters::
     ** PPERFORMANCE_INFORMATION pPerformanceInformation
     ** DWORD cb
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetPriorityClass
 ================
@@ -10949,6 +17121,15 @@ Signature::
 Parameters::
 
     ** HANDLE hProcess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetProcessAffinityMask
@@ -10965,6 +17146,15 @@ Parameters::
     ** PDWORD_PTR lpProcessAffinityMask
     ** PDWORD_PTR lpSystemAffinityMask
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessGroupAffinity
 =======================
@@ -10980,6 +17170,15 @@ Parameters::
     ** PUSHORT GroupCount
     ** PUSHORT GroupArray
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessHandleCount
 =====================
@@ -10994,6 +17193,15 @@ Parameters::
     ** HANDLE hProcess
     ** PDWORD pdwHandleCount
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessId
 ============
@@ -11007,6 +17215,15 @@ Parameters::
 
     ** HANDLE Process
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessIdOfThread
 ====================
@@ -11019,6 +17236,15 @@ Signature::
 Parameters::
 
     ** HANDLE Thread
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetProcessImageFileNameA
@@ -11035,6 +17261,15 @@ Parameters::
     ** LPSTR lpImageFileName
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessImageFileNameW
 ========================
@@ -11050,6 +17285,15 @@ Parameters::
     ** LPWSTR lpImageFileName
     ** DWORD nSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessIoCounters
 ====================
@@ -11063,6 +17307,15 @@ Parameters::
 
     ** HANDLE hProcess
     ** PIO_COUNTERS lpIoCounters
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetProcessMemoryInfo
@@ -11078,6 +17331,15 @@ Parameters::
     ** HANDLE Process
     ** PPROCESS_MEMORY_COUNTERS ppsmemCounters
     ** DWORD cb
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetProcessMitigationPolicy
@@ -11095,6 +17357,15 @@ Parameters::
     ** PVOID lpBuffer
     ** SIZE_T dwLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessPriorityBoost
 =======================
@@ -11109,6 +17380,15 @@ Parameters::
     ** HANDLE hProcess
     ** PBOOL pDisablePriorityBoost
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessShutdownParameters
 ============================
@@ -11122,6 +17402,15 @@ Parameters::
 
     ** LPDWORD lpdwLevel
     ** LPDWORD lpdwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetProcessTimes
@@ -11140,6 +17429,15 @@ Parameters::
     ** LPFILETIME lpKernelTime
     ** LPFILETIME lpUserTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessVersion
 =================
@@ -11152,6 +17450,15 @@ Signature::
 Parameters::
 
     ** DWORD ProcessId
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetProcessWorkingSetSize
@@ -11167,6 +17474,15 @@ Parameters::
     ** HANDLE hProcess
     ** PSIZE_T lpMinimumWorkingSetSize
     ** PSIZE_T lpMaximumWorkingSetSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetProcessWorkingSetSizeEx
@@ -11184,6 +17500,15 @@ Parameters::
     ** PSIZE_T lpMaximumWorkingSetSize
     ** PDWORD Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetProcessorSystemCycleTime
 ===========================
@@ -11199,6 +17524,15 @@ Parameters::
     ** PSYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION Buffer
     ** PDWORD ReturnedLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetStartupInfoA
 ===============
@@ -11212,6 +17546,15 @@ Parameters::
 
     ** LPSTARTUPINFOA lpStartupInfo
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetStartupInfoW
 ===============
@@ -11224,6 +17567,15 @@ Signature::
 Parameters::
 
     ** LPSTARTUPINFOW lpStartupInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetThreadGroupAffinity
@@ -11239,6 +17591,15 @@ Parameters::
     ** HANDLE hThread
     ** PGROUP_AFFINITY GroupAffinity
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetThreadIOPendingFlag
 ======================
@@ -11253,6 +17614,15 @@ Parameters::
     ** HANDLE hThread
     ** PBOOL lpIOIsPending
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetThreadId
 ===========
@@ -11265,6 +17635,15 @@ Signature::
 Parameters::
 
     ** HANDLE Thread
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetThreadIdealProcessorEx
@@ -11279,6 +17658,15 @@ Parameters::
 
     ** HANDLE hThread
     ** PPROCESSOR_NUMBER lpIdealProcessor
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetThreadInformation
@@ -11296,6 +17684,15 @@ Parameters::
     ** LPVOID ThreadInformation
     ** DWORD ThreadInformationSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetThreadPriority
 =================
@@ -11308,6 +17705,15 @@ Signature::
 Parameters::
 
     ** HANDLE hThread
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetThreadPriorityBoost
@@ -11322,6 +17728,15 @@ Parameters::
 
     ** HANDLE hThread
     ** PBOOL pDisablePriorityBoost
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 GetThreadTimes
@@ -11340,6 +17755,15 @@ Parameters::
     ** LPFILETIME lpKernelTime
     ** LPFILETIME lpUserTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetWsChanges
 ============
@@ -11355,6 +17779,15 @@ Parameters::
     ** PPSAPI_WS_WATCH_INFORMATION lpWatchInfo
     ** DWORD cb
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 GetWsChangesEx
 ==============
@@ -11369,6 +17802,15 @@ Parameters::
     ** HANDLE hProcess
     ** PPSAPI_WS_WATCH_INFORMATION_EX lpWatchInfoEx
     ** PDWORD cb
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 InitializeProcThreadAttributeList
@@ -11386,6 +17828,15 @@ Parameters::
     ** DWORD dwFlags
     ** PSIZE_T lpSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 InitializeProcessForWsWatch
 ===========================
@@ -11399,6 +17850,15 @@ Parameters::
 
     ** HANDLE hProcess
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 IsImmersiveProcess
 ==================
@@ -11411,6 +17871,15 @@ Signature::
 Parameters::
 
     ** HANDLE hProcess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 IsProcessInJob
@@ -11427,6 +17896,15 @@ Parameters::
     ** HANDLE JobHandle
     ** PBOOL Result
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 IsThreadAFiber
 ==============
@@ -11435,6 +17913,15 @@ Signature::
 
     * Library: kernel32
     * Return value: BOOL
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 IsThreadpoolTimerSet
@@ -11449,6 +17936,15 @@ Parameters::
 
     ** PTP_TIMER pti
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 IsWow64Message
 ==============
@@ -11457,6 +17953,15 @@ Signature::
 
     * Library: user32
     * Return value: BOOL
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 IsWow64Process
@@ -11472,6 +17977,15 @@ Parameters::
     ** HANDLE hProcess
     ** PBOOL Wow64Process
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 LeaveCriticalSectionWhenCallbackReturns
 =======================================
@@ -11486,6 +18000,15 @@ Parameters::
     ** PTP_CALLBACK_INSTANCE pci
     ** PCRITICAL_SECTION pcs
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 NeedCurrentDirectoryForExePathA
 ===============================
@@ -11499,6 +18022,15 @@ Parameters::
 
     ** LPCSTR ExeName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 NeedCurrentDirectoryForExePathW
 ===============================
@@ -11511,6 +18043,15 @@ Signature::
 Parameters::
 
     ** LPCWSTR ExeName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 OpenJobObjectA
@@ -11527,6 +18068,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** LPCSTR lpName
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenJobObjectW
 ==============
@@ -11541,6 +18091,15 @@ Parameters::
     ** DWORD dwDesiredAccess
     ** BOOL bInheritHandle
     ** LPCWSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 OpenProcess
@@ -11557,6 +18116,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** DWORD dwProcessId
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 OpenThread
 ==========
@@ -11572,6 +18140,15 @@ Parameters::
     ** BOOL bInheritHandle
     ** DWORD dwThreadId
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 Process32First
 ==============
@@ -11585,6 +18162,15 @@ Parameters::
 
     ** HANDLE hSnapshot
     ** LPPROCESSENTRY32 lppe
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 Process32FirstW
@@ -11600,6 +18186,15 @@ Parameters::
     ** HANDLE hSnapshot
     ** LPPROCESSENTRY32W lppe
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 Process32Next
 =============
@@ -11614,6 +18209,15 @@ Parameters::
     ** HANDLE hSnapshot
     ** LPPROCESSENTRY32 lppe
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 Process32NextW
 ==============
@@ -11627,6 +18231,15 @@ Parameters::
 
     ** HANDLE hSnapshot
     ** LPPROCESSENTRY32W lppe
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueryFullProcessImageNameA
@@ -11644,6 +18257,15 @@ Parameters::
     ** LPSTR lpExeName
     ** PDWORD lpdwSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryFullProcessImageNameW
 ==========================
@@ -11660,6 +18282,15 @@ Parameters::
     ** LPWSTR lpExeName
     ** PDWORD lpdwSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryIdleProcessorCycleTime
 ===========================
@@ -11673,6 +18304,15 @@ Parameters::
 
     ** PULONG BufferLength
     ** PULONG64 ProcessorIdleCycleTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueryIdleProcessorCycleTimeEx
@@ -11688,6 +18328,15 @@ Parameters::
     ** USHORT Group
     ** PULONG BufferLength
     ** PULONG64 ProcessorIdleCycleTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueryInformationJobObject
@@ -11706,6 +18355,15 @@ Parameters::
     ** DWORD cbJobObjectInformationLength
     ** LPDWORD lpReturnLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryProcessAffinityUpdateMode
 ==============================
@@ -11719,6 +18377,15 @@ Parameters::
 
     ** HANDLE hProcess
     ** LPDWORD lpdwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueryProcessCycleTime
@@ -11734,6 +18401,15 @@ Parameters::
     ** HANDLE ProcessHandle
     ** PULONG64 CycleTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryThreadCycleTime
 ====================
@@ -11748,6 +18424,15 @@ Parameters::
     ** HANDLE ThreadHandle
     ** PULONG64 CycleTime
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryThreadpoolStackInformation
 ===============================
@@ -11761,6 +18446,15 @@ Parameters::
 
     ** PTP_POOL ptpp
     ** PTP_POOL_STACK_INFORMATION ptpsi
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueryWorkingSet
@@ -11777,6 +18471,15 @@ Parameters::
     ** PVOID pv
     ** DWORD cb
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 QueryWorkingSetEx
 =================
@@ -11791,6 +18494,15 @@ Parameters::
     ** HANDLE hProcess
     ** PVOID pv
     ** DWORD cb
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 QueueUserWorkItem
@@ -11807,6 +18519,15 @@ Parameters::
     ** PVOID Context
     ** ULONG Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ReleaseMutexWhenCallbackReturns
 ===============================
@@ -11820,6 +18541,15 @@ Parameters::
 
     ** PTP_CALLBACK_INSTANCE pci
     ** HANDLE mut
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 ReleaseSemaphoreWhenCallbackReturns
@@ -11836,6 +18566,15 @@ Parameters::
     ** HANDLE sem
     ** DWORD crel
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 ResumeThread
 ============
@@ -11850,6 +18589,13 @@ Parameters::
     ** HANDLE hThread
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     uint32_t pid = pid_from_thread_handle(hThread);
     if(pid != get_current_process_id()) {
@@ -11877,6 +18623,15 @@ Parameters::
     ** PTP_CALLBACK_INSTANCE pci
     ** HANDLE evt
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetInformationJobObject
 =======================
@@ -11893,6 +18648,15 @@ Parameters::
     ** LPVOID lpJobObjectInformation
     ** DWORD cbJobObjectInformationLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetPriorityClass
 ================
@@ -11906,6 +18670,15 @@ Parameters::
 
     ** HANDLE hProcess
     ** DWORD dwPriorityClass
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetProcessAffinityMask
@@ -11921,6 +18694,15 @@ Parameters::
     ** HANDLE hProcess
     ** DWORD_PTR dwProcessAffinityMask
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetProcessAffinityUpdateMode
 ============================
@@ -11934,6 +18716,15 @@ Parameters::
 
     ** HANDLE hProcess
     ** DWORD dwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetProcessInformation
@@ -11951,6 +18742,15 @@ Parameters::
     ** LPVOID ProcessInformation
     ** DWORD ProcessInformationSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetProcessMitigationPolicy
 ==========================
@@ -11966,6 +18766,15 @@ Parameters::
     ** PVOID lpBuffer
     ** SIZE_T dwLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetProcessPriorityBoost
 =======================
@@ -11980,6 +18789,15 @@ Parameters::
     ** HANDLE hProcess
     ** BOOL bDisablePriorityBoost
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetProcessRestrictionExemption
 ==============================
@@ -11992,6 +18810,15 @@ Signature::
 Parameters::
 
     ** BOOL fEnableExemption
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetProcessShutdownParameters
@@ -12007,6 +18834,15 @@ Parameters::
     ** DWORD dwLevel
     ** DWORD dwFlags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetProcessWorkingSetSize
 ========================
@@ -12021,6 +18857,15 @@ Parameters::
     ** HANDLE hProcess
     ** SIZE_T dwMinimumWorkingSetSize
     ** SIZE_T dwMaximumWorkingSetSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetProcessWorkingSetSizeEx
@@ -12038,6 +18883,15 @@ Parameters::
     ** SIZE_T dwMaximumWorkingSetSize
     ** DWORD Flags
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetThreadAffinityMask
 =====================
@@ -12051,6 +18905,15 @@ Parameters::
 
     ** HANDLE hThread
     ** DWORD_PTR dwThreadAffinityMask
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetThreadGroupAffinity
@@ -12067,6 +18930,15 @@ Parameters::
     ** const GROUP_AFFINITY *GroupAffinity
     ** PGROUP_AFFINITY PreviousGroupAffinity
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetThreadIdealProcessor
 =======================
@@ -12080,6 +18952,15 @@ Parameters::
 
     ** HANDLE hThread
     ** DWORD dwIdealProcessor
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetThreadIdealProcessorEx
@@ -12095,6 +18976,15 @@ Parameters::
     ** HANDLE hThread
     ** PPROCESSOR_NUMBER lpIdealProcessor
     ** PPROCESSOR_NUMBER lpPreviousIdealProcessor
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetThreadInformation
@@ -12112,6 +19002,15 @@ Parameters::
     ** LPVOID ThreadInformation
     ** DWORD ThreadInformationSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetThreadPriority
 =================
@@ -12125,6 +19024,15 @@ Parameters::
 
     ** HANDLE hThread
     ** int nPriority
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetThreadPriorityBoost
@@ -12140,6 +19048,15 @@ Parameters::
     ** HANDLE hThread
     ** BOOL bDisablePriorityBoost
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetThreadStackGuarantee
 =======================
@@ -12152,6 +19069,15 @@ Signature::
 Parameters::
 
     ** PULONG StackSizeInBytes
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetThreadpoolStackInformation
@@ -12167,6 +19093,15 @@ Parameters::
     ** PTP_POOL ptpp
     ** PTP_POOL_STACK_INFORMATION ptpsi
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetThreadpoolThreadMaximum
 ==========================
@@ -12181,6 +19116,15 @@ Parameters::
     ** PTP_POOL ptpp
     ** DWORD cthrdMost
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetThreadpoolThreadMinimum
 ==========================
@@ -12194,6 +19138,15 @@ Parameters::
 
     ** PTP_POOL ptpp
     ** DWORD cthrdMic
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetThreadpoolTimer
@@ -12211,6 +19164,15 @@ Parameters::
     ** DWORD msPeriod
     ** DWORD msWindowLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetThreadpoolTimerEx
 ====================
@@ -12227,6 +19189,15 @@ Parameters::
     ** DWORD msPeriod
     ** DWORD msWindowLength
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SetThreadpoolWait
 =================
@@ -12241,6 +19212,15 @@ Parameters::
     ** PTP_WAIT pwa
     ** HANDLE h
     ** PFILETIME pftTimeout
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SetThreadpoolWaitEx
@@ -12258,6 +19238,15 @@ Parameters::
     ** PFILETIME pftTimeout
     ** PVOID Reserved
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 Sleep
 =====
@@ -12270,6 +19259,15 @@ Signature::
 Parameters::
 
     ** DWORD dwMilliseconds
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SleepEx
@@ -12285,6 +19283,15 @@ Parameters::
     ** DWORD dwMilliseconds
     ** BOOL bAlertable
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 StartThreadpoolIo
 =================
@@ -12297,6 +19304,15 @@ Signature::
 Parameters::
 
     ** PTP_IO pio
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SubmitThreadpoolWork
@@ -12311,6 +19327,15 @@ Parameters::
 
     ** PTP_WORK pwk
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SuspendThread
 =============
@@ -12323,6 +19348,15 @@ Signature::
 Parameters::
 
     ** HANDLE hThread
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 SwitchToFiber
@@ -12337,6 +19371,15 @@ Parameters::
 
     ** LPVOID lpFiber
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 SwitchToThread
 ==============
@@ -12345,6 +19388,15 @@ Signature::
 
     * Library: kernel32
     * Return value: BOOL
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 TerminateJobObject
@@ -12359,6 +19411,15 @@ Parameters::
 
     ** HANDLE hJob
     ** UINT uExitCode
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 TerminateProcess
@@ -12375,6 +19436,13 @@ Parameters::
     ** UINT uExitCode
 
 Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
     uint32_t pid = pid_from_process_handle(hProcess);
 
@@ -12399,6 +19467,15 @@ Parameters::
     ** HANDLE hThread
     ** DWORD dwExitCode
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 TrySubmitThreadpoolCallback
 ===========================
@@ -12413,6 +19490,15 @@ Parameters::
     ** PTP_SIMPLE_CALLBACK pfns
     ** PVOID pv
     ** PTP_CALLBACK_ENVIRON pcbe
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 UpdateProcThreadAttribute
@@ -12433,6 +19519,15 @@ Parameters::
     ** PVOID lpPreviousValue
     ** PSIZE_T lpReturnSize
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 UserHandleGrantAccess
 =====================
@@ -12447,6 +19542,15 @@ Parameters::
     ** HANDLE hUserHandle
     ** HANDLE hJob
     ** BOOL bGrant
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 VirtualAllocExNuma
@@ -12466,6 +19570,15 @@ Parameters::
     ** DWORD flProtect
     ** DWORD nndPreferred
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WTSEnumerateProcessesA
 ======================
@@ -12482,6 +19595,15 @@ Parameters::
     ** DWORD Version
     ** PWTS_PROCESS_INFOA *ppProcessInfo
     ** DWORD *pCount
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WTSEnumerateProcessesW
@@ -12500,6 +19622,15 @@ Parameters::
     ** PWTS_PROCESS_INFOW *ppProcessInfo
     ** DWORD *pCount
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WaitForInputIdle
 ================
@@ -12513,6 +19644,15 @@ Parameters::
 
     ** HANDLE hProcess
     ** DWORD dwMilliseconds
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WaitForThreadpoolIoCallbacks
@@ -12528,6 +19668,15 @@ Parameters::
     ** PTP_IO pio
     ** BOOL fCancelPendingCallbacks
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WaitForThreadpoolTimerCallbacks
 ===============================
@@ -12541,6 +19690,15 @@ Parameters::
 
     ** PTP_TIMER pti
     ** BOOL fCancelPendingCallbacks
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 
 WaitForThreadpoolWaitCallbacks
@@ -12556,6 +19714,15 @@ Parameters::
     ** PTP_WAIT pwa
     ** BOOL fCancelPendingCallbacks
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 WaitForThreadpoolWorkCallbacks
 ==============================
@@ -12570,6 +19737,15 @@ Parameters::
     ** PTP_WORK pwk
     ** BOOL fCancelPendingCallbacks
 
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
 
 Wow64SuspendThread
 ==================
@@ -12582,5 +19758,14 @@ Signature::
 Parameters::
 
     ** HANDLE hThread
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
 
 

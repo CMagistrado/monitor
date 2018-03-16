@@ -25,9 +25,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "native.h"
 
 void log_init(const char *pipe_name, int track);
-
+// vishal: added another argument for eip
 void log_api(uint32_t index, int is_success, uintptr_t return_value,
-    uint64_t hash, last_error_t *lasterr, ...);
+    uint64_t hash, last_error_t *lasterr, uint32_t eip, ...);
 
 void log_intptr(bson *b, const char *idx, intptr_t value);
 void log_string(bson *b, const char *idx, const char *str, int length);

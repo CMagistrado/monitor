@@ -59,24 +59,55 @@ def get_sig(full,api):
                 line = fr.readline()
 
             newline = 0
+            done = False
+            #vishal: made changes to the logic within the while loop to add the assembly instruction into the signatures file
             while True:
                 # If end of file
                 if not line:
                     break
-
+                #vishal: _flag is for checking whether we've reached the Pre:: category
+                _flag=False
                 line = line.replace('\r','')
                 line = line.replace('\n','')
+                if line.lstrip(' ').startswith('Pre::'):
+                    _flag=True
                 if line == '':
                     newline += 1
                 else:
                     newline = 0
 
-                # We've found the target api
-                sys.stdout.write(line + '\n')
-
-                # We're done getting the signature
+                # Logic for adding the Pre part        
                 if newline == 2:
+                    # vishal: this signature doesn't have a Pre category, we'll write a new one
+                    if not done:
+                        sys.stdout.write('''Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+''')
+                    else:
+                        sys.stdout.write('\n')
                     break
+
+                elif _flag:
+                # vishal:We're prepending the PC logic to the existing Pre:: 
+                    sys.stdout.write(line + '\n\n'+'''    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+''')
+                    done=True
+                #vishal: we'll write back whatever we found in the signature file
+                else:
+                    sys.stdout.write(line + '\n')
 
                 # Get next line
                 line = fr.readline()

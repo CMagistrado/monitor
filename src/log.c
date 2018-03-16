@@ -48,6 +48,9 @@ static wchar_t g_debug_filepath[MAX_PATH];
 static HANDLE g_debug_handle;
 #endif
 
+// made change - declaration for get_eip is outside
+//extern uint32_t get_eip(void);
+
 static void log_raw(const char *buf, size_t length);
 
 static int open_handles()
@@ -245,7 +248,6 @@ static void log_buffer_notrunc(const uint8_t *buf, uintptr_t length)
 void log_explain(uint32_t index)
 {
     bson b; char argidx[4];
-
     bson_init_size(&b, mem_suggested_size(1024));
     bson_append_int(&b, "I", index);
     bson_append_string(&b, "name", sig_apiname(index));
@@ -255,7 +257,6 @@ void log_explain(uint32_t index)
     bson_append_start_array(&b, "args");
     bson_append_string(&b, "0", "is_success");
     bson_append_string(&b, "1", "retval");
-
     const char *fmt = sig_paramtypes(index);
 
     for (uint32_t argnum = 2; *fmt != 0; argnum++, fmt++) {
@@ -339,7 +340,8 @@ static void _log_stacktrace(bson *b)
     char number[20], sym[512];
 
     bson_append_start_array(b, "s");
-
+    //made changes here
+//  bson_append_string(b, "pC2", "Something2");
     count = stacktrace(NULL, addrs, RETADDRCNT);
 
     for (uint32_t idx = 4; idx < count; idx++) {
@@ -360,12 +362,12 @@ static void _log_stacktrace(bson *b)
 }
 
 //#endif
-
+# vishal : added the eip argument to the function
 void log_api(uint32_t index, int is_success, uintptr_t return_value,
-    uint64_t hash, last_error_t *lasterr, ...)
+    uint64_t hash, last_error_t *lasterr, uint32_t eip, ...)
 {
     va_list args; char idx[4];
-    va_start(args, lasterr);
+    va_start(args, eip);
 
     EnterCriticalSection(&g_mutex);
 
@@ -382,8 +384,8 @@ void log_api(uint32_t index, int is_success, uintptr_t return_value,
     bson_append_int(&b, "I", index);
     bson_append_int(&b, "T", get_current_thread_id());
     bson_append_int(&b, "t", get_tick_count() - g_starttick);
+    bson_append_int(&b, "PC", eip);
     bson_append_long(&b, "h", hash);
-
     // If failure has been determined, then log the last error as well.
     if(is_success == 0) {
         bson_append_int(&b, "e", lasterr->lasterror);
@@ -644,7 +646,7 @@ void log_new_process(int track)
     bson_append_finish_array(&modules);
     bson_finish(&modules);
 
-    log_api(sig_index_process(), 1, 0, 0, NULL, st.dwLowDateTime,
+    log_api(sig_index_process(), 1, 0, 0, NULL, 0, st.dwLowDateTime,
         st.dwHighDateTime, get_current_process_id(),
         parent_process_identifier(), module_path, command_line,
         is_64bit, track, &modules);
@@ -656,7 +658,7 @@ void log_new_process(int track)
 void log_anomaly(const char *subcategory,
     const char *funcname, const char *msg)
 {
-    log_api(sig_index_anomaly(), 1, 0, 0, NULL,
+    log_api(sig_index_anomaly(), 1, 0, 0, NULL, 0,
         get_current_thread_id(), subcategory, funcname, msg);
 }
 
@@ -776,7 +778,7 @@ void log_exception(CONTEXT *ctx, EXCEPTION_RECORD *rec,
     bson_finish(&r);
     bson_finish(&s);
 
-    log_api(sig_index_exception(), 1, 0, 0, NULL, &e, &r, &s);
+    log_api(sig_index_exception(), 1, 0, 0, NULL, 0, &e, &r, &s);
 
     bson_destroy(&e);
     bson_destroy(&r);
@@ -820,7 +822,7 @@ void log_debug(const char *fmt, ...)
 void WINAPI log_missing_hook(const char *funcname)
 {
     // if(hook_in_monitor() == 0) {
-        log_api(sig_index_missing(), 1, 0, 0, NULL, funcname);
+        log_api(sig_index_missing(), 1, 0, 0, NULL, 0, funcname);
     // }
 }
 

@@ -766,6 +766,14 @@ Scanning sync.txt
    UnregisterWaitW was not found in ../template/sigs.rst-full
    UnregisterWaitExA was not found in ../template/sigs.rst-full
    UnregisterWaitExW was not found in ../template/sigs.rst-full
+   WaitForMultipleObjectsA was not found in ../template/sigs.rst-full
+   WaitForMultipleObjectsW was not found in ../template/sigs.rst-full
+   WaitForMultipleObjectsExA was not found in ../template/sigs.rst-full
+   WaitForMultipleObjectsExW was not found in ../template/sigs.rst-full
+   WaitForSingleObjectA was not found in ../template/sigs.rst-full
+   WaitForSingleObjectW was not found in ../template/sigs.rst-full
+   WaitForSingleObjectExA was not found in ../template/sigs.rst-full
+   WaitForSingleObjectExW was not found in ../template/sigs.rst-full
    WaitOnAddress was not found in ../template/sigs.rst-full
    WaitOnAddressA was not found in ../template/sigs.rst-full
    WaitOnAddressW was not found in ../template/sigs.rst-full
