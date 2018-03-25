@@ -362,7 +362,7 @@ static void _log_stacktrace(bson *b)
 }
 
 //#endif
-# vishal : added the eip argument to the function
+// vishal : added the eip argument to the function
 void log_api(uint32_t index, int is_success, uintptr_t return_value,
     uint64_t hash, last_error_t *lasterr, uint32_t eip, ...)
 {
