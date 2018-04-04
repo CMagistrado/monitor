@@ -66,6 +66,11 @@ int copy_bytes(void *to, const void *from, uint32_t length)
 
 int copy_unicodez(wchar_t *to, const wchar_t *from)
 {
+    // evan: double-check if this is NULL
+    if (to == NULL || from == NULL) {
+        return 0;
+    }
+
     uint32_t length = MAX_PATH_W;
     tls_copy_t *tls = copy_get_tls();
 
@@ -82,6 +87,11 @@ int copy_unicodez(wchar_t *to, const wchar_t *from)
 
 int copy_wcsncpyA(wchar_t *to, const char *from, uint32_t length)
 {
+    // evan: double-check if this is NULL
+    if (to == NULL || from == NULL) {
+        return 0;
+    }
+
     tls_copy_t *tls = copy_get_tls();
 
     tls->active = 1;
@@ -96,6 +106,11 @@ int copy_wcsncpyA(wchar_t *to, const char *from, uint32_t length)
 
 uint32_t copy_strlen(const char *value)
 {
+    // evan: double-check if this is NULL
+    if (value == NULL) {
+        return 0;
+    }
+
     tls_copy_t *tls = copy_get_tls();
 
     tls->active = 1;
@@ -113,6 +128,11 @@ uint32_t copy_strlen(const char *value)
 
 uint32_t copy_strlenW(const wchar_t *value)
 {
+    // evan: double-check if this is NULL
+    if (value == NULL) {
+        return 0;
+    }
+
     tls_copy_t *tls = copy_get_tls();
 
     tls->active = 1;
@@ -130,6 +150,11 @@ uint32_t copy_strlenW(const wchar_t *value)
 
 char *copy_utf8_string(const char *str, uint32_t length)
 {
+    // evan: double-check if this is NULL
+    if (str == NULL) {
+        return 0;
+    }
+
     tls_copy_t *tls = copy_get_tls();
 
     tls->active = 1;
@@ -144,6 +169,11 @@ char *copy_utf8_string(const char *str, uint32_t length)
 
 char *copy_utf8_wstring(const wchar_t *str, uint32_t length)
 {
+    // evan: double-check if this is NULL
+    if (str == NULL) {
+        return 0;
+    }
+
     tls_copy_t *tls = copy_get_tls();
 
     tls->active = 1;

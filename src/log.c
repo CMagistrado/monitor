@@ -340,8 +340,6 @@ static void _log_stacktrace(bson *b)
     char number[20], sym[512];
 
     bson_append_start_array(b, "s");
-    //made changes here
-//  bson_append_string(b, "pC2", "Something2");
     count = stacktrace(NULL, addrs, RETADDRCNT);
 
     for (uint32_t idx = 4; idx < count; idx++) {
@@ -362,7 +360,7 @@ static void _log_stacktrace(bson *b)
 }
 
 //#endif
-# vishal : added the eip argument to the function
+// vishal : added the eip argument to the function
 void log_api(uint32_t index, int is_success, uintptr_t return_value,
     uint64_t hash, last_error_t *lasterr, uint32_t eip, ...)
 {
@@ -813,7 +811,6 @@ void log_debug(const char *fmt, ...)
     va_end(args);
 
     write_file(g_debug_handle, message, length, NULL);
-
     LeaveCriticalSection(&g_mutex);
 }
 
