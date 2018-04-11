@@ -415,8 +415,21 @@ void log_api(uint32_t index, int is_success, uintptr_t return_value,
         }
 
         if(*fmt == 's') {
-            const char *s = va_arg(args, const char *);
-            log_string(&b, idx, s, copy_strlen(s));
+//          const char *s = va_arg(args, const char *);
+//          log_string(&b, idx, s, copy_strlen(s));
+
+            // evan: because some API calls use ordinal values
+            // instead - https://msdn.microsoft.com/en-us/library/windows/desktop/ms683212(v=vs.85).aspx
+            uintptr_t s = va_arg(args, uintptr_t);
+            log_debug("addr: %d\n", s);
+            log_debug("HI: %d LO: %d\n", HIWORD(s), LOWORD(s));
+
+            // If HIWORD is 0, then treat as integer, else treat as string
+            if (HIWORD(s) == 0) {
+                log_intptr(&b, idx, s);
+            } else {
+                log_string(&b, idx, s, copy_strlen(s));
+            }
         }
         else if(*fmt == 'S') {
             int len = va_arg(args, int);
@@ -811,6 +824,7 @@ void log_debug(const char *fmt, ...)
     va_end(args);
 
     write_file(g_debug_handle, message, length, NULL);
+
     LeaveCriticalSection(&g_mutex);
 }
 

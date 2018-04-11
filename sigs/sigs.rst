@@ -237,6 +237,121 @@ Pre::
     #endif
 
 
+GetModuleHandleA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HMODULE
+
+Parameters::
+
+    ** LPCSTR lpModuleName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetModuleHandleW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HMODULE
+
+Parameters::
+
+    ** LPCWSTR lpModuleName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetModuleHandleExA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** DWORD dwFlags
+    ** LPCSTR lpModuleName
+    ** HMODULE *phModule
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetModuleHandleExW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** DWORD dwFlags
+    ** LPCWSTR lpModuleName
+    ** HMODULE *phModule
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetProcAddress
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: FARPROC
+
+Parameters::
+
+    ** HMODULE hModule
+    ** LPCSTR lpProcName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
 LoadLibraryA
 ============
 
@@ -4752,6 +4867,132 @@ Post::
     free_unicode_buffer(backupfilepath);
 
 
+GetFullPathNameA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** LPCSTR lpFileName
+    ** DWORD nBufferLength
+    ** LPSTR lpBuffer
+    ** LPSTR *lpFilePart
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetFullPathNameW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** LPCWSTR lpFileName
+    ** DWORD nBufferLength
+    ** LPWSTR lpBuffer
+    ** LPWSTR *lpFilePart
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+SearchPathA
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** LPCSTR lpPath
+    ** LPCSTR lpFileName
+    ** LPCSTR lpExtension
+    ** DWORD nBufferLength
+    ** LPSTR lpBuffer
+    ** LPSTR *lpFilePart
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+SearchPathW
+===========
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** LPCWSTR lpPath
+    ** LPCWSTR lpFileName
+    ** LPCWSTR lpExtension
+    ** DWORD nBufferLength
+    ** LPWSTR lpBuffer
+    ** LPWSTR *lpFilePart
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+FindCloseChangeNotification
+===========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hChangeHandle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
 ChangeServiceConfigA
 ====================
 
@@ -5690,6 +5931,54 @@ Signature::
 Parameters::
 
     ** const SERVICE_TABLE_ENTRYW *lpServiceStartTable
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+OpenSCManagerA
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    ** LPCSTR lpMachineName
+    ** LPCSTR lpDatabaseName
+    ** DWORD dwDesiredAccess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+OpenSCManagerW
+==============
+
+Signature::
+
+    * Library: sechost
+    * Return value: SC_HANDLE
+
+Parameters::
+
+    ** LPCWSTR lpMachineName
+    ** LPCWSTR lpDatabaseName
+    ** DWORD dwDesiredAccess
 
 Pre::
 
@@ -6666,6 +6955,192 @@ Parameters::
     ** LPOSVERSIONINFOEXW lpVersionInformation
     ** DWORD dwTypeMask
     ** DWORDLONG dwlConditionMask
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+ExpandEnvironmentStringsA
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** LPCSTR lpSrc
+    ** LPSTR lpDst
+    ** DWORD nSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+ExpandEnvironmentStringsW
+=========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: DWORD
+
+Parameters::
+
+    ** LPCWSTR lpSrc
+    ** LPWSTR lpDst
+    ** DWORD nSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetSystemWindowsDirectoryA
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    ** LPSTR lpBuffer
+    ** UINT uSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetSystemWindowsDirectoryW
+==========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    ** LPWSTR lpBuffer
+    ** UINT uSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetSystemWow64DirectoryA
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    ** LPSTR lpBuffer
+    ** UINT uSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetSystemWow64DirectoryW
+========================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    ** LPWSTR lpBuffer
+    ** UINT uSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetSystemDirectoryA
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    ** LPSTR lpBuffer
+    ** UINT uSize
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetSystemDirectoryW
+===================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: UINT
+
+Parameters::
+
+    ** LPWSTR lpBuffer
+    ** UINT uSize
 
 Pre::
 
@@ -8081,6 +8556,498 @@ Pre::
     #endif
 
 
+RegQueryInfoKeyA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPSTR lpClass
+    ** LPDWORD lpcchClass
+    ** LPDWORD lpReserved
+    ** LPDWORD lpcSubKeys
+    ** LPDWORD lpcbMaxSubKeyLen
+    ** LPDWORD lpcbMaxClassLen
+    ** LPDWORD lpcValues
+    ** LPDWORD lpcbMaxValueNameLen
+    ** LPDWORD lpcbMaxValueLen
+    ** LPDWORD lpcbSecurityDescriptor
+    ** PFILETIME lpftLastWriteTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegQueryInfoKeyW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPWSTR lpClass
+    ** LPDWORD lpcchClass
+    ** LPDWORD lpReserved
+    ** LPDWORD lpcSubKeys
+    ** LPDWORD lpcbMaxSubKeyLen
+    ** LPDWORD lpcbMaxClassLen
+    ** LPDWORD lpcValues
+    ** LPDWORD lpcbMaxValueNameLen
+    ** LPDWORD lpcbMaxValueLen
+    ** LPDWORD lpcbSecurityDescriptor
+    ** PFILETIME lpftLastWriteTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegEnumKeyExA
+=============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** DWORD dwIndex
+    ** LPSTR lpName
+    ** LPDWORD lpcchName
+    ** LPDWORD lpReserved
+    ** LPSTR lpClass
+    ** LPDWORD lpcchClass
+    ** PFILETIME lpftLastWriteTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegEnumKeyExW
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** DWORD dwIndex
+    ** LPWSTR lpName
+    ** LPDWORD lpcchName
+    ** LPDWORD lpReserved
+    ** LPWSTR lpClass
+    ** LPDWORD lpcchClass
+    ** PFILETIME lpftLastWriteTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegLoadMUIStringA
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR pszValue
+    ** LPSTR pszOutBuf
+    ** DWORD cbOutBuf
+    ** LPDWORD pcbData
+    ** DWORD Flags
+    ** LPCSTR pszDirectory
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegLoadMUIStringW
+=================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR pszValue
+    ** LPWSTR pszOutBuf
+    ** DWORD cbOutBuf
+    ** LPDWORD pcbData
+    ** DWORD Flags
+    ** LPCWSTR pszDirectory
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegQueryValueA
+==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpSubKey
+    ** LPSTR lpData
+    ** PLONG lpcbData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegQueryValueW
+==============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpSubKey
+    ** LPWSTR lpData
+    ** PLONG lpcbData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegQueryValueExA
+================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpValueName
+    ** LPDWORD lpReserved
+    ** LPDWORD lpType
+    ** LPBYTE lpData
+    ** LPDWORD lpcbData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegQueryValueExW
+================
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpValueName
+    ** LPDWORD lpReserved
+    ** LPDWORD lpType
+    ** LPBYTE lpData
+    ** LPDWORD lpcbData
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegOpenKeyA
+===========
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpSubKey
+    ** PHKEY phkResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegOpenKeyW
+===========
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpSubKey
+    ** PHKEY phkResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegOpenKeyExA
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpSubKey
+    ** DWORD ulOptions
+    ** REGSAM samDesired
+    ** PHKEY phkResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegOpenKeyExW
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpSubKey
+    ** DWORD ulOptions
+    ** REGSAM samDesired
+    ** PHKEY phkResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegCreateKeyA
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpSubKey
+    ** PHKEY phkResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegCreateKeyW
+=============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpSubKey
+    ** PHKEY phkResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegCreateKeyExA
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCSTR lpSubKey
+    ** DWORD Reserved
+    ** LPSTR lpClass
+    ** DWORD dwOptions
+    ** REGSAM samDesired
+    ** const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    ** PHKEY phkResult
+    ** LPDWORD lpdwDisposition
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+RegCreateKeyExW
+===============
+
+Signature::
+
+    * Library: advapi32
+    * Return value: LSTATUS
+
+Parameters::
+
+    ** HKEY hKey
+    ** LPCWSTR lpSubKey
+    ** DWORD Reserved
+    ** LPWSTR lpClass
+    ** DWORD dwOptions
+    ** REGSAM samDesired
+    ** const LPSECURITY_ATTRIBUTES lpSecurityAttributes
+    ** PHKEY phkResult
+    ** LPDWORD lpdwDisposition
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
 CompareFileTime
 ===============
 
@@ -8753,6 +9720,84 @@ Parameters::
     ** const DYNAMIC_TIME_ZONE_INFORMATION *lpTimeZoneInformation
     ** const SYSTEMTIME *lpLocalTime
     ** LPSYSTEMTIME lpUniversalTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetTimeFormatA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: int
+
+Parameters::
+
+    ** LCID Locale
+    ** DWORD dwFlags
+    ** const SYSTEMTIME *lpTime
+    ** LPCSTR lpFormat
+    ** LPSTR lpTimeStr
+    ** int cchTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetTimeFormatW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: int
+
+Parameters::
+
+    ** LCID Locale
+    ** DWORD dwFlags
+    ** const SYSTEMTIME *lpTime
+    ** LPCWSTR lpFormat
+    ** LPWSTR lpTimeStr
+    ** int cchTime
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+FileTimeToDosDateTime
+=====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** const FILETIME *lpFileTime
+    ** LPWORD lpFatDate
+    ** LPWORD lpFatTime
 
 Pre::
 
@@ -9974,6 +11019,406 @@ Signature::
 Parameters::
 
     ** PCONDITION_VARIABLE ConditionVariable
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateEventA
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpEventAttributes
+    ** BOOL bManualReset
+    ** BOOL bInitialState
+    ** LPCSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateEventW
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpEventAttributes
+    ** BOOL bManualReset
+    ** BOOL bInitialState
+    ** LPCWSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateEventExA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpEventAttributes
+    ** LPCSTR lpName
+    ** DWORD dwFlags
+    ** DWORD dwDesiredAccess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateEventExW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpEventAttributes
+    ** LPCWSTR lpName
+    ** DWORD dwFlags
+    ** DWORD dwDesiredAccess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateMutexA
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpMutexAttributes
+    ** BOOL bInitialOwner
+    ** LPCSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateMutexW
+============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpMutexAttributes
+    ** BOOL bInitialOwner
+    ** LPCWSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateMutexExA
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpMutexAttributes
+    ** LPCSTR lpName
+    ** DWORD dwFlags
+    ** DWORD dwDesiredAccess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateMutexExW
+==============
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpMutexAttributes
+    ** LPCWSTR lpName
+    ** DWORD dwFlags
+    ** DWORD dwDesiredAccess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateSemaphoreA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+    ** LONG lInitialCount
+    ** LONG lMaximumCount
+    ** LPCSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateSemaphoreW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+    ** LONG lInitialCount
+    ** LONG lMaximumCount
+    ** LPCWSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateSemaphoreExA
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+    ** LONG lInitialCount
+    ** LONG lMaximumCount
+    ** LPCSTR lpName
+    ** DWORD dwFlags
+    ** DWORD dwDesiredAccess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateSemaphoreExW
+==================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+    ** LONG lInitialCount
+    ** LONG lMaximumCount
+    ** LPCWSTR lpName
+    ** DWORD dwFlags
+    ** DWORD dwDesiredAccess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateWaitableTimerA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpTimerAttributes
+    ** BOOL bManualReset
+    ** LPCSTR lpTimerName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateWaitableTimerW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpTimerAttributes
+    ** BOOL bManualReset
+    ** LPCWSTR lpTimerName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateWaitableTimerExA
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpTimerAttributes
+    ** LPCSTR lpTimerName
+    ** DWORD dwFlags
+    ** DWORD dwDesiredAccess
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateWaitableTimerExW
+======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpTimerAttributes
+    ** LPCWSTR lpTimerName
+    ** DWORD dwFlags
+    ** DWORD dwDesiredAccess
 
 Pre::
 
@@ -14628,6 +16073,560 @@ Post::
     free_unicode_buffer(filepath);
 
 
+GetAddrInfoW
+============
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: INT
+
+Parameters::
+
+    ** PCWSTR pNodeName
+    ** PCWSTR pServiceName
+    ** const ADDRINFOW *pHints
+    ** PADDRINFOW *ppResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+getaddrinfo
+===========
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: INT
+
+Parameters::
+
+    ** PCSTR pNodeName
+    ** PCSTR pServiceName
+    ** const ADDRINFOA *pHints
+    ** PADDRINFOA *ppResult
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+InternetCreateUrlA
+==================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPURL_COMPONENTSA lpUrlComponents
+    ** DWORD dwFlags
+    ** LPSTR lpszUrl
+    ** LPDWORD lpdwUrlLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+InternetCreateUrlW
+==================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPURL_COMPONENTSW lpUrlComponents
+    ** DWORD dwFlags
+    ** LPWSTR lpszUrl
+    ** LPDWORD lpdwUrlLength
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetAddrInfoExA
+==============
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: INT
+
+Parameters::
+
+    ** PCSTR pName
+    ** PCSTR pServiceName
+    ** DWORD dwNameSpace
+    ** LPGUID lpNspId
+    ** const ADDRINFOEXA *hints
+    ** PADDRINFOEXA *ppResult
+    ** struct timeval *timeout
+    ** LPOVERLAPPED lpOverlapped
+    ** LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine
+    ** LPHANDLE lpNameHandle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetAddrInfoExW
+==============
+
+Signature::
+
+    * Library: ws2_32
+    * Return value: INT
+
+Parameters::
+
+    ** PCWSTR pName
+    ** PCWSTR pServiceName
+    ** DWORD dwNameSpace
+    ** LPGUID lpNspId
+    ** const ADDRINFOEXW *hints
+    ** PADDRINFOEXW *ppResult
+    ** struct timeval *timeout
+    ** LPOVERLAPPED lpOverlapped
+    ** LPLOOKUPSERVICE_COMPLETION_ROUTINE lpCompletionRoutine
+    ** LPHANDLE lpHandle
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetUrlCacheEntryInfoA
+=====================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCSTR lpszUrlName
+    ** LPINTERNET_CACHE_ENTRY_INFOA lpCacheEntryInfo
+    ** LPDWORD lpcbCacheEntryInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetUrlCacheEntryInfoW
+=====================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCWSTR lpszUrlName
+    ** LPINTERNET_CACHE_ENTRY_INFOW lpCacheEntryInfo
+    ** LPDWORD lpcbCacheEntryInfo
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetUrlCacheEntryInfoExA
+=======================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCSTR lpszUrl
+    ** LPINTERNET_CACHE_ENTRY_INFOA lpCacheEntryInfo
+    ** LPDWORD lpcbCacheEntryInfo
+    ** LPSTR lpszRedirectUrl
+    ** LPDWORD lpcbRedirectUrl
+    ** LPVOID lpReserved
+    ** DWORD dwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+GetUrlCacheEntryInfoExW
+=======================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCWSTR lpszUrl
+    ** LPINTERNET_CACHE_ENTRY_INFOW lpCacheEntryInfo
+    ** LPDWORD lpcbCacheEntryInfo
+    ** LPWSTR lpszRedirectUrl
+    ** LPDWORD lpcbRedirectUrl
+    ** LPVOID lpReserved
+    ** DWORD dwFlags
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+InternetGetConnectedStateExA
+============================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPDWORD lpdwFlags
+    ** LPSTR lpszConnectionName
+    ** DWORD cchNameLen
+    ** DWORD dwReserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+InternetGetConnectedStateExW
+============================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPDWORD lpdwFlags
+    ** LPWSTR lpszConnectionName
+    ** DWORD cchNameLen
+    ** DWORD dwReserved
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CommitUrlCacheEntryA
+====================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCSTR lpszUrlName
+    ** LPCSTR lpszLocalFileName
+    ** FILETIME ExpireTime
+    ** FILETIME LastModifiedTime
+    ** DWORD CacheEntryType
+    ** LPBYTE lpHeaderInfo
+    ** DWORD cchHeaderInfo
+    ** LPCSTR lpszFileExtension
+    ** LPCSTR lpszOriginalUrl
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CommitUrlCacheEntryW
+====================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCWSTR lpszUrlName
+    ** LPCWSTR lpszLocalFileName
+    ** FILETIME ExpireTime
+    ** FILETIME LastModifiedTime
+    ** DWORD CacheEntryType
+    ** LPWSTR lpszHeaderInfo
+    ** DWORD cchHeaderInfo
+    ** LPCWSTR lpszFileExtension
+    ** LPCWSTR lpszOriginalUrl
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateJobObjectA
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpJobAttributes
+    ** LPCSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateJobObjectW
+================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: HANDLE
+
+Parameters::
+
+    ** LPSECURITY_ATTRIBUTES lpJobAttributes
+    ** LPCWSTR lpName
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateProcessAsUserA
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hToken
+    ** LPCSTR lpApplicationName
+    ** LPSTR lpCommandLine
+    ** LPSECURITY_ATTRIBUTES lpProcessAttributes
+    ** LPSECURITY_ATTRIBUTES lpThreadAttributes
+    ** BOOL bInheritHandles
+    ** DWORD dwCreationFlags
+    ** LPVOID lpEnvironment
+    ** LPCSTR lpCurrentDirectory
+    ** LPSTARTUPINFOA lpStartupInfo
+    ** LPPROCESS_INFORMATION lpProcessInformation
+
+Middle::
+
+    uint32_t pid = lpProcessInformation->dwProcessId;
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        pipe("PROCESS:%d", pid);
+        sleep_skip_disable();
+    }
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+CreateProcessAsUserW
+====================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** HANDLE hToken
+    ** LPCWSTR lpApplicationName
+    ** LPWSTR lpCommandLine
+    ** LPSECURITY_ATTRIBUTES lpProcessAttributes
+    ** LPSECURITY_ATTRIBUTES lpThreadAttributes
+    ** BOOL bInheritHandles
+    ** DWORD dwCreationFlags
+    ** LPVOID lpEnvironment
+    ** LPCWSTR lpCurrentDirectory
+    ** LPSTARTUPINFOW lpStartupInfo
+    ** LPPROCESS_INFORMATION lpProcessInformation
+
+Middle::
+
+    uint32_t pid = lpProcessInformation->dwProcessId;
+
+Post::
+
+    if(NT_SUCCESS(ret) != FALSE) {
+        pipe("PROCESS:%d", pid);
+        sleep_skip_disable();
+    }
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+SetEnvironmentVariableA
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCSTR lpName
+    ** LPCSTR lpValue
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
+SetEnvironmentVariableW
+=======================
+
+Signature::
+
+    * Library: kernel32
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCWSTR lpName
+    ** LPCWSTR lpValue
+
+Pre::
+
+    uintptr_t eip;
+    #if !__x86_64__
+      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
+    #else
+      eip=0;
+    #endif
+
+
 AllocateUserPhysicalPagesNuma
 =============================
 
@@ -16368,24 +18367,6 @@ Signature::
 
     * Library: kernel32
     * Return value: HANDLE
-
-Pre::
-
-    uintptr_t eip;
-    #if !__x86_64__
-      __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
-    #else
-      eip=0;
-    #endif
-
-
-GetCurrentThreadId
-==================
-
-Signature::
-
-    * Library: kernel32
-    * Return value: DWORD
 
 Pre::
 

@@ -1,6 +1,7 @@
 CeipIsOptedIn
 DnsHostnameToComputerName
 EnumSystemFirmwareTables
+ExpandEnvironmentStrings
 GetComputerName
 GetComputerNameEx
 GetComputerObjectName
@@ -11,9 +12,12 @@ GetFirmwareType
 GetIntegratedDisplaySize
 GetNativeSystemInfo
 GetProductInfo
+GetSystemDirectory
 GetSystemFirmwareTable
 GetSystemInfo
 GetSystemRegistryQuota
+GetSystemWindowsDirectory
+GetSystemWow64Directory
 GetUserName
 GetUserNameEx
 GetVersion

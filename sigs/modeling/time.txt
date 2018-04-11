@@ -4,6 +4,7 @@ ConvertAuxiliaryCounterToPerformanceCounter
 ConvertPerformanceCounterToAuxiliaryCounter
 DosDateTimeToFileTime
 EnumDynamicTimeZoneInformation
+FileTimeToDosDateTime
 FileTimeToLocalFileTime
 FileTimeToSystemTime
 GetDynamicTimeZoneInformation
@@ -16,6 +17,7 @@ GetSystemTimeAsFileTime
 GetSystemTimes
 GetTickCount
 GetTickCount64
+GetTimeFormat
 GetTimeSysInfoFunc
 GetTimeZoneInformation
 GetTimeZoneInformationForYear

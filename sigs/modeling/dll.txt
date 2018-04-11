@@ -6,6 +6,9 @@ FreeLibraryAndExitThread
 GetDllDirectory
 GetModuleFileName
 GetModuleFileNameEx
+GetModuleHandle
+GetModuleHandleEx
+GetProcAddress
 LoadLibrary
 LoadLibraryEx
 LoadPackagedLibrary

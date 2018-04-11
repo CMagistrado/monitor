@@ -2,9 +2,17 @@ APCProc
 CancelWaitableTimer
 ChangeTimerQueueTimer
 ClosePrivateNamespace
+CreateEvent
+CreateEventEx
+CreateMutex
+CreateMutexEx
 CreatePrivateNamespace
+CreateSemaphore
+CreateSemaphoreEx
 CreateTimerQueue
 CreateTimerQueueTimer
+CreateWaitableTimer
+CreateWaitableTimerEx
 DeleteSynchronizationBarrier
 DeleteTimerQueue
 DeleteTimerQueueEx

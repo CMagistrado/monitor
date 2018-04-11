@@ -83,39 +83,16 @@
       - Reason: Mingw-gcc doesn't have cryptdlg.h
 
   - dll.txt
-    - These interfere with the monitor, causing it to crash:
-      - GetModuleHandle
-      - GetModuleHandleEx
-      - GetProcAddress
 
   - file.txt
     - CreateFile2
       - Reason: Minimum Windows 8
     - CopyFile2
       - Reason: Minimum Windows 8
-    - These interfere with the monitor, causing it to crash:
-      - SearchPath
-      - GetFullPathName
-      - FindCloseChangeNotification
 
   - network.txt
-    - These interfere with the monitor, causing it to crash:
-      - GetAddrInfoW
-      - getaddrinfo
-      - InternetCreateUrl
-      - GetAddrInfoEx
-      - GetUrlCacheEntryInfo
-      - GetUrlCacheEntryInfoEx
-      - InternetGetConnectedState
-      - InternetGetConnectedStateEx
-      - CommitUrlCacheEntryA
-      - CommitUrlCacheEntryW
 
   - process.txt
-    - These interfere with the monitor, causing it to crash:
-      - CreateJobObject
-      - CreateProcessAsUser
-      - SetEnvironmentVariable
 
     - Because these were not found in malware sources and are probably useless:
       - FlsAlloc
@@ -133,23 +110,11 @@
       - MsgWaitForMultipleObjectsEx
       - GetCurrentProcessorNumber
       - GetCurrentProcessorNumberEx
+      - GetCurrentThreadId
 
   - registry.txt
-    - These interfere with the monitor, causing it to crash:
-      - RegQueryInfoKey
-      - RegEnumKeyEx
-      - RegLoadMUIString
-
-      - RegQueryValue
-      - RegQueryValueEx
-      - RegOpenKey
-      - RegOpenKeyEx
-      - RegCreateKey
-      - RegCreateKeyEx
 
   - service.txt
-    - These interfere with the monitor, causing it to crash:
-      - OpenSCManager
 
   - sync.txt
     - These interfere with the monitor, causing it to crash:
@@ -161,15 +126,6 @@
       - LeaveCriticalSection
       - SetCriticalSectionSpinCount
       - TryEnterCriticalSection
-
-      - CreateEvent
-      - CreateEventEx
-      - CreateMutex
-      - CreateMutexEx
-      - CreateSemaphore
-      - CreateSemaphoreEx
-      - CreateWaitableTimer
-      - CreateWaitableTimerEx
 
     - These slow the target program down
       - AcquireSRWLockExclusive
@@ -340,16 +296,8 @@
       - InterlockedXorRelease
 
   - system-info.txt
-    - These interfere with the monitor, causing it to crash:
-      - ExpandEnvironmentStrings
-      - GetSystemWindowsDirectory
-      - GetSystemWow64Directory
-      - GetSystemDirectory
 
   - time.txt
-    - These interfere with the monitor, causing it to crash:
-      - GetTimeFormat
-      - FileTimeToDosDateTime
 
 # Tests
   - Notepad.exe
@@ -357,6 +305,5 @@
     - Saved many files to Desktop
 
   - Internet Explorer
-    - Crashes before it can start up fully
-    - Traces one process, spawns off another process and attempts to trace that as well.
-      This is where it crashes
+    - Does not crash, but does not fully load before 2 minutes
+    - Spawns an additional process and this is where it gets stuck

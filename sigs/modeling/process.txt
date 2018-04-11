@@ -27,7 +27,9 @@ ConvertThreadToFiber
 ConvertThreadToFiberEx
 CreateFiber
 CreateFiberEx
+CreateJobObject
 CreateProcess
+CreateProcessAsUser
 CreateProcessInternal
 CreateProcessWithLogonW
 CreateProcessWithTokenW
@@ -69,7 +71,6 @@ GetCommandLine
 GetCurrentProcess
 GetCurrentProcessId
 GetCurrentThread
-GetCurrentThreadId
 GetCurrentUmsThread
 GetDeviceDriverBaseName
 GetDeviceDriverFileName
@@ -160,6 +161,7 @@ QueueUserWorkItem
 ReleaseMutexWhenCallbackReturns
 ReleaseSemaphoreWhenCallbackReturns
 ResumeThread
+SetEnvironmentVariable
 SetEventWhenCallbackReturns
 SetInformationJobObject
 SetPriorityClass

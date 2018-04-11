@@ -3,6 +3,8 @@ AddIPAddress
 CancelMibChangeNotify2
 CancelSecurityHealthChangeNotify
 CleanupCredentialCache
+CommitUrlCacheEntryA
+CommitUrlCacheEntryW
 ConnectEx
 ConvertInterfaceAliasToLuid
 ConvertInterfaceGuidToLuid
@@ -288,8 +290,10 @@ GetAcceptExSockaddrs
 GetAdapterIndex
 GetAdaptersAddresses
 GetAdaptersInfo
+GetAddrInfoEx
 GetAddrInfoExCancel
 GetAddrInfoExOverlappedResult
+GetAddrInfoW
 GetAddressByName
 GetAnycastIpAddressEntry
 GetAnycastIpAddressTable
@@ -335,6 +339,8 @@ GetTypeByName
 GetUniDirectionalAdapterInfo
 GetUnicastIpAddressEntry
 GetUnicastIpAddressTable
+GetUrlCacheEntryInfo
+GetUrlCacheEntryInfoEx
 GetUrlCacheGroupAttribute
 GopherAttributeEnumerator
 GopherCreateLocator
@@ -407,11 +413,14 @@ InternetCombineUrl
 InternetConfirmZoneCrossing
 InternetConnect
 InternetCrackUrl
+InternetCreateUrl
 InternetDeInitializeAutoProxyDll
 InternetDial
 InternetEnumPerSiteCookieDecisions
 InternetErrorDlg
 InternetFindNextFile
+InternetGetConnectedState
+InternetGetConnectedStateEx
 InternetGetCookie
 InternetGetCookieEx
 InternetGetLastResponseInfo
@@ -782,6 +791,7 @@ SetUrlCacheEntryInfo
 SetUrlCacheGroupAttribute
 TransmitFile
 TransmitPackets
+URLDownloadToFile
 UnenableRouter
 UnlockUrlCacheEntryFile
 UnlockUrlCacheEntryStream
@@ -937,6 +947,7 @@ closesocket
 connect
 freeaddrinfo
 gai_strerror
+getaddrinfo
 gethostbyaddr
 gethostbyname
 gethostname
@@ -976,4 +987,3 @@ setsockopt
 setsourcefilter
 shutdown
 socket
-URLDownloadToFile
