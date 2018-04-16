@@ -77,6 +77,8 @@ Scanning file.txt
    FileIOCompletionRoutineW was not found in ../template/sigs.rst-full
    FindCloseA was not found in ../template/sigs.rst-full
    FindCloseW was not found in ../template/sigs.rst-full
+   FindCloseChangeNotificationA was not found in ../template/sigs.rst-full
+   FindCloseChangeNotificationW was not found in ../template/sigs.rst-full
    FindFirstChangeNotification was not found in ../template/sigs.rst-full
    FindFirstFile was not found in ../template/sigs.rst-full
    FindFirstFileEx was not found in ../template/sigs.rst-full
@@ -123,6 +125,7 @@ Scanning file.txt
    GetFileTypeA was not found in ../template/sigs.rst-full
    GetFileTypeW was not found in ../template/sigs.rst-full
    GetFinalPathNameByHandle was not found in ../template/sigs.rst-full
+   GetFullPathName was not found in ../template/sigs.rst-full
    GetFullPathNameTransacted was not found in ../template/sigs.rst-full
    GetLongPathName was not found in ../template/sigs.rst-full
    GetLongPathNameTransacted was not found in ../template/sigs.rst-full
@@ -189,6 +192,8 @@ Scanning file.txt
    RemoveDirectoryTransacted was not found in ../template/sigs.rst-full
    RemoveUsersFromEncryptedFileA was not found in ../template/sigs.rst-full
    RemoveUsersFromEncryptedFileW was not found in ../template/sigs.rst-full
+   ReplaceFile was not found in ../template/sigs.rst-full
+   SearchPath was not found in ../template/sigs.rst-full
    SetCurrentDirectory was not found in ../template/sigs.rst-full
    SetEndOfFileA was not found in ../template/sigs.rst-full
    SetEndOfFileW was not found in ../template/sigs.rst-full
@@ -274,11 +279,6 @@ Scanning file.txt
    WriteFileExW was not found in ../template/sigs.rst-full
    WriteFileGatherA was not found in ../template/sigs.rst-full
    WriteFileGatherW was not found in ../template/sigs.rst-full
-   ReplaceFile was not found in ../template/sigs.rst-full
-   GetFullPathName was not found in ../template/sigs.rst-full
-   SearchPath was not found in ../template/sigs.rst-full
-   FindCloseChangeNotificationA was not found in ../template/sigs.rst-full
-   FindCloseChangeNotificationW was not found in ../template/sigs.rst-full
 Scanning service.txt
    ChangeServiceConfig was not found in ../template/sigs.rst-full
    ChangeServiceConfig2 was not found in ../template/sigs.rst-full
@@ -303,6 +303,7 @@ Scanning service.txt
    NotifyBootConfigStatusA was not found in ../template/sigs.rst-full
    NotifyBootConfigStatusW was not found in ../template/sigs.rst-full
    NotifyServiceStatusChange was not found in ../template/sigs.rst-full
+   OpenSCManager was not found in ../template/sigs.rst-full
    OpenService was not found in ../template/sigs.rst-full
    QueryServiceConfig was not found in ../template/sigs.rst-full
    QueryServiceConfig2 was not found in ../template/sigs.rst-full
@@ -330,13 +331,13 @@ Scanning service.txt
    SetServiceStatusW was not found in ../template/sigs.rst-full
    StartService was not found in ../template/sigs.rst-full
    StartServiceCtrlDispatcher was not found in ../template/sigs.rst-full
-   OpenSCManager was not found in ../template/sigs.rst-full
 Scanning system-info.txt
    CeipIsOptedInA was not found in ../template/sigs.rst-full
    CeipIsOptedInW was not found in ../template/sigs.rst-full
    DnsHostnameToComputerName was not found in ../template/sigs.rst-full
    EnumSystemFirmwareTablesA was not found in ../template/sigs.rst-full
    EnumSystemFirmwareTablesW was not found in ../template/sigs.rst-full
+   ExpandEnvironmentStrings was not found in ../template/sigs.rst-full
    GetComputerName was not found in ../template/sigs.rst-full
    GetComputerNameEx was not found in ../template/sigs.rst-full
    GetComputerObjectName was not found in ../template/sigs.rst-full
@@ -354,16 +355,17 @@ Scanning system-info.txt
    GetNativeSystemInfoW was not found in ../template/sigs.rst-full
    GetProductInfoA was not found in ../template/sigs.rst-full
    GetProductInfoW was not found in ../template/sigs.rst-full
+   GetSystemDirectory was not found in ../template/sigs.rst-full
    GetSystemFirmwareTableA was not found in ../template/sigs.rst-full
    GetSystemFirmwareTableW was not found in ../template/sigs.rst-full
    GetSystemInfoA was not found in ../template/sigs.rst-full
    GetSystemInfoW was not found in ../template/sigs.rst-full
    GetSystemRegistryQuotaA was not found in ../template/sigs.rst-full
    GetSystemRegistryQuotaW was not found in ../template/sigs.rst-full
+   GetSystemWindowsDirectory was not found in ../template/sigs.rst-full
+   GetSystemWow64Directory was not found in ../template/sigs.rst-full
    GetUserName was not found in ../template/sigs.rst-full
    GetUserNameEx was not found in ../template/sigs.rst-full
-   GetUserNameExA was not found in ../template/sigs.rst-full
-   GetUserNameExW was not found in ../template/sigs.rst-full
    GetVersionA was not found in ../template/sigs.rst-full
    GetVersionW was not found in ../template/sigs.rst-full
    GetVersionEx was not found in ../template/sigs.rst-full
@@ -389,10 +391,6 @@ Scanning system-info.txt
    VerSetConditionMaskA was not found in ../template/sigs.rst-full
    VerSetConditionMaskW was not found in ../template/sigs.rst-full
    VerifyVersionInfo was not found in ../template/sigs.rst-full
-   ExpandEnvironmentStrings was not found in ../template/sigs.rst-full
-   GetSystemWindowsDirectory was not found in ../template/sigs.rst-full
-   GetSystemWow64Directory was not found in ../template/sigs.rst-full
-   GetSystemDirectory was not found in ../template/sigs.rst-full
 Scanning object.txt
    CloseHandleA was not found in ../template/sigs.rst-full
    CloseHandleW was not found in ../template/sigs.rst-full
@@ -422,6 +420,8 @@ Scanning registry.txt
    RegCloseKeyW was not found in ../template/sigs.rst-full
    RegConnectRegistry was not found in ../template/sigs.rst-full
    RegCopyTree was not found in ../template/sigs.rst-full
+   RegCreateKey was not found in ../template/sigs.rst-full
+   RegCreateKeyEx was not found in ../template/sigs.rst-full
    RegCreateKeyTransacted was not found in ../template/sigs.rst-full
    RegDeleteKey was not found in ../template/sigs.rst-full
    RegDeleteKeyEx was not found in ../template/sigs.rst-full
@@ -437,6 +437,7 @@ Scanning registry.txt
    RegDisableReflectionKeyW was not found in ../template/sigs.rst-full
    RegEnableReflectionKeyA was not found in ../template/sigs.rst-full
    RegEnableReflectionKeyW was not found in ../template/sigs.rst-full
+   RegEnumKeyEx was not found in ../template/sigs.rst-full
    RegEnumValue was not found in ../template/sigs.rst-full
    RegFlushKeyA was not found in ../template/sigs.rst-full
    RegFlushKeyW was not found in ../template/sigs.rst-full
@@ -446,18 +447,24 @@ Scanning registry.txt
    RegGetValueA was not found in ../template/sigs.rst-full
    RegGetValueW was not found in ../template/sigs.rst-full
    RegLoadKey was not found in ../template/sigs.rst-full
+   RegLoadMUIString was not found in ../template/sigs.rst-full
    RegNotifyChangeKeyValueA was not found in ../template/sigs.rst-full
    RegNotifyChangeKeyValueW was not found in ../template/sigs.rst-full
    RegOpenCurrentUserA was not found in ../template/sigs.rst-full
    RegOpenCurrentUserW was not found in ../template/sigs.rst-full
+   RegOpenKey was not found in ../template/sigs.rst-full
+   RegOpenKeyEx was not found in ../template/sigs.rst-full
    RegOpenKeyTransacted was not found in ../template/sigs.rst-full
    RegOpenUserClassesRootA was not found in ../template/sigs.rst-full
    RegOpenUserClassesRootW was not found in ../template/sigs.rst-full
    RegOverridePredefKeyA was not found in ../template/sigs.rst-full
    RegOverridePredefKeyW was not found in ../template/sigs.rst-full
+   RegQueryInfoKey was not found in ../template/sigs.rst-full
    RegQueryMultipleValues was not found in ../template/sigs.rst-full
    RegQueryReflectionKeyA was not found in ../template/sigs.rst-full
    RegQueryReflectionKeyW was not found in ../template/sigs.rst-full
+   RegQueryValue was not found in ../template/sigs.rst-full
+   RegQueryValueEx was not found in ../template/sigs.rst-full
    RegReplaceKey was not found in ../template/sigs.rst-full
    RegRestoreKey was not found in ../template/sigs.rst-full
    RegSaveKey was not found in ../template/sigs.rst-full
@@ -548,15 +555,306 @@ Scanning registry.txt
    SHSetValue was not found in ../template/sigs.rst-full
    SHSetValueA was not found in ../template/sigs.rst-full
    SHSetValueW was not found in ../template/sigs.rst-full
-   RegQueryInfoKey was not found in ../template/sigs.rst-full
-   RegEnumKeyEx was not found in ../template/sigs.rst-full
-   RegLoadMUIString was not found in ../template/sigs.rst-full
-   RegQueryValue was not found in ../template/sigs.rst-full
-   RegQueryValueEx was not found in ../template/sigs.rst-full
-   RegOpenKey was not found in ../template/sigs.rst-full
-   RegOpenKeyEx was not found in ../template/sigs.rst-full
-   RegCreateKey was not found in ../template/sigs.rst-full
-   RegCreateKeyEx was not found in ../template/sigs.rst-full
+Scanning old-cuckoo.txt
+   ActiveXObjectFncObj_ConstructA was not found in ../template/sigs.rst-full
+   ActiveXObjectFncObj_ConstructW was not found in ../template/sigs.rst-full
+   CDocument_writeA was not found in ../template/sigs.rst-full
+   CDocument_writeW was not found in ../template/sigs.rst-full
+   CElement_put_innerHTMLA was not found in ../template/sigs.rst-full
+   CElement_put_innerHTMLW was not found in ../template/sigs.rst-full
+   CHyperlink_SetUrlComponentA was not found in ../template/sigs.rst-full
+   CHyperlink_SetUrlComponentW was not found in ../template/sigs.rst-full
+   CIFrameElement_CreateElementA was not found in ../template/sigs.rst-full
+   CIFrameElement_CreateElementW was not found in ../template/sigs.rst-full
+   CImgElement_put_srcA was not found in ../template/sigs.rst-full
+   CImgElement_put_srcW was not found in ../template/sigs.rst-full
+   COleScript_CompileA was not found in ../template/sigs.rst-full
+   COleScript_CompileW was not found in ../template/sigs.rst-full
+   CScriptElement_put_srcA was not found in ../template/sigs.rst-full
+   CScriptElement_put_srcW was not found in ../template/sigs.rst-full
+   CWindow_AddTimeoutCodeA was not found in ../template/sigs.rst-full
+   CWindow_AddTimeoutCodeW was not found in ../template/sigs.rst-full
+   CertControlStoreA was not found in ../template/sigs.rst-full
+   CertControlStoreW was not found in ../template/sigs.rst-full
+   CertCreateCertificateContextA was not found in ../template/sigs.rst-full
+   CertCreateCertificateContextW was not found in ../template/sigs.rst-full
+   CertOpenStoreA was not found in ../template/sigs.rst-full
+   CertOpenStoreW was not found in ../template/sigs.rst-full
+   CertOpenSystemStoreAA was not found in ../template/sigs.rst-full
+   CertOpenSystemStoreAW was not found in ../template/sigs.rst-full
+   CertOpenSystemStoreWA was not found in ../template/sigs.rst-full
+   CertOpenSystemStoreWW was not found in ../template/sigs.rst-full
+   CoCreateInstanceA was not found in ../template/sigs.rst-full
+   CoCreateInstanceW was not found in ../template/sigs.rst-full
+   CoCreateInstanceExA was not found in ../template/sigs.rst-full
+   CoCreateInstanceExW was not found in ../template/sigs.rst-full
+   CoGetClassObjectA was not found in ../template/sigs.rst-full
+   CoGetClassObjectW was not found in ../template/sigs.rst-full
+   CoInitializeExA was not found in ../template/sigs.rst-full
+   CoInitializeExW was not found in ../template/sigs.rst-full
+   CoInitializeSecurityA was not found in ../template/sigs.rst-full
+   CoInitializeSecurityW was not found in ../template/sigs.rst-full
+   CoUninitialize was not found in ../template/sigs.rst-full
+   CoUninitializeA was not found in ../template/sigs.rst-full
+   CoUninitializeW was not found in ../template/sigs.rst-full
+   ConnectExA was not found in ../template/sigs.rst-full
+   ConnectExW was not found in ../template/sigs.rst-full
+   CreateActCtxWA was not found in ../template/sigs.rst-full
+   CreateActCtxWW was not found in ../template/sigs.rst-full
+   CreateToolhelp32SnapshotA was not found in ../template/sigs.rst-full
+   CreateToolhelp32SnapshotW was not found in ../template/sigs.rst-full
+   CryptAcquireContextAA was not found in ../template/sigs.rst-full
+   CryptAcquireContextAW was not found in ../template/sigs.rst-full
+   CryptAcquireContextWA was not found in ../template/sigs.rst-full
+   CryptAcquireContextWW was not found in ../template/sigs.rst-full
+   CryptCreateHashA was not found in ../template/sigs.rst-full
+   CryptCreateHashW was not found in ../template/sigs.rst-full
+   CryptDecodeMessageA was not found in ../template/sigs.rst-full
+   CryptDecodeMessageW was not found in ../template/sigs.rst-full
+   CryptDecodeObjectExA was not found in ../template/sigs.rst-full
+   CryptDecodeObjectExW was not found in ../template/sigs.rst-full
+   CryptDecryptA was not found in ../template/sigs.rst-full
+   CryptDecryptW was not found in ../template/sigs.rst-full
+   CryptDecryptMessageA was not found in ../template/sigs.rst-full
+   CryptDecryptMessageW was not found in ../template/sigs.rst-full
+   CryptEncryptA was not found in ../template/sigs.rst-full
+   CryptEncryptW was not found in ../template/sigs.rst-full
+   CryptEncryptMessageA was not found in ../template/sigs.rst-full
+   CryptEncryptMessageW was not found in ../template/sigs.rst-full
+   CryptExportKeyA was not found in ../template/sigs.rst-full
+   CryptExportKeyW was not found in ../template/sigs.rst-full
+   CryptGenKeyA was not found in ../template/sigs.rst-full
+   CryptGenKeyW was not found in ../template/sigs.rst-full
+   CryptHashDataA was not found in ../template/sigs.rst-full
+   CryptHashDataW was not found in ../template/sigs.rst-full
+   CryptHashMessageA was not found in ../template/sigs.rst-full
+   CryptHashMessageW was not found in ../template/sigs.rst-full
+   CryptProtectDataA was not found in ../template/sigs.rst-full
+   CryptProtectDataW was not found in ../template/sigs.rst-full
+   CryptProtectMemoryA was not found in ../template/sigs.rst-full
+   CryptProtectMemoryW was not found in ../template/sigs.rst-full
+   CryptUnprotectDataA was not found in ../template/sigs.rst-full
+   CryptUnprotectDataW was not found in ../template/sigs.rst-full
+   CryptUnprotectMemoryA was not found in ../template/sigs.rst-full
+   CryptUnprotectMemoryW was not found in ../template/sigs.rst-full
+   DecryptMessageA was not found in ../template/sigs.rst-full
+   DecryptMessageW was not found in ../template/sigs.rst-full
+   DeleteUrlCacheEntryAA was not found in ../template/sigs.rst-full
+   DeleteUrlCacheEntryAW was not found in ../template/sigs.rst-full
+   DeleteUrlCacheEntryWA was not found in ../template/sigs.rst-full
+   DeleteUrlCacheEntryWW was not found in ../template/sigs.rst-full
+   DeviceIoControlA was not found in ../template/sigs.rst-full
+   DeviceIoControlW was not found in ../template/sigs.rst-full
+   DnsQuery_AA was not found in ../template/sigs.rst-full
+   DnsQuery_AW was not found in ../template/sigs.rst-full
+   DnsQuery_UTF8A was not found in ../template/sigs.rst-full
+   DnsQuery_UTF8W was not found in ../template/sigs.rst-full
+   DnsQuery_WA was not found in ../template/sigs.rst-full
+   DnsQuery_WW was not found in ../template/sigs.rst-full
+   DrawTextExAA was not found in ../template/sigs.rst-full
+   DrawTextExAW was not found in ../template/sigs.rst-full
+   DrawTextExWA was not found in ../template/sigs.rst-full
+   DrawTextExWW was not found in ../template/sigs.rst-full
+   EncryptMessageA was not found in ../template/sigs.rst-full
+   EncryptMessageW was not found in ../template/sigs.rst-full
+   EnumServicesStatusAA was not found in ../template/sigs.rst-full
+   EnumServicesStatusAW was not found in ../template/sigs.rst-full
+   EnumServicesStatusWA was not found in ../template/sigs.rst-full
+   EnumServicesStatusWW was not found in ../template/sigs.rst-full
+   EnumWindowsA was not found in ../template/sigs.rst-full
+   EnumWindowsW was not found in ../template/sigs.rst-full
+   ExitWindowsExA was not found in ../template/sigs.rst-full
+   ExitWindowsExW was not found in ../template/sigs.rst-full
+   FindResourceAA was not found in ../template/sigs.rst-full
+   FindResourceAW was not found in ../template/sigs.rst-full
+   FindResourceExAA was not found in ../template/sigs.rst-full
+   FindResourceExAW was not found in ../template/sigs.rst-full
+   FindResourceExWA was not found in ../template/sigs.rst-full
+   FindResourceExWW was not found in ../template/sigs.rst-full
+   FindResourceWA was not found in ../template/sigs.rst-full
+   FindResourceWW was not found in ../template/sigs.rst-full
+   FindWindowAA was not found in ../template/sigs.rst-full
+   FindWindowAW was not found in ../template/sigs.rst-full
+   FindWindowExAA was not found in ../template/sigs.rst-full
+   FindWindowExAW was not found in ../template/sigs.rst-full
+   FindWindowExWA was not found in ../template/sigs.rst-full
+   FindWindowExWW was not found in ../template/sigs.rst-full
+   FindWindowWA was not found in ../template/sigs.rst-full
+   FindWindowWW was not found in ../template/sigs.rst-full
+   GetAdaptersAddressesA was not found in ../template/sigs.rst-full
+   GetAdaptersAddressesW was not found in ../template/sigs.rst-full
+   GetAdaptersInfoA was not found in ../template/sigs.rst-full
+   GetAdaptersInfoW was not found in ../template/sigs.rst-full
+   GetAsyncKeyStateA was not found in ../template/sigs.rst-full
+   GetAsyncKeyStateW was not found in ../template/sigs.rst-full
+   GetBestInterfaceExA was not found in ../template/sigs.rst-full
+   GetBestInterfaceExW was not found in ../template/sigs.rst-full
+   GetCursorPosA was not found in ../template/sigs.rst-full
+   GetCursorPosW was not found in ../template/sigs.rst-full
+   GetDiskFreeSpaceExWA was not found in ../template/sigs.rst-full
+   GetDiskFreeSpaceExWW was not found in ../template/sigs.rst-full
+   GetDiskFreeSpaceWA was not found in ../template/sigs.rst-full
+   GetDiskFreeSpaceWW was not found in ../template/sigs.rst-full
+   GetFileVersionInfoExWA was not found in ../template/sigs.rst-full
+   GetFileVersionInfoExWW was not found in ../template/sigs.rst-full
+   GetFileVersionInfoSizeExWA was not found in ../template/sigs.rst-full
+   GetFileVersionInfoSizeExWW was not found in ../template/sigs.rst-full
+   GetFileVersionInfoSizeWA was not found in ../template/sigs.rst-full
+   GetFileVersionInfoSizeWW was not found in ../template/sigs.rst-full
+   GetFileVersionInfoWA was not found in ../template/sigs.rst-full
+   GetFileVersionInfoWW was not found in ../template/sigs.rst-full
+   GetForegroundWindowA was not found in ../template/sigs.rst-full
+   GetForegroundWindowW was not found in ../template/sigs.rst-full
+   GetInterfaceInfoA was not found in ../template/sigs.rst-full
+   GetInterfaceInfoW was not found in ../template/sigs.rst-full
+   GetKeyStateA was not found in ../template/sigs.rst-full
+   GetKeyStateW was not found in ../template/sigs.rst-full
+   GetKeyboardStateA was not found in ../template/sigs.rst-full
+   GetKeyboardStateW was not found in ../template/sigs.rst-full
+   GetSystemMetricsA was not found in ../template/sigs.rst-full
+   GetSystemMetricsW was not found in ../template/sigs.rst-full
+   GetUserNameExAA was not found in ../template/sigs.rst-full
+   GetUserNameExAW was not found in ../template/sigs.rst-full
+   GetUserNameExWA was not found in ../template/sigs.rst-full
+   GetUserNameExWW was not found in ../template/sigs.rst-full
+   GetVolumeNameForVolumeMountPointWA was not found in ../template/sigs.rst-full
+   GetVolumeNameForVolumeMountPointWW was not found in ../template/sigs.rst-full
+   GetVolumePathNameWA was not found in ../template/sigs.rst-full
+   GetVolumePathNameWW was not found in ../template/sigs.rst-full
+   GetVolumePathNamesForVolumeNameWA was not found in ../template/sigs.rst-full
+   GetVolumePathNamesForVolumeNameWW was not found in ../template/sigs.rst-full
+   GlobalMemoryStatusA was not found in ../template/sigs.rst-full
+   GlobalMemoryStatusW was not found in ../template/sigs.rst-full
+   GlobalMemoryStatusExA was not found in ../template/sigs.rst-full
+   GlobalMemoryStatusExW was not found in ../template/sigs.rst-full
+   HttpOpenRequestAA was not found in ../template/sigs.rst-full
+   HttpOpenRequestAW was not found in ../template/sigs.rst-full
+   HttpOpenRequestWA was not found in ../template/sigs.rst-full
+   HttpOpenRequestWW was not found in ../template/sigs.rst-full
+   HttpSendRequestAA was not found in ../template/sigs.rst-full
+   HttpSendRequestAW was not found in ../template/sigs.rst-full
+   HttpSendRequestWA was not found in ../template/sigs.rst-full
+   HttpSendRequestWW was not found in ../template/sigs.rst-full
+   IWbemServices_ExecMethodA was not found in ../template/sigs.rst-full
+   IWbemServices_ExecMethodW was not found in ../template/sigs.rst-full
+   IWbemServices_ExecMethodAsyncA was not found in ../template/sigs.rst-full
+   IWbemServices_ExecMethodAsyncW was not found in ../template/sigs.rst-full
+   IWbemServices_ExecQueryA was not found in ../template/sigs.rst-full
+   IWbemServices_ExecQueryW was not found in ../template/sigs.rst-full
+   IWbemServices_ExecQueryAsyncA was not found in ../template/sigs.rst-full
+   IWbemServices_ExecQueryAsyncW was not found in ../template/sigs.rst-full
+   InternetCloseHandleA was not found in ../template/sigs.rst-full
+   InternetCloseHandleW was not found in ../template/sigs.rst-full
+   InternetConnectAA was not found in ../template/sigs.rst-full
+   InternetConnectAW was not found in ../template/sigs.rst-full
+   InternetConnectWA was not found in ../template/sigs.rst-full
+   InternetConnectWW was not found in ../template/sigs.rst-full
+   InternetGetConnectedStateA was not found in ../template/sigs.rst-full
+   InternetGetConnectedStateW was not found in ../template/sigs.rst-full
+   InternetOpenAA was not found in ../template/sigs.rst-full
+   InternetOpenAW was not found in ../template/sigs.rst-full
+   InternetOpenUrlAA was not found in ../template/sigs.rst-full
+   InternetOpenUrlAW was not found in ../template/sigs.rst-full
+   InternetOpenUrlWA was not found in ../template/sigs.rst-full
+   InternetOpenUrlWW was not found in ../template/sigs.rst-full
+   InternetOpenWA was not found in ../template/sigs.rst-full
+   InternetOpenWW was not found in ../template/sigs.rst-full
+   InternetQueryOptionAA was not found in ../template/sigs.rst-full
+   InternetQueryOptionAW was not found in ../template/sigs.rst-full
+   InternetReadFileA was not found in ../template/sigs.rst-full
+   InternetReadFileW was not found in ../template/sigs.rst-full
+   InternetSetOptionAA was not found in ../template/sigs.rst-full
+   InternetSetOptionAW was not found in ../template/sigs.rst-full
+   InternetSetStatusCallbackA was not found in ../template/sigs.rst-full
+   InternetSetStatusCallbackW was not found in ../template/sigs.rst-full
+   InternetWriteFileA was not found in ../template/sigs.rst-full
+   InternetWriteFileW was not found in ../template/sigs.rst-full
+   IsDebuggerPresentA was not found in ../template/sigs.rst-full
+   IsDebuggerPresentW was not found in ../template/sigs.rst-full
+   LoadResourceA was not found in ../template/sigs.rst-full
+   LoadResourceW was not found in ../template/sigs.rst-full
+   LoadStringAA was not found in ../template/sigs.rst-full
+   LoadStringAW was not found in ../template/sigs.rst-full
+   LoadStringWA was not found in ../template/sigs.rst-full
+   LoadStringWW was not found in ../template/sigs.rst-full
+   LookupAccountSidWA was not found in ../template/sigs.rst-full
+   LookupAccountSidWW was not found in ../template/sigs.rst-full
+   LookupPrivilegeValueWA was not found in ../template/sigs.rst-full
+   LookupPrivilegeValueWW was not found in ../template/sigs.rst-full
+   MessageBoxTimeoutAA was not found in ../template/sigs.rst-full
+   MessageBoxTimeoutAW was not found in ../template/sigs.rst-full
+   MessageBoxTimeoutWA was not found in ../template/sigs.rst-full
+   MessageBoxTimeoutWW was not found in ../template/sigs.rst-full
+   Module32FirstWA was not found in ../template/sigs.rst-full
+   Module32FirstWW was not found in ../template/sigs.rst-full
+   Module32NextWA was not found in ../template/sigs.rst-full
+   Module32NextWW was not found in ../template/sigs.rst-full
+   NetGetJoinInformationA was not found in ../template/sigs.rst-full
+   NetGetJoinInformationW was not found in ../template/sigs.rst-full
+   NetShareEnumA was not found in ../template/sigs.rst-full
+   NetShareEnumW was not found in ../template/sigs.rst-full
+   NetUserGetInfoA was not found in ../template/sigs.rst-full
+   NetUserGetInfoW was not found in ../template/sigs.rst-full
+   NetUserGetLocalGroupsA was not found in ../template/sigs.rst-full
+   NetUserGetLocalGroupsW was not found in ../template/sigs.rst-full
+   ObtainUserAgentStringA was not found in ../template/sigs.rst-full
+   ObtainUserAgentStringW was not found in ../template/sigs.rst-full
+   OleConvertOLESTREAMToIStorageA was not found in ../template/sigs.rst-full
+   OleConvertOLESTREAMToIStorageW was not found in ../template/sigs.rst-full
+   OleInitializeA was not found in ../template/sigs.rst-full
+   OleInitializeW was not found in ../template/sigs.rst-full
+   OutputDebugStringAA was not found in ../template/sigs.rst-full
+   OutputDebugStringAW was not found in ../template/sigs.rst-full
+   PRFA was not found in ../template/sigs.rst-full
+   PRFW was not found in ../template/sigs.rst-full
+   ReadCabinetStateA was not found in ../template/sigs.rst-full
+   ReadCabinetStateW was not found in ../template/sigs.rst-full
+   ReadProcessMemoryA was not found in ../template/sigs.rst-full
+   ReadProcessMemoryW was not found in ../template/sigs.rst-full
+   RegEnumKeyWA was not found in ../template/sigs.rst-full
+   RegEnumKeyWW was not found in ../template/sigs.rst-full
+   RegisterHotKeyA was not found in ../template/sigs.rst-full
+   RegisterHotKeyW was not found in ../template/sigs.rst-full
+   SHGetFolderPathWA was not found in ../template/sigs.rst-full
+   SHGetFolderPathWW was not found in ../template/sigs.rst-full
+   SHGetSpecialFolderLocationA was not found in ../template/sigs.rst-full
+   SHGetSpecialFolderLocationW was not found in ../template/sigs.rst-full
+   SendNotifyMessageAA was not found in ../template/sigs.rst-full
+   SendNotifyMessageAW was not found in ../template/sigs.rst-full
+   SendNotifyMessageWA was not found in ../template/sigs.rst-full
+   SendNotifyMessageWW was not found in ../template/sigs.rst-full
+   SetErrorModeA was not found in ../template/sigs.rst-full
+   SetErrorModeW was not found in ../template/sigs.rst-full
+   SetUnhandledExceptionFilterA was not found in ../template/sigs.rst-full
+   SetUnhandledExceptionFilterW was not found in ../template/sigs.rst-full
+   ShellExecuteExWA was not found in ../template/sigs.rst-full
+   ShellExecuteExWW was not found in ../template/sigs.rst-full
+   SizeofResourceA was not found in ../template/sigs.rst-full
+   SizeofResourceW was not found in ../template/sigs.rst-full
+   Ssl3GenerateKeyMaterialA was not found in ../template/sigs.rst-full
+   Ssl3GenerateKeyMaterialW was not found in ../template/sigs.rst-full
+   TaskDialogA was not found in ../template/sigs.rst-full
+   TaskDialogW was not found in ../template/sigs.rst-full
+   Thread32FirstA was not found in ../template/sigs.rst-full
+   Thread32FirstW was not found in ../template/sigs.rst-full
+   Thread32NextA was not found in ../template/sigs.rst-full
+   Thread32NextW was not found in ../template/sigs.rst-full
+   TransmitFileA was not found in ../template/sigs.rst-full
+   TransmitFileW was not found in ../template/sigs.rst-full
+   UuidCreateA was not found in ../template/sigs.rst-full
+   UuidCreateW was not found in ../template/sigs.rst-full
+   WNetGetProviderNameWA was not found in ../template/sigs.rst-full
+   WNetGetProviderNameWW was not found in ../template/sigs.rst-full
+   WriteConsoleAA was not found in ../template/sigs.rst-full
+   WriteConsoleAW was not found in ../template/sigs.rst-full
+   WriteConsoleWA was not found in ../template/sigs.rst-full
+   WriteConsoleWW was not found in ../template/sigs.rst-full
+   WriteProcessMemoryA was not found in ../template/sigs.rst-full
+   WriteProcessMemoryW was not found in ../template/sigs.rst-full
+   systemA was not found in ../template/sigs.rst-full
+   systemW was not found in ../template/sigs.rst-full
+   timeGetTimeA was not found in ../template/sigs.rst-full
+   timeGetTimeW was not found in ../template/sigs.rst-full
 Scanning time.txt
    AlertSamplesAvailFunc was not found in ../template/sigs.rst-full
    AlertSamplesAvailFuncA was not found in ../template/sigs.rst-full
@@ -573,6 +871,8 @@ Scanning time.txt
    DosDateTimeToFileTimeW was not found in ../template/sigs.rst-full
    EnumDynamicTimeZoneInformationA was not found in ../template/sigs.rst-full
    EnumDynamicTimeZoneInformationW was not found in ../template/sigs.rst-full
+   FileTimeToDosDateTimeA was not found in ../template/sigs.rst-full
+   FileTimeToDosDateTimeW was not found in ../template/sigs.rst-full
    FileTimeToLocalFileTimeA was not found in ../template/sigs.rst-full
    FileTimeToLocalFileTimeW was not found in ../template/sigs.rst-full
    FileTimeToSystemTimeA was not found in ../template/sigs.rst-full
@@ -597,6 +897,7 @@ Scanning time.txt
    GetTickCountW was not found in ../template/sigs.rst-full
    GetTickCount64A was not found in ../template/sigs.rst-full
    GetTickCount64W was not found in ../template/sigs.rst-full
+   GetTimeFormat was not found in ../template/sigs.rst-full
    GetTimeSysInfoFunc was not found in ../template/sigs.rst-full
    GetTimeSysInfoFuncA was not found in ../template/sigs.rst-full
    GetTimeSysInfoFuncW was not found in ../template/sigs.rst-full
@@ -626,12 +927,6 @@ Scanning time.txt
    QueryUnbiasedInterruptTimePrecise was not found in ../template/sigs.rst-full
    QueryUnbiasedInterruptTimePreciseA was not found in ../template/sigs.rst-full
    QueryUnbiasedInterruptTimePreciseW was not found in ../template/sigs.rst-full
-   RtlLocalTimeToSystemTime was not found in ../template/sigs.rst-full
-   RtlLocalTimeToSystemTimeA was not found in ../template/sigs.rst-full
-   RtlLocalTimeToSystemTimeW was not found in ../template/sigs.rst-full
-   RtlTimeToSecondsSince1970 was not found in ../template/sigs.rst-full
-   RtlTimeToSecondsSince1970A was not found in ../template/sigs.rst-full
-   RtlTimeToSecondsSince1970W was not found in ../template/sigs.rst-full
    SetDynamicTimeZoneInformationA was not found in ../template/sigs.rst-full
    SetDynamicTimeZoneInformationW was not found in ../template/sigs.rst-full
    SetFileTimeA was not found in ../template/sigs.rst-full
@@ -669,9 +964,6 @@ Scanning time.txt
    TzSpecificLocalTimeToSystemTimeW was not found in ../template/sigs.rst-full
    TzSpecificLocalTimeToSystemTimeExA was not found in ../template/sigs.rst-full
    TzSpecificLocalTimeToSystemTimeExW was not found in ../template/sigs.rst-full
-   GetTimeFormat was not found in ../template/sigs.rst-full
-   FileTimeToDosDateTimeA was not found in ../template/sigs.rst-full
-   FileTimeToDosDateTimeW was not found in ../template/sigs.rst-full
 Scanning hook.txt
    CBTProc was not found in ../template/sigs.rst-full
    CBTProcA was not found in ../template/sigs.rst-full
@@ -734,11 +1026,19 @@ Scanning sync.txt
    ChangeTimerQueueTimerW was not found in ../template/sigs.rst-full
    ClosePrivateNamespaceA was not found in ../template/sigs.rst-full
    ClosePrivateNamespaceW was not found in ../template/sigs.rst-full
+   CreateEvent was not found in ../template/sigs.rst-full
+   CreateEventEx was not found in ../template/sigs.rst-full
+   CreateMutex was not found in ../template/sigs.rst-full
+   CreateMutexEx was not found in ../template/sigs.rst-full
    CreatePrivateNamespace was not found in ../template/sigs.rst-full
+   CreateSemaphore was not found in ../template/sigs.rst-full
+   CreateSemaphoreEx was not found in ../template/sigs.rst-full
    CreateTimerQueueA was not found in ../template/sigs.rst-full
    CreateTimerQueueW was not found in ../template/sigs.rst-full
    CreateTimerQueueTimerA was not found in ../template/sigs.rst-full
    CreateTimerQueueTimerW was not found in ../template/sigs.rst-full
+   CreateWaitableTimer was not found in ../template/sigs.rst-full
+   CreateWaitableTimerEx was not found in ../template/sigs.rst-full
    DeleteSynchronizationBarrierA was not found in ../template/sigs.rst-full
    DeleteSynchronizationBarrierW was not found in ../template/sigs.rst-full
    DeleteTimerQueueA was not found in ../template/sigs.rst-full
@@ -815,14 +1115,6 @@ Scanning sync.txt
    WakeByAddressSingleW was not found in ../template/sigs.rst-full
    WakeConditionVariableA was not found in ../template/sigs.rst-full
    WakeConditionVariableW was not found in ../template/sigs.rst-full
-   CreateEvent was not found in ../template/sigs.rst-full
-   CreateEventEx was not found in ../template/sigs.rst-full
-   CreateMutex was not found in ../template/sigs.rst-full
-   CreateMutexEx was not found in ../template/sigs.rst-full
-   CreateSemaphore was not found in ../template/sigs.rst-full
-   CreateSemaphoreEx was not found in ../template/sigs.rst-full
-   CreateWaitableTimer was not found in ../template/sigs.rst-full
-   CreateWaitableTimerEx was not found in ../template/sigs.rst-full
 Scanning network.txt
    AcceptEx was not found in ../template/sigs.rst-full
    AcceptExA was not found in ../template/sigs.rst-full
@@ -839,7 +1131,10 @@ Scanning network.txt
    CleanupCredentialCache was not found in ../template/sigs.rst-full
    CleanupCredentialCacheA was not found in ../template/sigs.rst-full
    CleanupCredentialCacheW was not found in ../template/sigs.rst-full
-   ConnectEx was not found in ../template/sigs.rst-full
+   CommitUrlCacheEntryAA was not found in ../template/sigs.rst-full
+   CommitUrlCacheEntryAW was not found in ../template/sigs.rst-full
+   CommitUrlCacheEntryWA was not found in ../template/sigs.rst-full
+   CommitUrlCacheEntryWW was not found in ../template/sigs.rst-full
    ConnectExA was not found in ../template/sigs.rst-full
    ConnectExW was not found in ../template/sigs.rst-full
    ConvertInterfaceAliasToLuid was not found in ../template/sigs.rst-full
@@ -951,8 +1246,6 @@ Scanning network.txt
    DeleteUnicastIpAddressEntryA was not found in ../template/sigs.rst-full
    DeleteUnicastIpAddressEntryW was not found in ../template/sigs.rst-full
    DeleteUrlCacheEntry was not found in ../template/sigs.rst-full
-   DeleteUrlCacheEntryA was not found in ../template/sigs.rst-full
-   DeleteUrlCacheEntryW was not found in ../template/sigs.rst-full
    DeleteUrlCacheGroup was not found in ../template/sigs.rst-full
    DeleteUrlCacheGroupA was not found in ../template/sigs.rst-full
    DeleteUrlCacheGroupW was not found in ../template/sigs.rst-full
@@ -1667,16 +1960,17 @@ Scanning network.txt
    GetAdapterIndex was not found in ../template/sigs.rst-full
    GetAdapterIndexA was not found in ../template/sigs.rst-full
    GetAdapterIndexW was not found in ../template/sigs.rst-full
-   GetAdaptersAddresses was not found in ../template/sigs.rst-full
    GetAdaptersAddressesA was not found in ../template/sigs.rst-full
    GetAdaptersAddressesW was not found in ../template/sigs.rst-full
-   GetAdaptersInfo was not found in ../template/sigs.rst-full
    GetAdaptersInfoA was not found in ../template/sigs.rst-full
    GetAdaptersInfoW was not found in ../template/sigs.rst-full
+   GetAddrInfoEx was not found in ../template/sigs.rst-full
    GetAddrInfoExCancelA was not found in ../template/sigs.rst-full
    GetAddrInfoExCancelW was not found in ../template/sigs.rst-full
    GetAddrInfoExOverlappedResultA was not found in ../template/sigs.rst-full
    GetAddrInfoExOverlappedResultW was not found in ../template/sigs.rst-full
+   GetAddrInfoWA was not found in ../template/sigs.rst-full
+   GetAddrInfoWW was not found in ../template/sigs.rst-full
    GetAddressByName was not found in ../template/sigs.rst-full
    GetAddressByNameA was not found in ../template/sigs.rst-full
    GetAddressByNameW was not found in ../template/sigs.rst-full
@@ -1689,7 +1983,6 @@ Scanning network.txt
    GetBestInterface was not found in ../template/sigs.rst-full
    GetBestInterfaceA was not found in ../template/sigs.rst-full
    GetBestInterfaceW was not found in ../template/sigs.rst-full
-   GetBestInterfaceEx was not found in ../template/sigs.rst-full
    GetBestInterfaceExA was not found in ../template/sigs.rst-full
    GetBestInterfaceExW was not found in ../template/sigs.rst-full
    GetBestRoute was not found in ../template/sigs.rst-full
@@ -1727,7 +2020,6 @@ Scanning network.txt
    GetIfTable2Ex was not found in ../template/sigs.rst-full
    GetIfTable2ExA was not found in ../template/sigs.rst-full
    GetIfTable2ExW was not found in ../template/sigs.rst-full
-   GetInterfaceInfo was not found in ../template/sigs.rst-full
    GetInterfaceInfoA was not found in ../template/sigs.rst-full
    GetInterfaceInfoW was not found in ../template/sigs.rst-full
    GetInvertedIfStackTable was not found in ../template/sigs.rst-full
@@ -1810,6 +2102,8 @@ Scanning network.txt
    GetUnicastIpAddressTable was not found in ../template/sigs.rst-full
    GetUnicastIpAddressTableA was not found in ../template/sigs.rst-full
    GetUnicastIpAddressTableW was not found in ../template/sigs.rst-full
+   GetUrlCacheEntryInfo was not found in ../template/sigs.rst-full
+   GetUrlCacheEntryInfoEx was not found in ../template/sigs.rst-full
    GetUrlCacheGroupAttribute was not found in ../template/sigs.rst-full
    GetUrlCacheGroupAttributeA was not found in ../template/sigs.rst-full
    GetUrlCacheGroupAttributeW was not found in ../template/sigs.rst-full
@@ -1864,8 +2158,6 @@ Scanning network.txt
    HttpInitializeA was not found in ../template/sigs.rst-full
    HttpInitializeW was not found in ../template/sigs.rst-full
    HttpOpenRequest was not found in ../template/sigs.rst-full
-   HttpOpenRequestA was not found in ../template/sigs.rst-full
-   HttpOpenRequestW was not found in ../template/sigs.rst-full
    HttpPrepareUrlA was not found in ../template/sigs.rst-full
    HttpPrepareUrlW was not found in ../template/sigs.rst-full
    HttpQueryInfo was not found in ../template/sigs.rst-full
@@ -1892,8 +2184,6 @@ Scanning network.txt
    HttpSendHttpResponseA was not found in ../template/sigs.rst-full
    HttpSendHttpResponseW was not found in ../template/sigs.rst-full
    HttpSendRequest was not found in ../template/sigs.rst-full
-   HttpSendRequestA was not found in ../template/sigs.rst-full
-   HttpSendRequestW was not found in ../template/sigs.rst-full
    HttpSendRequestEx was not found in ../template/sigs.rst-full
    HttpSendRequestExA was not found in ../template/sigs.rst-full
    HttpSendRequestExW was not found in ../template/sigs.rst-full
@@ -1965,7 +2255,6 @@ Scanning network.txt
    InternetClearAllPerSiteCookieDecisions was not found in ../template/sigs.rst-full
    InternetClearAllPerSiteCookieDecisionsA was not found in ../template/sigs.rst-full
    InternetClearAllPerSiteCookieDecisionsW was not found in ../template/sigs.rst-full
-   InternetCloseHandle was not found in ../template/sigs.rst-full
    InternetCloseHandleA was not found in ../template/sigs.rst-full
    InternetCloseHandleW was not found in ../template/sigs.rst-full
    InternetCombineUrl was not found in ../template/sigs.rst-full
@@ -1973,9 +2262,8 @@ Scanning network.txt
    InternetConfirmZoneCrossingA was not found in ../template/sigs.rst-full
    InternetConfirmZoneCrossingW was not found in ../template/sigs.rst-full
    InternetConnect was not found in ../template/sigs.rst-full
-   InternetConnectA was not found in ../template/sigs.rst-full
-   InternetConnectW was not found in ../template/sigs.rst-full
    InternetCrackUrl was not found in ../template/sigs.rst-full
+   InternetCreateUrl was not found in ../template/sigs.rst-full
    InternetDeInitializeAutoProxyDll was not found in ../template/sigs.rst-full
    InternetDeInitializeAutoProxyDllA was not found in ../template/sigs.rst-full
    InternetDeInitializeAutoProxyDllW was not found in ../template/sigs.rst-full
@@ -1991,6 +2279,9 @@ Scanning network.txt
    InternetFindNextFile was not found in ../template/sigs.rst-full
    InternetFindNextFileA was not found in ../template/sigs.rst-full
    InternetFindNextFileW was not found in ../template/sigs.rst-full
+   InternetGetConnectedStateA was not found in ../template/sigs.rst-full
+   InternetGetConnectedStateW was not found in ../template/sigs.rst-full
+   InternetGetConnectedStateEx was not found in ../template/sigs.rst-full
    InternetGetCookie was not found in ../template/sigs.rst-full
    InternetGetCookieEx was not found in ../template/sigs.rst-full
    InternetGetLastResponseInfo was not found in ../template/sigs.rst-full
@@ -2013,18 +2304,12 @@ Scanning network.txt
    InternetLockRequestFileA was not found in ../template/sigs.rst-full
    InternetLockRequestFileW was not found in ../template/sigs.rst-full
    InternetOpen was not found in ../template/sigs.rst-full
-   InternetOpenA was not found in ../template/sigs.rst-full
-   InternetOpenW was not found in ../template/sigs.rst-full
    InternetOpenUrl was not found in ../template/sigs.rst-full
-   InternetOpenUrlA was not found in ../template/sigs.rst-full
-   InternetOpenUrlW was not found in ../template/sigs.rst-full
    InternetQueryDataAvailable was not found in ../template/sigs.rst-full
    InternetQueryDataAvailableA was not found in ../template/sigs.rst-full
    InternetQueryDataAvailableW was not found in ../template/sigs.rst-full
    InternetQueryOption was not found in ../template/sigs.rst-full
-   InternetQueryOptionA was not found in ../template/sigs.rst-full
    InternetQueryOptionW was not found in ../template/sigs.rst-full
-   InternetReadFile was not found in ../template/sigs.rst-full
    InternetReadFileA was not found in ../template/sigs.rst-full
    InternetReadFileW was not found in ../template/sigs.rst-full
    InternetReadFileEx was not found in ../template/sigs.rst-full
@@ -2041,7 +2326,6 @@ Scanning network.txt
    InternetSetFilePointerA was not found in ../template/sigs.rst-full
    InternetSetFilePointerW was not found in ../template/sigs.rst-full
    InternetSetOption was not found in ../template/sigs.rst-full
-   InternetSetOptionA was not found in ../template/sigs.rst-full
    InternetSetOptionW was not found in ../template/sigs.rst-full
    InternetSetOptionEx was not found in ../template/sigs.rst-full
    InternetSetOptionExA was not found in ../template/sigs.rst-full
@@ -2049,7 +2333,6 @@ Scanning network.txt
    InternetSetPerSiteCookieDecisions was not found in ../template/sigs.rst-full
    InternetSetPerSiteCookieDecisionsA was not found in ../template/sigs.rst-full
    InternetSetPerSiteCookieDecisionsW was not found in ../template/sigs.rst-full
-   InternetSetStatusCallback was not found in ../template/sigs.rst-full
    InternetSetStatusCallbackA was not found in ../template/sigs.rst-full
    InternetSetStatusCallbackW was not found in ../template/sigs.rst-full
    InternetStatusCallback was not found in ../template/sigs.rst-full
@@ -2064,7 +2347,6 @@ Scanning network.txt
    InternetUnlockRequestFile was not found in ../template/sigs.rst-full
    InternetUnlockRequestFileA was not found in ../template/sigs.rst-full
    InternetUnlockRequestFileW was not found in ../template/sigs.rst-full
-   InternetWriteFile was not found in ../template/sigs.rst-full
    InternetWriteFileA was not found in ../template/sigs.rst-full
    InternetWriteFileW was not found in ../template/sigs.rst-full
    IpReleaseAddress was not found in ../template/sigs.rst-full
@@ -2163,7 +2445,6 @@ Scanning network.txt
    NetGetDisplayInformationIndex was not found in ../template/sigs.rst-full
    NetGetDisplayInformationIndexA was not found in ../template/sigs.rst-full
    NetGetDisplayInformationIndexW was not found in ../template/sigs.rst-full
-   NetGetJoinInformation was not found in ../template/sigs.rst-full
    NetGetJoinInformationA was not found in ../template/sigs.rst-full
    NetGetJoinInformationW was not found in ../template/sigs.rst-full
    NetGetJoinableOUs was not found in ../template/sigs.rst-full
@@ -2343,10 +2624,8 @@ Scanning network.txt
    NetUserGetGroups was not found in ../template/sigs.rst-full
    NetUserGetGroupsA was not found in ../template/sigs.rst-full
    NetUserGetGroupsW was not found in ../template/sigs.rst-full
-   NetUserGetInfo was not found in ../template/sigs.rst-full
    NetUserGetInfoA was not found in ../template/sigs.rst-full
    NetUserGetInfoW was not found in ../template/sigs.rst-full
-   NetUserGetLocalGroups was not found in ../template/sigs.rst-full
    NetUserGetLocalGroupsA was not found in ../template/sigs.rst-full
    NetUserGetLocalGroupsW was not found in ../template/sigs.rst-full
    NetUserModalsGet was not found in ../template/sigs.rst-full
@@ -3004,30 +3283,6 @@ Scanning network.txt
    RpcTestCancel was not found in ../template/sigs.rst-full
    RpcTestCancelA was not found in ../template/sigs.rst-full
    RpcTestCancelW was not found in ../template/sigs.rst-full
-   RtlIpv4AddressToString was not found in ../template/sigs.rst-full
-   RtlIpv4AddressToStringA was not found in ../template/sigs.rst-full
-   RtlIpv4AddressToStringW was not found in ../template/sigs.rst-full
-   RtlIpv4AddressToStringEx was not found in ../template/sigs.rst-full
-   RtlIpv4AddressToStringExA was not found in ../template/sigs.rst-full
-   RtlIpv4AddressToStringExW was not found in ../template/sigs.rst-full
-   RtlIpv4StringToAddress was not found in ../template/sigs.rst-full
-   RtlIpv4StringToAddressA was not found in ../template/sigs.rst-full
-   RtlIpv4StringToAddressW was not found in ../template/sigs.rst-full
-   RtlIpv4StringToAddressEx was not found in ../template/sigs.rst-full
-   RtlIpv4StringToAddressExA was not found in ../template/sigs.rst-full
-   RtlIpv4StringToAddressExW was not found in ../template/sigs.rst-full
-   RtlIpv6AddressToString was not found in ../template/sigs.rst-full
-   RtlIpv6AddressToStringA was not found in ../template/sigs.rst-full
-   RtlIpv6AddressToStringW was not found in ../template/sigs.rst-full
-   RtlIpv6AddressToStringEx was not found in ../template/sigs.rst-full
-   RtlIpv6AddressToStringExA was not found in ../template/sigs.rst-full
-   RtlIpv6AddressToStringExW was not found in ../template/sigs.rst-full
-   RtlIpv6StringToAddress was not found in ../template/sigs.rst-full
-   RtlIpv6StringToAddressA was not found in ../template/sigs.rst-full
-   RtlIpv6StringToAddressW was not found in ../template/sigs.rst-full
-   RtlIpv6StringToAddressEx was not found in ../template/sigs.rst-full
-   RtlIpv6StringToAddressExA was not found in ../template/sigs.rst-full
-   RtlIpv6StringToAddressExW was not found in ../template/sigs.rst-full
    SendARP was not found in ../template/sigs.rst-full
    SendARPA was not found in ../template/sigs.rst-full
    SendARPW was not found in ../template/sigs.rst-full
@@ -3080,12 +3335,13 @@ Scanning network.txt
    SetUrlCacheGroupAttribute was not found in ../template/sigs.rst-full
    SetUrlCacheGroupAttributeA was not found in ../template/sigs.rst-full
    SetUrlCacheGroupAttributeW was not found in ../template/sigs.rst-full
-   TransmitFile was not found in ../template/sigs.rst-full
    TransmitFileA was not found in ../template/sigs.rst-full
    TransmitFileW was not found in ../template/sigs.rst-full
    TransmitPackets was not found in ../template/sigs.rst-full
    TransmitPacketsA was not found in ../template/sigs.rst-full
    TransmitPacketsW was not found in ../template/sigs.rst-full
+   URLDownloadToFile was not found in ../template/sigs.rst-full
+   URLDownloadToFileA was not found in ../template/sigs.rst-full
    UnenableRouter was not found in ../template/sigs.rst-full
    UnenableRouterA was not found in ../template/sigs.rst-full
    UnenableRouterW was not found in ../template/sigs.rst-full
@@ -3097,7 +3353,6 @@ Scanning network.txt
    UuidCompare was not found in ../template/sigs.rst-full
    UuidCompareA was not found in ../template/sigs.rst-full
    UuidCompareW was not found in ../template/sigs.rst-full
-   UuidCreate was not found in ../template/sigs.rst-full
    UuidCreateA was not found in ../template/sigs.rst-full
    UuidCreateW was not found in ../template/sigs.rst-full
    UuidCreateNil was not found in ../template/sigs.rst-full
@@ -3162,7 +3417,6 @@ Scanning network.txt
    WNetGetNetworkInformationW was not found in ../template/sigs.rst-full
    WNetGetProviderName was not found in ../template/sigs.rst-full
    WNetGetProviderNameA was not found in ../template/sigs.rst-full
-   WNetGetProviderNameW was not found in ../template/sigs.rst-full
    WNetGetResourceInformation was not found in ../template/sigs.rst-full
    WNetGetResourceInformationA was not found in ../template/sigs.rst-full
    WNetGetResourceInformationW was not found in ../template/sigs.rst-full
@@ -3482,6 +3736,8 @@ Scanning network.txt
    gai_strerror was not found in ../template/sigs.rst-full
    gai_strerrorA was not found in ../template/sigs.rst-full
    gai_strerrorW was not found in ../template/sigs.rst-full
+   getaddrinfoA was not found in ../template/sigs.rst-full
+   getaddrinfoW was not found in ../template/sigs.rst-full
    gethostbyaddrA was not found in ../template/sigs.rst-full
    gethostbyaddrW was not found in ../template/sigs.rst-full
    gethostbynameA was not found in ../template/sigs.rst-full
@@ -3572,82 +3828,6 @@ Scanning network.txt
    shutdownW was not found in ../template/sigs.rst-full
    socketA was not found in ../template/sigs.rst-full
    socketW was not found in ../template/sigs.rst-full
-   URLDownloadToFile was not found in ../template/sigs.rst-full
-   URLDownloadToFileA was not found in ../template/sigs.rst-full
-   GetAddrInfoWA was not found in ../template/sigs.rst-full
-   GetAddrInfoWW was not found in ../template/sigs.rst-full
-   getaddrinfoA was not found in ../template/sigs.rst-full
-   getaddrinfoW was not found in ../template/sigs.rst-full
-   InternetCreateUrl was not found in ../template/sigs.rst-full
-   GetAddrInfoEx was not found in ../template/sigs.rst-full
-   GetUrlCacheEntryInfo was not found in ../template/sigs.rst-full
-   GetUrlCacheEntryInfoEx was not found in ../template/sigs.rst-full
-   InternetGetConnectedState was not found in ../template/sigs.rst-full
-   InternetGetConnectedStateA was not found in ../template/sigs.rst-full
-   InternetGetConnectedStateW was not found in ../template/sigs.rst-full
-   InternetGetConnectedStateEx was not found in ../template/sigs.rst-full
-   CommitUrlCacheEntryAA was not found in ../template/sigs.rst-full
-   CommitUrlCacheEntryAW was not found in ../template/sigs.rst-full
-   CommitUrlCacheEntryWA was not found in ../template/sigs.rst-full
-   CommitUrlCacheEntryWW was not found in ../template/sigs.rst-full
-Scanning added.txt
-   CommitUrlCacheEntryAA was not found in ../template/sigs.rst-full
-   CommitUrlCacheEntryAW was not found in ../template/sigs.rst-full
-   CommitUrlCacheEntryWA was not found in ../template/sigs.rst-full
-   CommitUrlCacheEntryWW was not found in ../template/sigs.rst-full
-   CreateEvent was not found in ../template/sigs.rst-full
-   CreateEventEx was not found in ../template/sigs.rst-full
-   CreateJobObject was not found in ../template/sigs.rst-full
-   CreateMutex was not found in ../template/sigs.rst-full
-   CreateMutexEx was not found in ../template/sigs.rst-full
-   CreateProcessAsUser was not found in ../template/sigs.rst-full
-   CreateSemaphore was not found in ../template/sigs.rst-full
-   CreateSemaphoreEx was not found in ../template/sigs.rst-full
-   CreateWaitableTimer was not found in ../template/sigs.rst-full
-   CreateWaitableTimerEx was not found in ../template/sigs.rst-full
-   ExpandEnvironmentStrings was not found in ../template/sigs.rst-full
-   FileTimeToDosDateTimeA was not found in ../template/sigs.rst-full
-   FileTimeToDosDateTimeW was not found in ../template/sigs.rst-full
-   FindCloseChangeNotificationA was not found in ../template/sigs.rst-full
-   FindCloseChangeNotificationW was not found in ../template/sigs.rst-full
-   GetAddrInfoEx was not found in ../template/sigs.rst-full
-   GetAddrInfoWA was not found in ../template/sigs.rst-full
-   GetAddrInfoWW was not found in ../template/sigs.rst-full
-   GetFullPathName was not found in ../template/sigs.rst-full
-   GetModuleHandle was not found in ../template/sigs.rst-full
-   GetProcAddressA was not found in ../template/sigs.rst-full
-   GetProcAddressW was not found in ../template/sigs.rst-full
-   GetSystemDirectory was not found in ../template/sigs.rst-full
-   GetSystemWindowsDirectory was not found in ../template/sigs.rst-full
-   GetSystemWow64Directory was not found in ../template/sigs.rst-full
-   GetTimeFormat was not found in ../template/sigs.rst-full
-   GetUrlCacheEntryInfo was not found in ../template/sigs.rst-full
-   GetUrlCacheEntryInfoEx was not found in ../template/sigs.rst-full
-   InternetCreateUrl was not found in ../template/sigs.rst-full
-   InternetGetConnectedState was not found in ../template/sigs.rst-full
-   InternetGetConnectedStateA was not found in ../template/sigs.rst-full
-   InternetGetConnectedStateW was not found in ../template/sigs.rst-full
-   InternetGetConnectedStateEx was not found in ../template/sigs.rst-full
-   OpenSCManager was not found in ../template/sigs.rst-full
-   RegCreateKey was not found in ../template/sigs.rst-full
-   RegCreateKeyEx was not found in ../template/sigs.rst-full
-   RegEnumKeyEx was not found in ../template/sigs.rst-full
-   RegLoadMUIString was not found in ../template/sigs.rst-full
-   RegOpenKey was not found in ../template/sigs.rst-full
-   RegOpenKeyEx was not found in ../template/sigs.rst-full
-   RegQueryInfoKey was not found in ../template/sigs.rst-full
-   RegQueryValue was not found in ../template/sigs.rst-full
-   RegQueryValueEx was not found in ../template/sigs.rst-full
-   RemoveDllDirectoryA was not found in ../template/sigs.rst-full
-   RemoveDllDirectoryW was not found in ../template/sigs.rst-full
-   ReplaceFile was not found in ../template/sigs.rst-full
-   SearchPath was not found in ../template/sigs.rst-full
-   SetDefaultDllDirectoriesA was not found in ../template/sigs.rst-full
-   SetDefaultDllDirectoriesW was not found in ../template/sigs.rst-full
-   SetDllDirectory was not found in ../template/sigs.rst-full
-   SetEnvironmentVariable was not found in ../template/sigs.rst-full
-   getaddrinfoA was not found in ../template/sigs.rst-full
-   getaddrinfoW was not found in ../template/sigs.rst-full
 Scanning process.txt
    AllocateUserPhysicalPagesNumaA was not found in ../template/sigs.rst-full
    AllocateUserPhysicalPagesNumaW was not found in ../template/sigs.rst-full
@@ -3704,7 +3884,9 @@ Scanning process.txt
    CreateFiberW was not found in ../template/sigs.rst-full
    CreateFiberExA was not found in ../template/sigs.rst-full
    CreateFiberExW was not found in ../template/sigs.rst-full
+   CreateJobObject was not found in ../template/sigs.rst-full
    CreateProcess was not found in ../template/sigs.rst-full
+   CreateProcessAsUser was not found in ../template/sigs.rst-full
    CreateProcessInternal was not found in ../template/sigs.rst-full
    CreateProcessInternalA was not found in ../template/sigs.rst-full
    CreateProcessWithLogonWA was not found in ../template/sigs.rst-full
@@ -3968,6 +4150,7 @@ Scanning process.txt
    ReleaseSemaphoreWhenCallbackReturnsW was not found in ../template/sigs.rst-full
    ResumeThreadA was not found in ../template/sigs.rst-full
    ResumeThreadW was not found in ../template/sigs.rst-full
+   SetEnvironmentVariable was not found in ../template/sigs.rst-full
    SetEventWhenCallbackReturnsA was not found in ../template/sigs.rst-full
    SetEventWhenCallbackReturnsW was not found in ../template/sigs.rst-full
    SetInformationJobObjectA was not found in ../template/sigs.rst-full
@@ -4132,6 +4315,3 @@ Scanning process.txt
    WaitForThreadpoolWorkCallbacksW was not found in ../template/sigs.rst-full
    Wow64SuspendThreadA was not found in ../template/sigs.rst-full
    Wow64SuspendThreadW was not found in ../template/sigs.rst-full
-   CreateJobObject was not found in ../template/sigs.rst-full
-   CreateProcessAsUser was not found in ../template/sigs.rst-full
-   SetEnvironmentVariable was not found in ../template/sigs.rst-full
