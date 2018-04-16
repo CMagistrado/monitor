@@ -82,11 +82,185 @@ analyzer (e.g., to tell it to hook into a child process). You must add
 this back in after rescanning. See all lines in ./sigs/template/sigs.rst-full
 that call pipe().
 
-There were some calls hooked by Cuckoo's old signatures that my parser didn't pickup:
+There were calls hooked by Cuckoo's old signatures that my parser didn't pickup:
   - CreateProcessInternalW
   - SetContextThread
   - IWbemServices_ExecMethod
   - URLDownloadToFileW
+  - ActiveXObjectFncObj_Construct
+  - CDocument_write
+  - CElement_put_innerHTML
+  - CertControlStore
+  - CertCreateCertificateContext
+  - CertOpenStore
+  - CertOpenSystemStoreA
+  - CertOpenSystemStoreW
+  - CHyperlink_SetUrlComponent
+  - CIFrameElement_CreateElement
+  - CImgElement_put_src
+  - CoCreateInstance
+  - CoCreateInstanceEx
+  - CoGetClassObject
+  - CoInitializeEx
+  - CoInitializeSecurity
+  - COleScript_Compile
+  - ConnectEx
+  - CoUninitialize
+  - CreateActCtxW
+  - CreateToolhelp32Snapshot
+  - CryptAcquireContextA
+  - CryptAcquireContextW
+  - CryptCreateHash
+  - CryptDecodeMessage
+  - CryptDecodeObjectEx
+  - CryptDecrypt
+  - CryptDecryptMessage
+  - CryptEncrypt
+  - CryptEncryptMessage
+  - CryptExportKey
+  - CryptGenKey
+  - CryptHashData
+  - CryptHashMessage
+  - CryptProtectData
+  - CryptProtectMemory
+  - CryptUnprotectData
+  - CryptUnprotectMemory
+  - CScriptElement_put_src
+  - CWindow_AddTimeoutCode
+  - DecryptMessage
+  - DeleteUrlCacheEntryA
+  - DeleteUrlCacheEntryW
+  - DeviceIoControl
+  - DnsQuery_A
+  - DnsQuery_UTF8
+  - DnsQuery_W
+  - DrawTextExA
+  - DrawTextExW
+  - EncryptMessage
+  - EnumServicesStatusA
+  - EnumServicesStatusW
+  - EnumWindows
+  - ExitWindowsEx
+  - FindResourceA
+  - FindResourceExA
+  - FindResourceExW
+  - FindResourceW
+  - FindWindowA
+  - FindWindowExA
+  - FindWindowExW
+  - FindWindowW
+  - GetAdaptersAddresses
+  - GetAdaptersInfo
+  - GetAsyncKeyState
+  - GetBestInterfaceEx
+  - GetCursorPos
+  - GetDiskFreeSpaceExW
+  - GetDiskFreeSpaceW
+  - GetFileVersionInfoExW
+  - GetFileVersionInfoSizeExW
+  - GetFileVersionInfoSizeW
+  - GetFileVersionInfoW
+  - GetForegroundWindow
+  - GetInterfaceInfo
+  - GetKeyboardState
+  - GetKeyState
+  - GetSystemMetrics
+  - GetUserNameExA
+  - GetUserNameExW
+  - GetVolumeNameForVolumeMountPointW
+  - GetVolumePathNamesForVolumeNameW
+  - GetVolumePathNameW
+  - GlobalMemoryStatus
+  - GlobalMemoryStatusEx
+  - HttpOpenRequestA
+  - HttpOpenRequestW
+  - HttpSendRequestA
+  - HttpSendRequestW
+  - InternetCloseHandle
+  - InternetConnectA
+  - InternetConnectW
+  - InternetGetConnectedState
+  - InternetOpenA
+  - InternetOpenUrlA
+  - InternetOpenUrlW
+  - InternetOpenW
+  - InternetQueryOptionA
+  - InternetReadFile
+  - InternetSetOptionA
+  - InternetSetStatusCallback
+  - InternetWriteFile
+  - IsDebuggerPresent
+  - IWbemServices_ExecMethod
+  - IWbemServices_ExecMethodAsync
+  - IWbemServices_ExecQuery
+  - IWbemServices_ExecQueryAsync
+  - LdrGetDllHandle
+  - LdrGetProcedureAddress
+  - LdrLoadDll
+  - LdrUnloadDll
+  - LoadResource
+  - LoadStringA
+  - LoadStringW
+  - LookupAccountSidW
+  - LookupPrivilegeValueW
+  - MessageBoxTimeoutA
+  - MessageBoxTimeoutW
+  - Module32FirstW
+  - Module32NextW
+  - NetGetJoinInformation
+  - NetShareEnum
+  - NetUserGetInfo
+  - NetUserGetLocalGroups
+  - ObtainUserAgentString
+  - OleConvertOLESTREAMToIStorage
+  - OleInitialize
+  - OutputDebugStringA
+  - PRF
+  - ReadCabinetState
+  - ReadProcessMemory
+  - RegEnumKeyW
+  - RegisterHotKey
+  - RtlAddVectoredContinueHandler
+  - RtlAddVectoredExceptionHandler
+  - RtlCompressBuffer
+  - RtlCreateUserProcess
+  - RtlCreateUserThread
+  - RtlDecompressBuffer
+  - RtlDecompressFragment
+  - RtlDispatchException
+  - RtlRemoveVectoredContinueHandler
+  - RtlRemoveVectoredExceptionHandler
+  - SendNotifyMessageA
+  - SendNotifyMessageW
+  - SetErrorMode
+  - SetUnhandledExceptionFilter
+  - ShellExecuteExW
+  - SHGetFolderPathW
+  - SHGetSpecialFolderLocation
+  - SizeofResource
+  - Ssl3GenerateKeyMaterial
+  - system
+  - TaskDialog
+  - Thread32First
+  - Thread32Next
+  - timeGetTime
+  - TransmitFile
+  - UuidCreate
+  - vbe6_CallByName
+  - vbe6_Close
+  - vbe6_CreateObject
+  - vbe6_GetIDFromName
+  - vbe6_GetObject
+  - vbe6_Import
+  - vbe6_Invoke
+  - vbe6_Open
+  - vbe6_Print
+  - vbe6_Shell
+  - vbe6_StringConcat
+  - WNetGetProviderNameW
+  - WriteConsoleA
+  - WriteConsoleW
+  - WriteProcessMemory
 
 In addition, I modified ExitProcess and ExitThread and FreeLibraryAndExitThread
 return values to be void. Were originally DECLSPEC_NORETURN.
@@ -97,8 +271,18 @@ to LPBINDSTATUSCALLBACK
 Corrected GetLastError's return value to DWORD from _Post_equals_last_error_
 
 ## Other tools
-Inside Command Prompt (Windows):
+
+# Check if we've hooked at least all of the old API calls
 ```
+$ python utils/process.py list-apis data/ objects/code/ sigs-old/ | awk '{print $2}' | sort -u > cmp.old
+$ python utils/process.py list-apis data/ objects/code/ sigs/ | awk '{print $2}' | sort -u > cmp.new
+$ comm -23 cmp.old cmp.new > cmp.missing
+
+# cmp.missing has contents which do not appear in sigs-old/
+```
+
+```
+Inside Command Prompt (Windows):
 # Printing out byte values of API functions (seeing where the hooking mechanism can fit)
 $ python debug.py
 ```

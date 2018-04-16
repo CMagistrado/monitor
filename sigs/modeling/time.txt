@@ -29,8 +29,6 @@ QueryInterruptTime
 QueryInterruptTimePrecise
 QueryUnbiasedInterruptTime
 QueryUnbiasedInterruptTimePrecise
-RtlLocalTimeToSystemTime
-RtlTimeToSecondsSince1970
 SetDynamicTimeZoneInformation
 SetFileTime
 SetLocalTime

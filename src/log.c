@@ -428,7 +428,7 @@ void log_api(uint32_t index, int is_success, uintptr_t return_value,
             if (HIWORD(s) == 0) {
                 log_intptr(&b, idx, s);
             } else {
-                log_string(&b, idx, s, copy_strlen(s));
+                log_string(&b, idx, (char*)s, copy_strlen((char*)s));
             }
         }
         else if(*fmt == 'S') {

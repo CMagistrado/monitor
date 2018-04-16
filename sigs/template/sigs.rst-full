@@ -18864,9 +18864,21 @@ Signature::
 Parameters::
 
     ** HMODULE hModule
-    ** LPCWSTR lpType
-    ** LPCWSTR lpName
+    *  LPCWSTR lpType
+    *  LPCWSTR lpName
     ** WORD wLanguage
+
+Pre::
+
+    wchar_t value[10], value2[10], *name, *type;
+
+    int_or_strW(&name, lpName, value);
+    int_or_strW(&type, lpType, value2);
+
+Logging::
+
+    u name name
+    u type type
 
 
 FindStringOrdinal
@@ -27969,93 +27981,6 @@ Parameters::
     ** PCCERT_CONTEXT Context
     ** DWORD Flags
     ** RPC_CSTR *pBuffer
-
-
-RtlCaptureStackBackTrace
-========================
-
-Signature::
-
-    * Library: ntdll
-    * Return value: USHORT
-
-Parameters::
-
-    ** ULONG FramesToSkip
-    ** ULONG FramesToCapture
-    ** PVOID *BackTrace
-    ** PULONG BackTraceHash
-
-
-RtlCaptureContext
-=================
-
-Signature::
-
-    * Library: ntdll
-    * Return value: void
-
-Parameters::
-
-    ** PCONTEXT ContextRecord
-
-
-RtlUnwind
-=========
-
-Signature::
-
-    * Library: ntdll
-    * Return value: void
-
-Parameters::
-
-    ** PVOID TargetFrame
-    ** PVOID TargetIp
-    ** PEXCEPTION_RECORD ExceptionRecord
-    ** PVOID ReturnValue
-
-
-RtlRaiseException
-=================
-
-Signature::
-
-    * Library: ntdll
-    * Return value: void
-
-Parameters::
-
-    ** PEXCEPTION_RECORD ExceptionRecord
-
-
-RtlPcToFileHeader
-=================
-
-Signature::
-
-    * Library: ntdll
-    * Return value: PVOID
-
-Parameters::
-
-    ** PVOID PcValue
-    ** PVOID *BaseOfImage
-
-
-RtlCompareMemory
-================
-
-Signature::
-
-    * Library: ntdll
-    * Return value: SIZE_T
-
-Parameters::
-
-    ** const VOID *Source1
-    ** const VOID *Source2
-    ** SIZE_T Length
 
 
 RtmRegisterEntity
@@ -46907,8 +46832,20 @@ Signature::
 Parameters::
 
     ** HMODULE hModule
-    ** LPCSTR lpName
-    ** LPCSTR lpType
+    *  LPCSTR lpName
+    *  LPCSTR lpType
+
+Pre::
+
+    char value[10], value2[10], *name, *type;
+
+    int_or_strA(&name, lpName, value);
+    int_or_strA(&type, lpType, value2);
+
+Logging::
+
+    s name name
+    s type type
 
 
 FindResourceW
@@ -46922,8 +46859,20 @@ Signature::
 Parameters::
 
     ** HMODULE hModule
-    ** LPCWSTR lpName
-    ** LPCWSTR lpType
+    *  LPCWSTR lpName
+    *  LPCWSTR lpType
+
+Pre::
+
+    wchar_t value[10], value2[10], *name, *type;
+
+    int_or_strW(&name, lpName, value);
+    int_or_strW(&type, lpType, value2);
+
+Logging::
+
+    u name name
+    u type type
 
 
 FindResourceExA
@@ -46937,9 +46886,21 @@ Signature::
 Parameters::
 
     ** HMODULE hModule
-    ** LPCSTR lpType
-    ** LPCSTR lpName
+    *  LPCSTR lpType
+    *  LPCSTR lpName
     ** WORD wLanguage
+
+Pre::
+
+    char value[10], value2[10], *name, *type;
+
+    int_or_strA(&name, lpName, value);
+    int_or_strA(&type, lpType, value2);
+
+Logging::
+
+    s name name
+    s type type
 
 
 EnumResourceTypesA
@@ -50671,32 +50632,52 @@ Parameters::
     ** LPDWORD nSize
 
 
-GetUserNameA
-============
+GetUserNameExA
+==============
 
 Signature::
 
-    * Library: advapi32
+    * Interesting: yes
+    * Library: secur32
     * Return value: BOOL
 
 Parameters::
 
-    ** LPSTR lpBuffer
-    ** LPDWORD pcbBuffer
+    ** EXTENDED_NAME_FORMAT NameFormat name_format
+    *  LPCSTR lpNameBuffer
+    *  PULONG lpnSize
+
+Ensure::
+
+    lpnSize
+
+Logging::
+
+    S username copy_uint32(lpnSize)-1, lpNameBuffer
 
 
-GetUserNameW
-============
+GetUserNameExW
+==============
 
 Signature::
 
-    * Library: advapi32
+    * Interesting: yes
+    * Library: secur32
     * Return value: BOOL
 
 Parameters::
 
-    ** LPWSTR lpBuffer
-    ** LPDWORD pcbBuffer
+    ** EXTENDED_NAME_FORMAT NameFormat name_format
+    *  LPWSTR lpNameBuffer
+    *  PULONG lpnSize
+
+Ensure::
+
+    lpnSize
+
+Logging::
+
+    U username copy_uint32(lpnSize)-1, lpNameBuffer
 
 
 LogonUserA
@@ -77394,6 +77375,13 @@ Post::
 IWbemServices_ExecMethod
 ========================
 
+Signature::
+
+    * Callback: addr
+    * Library: __wmi__
+    * Mode: exploit
+    * Return value: HRESULT
+
 Parameters::
 
     *  IWbemServices *This
@@ -77440,6 +77428,71 @@ Post::
     }
 
 
+IWbemServices_ExecQuery
+=======================
+
+Signature::
+
+    * Callback: addr
+    * Library: __wmi__
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    *  IWbemServices *This
+    ** const BSTR strQueryLanguage query_language
+    ** const BSTR strQuery query
+    ** ULONG lFlags flags
+    *  IWbemContext *pCtx
+    *  IEnumWbemClassObject **ppEnum
+
+
+IWbemServices_ExecQueryAsync
+============================
+
+Signature::
+
+    * Callback: addr
+    * Library: __wmi__
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    *  IWbemServices *This
+    ** const BSTR strQueryLanguage query_language
+    ** const BSTR strQuery query
+    ** long lFlags flags
+    *  IWbemContext *pCtx
+    *  IWbemObjectSink *pResponseHandler
+
+
+IWbemServices_ExecMethodAsync
+=============================
+
+Signature::
+
+    * Callback: addr
+    * Library: __wmi__
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    *  IWbemServices *This
+    ** const BSTR strObjectPath class
+    ** const BSTR strMethodName method
+    ** long lFlags flags
+    *  IWbemContext *pCtx
+    *  IWbemClassObject *pInParams
+    *  IWbemObjectSink *pResponseHandler
+
+Pre::
+
+    // TODO Implement process following functionality.
+
+
 URLDownloadToFileW
 ==================
 
@@ -77478,5 +77531,1827 @@ Post::
     }
 
     free_unicode_buffer(filepath);
+
+
+EncryptMessage
+==============
+
+Signature::
+
+    * Library: secur32
+    * Return value: SECURITY_STATUS
+
+Parameters::
+
+    ** PCtxtHandle phContext context_handle
+    ** ULONG fQOP qop
+    *  PSecBufferDesc pMessage
+    ** ULONG MessageSeqNo number
+
+Pre::
+
+    uint8_t *buf = NULL; uintptr_t length = 0;
+
+    if(pMessage != NULL && pMessage->pBuffers != NULL) {
+        secbuf_get_buffer(pMessage->cBuffers,
+            pMessage->pBuffers, &buf, &length);
+        buf = memdup(buf, length);
+    }
+
+Logging::
+
+    !b buffer length, buf
+
+Post::
+
+    mem_free(buf);
+
+
+DecryptMessage
+==============
+
+Signature::
+
+    * Library: secur32
+    * Return value: SECURITY_STATUS
+
+Parameters::
+
+    ** PCtxtHandle phContext context_handle
+    *  PSecBufferDesc pMessage
+    ** ULONG MessageSeqNo number
+    ** PULONG pfQOP qop
+
+Middle::
+
+    uint8_t *buf = NULL; uintptr_t length = 0;
+
+    if(pMessage != NULL && pMessage->pBuffers != NULL) {
+        secbuf_get_buffer(pMessage->cBuffers,
+            pMessage->pBuffers, &buf, &length);
+    }
+
+Logging::
+
+    !b buffer length, buf
+
+
+COleScript_Compile
+==================
+
+Signature::
+
+    * Is success: ret >= 0
+    * Library: jscript
+    * Return value: int
+
+Parameters::
+
+    *  void *this
+    *  void *script_body
+    ** const wchar_t *script
+    *  uintptr_t unk1
+    *  uintptr_t unk2
+    *  uintptr_t unk3
+    ** const wchar_t *type
+    *  void *exception
+
+
+CDocument_write
+===============
+
+Signature::
+
+    * Is success: 1
+    * Library: mshtml
+    * Return value: int
+
+Parameters::
+
+    *  void *cdocument
+    *  SAFEARRAY *arr
+
+Middle::
+
+    bson b; char index[8];
+    bson_init_size(&b, mem_suggested_size(4096));
+    bson_append_start_array(&b, "lines");
+
+    VARIANT *elements = (VARIANT *) arr->pvData;
+    for (uint32_t idx = 0, jdx = 0; idx < arr->rgsabound[0].cElements;
+            idx++, elements++) {
+        if(elements->vt == VT_BSTR && elements->bstrVal != NULL) {
+            our_snprintf(index, sizeof(index), "%d", jdx++);
+            log_wstring(&b, index, elements->bstrVal,
+                sys_string_length(elements->bstrVal));
+        }
+    }
+
+    bson_append_finish_array(&b);
+    bson_finish(&b);
+
+Logging::
+
+    z lines &b
+
+Post::
+
+    bson_destroy(&b);
+
+
+CHyperlink_SetUrlComponent
+==========================
+
+Signature::
+
+    * Is success: 1
+    * Library: mshtml
+    * Return value: int
+
+Parameters::
+
+    *  void *chyperlink
+    ** const wchar_t *component
+    ** int index
+
+
+CIFrameElement_CreateElement
+============================
+
+Signature::
+
+    * Library: mshtml
+    * Return value: HRESULT
+
+Parameters::
+
+    *  void *chtmtag
+    *  void *cdoc
+    *  void **celement
+
+Middle::
+
+    bson b;
+    bson_init_size(&b, mem_suggested_size(1024));
+    bson_append_start_object(&b, "attributes");
+
+    chtmtag_attrs(chtmtag, &b);
+
+    bson_append_finish_object(&b);
+    bson_finish(&b);
+
+Logging::
+
+    z attributes &b
+
+Post::
+
+    bson_destroy(&b);
+
+
+CWindow_AddTimeoutCode
+======================
+
+Signature::
+
+    * Library: mshtml
+    * Return value: HRESULT
+
+Parameters::
+
+    *  void *cwindow
+    *  VARIANT *data
+    ** const wchar_t *argument
+    ** int milliseconds
+    *  int repeat
+    *  void *unk2
+
+Pre::
+
+    wchar_t *code = NULL;
+    if(data != NULL && data->vt == VT_BSTR) {
+        code = data->bstrVal;
+    }
+
+    VARIANT v; v.vt = VT_EMPTY;
+    if(data != NULL && data->vt == VT_DISPATCH) {
+        if(SUCCEEDED(variant_change_type(&v, data, 0, VT_BSTR)) != FALSE) {
+            code = v.bstrVal;
+        }
+    }
+
+Logging::
+
+    u code code
+    i repeat repeat != 0
+
+Post::
+
+    if(v.vt != VT_EMPTY) {
+        variant_clear(&v);
+    }
+
+
+CScriptElement_put_src
+======================
+
+Signature::
+
+    * Library: mshtml
+    * Return value: HRESULT
+
+Parameters::
+
+    *  void *cscriptelement
+    ** const wchar_t *url
+
+
+CElement_put_innerHTML
+======================
+
+Signature::
+
+    * Library: mshtml
+    * Return value: HRESULT
+
+Parameters::
+
+    *  void *celement
+    ** const wchar_t *html
+
+
+CImgElement_put_src
+===================
+
+Signature::
+
+    * Library: mshtml
+    * Return value: HRESULT
+
+Parameters::
+
+    *  void *celement
+    ** const wchar_t *src
+
+
+ActiveXObjectFncObj_Construct
+=============================
+
+Signature::
+
+    * Library: jscript
+    * Return value: HRESULT
+
+Parameters::
+
+    *  void *this
+    *  VAR *unk1
+    *  int unk2
+    *  VAR *args
+
+Pre::
+
+    wchar_t *objname = NULL; void *session = ((void **) this)[3];
+
+    VAR *value = iexplore_var_getvalue(args, session);
+    if(value != NULL) {
+        objname = *((wchar_t **) value + 1);
+    }
+
+Logging::
+
+    u objname objname
+
+
+InternetOpenA
+=============
+
+Signature::
+
+    * Library: wininet
+    * Return value: HINTERNET
+
+Parameters::
+
+    ** LPCTSTR lpszAgent user_agent
+    ** DWORD dwAccessType access_type
+    ** LPCTSTR lpszProxyName proxy_name
+    ** LPCTSTR lpszProxyBypass proxy_bypass
+    ** DWORD dwFlags flags
+
+Interesting::
+
+    s user_agent
+    i access_type
+    s proxy_name
+    s proxy_bypass
+    i flags
+
+
+InternetOpenW
+=============
+
+Signature::
+
+    * Library: wininet
+    * Return value: HINTERNET
+
+Parameters::
+
+    ** LPWSTR lpszAgent user_agent
+    ** DWORD dwAccessType access_type
+    ** LPWSTR lpszProxyName proxy_name
+    ** LPWSTR lpszProxyBypass proxy_bypass
+    ** DWORD dwFlags flags
+
+Interesting::
+
+    u user_agent
+    i access_type
+    u proxy_name
+    u proxy_bypass
+    i flags
+
+
+InternetConnectA
+================
+
+Signature::
+
+    * Library: wininet
+    * Return value: HINTERNET
+
+Parameters::
+
+    ** HINTERNET hInternet internet_handle
+    ** LPCTSTR lpszServerName hostname
+    ** INTERNET_PORT nServerPort port
+    ** LPCTSTR lpszUsername username
+    ** LPCTSTR lpszPassword password
+    ** DWORD dwService service
+    ** DWORD dwFlags flags
+    *  DWORD_PTR dwContext
+
+Interesting::
+
+    s hostname
+    i port
+    s username
+    s password
+    i service
+    i flags
+
+
+InternetConnectW
+================
+
+Signature::
+
+    * Library: wininet
+    * Return value: HINTERNET
+
+Parameters::
+
+    ** HINTERNET hInternet internet_handle
+    ** LPWSTR lpszServerName hostname
+    ** INTERNET_PORT nServerPort port
+    ** LPWSTR lpszUsername username
+    ** LPWSTR lpszPassword password
+    ** DWORD dwService service
+    ** DWORD dwFlags flags
+    *  DWORD_PTR dwContext
+
+Interesting::
+
+    u hostname
+    i port
+    u username
+    u password
+    i service
+    i flags
+
+
+InternetOpenUrlA
+================
+
+Signature::
+
+    * Library: wininet
+    * Return value: HINTERNET
+
+Parameters::
+
+    ** HINTERNET hInternet internet_handle
+    ** LPCTSTR lpszUrl url
+    *  LPCTSTR lpszHeaders
+    *  DWORD dwHeadersLength
+    ** DWORD dwFlags flags
+    *  DWORD_PTR dwContext
+
+Pre::
+
+    int headers_length = dwHeadersLength;
+    if(lpszHeaders != NULL && headers_length == -1) {
+        headers_length = copy_strlen(lpszHeaders);
+    }
+
+Interesting::
+
+    s url
+    S headers_length, lpszHeaders
+    i flags
+
+Logging::
+
+    b headers (uintptr_t) headers_length, lpszHeaders
+
+
+InternetOpenUrlW
+================
+
+Signature::
+
+    * Library: wininet
+    * Return value: HINTERNET
+
+Parameters::
+
+    ** HINTERNET hInternet
+    ** LPWSTR lpszUrl url
+    *  LPWSTR lpszHeaders
+    *  DWORD dwHeadersLength
+    ** DWORD dwFlags flags
+    *  DWORD_PTR dwContext
+
+Pre::
+
+    int headers_length = dwHeadersLength;
+    if(lpszHeaders != NULL && headers_length == -1) {
+        headers_length = copy_strlenW(lpszHeaders);
+    }
+
+Interesting::
+
+    u url
+    U headers_length, lpszHeaders
+    i flags
+
+Logging::
+
+    b headers (uintptr_t) headers_length, lpszHeaders
+
+
+InternetQueryOptionA
+====================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** HINTERNET hInternet internet_handle
+    ** DWORD dwOption option
+    *  LPVOID lpBuffer
+    *  LPDWORD lpdwBufferLength
+
+Flags::
+
+    option
+
+
+InternetSetOptionA
+==================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** HINTERNET hInternet internet_handle
+    ** DWORD dwOption option
+    *  LPVOID lpBuffer
+    *  DWORD dwBufferLength
+
+Flags::
+
+    option
+
+
+HttpOpenRequestA
+================
+
+Signature::
+
+    * Library: wininet
+    * Return value: HINTERNET
+
+Parameters::
+
+    ** HINTERNET hConnect connect_handle
+    ** LPCTSTR lpszVerb http_method
+    ** LPCTSTR lpszObjectName path
+    ** LPCTSTR lpszVersion http_version
+    ** LPCTSTR lpszReferer referer
+    *  LPCTSTR *lplpszAcceptTypes
+    ** DWORD dwFlags flags
+    *  DWORD_PTR dwContext
+
+Interesting::
+
+    s http_method
+    s path
+    s http_version
+    s referer
+    i flags
+
+
+HttpOpenRequestW
+================
+
+Signature::
+
+    * Library: wininet
+    * Return value: HINTERNET
+
+Parameters::
+
+    ** HINTERNET hConnect connect_handle
+    ** LPWSTR lpszVerb http_method
+    ** LPWSTR lpszObjectName path
+    ** LPWSTR lpszVersion http_version
+    ** LPWSTR lpszReferer referer
+    *  LPWSTR *lplpszAcceptTypes
+    ** DWORD dwFlags flags
+    *  DWORD_PTR dwContext
+
+Interesting::
+
+    u http_method
+    u path
+    u http_version
+    u referer
+    i flags
+
+
+HttpSendRequestA
+================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** HINTERNET hRequest request_handle
+    *  LPCTSTR lpszHeaders
+    *  DWORD dwHeadersLength
+    *  LPVOID lpOptional
+    *  DWORD dwOptionalLength
+
+Pre::
+
+    int headers_length = dwHeadersLength;
+    if(lpszHeaders != NULL && headers_length == -1) {
+        headers_length = copy_strlen(lpszHeaders);
+    }
+
+Interesting::
+
+    S dwHeadersLength, lpszHeaders
+    b dwOptionalLength, lpOptional
+
+Logging::
+
+    S headers headers_length, lpszHeaders
+    b post_data (uintptr_t) dwOptionalLength, lpOptional
+
+
+HttpSendRequestW
+================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** HINTERNET hRequest request_handle
+    *  LPWSTR lpszHeaders
+    *  DWORD dwHeadersLength
+    *  LPVOID lpOptional
+    *  DWORD dwOptionalLength
+
+Pre::
+
+    int headers_length = dwHeadersLength;
+    if(lpszHeaders != NULL && headers_length == -1) {
+        headers_length = copy_strlenW(lpszHeaders);
+    }
+
+Interesting::
+
+    U dwHeadersLength, lpszHeaders
+    b dwOptionalLength, lpOptional
+
+Logging::
+
+    U headers headers_length, lpszHeaders
+    b post_data (uintptr_t) dwOptionalLength, lpOptional
+
+
+InternetReadFile
+================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** HINTERNET hFile request_handle
+    *  LPVOID lpBuffer
+    *  DWORD dwNumberOfBytesToRead
+    *  LPDWORD lpdwNumberOfBytesRead
+
+Ensure::
+
+    lpdwNumberOfBytesRead
+
+Logging::
+
+    b buffer (uintptr_t) copy_uint32(lpdwNumberOfBytesRead), lpBuffer
+
+
+InternetWriteFile
+=================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** HINTERNET hFile request_handle
+    *  LPCVOID lpBuffer
+    *  DWORD dwNumberOfBytesToWrite
+    *  LPDWORD lpdwNumberOfBytesWritten
+
+Ensure::
+
+    lpdwNumberOfBytesWritten
+
+Logging::
+
+    b buffer (uintptr_t) copy_uint32(lpdwNumberOfBytesWritten), lpBuffer
+
+
+InternetCloseHandle
+===================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** HINTERNET hInternet internet_handle
+
+
+InternetGetConnectedState
+=========================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPDWORD lpdwFlags flags
+    *  DWORD dwReserved
+
+
+InternetSetStatusCallback
+=========================
+
+Signature::
+
+    * Is success: 1
+    * Library: wininet
+    * Return value: INTERNET_STATUS_CALLBACK
+
+Parameters::
+
+    ** HINTERNET hInternet internet_handle
+    ** INTERNET_STATUS_CALLBACK lpfnInternetCallback callback
+
+
+DeleteUrlCacheEntryA
+====================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCSTR lpszUrlName url
+
+
+DeleteUrlCacheEntryW
+====================
+
+Signature::
+
+    * Library: wininet
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPWSTR lpszUrlName url
+
+
+GetInterfaceInfo
+================
+
+Signature::
+
+    * Is success: ret == NO_ERROR
+    * Library: iphlpapi
+    * Return value: DWORD
+
+Parameters::
+
+    *  PIP_INTERFACE_INFO pIfTable
+    *  PULONG dwOutBufLen
+
+
+GetAdaptersInfo
+===============
+
+Signature::
+
+    * Is success: ret == NO_ERROR
+    * Library: iphlpapi
+    * Return value: DWORD
+
+Parameters::
+
+    *  PIP_ADAPTER_INFO pAdapterInfo
+    *  PULONG pOutBufLen
+
+
+GetAdaptersAddresses
+====================
+
+Signature::
+
+    * Is success: ret == ERROR_SUCCESS
+    * Library: iphlpapi
+    * Return value: ULONG
+
+Parameters::
+
+    ** ULONG Family family
+    ** ULONG Flags flags
+    *  PVOID Reserved
+    *  PIP_ADAPTER_ADDRESSES AdapterAddresses
+    *  PULONG SizePointer
+
+
+ObtainUserAgentString
+=====================
+
+Signature::
+
+    * Library: urlmon
+    * Return value: HRESULT
+
+Parameters::
+
+    ** DWORD dwOption option
+    *  LPSTR pcszUAOut
+    *  DWORD *cbSize
+
+Ensure::
+
+    cbSize
+
+Middle::
+
+    uint32_t length = ret == S_OK ? copy_uint32(cbSize) : 0;
+
+Logging::
+
+    S user_agent length, pcszUAOut
+
+
+GetBestInterfaceEx
+==================
+
+Signature::
+
+    * Is success: ret == NO_ERROR
+    * Library: iphlpapi
+    * Return value: DWORD
+
+Parameters::
+
+    *  struct sockaddr *pDestAddr
+    *  PDWORD pdwBestIfIndex
+
+
+WNetGetProviderNameW
+====================
+
+Signature::
+
+    * Is success: ret == NO_ERROR
+    * Library: mpr
+    * Return value: DWORD
+
+Parameters::
+
+    *  DWORD dwNetType
+    *  LPTSTR lpProviderName
+    *  LPDWORD lpBufferSize
+
+Ensure::
+
+    lpBufferSize
+
+Logging::
+
+    x net_type dwNetType
+
+
+RtlRemoveVectoredExceptionHandler
+=================================
+
+Signature::
+
+    * Is success: 1
+    * Library: ntdll
+    * Prune: resolve
+    * Return value: ULONG
+
+Parameters::
+
+    *  PVOID VectoredHandlerHandle
+
+Interesting::
+
+    p VectoredHandlerHandle
+
+
+RtlRemoveVectoredContinueHandler
+================================
+
+Signature::
+
+    * Is success: 1
+    * Library: ntdll
+    * Prune: resolve
+    * Return value: ULONG
+
+Parameters::
+
+    *  PVOID VectoredHandlerHandle
+
+Interesting::
+
+    p VectoredHandlerHandle
+
+
+RtlDispatchException
+====================
+
+Signature::
+
+    * Callback: addr
+    * Is success: 1
+    * Mode: exploit
+    * Library: ntdll
+    * Logging: no
+    * Return value: void *
+    * Special: true
+
+Parameters::
+
+    *  EXCEPTION_RECORD *ExceptionRecord
+    *  CONTEXT *Context
+
+Pre::
+
+    uint32_t exception_code = 0;
+    if(ExceptionRecord != NULL) {
+        exception_code = ExceptionRecord->ExceptionCode;
+    }
+
+    uintptr_t pc = 0;
+    #if __x86_64__
+    pc = Context->Rip;
+    #else
+    pc = Context->Eip;
+    #endif
+
+    // Is this exception within our monitor?
+    if(exception_code == STATUS_ACCESS_VIOLATION &&
+            pc >= g_monitor_start && pc < g_monitor_end) {
+        copy_return();
+    }
+
+    // Is this exception address whitelisted? This is the case for the
+    // IsBadReadPtr function where access violations are expected.
+    if(exception_code == STATUS_ACCESS_VIOLATION &&
+            is_exception_address_whitelisted(pc) == 0) {
+        // TODO Should we do something here?
+        // For now we'll just ignore this code path.
+    }
+    // Ignore exceptions that are caused by calling OutputDebugString().
+    else if(is_exception_code_whitelisted(exception_code) == 0) {
+        uintptr_t addrs[RETADDRCNT]; uint32_t count = 0;
+        count = stacktrace(Context, addrs, RETADDRCNT);
+        log_exception(Context, ExceptionRecord, addrs, count);
+    }
+
+
+PRF
+===
+
+Signature::
+
+    * Callback: module
+    * Library: ncrypt
+    * Mode: dumptls
+    * Prune: resolve
+    * Return value: NTSTATUS
+
+Parameters::
+
+    *  void *unk1
+    *  uintptr_t unk2
+    *  uint8_t *buf1
+    *  uintptr_t buf1_length
+    ** const char *type
+    *  uint32_t type_length
+    *  uint8_t *buf2
+    *  uint32_t buf2_length
+    *  uint8_t *buf3
+    *  uint32_t buf3_length
+
+Middle::
+
+    uintptr_t master_secret_length = 0, random_length = 0;
+    uint8_t *master_secret = NULL, *client_random = NULL;
+    uint8_t *server_random = NULL;
+
+    char client_random_repr[32*2+1] = {};
+    char server_random_repr[32*2+1] = {};
+    char master_secret_repr[48*2+1] = {};
+
+    if(type_length == 13 && strcmp(type, "key expansion") == 0 &&
+            buf2_length == 64) {
+        master_secret_length = buf1_length;
+        master_secret = buf1;
+
+        random_length = 32;
+        server_random = buf2;
+        client_random = buf2 + random_length;
+
+        hexencode(client_random_repr, client_random, random_length);
+        hexencode(server_random_repr, server_random, random_length);
+        hexencode(master_secret_repr, master_secret, master_secret_length);
+    }
+
+Logging::
+
+    s client_random client_random_repr
+    s server_random server_random_repr
+    s master_secret master_secret_repr
+
+
+Ssl3GenerateKeyMaterial
+=======================
+
+Signature::
+
+    * Callback: module
+    * Library: ncrypt
+    * Mode: dumptls
+    * Prune: resolve
+    * Return value: NTSTATUS
+
+Parameters::
+
+    *  uintptr_t unk1
+    *  uint8_t *secret
+    *  uintptr_t secret_length
+    *  uint8_t *seed
+    *  uintptr_t seed_length
+    *  void *unk2
+    *  uintptr_t unk3
+
+Middle::
+
+    uintptr_t random_length = 32;
+    uint8_t *client_random = seed;
+    uint8_t *server_random = seed + random_length;
+
+    char client_random_repr[32*2+1] = {};
+    char server_random_repr[32*2+1] = {};
+    char master_secret_repr[48*2+1] = {};
+
+    if(seed_length == 64 && secret_length == 48) {
+        hexencode(client_random_repr, client_random, random_length);
+        hexencode(server_random_repr, server_random, random_length);
+        hexencode(master_secret_repr, secret, secret_length);
+    }
+
+Logging::
+
+    s client_random client_random_repr
+    s server_random server_random_repr
+    s master_secret master_secret_repr
+
+
+CoCreateInstance
+================
+
+Signature::
+
+    * Library: ole32
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    ** REFCLSID rclsid clsid
+    *  LPUNKNOWN pUnkOuter
+    ** DWORD dwClsContext class_context
+    ** REFIID riid iid
+    *  LPVOID *ppv
+
+Interesting::
+
+    b sizeof(CLSID), rclsid
+    i class_context
+    b sizeof(IID), riid
+
+Post::
+
+    ole_enable_hooks(rclsid);
+
+
+OleInitialize
+=============
+
+Signature::
+
+    * Library: ole32
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    *  LPVOID pvReserved
+
+
+CoInitializeEx
+==============
+
+Signature::
+
+    * Library: ole32
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    *  LPVOID pvReserved
+    ** DWORD dwCoInit options
+
+
+CoInitializeSecurity
+====================
+
+Signature::
+
+    * Library: ole32
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    *  PSECURITY_DESCRIPTOR pSecDesc
+    *  LONG cAuthSvc
+    *  SOLE_AUTHENTICATION_SERVICE *asAuthSvc
+    *  void *pReserved1
+    *  DWORD dwAuthnLevel
+    *  DWORD dwImpLevel
+    *  void *pAuthList
+    *  DWORD dwCapabilities
+    *  void *pReserved3
+
+
+CoCreateInstanceEx
+==================
+
+Signature::
+
+    * Library: ole32
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    ** REFCLSID rclsid clsid
+    *  IUnknown *punkOuter
+    ** DWORD dwClsCtx class_context
+    *  COSERVERINFO *pServerInfo
+    *  DWORD dwCount
+    *  MULTI_QI *pResults
+
+Pre::
+
+    bson b; char index[8], clsid[64];
+    bson_init(&b);
+
+    bson_append_start_array(&b, "iid");
+
+    MULTI_QI *multi_qi = pResults;
+    for (uint32_t idx = 0; idx < dwCount; idx++, multi_qi++) {
+        our_snprintf(index, sizeof(index), "%d", idx++);
+        clsid_to_string(copy_ptr(&multi_qi->pIID), clsid);
+        log_string(&b, index, clsid, our_strlen(clsid));
+    }
+
+    bson_append_finish_array(&b);
+    bson_finish(&b);
+
+Logging::
+
+    z iid &b
+
+Post::
+
+    ole_enable_hooks(rclsid);
+    bson_destroy(&b);
+
+
+CoGetClassObject
+================
+
+Signature::
+
+    * Library: ole32
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    ** REFCLSID rclsid clsid
+    ** DWORD dwClsContext class_context
+    *  COSERVERINFO *pServerInfo
+    ** REFIID riid iid
+    *  LPVOID *ppv
+
+Post::
+
+    ole_enable_hooks(rclsid);
+
+
+OleConvertOLESTREAMToIStorage
+=============================
+
+Signature::
+
+    * Library: ole32
+    * Mode: exploit
+    * Return value: HRESULT
+
+Parameters::
+
+    *  LPOLESTREAM lpolestream
+    *  IStorage *pstg
+    *  const DVTARGETDEVICE *ptd
+
+Middle::
+
+    void *buf = NULL; uintptr_t len = 0;
+
+    #if !__x86_64__
+    if(lpolestream != NULL) {
+        buf = copy_ptr(copy_ptr((uint8_t *) lpolestream + 8));
+        len = copy_uint32((uint8_t *) lpolestream + 12);
+    }
+    #endif
+
+Logging::
+
+    !b ole2 len, buf
+
+
+GetFileVersionInfoSizeW
+=======================
+
+Signature::
+
+    * Is success: ret != 0
+    * Library: version
+    * Return value: DWORD
+
+Parameters::
+
+    ** LPCWSTR lptstrFilename filepath
+    *  LPDWORD lpdwHandle
+
+
+GetFileVersionInfoSizeExW
+=========================
+
+Signature::
+
+    * Is success: ret != 0
+    * Library: version
+    * Prune: resolve
+    * Return value: DWORD
+
+Parameters::
+
+    ** DWORD dwFlags flags
+    ** LPCWSTR lptstrFilename filepath
+    *  LPDWORD lpdwHandle
+
+
+GetFileVersionInfoW
+===================
+
+Signature::
+
+    * Library: version
+    * Return value: BOOL
+
+Parameters::
+
+    ** LPCWSTR lptstrFilename filepath
+    *  DWORD dwHandle
+    *  DWORD dwLen
+    *  LPVOID lpData
+
+Logging::
+
+    b buffer dwLen, lpData
+
+
+GetFileVersionInfoExW
+=====================
+
+Signature::
+
+    * Library: version
+    * Prune: resolve
+    * Return value: BOOL
+
+Parameters::
+
+    ** DWORD dwFlags flags
+    ** LPCWSTR lptstrFilename filepath
+    *  DWORD dwHandle
+    *  DWORD dwLen
+    *  LPVOID lpData
+
+Logging::
+
+    b buffer dwLen, lpData
+
+
+NetGetJoinInformation
+=====================
+
+Signature::
+
+    * Library: netapi32
+    * Return value: NET_API_STATUS
+
+Parameters::
+
+    ** LPCWSTR lpServer server
+    *  LPWSTR *lpNameBuffer
+    *  PNETSETUP_JOIN_STATUS BufferType
+
+Ensure::
+
+    lpNameBuffer
+
+Logging::
+
+    u name *lpNameBuffer
+
+
+NetUserGetInfo
+==============
+
+Signature::
+
+    * Library: netapi32
+    * Is success: ret == 0
+    * Return value: int
+
+Parameters::
+
+    ** LPCWSTR servername server_name
+    ** LPCWSTR username username
+    ** DWORD level level
+    *  LPBYTE *bufptr
+
+
+NetUserGetLocalGroups
+=====================
+
+Signature::
+
+    * Library: netapi32
+    * Return value: NET_API_STATUS
+
+Parameters::
+
+    ** LPCWSTR servername servername
+    ** LPCWSTR username username
+    ** DWORD level level
+    ** DWORD flags flags
+    *  LPBYTE *bufptr
+    *  DWORD prefmaxlen
+    *  LPDWORD entriesread
+    *  LPDWORD totalentries
+
+
+NetShareEnum
+============
+
+Signature::
+
+    * Library: netapi32
+    * Return value: NET_API_STATUS
+
+Parameters::
+
+    ** LPWSTR servername servername
+    ** DWORD level level
+    *  LPBYTE *bufptr
+    *  DWORD prefmaxlen
+    *  LPDWORD entriesread
+    *  LPDWORD totalentries
+    *  LPDWORD resume_handle
+
+
+ConnectEx
+=========
+
+Signature::
+
+    * Library: ws2_32
+    * Prune: resolve
+    * Return value: BOOL
+
+Parameters::
+
+    ** SOCKET s socket
+    *  const struct sockaddr *name
+    *  int namelen
+    *  PVOID lpSendBuffer
+    *  DWORD dwSendDataLength
+    *  LPDWORD lpdwBytesSent
+    *  LPOVERLAPPED lpOverlapped
+
+Ensure::
+
+    lpdwBytesSent
+
+Pre::
+
+    const char *ip = NULL; int port = 0;
+    get_ip_port(name, &ip, &port);
+
+Logging::
+
+    s ip_address ip
+    i port port
+    b buffer (uintptr_t) *lpdwBytesSent, lpSendBuffer
+
+
+TransmitFile
+============
+
+Signature::
+
+    * Library: ws2_32
+    * Prune: resolve
+    * Return value: BOOL
+
+Parameters::
+
+    ** SOCKET hSocket socket
+    ** HANDLE hFile file_handle
+    ** DWORD nNumberOfBytesToWrite
+    ** DWORD nNumberOfBytesPerSend
+    *  LPOVERLAPPED lpOverlapped
+    *  LPTRANSMIT_FILE_BUFFERS lpTransmitBuffers
+    *  DWORD dwFlags
+
+
+TaskDialog
+==========
+
+Signature::
+
+    * Library: comctl32
+    * Prune: resolve
+    * Return value: HRESULT
+
+Parameters::
+
+    ** HWND hWndParent parent_window_handle
+    ** HINSTANCE hInstance instance_handle
+    *  PCWSTR pszWindowTitle
+    *  PCWSTR pszMainInstruction
+    *  PCWSTR pszContent
+    ** TASKDIALOG_COMMON_BUTTON_FLAGS dwCommonButtons buttons
+    *  PCWSTR pszIcon
+    ** int *pnButton button
+
+Pre::
+
+    wchar_t title_buf[10], description_buf[10], content_buf[10], icon_buf[10];
+    wchar_t *title, *description, *content, *icon;
+
+    int_or_strW(&title, pszWindowTitle, title_buf);
+    int_or_strW(&description, pszMainInstruction, description_buf);
+    int_or_strW(&content, pszContent, content_buf);
+    int_or_strW(&icon, pszIcon, icon_buf);
+
+Logging::
+
+    u title title
+    u description description
+    u content content
+    u icon icon
+
+
+RtlCompressBuffer
+=================
+
+Signature::
+
+    * Library: ntdll
+    * Return value: NTSTATUS
+
+Parameters::
+
+    ** USHORT CompressionFormatAndEngine format
+    *  PUCHAR UncompressedBuffer
+    ** ULONG UncompressedBufferSize input_size
+    *  PUCHAR CompressedBuffer
+    *  ULONG CompressedBufferSize
+    *  ULONG UncompressedChunkSize
+    ** PULONG FinalCompressedSize output_size
+    *  PVOID WorkSpace
+
+Prelog::
+
+    !b uncompressed UncompressedBufferSize, UncompressedBuffer
+
+
+RtlDecompressBuffer
+===================
+
+Signature::
+
+    * Library: ntdll
+    * Return value: NTSTATUS
+
+Parameters::
+
+    ** USHORT CompressionFormat format
+    *  PUCHAR UncompressedBuffer
+    *  ULONG UncompressedBufferSize
+    *  PUCHAR CompressedBuffer
+    ** ULONG CompressedBufferSize input_size
+    ** PULONG FinalUncompressedSize output_size
+
+Logging::
+
+    !B uncompressed FinalUncompressedSize, UncompressedBuffer
+
+
+RtlDecompressFragment
+=====================
+
+Signature::
+
+    * Library: ntdll
+    * Return value: NTSTATUS
+
+Parameters::
+
+    ** USHORT CompressionFormat format
+    *  PUCHAR UncompressedFragment
+    *  ULONG UncompressedFragmentSize
+    *  PUCHAR CompressedBuffer
+    ** ULONG CompressedBufferSize input_size
+    ** ULONG FragmentOffset offset
+    ** PULONG FinalUncompressedSize output_size
+    *  PVOID WorkSpace
+
+Logging::
+
+    !B uncompressed FinalUncompressedSize, UncompressedFragment
+
+
+MessageBoxTimeoutA
+==================
+
+Signature::
+
+    * Library: user32
+    * Is success: ret != 0
+    * Return value: int
+
+Parameters::
+
+    ** HWND hWnd window_handle
+    ** LPCTSTR lpText text
+    ** LPCTSTR lpCaption caption
+    ** UINT uType flags
+    ** WORD wLanguageId language_identifier
+    *  INT Unknown
+
+Interesting::
+
+    s text
+    s caption
+    i flags
+    i language_identifier
+
+
+MessageBoxTimeoutW
+==================
+
+Signature::
+
+    * Library: user32
+    * Is success: ret != 0
+    * Return value: int
+
+Parameters::
+
+    ** HWND hWnd window_handle
+    ** LPWSTR lpText text
+    ** LPWSTR lpCaption caption
+    ** UINT uType flags
+    ** WORD wLanguageId language_identifier
+    *  INT Unknown
+
+Interesting::
+
+    u text
+    u caption
+    i flags
+    i language_identifier
+
+
+GetUserNameA
+============
+
+Signature::
+
+    * Interesting: yes
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    *  LPCSTR lpBuffer
+    *  LPDWORD lpnSize
+
+Ensure::
+
+    lpnSize
+
+Logging::
+
+    S username copy_uint32(lpnSize)-1, lpBuffer
+
+
+GetUserNameW
+============
+
+Signature::
+
+    * Interesting: yes
+    * Library: advapi32
+    * Return value: BOOL
+
+Parameters::
+
+    *  LPWSTR lpBuffer
+    *  LPDWORD lpnSize
+
+Ensure::
+
+    lpnSize
+
+Logging::
+
+    U username copy_uint32(lpnSize)-1, lpBuffer
+
+
+ReadCabinetState
+================
+
+Signature::
+
+    * Library: shell32
+    * Return value: BOOL
+
+Parameters::
+
+    *  CABINETSTATE *pcs
+    *  int cLength
+
+
+system
+======
+
+Signature::
+
+    * Is success: ret == 0
+    * Library: msvcrt
+    * Return value: int
+
+Parameters::
+
+    ** const char *command
+
+Interesting::
+
+    s command
+
+
+UuidCreate
+==========
+
+Signature::
+
+    * Is success: 1
+    * Library: rpcrt4
+    * Return value: RPC_STATUS
+
+Parameters::
+
+    *  UUID *Uuid
+
+Middle::
+
+    char uuid[128];
+    clsid_to_string(Uuid, uuid);
+
+Logging::
+
+    s uuid uuid
+
+
+timeGetTime
+===========
+
+Signature::
+
+    * Is success: 1
+    * Library: winmm
+    * Return value: DWORD
+
+Post::
+
+    ret += sleep_skipped() / 10000;
+
+
+ShellExecuteExW
+===============
+
+Signature::
+
+    * Library: shell32
+    * Mode: exploit
+    * Return value: BOOL
+
+Parameters::
+
+    *  SHELLEXECUTEINFOW *pExecInfo
+
+Ensure::
+
+    pExecInfo
+
+Pre::
+
+    SHELLEXECUTEINFOW sei;
+    memset(&sei, 0, sizeof(SHELLEXECUTEINFOW));
+
+    wchar_t *filepath = get_unicode_buffer();
+    if(pExecInfo != NULL &&
+            copy_bytes(&sei, pExecInfo, sizeof(SHELLEXECUTEINFOW)) == 0 &&
+            sei.lpFile != NULL) {
+        // In case it's a relative path we'll just stick to it.
+        copy_unicodez(filepath, sei.lpFile);
+
+        // If this is not a relative path then we resolve the full path.
+        if(lstrlenW(filepath) > 2 && filepath[1] == ':' &&
+                filepath[2] == '\\') {
+            path_get_full_pathW(sei.lpFile, filepath);
+        }
+    }
+
+Interesting::
+
+    u filepath
+    i sei.fMask
+    u sei.lpVerb
+    u sei.lpFile
+    u sei.lpParameters
+    u sei.lpDirectory
+    i sei.nShow
+    u sei.lpClass
+    i sei.dwHotKey
+
+Logging::
+
+    u filepath filepath
+    u filepath_r sei.lpFile
+    u parameters sei.lpParameters
+    i show_type sei.nShow
+
+Post::
+
+    free_unicode_buffer(filepath);
+
+
+SHGetSpecialFolderLocation
+==========================
+
+Signature::
+
+    * Library: shell32
+    * Return value: HRESULT
+
+Parameters::
+
+    ** HWND hwndOwner window_handle
+    ** int nFolder folder_index
+    *  void *ppidl
+
+
+SHGetFolderPathW
+================
+
+Signature::
+
+    * Library: shell32
+    * Return value: HRESULT
+
+Parameters::
+
+    ** HWND hwndOwner owner_handle
+    ** int nFolder folder
+    ** HANDLE hToken token_handle
+    ** DWORD dwFlags flags
+    *  LPWSTR pszPath
+
+Flags::
+
+    folder
+
+Middle::
+
+    wchar_t *dirpath = get_unicode_buffer();
+    path_get_full_pathW(pszPath, dirpath);
+
+Logging::
+
+    u dirpath dirpath
+    u dirpath_r pszPath
+
+Post::
+
+    free_unicode_buffer(dirpath);
 
 

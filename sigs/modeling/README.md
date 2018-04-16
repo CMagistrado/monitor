@@ -91,9 +91,17 @@
       - Reason: Minimum Windows 8
 
   - network.txt
+    - Because these are native calls
+      - RtlIpv4AddressToString
+      - RtlIpv4AddressToStringEx
+      - RtlIpv4StringToAddress
+      - RtlIpv4StringToAddressEx
+      - RtlIpv6AddressToString
+      - RtlIpv6AddressToStringEx
+      - RtlIpv6StringToAddress
+      - RtlIpv6StringToAddressEx
 
   - process.txt
-
     - Because these were not found in malware sources and are probably useless:
       - FlsAlloc
       - FlsFree
@@ -298,6 +306,9 @@
   - system-info.txt
 
   - time.txt
+    - Because these are native calls
+      - RtlLocalTimeToSystemTime
+      - RtlTimeToSecondsSince1970
 
 # Tests
   - Notepad.exe

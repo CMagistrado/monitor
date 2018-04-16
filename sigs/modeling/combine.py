@@ -78,7 +78,7 @@ def get_sig(full,api):
 
                 # Logic for adding the Pre part        
                 if newline == 2:
-                    # vishal: this signature doesn't have a Pre category, we'll write a new one
+                    # vishal: This signature doesn't have a Pre category, we'll write a new one
                     if not done:
                         sys.stdout.write('''Pre::
 
@@ -96,7 +96,7 @@ def get_sig(full,api):
                     break
 
                 elif _flag:
-                # vishal:We're prepending the PC logic to the existing Pre:: 
+                    # vishal: We're prepending the PC logic to the existing Pre:: 
                     sys.stdout.write(line + '\n\n'+'''    uintptr_t eip;
     #if !__x86_64__
       __asm__ volatile("movl 4(%%ebp), %0" : "=r" (eip));
@@ -105,7 +105,7 @@ def get_sig(full,api):
     #endif
 ''')
                     done=True
-                #vishal: we'll write back whatever we found in the signature file
+                # vishal: we'll write back whatever we found in the signature file
                 else:
                     sys.stdout.write(line + '\n')
 

@@ -763,14 +763,6 @@ RpcStringBindingCompose
 RpcStringBindingParse
 RpcStringFree
 RpcTestCancel
-RtlIpv4AddressToString
-RtlIpv4AddressToStringEx
-RtlIpv4StringToAddress
-RtlIpv4StringToAddressEx
-RtlIpv6AddressToString
-RtlIpv6AddressToStringEx
-RtlIpv6StringToAddress
-RtlIpv6StringToAddressEx
 SendARP
 SetAddrInfoEx
 SetIfEntry
